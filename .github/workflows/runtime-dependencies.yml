@@ -1,0 +1,81 @@
+name: Runtime dependencies and Cooked
+on:
+  push:
+    paths: ['.github/workflows/runtime-dependencies.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Acquire dependencies with provenance
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out/src out/research out/native
+          git clone --depth 1 https://github.com/melpa/melpa.git /tmp/melpa
+          python3 - <<'PY'
+          import pathlib,re,subprocess,json,concurrent.futures,urllib.request,os
+          out=pathlib.Path('out'); candidates={}
+          names='window-layout buffer-manage circe popwin with-shell-interpreter friendly-tramp-path yaxception log4e auto-complete readline-complete migemo uuid map bind-key names cl-lib'.split()
+          for name in names:
+            p=pathlib.Path('/tmp/melpa/recipes')/name
+            if not p.exists():continue
+            text=p.read_text();repo=re.search(r':repo\s+"([^"]+)"',text);fetcher=re.search(r':fetcher\s+(\S+)',text);url=re.search(r':url\s+"([^"]+)"',text)
+            if repo and fetcher:
+              host={'github':'github.com','gitlab':'gitlab.com','codeberg':'codeberg.org','sourcehut':'git.sr.ht'}.get(fetcher[1].rstrip(')'))
+              if host:candidates[name]='https://'+host+'/'+('~' if host=='git.sr.ht' else '')+repo[1]+('.git' if host!='git.sr.ht' else '')
+            elif url:candidates[name]=url[1]
+          candidates.update({'tab-group':'https://github.com/tarao/tab-group-el.git','zmx-runtime':'https://github.com/neurosnap/zmx.git','herdr-runtime':'https://github.com/ogulcancelik/herdr.git','cooked-build':'https://github.com/vodik/cooked.git'})
+          def clone(item):
+            name,url=item;dest=out/'src'/name
+            try:
+              p=subprocess.run(['git','clone','--depth','1',url,str(dest)],capture_output=True,text=True,timeout=120)
+              if p.returncode:return {'id':name,'url':url,'status':'fetch-failed','error':p.stderr[-1600:]}
+              if name=='cooked-build':
+                subprocess.run(['git','-C',str(dest),'fetch','origin','dd8e9fcc3c09d85d9dd598682dbe6390bd138262'],check=True,capture_output=True)
+                subprocess.run(['git','-C',str(dest),'checkout','--detach','dd8e9fcc3c09d85d9dd598682dbe6390bd138262'],check=True,capture_output=True)
+              return {'id':name,'url':url,'status':'fetched','commit':subprocess.check_output(['git','-C',str(dest),'rev-parse','HEAD'],text=True).strip(),'commit_date':subprocess.check_output(['git','-C',str(dest),'show','-s','--format=%cI'],text=True).strip()}
+            except Exception as e:return {'id':name,'url':url,'status':'fetch-failed','error':str(e)}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:rows=list(pool.map(clone,sorted(candidates.items())))
+          (out/'research'/'acquisition-runtime-dependencies.json').write_text(json.dumps(rows,indent=2))
+          for r in rows:print(r['id'],r['status'])
+          for repo in ['neurosnap/zmx','ogulcancelik/herdr']:
+            try:
+              req=urllib.request.Request('https://api.github.com/repos/'+repo+'/releases/latest',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})
+              rel=json.load(urllib.request.urlopen(req,timeout=30));(out/'research'/('release-correct-'+repo.split('/')[1]+'.json')).write_text(json.dumps(rel,indent=2))
+              for a in rel.get('assets',[]):
+                n=a['name'].lower()
+                if 'linux' in n and any(v in n for v in ['x86_64','amd64']):
+                  (out/'native'/a['name']).write_bytes(urllib.request.urlopen(a['browser_download_url'],timeout=90).read())
+            except Exception as e:(out/'research'/('release-correct-'+repo.split('/')[1]+'.error.txt')).write_text(str(e))
+          # Optional historical compatibility library, never added silently to default profile.
+          url='https://raw.githubusercontent.com/emacs-mirror/emacs/emacs-28.2/lisp/obsolete/assoc.el'
+          try:
+            d=out/'src'/'compat-assoc';d.mkdir();(d/'assoc.el').write_bytes(urllib.request.urlopen(url,timeout=30).read())
+            (out/'research'/'compat-assoc-source.txt').write_text(url+'\nHistorical compatibility only, GNU Emacs 28.2.\n')
+          except Exception as e:print(e)
+          PY
+      - name: Compile pinned Cooked module
+        continue-on-error: true
+        run: |
+          rustc --version | tee out/research/cooked-rust-version.txt
+          cd out/src/cooked-build
+          cargo build --locked --release 2>&1 | tee ../../research/build-cooked.log
+          cp target/release/libcooked.so ../../native/
+          cargo vendor --locked > ../../research/cooked-vendor-config.toml
+          tar -czf ../../native/cooked-rust-vendor.tar.gz vendor
+      - name: Archive source and build evidence
+        if: always()
+        run: |
+          find out/src -type d -name .git -prune -exec rm -rf {} +
+          rm -rf out/src/cooked-build/target out/src/cooked-build/vendor
+          tar -C out -czf runtime-dependencies.tar.gz .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: study-runtime-dependencies
+          path: runtime-dependencies.tar.gz
+          retention-days: 14
