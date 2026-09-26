@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"tmux","library":"/home/admin/Emacs-Multiplexing-Study/sources/tmux-el/tmux.el","commands":["tmux-cd","tmux-cd-to-here","tmux-cd-to-project","tmux-rerun","tmux-run","tmux-send-region"]}
+STDERR:

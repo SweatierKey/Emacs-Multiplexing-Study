@@ -1,0 +1,146 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>vtermux</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/pcmantz/vtermux">Sorgente upstream</a>. Revisione: <code>98db8bfde835ba2c100e5dd835d5772ab2becf0a</code>.</p>
+<h2>Funzionamento</h2>
+<p>Macro che genera launcher per programmi e backend vterm/ghostel/term; liste di istanze, etichette e cycling.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>Il profilo dichiara un'applicazione bash con vtermux-define; è configurazione necessaria, non un comando incluso nel pacchetto. Launcher generato e nomi richiesti sono registrati.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/vtermux.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/vtermux.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario vtermux: passed</h3>
+<p><a href="../../results/vtermux.json">Esito e snapshot</a> · <a href="../../results/vtermux-keys.json">Traccia dei tasti</a> · <a href="../../recordings/vtermux.cast">Registrazione asciinema</a> · <a href="../../index.html#vtermux">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>study-bash</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.71</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.91</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.91</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.12</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.12</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.42</td>
+<td><code>study-bash</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.92</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.72</td>
+<td><code>db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.92</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.22</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.42</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.42</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.62</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.62</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.03</td>
+<td><code>*study-bash - /home/admin/Emacs-Multiplexing-Study/*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.43</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.84</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.04</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.74</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.94</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.65</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.15</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.35</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

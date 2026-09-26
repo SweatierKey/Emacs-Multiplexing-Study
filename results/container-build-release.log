@@ -1,0 +1,44 @@
+STEP 1/10: FROM debian@sha256:9cc080028c43b27d2074d63a5f9caf7166d731494965616c1a6d2827a004585c
+STEP 2/10: COPY vendor/lab-debs.tar.gz /tmp/lab-debs.tar.gz
+--> Using cache c1edc8aafe20d2029c5cea299c2666532e3972229a35db84ae1cb2d8f6a06fc7
+--> c1edc8aafe20
+STEP 3/10: RUN mkdir /tmp/debs && tar -xf /tmp/lab-debs.tar.gz -C /tmp/debs --strip-components=1 &&     (DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/debs/*.deb || DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/debs/*.deb || DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/debs/*.deb) && rm -rf /tmp/debs /tmp/lab-debs.tar.gz &&     useradd -m -s /bin/bash study && mkdir -p /run/sshd /study && chown study:study /study
+--> Using cache 6b07746124ae13253be34b4890217baf0bba5046bce2def544d82985eae762bc
+--> 6b07746124ae
+STEP 4/10: COPY vendor/extra-debs/ /tmp/extra-debs/
+--> Using cache 4b47ed0ed8b5d742bc5162ed0c653771f68bbeabf91de0ef868b5a8fc875f14d
+--> 4b47ed0ed8b5
+STEP 5/10: RUN dpkg -i /tmp/extra-debs/*.deb && rm -rf /tmp/extra-debs
+--> Using cache efadd6b9d6d784116e1e1ca9c8704e8a8ff05f90f586f0ee6d08a9e883ada324
+--> efadd6b9d6d7
+STEP 6/10: COPY --chown=study:study . /study
+--> 9208bb3f9db5
+STEP 7/10: USER study
+--> e811c2e4064d
+STEP 8/10: WORKDIR /study
+--> 4bc4ac68a351
+STEP 9/10: RUN python3 scripts/prepare.py
+-- The C compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- No build type selected, defaulting to RelWithDebInfo
+-- System libvterm detected
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /study/.runtime/build-vterm
+[ 25%] Building C object CMakeFiles/vterm-module.dir/vterm-module.c.o
+[ 50%] Building C object CMakeFiles/vterm-module.dir/utf8.c.o
+[ 75%] Building C object CMakeFiles/vterm-module.dir/elisp.c.o
+[100%] Linking C shared module /study/sources/vterm/vterm-module.so
+[100%] Built target vterm-module
+"/study/sources/ghostel/etc/terminfo/xterm-ghostty.terminfo", line 2, col 31, terminal 'xterm-ghostty': older tic versions may treat the description field as an alias
+Prepared. Run python3 scripts/lab.py start, then the selected tests.
+--> 56e2b638789f
+STEP 10/10: CMD ["python3", "scripts/run-suite.py", "--smoke"]
+COMMIT emacs-study:2026-09-26
+--> 130677d23505
+Successfully tagged localhost/emacs-study:2026-09-26
+130677d2350596b747c103ef925236be02eac528a642728e958875a2b98141aa

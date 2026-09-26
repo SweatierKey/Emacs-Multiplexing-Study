@@ -1,0 +1,150 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>emux-el</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/luozengbin/emux-el">Sorgente upstream</a>. Revisione: <code>acc8db2b25d394364165ddeee13019a28eff4fba</code>.</p>
+<h2>Funzionamento</h2>
+<p>Implementazione luozengbin distinta: lista doppiamente collegata di terminali e interfaccia a tab, term-exec.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x emux:term-new due volte; C-x b per il ritorno. Scenario SSH/pager verificato.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/emux-el.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/emux-el.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario emux-el: passed</h3>
+<p><a href="../../results/emux-el.json">Esito e snapshot</a> · <a href="../../results/emux-el-keys.json">Traccia dei tasti</a> · <a href="../../recordings/emux-el.cast">Registrazione asciinema</a> · <a href="../../index.html#emux-el">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.31</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>emux:term-new</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.41</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.61</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.61</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.81</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.81</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.01</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.82</td>
+<td><code>C-c C-j: term line mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.22</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.52</td>
+<td><code>emux:term-new</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.02</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.32</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.52</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.52</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.72</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.72</td>
+<td><code>C-c C-j: term line mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.12</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.53</td>
+<td><code>emux</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.93</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.33</td>
+<td><code>C-c C-k: term char mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.73</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.93</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.63</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.83</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.53</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.03</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.23</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

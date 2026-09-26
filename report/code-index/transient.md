@@ -1,0 +1,290 @@
+# Indice del codice: transient
+
+Fonte: https://github.com/magit/transient.git
+
+Revisione: `6f69527a4d39f1244fb86a55657f70679d8577e0`.
+
+
+## .dir-locals.el
+
+
+## lisp/transient.el
+
+- L50: `(require 'cl-lib)`
+- L51: `(require 'compat)`
+- L52: `(require 'cond-let)`
+- L53: `(require 'eieio)`
+- L54: `(require 'edmacro)`
+- L55: `(require 'format-spec)`
+- L56: `(require 'llama)`
+- L57: `(require 'pcase)`
+- L58: `(require 'pp)`
+- L64: `(require 'seq)`
+- L115: `(defmacro transient--with-emergency-exit (id &rest body)`
+- L132: `(defun transient--exit-and-debug (&rest args)`
+- L142: `(defcustom transient-show-menu t`
+- L166: `(defcustom transient-enable-menu-navigation 'verbose`
+- L205: `(defcustom transient-navigate-to-group-descriptions nil`
+- L219: `(defcustom transient-describe-menu nil`
+- L234: `(defcustom transient-select-menu-window nil`
+- L245: `(defcustom transient-display-buffer-action`
+- L302: `(defcustom transient-minimal-frame-width 83`
+- L312: `(defcustom transient-mode-line-format 'line`
+- L343: `(defcustom transient-show-common-commands nil`
+- L358: `(defcustom transient-show-during-minibuffer-read nil`
+- L403: `(defcustom transient-show-docstring-format "%s"`
+- L417: `(defcustom transient-read-with-initial-input nil`
+- L423: `(defcustom transient-prefer-reading-value nil`
+- L445: `(defcustom transient-highlight-mismatched-keys nil`
+- L464: `(defcustom transient-highlight-higher-levels nil`
+- L478: `(defcustom transient-substitute-key-function nil`
+- L503: `(defcustom transient-semantic-coloring t`
+- L514: `(defcustom transient-detect-key-conflicts nil`
+- L524: `(defcustom transient-error-on-insert-failure nil`
+- L534: `(defcustom transient-align-variable-pitch nil`
+- L551: `(defcustom transient-force-fixed-pitch nil`
+- L564: `(defcustom transient-force-single-column nil`
+- L575: `(defcustom transient-use-accessible-values nil`
+- L601: `(defcustom transient-use-accessible-formats nil`
+- L635: `(defcustom transient-default-level transient--default-prefix-level`
+- L668: `(defcustom transient-levels-file`
+- L675: `(defcustom transient-values-file`
+- L682: `(defcustom transient-history-file`
+- L689: `(defcustom transient-history-limit 10`
+- L695: `(defcustom transient-save-history t`
+- L853: `(defun transient--read-file-contents (file)`
+- L860: `(defun transient--pp-to-file (value file)`
+- L878: `(defun transient-save-values ()`
+- L887: `(defun transient-save-levels ()`
+- L897: `(defun transient-save-history ()`
+- L907: `(defun transient-maybe-save-history ()`
+- L1182: `(defmacro transient-define-prefix (name arglist &rest args)`
+- L1249: `(defmacro transient-define-group (name &rest groups)`
+- L1262: `(defmacro transient-define-suffix (name arglist &rest args)`
+- L1300: `(defmacro transient-augment-suffix (name &rest args)`
+- L1314: `(defmacro transient-define-infix (name arglist &rest args)`
+- L1371: `(defun transient--default-infix-command ()`
+- L1461: `(defun transient--parse-child (prefix spec)`
+- L1470: `(defun transient--parse-group (prefix spec)`
+- L1501: `(defun transient--parse-suffix (prefix spec)`
+- L1607: `(defun transient--derive-shortarg (arg)`
+- L1612: `(defun transient-command-completion-not-suffix-only-p (symbol _buffer)`
+- L1631: `(defun transient--set-layout (prefix layout)`
+- L1634: `(defun transient--get-layout (prefix)`
+- L1685: `(defun transient--get-children (prefix)`
+- L1688: `(defun transient-parse-suffix (prefix suffix)`
+- L1698: `(defun transient-parse-suffixes (prefix suffixes)`
+- L1710: `(defun transient--insert-suffix (prefix loc suffix action &optional keep-other)`
+- L1755: `(defun transient-insert-suffix (prefix loc suffix &optional keep-other)`
+- L1772: `(defun transient-append-suffix (prefix loc suffix &optional keep-other)`
+- L1789: `(defun transient-replace-suffix (prefix loc suffix)`
+- L1802: `(defun transient-inline-group (prefix group)`
+- L1818: `(defun transient-remove-suffix (prefix loc)`
+- L1830: `(defun transient-suffix-put (prefix loc prop value)`
+- L1846: `(defun transient-get-suffix (prefix loc)`
+- L1856: `(defun transient--locate-child (group loc)`
+- L1876: `(defun transient--match-child (group loc child)`
+- L1895: `(defun transient--nth (n list)`
+- L1898: `(defun transient--suffix-key (spec)`
+- L1904: `(defun transient--command-key (cmd)`
+- L1913: `(defun transient-set-default-level (command level)`
+- L2039: `(defun transient-active-prefix (&optional prefixes)`
+- L2064: `(defun transient-prefix-object ()`
+- L2089: `(defun transient-suffix-object (&optional command)`
+- L2170: `(defun transient--suffix-prototype (command)`
+- L2177: `(defvar-keymap transient-base-map`
+- L2201: `(defvar-keymap transient-map`
+- L2218: `(defvar-keymap transient-edit-map`
+- L2224: `(defvar-keymap transient-sticky-map`
+- L2261: `(defun transient--init-common-commands ()`
+- L2277: `(defcustom transient-common-command-prefix "C-x"`
+- L2299: `(defvar-keymap transient-popup-navigation-map`
+- L2308: `(defvar-keymap transient-button-map`
+- L2314: `(defvar-keymap transient-resume-mode-map`
+- L2324: `(defvar-keymap transient-predicate-map`
+- L2391: `(defvar transient--transient-map nil)`
+- L2392: `(defvar transient--predicate-map nil)`
+- L2393: `(defvar transient--redisplay-map nil)`
+- L2396: `(defun transient--push-keymap (var)`
+- L2403: `(defun transient--pop-keymap (var)`
+- L2410: `(defun transient--make-transient-map ()`
+- L2413: `(keymap-set map (concat transient-common-command-prefix " l")`
+- L2430: `(define-key map kbd cmd))`
+- L2437: `(define-key map kbd cmd))`
+- L2441: `((define-key map kbd cmd))))))`
+- L2442: `(when$ (keymap-lookup map "-") (keymap-set map "<kp-subtract>" $))`
+- L2443: `(when$ (keymap-lookup map "=") (keymap-set map "<kp-equal>" $))`
+- L2444: `(when$ (keymap-lookup map "+") (keymap-set map "<kp-add>" $))`
+- L2454: `(defun transient--make-predicate-map ()`
+- L2466: `(define-key map [handle-switch-frame] #'transient--do-suspend))`
+- L2502: `(define-key map (vconcat (oref obj key) id) pre))`
+- L2503: `(define-key map id pre)))))`
+- L2506: `(defun transient--make-redisplay-map ()`
+- L2522: `(define-key topmap (vconcat transient--redisplay-key) submap)`
+- L2529: `(define-key topmap (vconcat transient--redisplay-key (list key))`
+- L2541: `(defun transient-setup (&optional name layout edit &rest params)`
+- L2596: `(defun transient--env-apply (fn &optional prefix)`
+- L2601: `(defun transient--init-transient (&optional name layout params)`
+- L2610: `(defun transient--init-keymaps ()`
+- L2615: `(defun transient--init-objects (&optional name layout params)`
+- L2626: `(defun transient--init-prefix (name &optional params)`
+- L2638: `(defun transient--init-suffixes (name)`
+- L2646: `(defun transient--flatten-suffixes (layout)`
+- L2656: `(defun transient--init-child (levels spec parent)`
+- L2664: `(defun transient--init-group (levels spec parent)`
+- L2680: `(defun transient--init-suffix (levels spec parent)`
+- L2742: `(defun transient--use-level-p (level &optional edit)`
+- L2748: `(defun transient--use-suffix-p (obj)`
+- L2762: `(defun transient--inapt-suffix-p (obj)`
+- L2778: `(defun transient--do-suffix-p`
+- L2802: `(defun transient--suffix-predicate (spec)`
+- L2816: `(defun transient--load-command-if-autoload (cmd)`
+- L2825: `(defun transient--setup-transient ()`
+- L2839: `(defun transient--refresh-transient ()`
+- L2852: `(defun transient--pre-command ()`
+- L2892: `(defun transient--pre-exit ()`
+- L2917: `(defun transient--export ()`
+- L2924: `(defun transient--suspend-override (&optional nohide)`
+- L2948: `(defun transient--resume-override (&optional _ignore)`
+- L2957: `(defun transient--recursive-edit (fn)`
+- L2980: `(defmacro transient--with-suspended-override (&rest body)`
+- L3007: `(defun transient--wrap-command ()`
+- L3104: `(defun transient--advise-this-command (advice)`
+- L3117: `(defun transient--premature-post-command ()`
+- L3131: `(defun transient--post-command ()`
+- L3163: `(defun transient--post-exit (&optional command)`
+- L3205: `(defun transient--stack-push ()`
+- L3215: `(defun transient--stack-pop ()`
+- L3220: `(defun transient--stack-zap ()`
+- L3224: `(defun transient--redisplay ()`
+- L3246: `(defun transient--timer-start ()`
+- L3255: `(defun transient--timer-cancel ()`
+- L3260: `(defun transient--debug (arg &rest args)`
+- L3284: `(defun transient--emergency-exit (&optional id)`
+- L3297: `(defun transient--quit-kludge (action)`
+- L3325: `(defun transient--call-pre-command ()`
+- L3340: `(defun transient--get-pre-command (&optional cmd key enforce-type)`
+- L3357: `(defun transient--resolve-pre-command (pre &optional resolve-boolean correct)`
+- L3371: `(defun transient--do-stay ()`
+- L3376: `(defun transient--do-noop ()`
+- L3382: `(defun transient--do-warn ()`
+- L3388: `(defun transient--do-warn-inapt ()`
+- L3393: `(defun transient--do-call ()`
+- L3398: `(defun transient--do-return ()`
+- L3406: `(defun transient--do-exit ()`
+- L3412: `(defun transient--do-leave ()`
+- L3417: `(defun transient--do-push-button ()`
+- L3432: `(defun transient--do-recurse ()`
+- L3437: `(defun transient--do-stack ()`
+- L3445: `(defun transient--do-replace ()`
+- L3452: `(defun transient--do-suspend ()`
+- L3461: `(defun transient--do-quit-one ()`
+- L3474: `(defun transient--do-quit-all ()`
+- L3479: `(defun transient--do-move ()`
+- L3487: `(defun transient--do-scroll ()`
+- L3491: `(defun transient--do-mouse ()`
+- L3495: `(defun transient--do-minus ()`
+- L3525: `(defun transient-noop ()`
+- L3529: `(defun transient-undefined ()`
+- L3534: `(defun transient-inapt ()`
+- L3539: `(defun transient--invalid (msg)`
+- L3564: `(defun transient-inhibit-move ()`
+- L3573: `(defun transient-quit-all ()`
+- L3577: `(defun transient-quit-one ()`
+- L3581: `(defun transient-quit-seq ()`
+- L3585: `(defun transient-update ()`
+- L3590: `(defun transient-show ()`
+- L3595: `(defun transient-push-button ()`
+- L3601: `(defun transient-suspend ()`
+- L3607: `(define-minor-mode transient-resume-mode`
+- L3610: `(defun transient-resume ()`
+- L3631: `(defun transient-help (&optional interactivep)`
+- L3670: `(defun transient-set-level (&optional command level)`
+- L3728: `(defun transient-set ()`
+- L3736: `(defun transient-save ()`
+- L3744: `(defun transient-reset ()`
+- L3749: `(defun transient-history-next ()`
+- L3761: `(defun transient-history-prev ()`
+- L3808: `(defun transient-toggle-debug ()`
+- L3815: `(defun transient-copy-menu-text ()`
+- L3909: `(defun transient--extract-value (obj)`
+- L4072: `(defun transient-read-file (prompt _initial-input _history)`
+- L4076: `(defun transient-read-existing-file (prompt _initial-input _history)`
+- L4080: `(defun transient-read-directory (prompt _initial-input _history)`
+- L4084: `(defun transient-read-existing-directory (prompt _initial-input _history)`
+- L4088: `(defun transient-read-number-N0 (prompt initial-input history)`
+- L4092: `(defun transient-read-number-N+ (prompt initial-input history)`
+- L4096: `(defun transient--read-number-N (prompt initial-input history include-zero)`
+- L4111: `(defun transient-read-date (prompt default-time _history)`
+- L4206: `(defun transient-prefix-set (value)`
+- L4222: `(defun transient--maybe-set-value (event)`
+- L4268: `(defun transient-args (prefix)`
+- L4324: `(defun transient-suffixes (prefix)`
+- L4335: `(defun transient-get-value ()`
+- L4349: `(defun transient--get-extended-value ()`
+- L4359: `(defun transient--get-savable-value ()`
+- L4371: `(defun transient--get-wrapped-value (obj)`
+- L4434: `(defun transient-arg-value (arg args)`
+- L4456: `(defun transient-init-return (obj)`
+- L4491: `(defun transient-scope (&optional prefixes classes)`
+- L4576: `(defun transient--show-hint ()`
+- L4580: `(defun transient--show ()`
+- L4611: `(defun transient--display-action ()`
+- L4630: `(defun transient--fit-window-to-buffer (window)`
+- L4650: `(defun transient--delete-window ()`
+- L4674: `(defun transient--preserve-window-p (&optional nohide)`
+- L4686: `(defun transient--format-hint ()`
+- L4714: `(defun transient--insert-menu (setup)`
+- L4753: `(defun transient--mode-line-format ()`
+- L4758: `(defun transient--separator-line ()`
+- L4767: `(defun transient--prefix-color ()`
+- L4771: `(defmacro transient-with-shadowed-buffer (&rest body)`
+- L4777: `(defun transient--insert-groups ()`
+- L4791: `(defun transient--active-suffixes (group)`
+- L5126: `(defun transient-argument-face (obj)`
+- L5133: `(cl-defun transient-value-face (obj &optional (active nil sactive))`
+- L5166: `(defun transient--add-face (string face &optional append beg end)`
+- L5171: `(defun transient--key-face (cmd key &optional enforce-type)`
+- L5179: `(defun transient--key-unreachable-p (obj)`
+- L5187: `(defun transient--lookup-key (keymap key)`
+- L5191: `(defun transient--maybe-pad-keys (group &optional parent)`
+- L5217: `(defun transient--column-stops (columns)`
+- L5234: `(defun transient--align-to (stop)`
+- L5241: `(defun transient-command-summary-or-name (obj)`
+- L5302: `(defmacro transient-with-help-window (&rest body)`
+- L5313: `(defun transient--display-help (helper target)`
+- L5328: `(defun transient--describe-function (fn)`
+- L5338: `(defun transient--show-manual (manual)`
+- L5341: `(defun transient--show-manpage (manpage &optional argument)`
+- L5352: `(defun transient--goto-argument-description (arg)`
+- L5396: `(defun transient--insert-help ()`
+- L5477: `(defun transient-scroll-up (&optional arg)`
+- L5485: `(defun transient-scroll-down (&optional arg)`
+- L5493: `(defun transient-backward-button (n)`
+- L5501: `(defun transient-forward-button (n)`
+- L5509: `(defun transient--button-move-echo ()`
+- L5515: `(defun transient--button-help-echo (win buf pos)`
+- L5525: `(defun transient-buttonize (string object)`
+- L5530: `(defun transient--goto-button (object)`
+- L5543: `(defun transient--match-button (object)`
+- L5562: `(defvar-keymap transient--isearch-mode-map`
+- L5569: `(defun transient-isearch-backward (&optional regexp-p)`
+- L5578: `(defun transient-isearch-forward (&optional regexp-p)`
+- L5587: `(defun transient-isearch-exit ()`
+- L5593: `(defun transient-isearch-cancel ()`
+- L5599: `(defun transient-isearch-abort ()`
+- L5610: `(defun transient--isearch-setup ()`
+- L5614: `(defun transient--isearch-exit ()`
+- L5620: `(defun transient--edebug-command-p ()`
+- L5639: `(defun transient--suspend-text-conversion-style ()`
+- L5653: `(defun transient--suspend-which-key-mode ()`
+- L5658: `(defun transient--resume-which-key-mode ()`
+- L5663: `(defun transient-bind-q-to-quit ()`
+- L5681: `(keymap-set transient-base-map   "q" #'transient-quit-one)`
+- L5682: `(keymap-set transient-sticky-map "q" #'transient-quit-seq)`
+- L5686: `(defun transient-rebind-quit-commands (obj)`
+- L5693: `(defun transient--force-fixed-pitch ()`
+- L5698: `(defun transient--seq-reductions-from (function sequence initial-value)`
+- L5704: `(defun transient--mapn (function &rest lists)`
+- L5764: `(defun transient-lisp-variable--reader (prompt initial-input _history)`
+- L5810: `(provide 'transient)`

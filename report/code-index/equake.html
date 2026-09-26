@@ -1,0 +1,97 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: equake</h1>
+<p>Fonte: https://github.com/emacsomancer/equake.git</p>
+<p>Revisione: <code>4469dd9eb1519f4d699d43d6cdb3a59488021fe8</code>.</p>
+<h2>equake.el</h2>
+<ul>
+<li>L159: <code>;; (define-key *top-map* (kbd "F12") "invoke-equake")</code></li>
+<li>L226: <code>(require 'dash)                         ; for -let*</code></li>
+<li>L227: <code>(require 'gv)</code></li>
+<li>L228: <code>(require 'rx)                           ; for sane regexps</code></li>
+<li>L229: <code>(require 'subr-x)</code></li>
+<li>L232: <code>(define-minor-mode equake-mode</code></li>
+<li>L238: <code>(define-minor-mode equake-rash-mode</code></li>
+<li>L260: <code>(defcustom equake-inhibit-message-choice nil</code></li>
+<li>L265: <code>(defcustom equake-hide-from-taskbar-choice t</code></li>
+<li>L270: <code>(defcustom equake-open-non-terminal-in-new-frame nil</code></li>
+<li>L275: <code>(defcustom equake-shell-mode-setup nil</code></li>
+<li>L281: <code>(defcustom equake-display-buffer-function #'display-buffer-pop-up-frame</code></li>
+<li>L288: <code>(defun equake-inhibit-message-locally ()</code></li>
+<li>L294: <code>(defcustom equake-new-tab-binding "C-+"</code></li>
+<li>L299: <code>(define-key equake-mode-map (kbd equake-new-tab-binding) 'equake-new-tab))</code></li>
+<li>L302: <code>(defcustom equake-new-tab-different-shell-binding "C-M-+"</code></li>
+<li>L307: <code>(define-key equake-mode-map (kbd equake-new-tab-different-shell-binding) 'equake-new-tab-different-shell))</code></li>
+<li>L310: <code>(defcustom equake-prev-tab-binding "C-{"</code></li>
+<li>L315: <code>(define-key equake-mode-map (kbd equake-prev-tab-binding) 'equake-prev-tab))</code></li>
+<li>L318: <code>(defcustom equake-next-tab-binding "C-}"</code></li>
+<li>L323: <code>(define-key equake-mode-map (kbd equake-next-tab-binding) 'equake-next-tab))</code></li>
+<li>L326: <code>(defcustom equake-move-tab-left-binding "C-M-{"</code></li>
+<li>L331: <code>(define-key equake-mode-map (kbd equake-move-tab-left-binding) 'equake-move-tab-left))</code></li>
+<li>L334: <code>(defcustom equake-move-tab-right-binding "C-M-}"</code></li>
+<li>L339: <code>(define-key equake-mode-map (kbd equake-move-tab-right-binding) 'equake-move-tab-right))</code></li>
+<li>L342: <code>(defcustom equake-rename-etab-binding "C-|"</code></li>
+<li>L347: <code>(define-key equake-mode-map (kbd equake-rename-etab-binding) 'equake-rename-etab))</code></li>
+<li>L350: <code>(defcustom equake-close-tab-binding "C-M-_"</code></li>
+<li>L355: <code>(define-key equake-mode-map (kbd equake-close-tab-binding) 'equake-close-tab-without-query))</code></li>
+<li>L358: <code>(defcustom equake-available-shells</code></li>
+<li>L369: <code>(defcustom equake-size-width 1.0</code></li>
+<li>L374: <code>(defcustom equake-size-height 0.4</code></li>
+<li>L379: <code>(defcustom equake-opacity-active 75</code></li>
+<li>L384: <code>(defcustom equake-opacity-inactive 60</code></li>
+<li>L389: <code>(defcustom equake-default-shell 'eshell</code></li>
+<li>L395: <code>(defcustom equake-default-sh-command ""</code></li>
+<li>L402: <code>(defcustom equake-show-monitor-in-mode-line nil</code></li>
+<li>L407: <code>(defcustom equake-use-frame-hide t</code></li>
+<li>L413: <code>(defcustom equake-close-frame-on-focus-loss nil</code></li>
+<li>L418: <code>(defcustom equake-restore-frame-use-offset 'nil</code></li>
+<li>L423: <code>(defcustom equake-restore-frame-x-offset 0</code></li>
+<li>L428: <code>(defcustom equake-restore-frame-y-offset 0</code></li>
+<li>L433: <code>(defcustom equake-display-guess-list</code></li>
+<li>L440: <code>(defcustom equake-close-frame-after-last-etab-closes t</code></li>
+<li>L491: <code>(defun equake-kill-emacs-advice (&amp;rest _)</code></li>
+<li>L502: <code>(defun equake-ask-before-closing-equake ()</code></li>
+<li>L514: <code>(defun equake-check-if-in-equake-frame-before-closing ()</code></li>
+<li>L522: <code>(defun equake--open-in-new-frame (buffer alist)</code></li>
+<li>L530: <code>(defun equake--display-buffer-function (buffer alist)</code></li>
+<li>L537: <code>(defun equake-invoke ()</code></li>
+<li>L564: <code>(defun equake-new-tab-different-shell ()</code></li>
+<li>L573: <code>(defun equake-new-tab (&amp;optional override)</code></li>
+<li>L597: <code>(defun equake-move-tab-right ()</code></li>
+<li>L605: <code>(defun equake-move-tab-left ()</code></li>
+<li>L613: <code>(defun equake-next-tab ()</code></li>
+<li>L623: <code>(defun equake-prev-tab ()</code></li>
+<li>L633: <code>(defun equake-rename-etab ()</code></li>
+<li>L640: <code>(defun equake-restore-last-etab ()</code></li>
+<li>L648: <code>(defun equake-close-tab-without-query ()</code></li>
+<li>L656: <code>(defun equake--on-kill-buffer ()</code></li>
+<li>L671: <code>(defun equake--tab-p (&amp;optional buffer)</code></li>
+<li>L678: <code>(defun equake--get-tab-properties (&amp;optional buffer)</code></li>
+<li>L690: <code>(defun equake--get-tab-property (property &amp;optional buffer)</code></li>
+<li>L698: <code>(defun equake--find-next-tab (monitor tab &amp;optional offset)</code></li>
+<li>L712: <code>(defun equake--rename-tab (base-name)</code></li>
+<li>L722: <code>(defun equake--update-mode-line (monitor)</code></li>
+<li>L733: <code>(defun equake--style-shell-type (mode)</code></li>
+<li>L747: <code>(defun equake--format-tab (tab)</code></li>
+<li>L768: <code>(defun equake--get-monitor (&amp;optional frame)</code></li>
+<li>L777: <code>(defun equake--get-monitor-attribute (attr &amp;optional frame)</code></li>
+<li>L787: <code>(defun equake--record-frame-history ()</code></li>
+<li>L801: <code>(defun equake--hide-or-destroy-frame (current-frame)</code></li>
+<li>L811: <code>(defun equake--set-up-new-frame ()</code></li>
+<li>L823: <code>(defun equake--transform-existing-frame-into-equake-frame ()</code></li>
+<li>L839: <code>(defun equake--finish-equake-frame-setup (frame monitor)</code></li>
+<li>L859: <code>(defun equake--make-new-frame ()</code></li>
+<li>L869: <code>(defun equake--make-new-frame-when-no-monitor ()</code></li>
+<li>L885: <code>(defun equake--make-frame-parameters (monitor target-workarea)</code></li>
+<li>L916: <code>(defun equake--get-display ()</code></li>
+<li>L936: <code>(defun equake--read-display-from-disk ()</code></li>
+<li>L946: <code>(defun equake--update-persistent-display-file (frame)</code></li>
+<li>L965: <code>(defun equake--display-exists-p (display)</code></li>
+<li>L981: <code>(defun equake--after-focus-change ()</code></li>
+<li>L1010: <code>(defun equake--after-focus-change-hook ()</code></li>
+<li>L1025: <code>(defun equake--hide-from-taskbar ()</code></li>
+<li>L1033: <code>(defun equake--select-some-graphic-frame ()</code></li>
+<li>L1045: <code>(defun equake--shift-item (list item shift)</code></li>
+<li>L1061: <code>(defun equake--filter-history (history)</code></li>
+<li>L1067: <code>(defun equake--on-buffer-list-update ()</code></li>
+<li>L1076: <code>(defun equake--launch-shell (launchshell)</code></li>
+<li>L1117: <code>(provide 'equake)</code></li>
+</ul></main></html>

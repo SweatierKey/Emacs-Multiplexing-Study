@@ -1,0 +1,41 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: termint</h1>
+<p>Fonte: https://github.com/milanglacier/termint.el.git</p>
+<p>Revisione: <code>bf97d0a417902417febc2b6925152dab5610057f</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>termint.el</h2>
+<ul>
+<li>L66: <code>(require 'cl-lib)</code></li>
+<li>L92: <code>(defcustom termint-backend 'term</code></li>
+<li>L106: <code>(defcustom termint-region-dispatchers</code></li>
+<li>L120: <code>(defcustom termint-schema-custom-commands nil</code></li>
+<li>L137: <code>(defcustom termint-mode-map-additional-keys</code></li>
+<li>L156: <code>(defun termint--get-session-suffix (session)</code></li>
+<li>L164: <code>(defun termint--repl-buffer-name (repl-name session)</code></li>
+<li>L170: <code>(defun termint-find-binary</code></li>
+<li>L199: <code>(defun termint-ipython-cmd-function ()</code></li>
+<li>L208: <code>(defun termint-python-cmd-function ()</code></li>
+<li>L218: <code>(defun termint--start (repl-name repl-cmd session)</code></li>
+<li>L229: <code>(defun termint--rearrange-session-on-buffer-exit ()</code></li>
+<li>L323: <code>(define-minor-mode termint-mode</code></li>
+<li>L359: <code>(defun termint--send-string (string schema session)</code></li>
+<li>L400: <code>(defun termint--show-source-command-hint (repl-name session original-content source-command)</code></li>
+<li>L454: <code>(defun termint--dispatch-paragraph ()</code></li>
+<li>L461: <code>(defun termint--dispatch-buffer ()</code></li>
+<li>L465: <code>(defun termint--dispatch-defun ()</code></li>
+<li>L479: <code>(defun termint--dispatch-region-and-send</code></li>
+<li>L498: <code>(defun termint--hide-window (repl-name session)</code></li>
+<li>L506: <code>(defun termint--create-source-command (str source-syntax)</code></li>
+<li>L519: <code>(defmacro termint-define (repl-name repl-cmd &amp;rest args)</code></li>
+<li>L794: <code>(define-key map "s" #',start-func-name)</code></li>
+<li>L795: <code>(define-key map "r" #',send-region-func-name)</code></li>
+<li>L796: <code>(define-key map "R" #',source-region-func-name)</code></li>
+<li>L797: <code>(define-key map "e" #',send-string-func-name)</code></li>
+<li>L798: <code>(define-key map "h" #',hide-window-func-name)</code></li>
+<li>L800: <code>(define-key map "r" #',send-region-operator-name)</code></li>
+<li>L801: <code>(define-key map "R" #',source-region-operator-name))</code></li>
+<li>L808: <code>(define-key map key command))))</code></li>
+<li>L815: <code>(defun termint--delete-tmp-file (file)</code></li>
+<li>L820: <code>(defun termint--delete-tmp-files ()</code></li>
+<li>L826: <code>(defun termint--make-tmp-file (str &amp;optional keep-file)</code></li>
+<li>L869: <code>(provide 'termint)</code></li>
+</ul></main></html>

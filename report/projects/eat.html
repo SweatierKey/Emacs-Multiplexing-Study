@@ -1,0 +1,250 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>eat</h1>
+<p>Categoria: <strong>emulatore</strong>. <a href="https://codeberg.org/akib/emacs-eat">Sorgente upstream</a>. Revisione: <code>c8d54d649872bfe7b2b9f49ae5c2addbf12d3b99</code>.</p>
+<h2>Funzionamento</h2>
+<p>Macchina terminale in Lisp, renderer nel buffer, modalità semi-char/char/emacs; integrazione Eshell.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x eat; C-u M-x eat crea un'altra istanza. Nel test due SSH e less. Per il remoto occorre installare la sua terminfo; il laboratorio lo fa esplicitamente.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/eat.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/eat.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario eat: passed</h3>
+<p><a href="../../results/eat.json">Esito e snapshot</a> · <a href="../../results/eat-keys.json">Traccia dei tasti</a> · <a href="../../recordings/eat.cast">Registrazione asciinema</a> · <a href="../../index.html#eat">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>eat</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.71</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.91</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.91</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.11</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.12</td>
+<td><code>C-u</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.52</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.82</td>
+<td><code>eat</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.62</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.82</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.82</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.02</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.02</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.42</td>
+<td><code>*eat*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.82</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.23</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.43</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.13</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.33</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.03</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.53</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.73</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Scenario eat-eshell: passed</h3>
+<p><a href="../../results/eat-eshell.json">Esito e snapshot</a> · <a href="../../results/eat-eshell-keys.json">Traccia dei tasti</a> · <a href="../../recordings/eat-eshell.cast">Registrazione asciinema</a> · <a href="../../index.html#eat">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>eshell</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.71</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.91</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.91</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.12</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.12</td>
+<td><code>C-u</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.52</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.82</td>
+<td><code>eshell</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.62</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.82</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.82</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.02</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.04</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.44</td>
+<td><code>*eshell*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.84</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.24</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.45</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

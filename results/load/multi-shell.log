@@ -1,0 +1,4 @@
+{"status":"loaded","feature":"multi-shell","library":"/home/admin/Emacs-Multiplexing-Study/sources/multi-shell/multi-shell.el","commands":["multi-shell-current-directory","multi-shell-insert-or-revert-window-layout","multi-shell-new","multi-shell-next","multi-shell-prev"]}
+STDERR:
+Package cl is deprecated
+sources/multi-shell/multi-shell.el: Warning: ‘incf’ is an obsolete alias (as of 27.1); use ‘cl-incf’ instead.

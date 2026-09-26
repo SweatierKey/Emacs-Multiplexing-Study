@@ -1,0 +1,37 @@
+[
+  {
+    "at": 2.607,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.907,
+    "keys": "tmux-cc-start",
+    "input_hex": "746d75782d63632d7374617274"
+  },
+  {
+    "at": 3.408,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.208,
+    "keys": "b'\\x01\\x0b'",
+    "input_hex": "010b"
+  },
+  {
+    "at": 4.608,
+    "keys": "tmux -L ems-debug -f /dev/null -CC new-session -A -s ops",
+    "input_hex": "746d7578202d4c20656d732d6465627567202d66202f6465762f6e756c6c202d4343206e65772d73657373696f6e202d41202d73206f7073"
+  },
+  {
+    "at": 4.808,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.812,
+    "keys": "RET: visit manager row",
+    "input_hex": "0d"
+  }
+]

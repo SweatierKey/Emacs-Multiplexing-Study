@@ -1,0 +1,20 @@
+[
+  {
+    "query": "emacs terminal emulator",
+    "url": "https://www.google.com/search?q=emacs+terminal+emulator&num=30",
+    "status": 200,
+    "bytes": 91082
+  },
+  {
+    "query": "emacs terminal multiplexer github gitlab codeberg",
+    "url": "https://www.google.com/search?q=emacs+terminal+multiplexer+github+gitlab+codeberg&num=30",
+    "status": 200,
+    "bytes": 91138
+  },
+  {
+    "query": "emacs multi terminal reddit",
+    "url": "https://www.google.com/search?q=emacs+multi+terminal+reddit&num=30",
+    "status": 200,
+    "bytes": 91217
+  }
+]

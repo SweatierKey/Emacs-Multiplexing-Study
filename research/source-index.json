@@ -1,0 +1,5657 @@
+[
+  {
+    "id": "abysl-term",
+    "url": "https://github.com/abysl/abysl-term.git",
+    "status": "fetched",
+    "commit": "7a5de7fb1bd50a56c0ccf6c808fb817a84c49247",
+    "commit_date": "2024-10-15T00:53:16-05:00",
+    "files": [
+      {
+        "path": "sources/abysl-term/abysl-term.el",
+        "sha256": "8db9fdc9f17c7d1ff2a9eaf73f95c143636335a75f603cf1a6a6059620eb92f4",
+        "lines": 426
+      }
+    ]
+  },
+  {
+    "id": "alacritty",
+    "url": "https://github.com/ArthurHeymans/emacs-alacritty.git",
+    "status": "fetched",
+    "commit": "a81152af4702bd3b8fd8c737ce8a5abeb7593121",
+    "commit_date": "2025-12-27T20:56:44+01:00",
+    "files": [
+      {
+        "path": "sources/alacritty/alacritty.el",
+        "sha256": "c58b563e736ebeaf94112a6036d0c3effbde845263f589f89bb1422c275ccc3a",
+        "lines": 1589
+      }
+    ]
+  },
+  {
+    "id": "dropdown-remote",
+    "url": "https://github.com/SleepyBag/dropdown-remote.git",
+    "status": "fetched",
+    "commit": "0445c065373f809a6cca31dde3217d9aee970f07",
+    "commit_date": "2020-12-30T14:03:12+08:00",
+    "files": [
+      {
+        "path": "sources/dropdown-remote/dropdown-remote.el",
+        "sha256": "ff67d9dd288aa97a456e650a04a5f31377af4f8c1a0e3d33928090f9f801fb56",
+        "lines": 115
+      },
+      {
+        "path": "sources/dropdown-remote/emacs-guake.el",
+        "sha256": "fb5f1a18858753d0f7f3ef0e52805dbec9e7524352a78be71e659a662b0e0cbc",
+        "lines": 70
+      },
+      {
+        "path": "sources/dropdown-remote/emacs-yakuake.el",
+        "sha256": "cd36d7a19b93b1e47b04d4b10a62f671ea6d7e73726ae57536ea6e5d153567e3",
+        "lines": 113
+      }
+    ]
+  },
+  {
+    "id": "eaf-pyqterminal",
+    "url": "https://github.com/mumu-lhl/eaf-pyqterminal.git",
+    "status": "fetched",
+    "commit": "41ed08eb8253c5d316794622ed52153607f9ae60",
+    "commit_date": "2025-12-07T15:03:14+08:00",
+    "files": [
+      {
+        "path": "sources/eaf-pyqterminal/eaf-pyqterminal.el",
+        "sha256": "02c3120205fbcf45dd1661c29576dcd356d56ed0f40182ca893da1ff0ab2b549",
+        "lines": 262
+      }
+    ]
+  },
+  {
+    "id": "eat-lucasec",
+    "url": "https://github.com/lucasec/emacs-eat.git",
+    "status": "fetched",
+    "commit": "d29c8ecf3ee15ad6739e5372f702e2ab9073035d",
+    "commit_date": "2026-05-25T23:11:55-07:00",
+    "files": [
+      {
+        "path": "sources/eat-lucasec/.dir-locals.el",
+        "sha256": "10c2e3c1658217f5ee32f9bd6986a02e946e9292857c55a4b1d5ba125eba5a26",
+        "lines": 8
+      },
+      {
+        "path": "sources/eat-lucasec/eat-tests.el",
+        "sha256": "18da779d28d1824065d7a9fdf76166f63c7bbd4388ea11c1f0517b33c9ff2fa0",
+        "lines": 6394
+      },
+      {
+        "path": "sources/eat-lucasec/eat.el",
+        "sha256": "49cddbbadae820b5a44445111a339783545c4b51ccf76f4f36a2514b186c9f63",
+        "lines": 9222
+      },
+      {
+        "path": "sources/eat-lucasec/term/eat.el",
+        "sha256": "b224aa7f390e755f8b33f0b676804a6294891cf320e4b0efd85be3ebb06ccf93",
+        "lines": 50
+      }
+    ]
+  },
+  {
+    "id": "eat-serial",
+    "url": "https://github.com/ArthurHeymans/eat-serial.git",
+    "status": "fetched",
+    "commit": "5510c23cd97994e98c068903c93545f3e4077881",
+    "commit_date": "2026-06-16T15:28:26+02:00",
+    "files": [
+      {
+        "path": "sources/eat-serial/eat-serial-codec.el",
+        "sha256": "07761eabe48f81078f9f264dd323f77631179c119c9eea58f3f974a0030888ee",
+        "lines": 220
+      },
+      {
+        "path": "sources/eat-serial/eat-serial-tests.el",
+        "sha256": "0f608cbaec0c78f252cfb7aab5619aee400925f1043e60f7f1c47de5e62058bc",
+        "lines": 256
+      },
+      {
+        "path": "sources/eat-serial/eat-serial.el",
+        "sha256": "70aaed02b9a757b5be854d8f648cb678d6d30a5016110c239429da11ca6bbb7b",
+        "lines": 881
+      }
+    ]
+  },
+  {
+    "id": "edger",
+    "url": "https://github.com/suderman/edger.git",
+    "status": "fetched",
+    "commit": "d7af1643454e8d2025976f31531aee15d0224bb0",
+    "commit_date": "2026-09-25T17:12:01-06:00",
+    "files": [
+      {
+        "path": "sources/edger/emacs/edger.el",
+        "sha256": "b0e79f06e49e70d048eef051965bb6cb0030e15368afc2dab521d6d7b6435bb7",
+        "lines": 144
+      }
+    ]
+  },
+  {
+    "id": "emacs-tabbar",
+    "url": "https://github.com/sundarvenkata-personal/emacs-tabbar.git",
+    "status": "fetched",
+    "commit": "b782ba0d83c86a7f1cc8b8fd4f4a7b320581164b",
+    "commit_date": "2025-10-15T22:33:35+01:00",
+    "files": []
+  },
+  {
+    "id": "emux-rock",
+    "url": "https://github.com/rockneurotiko/emux.git",
+    "status": "fetched",
+    "commit": "0695452583055485e848a4948cdaec1da8f64188",
+    "commit_date": "2014-08-06T22:26:01-07:00",
+    "files": [
+      {
+        "path": "sources/emux-rock/emux-base.el",
+        "sha256": "8a33b3e52e051fca154ec53a6deb5eac760aa89adea15a4fb5788a5755c26ee6",
+        "lines": 83
+      },
+      {
+        "path": "sources/emux-rock/emux-screen.el",
+        "sha256": "cdd18d5fc9ebc2b78c385bf55fc877b2ab4b0eaa956a06eb09b09555cc2ce7c6",
+        "lines": 170
+      },
+      {
+        "path": "sources/emux-rock/emux-session.el",
+        "sha256": "cf65ce48c5e798f64cf50f9f30068acb4695957aa5d102be66e196f6b68face8",
+        "lines": 264
+      },
+      {
+        "path": "sources/emux-rock/emux-term.el",
+        "sha256": "cfc3e7c046eee542fb7a7edfbeb98dfee3ffbb3d1a4ae0b57c41906ae5ad5058",
+        "lines": 309
+      }
+    ]
+  },
+  {
+    "id": "evil-tmux-navigator",
+    "url": "https://github.com/keith/evil-tmux-navigator.git",
+    "status": "fetched",
+    "commit": "b455b255854d1c7af6123d6cb15054f504fa6ac0",
+    "commit_date": "2019-08-31T23:00:57-07:00",
+    "files": [
+      {
+        "path": "sources/evil-tmux-navigator/navigate.el",
+        "sha256": "87ed7291de23ec8588ae5e623270e0149971cadd0e20b6df741dc9b0a726da22",
+        "lines": 74
+      }
+    ]
+  },
+  {
+    "id": "ghostel-switch",
+    "url": "https://github.com/JulHee/ghostel-switch.git",
+    "status": "fetched",
+    "commit": "e33a981aaffeb555e453e86b2b4a81a2af40a4e1",
+    "commit_date": "2026-07-24T16:00:35+02:00",
+    "files": [
+      {
+        "path": "sources/ghostel-switch/ghostel-switch.el",
+        "sha256": "cd2820e1bfb53959e285114905c68c5093f66e5a4fad7f74c3bd3f7efe52c6bc",
+        "lines": 146
+      }
+    ]
+  },
+  {
+    "id": "ghostherd",
+    "url": "https://github.com/ionrock/ghostherd.git",
+    "status": "fetched",
+    "commit": "2a505e62512e97d2090d76a2ea004e10f86a6a3d",
+    "commit_date": "2026-08-13T18:34:24-05:00",
+    "files": [
+      {
+        "path": "sources/ghostherd/lisp/ghostherd-client.el",
+        "sha256": "0f5c72836fb6773b829ff8bae4d780071ff77a11c1e395248bac95d8a6b9fcef",
+        "lines": 372
+      },
+      {
+        "path": "sources/ghostherd/lisp/ghostherd-notify.el",
+        "sha256": "97c8e33be6c23e99bbb42ae0d1a15534c38f97234d37f09df867aea23622742d",
+        "lines": 203
+      },
+      {
+        "path": "sources/ghostherd/lisp/ghostherd-sidebar.el",
+        "sha256": "972ca8e85efa4f22587232040f65cd1d3c233f1487bf87c3396e872de3d1e5dc",
+        "lines": 394
+      },
+      {
+        "path": "sources/ghostherd/lisp/ghostherd.el",
+        "sha256": "aa94173e97e688f5e073cd0675c8c32c9e6afe8a095f59f9d189117fb6498dc5",
+        "lines": 678
+      }
+    ]
+  },
+  {
+    "id": "herdr-runtime",
+    "url": "https://github.com/ogulcancelik/herdr.git",
+    "status": "fetched",
+    "commit": "81ddfc65b4661c52569f8b8d1ee41d5a6d68f85e",
+    "commit_date": "2026-09-26T02:13:20+02:00",
+    "files": []
+  },
+  {
+    "id": "lazy-emacs-terminal",
+    "url": "https://github.com/lizqwerscott/lazy-emacs-terminal.git",
+    "status": "fetched",
+    "commit": "75eee8341b0c2e64376f482577e76b19c0c4a530",
+    "commit_date": "2022-10-17T10:52:29+08:00",
+    "files": [
+      {
+        "path": "sources/lazy-emacs-terminal/early-init.el",
+        "sha256": "8ad7748fc03ab5c2ea782806bceb44527815300f6e37bfe43ff770e5d37a2dbd",
+        "lines": 24
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/init.el",
+        "sha256": "f574d7b7e6ca2a61b6110bbb3c4be9688b0bdb064738b9dd6b18d42271f5a168",
+        "lines": 53
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/init-common-lisp.el",
+        "sha256": "6b38575524e6f16ecae9712ad408a422b097652476d125a49edc33e761110496",
+        "lines": 32
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/init-corfu.el",
+        "sha256": "9772fb72540a6780ad3d1d62ec5fe6fb97c5d2692a86eb35aa54bd1bfe760923",
+        "lines": 54
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/init-edit.el",
+        "sha256": "cc2c1deafc4183602d0a7e219e668c0e5a87b8a9fd94a2e385529011b4edf66b",
+        "lines": 72
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/init-input.el",
+        "sha256": "ff60166b919c68b7c11df0c7d9d3c23d6c2ec0a82eaac88fc27feb79af30a9a2",
+        "lines": 37
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/init-package.el",
+        "sha256": "e9f4d3aec8d531e7b3625d3e397a87fb24df1d184c43825a9f4257c7b7b587d9",
+        "lines": 78
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/init-program.el",
+        "sha256": "2c4133d860296615a28fefc8c3bc1507259c45f3b2c06bc3d55c0d19a628732e",
+        "lines": 181
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/init-startup.el",
+        "sha256": "a13104ac8a8eca5561ad72f4016e6a731e2e530c4627a7b175594af356b76e8d",
+        "lines": 253
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/init-ui.el",
+        "sha256": "388f2db87d81b7f4cfde734508ecc3982a9a45ee8e474e6e37e2d84c2812f703",
+        "lines": 158
+      },
+      {
+        "path": "sources/lazy-emacs-terminal/lisp/keybinding.el",
+        "sha256": "cbfb10092122fc0cc02758c7cfc0ec962da4848d61c1e43fedfcb343540aa7cb",
+        "lines": 240
+      }
+    ]
+  },
+  {
+    "id": "multi-term-roman",
+    "url": "https://github.com/roman/multi-term.git",
+    "status": "fetched",
+    "commit": "06f6b49ef53a5f2ea779b1608eb5a7b38660e6bb",
+    "commit_date": "2012-11-26T19:38:23Z",
+    "files": [
+      {
+        "path": "sources/multi-term-roman/multi-term.el",
+        "sha256": "518e960129d6e05f8840a9444647b1d524a653b66d6201ad6c942d289850ede7",
+        "lines": 810
+      }
+    ]
+  },
+  {
+    "id": "project-terminal",
+    "url": "https://github.com/cowboyd/project-terminal.el.git",
+    "status": "fetched",
+    "commit": "79a4cb4fe4bd30c4088f634a108ef24b54769943",
+    "commit_date": "2026-02-23T13:20:08-06:00",
+    "files": [
+      {
+        "path": "sources/project-terminal/project-terminal.el",
+        "sha256": "3936354ab3422caf6e412708d803cb393e96fab26606bfbf475d8cd04e7a0938",
+        "lines": 234
+      }
+    ]
+  },
+  {
+    "id": "term-control",
+    "url": "https://github.com/Pablololo12/term-control.el.git",
+    "status": "fetched",
+    "commit": "d5c0bf282e0e292881b24c4816de5fde0897034c",
+    "commit_date": "2026-02-10T14:15:11Z",
+    "files": [
+      {
+        "path": "sources/term-control/term-control.el",
+        "sha256": "47289d01c0c98eaad3d427cc07c2a0fe5bf676a46702281715674f2a935f47ed",
+        "lines": 180
+      }
+    ]
+  },
+  {
+    "id": "term-plus-fork",
+    "url": "https://github.com/ZpullZ/term-plus-el.git",
+    "status": "fetched",
+    "commit": "699fed40378c9d43ee3a0bf80db33df3ae9f9a0e",
+    "commit_date": "2012-11-06T15:14:32Z",
+    "files": [
+      {
+        "path": "sources/term-plus-fork/term+.el",
+        "sha256": "6e77a17ee51b73318e71c62a311064ab9259dce616bd774e0d86f31c873fa91d",
+        "lines": 320
+      },
+      {
+        "path": "sources/term-plus-fork/term+edit.el",
+        "sha256": "fc8119fc4363e451a73af76d6898d999d73f634643f237e36d0c3b4b9f4a8b2c",
+        "lines": 152
+      },
+      {
+        "path": "sources/term-plus-fork/term+file-transfer.el",
+        "sha256": "35a57b6fbb5f45a7196487821f14ca97b238161dc1a1d4aa5f7de07fbbef17c1",
+        "lines": 205
+      },
+      {
+        "path": "sources/term-plus-fork/term+input.el",
+        "sha256": "c38b584f3d2b9e10764e6cc9a8333a8a73babcb5e2558dd6d5e84bc4824ad03f",
+        "lines": 230
+      },
+      {
+        "path": "sources/term-plus-fork/term+logging.el",
+        "sha256": "cc63dd26a1ceaef521f2d6cbf31b9b821a29f5871edbe7f0d67a26a3631972d6",
+        "lines": 350
+      },
+      {
+        "path": "sources/term-plus-fork/term+shell-history.el",
+        "sha256": "7e52c2966f7e931502d32116dfb0e286b608f3325051be9dcb136f9934297281",
+        "lines": 106
+      },
+      {
+        "path": "sources/term-plus-fork/term+vars.el",
+        "sha256": "3d68335b9dc70bbed3e27c8c510152d21b7b6879a9b85c7baaf2fbe927c82733",
+        "lines": 305
+      },
+      {
+        "path": "sources/term-plus-fork/xterm-256color.el",
+        "sha256": "0ab103f5a45b78a15fe2a331e55672617d9886162b30f17d87cbea297f4cfd42",
+        "lines": 425
+      }
+    ]
+  },
+  {
+    "id": "terminology",
+    "url": "https://github.com/timjstewart/terminology.git",
+    "status": "fetched",
+    "commit": "f18d28163e5a408e3250f22f2705c9349a43256c",
+    "commit_date": "2022-03-31T13:41:34-06:00",
+    "files": [
+      {
+        "path": "sources/terminology/terminology.el",
+        "sha256": "d231c44836271c54c57216794cde04b185f331e452aade1a53e2e084d692ddda",
+        "lines": 93
+      }
+    ]
+  },
+  {
+    "id": "vterm-anti-flicker-filter",
+    "url": "https://github.com/martinbaillie/vterm-anti-flicker-filter.git",
+    "status": "fetched",
+    "commit": "b17b013982b7a4eed0c31a3fee068bcbcac002ea",
+    "commit_date": "2025-08-08T15:57:33+10:00",
+    "files": [
+      {
+        "path": "sources/vterm-anti-flicker-filter/vterm-anti-flicker-filter.el",
+        "sha256": "d4cd413359c408f4e1179cf4dc9e017b3b3521fd28a84449565be40fb2d4da17",
+        "lines": 176
+      }
+    ]
+  },
+  {
+    "id": "winterm",
+    "url": "https://github.com/Borwe/emacs-winterm.git",
+    "status": "fetched",
+    "commit": "8549cd42593f22b6c6ff61015cbcd08862c028e8",
+    "commit_date": "2024-04-04T16:47:09+03:00",
+    "files": [
+      {
+        "path": "sources/winterm/emacs-winterm.el",
+        "sha256": "92cc27a9959e8a2f4aab681801b7bbf87c608b18d75b3163e95256268b50914c",
+        "lines": 29
+      }
+    ]
+  },
+  {
+    "id": "yantra",
+    "url": "https://github.com/alix559/yantra.git",
+    "status": "fetched",
+    "commit": "abd9d94f3cb60abd0200e5427fe9ba715d7c9103",
+    "commit_date": "2026-08-16T01:16:19Z",
+    "files": [
+      {
+        "path": "sources/yantra/web_editor_api.el",
+        "sha256": "dd342a2e6b17c0c4f96f62154650044e67f27180fa380682209b6f34a078627d",
+        "lines": 360
+      }
+    ]
+  },
+  {
+    "id": "zmx",
+    "url": "https://github.com/neomataru/zmx.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/zmx'...\nfatal: could not read Username for 'https://github.com': No such device or address\n",
+    "files": []
+  },
+  {
+    "id": "eev",
+    "url": "https://github.com/edrx/eev.git",
+    "status": "fetched",
+    "commit": "4850e9c7a465684a0fdb79a6be83055e0ef9537b",
+    "files": [
+      {
+        "path": "sources/eev/eejump.el",
+        "sha256": "71193ce520e48b03f5c085724a2d5b8e4b69578b1f65cb2b15599a0c8db83980",
+        "lines": 143
+      },
+      {
+        "path": "sources/eev/eepitch.el",
+        "sha256": "427d521fd0c5d3378a456d079909e3aefa6e6c1a13e264accd00605311f62066",
+        "lines": 1587
+      },
+      {
+        "path": "sources/eev/eev-aliases.el",
+        "sha256": "0dba0af19dc4f47a3b04cd12a0e5ce1210c868285fa50c6851fc7fc3ed9da74d",
+        "lines": 135
+      },
+      {
+        "path": "sources/eev/eev-anchors.el",
+        "sha256": "20e25b9281e6215c6b5253eeee9261d37afbedbcadfef4481d2360c30bb846c9",
+        "lines": 181
+      },
+      {
+        "path": "sources/eev/eev-audiovideo.el",
+        "sha256": "8dbb18d02318d4918770cb4cca716d7d618b90ed3d01b32fc40e1ed8f7833dac",
+        "lines": 675
+      },
+      {
+        "path": "sources/eev/eev-beginner.el",
+        "sha256": "37c269ae0a1d293331715a0447af2226a6ccf0568e05b62ff6b96fcd0ec73c45",
+        "lines": 199
+      },
+      {
+        "path": "sources/eev/eev-blinks.el",
+        "sha256": "817153fbd51ca1136999a28914dc4293fa3ac68daca53a1ef869f69946d9b606",
+        "lines": 2277
+      },
+      {
+        "path": "sources/eev/eev-bounded.el",
+        "sha256": "f4f0a0a2343d5522ff33a27bd4315b38a5b2048919a36adcf4fdd3e9ad1f3230",
+        "lines": 337
+      },
+      {
+        "path": "sources/eev/eev-brxxx.el",
+        "sha256": "376fb3075bc309a0fd0767a249b60260a45eddd7829c0c30c9790bdd1736a3cd",
+        "lines": 434
+      },
+      {
+        "path": "sources/eev/eev-channels.el",
+        "sha256": "b4c7e0c9f0a44273a4b1c12be50b8dc032cb2d47db645720f6d05d85f9bd4ee4",
+        "lines": 270
+      },
+      {
+        "path": "sources/eev/eev-code.el",
+        "sha256": "8f33e487d43d7c92ec477250d206e775c623f181eb64a45dd3f08d81dce22c50",
+        "lines": 440
+      },
+      {
+        "path": "sources/eev/eev-codings.el",
+        "sha256": "e6982e251f303092d01ef65024d36b320c6a36b0a7617621fc1d66037f4108e1",
+        "lines": 148
+      },
+      {
+        "path": "sources/eev/eev-compose-hash.el",
+        "sha256": "6ece376bd6eec52800d902302f0c602b8d63b94bf3760965b9bd2860538b3893",
+        "lines": 679
+      },
+      {
+        "path": "sources/eev/eev-edit.el",
+        "sha256": "d6eea86ddf4d5167130155be2d0b3393d2aebc89fea79d74ade92e83a401f273",
+        "lines": 307
+      },
+      {
+        "path": "sources/eev/eev-elinks.el",
+        "sha256": "7c85a9eecd45a2cc52c8c9d24a8d999f2aa43ca286caf0dff84a06d213b79c42",
+        "lines": 2334
+      },
+      {
+        "path": "sources/eev/eev-env.el",
+        "sha256": "743a30b74051966c1eb6c798b70e2e84755979a55e853641c170bd7ab5312aa5",
+        "lines": 136
+      },
+      {
+        "path": "sources/eev/eev-eval.el",
+        "sha256": "fd696783d1ca6c0a5d45e711f6ecf5af0df192e0d53926bc1bef1b5128f9c11b",
+        "lines": 343
+      },
+      {
+        "path": "sources/eev/eev-explain.el",
+        "sha256": "f451b2cfab11327489424c2acdd4c969d759a33dcb43b5d7f65251215055dd6a",
+        "lines": 257
+      },
+      {
+        "path": "sources/eev/eev-flash.el",
+        "sha256": "fe23f1095129451823a4294fd04ccffb6c9797912b6678c56226d1dd3d22198d",
+        "lines": 98
+      },
+      {
+        "path": "sources/eev/eev-helpful.el",
+        "sha256": "3981bfff1551b7ba6177a0e8953fe3d3c44f6a81b9d23698c8e3f9cca1e96e11",
+        "lines": 239
+      },
+      {
+        "path": "sources/eev/eev-hlinks.el",
+        "sha256": "21a620ca1cc285efaf2dde45d6153fdf1ffdc428446932e1e74b2bd56263cd58",
+        "lines": 698
+      },
+      {
+        "path": "sources/eev/eev-htests.el",
+        "sha256": "3eddfce7a73367d773e3e614182119a1b81646e0a3b5292710d2fb462828d679",
+        "lines": 145
+      },
+      {
+        "path": "sources/eev/eev-hydras.el",
+        "sha256": "1af2ef3862a29606a9670021a0d86d6c80eac849d0662dd8e1c9fe6a62fdfed0",
+        "lines": 164
+      },
+      {
+        "path": "sources/eev/eev-intro.el",
+        "sha256": "cb31f897076cef199dbee37157b1853b04a6b5b5c792dcdb19c5d4121bcc71df",
+        "lines": 20753
+      },
+      {
+        "path": "sources/eev/eev-kl-here.el",
+        "sha256": "524b2e95824200fa1b34c91c83d19f26d5b30f0786e590ce0a0556f388ce0768",
+        "lines": 358
+      },
+      {
+        "path": "sources/eev/eev-kla.el",
+        "sha256": "a013ac9e6e78c8f28b4e88e3b700712c03d9889d398e0d454080e2fc179acd1e",
+        "lines": 592
+      },
+      {
+        "path": "sources/eev/eev-lean4.el",
+        "sha256": "034f89f860cce63d23fea1f27ac427a0ea08c50636c1610464290585029c245d",
+        "lines": 527
+      },
+      {
+        "path": "sources/eev/eev-load.el",
+        "sha256": "ab8747fc1d1da15bac27fc3573888608c0e391bf348ba04393993ba094de5f9c",
+        "lines": 233
+      },
+      {
+        "path": "sources/eev/eev-mode.el",
+        "sha256": "48970a5bef0eb2ceb43ed080f61876a57773ad2af924ac1eb681bf607a2fe926",
+        "lines": 341
+      },
+      {
+        "path": "sources/eev/eev-multiwindow.el",
+        "sha256": "2e5c58fc9e94aea3306755aad1d6403953e193a4700c9e9d8716f8c6adeb3679",
+        "lines": 187
+      },
+      {
+        "path": "sources/eev/eev-on-windows.el",
+        "sha256": "22e5df53517d8d9123bd79d6c5d27e8dbb3c4be6963dca95f0399eada7d793e0",
+        "lines": 530
+      },
+      {
+        "path": "sources/eev/eev-pdflike.el",
+        "sha256": "096afaebcf4ec362feed8a22432d153c6840c044583e38408c652177fad8c967",
+        "lines": 1273
+      },
+      {
+        "path": "sources/eev/eev-plinks.el",
+        "sha256": "5d204eee6bae1793bb9c9634f907991ef5234e851caffd149c566df003239341",
+        "lines": 731
+      },
+      {
+        "path": "sources/eev/eev-prepared.el",
+        "sha256": "d486f8028296205172e30028a96793d5044dea9956bf5631965d9d5efadc0828",
+        "lines": 275
+      },
+      {
+        "path": "sources/eev/eev-qrl.el",
+        "sha256": "25a0afd84abe8bff5e776f131c0247fc8b6bbf1fc78142d5021ba93f7c2d31de",
+        "lines": 112
+      },
+      {
+        "path": "sources/eev/eev-rcirc.el",
+        "sha256": "26062d41e89002c2ea264d1ff9196d3df138bd39e7437fa478a7d28ac1406667",
+        "lines": 539
+      },
+      {
+        "path": "sources/eev/eev-readme.el",
+        "sha256": "a736bc01f70ce4672fbb5fcd75b65813c98851b2680a95529c39201eec6cdb75",
+        "lines": 111
+      },
+      {
+        "path": "sources/eev/eev-rstdoc.el",
+        "sha256": "eb4469c9affbcf9e4654ea139a2ad294aa2d859820b47c1f526c9e2c08857edb",
+        "lines": 625
+      },
+      {
+        "path": "sources/eev/eev-strange-functions.el",
+        "sha256": "e9b8feb62d77c21bb227d04e8023f64045ba9a9221923713eb9bf343d8a87b1a",
+        "lines": 495
+      },
+      {
+        "path": "sources/eev/eev-template0.el",
+        "sha256": "dca9df9a28b42de37ed309a0dc10d0feb1a07cda41b6d1d463db586db94eec2f",
+        "lines": 261
+      },
+      {
+        "path": "sources/eev/eev-testblocks.el",
+        "sha256": "6374c749a2c95e8f58f9e3fdfa47bf2e8886000099cb899c3903e3ba7c815cdf",
+        "lines": 764
+      },
+      {
+        "path": "sources/eev/eev-tla.el",
+        "sha256": "92836c3efdffad6fc57e075c253c1b45064ce5ef2572824191542e0a8bd48a59",
+        "lines": 494
+      },
+      {
+        "path": "sources/eev/eev-tlinks.el",
+        "sha256": "5fb805ca6bce47d15e89066880c42e3c457a9d4507a214ada8fa9b10450efcd7",
+        "lines": 6829
+      },
+      {
+        "path": "sources/eev/eev-videolinks.el",
+        "sha256": "1017723c78a2712dcb9ba16f23eb63829ce22924976155c4542fadefdbbe36c2",
+        "lines": 1309
+      },
+      {
+        "path": "sources/eev/eev-wconfig.el",
+        "sha256": "d86280085251011162336394cc36669cc0e0736a0b7808dbf02517aa28b7d352",
+        "lines": 1091
+      },
+      {
+        "path": "sources/eev/eev-wrap.el",
+        "sha256": "c90dbba12ad9e97872a5b5a31adb1d6cd07b11d9474bd7c60c0022f7d4a7c6db",
+        "lines": 670
+      },
+      {
+        "path": "sources/eev/eev.el",
+        "sha256": "2b27a377fc8ce278f8211e5270a1eb6f7177a6edbca600f587c99c551dce0b8b",
+        "lines": 43
+      },
+      {
+        "path": "sources/eev/eev2-all.el",
+        "sha256": "107da2a98febfd9b466560920a572a70ebdd3079b8ce9f611635b78e436cc026",
+        "lines": 127
+      }
+    ]
+  },
+  {
+    "id": "bshell",
+    "url": "https://github.com/plandes/bshell.git",
+    "commit": "c13907ac0d2d8eda58c0e35d99179ed8c0e4c25a",
+    "commit_date": "2026-01-07T13:14:38-06:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/bshell/bshell.el",
+        "sha256": "72638bc68f2eaf89d428d47eaa2c6f8ea48b76d035e71502a15928e72d8a807c",
+        "lines": 168
+      }
+    ]
+  },
+  {
+    "id": "compat",
+    "url": "https://github.com/emacs-compat/compat.git",
+    "commit": "90880f81419577e1d3f68424d2a3adf31e6d663e",
+    "commit_date": "2026-09-13T17:21:11+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/compat/.dir-locals.el",
+        "sha256": "a8d35b41b2ab4bb187c9221168ee395d478eff27900907a6fff9ea1277795052",
+        "lines": 8
+      },
+      {
+        "path": "sources/compat/compat-26.el",
+        "sha256": "bbdf2eb6b058b9e864aca6b6db83ca7debaf635090ecb9cc3ff576fa06e184e1",
+        "lines": 550
+      },
+      {
+        "path": "sources/compat/compat-27.el",
+        "sha256": "b00a1ebb6cb05906e9bf7cf81399ee98040a32cf996820bddc513c4fc5ad27bb",
+        "lines": 885
+      },
+      {
+        "path": "sources/compat/compat-28.el",
+        "sha256": "7699a65fff44efb5b66508b54803adc538a6a62a2c4aebc7e24e04ae569d0994",
+        "lines": 865
+      },
+      {
+        "path": "sources/compat/compat-29.el",
+        "sha256": "b159a3b3452e272d7371c02d515fcab879552c8dc954fb64aee40bba1983bbf7",
+        "lines": 1591
+      },
+      {
+        "path": "sources/compat/compat-30.el",
+        "sha256": "4f1dd1e95da0f2337cb79d427de4eedbf254ebc9b9a982368cee1aa9656bd621",
+        "lines": 460
+      },
+      {
+        "path": "sources/compat/compat-31.el",
+        "sha256": "a3d1cf22dc4e078ef7716c1ff21fd071afb03e64b43e93c3d228a2f48a3ccd3c",
+        "lines": 415
+      },
+      {
+        "path": "sources/compat/compat-macs.el",
+        "sha256": "6a6e2ce2bae34fbff494fdeba924618ed2df2e79546b8b3f816c5fdf04cbf1de",
+        "lines": 272
+      },
+      {
+        "path": "sources/compat/compat-tests.el",
+        "sha256": "6a454b707b91ace49c4959d742e1bf45d1dcbdd029de3a41be70aec6d799980b",
+        "lines": 3491
+      },
+      {
+        "path": "sources/compat/compat.el",
+        "sha256": "3adc082505a4af00bfcc4c5458fce16502d3b708b41c89e965a61c04c8d1281c",
+        "lines": 93
+      }
+    ]
+  },
+  {
+    "id": "cooked",
+    "url": "https://github.com/vodik/cooked.git",
+    "commit": "dd8e9fcc3c09d85d9dd598682dbe6390bd138262",
+    "commit_date": "2026-09-06T22:34:46-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/cooked/lisp/cooked-command-decorations.el",
+        "sha256": "8da13bf71ca3b3639b3e5f26f4dbc036d4f61c8186e7a595078061c172bb6c81",
+        "lines": 492
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-command.el",
+        "sha256": "7001c30db211934f5aa992bb80be0efc2e19be6f5db9d109e0bf65862338d835",
+        "lines": 413
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-completion.el",
+        "sha256": "3665457711da28334fed57f934281cc3326e09458fdcb887da649c2dfe228fbe",
+        "lines": 121
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-deco.el",
+        "sha256": "859040a06ab2b0e0f384b0f98ba371896658b8ea11e5885e8232713e0d275114",
+        "lines": 1234
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-evil.el",
+        "sha256": "6ed7fb07a6a162416fc5ecf79f316fc8df59c47b1678eb7d871311f0943564b4",
+        "lines": 568
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-face.el",
+        "sha256": "52b5e6e4b23de4c2c3bb507fe2ac121d31990a2ce969464d85de40f995f83451",
+        "lines": 332
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-file-link.el",
+        "sha256": "c1d27a512d11d820c815458f030f22fca8bac4ab0d2d9d0975792400b4522be0",
+        "lines": 266
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-glyph.el",
+        "sha256": "29eeacd4278fccb36f83103758d9c6956910bf33fcb0f88ab10104213fda5b82",
+        "lines": 549
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-keys.el",
+        "sha256": "cef09bf67a9358f0769b99ddabcb819f12bf25d62a3e63a7ab877618f6276901",
+        "lines": 1210
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-link.el",
+        "sha256": "10c7ca848a73a465bf9d65328c848c53d0033ff130bf6bb9971831fda5313443",
+        "lines": 398
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-mode-line.el",
+        "sha256": "7b9973a4074761f86917f0ab36b927e15e123b5e6963534568d02294024f5ca4",
+        "lines": 345
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-mode.el",
+        "sha256": "a03cf4ff2a2a81441ba5b4d13a1ff5d9011d6257b0fd2c4823b9f77c72112130",
+        "lines": 2369
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-module.el",
+        "sha256": "ec3fbb9f1584ae8cf71b81812ce2fcc364991b618ac2bce166eb9151bfe17455",
+        "lines": 315
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-mouse.el",
+        "sha256": "52a66a37e0148f4e9f6a3af271cba0a4624bf37429c3f007d113eaa175a12a33",
+        "lines": 536
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-next-error.el",
+        "sha256": "8ac78868432fe911f52d78075037f06ff4421245e96bb133177be375904af38a",
+        "lines": 189
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-osc-eval.el",
+        "sha256": "59c2b9af55b023e9d6eb58a29dfec59cecfed52aa842a4da9d2d76762296dc40",
+        "lines": 148
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-osc.el",
+        "sha256": "bf03a4f6dcd58e254d1d28af654a6ed9e0aeaaaae114b2fa6340f75de350f01e",
+        "lines": 583
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-process.el",
+        "sha256": "f03bcf6f7cc597a93397459d9eeb569d3b91c58341268f1f82a3b55cb07bdc7a",
+        "lines": 734
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-project.el",
+        "sha256": "1362dd0044c56b302b044366a529efc2e809b22fa50df9bd0849c1bc5fec1b90",
+        "lines": 145
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-render.el",
+        "sha256": "6cb3e63fa32929635e3af5cba11417c74457c720411339065713e86d0d41ed4e",
+        "lines": 664
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-scrollback.el",
+        "sha256": "7efe203870db17ce47df59819b13712275dbd642078c29ef17ef313fa7aef567",
+        "lines": 287
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-secret.el",
+        "sha256": "37d7d62c2fd7f95b7fc16f633603d8ecc32f56b2c36a0e00a8c1611a28cb9afe",
+        "lines": 210
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-shell-completion.el",
+        "sha256": "8bd9f56c3d1c795bf71c46ee101426d98903003404c5d034f6740882658f1054",
+        "lines": 401
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-shell-integration.el",
+        "sha256": "895970fcb72442186548e44840fa7514507c9b8d93808eab72b2c8f7188c7bfb",
+        "lines": 272
+      },
+      {
+        "path": "sources/cooked/lisp/cooked-util.el",
+        "sha256": "b58f09c52e9184fd223a5a9a8f723b5ab92d1cf88629e0eaf27ff53308c2ace2",
+        "lines": 395
+      },
+      {
+        "path": "sources/cooked/lisp/cooked.el",
+        "sha256": "47b4914610f237143a8f84bb693445b40b86fffb6df35aa9f0b606a7e3596de0",
+        "lines": 2858
+      }
+    ]
+  },
+  {
+    "id": "coterm",
+    "url": "https://github.com/emacsmirror/coterm.git",
+    "commit": "ce3206fbd7156685e2d2f3fbc39b3eea3334754b",
+    "commit_date": "2022-10-15T18:04:20+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/coterm/coterm.el",
+        "sha256": "33e9274996661a8e0629fa14063200617f2b8ec352d5599889bbb0313424b22c",
+        "lines": 1348
+      }
+    ]
+  },
+  {
+    "id": "deskel",
+    "url": "https://github.com/andrejlamov/deskel.git",
+    "commit": "48899d99c1de20d69cbfda48c27872eded73f787",
+    "commit_date": "2016-05-11T13:53:11Z",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/deskel/desk.el",
+        "sha256": "6232545952d24bda662995763ac0e4aa57ab5bf4e7eca87fc1fcd89dabb94cac",
+        "lines": 188
+      },
+      {
+        "path": "sources/deskel/run_test.el",
+        "sha256": "77696e523620968fd85704bb8664e4dedb57cace091e5edfe79f0fb943266ccf",
+        "lines": 15
+      },
+      {
+        "path": "sources/deskel/test.el",
+        "sha256": "9d28b192778270335f1548859e774221a6dcd3cf3308b153973138db3bef4990",
+        "lines": 146
+      }
+    ]
+  },
+  {
+    "id": "detached",
+    "url": "https://git.sr.ht/~niklaseklund/detached.el",
+    "commit": "6b64d4d8064cee781e071e825857b442ea96c3d9",
+    "commit_date": "2022-11-29T15:30:49+01:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/detached/.dir-locals.el",
+        "sha256": "19d714b6b51d178db60414f213c46197963a6512dc20111de024298a0c969381",
+        "lines": 2
+      },
+      {
+        "path": "sources/detached/detached-compile.el",
+        "sha256": "dbb913c9fe4829df55b13932fdb01d27f7e4b6f84f85696f8e88f7759581c9c8",
+        "lines": 200
+      },
+      {
+        "path": "sources/detached/detached-consult.el",
+        "sha256": "b055e45f10a64ca770ca4cb3317e74527643e9cda7b90b2d0d98ccb50dd5f02c",
+        "lines": 206
+      },
+      {
+        "path": "sources/detached/detached-dired.el",
+        "sha256": "a9c0c1057618a3118ef3646a4f300a2d7d6c5ce1a0cb9db72caeb2f73e4e1695",
+        "lines": 48
+      },
+      {
+        "path": "sources/detached/detached-eshell.el",
+        "sha256": "86822020e090e05500faa2b3b0948476bccdb79cfa06d07ea091bebd114b43eb",
+        "lines": 141
+      },
+      {
+        "path": "sources/detached/detached-extra.el",
+        "sha256": "e0077a5e7ba092fd8d0dda663beca8e40c99e7953a1fb60f1ddbbce1691a5e1d",
+        "lines": 73
+      },
+      {
+        "path": "sources/detached/detached-init.el",
+        "sha256": "aa3013d03331fb6434d68608e61fce4f2195c729b5045bee9bef617c6fd198d7",
+        "lines": 198
+      },
+      {
+        "path": "sources/detached/detached-list.el",
+        "sha256": "41d773e2ba5e6f3c0093a2ddb6a0674971984ee8caed90f4a11d559e12ed8e11",
+        "lines": 943
+      },
+      {
+        "path": "sources/detached/detached-org.el",
+        "sha256": "6e354f24b70b2fab4be89586979ee7d49b497c5d2c1213b7edb482978b064610",
+        "lines": 73
+      },
+      {
+        "path": "sources/detached/detached-shell.el",
+        "sha256": "9825e71a94c4507dc426de662407d89e2df76ba42546881daf4275ae62f948b1",
+        "lines": 112
+      },
+      {
+        "path": "sources/detached/detached-vterm.el",
+        "sha256": "0af2b09ba68ceee7e8397f02461f394dd6d8ccea94d2ad772de45813b1084b2b",
+        "lines": 113
+      },
+      {
+        "path": "sources/detached/detached.el",
+        "sha256": "5fa2e9acef4e3fd81de330595b79ed35176ce0c57257816232fe3b5d28518281",
+        "lines": 2209
+      }
+    ]
+  },
+  {
+    "id": "dtache",
+    "url": "https://codeberg.org/akib/emacs-dtache.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/dtache'...\nfatal: could not read Username for 'https://codeberg.org': No such device or address\n",
+    "files": []
+  },
+  {
+    "id": "eee",
+    "url": "https://github.com/eval-exec/eee.el.git",
+    "status": "fetched",
+    "commit": "ba62f385963d67d48abdec56c70fb08a3a14f656",
+    "commit_date": "2026-03-17T21:32:56+08:00",
+    "files": [
+      {
+        "path": "sources/eee/eee-eat.el",
+        "sha256": "f3e4ebb04a21d08b29a3282c636015bd844dabd85d256d777eeb0184d21c30ca",
+        "lines": 54
+      },
+      {
+        "path": "sources/eee/eee-transient.el",
+        "sha256": "bbac039685f8f96bd5e19f92b1a752902db6fb1270cf241f082baecf5536575d",
+        "lines": 1216
+      },
+      {
+        "path": "sources/eee/eee-vterm.el",
+        "sha256": "3d2c55e4c6f42240390cd23beff257fe81b2786948f831e313905b4390e5c95b",
+        "lines": 36
+      },
+      {
+        "path": "sources/eee/eee.el",
+        "sha256": "9b4cf235a80ae8be8e8820d86cf8b2312bfa0381ac8dbcdb93450bfbc0d8b0c3",
+        "lines": 377
+      }
+    ]
+  },
+  {
+    "id": "el-be-back",
+    "url": "https://github.com/ArthurHeymans/el-be-back.git",
+    "commit": "e7a4b2d3b340aa98fd99d593054cca834601f4d6",
+    "commit_date": "2026-09-08T19:00:16+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/el-be-back/ebb-eshell.el",
+        "sha256": "d5d4ee045d7df1db213684a2507eea976adc5efb88726dc60563c14a02690c2f",
+        "lines": 382
+      },
+      {
+        "path": "sources/el-be-back/ebb-graphics.el",
+        "sha256": "e37d0daebbbc5e3f1c10aac5a4951d851f4c2022549df44acb1de925333b521b",
+        "lines": 1350
+      },
+      {
+        "path": "sources/el-be-back/ebb-input.el",
+        "sha256": "653c23357afd3aa78db858dccbf9ff370539469f908cb8ebb53a6fed31cd6ff0",
+        "lines": 606
+      },
+      {
+        "path": "sources/el-be-back/ebb-io.el",
+        "sha256": "d576ca7f06b40535fe033daf3f8fcaf99e97949138793d3901eef1d3b69ca431",
+        "lines": 812
+      },
+      {
+        "path": "sources/el-be-back/ebb-parse.el",
+        "sha256": "4dc345a3d14567998d872603e1db486ac7b78c65f9137d5d16db7a15b4712c78",
+        "lines": 1984
+      },
+      {
+        "path": "sources/el-be-back/ebb-render.el",
+        "sha256": "e4425433c6a2aa9e1ed1ad26507d8cd374b1af7a9e6c38b3d49f589baa721e49",
+        "lines": 2478
+      },
+      {
+        "path": "sources/el-be-back/ebb-serial-codec.el",
+        "sha256": "6c1ec3131dbea525af9aa39d16a16a2f18f18c563bd1ef0ce536424f5547ca1d",
+        "lines": 219
+      },
+      {
+        "path": "sources/el-be-back/ebb-serial-test.el",
+        "sha256": "f61563a94c8fd9c55a51de45ca4baed90fe4060eadcf67cf2c9936050df60a14",
+        "lines": 371
+      },
+      {
+        "path": "sources/el-be-back/ebb-serial.el",
+        "sha256": "7d4b217bf62b8f2f2da4e5dda9353431560c709892567462321f27e6c82e8f73",
+        "lines": 855
+      },
+      {
+        "path": "sources/el-be-back/ebb-shell.el",
+        "sha256": "b0c0481b22b7a92107f8fb12fa011dfdd7d774d012c4ba03f6cc1bc12faf28ac",
+        "lines": 568
+      },
+      {
+        "path": "sources/el-be-back/ebb-term.el",
+        "sha256": "33156f26704ee2580bfd83f700f23d204f1626bda047c594d3d38a00aa297b0f",
+        "lines": 4012
+      },
+      {
+        "path": "sources/el-be-back/ebb-test.el",
+        "sha256": "f1347aeea2bb774aeccb06ae2c893acdd6cf76457836bc5981c3da1bad5d396c",
+        "lines": 6326
+      },
+      {
+        "path": "sources/el-be-back/ebb-trace.el",
+        "sha256": "004e6baf2373d4d8858605270104b3f16026d39b59d3f1842128cd1d8a04a0d6",
+        "lines": 149
+      },
+      {
+        "path": "sources/el-be-back/ebb.el",
+        "sha256": "ceaac28ec75ef6ecd30b96f4f2f2ebd384f0894bfcac0928e8813c3cdb2d8a72",
+        "lines": 1469
+      }
+    ]
+  },
+  {
+    "id": "emacs-herdr",
+    "url": "https://github.com/baongoc124/emacs-herdr.git",
+    "commit": "4c84bfe4d7487df53f03dd073a91d3f43b18643d",
+    "commit_date": "2026-09-23T16:36:39+09:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/emacs-herdr/herdr.el",
+        "sha256": "d2f0f1fa220f4c5cec08600c41446b658eb7c718dc6f80d8ed437cd80565616a",
+        "lines": 851
+      }
+    ]
+  },
+  {
+    "id": "emux-el",
+    "url": "https://github.com/luozengbin/emux-el.git",
+    "commit": "acc8db2b25d394364165ddeee13019a28eff4fba",
+    "commit_date": "2012-03-21T17:56:36+09:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/emux-el/emux.el",
+        "sha256": "782ff76bc7090a704c0e65abc6f9a7f6ed4dfe1076f41701b5eb33fefa0633a2",
+        "lines": 354
+      }
+    ]
+  },
+  {
+    "id": "emux-shcv",
+    "url": "https://github.com/shcv/emux.git",
+    "commit": "156829a9ee823b24a94108c95c34dbca8ca5a4d1",
+    "commit_date": "2026-02-10T17:05:19-05:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/emux-shcv/emux.el",
+        "sha256": "11362338e2247e7b954b6e94dfffae90966678475f6db0c93cfd2652d9175997",
+        "lines": 666
+      }
+    ]
+  },
+  {
+    "id": "esh-autosuggest",
+    "url": "https://github.com/dieggsy/esh-autosuggest.git",
+    "commit": "8f44a045cf7855893965f4430e2a2ccfa23312d5",
+    "commit_date": "2026-05-19T23:23:17-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/esh-autosuggest/esh-autosuggest.el",
+        "sha256": "5cd6a1833b306ccc7762ea6fc261a968c185b565f60e734c8e11967fa462b267",
+        "lines": 179
+      }
+    ]
+  },
+  {
+    "id": "eshell-up",
+    "url": "https://github.com/peterwvj/eshell-up.git",
+    "status": "fetched",
+    "commit": "1999afaa509204b780db44e99ac9648fe7d92d32",
+    "commit_date": "2024-02-26T18:47:47+01:00",
+    "files": [
+      {
+        "path": "sources/eshell-up/eshell-up-tests.el",
+        "sha256": "33826b9fcfbd37e5b02cd1b55851ef9bfccc6c25dd4869964a750a9bd34f3580",
+        "lines": 53
+      },
+      {
+        "path": "sources/eshell-up/eshell-up.el",
+        "sha256": "3629ba3eee8ab3150ed0bc7f4f2cb35bfdb3fc18089b44901f1ae9fe8142e911",
+        "lines": 123
+      }
+    ]
+  },
+  {
+    "id": "eshell-z",
+    "url": "https://github.com/xuchunyang/eshell-z.git",
+    "commit": "337cb241e17bd472bd3677ff166a0800f684213c",
+    "commit_date": "2019-11-16T11:33:46+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/eshell-z/eshell-z-test.el",
+        "sha256": "04b290a8e34acfdb54fb4fa001411935cff3ad9615be604eac2f1d5605015caa",
+        "lines": 41
+      },
+      {
+        "path": "sources/eshell-z/eshell-z.el",
+        "sha256": "34ded4e4f353dd288bed35ad11fa95b2cf1cef7d932dd2de3c8d39593430cb24",
+        "lines": 425
+      }
+    ]
+  },
+  {
+    "id": "eterm-256color",
+    "url": "https://git.sr.ht/~dieggsy/eterm-256color",
+    "commit": "868eeaa958de1deab690fe8ac8f5477452ccdb6a",
+    "commit_date": "2026-05-30T01:31:10-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/eterm-256color/eterm-256color.el",
+        "sha256": "f5dcec0bb2d9e17dd961e4efc54e746dc20a9d52fcac8326e38db26dd2a321d2",
+        "lines": 359
+      }
+    ]
+  },
+  {
+    "id": "exec-path-from-shell",
+    "url": "https://github.com/purcell/exec-path-from-shell.git",
+    "commit": "6146fdc16e9882df270be7e58ae8d628032d6bc4",
+    "commit_date": "2026-06-19T23:59:58+12:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/exec-path-from-shell/exec-path-from-shell.el",
+        "sha256": "f09823778808890198bc95077fc1da1cbcffaea5b53022e4547add945a67cd1d",
+        "lines": 332
+      }
+    ]
+  },
+  {
+    "id": "frame-local",
+    "url": "https://github.com/sebastiencs/frame-local.git",
+    "status": "fetched",
+    "commit": "7ee1106c3bcd4022f48421f8cb1ef4f995da816e",
+    "commit_date": "2018-04-22T17:17:38+02:00",
+    "files": [
+      {
+        "path": "sources/frame-local/frame-local.el",
+        "sha256": "ff50c591fffd59477bb5fa8640aaf28002e204ba8e7e2796875ba39508610e52",
+        "lines": 113
+      }
+    ]
+  },
+  {
+    "id": "herdr",
+    "url": "https://github.com/eddof13/herdr.el.git",
+    "commit": "6500aa6e272aaf125111150a62dd12c7644f1825",
+    "commit_date": "2026-09-14T19:13:18-06:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/herdr/herdr-agents.el",
+        "sha256": "0366661b9644cbad9064ad9fb25e5556dbc18eb65c53c6d4fe4551c8b5115ab8",
+        "lines": 251
+      },
+      {
+        "path": "sources/herdr/herdr-call.el",
+        "sha256": "672e87c124c15159fde2ea14ad0fbb5a24a250ec494787aea6b2aa52628b61c7",
+        "lines": 90
+      },
+      {
+        "path": "sources/herdr/herdr-cmd.el",
+        "sha256": "8c9a2d39b34295272b5aba97bfc37226e2e0f475171be585b66308bef15ed487",
+        "lines": 667
+      },
+      {
+        "path": "sources/herdr/herdr-rpc.el",
+        "sha256": "a3a1110724565e445ccbf7f4fc8d52847cb2de76d37f72839ad5cef8767973d4",
+        "lines": 196
+      },
+      {
+        "path": "sources/herdr/herdr-schema.el",
+        "sha256": "6ff3c4ab935b7502d7830fa56ec7b62a6ae9a90ebfd67ffe8dbfc50cc30dadcb",
+        "lines": 208
+      },
+      {
+        "path": "sources/herdr/herdr-select.el",
+        "sha256": "c2d4e70cf2d6bd708e5d52d5444d04e97f14fb66a55a641d736c85dfd6060ea2",
+        "lines": 271
+      },
+      {
+        "path": "sources/herdr/herdr-state.el",
+        "sha256": "71e910024b11818dbd178dd29b201f9ea5f191664675790ccae80da7fa402c5f",
+        "lines": 729
+      },
+      {
+        "path": "sources/herdr/herdr-term.el",
+        "sha256": "4f4e5bd45ac37fae1dfb41c5ef45de2054941c363742b410f54392dcb83e73f7",
+        "lines": 459
+      },
+      {
+        "path": "sources/herdr/herdr-transient.el",
+        "sha256": "7cd838722055c03e78c9d6d1596a3584dc5f3326320c8cf80b01fed3ffa15e23",
+        "lines": 190
+      },
+      {
+        "path": "sources/herdr/herdr.el",
+        "sha256": "dfbdfa7fcf51f9ca6eab266c8f1a2d230932a78e794e38f3683be4c3688297fa",
+        "lines": 115
+      }
+    ]
+  },
+  {
+    "id": "herdr-emacs",
+    "url": "https://github.com/valdezm/herdr-emacs.git",
+    "commit": "f5ae573569fbd2137b09dfe69abb5150b53afd26",
+    "commit_date": "2026-06-25T13:30:13-07:00",
+    "status": "fetched",
+    "files": []
+  },
+  {
+    "id": "kuro",
+    "url": "https://github.com/takeokunn/kuro.git",
+    "commit": "30a4ff96bdde62c789f42a443766632e8c379873",
+    "commit_date": "2026-07-26T14:15:37+09:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-config-logic.el",
+        "sha256": "2a847764b9939a1d56796ea2c404e32237f51c55a820682e17e65f0522a916c8",
+        "lines": 153
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-config-macros.el",
+        "sha256": "71c91f3312d7d3ce8c7cc1de6ed4eb6b6f39109ab835e8f9f4a22e14426f604b",
+        "lines": 86
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-config.el",
+        "sha256": "f883752ce8d3896600ca0196aa515588638cbe9a0c99cea5828c4a635e574738",
+        "lines": 307
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-copy-macros.el",
+        "sha256": "0fd751ade2cd5dc60b14c75fa86add734e8d23b2d7bf4d5b5910af6806655562",
+        "lines": 75
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-copy.el",
+        "sha256": "726471138b66949378c7de8891c91719cb2379204846a5a3146412b015a8f56a",
+        "lines": 376
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-keymap-macros.el",
+        "sha256": "50741f83806051ee5c0dafdd94fee49fc7fcf7d74295e38e104693cb208da913",
+        "lines": 59
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-keymap.el",
+        "sha256": "edf1dec4c9b57ae543ec3c453728607db5db695dff21063fd3794859a4f7770e",
+        "lines": 18
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-lifecycle-commands-macros.el",
+        "sha256": "f97a86442fb761f83d185c040d99a2b149deadee45d901dce08a898dbfe4cae7",
+        "lines": 18
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-lifecycle-commands.el",
+        "sha256": "48a54ede0c99f226a56257715cc4c542d993d7773851ab22051689088c4a0223",
+        "lines": 237
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-lifecycle-macros.el",
+        "sha256": "06e22ad557ab6c3fb046d0206a558b55f28bd2a3e16967abace63f4df2251c9f",
+        "lines": 39
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-lifecycle-module.el",
+        "sha256": "03c49c05ca6ccba279fc1c03bc226a95432b1e1040583f7a49902fbf97dc24bf",
+        "lines": 91
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-lifecycle.el",
+        "sha256": "23a3d105f549cfbcaed3ab1cde8243378cdf2c33378fb863546534361a9e8565",
+        "lines": 327
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-module-install.el",
+        "sha256": "d356a83e0a6e7806376f919b0046ebb18dccab94344bbb664237594e23334e57",
+        "lines": 371
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-module-macros.el",
+        "sha256": "16a4f7c20ed8d650c21953e4d00b368be4be754dbe3e6343c1ade04b463c4a9a",
+        "lines": 30
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-module-platform.el",
+        "sha256": "f5a333dc1b33103ea698772983e7e516b762ac69314997a63b0ce1cec16a5733",
+        "lines": 58
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-module.el",
+        "sha256": "c4e5f206eca418628e39281d32949510f790dc89ffa74bc11aabf36528c87c67",
+        "lines": 165
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro-scrollback.el",
+        "sha256": "475b952ffe1d08dd10430f0c957613ce407b3019dfeb9b81c86bb3d1cc42bbdd",
+        "lines": 101
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/core/kuro.el",
+        "sha256": "cf7ddc93b719c743104004eec02cfd9ea2fbed0c074670762cc34803d12bc3a8",
+        "lines": 213
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/faces/kuro-colors-macros.el",
+        "sha256": "dc4b4ea51d6574c360e1c0a940c85f37f243eaa7c1b9e98abcd7cb34bf58d00f",
+        "lines": 25
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/faces/kuro-colors.el",
+        "sha256": "0b380c789c2c18994041a58ae501c76866f66cd308806aeef2a019ada2e930f2",
+        "lines": 124
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/faces/kuro-faces-attrs.el",
+        "sha256": "e447240d64cec2b3c6702cb29061aa9f664dca10e579d4e4c9f078752c075574",
+        "lines": 214
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/faces/kuro-faces-color.el",
+        "sha256": "8b3ec151c4c8055796883ab1fb98b10a8c362ab371089789ac107a70ab7edd76",
+        "lines": 216
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/faces/kuro-faces-macros.el",
+        "sha256": "dc29c9e96b793f797b6b9b3e9fa8f136d55f115794d9735cbeb8f74d3eef03df",
+        "lines": 29
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/faces/kuro-faces.el",
+        "sha256": "4a42ac8a31fc2e09cdd452a8d86c135ca838b4e58c2c9229965ca2eeda202835",
+        "lines": 248
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-activity.el",
+        "sha256": "fe52de6d71a7d295f83458a933710fa488d618389ea241ace1a0ab003cfab98b",
+        "lines": 271
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-bookmark.el",
+        "sha256": "47e7127bea2897296573d6aec64b6bff79913eb5ddb8ee1568e4c7f7f01073ac",
+        "lines": 69
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-char-width-macros.el",
+        "sha256": "37bdaf6e3863a60283aacd64abe2470f6b3560d1e9098f222c0d6a2762b312d1",
+        "lines": 24
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-char-width.el",
+        "sha256": "56bc00923be00e2530947cd9c126c5d4f6c7045b3534e0fc8cce636d37767f2d",
+        "lines": 344
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-color-scheme.el",
+        "sha256": "a56cf71af040bf27241b3b69a1aeb56b720b06deaaef00dcac50a6ddb55ece10",
+        "lines": 138
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-compilation.el",
+        "sha256": "1f770caac4e8f92aab0b06b4644b1a3370eaffc3bc995fc36b24113472915ba9",
+        "lines": 36
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-debug-perf.el",
+        "sha256": "5e1ab9dd4c1c6ad8cc5c7ee1ef2efe2095253b15ff16a24d02c16298108a3594",
+        "lines": 144
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-dnd.el",
+        "sha256": "8ee142a1dbc089a805dfaf872338412fc35f47c21f0d4fe765f4c95038b201d4",
+        "lines": 69
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-hyperlinks-macros.el",
+        "sha256": "61025fc3f1828676084c6bba76f87834365421bcc6642248dc59a0f61291a515",
+        "lines": 26
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-hyperlinks.el",
+        "sha256": "8dc15d12d11ed4abbc8f652c1ca87fdf4a20df5160c7d9ddcb6629e05219052a",
+        "lines": 92
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux-ext-macros.el",
+        "sha256": "4a5d123b936b37e2d575f810924e11aa827dad51f5c48ed5fb79334a570f45a5",
+        "lines": 29
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux-ext.el",
+        "sha256": "1343f5512f5e56ef8418e6f8d069b59110dab696d92a66ec3166f4b2e11e5cb0",
+        "lines": 232
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux-ext2.el",
+        "sha256": "d4be26fdc02b543db36cbd55b8dbd1685a39168c73df4f7a227536759a820cb1",
+        "lines": 507
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux-layout-macros.el",
+        "sha256": "faa0132dae7846ea30f9a6e33f2f951a767822481bb24853981b87a92ba17e52",
+        "lines": 27
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux-layout.el",
+        "sha256": "2a1237758e06687e23cd0385a703fccf13aa86dbe008f52abd1f8d68e953d6f9",
+        "lines": 170
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux-macros.el",
+        "sha256": "e1359f3763869727bd23753ca071a7833eebb6ed14dc66bc5aa0d10007dbfde9",
+        "lines": 64
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux-monitor.el",
+        "sha256": "acbff16ad4da7fa220ef9267e10ee9d3ad0e4efb27a00a3fd610200721403cd5",
+        "lines": 323
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux-windows.el",
+        "sha256": "12b0b0f4aaa39749f2c0cae8c0267a95fe6402ce38034c72dff80c1ef458bf1a",
+        "lines": 178
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-mux.el",
+        "sha256": "251c77dfcc262c11c063d5c38a7b2071b5db013c7f1e7be45019260ad739346c",
+        "lines": 287
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-navigation-macros.el",
+        "sha256": "01ddeca22b5a713142ef4eadf588af8b6ea06972e4d8dcaf39a744313adb5a17",
+        "lines": 50
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-navigation.el",
+        "sha256": "badda44a0f176a8a08fa3946d56e3abdeacecc788517df8e56bed738c05dacdc",
+        "lines": 239
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-poll-modes-macros.el",
+        "sha256": "15d33e1ba0bed9ecc6f361ae1576d64a89dfa462cad0dd708c3871472f03beb3",
+        "lines": 50
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-poll-modes.el",
+        "sha256": "a3312b803dddc72e254c8d4f7bb5419536060d53cfbed3c357a16e2111d2fa08",
+        "lines": 495
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-prompt-status.el",
+        "sha256": "3b372ca69454d82ea5a4aaa374857148a999bafc39bb41fa93e33ffff6187c99",
+        "lines": 255
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-sessions.el",
+        "sha256": "7ede7df4a64b0f7231f93903497e0ea3ad96e072ae3a95a1fccd58a1c40a8a8d",
+        "lines": 115
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-stream.el",
+        "sha256": "b4198d3e9810d3c6b1528b086af02fe186016004c07140dca1e6f1518ec04753",
+        "lines": 122
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-text-size.el",
+        "sha256": "aaa2e3a3cd96fbb272387ac834d1b788ed04588104d37bafd9981743349a1929",
+        "lines": 109
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-tramp.el",
+        "sha256": "1f72e49c8282f808cff985f4066e4f822c365e4eba7cfffbd62a18ead4ec7981",
+        "lines": 169
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-tui-mode.el",
+        "sha256": "f8326747ba1da8bca9eae6a0d61896f99327637bd956fe53b3f4493263339f88",
+        "lines": 137
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-url-detect.el",
+        "sha256": "282b9bdf97c6679206edf7bd59c61b465328606d9d084fad894a21298ab3dd9e",
+        "lines": 155
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/features/kuro-url-safety.el",
+        "sha256": "0a71c0d7a6d96f496be007ca6317eb0fa1e2e5d5189e449a7d33de3bbaf98aa3",
+        "lines": 198
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/ffi/kuro-binary-decoder-macros.el",
+        "sha256": "6031a89097c45c94f3fbce69dfb55a3d3db7133a2cadb7744af1097db7ac8d1d",
+        "lines": 70
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/ffi/kuro-binary-decoder.el",
+        "sha256": "4ecb52397834ce019f4a1f392a9715dfe315d92dd022fee95850ea82885e4d0d",
+        "lines": 442
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/ffi/kuro-eval.el",
+        "sha256": "ac4bf9e3790f30817e75dd515a8851d9ebe83fdb9f80d2b77e9f23ed18cc1717",
+        "lines": 253
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/ffi/kuro-ffi-macros.el",
+        "sha256": "1046e1953887518eb9205d8890a59ee54c0021628f52ae97968bf7db702f436d",
+        "lines": 120
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/ffi/kuro-ffi-modes.el",
+        "sha256": "01ed83714c9daea5db0c6dd2d731bf20b9b35bdfd33566ea3bb0ea4f325fc51d",
+        "lines": 128
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/ffi/kuro-ffi-osc.el",
+        "sha256": "5d92655b071518baeb2d3938983468e6a24f337c9f3c5c1cf2f67dbbb5540d03",
+        "lines": 266
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/ffi/kuro-ffi.el",
+        "sha256": "47ffce2621408f553ed05a8f45e730b61682b97b6158b4b420d8491344b7150f",
+        "lines": 222
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-encode.el",
+        "sha256": "b2e65dc9a055459a0242d10e5ba5cf404079d54e2365f8e60d95f3778eedeac1",
+        "lines": 90
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keymap-data.el",
+        "sha256": "e33c85e0544efea99c7d2705df48c1d5d8f83661e0bf6d077815e73d06d5e7c0",
+        "lines": 109
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keymap-meta-macros.el",
+        "sha256": "02ed1c0604c8dcfc81c4884ae982165fd00fc329e1b37234f0ea0bde86800358",
+        "lines": 40
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keymap-meta.el",
+        "sha256": "9f3b55c8bfcf5a43bac7af87fdc3447e000e60b74f94ff231a7fb7408ccf268d",
+        "lines": 100
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keymap-navigation-macros.el",
+        "sha256": "908644e8c80dd6489e697d16cb47c6b2022bcfc248ad0e8394e3d1354335fa8e",
+        "lines": 79
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keymap-navigation.el",
+        "sha256": "657e6bfe2808123d7be0ac2e918f7cf24d0b8104af5441ed891d2a44a280b929",
+        "lines": 124
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keymap.el",
+        "sha256": "17df4d09781a100fc3196910f83dbcd025b28683c1b1b2c40ca9877b83c6a037",
+        "lines": 177
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keys-data.el",
+        "sha256": "f312485f07e80d2c7d6315879817a2984f287d42f4a6f4b398110e8741562dae",
+        "lines": 133
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keys-macros.el",
+        "sha256": "641231d59459cd59335a147b35234d4ecc8f596a3c940a8c5f2278b19a8694e3",
+        "lines": 49
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-keys.el",
+        "sha256": "1f2870a33b527106137ba6ad75d7455f69a3c71e607bf2e2111285baa009c726",
+        "lines": 181
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-macros.el",
+        "sha256": "a0ecc5736c28f18ea68c06aa381bc050d1cecf3e4ff465c8efd831af89153181",
+        "lines": 58
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-buffer-macros.el",
+        "sha256": "01f685ce4ae26ed1d84ade93ae58b89204474155321f0d4265a749b254d81335",
+        "lines": 76
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-completion-dispatch.el",
+        "sha256": "9f9bbee67bf96165121da738d3864a1039957555bb453b7b4800b69389edccdc",
+        "lines": 37
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-completion-history.el",
+        "sha256": "e2819633d10286424b7e8440bac1edc3264c0a5a1f81f25929a60ecdd0b5d458",
+        "lines": 76
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-completion-word-macros.el",
+        "sha256": "a548f748bb8e07364c8a493bc96b8be3e7d4f7d86097c28eb1c0268d624e56a1",
+        "lines": 29
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-completion-word.el",
+        "sha256": "0b23e46f1a772724c9b85ddaa2b06b0bdee67403a4f94a42c8347324be475d9b",
+        "lines": 59
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-completion.el",
+        "sha256": "8cc3d040e41482ae83dd5a6178ef84601097955e95eb5139aae7ba9681351df5",
+        "lines": 31
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-data.el",
+        "sha256": "39bda157e6587663414c3490a7ada1ba890c9c5f5152dd29879386706b102463",
+        "lines": 138
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-edit.el",
+        "sha256": "bf700ec1f66449d29334086831cdcff9c5a783e735df57ea09a00068bc5b5586",
+        "lines": 123
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-ext.el",
+        "sha256": "0a9b68fc2aa1241bc6eac6d14488ebae791ae7a147515de960f754ee81582a37",
+        "lines": 56
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-ext2-data.el",
+        "sha256": "ebc084a8392ec29b11167043448a688beb94b9ca383866c0bdd50b4ac1f9b33d",
+        "lines": 79
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-ext2-keymap.el",
+        "sha256": "4c62dc7bab5c5162c3fb5222b15317a42948ddab5b561d78e8c4049066384641",
+        "lines": 190
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-ext2-mode-macros.el",
+        "sha256": "0ca97d8bdc733fa7277b16e60839bef12d560f92e9aedf52f7ae7674e4fedc4f",
+        "lines": 29
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-ext2-mode.el",
+        "sha256": "f5ebb773e0d11e3f16826a64ee6214f7de9ee63eb2ee88bef680f70041ee3c1e",
+        "lines": 99
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-ext2-send.el",
+        "sha256": "d910b2d5100241f761e83cce4166ee86670e7985e335782322998dbbba1921d5",
+        "lines": 53
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-ext2.el",
+        "sha256": "68ce1c1e90a90f2013b17c9a386f4d5c47ef3722a44ae76cfeae59fbb87c7d53",
+        "lines": 23
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-history-nav-state.el",
+        "sha256": "415bd4b63253ded68b5e04727ce99c47e8c49dca79152956a4b9db2146412fc4",
+        "lines": 36
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-history-nav.el",
+        "sha256": "0715cd99a59596828d0ccdc0f5f2d023c0d71258deabb4edac8acf4f9620a467",
+        "lines": 60
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-history.el",
+        "sha256": "f9841a101410c67d85f11ee44444332a8ad0a21d8de481fa95e6c6ab9a9dc1b6",
+        "lines": 19
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-line-display.el",
+        "sha256": "6628c91cc4e5b19c1ef2205e307dd354437a4e15b802d7c98c1f6f670ff8ad4b",
+        "lines": 58
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-line-nav.el",
+        "sha256": "d23da1ab020048f9887a90dee06d6358233756cb1a6388cd004cfaa5548d14fd",
+        "lines": 54
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-line-ops.el",
+        "sha256": "deaf564b5b1e30daeed1162e05ab003b7810cce381d89c57378c90d4385fd157",
+        "lines": 76
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-line-state.el",
+        "sha256": "fe11c7f2fa5bcb00d96c725e00ff1dacb2974cf2406bc366e4bda2f4bf344449",
+        "lines": 63
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-line.el",
+        "sha256": "cd8d466b86b23efc48758f656909aacaf23d8caae6f6e975dba31c4b3904b9f1",
+        "lines": 133
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-macros.el",
+        "sha256": "364119fc48e841772849b57fafebefd339c3a5b83577a93978397171da070e7c",
+        "lines": 133
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-transform.el",
+        "sha256": "3e2e4b4f29db44fc2178f3c855626db7a1e5f65d8aa87d43b9788ba3f43a890c",
+        "lines": 52
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode-yank.el",
+        "sha256": "f72b8751c79691b86de751b8792e0b7612cfa059d2c310a6800e7603518b8e46",
+        "lines": 92
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mode.el",
+        "sha256": "7c57e447b1428c322942afaa2a568feace5c5216b4b777a708722b50b5ca2db7",
+        "lines": 53
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mouse-macros.el",
+        "sha256": "97958f98d6faf6225689acaefe2630b26046e44b1101db68f8fbc48a1b711107",
+        "lines": 60
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mouse-scroll.el",
+        "sha256": "d4e39433fa803e7798ebde6c0adeee5732e6f448b518a0939414fbe197066c42",
+        "lines": 64
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-mouse.el",
+        "sha256": "40ddf84c2f4cdb8e426593981dc03848b2d786732250e4c6ca3f3b3fc9a19a66",
+        "lines": 87
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-paste.el",
+        "sha256": "5b22028b4e03f47ec079006c73e8dfe587e00962f43f6c5903ce728cb5bce3bc",
+        "lines": 94
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-render.el",
+        "sha256": "2b863a5ac1f6a4d5720e1cb4972fe425d632083a76c4746efedccdccad8726e2",
+        "lines": 54
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-send-scroll.el",
+        "sha256": "921fa78836c81c23704dbc3d5c7af81417261c453c3e6a4649aad16953e3dcfe",
+        "lines": 76
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input-send.el",
+        "sha256": "0615dfdcbdb2675332e2a7a0bfed6015c86cbf683e3a65af1474153d8b773b03",
+        "lines": 119
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/input/kuro-input.el",
+        "sha256": "9c29b98c1969dc9b5e2aeae3a0604e0f98d850b45565c827c08cbcbcfce7daa5",
+        "lines": 55
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-overlays-macros.el",
+        "sha256": "45e787849e7c24c020f551930c56d1221034670bb16eeec382417c8a6db5740c",
+        "lines": 39
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-overlays.el",
+        "sha256": "53f9f86e4b7730decd50fb9b1d6fe841f65f4f946b471d683986af2f57ac2af2",
+        "lines": 657
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-render-buffer-macros.el",
+        "sha256": "5af88e7a1e772a8fe7ec221b4c708811e305ecde5b78eb1d7394de999d72a943",
+        "lines": 56
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-render-buffer.el",
+        "sha256": "721f2d47eb7c73dca702c28678b665428ffdf57fef266b54f40a283ec4ec378e",
+        "lines": 330
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-render-cursor-macros.el",
+        "sha256": "328af870c879d1934b35105c1ee8d6fa5a0d66abb9f82d065293738f6245902e",
+        "lines": 22
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-render-cursor.el",
+        "sha256": "aa0d0a6e54274bb25c360f3c8d34f2d08179f60e56c64b340be86ce14f6d7f23",
+        "lines": 253
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-renderer-macros.el",
+        "sha256": "c0c97370046a5d2077c325a55457648d74700e2430dbda14c058eed1a1a98ca4",
+        "lines": 54
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-renderer-pipeline-macros.el",
+        "sha256": "06d48fa131b1a0c1a745b028ae2372d5c485248aca3383a514f114ecbc4737b7",
+        "lines": 128
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-renderer-pipeline.el",
+        "sha256": "d151a3177cbf450187afda95f0dee07c424dd321a33427cee310c66e5b2d032b",
+        "lines": 451
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-renderer.el",
+        "sha256": "bc60fcb151ebc7265c00befa332a46058ba8bc273525666657e943f4944ff477",
+        "lines": 272
+      },
+      {
+        "path": "sources/kuro/emacs-lisp/rendering/kuro-typewriter.el",
+        "sha256": "11682d1323056c2b29bac3743a5ab7d93ebd102245f45e238d14f5b552e05b74",
+        "lines": 147
+      }
+    ]
+  },
+  {
+    "id": "libgterm",
+    "url": "https://github.com/rwc9u/emacs-libgterm.git",
+    "commit": "5f5516dccb0de06b2233b3492f175c3477f00ef0",
+    "commit_date": "2026-04-13T02:18:49-06:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/libgterm/gterm.el",
+        "sha256": "272ae9d251d1fbe3e85c95c8c9a34b970f21c31dee943499d35a169b8f41d7c2",
+        "lines": 780
+      }
+    ]
+  },
+  {
+    "id": "lterm",
+    "url": "https://github.com/TaylanUB/lterm.git",
+    "commit": "734cb5bd91fff337cefd266c4e43a9ae306e4c51",
+    "commit_date": "2025-01-07T18:46:51+01:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/lterm/lterm-mud.el",
+        "sha256": "d2c23f80e92ab9b8a702822d701c97fda7104a9eaecbf9d8401fe7cfb6d1d3d2",
+        "lines": 53
+      },
+      {
+        "path": "sources/lterm/lterm-muds/lterm-mud-godwars2.el",
+        "sha256": "3b7c4bd58dc94b02a9473a704eeae9683f8f8a35f3c2683966f3e6c1b06d73ae",
+        "lines": 29
+      },
+      {
+        "path": "sources/lterm/lterm.el",
+        "sha256": "df41d4a4676bc3ee3a42f757bdce7019888734354453bef33cd7e951b9005ad6",
+        "lines": 242
+      }
+    ]
+  },
+  {
+    "id": "multi-buf",
+    "url": "https://github.com/djr7C4/multi-buf.git",
+    "commit": "dcd28e9d18b4757431eb99a22b2193efb8f87841",
+    "commit_date": "2026-09-25T18:06:32-07:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/multi-buf/multi-buf.el",
+        "sha256": "d2d6470fe00624a8908e3540908cae644857ba43486bc92691a368a41e1fb14a",
+        "lines": 725
+      }
+    ]
+  },
+  {
+    "id": "multi-eshell",
+    "url": "https://github.com/emacsattic/multi-eshell.git",
+    "commit": "ac10d93d64e6ea9706ae4396df186faeecaaea12",
+    "commit_date": "2012-06-08T20:35:53+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/multi-eshell/multi-eshell.el",
+        "sha256": "74425f1091f649dc879d19637fbff485a5bef0a3df90de832241d06bbfe332f0",
+        "lines": 197
+      }
+    ]
+  },
+  {
+    "id": "multi-run",
+    "url": "https://github.com/sagarjha/multi-run.git",
+    "commit": "13d4d923535b5e8482b13ff76185203075fb26a3",
+    "commit_date": "2021-01-07T22:36:22-05:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/multi-run/multi-run-helpers.el",
+        "sha256": "532cc0942d95c1de332e767a3cdbc59f1839f57b9c4eec342cd10b47226d67b9",
+        "lines": 169
+      },
+      {
+        "path": "sources/multi-run/multi-run-vars.el",
+        "sha256": "a283bcb6b215eeaee0982e4106e0e4334b0ed46c162abf3b8327c26184d0c78d",
+        "lines": 52
+      },
+      {
+        "path": "sources/multi-run/multi-run.el",
+        "sha256": "2bb6b110a420a3fc9c45ea4a46f4f281718555ea4397cbed8511b84aef1b4aba",
+        "lines": 167
+      }
+    ]
+  },
+  {
+    "id": "multi-shell",
+    "url": "https://github.com/emacsmirror/multi-shell.git",
+    "commit": "57490c1be4a42b3d0e062a3ea5ebfe53ab21c74d",
+    "commit_date": "2009-08-30T10:40:19Z",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/multi-shell/multi-shell.el",
+        "sha256": "98d69104b890e77a08c14aea8cbfe0653c5f8c9b47af5c425c57634dfeceafdb",
+        "lines": 397
+      }
+    ]
+  },
+  {
+    "id": "multi-term-tmux",
+    "url": "https://github.com/beyondmetis/multi-term-tmux.git",
+    "commit": "d064fbdbfc585b8d1ca53a38d169d021abbab038",
+    "commit_date": "2015-12-01T02:22:54-06:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/multi-term-tmux/multi-term-tmux.el",
+        "sha256": "332713cd56a92aaf464b4c8f89872cbe5fce09c09cb8e798fcf24d6db85ab4d2",
+        "lines": 169
+      }
+    ]
+  },
+  {
+    "id": "popterm",
+    "url": "https://github.com/ChetanKoneru/popterm.el.git",
+    "commit": "d086833f7762d7f9a96954451328ee9a57378b93",
+    "commit_date": "2026-09-17T15:31:27-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/popterm/popterm-tests.el",
+        "sha256": "f552dd1be9d7b5ece899256b9c614cb3ffa353578929c3ec2e576db5185bb271",
+        "lines": 1505
+      },
+      {
+        "path": "sources/popterm/popterm.el",
+        "sha256": "0dc336211a9eee91f7f1d055d13dcb02804b9f9ec62e47f0645703fa6dd69aeb",
+        "lines": 1669
+      }
+    ]
+  },
+  {
+    "id": "popup",
+    "url": "https://github.com/auto-complete/popup-el.git",
+    "commit": "3afe431e9aa2e271aaf0412cbb50c733387e8ea4",
+    "commit_date": "2026-06-19T01:26:24-07:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/popup/popup.el",
+        "sha256": "6ab6cae6e9b6d9750e5497a71f3fbca6431ae3c5f93eee1b4e708b87e9b61b38",
+        "lines": 1459
+      }
+    ]
+  },
+  {
+    "id": "projectile",
+    "url": "https://github.com/bbatsov/projectile.git",
+    "commit": "f902073c1d10bb125875470c9dcbdcd7c9a1eefb",
+    "commit_date": "2026-09-16T17:30:18+03:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/projectile/.dir-locals.el",
+        "sha256": "9ce8ec7defa55120680ab66866af1104db5418ee3e44f13ceaf6b0c48206592b",
+        "lines": 13
+      },
+      {
+        "path": "sources/projectile/dev/buffer-leaks.el",
+        "sha256": "ef91c556713d6433836fcd58a3188ef4547b51327849dda6168745d87716450e",
+        "lines": 61
+      },
+      {
+        "path": "sources/projectile/dev/function-coverage.el",
+        "sha256": "6cfd2c3396c4fc10fff0dda6b16e39d4367ad0912045ebddf843918c899693cf",
+        "lines": 112
+      },
+      {
+        "path": "sources/projectile/projectile-consult.el",
+        "sha256": "529d9e7807e6ba15a6d5e9f1ff06c5359377da54684292e2e33a3466b1af9f90",
+        "lines": 124
+      },
+      {
+        "path": "sources/projectile/projectile.el",
+        "sha256": "52323ef58dbdc4120c7e259b65c2540a4c31a6361ff8f608add6d761d2807e24",
+        "lines": 18822
+      }
+    ]
+  },
+  {
+    "id": "screensend",
+    "url": "https://github.com/benwbooth/screensend.el.git",
+    "commit": "a298f87a6776bdb4afd99a1bb367fdf09bc29411",
+    "commit_date": "2016-06-06T13:03:11-07:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/screensend/screensend.el",
+        "sha256": "d4c1c8e140524ed097539e276af1160e501ece1ceb5dba8db26b578647568ebc",
+        "lines": 317
+      }
+    ]
+  },
+  {
+    "id": "shackle",
+    "url": "https://github.com/wasamasa/shackle.git",
+    "commit": "32a397770be30a518f5123b81a6d667d02308bfb",
+    "commit_date": "2020-05-06T14:35:15+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/shackle/shackle.el",
+        "sha256": "73b7bfe7a68a6531de19a8efe507b5a7e775016fe373a27c5b0999feb6885a82",
+        "lines": 512
+      }
+    ]
+  },
+  {
+    "id": "term-plus-mux",
+    "url": "https://github.com/tarao/term-plus-mux-el.git",
+    "commit": "cd12a3744d4b7d37a002f4f7fcc4a45ea5be95c3",
+    "commit_date": "2022-05-20T19:14:05+09:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/term-plus-mux/term+mux.el",
+        "sha256": "7587eb515d310dc5f086258c5e27bfc60751607da24fdbd9545191bb44dbdacf",
+        "lines": 967
+      }
+    ]
+  },
+  {
+    "id": "tiling",
+    "url": "https://github.com/lgfang/tiling.git",
+    "commit": "95c8cf543214eda33202a417a4ef7bb5095991c0",
+    "commit_date": "2016-12-20T12:58:58+11:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tiling/tiling.el",
+        "sha256": "625255ac3ce3143af88ac274139501cf73f721b9ba4232ad78d2c77b14c16634",
+        "lines": 206
+      }
+    ]
+  },
+  {
+    "id": "tmux-cc",
+    "url": "https://github.com/wcy123/tmux-cc.git",
+    "commit": "7f493a8d7f15e16fdf47da44756e1212e438dc6b",
+    "commit_date": "2025-05-29T20:14:53+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmux-cc/tmux-cc.el",
+        "sha256": "ab61de4f8275649347ad8a7809aa3eda0131dcfb0b7d3fbaca2907ed78651741",
+        "lines": 328
+      }
+    ]
+  },
+  {
+    "id": "tmux-control",
+    "url": "https://github.com/csheaff/tmux-control.git",
+    "commit": "ebe07f4caff0c1be21e1c92323de6d00744c2891",
+    "commit_date": "2026-09-23T11:18:44-07:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmux-control/tmux-control.el",
+        "sha256": "fb52027b45b625c1fad77bb4640298aad773c6c869d28ffd41adf02240b79a51",
+        "lines": 8438
+      }
+    ]
+  },
+  {
+    "id": "tmux-el",
+    "url": "https://github.com/abougouffa/tmux.el.git",
+    "commit": "26b2673eb5a15150f8f05b109aca77b33db22b53",
+    "commit_date": "2024-06-03T11:08:45+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmux-el/tmux-evil.el",
+        "sha256": "d04d2da363b7ea6394c5c75b23932a4981e6c1987e29630f8601eb6d69591c03",
+        "lines": 34
+      },
+      {
+        "path": "sources/tmux-el/tmux.el",
+        "sha256": "56e434e480b9d5ea81dd3d50f80e675c47b9e5d7c0fb1a63f15941dd48ca988b",
+        "lines": 191
+      }
+    ]
+  },
+  {
+    "id": "tmux-head",
+    "url": "https://github.com/jeffyql/tmux-head.git",
+    "commit": "12c6fa6fa1fef1c6af738086dceea53344483ef6",
+    "commit_date": "2019-05-19T19:51:49-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmux-head/tmux-commands.el",
+        "sha256": "61fbc3f51cd448326d4c6d79846606b27deba2931bc94bb1b04ae901298788c3",
+        "lines": 126
+      },
+      {
+        "path": "sources/tmux-head/tmux-head-ipython.el",
+        "sha256": "5fd77eca20bebe34bf28b20a7dd806797daaa3a633997d7b10fa6172437000dd",
+        "lines": 148
+      },
+      {
+        "path": "sources/tmux-head/tmux-head.el",
+        "sha256": "f26472ee996acc288a9758b786299d3861232fdc22e3bb2d4d0315ce731e8c57",
+        "lines": 646
+      }
+    ]
+  },
+  {
+    "id": "tmux-pane",
+    "url": "https://github.com/laishulu/emacs-tmux-pane.git",
+    "commit": "0ab0d40b497e984a589189358e04e322b8165985",
+    "commit_date": "2024-01-06T09:31:26+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmux-pane/tmux-pane.el",
+        "sha256": "c928019098ab7ad6541843136e79f8471e7c975627099680d703d793bdf37160",
+        "lines": 207
+      }
+    ]
+  },
+  {
+    "id": "tmux-tandem",
+    "url": "https://github.com/alberti42/emacs-tmux-tandem.git",
+    "commit": "82c1e8e4c15ef9576f1472d8b4e387c4b1e96c3a",
+    "commit_date": "2026-08-01T10:55:55+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmux-tandem/tmux-tandem.el",
+        "sha256": "18c44f9528cfbfe28f6ccaf8adcdb49750a722113ac82be53c07869e53438ba2",
+        "lines": 349
+      }
+    ]
+  },
+  {
+    "id": "tmux-view",
+    "url": "https://github.com/mgalgs/tmux-view.el.git",
+    "commit": "3f0339f568a68f128a678e684ebf351a0b647bd2",
+    "commit_date": "2026-02-12T12:09:31-08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmux-view/tmux-view-test.el",
+        "sha256": "2a00e1441acd16b79b594d7af48dc049f1fc7613430cba8ffd94e62d5572fd08",
+        "lines": 186
+      },
+      {
+        "path": "sources/tmux-view/tmux-view.el",
+        "sha256": "27934d6086cbdeab99a5fd977e9445feb1e567c17a35b61cc0696f4b68fae58b",
+        "lines": 194
+      }
+    ]
+  },
+  {
+    "id": "tmuxbuf",
+    "url": "https://github.com/tmshort/tmuxbuf.git",
+    "commit": "aa9e78798c8cb8d094300892973e63954d2f32f7",
+    "commit_date": "2022-02-24T09:45:16-05:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmuxbuf/tmuxbuf.el",
+        "sha256": "8993789160c7d03164405f60331452cf4900613ef2455e5037b3ed79f40afd32",
+        "lines": 59
+      }
+    ]
+  },
+  {
+    "id": "tmuxmacs",
+    "url": "https://github.com/andrewppar/tmuxmacs.git",
+    "commit": "e569afd48a7649607bd569af388c5311763fd935",
+    "commit_date": "2026-08-31T14:03:33-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/tmuxmacs/tmuxmacs-core.el",
+        "sha256": "93b07405b8e50531fd0a76b9ef7c7c4b23331c4205af01c8e5d07b486c9ebe76",
+        "lines": 58
+      },
+      {
+        "path": "sources/tmuxmacs/tmuxmacs-face.el",
+        "sha256": "b0d5b3746b22e4d4175a33224382adb81fc7e24e1a05d087c540eb8705e4dc4a",
+        "lines": 26
+      },
+      {
+        "path": "sources/tmuxmacs/tmuxmacs-pane.el",
+        "sha256": "46e32de4a5c7c2fdd7a51cc42e6f235b2f7730ea30e26d63fb06b3e47bd1b727",
+        "lines": 101
+      },
+      {
+        "path": "sources/tmuxmacs/tmuxmacs-session.el",
+        "sha256": "ba7d7f617ddac14f7a58ce6f69c00448723cdf9701cfc11977904b45af4a8b6a",
+        "lines": 55
+      },
+      {
+        "path": "sources/tmuxmacs/tmuxmacs-view.el",
+        "sha256": "638301480061ec121fda19a63b78649f14754d86930a00e008e9752b97efe923",
+        "lines": 342
+      },
+      {
+        "path": "sources/tmuxmacs/tmuxmacs-window.el",
+        "sha256": "632dd797a68adecca6629d2f9b7ce74f29e282faa60e661887a901a4a9425068",
+        "lines": 80
+      },
+      {
+        "path": "sources/tmuxmacs/tmuxmacs.el",
+        "sha256": "29f126bb4755439d1983132d6571ba585f00660257103208606107f4021989b8",
+        "lines": 167
+      }
+    ]
+  },
+  {
+    "id": "turnip",
+    "url": "https://github.com/kljohann/turnip.el.git",
+    "commit": "2fd32562fc6fc1cda6d91aa939cfb29f9b16e9de",
+    "commit_date": "2015-03-09T07:29:37+01:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/turnip/turnip.el",
+        "sha256": "3f0cfabb90827cccbf9fe2befa2973956d3fcb477318e73990299591911ece1c",
+        "lines": 486
+      }
+    ]
+  },
+  {
+    "id": "vterm-manager",
+    "url": "https://github.com/laishulu/emacs-vterm-manager.git",
+    "commit": "d770fd8cff7c24688199392ad93c01485c6a9569",
+    "commit_date": "2020-09-21T11:38:31+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vterm-manager/example.el",
+        "sha256": "3e066551fdda0e9dcdb793ce65e43206d3e9ae8baa372cc08429d842c7dc3c08",
+        "lines": 30
+      },
+      {
+        "path": "sources/vterm-manager/vtm.el",
+        "sha256": "d93bc251a76bf8c44598de8a0c47872cf26cc4dd93685ee26db428ede3926011",
+        "lines": 125
+      }
+    ]
+  },
+  {
+    "id": "vterm-ring",
+    "url": "https://github.com/daniel-ts/vterm-ring.git",
+    "commit": "b251259cb7a73fe468dcead17beac2901e952fbf",
+    "commit_date": "2026-01-17T17:42:16+01:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vterm-ring/vterm-ring.el",
+        "sha256": "4013fbb61bd0227e72a2845eb0151d0df599d5d7c9ae6fc0a5134cb154e77bea",
+        "lines": 152
+      }
+    ]
+  },
+  {
+    "id": "vterms",
+    "url": "https://github.com/t0yv0/vterms.el.git",
+    "commit": "e823b788ebc787374950a0e10bf606019b8443f4",
+    "commit_date": "2025-09-11T23:36:48-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vterms/vterms.el",
+        "sha256": "25c71d3f76e2a3115f238ee67481ef2e06f8e66eeaaa30b8ced5a2e7d95f8c96",
+        "lines": 66
+      }
+    ]
+  },
+  {
+    "id": "vtermux",
+    "url": "https://github.com/pcmantz/vtermux.git",
+    "commit": "98db8bfde835ba2c100e5dd835d5772ab2becf0a",
+    "commit_date": "2026-06-05T14:36:18-05:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vtermux/vtermux-test.el",
+        "sha256": "b8ea74fcf90a22ac93d9a1322ba990a53344dc3aa7864fff1f7ced006bb1461d",
+        "lines": 570
+      },
+      {
+        "path": "sources/vtermux/vtermux.el",
+        "sha256": "0f283510559dd80134a022077b162a25e1fe38b7c97baa5de90a06266a18e686",
+        "lines": 514
+      }
+    ]
+  },
+  {
+    "id": "vtplex",
+    "url": "https://github.com/mitch-kyle/vtplex.git",
+    "commit": "f853c0f6f32499b24300a0519d348356645c1a33",
+    "commit_date": "2022-02-04T19:32:28-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vtplex/vtplex-spaceline.el",
+        "sha256": "c210b35ec8d9586e7717dcfe4618a5d47fafa2046e02e8655a1c7ae5f9ea9f2a",
+        "lines": 214
+      },
+      {
+        "path": "sources/vtplex/vtplex.el",
+        "sha256": "b8719f6938fc7d900c6c3ec6421f19e572711e7d77140f928aa1fcad56414b2c",
+        "lines": 215
+      }
+    ]
+  },
+  {
+    "id": "wterm",
+    "url": "https://github.com/admmq/wterm.el.git",
+    "commit": "08a78cc300f3d39432e53f15bbc558ceacec35a8",
+    "commit_date": "2026-09-24T22:18:12+03:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/wterm/wterm.el",
+        "sha256": "a33f92eda453fe2884d0bfb801ddc2cc43a11993725be05773849154d5960bd6",
+        "lines": 571
+      }
+    ]
+  },
+  {
+    "id": "xterm-256color",
+    "url": "https://github.com/tarao/xterm-256color-el.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/xterm-256color'...\nfatal: could not read Username for 'https://github.com': No such device or address\n",
+    "files": []
+  },
+  {
+    "id": "zellij",
+    "url": "https://github.com/mandoo180/zellij.el.git",
+    "commit": "985ebccd222d5e288c178729328ab8e94eda3ba3",
+    "commit_date": "2025-12-08T13:28:10+09:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/zellij/examples/zellij-config.el",
+        "sha256": "852e7ac258f7609a193a3a6ad5bed15c1fbda10cd879003df842ec97e986d955",
+        "lines": 259
+      },
+      {
+        "path": "sources/zellij/zellij-org.el",
+        "sha256": "d87d37bf5780e6292fd50a931a844415a2e487d1b8c71a2f9443c53b0d2fda4b",
+        "lines": 171
+      },
+      {
+        "path": "sources/zellij/zellij.el",
+        "sha256": "6b48c11224eceaee6c38f5af78ae2cb6cd25330c37927495b0fde8d956b32122",
+        "lines": 1105
+      }
+    ]
+  },
+  {
+    "id": "emux-jcguu95",
+    "url": "https://github.com/jcguu95/emux.git",
+    "status": "fetched",
+    "commit": "54ce53ea351db4d34e70cee6973214f116d8a659",
+    "files": [
+      {
+        "path": "sources/emux-jcguu95/early-init.el",
+        "sha256": "a39c890dbf667319de88b5816eec758211d4a98cfc80d1f689452d4c793ccaf5",
+        "lines": 18
+      },
+      {
+        "path": "sources/emux-jcguu95/init.el",
+        "sha256": "5bfbec021b87a5652012f634314f01df60d8847c67fa25fbc8c5a4dda4418ff6",
+        "lines": 27
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-benchmark.el",
+        "sha256": "6bf2dfbfb71401afde7d69819a93e4fc14d4ff26b4062c8e1c6934e744905dc6",
+        "lines": 13
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-bindings.el",
+        "sha256": "8244c692ff483116de931fff27bc9de1803df8d81c23c4f22fb8ece7bae16cae",
+        "lines": 58
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-clipboard.el",
+        "sha256": "4df13fab55c1eda4a90a656dd42b1c3fcc73b7e93457c7b1994b791c8b17dd17",
+        "lines": 24
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-completion.el",
+        "sha256": "5fbe69ed2188f3abe4d1b3bc2b4f4f3a31812dee5cc6bc5554f1d62b62cdfe89",
+        "lines": 39
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-core-profile.el",
+        "sha256": "faf6c9775a98619f615427dfd6a3ae32d280ff25e9396cf124c9a6f0eb631eee",
+        "lines": 16
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-eat.el",
+        "sha256": "e07ac961499dac4de599f6128f9ca8378e0341ba2501f2e8470d92f4e66b0951",
+        "lines": 18
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-elpaca.el",
+        "sha256": "27a0b92634cbff558e9f9ef1da2d7b6e61707a2a10c55b846da1a2b808c9ff5e",
+        "lines": 48
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-evil.el",
+        "sha256": "326475edda00d74ee27d8a70ececc731f1b34c6d387d871817eabbb79eb98f0a",
+        "lines": 20
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-extended-profile.el",
+        "sha256": "6f4b6b40120a11f00a7263c9bde3db263952ff280b6c1fb6bfeec425a5bb1317",
+        "lines": 44
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-terminal.el",
+        "sha256": "c942043b420ce14a76aebc536cb76bf4a01214599e19618ef50117e55787264b",
+        "lines": 6
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-ui.el",
+        "sha256": "2e45fab4bcd9e99fcac2a4a371ddd4a638caaf181e868e82b37771bde31a556a",
+        "lines": 35
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-vterm.el",
+        "sha256": "88ca1f2770e34f88babdf08b8a333b745631499be6bcdb30308000d1f3cac3f8",
+        "lines": 167
+      },
+      {
+        "path": "sources/emux-jcguu95/lisp/init-window.el",
+        "sha256": "6dd14926411a86e5ef5b7ba26b5e99b6540206dba80f07de198fbaf473c41869",
+        "lines": 17
+      }
+    ]
+  },
+  {
+    "id": "ob-tmux",
+    "url": "https://github.com/ahendriksen/ob-tmux.git",
+    "status": "fetched",
+    "commit": "cb4f151554a653f8f6b22ab8edbe3420d7f5e377",
+    "files": [
+      {
+        "path": "sources/ob-tmux/ob-tmux.el",
+        "sha256": "a5baaa8eb0878ff55e34ed8665a48c8705d2c25687b24ebb20aa6fb49a399ad1",
+        "lines": 394
+      }
+    ]
+  },
+  {
+    "id": "eterm-fn",
+    "url": "https://github.com/oitofelix/eterm-fn.git",
+    "status": "fetched",
+    "commit": "b5d433fedc030046ea0e4a217f4dd3846a113fe4",
+    "files": [
+      {
+        "path": "sources/eterm-fn/eterm-fn.el",
+        "sha256": "bd70c6fd2f98ff570527cda3630bd0d8c529f3d661a00575145f45e5ea51f969",
+        "lines": 218
+      }
+    ]
+  },
+  {
+    "id": "myterminal-controls",
+    "url": "https://github.com/myTerminal/myterminal-controls.git",
+    "status": "fetched",
+    "commit": "c635868e13ee898ec77925d98b36421640e22aa4",
+    "files": [
+      {
+        "path": "sources/myterminal-controls/myterminal-controls.el",
+        "sha256": "39abd596815d24a3fa44ac0c95913ef2d61437a4a719820bfb0b1a2cee6c90fc",
+        "lines": 175
+      }
+    ]
+  },
+  {
+    "id": "choice-program-complete",
+    "url": "https://github.com/emacsorphanage/choice-program-complete.git",
+    "status": "fetch-failed",
+    "error": "Cloning into '/home/admin/Emacs-Multiplexing-Study/sources/choice-program-complete'...\nremote: Repository not found.\nfatal: repository 'https://github.com/emacsorphanage/choice-program-complete.git/' not found\n",
+    "files": []
+  },
+  {
+    "id": "key-intercept",
+    "url": "https://github.com/tarao/key-intercept-el.git",
+    "status": "fetched",
+    "commit": "d9a60edb4ce893f2d3d94f242164fdcc62d43cf2",
+    "files": [
+      {
+        "path": "sources/key-intercept/key-intercept.el",
+        "sha256": "abfc5614c8c1da9b5c4eeb66114f5bd7b682faaa95d441ee3f9342decfe51fc5",
+        "lines": 295
+      }
+    ]
+  },
+  {
+    "id": "alert",
+    "url": "https://github.com/jwiegley/alert.git",
+    "status": "fetched",
+    "commit": "31fc56855289d0846e73d7ca9b84b628aeac16a0",
+    "files": [
+      {
+        "path": "sources/alert/alert-test.el",
+        "sha256": "adbb021a052be5afda4cfbbbba1ec96a06ac9ceef664f396aea762f1c11084f5",
+        "lines": 181
+      },
+      {
+        "path": "sources/alert/alert.el",
+        "sha256": "6e450bbfa508ccf441e2e6e75e840d83f0a5f58ccc2a84066e92e3481c2b798b",
+        "lines": 1235
+      }
+    ]
+  },
+  {
+    "id": "choice-program",
+    "url": "https://github.com/plandes/choice-program.git",
+    "status": "fetched",
+    "commit": "9c027a54a97390ee4863d663be19b1a2aaa70c7b",
+    "files": [
+      {
+        "path": "sources/choice-program/choice-program-complete.el",
+        "sha256": "41705bc3eab4049a1fcdf2ba34ca188ee35a9731f67d48d3745e6ba49545a1ea",
+        "lines": 152
+      },
+      {
+        "path": "sources/choice-program/choice-program.el",
+        "sha256": "0ad6003bc233c0c158e6571d377fa3da0758b8fee52f08ee2059349769d370d7",
+        "lines": 356
+      }
+    ]
+  },
+  {
+    "id": "ssh",
+    "url": "https://github.com/emacsmirror/ssh.git",
+    "status": "fetched",
+    "commit": "812e27409d01c38d74906a1816640506d6e7e3ef",
+    "files": [
+      {
+        "path": "sources/ssh/ssh.el",
+        "sha256": "08a7fce409ebe346d58bfa0c2f1503be574b16fed9f4bd86e2bfba9a0aefa4cb",
+        "lines": 435
+      }
+    ]
+  },
+  {
+    "id": "multi-buffer",
+    "url": "https://gitlab.com/vslavkin/multi-buffer.el.git",
+    "status": "fetched",
+    "commit": "4459d83bb0e2a5399d5cace0016f13778a1f5869",
+    "files": [
+      {
+        "path": "sources/multi-buffer/multi-buffer.el",
+        "sha256": "c35ca3bd4bdcfe50acbc1d44963b8320437c3c80b28ac8a04f2412a47c06e07e",
+        "lines": 111
+      }
+    ]
+  },
+  {
+    "id": "term-toggle",
+    "url": "https://github.com/amno1/emacs-term-toggle.git",
+    "status": "fetched",
+    "commit": "8d3258bc8d03bbb4c735afc681a3c415bb0bbcc6",
+    "files": [
+      {
+        "path": "sources/term-toggle/helm-term-toggle.el",
+        "sha256": "01996f26ba07b9de8f7ede8463be3047f8381e5426de0d7dccecbe5a22756ba7",
+        "lines": 137
+      },
+      {
+        "path": "sources/term-toggle/term-toggle-animate.el",
+        "sha256": "bf607567f620a1ecd373a3f776131d4d52ecbc704abef6c273a0fc53ff8e5457",
+        "lines": 264
+      },
+      {
+        "path": "sources/term-toggle/term-toggle.el",
+        "sha256": "5899f42ac887b99e0f37009a70976adb6818e951d32fea2ae8b2f7b54f798b37",
+        "lines": 475
+      }
+    ]
+  },
+  {
+    "id": "nssh",
+    "url": "https://codeberg.org/emacs-weirdware/nssh.git",
+    "status": "fetched",
+    "commit": "74d43738565749af680e4d1388e0c2f88e93498d",
+    "files": [
+      {
+        "path": "sources/nssh/nssh.el",
+        "sha256": "d364e6f63934fffaf8e2384a4307ac8a76d545a717250497036c077dc31a9ffc",
+        "lines": 316
+      }
+    ]
+  },
+  {
+    "id": "avy",
+    "url": "https://github.com/abo-abo/avy.git",
+    "status": "fetched",
+    "commit": "933d1f36cca0f71e4acb5fac707e9ae26c536264",
+    "commit_date": "2024-11-01T13:57:13Z",
+    "files": [
+      {
+        "path": "sources/avy/.dir-locals.el",
+        "sha256": "cb42e76ffad93915eb476af1893d7ce3dba7a3b3240e0503662abea29a6acfd0",
+        "lines": 5
+      },
+      {
+        "path": "sources/avy/avy-test.el",
+        "sha256": "b2e67c535c84e21b9550e7ef33f71bcb7dcf57b08b7aa3aa348b68727a7ac6f4",
+        "lines": 72
+      },
+      {
+        "path": "sources/avy/avy.el",
+        "sha256": "4afe8b1c77169c53cc1d2777009dd865f748e712b03604f9cdf492aa718be129",
+        "lines": 2251
+      },
+      {
+        "path": "sources/avy/targets/avy-init.el",
+        "sha256": "5f846d76a97ca1c6386faafdf2ef9b558b444e5994c71097e1fafaf17debec48",
+        "lines": 26
+      },
+      {
+        "path": "sources/avy/targets/checkdoc.el",
+        "sha256": "af49390fda44dc097c4fa14528426e5373017facd573f4334417fbe0392e6a10",
+        "lines": 2
+      }
+    ]
+  },
+  {
+    "id": "better-shell",
+    "url": "https://github.com/killdash9/better-shell.git",
+    "status": "fetched",
+    "commit": "70c787b981caeef8c5f8012b170eb7b9f167cd13",
+    "commit_date": "2019-10-25T11:37:32-06:00",
+    "files": [
+      {
+        "path": "sources/better-shell/better-shell.el",
+        "sha256": "f06f00006fec560335c6e6f2a81549796a46dc4b9bddedcdef5190cfb8f588c6",
+        "lines": 265
+      }
+    ]
+  },
+  {
+    "id": "dash",
+    "url": "https://github.com/magnars/dash.el.git",
+    "commit": "d746dd9edcb67a108818beb0cdc78dc1cb466832",
+    "commit_date": "2026-08-10T20:03:02+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/dash/.dir-locals.el",
+        "sha256": "231bf845c8121238ea5bff795556bad48f2b238376c71fd6c7904e217d9e2290",
+        "lines": 12
+      },
+      {
+        "path": "sources/dash/dash-functional.el",
+        "sha256": "302c8aaec3d761c69fc92e065dfff6ea0887c57d18c31d738725cde1ba0fc44a",
+        "lines": 53
+      },
+      {
+        "path": "sources/dash/dash.el",
+        "sha256": "19fd9f8f85db32c589d2361a670326435520f6a60002d7c18b8070d8cb5f864d",
+        "lines": 4176
+      },
+      {
+        "path": "sources/dash/dev/dash-defs.el",
+        "sha256": "2f8b9c69b594b643b88cd493fe0b513159ec2f8f17e1ef3cf6a84585e3cb5f46",
+        "lines": 371
+      },
+      {
+        "path": "sources/dash/dev/examples.el",
+        "sha256": "36a21889000d36e5c4042793fc4c81106c498da1df1dc5f2a7d799acd8761955",
+        "lines": 2814
+      }
+    ]
+  },
+  {
+    "id": "e2wm",
+    "url": "https://github.com/kiwanami/emacs-window-manager.git",
+    "status": "fetched",
+    "commit": "33efca5504db9d8b3fdbd412c3d79663c9eec77a",
+    "commit_date": "2024-11-04T18:14:06+09:00",
+    "files": [
+      {
+        "path": "sources/e2wm/e2wm-config.el",
+        "sha256": "edf8084b8be3cd285e922178af3b8bd28e1a51370022c53771e5071a10294f42",
+        "lines": 433
+      },
+      {
+        "path": "sources/e2wm/e2wm-vcs.el",
+        "sha256": "7184f6b6772381b6727546556ae895e941ae10e2dd667e8f50d7a96e928897b7",
+        "lines": 499
+      },
+      {
+        "path": "sources/e2wm/e2wm.el",
+        "sha256": "e07a383c2488e6ec9221c6a461bae8592084b4bd75be660fcae3bb389220714d",
+        "lines": 4075
+      },
+      {
+        "path": "sources/e2wm/features/step-definitions/e2wm-steps.el",
+        "sha256": "a6a4da0ddf073097c3df45161e5a42c791ada60c0626a0a28988f3de95059c91",
+        "lines": 194
+      },
+      {
+        "path": "sources/e2wm/features/support/e2wm-testing.el",
+        "sha256": "e167c4c1d7d5fd83e70003fc4bd2a035046fa80c534e0e5ef082a8649de33898",
+        "lines": 37
+      },
+      {
+        "path": "sources/e2wm/features/support/env.el",
+        "sha256": "fe147a13f2f8f8dc2d080bd5f69c21e8d2fb55350fde0de5d64e246e6c72731d",
+        "lines": 56
+      },
+      {
+        "path": "sources/e2wm/test-e2wm-pst-class.el",
+        "sha256": "8da673553f95a44856b4a71f82c7bd3a5dae7ad864d6eee5f5e1df977becff2f",
+        "lines": 40
+      }
+    ]
+  },
+  {
+    "id": "e2wm-term",
+    "url": "https://github.com/aki2o/e2wm-term.git",
+    "status": "fetched",
+    "commit": "4542e52138484933dd99a497ff1b048ea42f9246",
+    "commit_date": "2024-01-07T17:50:16+09:00",
+    "files": [
+      {
+        "path": "sources/e2wm-term/e2wm-term.el",
+        "sha256": "54cd693226af4c8cc4f6cb2ffc5bfff4c45640aa419529814424af10c4841554",
+        "lines": 1272
+      }
+    ]
+  },
+  {
+    "id": "eaf",
+    "url": "https://github.com/emacs-eaf/emacs-application-framework.git",
+    "status": "fetched",
+    "commit": "6edd20450b2f31936847c4c5678b3ba6d2579a87",
+    "commit_date": "2026-08-23T21:41:02+08:00",
+    "files": [
+      {
+        "path": "sources/eaf/core/eaf-epc.el",
+        "sha256": "11ec4db32cbd0dc5b2af26080ef6a524153e6f78e82dbe2b3191a51dfd15bed1",
+        "lines": 768
+      },
+      {
+        "path": "sources/eaf/eaf.el",
+        "sha256": "2ae279fcd5c64e6713bfa1dcbd29c736427c1a3c8c8f01479d011c147228bf32",
+        "lines": 2217
+      },
+      {
+        "path": "sources/eaf/extension/eaf-all-the-icons.el",
+        "sha256": "599abfb9b6bf7bada4f134484f05a2a4e5a868c27516bf15d305cfb5aa44ee15",
+        "lines": 117
+      },
+      {
+        "path": "sources/eaf/extension/eaf-evil.el",
+        "sha256": "d6023d633436a8d2edbcf672de300190bcb1c02dcbab42522c05da3edbbb95aa",
+        "lines": 72
+      },
+      {
+        "path": "sources/eaf/extension/eaf-interleave.el",
+        "sha256": "bfe7c6703fec27d0dd0cca0e006ab11d729704fc3199583902fed18a93838be6",
+        "lines": 512
+      },
+      {
+        "path": "sources/eaf/extension/eaf-mail.el",
+        "sha256": "1cf1009e17aa00911fcd82e8deb8d619e3eb74b447c64d6c5cf549da4eb94bc2",
+        "lines": 162
+      },
+      {
+        "path": "sources/eaf/extension/eaf-org.el",
+        "sha256": "a31d3334c487e276d5228ad76906a75ca080fd3ffe4e41b883e4617bf43a69d8",
+        "lines": 187
+      }
+    ]
+  },
+  {
+    "id": "elscreen",
+    "url": "https://github.com/knu/elscreen.git",
+    "status": "fetched",
+    "commit": "cc58337faf5ba1eae7e87f75f6ff3758675688f2",
+    "commit_date": "2018-10-09T13:51:18+09:00",
+    "files": [
+      {
+        "path": "sources/elscreen/elscreen-buffer-list.el",
+        "sha256": "d960a328c27bae8254065980bf063ebd4fbdb29eb3b36ad0f93c136a9577219f",
+        "lines": 95
+      },
+      {
+        "path": "sources/elscreen/elscreen-color-theme.el",
+        "sha256": "fe4c45732975d92314cb42d57f9e6b6bb49ecaf22886292d645cda57675203d9",
+        "lines": 126
+      },
+      {
+        "path": "sources/elscreen/elscreen-dired.el",
+        "sha256": "9a41940ed61d3dd2ded98cf53a544f0ccc7d570c69bdf48125c69a35e0c37c04",
+        "lines": 38
+      },
+      {
+        "path": "sources/elscreen/elscreen-dnd.el",
+        "sha256": "9974eeefb9265b724c71a8b59a7746309aa72287a450db3f52e560df94af1d66",
+        "lines": 58
+      },
+      {
+        "path": "sources/elscreen/elscreen-gf.el",
+        "sha256": "3521ea1d413d634b103034f79fdedf13a3e87e6976f5cc98a2128862156cd0f8",
+        "lines": 1017
+      },
+      {
+        "path": "sources/elscreen/elscreen-goby.el",
+        "sha256": "e81e5ef2f3781b4344606c23a334f857b8aa53e93e533a63287a50cf9a1edb4b",
+        "lines": 35
+      },
+      {
+        "path": "sources/elscreen/elscreen-howm.el",
+        "sha256": "42d6509086baedd378e983ba7b6f2e1bd608f49c57b722d1baa33b8d5f5082b5",
+        "lines": 119
+      },
+      {
+        "path": "sources/elscreen/elscreen-server.el",
+        "sha256": "936332357e18cd82ac07c925e3cb28b88291ebbc14b9ad721b4f1b55d2996c1a",
+        "lines": 59
+      },
+      {
+        "path": "sources/elscreen/elscreen-speedbar.el",
+        "sha256": "8bb0300f0787d20b08e1f92908f6b792a6da30e3b06abc5a8a661d20df8e6e3d",
+        "lines": 48
+      },
+      {
+        "path": "sources/elscreen/elscreen-w3m.el",
+        "sha256": "2c10cb976af400083207b9d72558139ecf76d80e6bb83afc125b30cfaac3140c",
+        "lines": 82
+      },
+      {
+        "path": "sources/elscreen/elscreen-wl.el",
+        "sha256": "03c40196013291c43bf23535649976fc9b02185a03c86083e1c8dc1ffac2864e",
+        "lines": 155
+      },
+      {
+        "path": "sources/elscreen/elscreen.el",
+        "sha256": "64549c1b3a79195bca1ee0e7610b04f33b2e907e426a1ad6e6a9088b6d4f8744",
+        "lines": 1600
+      }
+    ]
+  },
+  {
+    "id": "elscreen-buffer-group",
+    "url": "https://github.com/jeffgran/elscreen-buffer-group.git",
+    "status": "fetched",
+    "commit": "b48e71d4782adfeb2958f227d78c04164d26e4bd",
+    "commit_date": "2020-01-09T23:38:19Z",
+    "files": [
+      {
+        "path": "sources/elscreen-buffer-group/elscreen-buffer-group.el",
+        "sha256": "993dd77fa90d8c146b05397ed7a2b8b7ab2fd23f2fddbf6a86264a0ad45298b8",
+        "lines": 267
+      }
+    ]
+  },
+  {
+    "id": "elscreen-multi-term",
+    "url": "https://github.com/wamei/elscreen-multi-term.git",
+    "status": "fetched",
+    "commit": "4ea89bae0444d9d4377515929f76cb3e98140f1f",
+    "commit_date": "2020-04-17T17:21:08+09:00",
+    "files": [
+      {
+        "path": "sources/elscreen-multi-term/elscreen-multi-term.el",
+        "sha256": "291b41bfe5324482dee60d91d4f6d413e7b3bd1333abc564cbf968664053128f",
+        "lines": 165
+      }
+    ]
+  },
+  {
+    "id": "emacs-tunnel",
+    "url": "https://github.com/mimunzar/emacs-tunnel.git",
+    "status": "fetched",
+    "commit": "ace3afdf5d3c68a4acf43d07bf7054ab5b8108c4",
+    "commit_date": "2021-05-22T21:42:04+02:00",
+    "files": [
+      {
+        "path": "sources/emacs-tunnel/tslime-test.el",
+        "sha256": "23e66310ba222eaf6c837684aa20f068e9976a012047af6de83e7f6efbd1830b",
+        "lines": 59
+      },
+      {
+        "path": "sources/emacs-tunnel/tslime.el",
+        "sha256": "725b379ac4afbe108ba29f00f5ffe5e82eb962a77fae28b9dfdf650457bccc0d",
+        "lines": 86
+      }
+    ]
+  },
+  {
+    "id": "emux-attic",
+    "url": "https://github.com/emacsattic/emux.git",
+    "status": "fetched",
+    "commit": "d41d6ac2803e8c5c368f012f05bce50d61a21631",
+    "commit_date": "2022-11-21T18:10:13+01:00",
+    "files": [
+      {
+        "path": "sources/emux-attic/emux-base.el",
+        "sha256": "8a33b3e52e051fca154ec53a6deb5eac760aa89adea15a4fb5788a5755c26ee6",
+        "lines": 83
+      },
+      {
+        "path": "sources/emux-attic/emux-screen.el",
+        "sha256": "cdd18d5fc9ebc2b78c385bf55fc877b2ab4b0eaa956a06eb09b09555cc2ce7c6",
+        "lines": 170
+      },
+      {
+        "path": "sources/emux-attic/emux-session.el",
+        "sha256": "74b6f7639709154de8fcf3ef7bd42d328839ce81db6c6a2be6719b45eb7e1e6c",
+        "lines": 270
+      },
+      {
+        "path": "sources/emux-attic/emux-term.el",
+        "sha256": "cfc3e7c046eee542fb7a7edfbeb98dfee3ffbb3d1a4ae0b57c41906ae5ad5058",
+        "lines": 309
+      },
+      {
+        "path": "sources/emux-attic/emux.el",
+        "sha256": "d7d27b925a7c07be0d39fb8a4d0cc70d9b71db6879b6052dc91f8c158fa9518d",
+        "lines": 45
+      }
+    ]
+  },
+  {
+    "id": "eyebrowse",
+    "url": "https://depp.brause.cc/eyebrowse.git",
+    "status": "fetched",
+    "commit": "473381f4f9e847eb50a40ef2306c027432789754",
+    "commit_date": "2024-04-07T15:42:20+02:00",
+    "files": [
+      {
+        "path": "sources/eyebrowse/eyebrowse.el",
+        "sha256": "fdb80b9916c02a34718b269fa5f6fedb8289063ce969f82056c8122a0bc31895",
+        "lines": 744
+      }
+    ]
+  },
+  {
+    "id": "friendly-shell",
+    "url": "https://github.com/p3r7/friendly-shell.git",
+    "status": "fetched",
+    "commit": "5cafa3f6313ce04a47c8996ea1ac6b617d155d46",
+    "commit_date": "2023-09-16T16:26:09+02:00",
+    "files": [
+      {
+        "path": "sources/friendly-shell/friendly-remote-shell.el",
+        "sha256": "3131f6af5c365ce195780d1b3df4c610c7bfec8d7e45d1ad572ff2ceed213394",
+        "lines": 120
+      },
+      {
+        "path": "sources/friendly-shell/friendly-shell-command.el",
+        "sha256": "adc80f9f60ded67521018bafd99369f6b6051f5700bf1713f9328e1e359b484c",
+        "lines": 185
+      },
+      {
+        "path": "sources/friendly-shell/friendly-shell.el",
+        "sha256": "2421098dcea4bc346d54dc5693334edbdc1ffaa2be15961fdaa2e767d6526c10",
+        "lines": 213
+      }
+    ]
+  },
+  {
+    "id": "helm",
+    "url": "https://github.com/emacs-helm/helm.git",
+    "status": "fetched",
+    "commit": "228879977563003631edc67926e6a241f8523d73",
+    "commit_date": "2026-09-18T07:30:28+02:00",
+    "files": [
+      {
+        "path": "sources/helm/.dir-locals.el",
+        "sha256": "fea8fe17a6274e380995fcd95ec6674bbe38b9ec4b16e88823b81cba6e0ddd6e",
+        "lines": 10
+      },
+      {
+        "path": "sources/helm/helm-adaptive.el",
+        "sha256": "789a4ab60036f0c85e9a82354ff398bf7e562cef5a480fccd4a237ec78340d4b",
+        "lines": 284
+      },
+      {
+        "path": "sources/helm/helm-bookmark.el",
+        "sha256": "541b315a875ab8149b7b65530bcd580cc5a5e5e74d4567323b4086a1a529f22a",
+        "lines": 979
+      },
+      {
+        "path": "sources/helm/helm-buffers.el",
+        "sha256": "410b5132c173105aa702e5c47a988b6498a731b1a49502476b00fb66cb1ae6c6",
+        "lines": 1287
+      },
+      {
+        "path": "sources/helm/helm-color.el",
+        "sha256": "767e18ee9e44a1d536b2b4dc399b2e5116cb8749ee88a09e2f443a4bda305660",
+        "lines": 158
+      },
+      {
+        "path": "sources/helm/helm-command.el",
+        "sha256": "e56d0323b791b874f497905c0231db1a7f1639096b0e1e6341ec51cb47451a62",
+        "lines": 477
+      },
+      {
+        "path": "sources/helm/helm-core.el",
+        "sha256": "fb18feb1623f5a9f3a274d86846197c2ab085603b94547c493fab83a1cb54a1f",
+        "lines": 8413
+      },
+      {
+        "path": "sources/helm/helm-dabbrev.el",
+        "sha256": "1ff9d2b3624e7a553100d45d8ec850b8ed9686c4ab3814c2a5b92f9b940afbe4",
+        "lines": 388
+      },
+      {
+        "path": "sources/helm/helm-easymenu.el",
+        "sha256": "1a7be7a7e363193cd1e395109d7c5bf0cf3385402740b9e027afae7e2e8540f5",
+        "lines": 85
+      },
+      {
+        "path": "sources/helm/helm-elisp.el",
+        "sha256": "b1724eb6885c455ae288fff2807da1615d3a6b92e4a4820039d658bd30d8e6b6",
+        "lines": 1174
+      },
+      {
+        "path": "sources/helm/helm-epa.el",
+        "sha256": "b7b8420fb747e27cdd36520244c5bda6d5a42fedafbd6d248653b2a371f1c7bf",
+        "lines": 269
+      },
+      {
+        "path": "sources/helm/helm-eshell.el",
+        "sha256": "1ceab55db680077d21ee52dd621857286f16303b4a6e18f3643a8e9212a3c010",
+        "lines": 495
+      },
+      {
+        "path": "sources/helm/helm-eval.el",
+        "sha256": "3dbe18e9fe8f4d14fd80ef1255bd0d2c34c7e6ad6136ffbebf1eda332ad11de9",
+        "lines": 221
+      },
+      {
+        "path": "sources/helm/helm-external.el",
+        "sha256": "f2eb7e29a05cc2ab8d2d8c57c58e01cc8ba048f75b90fe1eeaddcda4d6606695",
+        "lines": 264
+      },
+      {
+        "path": "sources/helm/helm-fd.el",
+        "sha256": "76b34539719dd667bbce2be5f7265859ae9e50ad1c1e814e5b0ad72964653f45",
+        "lines": 153
+      },
+      {
+        "path": "sources/helm/helm-files.el",
+        "sha256": "81eb4083e80b5847a40657723984a2d677f7f3f12408a00c815dec1f9ac73453",
+        "lines": 7285
+      },
+      {
+        "path": "sources/helm/helm-find.el",
+        "sha256": "91fdfb1359f9cb37c6772f7987ee484aa276a15f557ef66dabe41b0a336020bc",
+        "lines": 182
+      },
+      {
+        "path": "sources/helm/helm-font.el",
+        "sha256": "547beb6f6ae7c319c21b9247dc2978834df859f4cb0c1d1887e00f9aa1e623cd",
+        "lines": 344
+      },
+      {
+        "path": "sources/helm/helm-for-files.el",
+        "sha256": "ef28f7d2665b3dd81b7e810ea1d9fbd7fcccdf9b63bfa611ae6f017a313f3c30",
+        "lines": 366
+      },
+      {
+        "path": "sources/helm/helm-global-bindings.el",
+        "sha256": "cb8c9d40535eb184747ca6013c886d9e8aaf6957b781d1b7a707fcc0418e00c5",
+        "lines": 106
+      },
+      {
+        "path": "sources/helm/helm-grep.el",
+        "sha256": "b85d9fff2b51774a2523fb59d42180ab3b81d98188bebd34826086f4a2ce6008",
+        "lines": 1885
+      },
+      {
+        "path": "sources/helm/helm-help.el",
+        "sha256": "1aee6ef6acd29be2e5fcd178443f1b15211d84ade90b1b99efe0b75d1d6ed8d4",
+        "lines": 2665
+      },
+      {
+        "path": "sources/helm/helm-id-utils.el",
+        "sha256": "8c858e155bbdb6421f7aac72f14c46356ea9eb35aeb53d3250411fb5a691c001",
+        "lines": 127
+      },
+      {
+        "path": "sources/helm/helm-imenu.el",
+        "sha256": "c9c59918331fcd1917e8732dc62226873d25ce508af4093d1e55a5760b2b23c1",
+        "lines": 541
+      },
+      {
+        "path": "sources/helm/helm-info.el",
+        "sha256": "fe37cd1f57c9bb5f5438bbef2e1d356d9cdf983e8cef5aa09d4b97dc3e53a353",
+        "lines": 410
+      },
+      {
+        "path": "sources/helm/helm-lib.el",
+        "sha256": "1dc6874f7e42fb6e240f71b4680c1fc5c6aaaa196da91cd1781069bc7140cf7d",
+        "lines": 2372
+      },
+      {
+        "path": "sources/helm/helm-locate.el",
+        "sha256": "58dc9dae99b124e36af3b106ea2b668821ee019f827fe2f335848d0ea66fd9b7",
+        "lines": 531
+      },
+      {
+        "path": "sources/helm/helm-man.el",
+        "sha256": "5a61307c390f0b91cbf76700878953fbff02d6e0787da4082cc4a4c109e6fa37",
+        "lines": 176
+      },
+      {
+        "path": "sources/helm/helm-misc.el",
+        "sha256": "c31957ed6d4bd7655cf077ab957f7cb3a6c55c73012ca51ab575f64aacfc4cb3",
+        "lines": 414
+      },
+      {
+        "path": "sources/helm/helm-mode.el",
+        "sha256": "16bb3e6c0f719f5d04e550ca5077428337d8d88759f6d345fd68212fa7921986",
+        "lines": 3266
+      },
+      {
+        "path": "sources/helm/helm-multi-match.el",
+        "sha256": "c0cd96de20a996ce60feb48b7bf6ad6099514e15e3ba5a96646042c394f00e24",
+        "lines": 439
+      },
+      {
+        "path": "sources/helm/helm-net.el",
+        "sha256": "fd7a9cf26be045d703deddbb9a5ad26076945b74eeb61111f1a61ed667c16e48",
+        "lines": 475
+      },
+      {
+        "path": "sources/helm/helm-occur.el",
+        "sha256": "cbe950c75624e9f21437a83be59e0f80779058e0a4d9101417301fb115a45df3",
+        "lines": 937
+      },
+      {
+        "path": "sources/helm/helm-packages.el",
+        "sha256": "7d6edbdbc792a660ec061aaa50a855a53b2a9bcab7dd8de580fea8dcab5b33cc",
+        "lines": 627
+      },
+      {
+        "path": "sources/helm/helm-regexp.el",
+        "sha256": "750dce4e5af67d83f47e068384fd60b9b809e9a85f2c6697d1bcba9a7b45b0de",
+        "lines": 132
+      },
+      {
+        "path": "sources/helm/helm-ring.el",
+        "sha256": "c0b7af614bbc9d429c60f7cc714932acb8eaaef56354b80b5622f386525148f8",
+        "lines": 644
+      },
+      {
+        "path": "sources/helm/helm-semantic.el",
+        "sha256": "dbc489990df58761e51497a4b14f340cbe3753872209b3f82d8c07b7528159be",
+        "lines": 233
+      },
+      {
+        "path": "sources/helm/helm-source.el",
+        "sha256": "3d1cc987a1c31f4260b7adabd80429e0e06868b9c204bffa3d7abb18a57e589e",
+        "lines": 1356
+      },
+      {
+        "path": "sources/helm/helm-sys.el",
+        "sha256": "28e7c56c00b734ad74778a046084b8a2e62b05eb6f92c944a5b17d49368c04c4",
+        "lines": 476
+      },
+      {
+        "path": "sources/helm/helm-tags.el",
+        "sha256": "0db0d59c0f02f16a08168794542a27bfeb563a6cfc7d3a85535909ed02d554af",
+        "lines": 336
+      },
+      {
+        "path": "sources/helm/helm-types.el",
+        "sha256": "0598463f599e506b509073597506f7f4c44a88f4262b3e920775105a59faae6f",
+        "lines": 342
+      },
+      {
+        "path": "sources/helm/helm-utils.el",
+        "sha256": "06e5302492946217d817796189037981c4670a99ec23430ed8af6ad8381cf733",
+        "lines": 1232
+      },
+      {
+        "path": "sources/helm/helm-x-files.el",
+        "sha256": "83966896cf88865387027b70b68c2a122d68d112f853f35e8078f6a3781ade62",
+        "lines": 126
+      },
+      {
+        "path": "sources/helm/helm-x-icons.el",
+        "sha256": "d5129ccf536d19a5a4b72303a78d981f0ec1be0918d4f1312eee980638bf4d81",
+        "lines": 168
+      },
+      {
+        "path": "sources/helm/helm.el",
+        "sha256": "be6eab18a28fff83e41beecab6b69a295bc283916696617d409b1dbf6fe1482f",
+        "lines": 53
+      }
+    ]
+  },
+  {
+    "id": "helm-switch-shell",
+    "url": "https://github.com/jamesnvc/helm-switch-shell.git",
+    "status": "fetched",
+    "commit": "8d7ba1d99ff12a8f1d6ce3b9684ae8aebf494cf3",
+    "commit_date": "2021-07-13T10:40:53-04:00",
+    "files": [
+      {
+        "path": "sources/helm-switch-shell/helm-switch-shell.el",
+        "sha256": "5ea554177433f211696d40e04a53cffd19650b2c8cad3e2cd07c576232040aa6",
+        "lines": 343
+      }
+    ]
+  },
+  {
+    "id": "ht",
+    "url": "https://github.com/Wilfred/ht.el.git",
+    "status": "fetched",
+    "commit": "1c49aad1c820c86f7ee35bf9fff8429502f60fef",
+    "commit_date": "2023-07-02T22:58:45-07:00",
+    "files": [
+      {
+        "path": "sources/ht/ht.el",
+        "sha256": "3b915bdedb1151f61914dc0e680207e801391a7001fb8e6184eb23b8f32d6d32",
+        "lines": 354
+      }
+    ]
+  },
+  {
+    "id": "loop",
+    "url": "https://github.com/Wilfred/loop.el.git",
+    "status": "fetched",
+    "commit": "9db6372791bbd0cf3fa907ed0ae3e6b7bcf6cc57",
+    "commit_date": "2022-02-03T22:07:42-08:00",
+    "files": [
+      {
+        "path": "sources/loop/loop.el",
+        "sha256": "310c59a7c7611486914e776ec68086594ed6556debb41b9f237b63945ba3be26",
+        "lines": 121
+      }
+    ]
+  },
+  {
+    "id": "navorski",
+    "url": "https://github.com/roman/navorski.el.git",
+    "status": "fetched",
+    "commit": "698c1c62da70164aebe9a7a5d034778fbc30ea5b",
+    "commit_date": "2014-12-03T10:24:42-08:00",
+    "files": [
+      {
+        "path": "sources/navorski/navorski.el",
+        "sha256": "22fbe006fab8f71aad802af1a347adc127d6b04aa45ba688924fce195b920d1d",
+        "lines": 764
+      }
+    ]
+  },
+  {
+    "id": "persp-mode",
+    "url": "https://github.com/Bad-ptr/persp-mode.el.git",
+    "status": "fetched",
+    "commit": "703f3b5ad502cfe5b027586611421900bed1fb40",
+    "commit_date": "2026-09-22T11:25:25+03:00",
+    "files": [
+      {
+        "path": "sources/persp-mode/persp-mode.el",
+        "sha256": "7d6f1c164eca3856cc92e080530c01eeb0dc98e3bcda5421f1a0e97a0873d660",
+        "lines": 5362
+      }
+    ]
+  },
+  {
+    "id": "perspective",
+    "url": "https://github.com/nex3/perspective-el.git",
+    "status": "fetched",
+    "commit": "62e6f6de03423d0cede0ea0f821e6fcd3e195c83",
+    "commit_date": "2026-07-17T11:53:52-07:00",
+    "files": [
+      {
+        "path": "sources/perspective/perspective.el",
+        "sha256": "c3cecba12b41ca0bc48aad9b86cdb2e454c9488e809b8089a69e5cb3a856dcf6",
+        "lines": 2442
+      }
+    ]
+  },
+  {
+    "id": "posframe",
+    "url": "https://github.com/tumashu/posframe.git",
+    "status": "fetched",
+    "commit": "bdabcec96f127b2daa2f8bf988a71ec146e301d5",
+    "commit_date": "2026-09-20T15:06:38+08:00",
+    "files": [
+      {
+        "path": "sources/posframe/posframe-benchmark.el",
+        "sha256": "9c9d7689b64c7872b78f7ad57218c112a301f7b0c61b9a69586276e415919fac",
+        "lines": 83
+      },
+      {
+        "path": "sources/posframe/posframe.el",
+        "sha256": "e1a760006accc977b11d70456fb51af71ba8093c905b9e1ce1970614d59084f9",
+        "lines": 1600
+      }
+    ]
+  },
+  {
+    "id": "project-shells",
+    "url": "https://github.com/hying-caritas/project-shells.git",
+    "status": "fetched",
+    "commit": "15f70d99b6d5f078f490ceb64b6f13c000b37e24",
+    "commit_date": "2023-10-05T14:41:41+08:00",
+    "files": [
+      {
+        "path": "sources/project-shells/project-shells.el",
+        "sha256": "f0b4aacf3bb90d20e6beb9db81d5cf37551bb94a56d5cca99b12c49e3acf6fbf",
+        "lines": 386
+      }
+    ]
+  },
+  {
+    "id": "quick-shell-keybind",
+    "url": "https://github.com/eyeinsky/quick-shell-keybind.git",
+    "status": "fetched",
+    "commit": "eae4ef3673794a202f097b1619ba7cfb79424dfc",
+    "commit_date": "2023-09-27T16:21:32+03:00",
+    "files": [
+      {
+        "path": "sources/quick-shell-keybind/quick-shell-keybind.el",
+        "sha256": "950f2c12e48de5c60212e54812e8dcd9e46e4bd462f3dacde079ba9485af9c52",
+        "lines": 82
+      }
+    ]
+  },
+  {
+    "id": "rswitcher",
+    "url": "https://github.com/DamienCassou/rswitcher.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/rswitcher'...\nfatal: could not read Username for 'https://github.com': No such device or address\n",
+    "files": []
+  },
+  {
+    "id": "s",
+    "url": "https://github.com/magnars/s.el.git",
+    "commit": "d7c04b84d03481a1ed62ee13dbe595224ccbe57c",
+    "commit_date": "2026-08-02T08:07:54+07:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/s/dev/ert.el",
+        "sha256": "594942dcedf723bddcefb7e1a8f2462bdd41e04b6a72cdc3d3c6541260502e3a",
+        "lines": 2544
+      },
+      {
+        "path": "sources/s/dev/examples-to-docs.el",
+        "sha256": "b57478e2d6eed4cbf50d05ce90bbe4af6987a2d504c1db22a6eafaca720d2fb3",
+        "lines": 142
+      },
+      {
+        "path": "sources/s/dev/examples-to-tests.el",
+        "sha256": "4a8dcfad05bc546fdf9b60a9ae95305242ea764fc5b24e85fad078fc70462ccc",
+        "lines": 22
+      },
+      {
+        "path": "sources/s/dev/examples.el",
+        "sha256": "1ec5f9515ae7bb92fca3037e21cb18be9f2becc00622f358752ee71c4d8d8fba",
+        "lines": 539
+      },
+      {
+        "path": "sources/s/dev/undercover-init.el",
+        "sha256": "bfebae1d3f8812ce5ee127f3c456fd6d2b9c4dccfa4d20b9bfcb6a0f53136967",
+        "lines": 2
+      },
+      {
+        "path": "sources/s/s.el",
+        "sha256": "2fbe9c552c7bc634b1007efa98f5c25a15e18ca18e3863d28ceb4cc9dbc09f38",
+        "lines": 792
+      }
+    ]
+  },
+  {
+    "id": "session",
+    "url": "https://github.com/emacsorphanage/session.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/session'...\nfatal: could not read Username for 'https://github.com': No such device or address\n",
+    "files": []
+  },
+  {
+    "id": "shell-command-x",
+    "url": "https://github.com/elizagamedev/shell-command-x.el.git",
+    "status": "fetched",
+    "commit": "d2fe4d08be306d6570f3c316ea06b0e6931ea5d5",
+    "commit_date": "2023-12-13T16:01:37-08:00",
+    "files": [
+      {
+        "path": "sources/shell-command-x/shell-command-x.el",
+        "sha256": "9a72709abd36d86d55aab36ca1a411390a2df7bcaae5c889066ff7489abccd6b",
+        "lines": 307
+      }
+    ]
+  },
+  {
+    "id": "shell-switcher",
+    "url": "https://github.com/DamienCassou/shell-switcher.git",
+    "status": "fetched",
+    "commit": "4c96dc27afb519bdbf7bbe42d49a51497f078192",
+    "commit_date": "2024-12-29T17:57:00+01:00",
+    "files": [
+      {
+        "path": "sources/shell-switcher/features/step-definitions/shell-switcher-steps.el",
+        "sha256": "095fb5d6a0d5f06fd1b3f90963f557b5fcfa58d22b71d7649d120b30b5d8add4",
+        "lines": 27
+      },
+      {
+        "path": "sources/shell-switcher/features/support/env.el",
+        "sha256": "871343e380b13009d4a5e6eeb9c587b07e79b2fd1617c88f8a8550e4b6f561a5",
+        "lines": 33
+      },
+      {
+        "path": "sources/shell-switcher/rswitcher.el",
+        "sha256": "be8e55cb07fec0496e06bbb607dbb45b0f9169952f60a359ee7d78801ab265a8",
+        "lines": 195
+      },
+      {
+        "path": "sources/shell-switcher/shell-switcher.el",
+        "sha256": "679efaa0a70b3f1a4093e68e47aa7120a164ba3e643fd0a85392fac5b47e93e7",
+        "lines": 381
+      }
+    ]
+  },
+  {
+    "id": "shell-toggle",
+    "url": "https://github.com/knu/shell-toggle.el.git",
+    "status": "fetched",
+    "commit": "0d01bd9a780fdb7fe6609c552523f4498649a3b9",
+    "commit_date": "2015-02-26T23:11:29+09:00",
+    "files": [
+      {
+        "path": "sources/shell-toggle/shell-toggle.el",
+        "sha256": "b3a98ed2dc228df8f5700219b2346047349ecd45b161ca6cd1f516e23a5041c8",
+        "lines": 348
+      }
+    ]
+  },
+  {
+    "id": "shell-toggle-plus",
+    "url": "https://github.com/xcodebuild/shell-toggle-plus.git",
+    "status": "fetched",
+    "commit": "78200c1da8a4d9f2e6559a7e032702f4cb37eb09",
+    "commit_date": "2014-08-01T07:09:23+08:00",
+    "files": [
+      {
+        "path": "sources/shell-toggle-plus/shell-toggle-plus.el",
+        "sha256": "a936fc4821ec92d3c20297403568547cf183264328ea96327e9f817ea0e3f228",
+        "lines": 310
+      }
+    ]
+  },
+  {
+    "id": "simple-screen",
+    "url": "https://github.com/wachikun/simple-screen.git",
+    "status": "fetched",
+    "commit": "66eb5ddab259025ef5790084ca33018c266d6940",
+    "commit_date": "2024-12-28T10:13:56+09:00",
+    "files": [
+      {
+        "path": "sources/simple-screen/simple-screen.el",
+        "sha256": "a6b5372ae7b50545ad8f7171d9053dc56e2b840177019ae63748c0d578681f05",
+        "lines": 222
+      }
+    ]
+  },
+  {
+    "id": "sticky-shell",
+    "url": "https://github.com/andrewdea/sticky-shell.git",
+    "status": "fetched",
+    "commit": "2aec19f60539faf21f567e89701a8e28492eccd1",
+    "commit_date": "2024-09-28T00:27:47-04:00",
+    "files": [
+      {
+        "path": "sources/sticky-shell/sticky-shell.el",
+        "sha256": "e6107d3cbc44989c62bbac5ec5fe4fd2119fadf9a5232b82223faa85d0bf94c1",
+        "lines": 277
+      }
+    ]
+  },
+  {
+    "id": "term+key-intercept",
+    "url": "https://github.com/tarao/term-plus-ki-el.git",
+    "status": "fetched",
+    "commit": "2d98e976877a5ca71500ab57377b6e5a129fa2f3",
+    "commit_date": "2022-05-20T19:13:37+09:00",
+    "files": [
+      {
+        "path": "sources/term+key-intercept/term+key-intercept.el",
+        "sha256": "cea2bb0aa6e1546d9d17145ecce14cde45f7f1e7ce89a5250bf6dad2f0852c24",
+        "lines": 59
+      }
+    ]
+  },
+  {
+    "id": "term-alert",
+    "url": "https://codeberg.org/calliecameron/term-alert.git",
+    "status": "fetched",
+    "commit": "2236864975b9909e8499780a7fc4d92022c17b61",
+    "commit_date": "2026-09-18T19:38:50+02:00",
+    "files": [
+      {
+        "path": "sources/term-alert/term-alert-pkg.el",
+        "sha256": "6585dee0ed0de3659079eb09ef440c382b9b51711f1a1ef40277d95886112b96",
+        "lines": 5
+      },
+      {
+        "path": "sources/term-alert/term-alert.el",
+        "sha256": "726cd817d75b5a32e3669c2108987dfa2783c27a48c275055a4b87b5d6a780ff",
+        "lines": 230
+      }
+    ]
+  },
+  {
+    "id": "term-cmd",
+    "url": "https://codeberg.org/calliecameron/term-cmd.git",
+    "status": "fetched",
+    "commit": "4799725894028c2e693d34472715130bdefc529b",
+    "commit_date": "2026-09-18T19:39:19+02:00",
+    "files": [
+      {
+        "path": "sources/term-cmd/term-cmd-pkg.el",
+        "sha256": "7ac4a2b01718740c137eaca594b7905e1217072f5a6a9504538536254d1bd05d",
+        "lines": 5
+      },
+      {
+        "path": "sources/term-cmd/term-cmd.el",
+        "sha256": "a545fea82bcc9bfa4f1869d96f593aa6754aaa48bbc592ce73583a4be8abb168",
+        "lines": 240
+      }
+    ]
+  },
+  {
+    "id": "term-mux",
+    "url": "https://github.com/merrickluo/term-mux.el.git",
+    "status": "fetched",
+    "commit": "0b1770318c892de0d9dce5a5eb6cde38b9c03d78",
+    "commit_date": "2026-07-06T21:10:14+08:00",
+    "files": [
+      {
+        "path": "sources/term-mux/term-mux-frame.el",
+        "sha256": "479498a18da3aecea8544a75bc0b695283aca258c480c5419954ade2d2de8440",
+        "lines": 79
+      },
+      {
+        "path": "sources/term-mux/term-mux-test.el",
+        "sha256": "92e1926bf41ea14facef5b65da7f4fd2d1378adf4f4c135e5ffcf892beb5f54d",
+        "lines": 207
+      },
+      {
+        "path": "sources/term-mux/term-mux.el",
+        "sha256": "520a23d01a545148d505d11bed3f8c480e62f333939dc653018051e6e166928c",
+        "lines": 356
+      }
+    ]
+  },
+  {
+    "id": "term-plus-xterm",
+    "url": "https://github.com/tarao/term-plus-el.git",
+    "status": "fetched",
+    "commit": "c3c9239b339c127231860de43abfa08c44c0201a",
+    "commit_date": "2017-05-09T09:17:18+09:00",
+    "files": [
+      {
+        "path": "sources/term-plus-xterm/term+.el",
+        "sha256": "59e70d3124bc03246bb8df59e01672705c7596b3db20e381c9f7447c5a19d41f",
+        "lines": 321
+      },
+      {
+        "path": "sources/term-plus-xterm/term+edit.el",
+        "sha256": "fc8119fc4363e451a73af76d6898d999d73f634643f237e36d0c3b4b9f4a8b2c",
+        "lines": 152
+      },
+      {
+        "path": "sources/term-plus-xterm/term+file-transfer.el",
+        "sha256": "35a57b6fbb5f45a7196487821f14ca97b238161dc1a1d4aa5f7de07fbbef17c1",
+        "lines": 205
+      },
+      {
+        "path": "sources/term-plus-xterm/term+input.el",
+        "sha256": "c38b584f3d2b9e10764e6cc9a8333a8a73babcb5e2558dd6d5e84bc4824ad03f",
+        "lines": 230
+      },
+      {
+        "path": "sources/term-plus-xterm/term+logging.el",
+        "sha256": "cc63dd26a1ceaef521f2d6cbf31b9b821a29f5871edbe7f0d67a26a3631972d6",
+        "lines": 350
+      },
+      {
+        "path": "sources/term-plus-xterm/term+shell-history.el",
+        "sha256": "7e52c2966f7e931502d32116dfb0e286b608f3325051be9dcb136f9934297281",
+        "lines": 106
+      },
+      {
+        "path": "sources/term-plus-xterm/term+vars.el",
+        "sha256": "3d68335b9dc70bbed3e27c8c510152d21b7b6879a9b85c7baaf2fbe927c82733",
+        "lines": 305
+      },
+      {
+        "path": "sources/term-plus-xterm/xterm-256color.el",
+        "sha256": "1d56f8524e571035401145ea8af3e5b587670bb1d18c1a77fcf78ba967ef97c2",
+        "lines": 564
+      }
+    ]
+  },
+  {
+    "id": "term-run",
+    "url": "https://github.com/10sr/term-run-el.git",
+    "status": "fetched",
+    "commit": "0fd135d55fcf864598b1fb8dd880833a1a322910",
+    "commit_date": "2020-01-28T16:02:11+09:00",
+    "files": [
+      {
+        "path": "sources/term-run/term-run.el",
+        "sha256": "f27b7b3d3e22a437557561df4972673f99f772925e6b5c1213a74814761222a4",
+        "lines": 167
+      }
+    ]
+  },
+  {
+    "id": "term-sessions",
+    "url": "https://github.com/ArthurHeymans/emacs-term-sessions.git",
+    "status": "fetched",
+    "commit": "29084b6a8a73b612f60a73ef798303384bd44215",
+    "commit_date": "2026-09-08T17:06:33+02:00",
+    "files": [
+      {
+        "path": "sources/term-sessions/term-sessions-actions.el",
+        "sha256": "fae7738c6e1410b7e137d809e29e9c34d50d1e6e4a4d3f1351fe3b5fbebf5bba",
+        "lines": 589
+      },
+      {
+        "path": "sources/term-sessions/term-sessions-consult.el",
+        "sha256": "9bebeacdb6c4168cea39fe86a55381ae8ac8c3d0ba5576110f7de4da703c13fc",
+        "lines": 288
+      },
+      {
+        "path": "sources/term-sessions/term-sessions-core.el",
+        "sha256": "0283a675b8e58d8e729c8c796a440ee419dfaaa371240cbe28249f6d3e2f0a76",
+        "lines": 285
+      },
+      {
+        "path": "sources/term-sessions/term-sessions-frontends.el",
+        "sha256": "da343aa6ac6d8a416c1796792b85ee4e36f30729a38ebe1c8e85ce3fb6228cb1",
+        "lines": 470
+      },
+      {
+        "path": "sources/term-sessions/term-sessions-list.el",
+        "sha256": "ec12953e9afe1537443bf55e564d6c63f4979ea3ea04e040b9bfedef80c32b5c",
+        "lines": 1071
+      },
+      {
+        "path": "sources/term-sessions/term-sessions-org.el",
+        "sha256": "2a24ebfd71c60c241fe3e9046e3b42bc1d791ad9e2e3f3c060163b7c4d2266ff",
+        "lines": 556
+      },
+      {
+        "path": "sources/term-sessions/term-sessions-tests.el",
+        "sha256": "c33dad0f6753d752d1bc0a8da232b61067e90d71b83a71657ce491e88e8c77d1",
+        "lines": 1798
+      },
+      {
+        "path": "sources/term-sessions/term-sessions-tramp.el",
+        "sha256": "757ef11ae8a672917c332372023ef0d982575716f2101cff164d992a7dfe4022",
+        "lines": 205
+      },
+      {
+        "path": "sources/term-sessions/term-sessions-zmx.el",
+        "sha256": "f345e6ffaa6b0fee80eabe01c2090a35a2e76634ea4828195ecc7b797ed06c16",
+        "lines": 518
+      },
+      {
+        "path": "sources/term-sessions/term-sessions.el",
+        "sha256": "ea0a1704069a231ef5fce30b0408d782ecf5d185f5c269d513cc9a34c49bc6d2",
+        "lines": 33
+      }
+    ]
+  },
+  {
+    "id": "termint",
+    "url": "https://github.com/milanglacier/termint.el.git",
+    "status": "fetched",
+    "commit": "bf97d0a417902417febc2b6925152dab5610057f",
+    "commit_date": "2026-08-04T01:51:01-04:00",
+    "files": [
+      {
+        "path": "sources/termint/.dir-locals.el",
+        "sha256": "6f8baf657d187ca7a6e236c8e4f0657344c42f67f7e5c2ddec4236ba4c884990",
+        "lines": 5
+      },
+      {
+        "path": "sources/termint/termint.el",
+        "sha256": "73390ad74c81199727268436efe2e75ed2403e4dcf62aedcba83b16e0fd9f5ae",
+        "lines": 866
+      }
+    ]
+  },
+  {
+    "id": "tmux-control-mode",
+    "url": "https://github.com/stephenjayakar/emacs-tmux-control-mode.git",
+    "status": "fetched",
+    "commit": "d2a93a336f7d6a4a770cb9e740d5e6cfb602843b",
+    "commit_date": "2026-06-23T15:17:12-07:00",
+    "files": [
+      {
+        "path": "sources/tmux-control-mode/tmux-cc.el",
+        "sha256": "3c5af0dbe7e5f184ba4d0fc021bee4986f5d4d8f59d7714027155d253f8d9e3a",
+        "lines": 1901
+      }
+    ]
+  },
+  {
+    "id": "tmux-runner",
+    "url": "https://github.com/joaofnds/emacs-tmux-runner.git",
+    "status": "fetched",
+    "commit": "1dfdefd2569848024c581a933e3ebc09b93b41e3",
+    "commit_date": "2022-09-17T12:28:18-03:00",
+    "files": [
+      {
+        "path": "sources/tmux-runner/emacs-tmux-runner-test.el",
+        "sha256": "94d54a76194cae406d7aa4c953ad1fe75d64d6819ba9897da4f70f24e4dd1b78",
+        "lines": 86
+      },
+      {
+        "path": "sources/tmux-runner/emacs-tmux-runner.el",
+        "sha256": "0efa641ee740c2403ac1137d06b83cc3d5983cf40f8fa4e2e41ec5af381ce9c2",
+        "lines": 215
+      },
+      {
+        "path": "sources/tmux-runner/test-helper.el",
+        "sha256": "f3a85075f185a88b96f9b30685e706f74da38ad666a7054fcff69b6d112c5adf",
+        "lines": 50
+      }
+    ]
+  },
+  {
+    "id": "toggle-term",
+    "url": "https://github.com/justinlime/toggle-term.el.git",
+    "status": "fetched",
+    "commit": "ebfce6283e53fda7f69ccda73109a02b646623af",
+    "commit_date": "2026-08-20T05:11:49-05:00",
+    "files": [
+      {
+        "path": "sources/toggle-term/toggle-term.el",
+        "sha256": "77e2843f2fef504694e93054dbe28151e7766174c7d5e4135f1ef05d4ab8b1c8",
+        "lines": 561
+      }
+    ]
+  },
+  {
+    "id": "tramp-term",
+    "url": "https://github.com/cuspymd/tramp-term.el.git",
+    "status": "fetched",
+    "commit": "276c4d1cb79cc2685df89a02209e2082f74167ea",
+    "commit_date": "2026-07-01T22:51:41+09:00",
+    "files": [
+      {
+        "path": "sources/tramp-term/tramp-term.el",
+        "sha256": "9efae69ba7c5991323ca40b9a7ac7a4738b947ea419f050179a8cfa2353c058e",
+        "lines": 293
+      }
+    ]
+  },
+  {
+    "id": "vterm-editor",
+    "url": "https://git.andros.dev/andros/vterm-editor.el.git",
+    "status": "fetched",
+    "commit": "239782cdf2411aed27a4f053c30e05c90047351b",
+    "commit_date": "2026-03-30T10:45:31+02:00",
+    "files": [
+      {
+        "path": "sources/vterm-editor/vterm-editor.el",
+        "sha256": "49b0a984b4a418d90c8088acd69c1458c5197738b478adc45f85f4862a9c9f74",
+        "lines": 93
+      }
+    ]
+  },
+  {
+    "id": "workgroups",
+    "url": "https://github.com/tlh/workgroups.el.git",
+    "status": "fetched",
+    "commit": "9572b3492ee09054dc329f64ed846c962b395e39",
+    "commit_date": "2011-07-26T09:41:02-07:00",
+    "files": [
+      {
+        "path": "sources/workgroups/workgroups.el",
+        "sha256": "521cab72fc43de5869f6272b60416762aea467d8978bacf007ead263547e9693",
+        "lines": 2247
+      }
+    ]
+  },
+  {
+    "id": "workgroups2",
+    "url": "https://github.com/pashinin/workgroups2.git",
+    "status": "fetched",
+    "commit": "aff9d76b7be5eed33f30be2fabf111818749cbd5",
+    "commit_date": "2023-03-29T00:31:43+11:00",
+    "files": [
+      {
+        "path": "sources/workgroups2/src/workgroups2-sdk.el",
+        "sha256": "f5b87f716378e5296ee58b279468fa6b7f8a195a2eda224cf91ea5d2e1b468d0",
+        "lines": 209
+      },
+      {
+        "path": "sources/workgroups2/src/workgroups2-support.el",
+        "sha256": "616adf1e0add83e0b2cbe36a56a2cebeeddfbd64805ae3d3125f356bc65ba468",
+        "lines": 572
+      },
+      {
+        "path": "sources/workgroups2/src/workgroups2.el",
+        "sha256": "dccf5c1ef35f520906c6ce0759745aee88e68c68cacd13b3466697463fbe6831",
+        "lines": 1846
+      }
+    ]
+  },
+  {
+    "id": "xterm-color",
+    "url": "https://github.com/atomontage/xterm-color.git",
+    "status": "fetched",
+    "commit": "ffdad85e584dfc0857f2a1fb970f5ef0f5d31ba3",
+    "commit_date": "2026-06-03T18:16:57-04:00",
+    "files": [
+      {
+        "path": "sources/xterm-color/xterm-color.el",
+        "sha256": "f695e1bb2d3cb5b78cf9a700fca6bfa27702007aaf2b7e9070835e7ca4d33d79",
+        "lines": 951
+      }
+    ]
+  },
+  {
+    "id": "auto-complete",
+    "url": "https://github.com/auto-complete/auto-complete.git",
+    "status": "fetched",
+    "commit": "8419bec94f41ae78518d948aec0fc761534d7771",
+    "commit_date": "2026-06-19T01:32:47-07:00",
+    "files": [
+      {
+        "path": "sources/auto-complete/auto-complete-config.el",
+        "sha256": "b1aa1772fe70de065ae60666b0fb6db7f852d67e907bee1aa1c69fe7e74abec1",
+        "lines": 584
+      },
+      {
+        "path": "sources/auto-complete/auto-complete.el",
+        "sha256": "1fa553ae554e65c3e7a2499a403c598306760937d08c5953f430ddb6437c5ef1",
+        "lines": 2262
+      },
+      {
+        "path": "sources/auto-complete/etc/install.el",
+        "sha256": "2d76cf7124553bb9420d0051558c7ede485231ab4b0d4f02cdab8064787269ce",
+        "lines": 45
+      }
+    ]
+  },
+  {
+    "id": "buffer-manage",
+    "url": "https://github.com/plandes/buffer-manage.git",
+    "status": "fetched",
+    "commit": "f32c756a261aebca0a864e41958097b30690e171",
+    "commit_date": "2026-07-12T20:21:02-05:00",
+    "files": [
+      {
+        "path": "sources/buffer-manage/buffer-manage.el",
+        "sha256": "09b10c9d44129b70e849d5f8541e3f4f8ca5ca2b520757bb86d211b046415d76",
+        "lines": 815
+      },
+      {
+        "path": "sources/buffer-manage/config-manage-base.el",
+        "sha256": "cbb15ee128409942311118be7ff53031bd3e0c63a1b22ba5ed31a32892216705",
+        "lines": 768
+      },
+      {
+        "path": "sources/buffer-manage/config-manage-declare.el",
+        "sha256": "f9c2b40013423b1bf8a9e48b60604cb4cdf45a960c062b069a9c5ce8cea30d7e",
+        "lines": 117
+      },
+      {
+        "path": "sources/buffer-manage/config-manage-mode.el",
+        "sha256": "456f7c5192ae75bd6756acb9ec87f19aea6399b4fa9eaa672ab0076d6b9bfdeb",
+        "lines": 334
+      },
+      {
+        "path": "sources/buffer-manage/config-manage-prop.el",
+        "sha256": "8e7933083e1eed9c787bedd9054686bec5ca253d568122ae27b50baeb5869476",
+        "lines": 606
+      },
+      {
+        "path": "sources/buffer-manage/config-manage.el",
+        "sha256": "2cfad5680af7232049d30c5c5e622a6736f636131ef2ea4c4bc2fbfec8364058",
+        "lines": 59
+      }
+    ]
+  },
+  {
+    "id": "circe",
+    "url": "https://github.com/emacs-circe/circe.git",
+    "status": "fetched",
+    "commit": "50ac3bc96a0db359a877162a1033b41ba0d01bb8",
+    "commit_date": "2026-09-16T22:07:44+02:00",
+    "files": [
+      {
+        "path": "sources/circe/.dir-locals.el",
+        "sha256": "d0f16849d830ea6c9f4bf4dea4f3885dd06ece1bdc3418ffb9dd9b7b94b03dc1",
+        "lines": 4
+      },
+      {
+        "path": "sources/circe/circe-chanop.el",
+        "sha256": "a9f371edefe97581f9853d334313ee99a537ec6d56fb18ef27756681aab64234",
+        "lines": 122
+      },
+      {
+        "path": "sources/circe/circe-color-nicks.el",
+        "sha256": "14c9c4612a67bfc47619e9e267236b393542716bc39c09c074fb6cf8bf6c654c",
+        "lines": 339
+      },
+      {
+        "path": "sources/circe/circe-compat.el",
+        "sha256": "d257bf5dd48af6e0517611e5ccc78e2a310811b9817e8f5e24d011203ba8ac37",
+        "lines": 98
+      },
+      {
+        "path": "sources/circe/circe-display-images.el",
+        "sha256": "904897f40ad6a2f7f0bb279a1e660db3bed39c74418d3fa8ee9022febd21a0f4",
+        "lines": 214
+      },
+      {
+        "path": "sources/circe/circe-lagmon.el",
+        "sha256": "427b2a7daebff577df1e32bdfe3d15b316a94ca5f7676c33a7388af329c78062",
+        "lines": 243
+      },
+      {
+        "path": "sources/circe/circe-new-day-notifier.el",
+        "sha256": "187dd5230f97fbf4eff776cd03765aca63fc6868b7efae25f656a24da61b8a8a",
+        "lines": 87
+      },
+      {
+        "path": "sources/circe/circe-pingmon.el",
+        "sha256": "bb995c3da0b55ce5c2fdb2aaf238cb24cb91de4d9bf61adfc8d5bef92d5ae415",
+        "lines": 238
+      },
+      {
+        "path": "sources/circe/circe.el",
+        "sha256": "c92c898b1f1480908f32d91828838f195fe23d11013e4f843d0dc0941df7cddb",
+        "lines": 3831
+      },
+      {
+        "path": "sources/circe/irc.el",
+        "sha256": "d03bd0fc13c0620e96ceb80ad44349df77f6c45c5250bea94964338220993c1a",
+        "lines": 1593
+      },
+      {
+        "path": "sources/circe/lcs.el",
+        "sha256": "b6637cc7c476e41b6f93d3eab38d40beb1ca73d0942c06a9eac480401c4e51ab",
+        "lines": 202
+      },
+      {
+        "path": "sources/circe/lui-autopaste.el",
+        "sha256": "bc80037aaf683c57ddf41b4b0a0e2e3cabc25758efb211b122d33b0d6bdf7071",
+        "lines": 150
+      },
+      {
+        "path": "sources/circe/lui-format.el",
+        "sha256": "1a85d63e30d8d9199db3bf93d8a887aa20ffca3e4cb06b13dfc3d5fd08553b36",
+        "lines": 198
+      },
+      {
+        "path": "sources/circe/lui-irc-colors.el",
+        "sha256": "8b0a6e4fdd92c6e0e69ada877e3cf53bcb93ccf0c6a2bd21a1374a27a578f9ce",
+        "lines": 245
+      },
+      {
+        "path": "sources/circe/lui-logging.el",
+        "sha256": "afa0bee5f86672a32b558109ddef71cf697edd2c8f9104aa31bd5e8083f7f179",
+        "lines": 200
+      },
+      {
+        "path": "sources/circe/lui-track-bar.el",
+        "sha256": "62e1160839733a6bdb7cfbad846309f33a0725519411c44fa44b109f9243564b",
+        "lines": 60
+      },
+      {
+        "path": "sources/circe/lui-track.el",
+        "sha256": "84de1c435cb06828c6668c88a360d04262ac7fd6073dcdb47974c07b5039a346",
+        "lines": 152
+      },
+      {
+        "path": "sources/circe/lui.el",
+        "sha256": "c05f18df9c28cb8e6d1eecda9cff0defed71bb35c0b5a42c66379ce2b60caaed",
+        "lines": 1494
+      },
+      {
+        "path": "sources/circe/make-tls-process.el",
+        "sha256": "cb83bd6d560429c6c0b7824eba15f7d12864562629dec419c135a0ee49550ea4",
+        "lines": 195
+      },
+      {
+        "path": "sources/circe/shorten.el",
+        "sha256": "021b2e06ed7d21c3e270ee009077a8a6d69cad0b61f0538981d87a024ac888fc",
+        "lines": 223
+      },
+      {
+        "path": "sources/circe/tracking.el",
+        "sha256": "9c30a1aa5fc0f4627a2cc11bcc05c197e6c549b826b86a4e2342f7353bda95f0",
+        "lines": 451
+      }
+    ]
+  },
+  {
+    "id": "cooked-build",
+    "url": "https://github.com/vodik/cooked.git",
+    "status": "fetched",
+    "commit": "dd8e9fcc3c09d85d9dd598682dbe6390bd138262",
+    "commit_date": "2026-09-06T22:34:46-04:00",
+    "files": [
+      {
+        "path": "sources/cooked-build/lisp/cooked-command-decorations.el",
+        "sha256": "8da13bf71ca3b3639b3e5f26f4dbc036d4f61c8186e7a595078061c172bb6c81",
+        "lines": 492
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-command.el",
+        "sha256": "7001c30db211934f5aa992bb80be0efc2e19be6f5db9d109e0bf65862338d835",
+        "lines": 413
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-completion.el",
+        "sha256": "3665457711da28334fed57f934281cc3326e09458fdcb887da649c2dfe228fbe",
+        "lines": 121
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-deco.el",
+        "sha256": "859040a06ab2b0e0f384b0f98ba371896658b8ea11e5885e8232713e0d275114",
+        "lines": 1234
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-evil.el",
+        "sha256": "6ed7fb07a6a162416fc5ecf79f316fc8df59c47b1678eb7d871311f0943564b4",
+        "lines": 568
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-face.el",
+        "sha256": "52b5e6e4b23de4c2c3bb507fe2ac121d31990a2ce969464d85de40f995f83451",
+        "lines": 332
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-file-link.el",
+        "sha256": "c1d27a512d11d820c815458f030f22fca8bac4ab0d2d9d0975792400b4522be0",
+        "lines": 266
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-glyph.el",
+        "sha256": "29eeacd4278fccb36f83103758d9c6956910bf33fcb0f88ab10104213fda5b82",
+        "lines": 549
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-keys.el",
+        "sha256": "cef09bf67a9358f0769b99ddabcb819f12bf25d62a3e63a7ab877618f6276901",
+        "lines": 1210
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-link.el",
+        "sha256": "10c7ca848a73a465bf9d65328c848c53d0033ff130bf6bb9971831fda5313443",
+        "lines": 398
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-mode-line.el",
+        "sha256": "7b9973a4074761f86917f0ab36b927e15e123b5e6963534568d02294024f5ca4",
+        "lines": 345
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-mode.el",
+        "sha256": "a03cf4ff2a2a81441ba5b4d13a1ff5d9011d6257b0fd2c4823b9f77c72112130",
+        "lines": 2369
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-module.el",
+        "sha256": "ec3fbb9f1584ae8cf71b81812ce2fcc364991b618ac2bce166eb9151bfe17455",
+        "lines": 315
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-mouse.el",
+        "sha256": "52a66a37e0148f4e9f6a3af271cba0a4624bf37429c3f007d113eaa175a12a33",
+        "lines": 536
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-next-error.el",
+        "sha256": "8ac78868432fe911f52d78075037f06ff4421245e96bb133177be375904af38a",
+        "lines": 189
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-osc-eval.el",
+        "sha256": "59c2b9af55b023e9d6eb58a29dfec59cecfed52aa842a4da9d2d76762296dc40",
+        "lines": 148
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-osc.el",
+        "sha256": "bf03a4f6dcd58e254d1d28af654a6ed9e0aeaaaae114b2fa6340f75de350f01e",
+        "lines": 583
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-process.el",
+        "sha256": "f03bcf6f7cc597a93397459d9eeb569d3b91c58341268f1f82a3b55cb07bdc7a",
+        "lines": 734
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-project.el",
+        "sha256": "1362dd0044c56b302b044366a529efc2e809b22fa50df9bd0849c1bc5fec1b90",
+        "lines": 145
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-render.el",
+        "sha256": "6cb3e63fa32929635e3af5cba11417c74457c720411339065713e86d0d41ed4e",
+        "lines": 664
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-scrollback.el",
+        "sha256": "7efe203870db17ce47df59819b13712275dbd642078c29ef17ef313fa7aef567",
+        "lines": 287
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-secret.el",
+        "sha256": "37d7d62c2fd7f95b7fc16f633603d8ecc32f56b2c36a0e00a8c1611a28cb9afe",
+        "lines": 210
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-shell-completion.el",
+        "sha256": "8bd9f56c3d1c795bf71c46ee101426d98903003404c5d034f6740882658f1054",
+        "lines": 401
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-shell-integration.el",
+        "sha256": "895970fcb72442186548e44840fa7514507c9b8d93808eab72b2c8f7188c7bfb",
+        "lines": 272
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked-util.el",
+        "sha256": "b58f09c52e9184fd223a5a9a8f723b5ab92d1cf88629e0eaf27ff53308c2ace2",
+        "lines": 395
+      },
+      {
+        "path": "sources/cooked-build/lisp/cooked.el",
+        "sha256": "47b4914610f237143a8f84bb693445b40b86fffb6df35aa9f0b606a7e3596de0",
+        "lines": 2858
+      }
+    ]
+  },
+  {
+    "id": "friendly-tramp-path",
+    "url": "https://github.com/p3r7/friendly-tramp-path.git",
+    "status": "fetched",
+    "commit": "be572b8953b9e5a3a35c30bb64c2936d3e9802ba",
+    "commit_date": "2020-05-02T12:32:09+02:00",
+    "files": [
+      {
+        "path": "sources/friendly-tramp-path/friendly-tramp-path.el",
+        "sha256": "09b8ed93b09b3e900a2da3fde148d3cb04b096d20fe495612d6b957e94b03962",
+        "lines": 207
+      }
+    ]
+  },
+  {
+    "id": "log4e",
+    "url": "https://github.com/aki2o/log4e.git",
+    "status": "fetched",
+    "commit": "6d71462df9bf595d3861bfb328377346aceed422",
+    "commit_date": "2024-01-23T22:13:06+09:00",
+    "files": [
+      {
+        "path": "sources/log4e/log4e.el",
+        "sha256": "259943d37864f7d5b814d63c0f00c80b58b333fea8ae374d59948b8f5d0dad44",
+        "lines": 557
+      }
+    ]
+  },
+  {
+    "id": "migemo",
+    "url": "https://github.com/emacs-jp/migemo.git",
+    "status": "fetched",
+    "commit": "c0d84b4092ddade01110ba875559bfd454862ac2",
+    "commit_date": "2025-06-16T12:09:37+09:00",
+    "files": [
+      {
+        "path": "sources/migemo/migemo.el",
+        "sha256": "9f4eb360d70a611553c524d4442d00e8e52a9911d5089c4b2a67e999d08a46ec",
+        "lines": 733
+      }
+    ]
+  },
+  {
+    "id": "names",
+    "url": "https://github.com/Malabarba/names.git",
+    "status": "fetched",
+    "commit": "45a272fae915148d9a74d4cb3c39917b272ee9c3",
+    "commit_date": "2022-12-27T15:25:45-03:00",
+    "files": [
+      {
+        "path": "sources/names/names-dev.el",
+        "sha256": "2e0219caa89692fa365746a71d5ebe24353ffe9ff15bec668ebb27bc8345f3f0",
+        "lines": 254
+      },
+      {
+        "path": "sources/names/names.el",
+        "sha256": "09d11a1f8e2231a795f2dc1558d69b926aee3219d49f6a48085ae72c48a1566a",
+        "lines": 1317
+      }
+    ]
+  },
+  {
+    "id": "popwin",
+    "url": "https://github.com/emacsorphanage/popwin.git",
+    "status": "fetched",
+    "commit": "b67254bef763ffa5ab781460bc47d6adf6f87127",
+    "commit_date": "2026-06-19T21:54:14+08:00",
+    "files": [
+      {
+        "path": "sources/popwin/misc/popwin-browse-kill-ring.el",
+        "sha256": "94ecf843afe0008d2c737da6c61a90759a84beb778145b3d0b1928c362274d50",
+        "lines": 35
+      },
+      {
+        "path": "sources/popwin/misc/popwin-pp.el",
+        "sha256": "efae8af03803eebb88d75bf9ca4dd72037e3f0c64000bbab9193719622b8a535",
+        "lines": 42
+      },
+      {
+        "path": "sources/popwin/misc/popwin-term.el",
+        "sha256": "617c33f80e540ba67b1815b6b66049657016159ceb8a57dcb607be3ead76a406",
+        "lines": 38
+      },
+      {
+        "path": "sources/popwin/misc/popwin-w3m.el",
+        "sha256": "381d390e005375427803d84762f43d99f28071858ae2aa6ac7edafd07edfe27f",
+        "lines": 52
+      },
+      {
+        "path": "sources/popwin/misc/popwin-yatex.el",
+        "sha256": "21f09b4882d3269f83a78b4d69ff672c1525a0b742c47772abbb8ccd29e71374",
+        "lines": 40
+      },
+      {
+        "path": "sources/popwin/popwin.el",
+        "sha256": "60dcfb4e0cc26cbd4566124f257fcd72781440962c25973438e21482d267ce78",
+        "lines": 1121
+      }
+    ]
+  },
+  {
+    "id": "readline-complete",
+    "url": "https://github.com/monsanto/readline-complete.el.git",
+    "status": "fetched",
+    "commit": "30c020c37b2741160cc37e656e13c85d826a0ebf",
+    "commit_date": "2015-07-08T10:37:33-04:00",
+    "files": [
+      {
+        "path": "sources/readline-complete/readline-complete.el",
+        "sha256": "77b23a4e7cf3615c5c4020986e661cdec8468f2dffa0da9e797a66d8b180df16",
+        "lines": 309
+      }
+    ]
+  },
+  {
+    "id": "tab-group",
+    "url": "https://github.com/tarao/tab-group-el.git",
+    "status": "fetched",
+    "commit": "5a290ec2608e4100fb188fd60ecb77affcc3465b",
+    "commit_date": "2014-03-06T23:50:25+09:00",
+    "files": [
+      {
+        "path": "sources/tab-group/tab-group.el",
+        "sha256": "01ed3eeeb134aa9dca795af52de789512592c6b6cde98a49fa5241c36056ebd5",
+        "lines": 2031
+      }
+    ]
+  },
+  {
+    "id": "uuid",
+    "url": "https://github.com/nicferrier/emacs-uuid.git",
+    "status": "fetched",
+    "commit": "1519bfeb0e31602b840bc8dd35d7c7e732c159fe",
+    "commit_date": "2012-09-10T09:51:32+01:00",
+    "files": [
+      {
+        "path": "sources/uuid/uuid.el",
+        "sha256": "567b5414ca7ba7d011eb0fd3cc9d8b45d3878600adf38e03f0fc0b75879dfc7e",
+        "lines": 104
+      }
+    ]
+  },
+  {
+    "id": "window-layout",
+    "url": "https://github.com/kiwanami/emacs-window-layout.git",
+    "status": "fetched",
+    "commit": "277d0a8247adf13707703574cbbc16ddcff7c5fd",
+    "commit_date": "2024-11-04T18:00:01+09:00",
+    "files": [
+      {
+        "path": "sources/window-layout/window-layout.el",
+        "sha256": "09501f977ac3d9ff7fbd7bdd27f0c8e4880db9e7242f13058ccdabeba61b2ffc",
+        "lines": 938
+      }
+    ]
+  },
+  {
+    "id": "with-shell-interpreter",
+    "url": "https://github.com/p3r7/with-shell-interpreter.git",
+    "status": "fetched",
+    "commit": "8191d0b745dda30c7f6d225eb86598d8337c6b82",
+    "commit_date": "2026-07-27T17:22:30+02:00",
+    "files": [
+      {
+        "path": "sources/with-shell-interpreter/with-shell-interpreter.el",
+        "sha256": "021ce7a8966e39344840c383d277daec5f713f9e1837289b2b344f950f48a0a6",
+        "lines": 380
+      }
+    ]
+  },
+  {
+    "id": "yaxception",
+    "url": "https://github.com/aki2o/yaxception.git",
+    "status": "fetched",
+    "commit": "5941de88b19752c14e0dce0d2bf562b1288055a0",
+    "commit_date": "2024-01-07T14:04:06+09:00",
+    "files": [
+      {
+        "path": "sources/yaxception/yaxception.el",
+        "sha256": "93f76d072b829addaeb6180d9ba05e13abe34ddf887309b098c26ebe301368e1",
+        "lines": 198
+      }
+    ]
+  },
+  {
+    "id": "zmx-runtime",
+    "url": "https://github.com/neurosnap/zmx.git",
+    "status": "fetched",
+    "commit": "54b212d0eb05db3fabacce06b7bbc696afe7dcf8",
+    "commit_date": "2026-09-25T15:52:53-04:00",
+    "files": []
+  },
+  {
+    "id": "ace-window",
+    "url": "https://github.com/abo-abo/ace-window.git",
+    "commit": "77115afc1b0b9f633084cf7479c767988106c196",
+    "commit_date": "2022-09-11T11:58:41+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/ace-window/ace-window-posframe.el",
+        "sha256": "d162b47d37108ab91fc28d351acac1410bbe6984496ce285cc80001f3eedf97d",
+        "lines": 64
+      },
+      {
+        "path": "sources/ace-window/ace-window.el",
+        "sha256": "65708c963bce9ac9a420bbc454e4f740b8e03d2145378d3668b53fcebbbe5232",
+        "lines": 965
+      }
+    ]
+  },
+  {
+    "id": "aweshell",
+    "url": "https://github.com/manateelazycat/aweshell.git",
+    "commit": "db495f29eef9013cf6b3796c3797e0ec76352e3f",
+    "commit_date": "2024-08-26T08:11:49+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/aweshell/aweshell.el",
+        "sha256": "d4adbbc24d52bd39a52d4f4de0056f937862564052ee6710a62532af3bf71964",
+        "lines": 927
+      },
+      {
+        "path": "sources/aweshell/eshell-did-you-mean.el",
+        "sha256": "dd87f01a981f3cafdb3138221e51288856be08d0d831f1c26ee6480da448aa85",
+        "lines": 116
+      },
+      {
+        "path": "sources/aweshell/eshell-prompt-extras.el",
+        "sha256": "f14a765cb51ee8aa72cff1400788bf5143bb6b70de592733bcc843ad1cbd17c3",
+        "lines": 760
+      },
+      {
+        "path": "sources/aweshell/eshell-up.el",
+        "sha256": "61f7870097840a769b8834e9fb83b9e7ee3c0da6599a6030b3ca8d4f2f4a94c9",
+        "lines": 122
+      },
+      {
+        "path": "sources/aweshell/exec-path-from-shell.el",
+        "sha256": "c516469f406b575dfb2f4b1317cf5d2373ec3d7e264e23abdf25ad970c4cdd0a",
+        "lines": 271
+      }
+    ]
+  },
+  {
+    "id": "consult",
+    "url": "https://github.com/minad/consult.git",
+    "commit": "3c64214db5cd61a8f8186e4dce89c0e04be1652c",
+    "commit_date": "2026-09-26T11:10:30+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/consult/consult-compile.el",
+        "sha256": "f7963dc1bf5a50eb2c51943d428137b853d5481a51a5e95f282dd6078525d725",
+        "lines": 123
+      },
+      {
+        "path": "sources/consult/consult-flymake.el",
+        "sha256": "8241467231527e5389b9f18232b16edbe075f7f3b04556e080b043dde5491787",
+        "lines": 114
+      },
+      {
+        "path": "sources/consult/consult-imenu.el",
+        "sha256": "2acdfae9923302572db64d4f51955c3eea5b27f152870b284fe37a2ced533b9e",
+        "lines": 258
+      },
+      {
+        "path": "sources/consult/consult-info.el",
+        "sha256": "93b416bccfb5911aa517191458f5deb0cc72de679dcae3725483c5cba5adf705",
+        "lines": 217
+      },
+      {
+        "path": "sources/consult/consult-kmacro.el",
+        "sha256": "9bd1e8b31d923a24f508e19ce60b54366af4926979b19de571ce9af0ee0f5638",
+        "lines": 83
+      },
+      {
+        "path": "sources/consult/consult-org.el",
+        "sha256": "7de727ab53b33660e5c2c600418b6859d7974cee53b08c2ed14346cb7ec07834",
+        "lines": 144
+      },
+      {
+        "path": "sources/consult/consult-register.el",
+        "sha256": "26c404971f0a53b92aaead7a241c6003e1e1ea531f55f936dc9fc16ab7a62510",
+        "lines": 328
+      },
+      {
+        "path": "sources/consult/consult-xref.el",
+        "sha256": "483cdd6ad1788b5e8a1f2b1e5031c128e12722cd4c5fa12a26e0cda0276eaf4a",
+        "lines": 120
+      },
+      {
+        "path": "sources/consult/consult.el",
+        "sha256": "36df12cf9c464242751a795e48d4283fc475f4fa63393b4f3629e959c95a424a",
+        "lines": 5764
+      }
+    ]
+  },
+  {
+    "id": "eaf-terminal",
+    "url": "https://github.com/emacs-eaf/eaf-terminal.git",
+    "commit": "46cbe4f1730970e3db34b3ad86d3fa48fbe92c5b",
+    "commit_date": "2026-06-15T23:56:25-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/eaf-terminal/eaf-terminal.el",
+        "sha256": "c5c545e2eb4ff7f6329272a5b1a4d023c4541cc6d4727eabee2ea58607f39b76",
+        "lines": 211
+      }
+    ]
+  },
+  {
+    "id": "eat",
+    "url": "https://codeberg.org/akib/emacs-eat.git",
+    "commit": "c8d54d649872bfe7b2b9f49ae5c2addbf12d3b99",
+    "commit_date": "2025-02-06T06:44:47+06:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/eat/.dir-locals.el",
+        "sha256": "10c2e3c1658217f5ee32f9bd6986a02e946e9292857c55a4b1d5ba125eba5a26",
+        "lines": 8
+      },
+      {
+        "path": "sources/eat/eat-tests.el",
+        "sha256": "e2e71c7050c5513df283084668bdd66694a71bcbae411fb7ec30c30eb9281a1f",
+        "lines": 6253
+      },
+      {
+        "path": "sources/eat/eat.el",
+        "sha256": "dfa6cb90d2c9101e78e7f95d163b691539a97aa213fcd9909cdb39e513f19a96",
+        "lines": 8327
+      },
+      {
+        "path": "sources/eat/term/eat.el",
+        "sha256": "b224aa7f390e755f8b33f0b676804a6294891cf320e4b0efd85be3ebb06ccf93",
+        "lines": 50
+      }
+    ]
+  },
+  {
+    "id": "emamux",
+    "url": "https://github.com/emacsorphanage/emamux.git",
+    "commit": "93bb7e8b8cfb0ced5b9b38044a031d40342201a1",
+    "commit_date": "2026-06-19T21:57:10+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/emamux/emamux.el",
+        "sha256": "e81ad4bc6a5927db910d5f281f2093bfceb1c02b31a798f2e16f4bd4c774ca55",
+        "lines": 601
+      }
+    ]
+  },
+  {
+    "id": "emux",
+    "url": "https://github.com/re5et/emux.git",
+    "commit": "ab000ab78fb6a96b00ac8332575871a31f6f9548",
+    "commit_date": "2019-06-09T23:20:26-07:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/emux/emux-base.el",
+        "sha256": "8a33b3e52e051fca154ec53a6deb5eac760aa89adea15a4fb5788a5755c26ee6",
+        "lines": 83
+      },
+      {
+        "path": "sources/emux/emux-screen.el",
+        "sha256": "cdd18d5fc9ebc2b78c385bf55fc877b2ab4b0eaa956a06eb09b09555cc2ce7c6",
+        "lines": 170
+      },
+      {
+        "path": "sources/emux/emux-session.el",
+        "sha256": "74b6f7639709154de8fcf3ef7bd42d328839ce81db6c6a2be6719b45eb7e1e6c",
+        "lines": 270
+      },
+      {
+        "path": "sources/emux/emux-term.el",
+        "sha256": "cfc3e7c046eee542fb7a7edfbeb98dfee3ffbb3d1a4ae0b57c41906ae5ad5058",
+        "lines": 309
+      }
+    ]
+  },
+  {
+    "id": "equake",
+    "url": "https://github.com/emacsomancer/equake.git",
+    "commit": "4469dd9eb1519f4d699d43d6cdb3a59488021fe8",
+    "commit_date": "2026-01-01T20:25:37-06:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/equake/equake.el",
+        "sha256": "eecc044ff832580646c4eae50d5a4e1242d87ba24110616b3fa491df5d49169f",
+        "lines": 1119
+      }
+    ]
+  },
+  {
+    "id": "eshell-toggle",
+    "url": "https://github.com/4DA/eshell-toggle.git",
+    "commit": "04e501e02c475bd9067eebcf8807c951f2316194",
+    "commit_date": "2025-05-13T22:42:09+05:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/eshell-toggle/eshell-toggle.el",
+        "sha256": "00457c912705612703442aebe56866b77b1d27b1f05cc57ffdf7f1347e485703",
+        "lines": 255
+      }
+    ]
+  },
+  {
+    "id": "eshell-vterm",
+    "url": "https://github.com/iostapyshyn/eshell-vterm.git",
+    "commit": "20f4b246fa605a1533cdfbe3cb7faf31a24e3d2e",
+    "commit_date": "2024-03-05T12:49:31+01:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/eshell-vterm/eshell-vterm.el",
+        "sha256": "6efff606231d61e3a0088cb67e5a9a54b825cef4bf192a4c2008711d13d89ffc",
+        "lines": 100
+      }
+    ]
+  },
+  {
+    "id": "f",
+    "url": "https://github.com/rejeep/f.el.git",
+    "commit": "931b6d0667fe03e7bf1c6c282d6d8d7006143c52",
+    "commit_date": "2024-10-03T13:31:16+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/f/.dir-locals.el",
+        "sha256": "d6683b495d1152546c77fdf7eb431eb48fea09c81022523a27f72772801ace92",
+        "lines": 7
+      },
+      {
+        "path": "sources/f/bin/docs.el",
+        "sha256": "5ce5ac6a64264956d4dc00271ec7d82e4490993a6bd964390dbb7c6de0d078f9",
+        "lines": 35
+      },
+      {
+        "path": "sources/f/f-shortdoc.el",
+        "sha256": "901f68a60ff7c8234afab54f929aa878df78e394e9740e781e4cb12a42377f03",
+        "lines": 438
+      },
+      {
+        "path": "sources/f/f.el",
+        "sha256": "a8bf50074d55e5ad9a8684aeee113af081bbc85aac9124c1923f511f15d98d7f",
+        "lines": 799
+      }
+    ]
+  },
+  {
+    "id": "ghostel",
+    "url": "https://github.com/dakra/ghostel.git",
+    "commit": "c2c411f2b0051465a5f5e7826ebab4ed216d4c0e",
+    "commit_date": "2026-09-21T18:34:10+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/ghostel/extensions/consult-ghostel/consult-ghostel.el",
+        "sha256": "bdd9e78de1e5a0783be2f844df43d9258de3531940bdf9d38ff404b456d15db1",
+        "lines": 484
+      },
+      {
+        "path": "sources/ghostel/extensions/evil-ghostel/evil-ghostel.el",
+        "sha256": "4df3e251e260edb87efe622e9aa2781d81f7e00690920d71ba649d1377caeb4c",
+        "lines": 1025
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-bookmark.el",
+        "sha256": "71277320d28385aa50826a8f106353545d3d6aabeab15f90a99056fe8ac4ae55",
+        "lines": 156
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-comint.el",
+        "sha256": "11e5db1ae4b95513e75a36a2a9d10af5d4a94fdcc9859ecfb13102d23a5ead38",
+        "lines": 202
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-compile.el",
+        "sha256": "646bcedaa66bb4fd558498f6b43c5ab2fbb6db21138a9ba0f804eb70777c0da0",
+        "lines": 1287
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-debug.el",
+        "sha256": "9e37616f8c6090d5a3a5e579ad35defb38836e236494d9db4f7c90ab998e39cc",
+        "lines": 2079
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-desktop.el",
+        "sha256": "256b53408979ae7baf244552c2eec74e39d675fc74181c6bd4a543c119e241b6",
+        "lines": 133
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-eshell.el",
+        "sha256": "d67f22f1ac0771a743841cdad10fdada15d8aaebf12308f38f4beb71bc6712d9",
+        "lines": 136
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-faces.el",
+        "sha256": "afadec8c535c7146528bd9babf39b199018bd36520adf23cc77653f6a3a10080",
+        "lines": 189
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-ime.el",
+        "sha256": "5ab293c3ecee2b45b904d8bab5bc2a2a3dcd3fafbc09bb8a30e4a694c11c3150",
+        "lines": 185
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-kitty.el",
+        "sha256": "bac246dc9c1768be226e98fe4d007b60c182743ec836c2976a114cb4fa665bc3",
+        "lines": 363
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-line-mode.el",
+        "sha256": "917ce62278f5f753e3b9a43412faabd902fb0bac73753fe40dd44dc64c823de2",
+        "lines": 874
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-links.el",
+        "sha256": "fa37ab2a2af2ca4311e49ecd1798fe8c157d53ec90f2625b7f3a84e9baf9f91a",
+        "lines": 860
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-module-install.el",
+        "sha256": "b1a1a6608134d0392fa69cceb2a5e3d71bc2dbbf58efc9bad7aaae9ad22df731",
+        "lines": 620
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-org.el",
+        "sha256": "c2827c01edc0efcd8f7f6382678e69bc9fc28b5fd5c810a9639609b3107e5bdb",
+        "lines": 81
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel-shell.el",
+        "sha256": "27e7efb1f996568cecabfd8c9273f1a3860c11ce6a99b1ebd4384243ce825d15",
+        "lines": 811
+      },
+      {
+        "path": "sources/ghostel/lisp/ghostel.el",
+        "sha256": "b2a0791a76713ca74a8f8978e699c5885afb90d6293097319a6f977f918e7ea3",
+        "lines": 5716
+      },
+      {
+        "path": "sources/ghostel/tools/ghostel-dape.el",
+        "sha256": "6ebc54a7c827985c7352cd589fc211d1d281f4c08637b851e265e5443df4fe91",
+        "lines": 217
+      },
+      {
+        "path": "sources/ghostel/tools/ghostel-lint.el",
+        "sha256": "a0077d0cb56eac97ffe8f88a2b22e570e9a3f558acbe108746f93e41acfda22d",
+        "lines": 57
+      }
+    ]
+  },
+  {
+    "id": "ghostel-mux",
+    "url": "https://github.com/SweatierKey/ghostel-mux.git",
+    "commit": "c03055c8c081f5afe9ea35cfa431b844f415f949",
+    "commit_date": "2026-09-15T08:59:48+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/ghostel-mux/example-init.el",
+        "sha256": "e9fb5ea35a553bcfd83391dd895277d86b028f3fd0f5ba8849c9f053a3f0eb76",
+        "lines": 51
+      },
+      {
+        "path": "sources/ghostel-mux/ghostel-mux-context.el",
+        "sha256": "d8bc5b1d85a37b11d88fd25389d9245254928b710f8f724e277d37227ed73aba",
+        "lines": 263
+      },
+      {
+        "path": "sources/ghostel-mux/ghostel-mux.el",
+        "sha256": "1f6517ae42098e3ac12e5be56bc970b8f430690d07798442afa0308a2129cc70",
+        "lines": 2241
+      }
+    ]
+  },
+  {
+    "id": "hydra",
+    "url": "https://github.com/abo-abo/hydra.git",
+    "commit": "59a2a45a35027948476d1d7751b0f0215b1e61aa",
+    "commit_date": "2025-03-16T12:54:52Z",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/hydra/.dir-locals.el",
+        "sha256": "1a14976af0f9ed8a67ca43e1be152ab31ee6e08ec2effb0f56a78c50f7bef9d1",
+        "lines": 6
+      },
+      {
+        "path": "sources/hydra/hydra-examples.el",
+        "sha256": "84d6cb1ffee2d2181d156fafe6f19d43fc9ce14d6e9541d1489a14b1d8a0af23",
+        "lines": 393
+      },
+      {
+        "path": "sources/hydra/hydra-ox.el",
+        "sha256": "3136342aae0ea911ee11280b8890596c29d773d7d89ffe776d9b073dcc4e9f7d",
+        "lines": 127
+      },
+      {
+        "path": "sources/hydra/hydra-test.el",
+        "sha256": "944662c70d14ad2e73292894fc67df204788c4eb5cddaa34f27d4ac75a04c4d9",
+        "lines": 1721
+      },
+      {
+        "path": "sources/hydra/hydra.el",
+        "sha256": "24a2f6d795bf509afbda49ccc0a3864ff06511ccebbd3c3219d9a150babfc34c",
+        "lines": 1564
+      },
+      {
+        "path": "sources/hydra/lv.el",
+        "sha256": "672a4435f4ea468236c8bf949aa3d22e3fe1f9c37a031bf64b4c93d46690d1d9",
+        "lines": 148
+      },
+      {
+        "path": "sources/hydra/targets/hydra-init.el",
+        "sha256": "06545098d6769388bb09c06dae76e34d55370648c8d17cc67901b71f31966f0d",
+        "lines": 27
+      }
+    ]
+  },
+  {
+    "id": "marginalia",
+    "url": "https://github.com/minad/marginalia.git",
+    "commit": "c5d0139012d2a84f8040219b9aee17db4e145e5c",
+    "commit_date": "2026-09-07T07:11:17+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/marginalia/marginalia.el",
+        "sha256": "da9b0e37652b1694458c1e328a781f1495a095dcea05738c335cf229bf4e66e3",
+        "lines": 1450
+      }
+    ]
+  },
+  {
+    "id": "mistty",
+    "url": "https://github.com/szermatt/mistty.git",
+    "commit": "baba2dcd18cac75fc9953da20e8c0a9886441319",
+    "commit_date": "2026-09-24T13:27:19+03:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/mistty/extras/mistty-reverse-input-decode-map.el",
+        "sha256": "77ea1557c0f611f1f359b7d1595402e4a51b4c613abb5724067aad85b77f21c8",
+        "lines": 120
+      },
+      {
+        "path": "sources/mistty/mistty-accum-macros.el",
+        "sha256": "dbe31288681e85ed7252e8785400ea7c44babe0406c9cd2ed20a9172ff722ab8",
+        "lines": 269
+      },
+      {
+        "path": "sources/mistty/mistty-accum.el",
+        "sha256": "ad55160cd95a23d4abe2f96e64f8dedfcb38815caa7bcf31b9fcc94d2e45eb4a",
+        "lines": 469
+      },
+      {
+        "path": "sources/mistty/mistty-alacritty.el",
+        "sha256": "e92122a475c5b0137cd29e2240f47084e9df93e5cfb373ea741888180d893eb4",
+        "lines": 456
+      },
+      {
+        "path": "sources/mistty/mistty-changeset.el",
+        "sha256": "acc158efc351a8273a3e69bca18b29dcaca7f02e9a69aa7dcee3e8e0fc518ddd",
+        "lines": 296
+      },
+      {
+        "path": "sources/mistty/mistty-install.el",
+        "sha256": "5a1127c4448dafc1f8c35d60fcbc042f91e6d549925182a48933b91a5f9734e9",
+        "lines": 560
+      },
+      {
+        "path": "sources/mistty/mistty-kbd.el",
+        "sha256": "7c8355fba41274f92e41f9a8c76c0357e05306e98ed4ddb5c1f9e32d3a4d768a",
+        "lines": 487
+      },
+      {
+        "path": "sources/mistty/mistty-launch.el",
+        "sha256": "3c1452ade6949de9184e92afd9b3d7cc9b945aa9a1e86043882aff0188c14698",
+        "lines": 110
+      },
+      {
+        "path": "sources/mistty/mistty-log.el",
+        "sha256": "b356f23a68a38990619206787751970e4bb86eeb54560f9736daf909cf2fcc7b",
+        "lines": 257
+      },
+      {
+        "path": "sources/mistty/mistty-osc-colors.el",
+        "sha256": "14c0d645d882255cad6d538b37eba8f1f0fb4d56dfd2dd6caa38690453d895a1",
+        "lines": 48
+      },
+      {
+        "path": "sources/mistty/mistty-osc7.el",
+        "sha256": "1d8eb6a33067ca4c9a636e622d3fffa5c553f7071f40040461f277010be757f3",
+        "lines": 136
+      },
+      {
+        "path": "sources/mistty/mistty-project.el",
+        "sha256": "f848c556e423628b68b5f7184317f1ede1fb36ef649aa82a24bf5309959c15d8",
+        "lines": 100
+      },
+      {
+        "path": "sources/mistty/mistty-queue.el",
+        "sha256": "360ad7abad6c552d4202187a57cad19eef7a3a99de625a9e1e58ec9960397560",
+        "lines": 503
+      },
+      {
+        "path": "sources/mistty/mistty-scrolline.el",
+        "sha256": "eab09f71fd23c2ea496b1e129afca18db51bc100c9eca59f4aa7a9bc089efa0c",
+        "lines": 247
+      },
+      {
+        "path": "sources/mistty/mistty-term-alacritty.el",
+        "sha256": "e42a22d591e94e0cc49b3b6ab58c523c9a33dc1f7e9976c9f09d4f654e23eeeb",
+        "lines": 231
+      },
+      {
+        "path": "sources/mistty/mistty-term-base.el",
+        "sha256": "00032ae341572ab7110397ae4ff4bc94fc899cdba3f55d3858c5f9dcbcdd5da6",
+        "lines": 153
+      },
+      {
+        "path": "sources/mistty/mistty-term-eterm.el",
+        "sha256": "89a6ebafe7dd8166fc4e98a995ce377f58b5c72f4a9991b4d6174cd138edb40f",
+        "lines": 883
+      },
+      {
+        "path": "sources/mistty/mistty-term.el",
+        "sha256": "21835f15852e292ebadefaf07ed5bb0e5f454f4763f53bc961b9149ee0516f84",
+        "lines": 531
+      },
+      {
+        "path": "sources/mistty/mistty-undo.el",
+        "sha256": "c5e9927c107178b8671149ca9a6595ec9a748907915990cd1291ee20ccca3ef5",
+        "lines": 140
+      },
+      {
+        "path": "sources/mistty/mistty-util.el",
+        "sha256": "5fabfcdb25689ba2a0c007134a2214c272cb823fc2e692687735eeade97878f0",
+        "lines": 304
+      },
+      {
+        "path": "sources/mistty/mistty.el",
+        "sha256": "56111c97bbd0bb5018dc7994d7ba66e8954792827140bd6fe6f3010b4f83fd9b",
+        "lines": 4681
+      }
+    ]
+  },
+  {
+    "id": "multi-term",
+    "url": "https://github.com/manateelazycat/multi-term.git",
+    "commit": "017c77c550115936860e2ea71b88e585371475d5",
+    "commit_date": "2020-05-14T12:28:16+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/multi-term/multi-term.el",
+        "sha256": "edd2a349a2d975f119b7ecab976cc362f0b3f375b7f9898ab356a543139a8097",
+        "lines": 882
+      }
+    ]
+  },
+  {
+    "id": "multi-vterm",
+    "url": "https://github.com/suonlight/multi-vterm.git",
+    "commit": "36746d85870dac5aaee6b9af4aa1c3c0ef21a905",
+    "commit_date": "2022-10-31T13:10:30+07:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/multi-vterm/multi-vterm.el",
+        "sha256": "74f774674ba8b701a46d60fb2ac0f3b3775a567b2064e6644ce4952511cb513e",
+        "lines": 306
+      }
+    ]
+  },
+  {
+    "id": "popper",
+    "url": "https://github.com/karthink/popper.git",
+    "commit": "d83b894ee7a9daf7c8e9b864c23d08f1b23d78f6",
+    "commit_date": "2026-03-01T16:22:08-08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/popper/popper-echo.el",
+        "sha256": "dbc518cf34385c107c276f65b6ed0fabfe80f28ee0907e7f509ca7d6dab05f55",
+        "lines": 349
+      },
+      {
+        "path": "sources/popper/popper.el",
+        "sha256": "53499fb40714890d5bafe0f87da6a66d7248eec4716687f4c03af8be2a1e6c53",
+        "lines": 731
+      }
+    ]
+  },
+  {
+    "id": "projectile-rails",
+    "url": "https://github.com/asok/projectile-rails.git",
+    "commit": "701784df7befe17b861f1b53fe9cbc59d0b94b9f",
+    "commit_date": "2022-12-31T17:43:16+01:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/projectile-rails/.dir-locals.el",
+        "sha256": "539b4ce6948fcd5c79ccf70b6b5aa9f1236ee09f56e2d82a2cc011b2402b267e",
+        "lines": 1
+      },
+      {
+        "path": "sources/projectile-rails/features/step-definitions/projectile-rails-steps.el",
+        "sha256": "a639cd5935c3b17c393080c96a2497762cd8028a241b4e6f5b5e502165fae271",
+        "lines": 223
+      },
+      {
+        "path": "sources/projectile-rails/features/support/env.el",
+        "sha256": "2f70705baacd87254d570e8658ccb73b296378ebb6ba31783e6bcc77ce44904f",
+        "lines": 157
+      },
+      {
+        "path": "sources/projectile-rails/projectile-rails.el",
+        "sha256": "451adaffd8907ff5eae3668ce8adad26f83fdfebba61b6893567c195bb0dc412",
+        "lines": 1961
+      }
+    ]
+  },
+  {
+    "id": "shell-here",
+    "url": "https://codeberg.org/emacs-weirdware/shell-here.git",
+    "commit": "eeb437ff26d62a5009046b1b3b4503b768e3131a",
+    "commit_date": "2022-01-02T09:03:08-08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/shell-here/shell-here.el",
+        "sha256": "8b334a0718c6a395b1c617c4ffa826b92c80082ca02aac7287d510ba07ebab1f",
+        "lines": 190
+      }
+    ]
+  },
+  {
+    "id": "shell-pop",
+    "url": "https://github.com/kyagi/shell-pop-el.git",
+    "commit": "446b1691454e65be648dcb7e316639aa7dd73be2",
+    "commit_date": "2026-06-10T18:31:29-04:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/shell-pop/shell-pop.el",
+        "sha256": "6a3ebc3fea251c4dccf41e70847f9f543422ed468023b25a00f56a23599b0ad7",
+        "lines": 755
+      }
+    ]
+  },
+  {
+    "id": "term+",
+    "url": "https://github.com/tarao/term-plus-el.git",
+    "commit": "c3c9239b339c127231860de43abfa08c44c0201a",
+    "commit_date": "2017-05-09T09:17:18+09:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/term+/term+.el",
+        "sha256": "59e70d3124bc03246bb8df59e01672705c7596b3db20e381c9f7447c5a19d41f",
+        "lines": 321
+      },
+      {
+        "path": "sources/term+/term+edit.el",
+        "sha256": "fc8119fc4363e451a73af76d6898d999d73f634643f237e36d0c3b4b9f4a8b2c",
+        "lines": 152
+      },
+      {
+        "path": "sources/term+/term+file-transfer.el",
+        "sha256": "35a57b6fbb5f45a7196487821f14ca97b238161dc1a1d4aa5f7de07fbbef17c1",
+        "lines": 205
+      },
+      {
+        "path": "sources/term+/term+input.el",
+        "sha256": "c38b584f3d2b9e10764e6cc9a8333a8a73babcb5e2558dd6d5e84bc4824ad03f",
+        "lines": 230
+      },
+      {
+        "path": "sources/term+/term+logging.el",
+        "sha256": "cc63dd26a1ceaef521f2d6cbf31b9b821a29f5871edbe7f0d67a26a3631972d6",
+        "lines": 350
+      },
+      {
+        "path": "sources/term+/term+shell-history.el",
+        "sha256": "7e52c2966f7e931502d32116dfb0e286b608f3325051be9dcb136f9934297281",
+        "lines": 106
+      },
+      {
+        "path": "sources/term+/term+vars.el",
+        "sha256": "3d68335b9dc70bbed3e27c8c510152d21b7b6879a9b85c7baaf2fbe927c82733",
+        "lines": 305
+      },
+      {
+        "path": "sources/term+/xterm-256color.el",
+        "sha256": "1d56f8524e571035401145ea8af3e5b587670bb1d18c1a77fcf78ba967ef97c2",
+        "lines": 564
+      }
+    ]
+  },
+  {
+    "id": "term-manager",
+    "url": "https://github.com/colonelpanic8/term-manager.git",
+    "commit": "1581a90ff9b359449e056da55259b9f42e749f0c",
+    "commit_date": "2026-02-20T00:40:26-08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/term-manager/term-manager-eat.el",
+        "sha256": "3f4b4bdb7ee77c4375289441349c157a94de483183b6afe95557685f466a94b8",
+        "lines": 46
+      },
+      {
+        "path": "sources/term-manager/term-manager-indexed-mapping.el",
+        "sha256": "519b41d6d8ef33c1218c291b5fbc06c4007f313abea9921626e75119f99cfa91",
+        "lines": 89
+      },
+      {
+        "path": "sources/term-manager/term-manager.el",
+        "sha256": "f8b131b009c8036c147b7b7e615828386eaa8ad43702a547df70a97be9f3a7e9",
+        "lines": 191
+      },
+      {
+        "path": "sources/term-manager/term-project.el",
+        "sha256": "cabafaea6170f5f0cde5f1bca2f8b7fd469c72da434e039a1a7eaf942f96a077",
+        "lines": 156
+      },
+      {
+        "path": "sources/term-manager/term-projectile.el",
+        "sha256": "4e66559b06da354fceb406ab8fb72b3f451e42b5ccb2a08188d53340977a3bcd",
+        "lines": 149
+      }
+    ]
+  },
+  {
+    "id": "terminal-here",
+    "url": "https://github.com/davidshepherd7/terminal-here.git",
+    "commit": "d90bc3e1c8c660e11dba002a1ce1d82940b260b1",
+    "commit_date": "2026-03-14T10:48:49Z",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/terminal-here/terminal-here.el",
+        "sha256": "5a9c32c598e16a1b2f63c88dc40fa1bb7a705af90521328b1ca7b2200bebd25e",
+        "lines": 511
+      }
+    ]
+  },
+  {
+    "id": "terminal-toggle",
+    "url": "https://gitlab.com/mtekman/terminal-toggle.el.git",
+    "commit": "f824d634aef3600cb7a8e2ddf9e8444c6607c160",
+    "commit_date": "2019-02-26T16:10:30+01:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/terminal-toggle/terminal-toggle.el",
+        "sha256": "985422ebcb06342364ae64a0a3a72bdfa936ad92e9e1fc5063b3d5ab71d8005f",
+        "lines": 84
+      }
+    ]
+  },
+  {
+    "id": "transient",
+    "url": "https://github.com/magit/transient.git",
+    "commit": "6f69527a4d39f1244fb86a55657f70679d8577e0",
+    "commit_date": "2026-09-25T20:34:04+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/transient/.dir-locals.el",
+        "sha256": "c652629879a07d97a7c0bb1e1584f29f89c6aa952a4673a2b050fd99bfa80d6f",
+        "lines": 18
+      },
+      {
+        "path": "sources/transient/lisp/transient.el",
+        "sha256": "653336d4b67485e51024b8b90ab9eb655975eb29335d9f7b143b88cb3723dac1",
+        "lines": 5831
+      }
+    ]
+  },
+  {
+    "id": "vertico",
+    "url": "https://github.com/minad/vertico.git",
+    "commit": "a9998a777f1d92348f84d091bb15b87df933a7a2",
+    "commit_date": "2026-09-13T17:25:32+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vertico/extensions/vertico-buffer.el",
+        "sha256": "4b4beae68c8ea24d5a9c9bcf30fd2738705d39945c079979d4d75f320384ad8a",
+        "lines": 216
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-directory.el",
+        "sha256": "d89c406c4f25dfc7e495a462d3aaf557391153c803d42f58f324c84ac38ab241",
+        "lines": 141
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-flat.el",
+        "sha256": "f264b70a6eb2f8b1aeacf2866a1f86a61019da317f2f05ae486e44e3a509ca03",
+        "lines": 142
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-grid.el",
+        "sha256": "81f5ae61f973f011fd0ecba2cca7b9f13bd1feba8fc1a623b18405209b0606c4",
+        "lines": 171
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-indexed.el",
+        "sha256": "2e17e5156a46f2b39e5aef555604ff4f0995438adaf5c3c2039a343391d1e046",
+        "lines": 81
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-mouse.el",
+        "sha256": "c98fa16ff6c9c21dd4e94deeeab8872420e3194f3d6f77144f75d0eb54664847",
+        "lines": 84
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-multiform.el",
+        "sha256": "349b257f02b81dd5cacbad81fe5b9fe9f858aeedb88c4d891573d874b54899a1",
+        "lines": 232
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-quick.el",
+        "sha256": "75d6efd95ff731c09c8a02504a0b69a6ca18055aba6c030d780678aae4ff11d5",
+        "lines": 141
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-repeat.el",
+        "sha256": "db114f1f49d3670c05a7bc90305fd10380587a048c86be26740ede93cfc10538",
+        "lines": 247
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-reverse.el",
+        "sha256": "e3cf318897c27599350974cf87b659f9cf22b65b782203bc9ffee14a1052a68c",
+        "lines": 93
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-sort.el",
+        "sha256": "3e86a1fe97f27ba72c2c87191d9cc304470f28519621c5daaebd8ba986054bf8",
+        "lines": 132
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-suspend.el",
+        "sha256": "f9fa7eddf9496b63debe5e0ffa43ef34030bd3de0f246dae033906f9764a29d2",
+        "lines": 106
+      },
+      {
+        "path": "sources/vertico/extensions/vertico-unobtrusive.el",
+        "sha256": "f6c57d1b2360e0a3c328e4fc70fd75e5076e2db6d310d276a47a0a9dcf6fe316",
+        "lines": 65
+      },
+      {
+        "path": "sources/vertico/vertico.el",
+        "sha256": "f1e63f1335bde2b49784940bce644a291524e11363ba706476f4a0d630c2885f",
+        "lines": 726
+      }
+    ]
+  },
+  {
+    "id": "vterm",
+    "url": "https://github.com/akermu/emacs-libvterm.git",
+    "commit": "6d715a93fa0e5182bc137d4db09f376e06938aa5",
+    "commit_date": "2026-09-14T09:41:29-07:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vterm/vterm.el",
+        "sha256": "a1d1a0ad17935191b5bfc1583fdf3dfa44dcfab5d439fc3da77a98a1a1eb6f07",
+        "lines": 1977
+      }
+    ]
+  },
+  {
+    "id": "vterm-hotkey",
+    "url": "https://github.com/rootatpixel/vterm-hotkey.git",
+    "commit": "039033a4c30dabca625d6924d1796bb9e13d85c7",
+    "commit_date": "2024-07-02T15:45:30+01:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vterm-hotkey/vterm-hotkey.el",
+        "sha256": "bc0708f304a252621501494a01232ed4fad574de70ad3ca40d52adb239ae0758",
+        "lines": 89
+      }
+    ]
+  },
+  {
+    "id": "vterm-toggle",
+    "url": "https://github.com/jixiuf/vterm-toggle.git",
+    "commit": "a0051a8b8eaa85f8df54ddb032f5710c1f62779d",
+    "commit_date": "2026-06-02T00:32:05+08:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/vterm-toggle/vterm-toggle.el",
+        "sha256": "6eedcf1b15139a85f00d0c87c83d807851ed876615cd55ab04e8ba710ed86dab",
+        "lines": 485
+      }
+    ]
+  },
+  {
+    "id": "with-editor",
+    "url": "https://github.com/magit/with-editor.git",
+    "commit": "7bec41144ea197961c76c769cfc0acaf689ebac0",
+    "commit_date": "2026-09-25T17:02:45+02:00",
+    "status": "fetched",
+    "files": [
+      {
+        "path": "sources/with-editor/.dir-locals.el",
+        "sha256": "561395c26d0f6851497478d90dcc3582f4b0841509125024b0d76bc2240f4056",
+        "lines": 9
+      },
+      {
+        "path": "sources/with-editor/lisp/with-editor.el",
+        "sha256": "735404593d713a615c18050385f75609f4359d88e9cc48069834302f912ea47e",
+        "lines": 1059
+      }
+    ]
+  },
+  {
+    "id": "term",
+    "url": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "version": "30.1",
+    "status": "builtin",
+    "files": [
+      {
+        "path": "sources/term/term.el",
+        "sha256": "8cdce45ac99ec25df45fe7a2287e2be59892a608a77696298c63130823e5fd60",
+        "lines": 4774
+      }
+    ]
+  },
+  {
+    "id": "shell",
+    "url": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "version": "30.1",
+    "status": "builtin",
+    "files": [
+      {
+        "path": "sources/shell/shell.el",
+        "sha256": "5d6b0b219977055bdf6d07d86f8c595f19d38c15f573cdba4f173b5d2ea63f76",
+        "lines": 1867
+      }
+    ]
+  },
+  {
+    "id": "eshell",
+    "url": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "version": "30.1",
+    "status": "builtin",
+    "files": [
+      {
+        "path": "sources/eshell/em-alias.el",
+        "sha256": "eb339284ee90a9177a2af020236c75c7baef4d4be4a676d0289d410cc66bea94",
+        "lines": 282
+      },
+      {
+        "path": "sources/eshell/em-banner.el",
+        "sha256": "6bfb01eea86679ad9c51484579f67eb2d4e1a4187e8f839dd07e2f876e2cc93c",
+        "lines": 85
+      },
+      {
+        "path": "sources/eshell/em-basic.el",
+        "sha256": "78e115f357caa559d2340a038f9dc647f73eac1165733f809707b82d744128f2",
+        "lines": 228
+      },
+      {
+        "path": "sources/eshell/em-cmpl.el",
+        "sha256": "31b786ed3570337d4e3aeebb9944693c70c96db2a7456adf4501bce12b9447c3",
+        "lines": 522
+      },
+      {
+        "path": "sources/eshell/em-dirs.el",
+        "sha256": "646507e2e1a715ae1b139a19e5ee63fdb1ee0958d3d828bad02c1410d660eba4",
+        "lines": 601
+      },
+      {
+        "path": "sources/eshell/em-elecslash.el",
+        "sha256": "c87e5c49670709c4485e4c04fe6deca4a37600743af58c3671f4f30912bf33d7",
+        "lines": 111
+      },
+      {
+        "path": "sources/eshell/em-extpipe.el",
+        "sha256": "a1f690d0ce5c040a9a7f4aa56bd68f6eb1a1ef4af718ca9347ee21c365d3adac",
+        "lines": 220
+      },
+      {
+        "path": "sources/eshell/em-glob.el",
+        "sha256": "990c4e97e0f974b4f491ad77a3c9dfecae38bb2242694bd72f47a0b1e6ebbb9c",
+        "lines": 420
+      },
+      {
+        "path": "sources/eshell/em-hist.el",
+        "sha256": "d3e9300778aa647f341869f899d9928efef80d46c67362531007f8170122e748",
+        "lines": 1053
+      },
+      {
+        "path": "sources/eshell/em-ls.el",
+        "sha256": "da9b1f73d7273e028dbfdbcc180c2a3049e18a18bff5ed18d2228298ded66422",
+        "lines": 955
+      },
+      {
+        "path": "sources/eshell/em-pred.el",
+        "sha256": "3d36bffd176ddd1710386489ee312e1327a629760e58b652ae4e6940d1d5baca",
+        "lines": 579
+      },
+      {
+        "path": "sources/eshell/em-prompt.el",
+        "sha256": "6216c668999636236fd52a2418a7523a4cd5e610635c0642a571d8c327433715",
+        "lines": 256
+      },
+      {
+        "path": "sources/eshell/em-rebind.el",
+        "sha256": "3dd43c6f709d3900c2fb3d3a24f3d12a0be2739c92b7fc0c24feba3292ebbcee",
+        "lines": 253
+      },
+      {
+        "path": "sources/eshell/em-script.el",
+        "sha256": "95cffc719ea884af51a78bf0e418bc2501369bcede67b7cdeeb7db398f5581df",
+        "lines": 191
+      },
+      {
+        "path": "sources/eshell/em-smart.el",
+        "sha256": "60c82d100aa0ace7b4b77af51b2f10336bbae9f27f5fd85d1d9cad8e7ef819fa",
+        "lines": 306
+      },
+      {
+        "path": "sources/eshell/em-term.el",
+        "sha256": "7a12aa86c9febcffbdb12966a6812a90ef8acc73ac6d9cc4addd5784db6ecd26",
+        "lines": 333
+      },
+      {
+        "path": "sources/eshell/em-tramp.el",
+        "sha256": "1f746e8048652b9882abe32aa73860cd1a71d2d648ad93285cf5aca3f57b6875",
+        "lines": 155
+      },
+      {
+        "path": "sources/eshell/em-unix.el",
+        "sha256": "69f62be3445b1731d46edc25c14afec9312b7a2fa4490f447d1f23fb57fbf4aa",
+        "lines": 1094
+      },
+      {
+        "path": "sources/eshell/em-xtra.el",
+        "sha256": "34f76e2b2c6bd11e6c27210fda29ffac74600a38dfee37f8d3dc8f4adfcc8e7f",
+        "lines": 88
+      },
+      {
+        "path": "sources/eshell/esh-arg.el",
+        "sha256": "d5f74612857b99eb3ca0681f8a5866fb1742be7f8aded3aac2a322c3e8e89265",
+        "lines": 746
+      },
+      {
+        "path": "sources/eshell/esh-cmd.el",
+        "sha256": "c2e57e93ab10859a71ca9239c97dec7a324d319e1c6fa8f0a1f8251f86f9936e",
+        "lines": 1565
+      },
+      {
+        "path": "sources/eshell/esh-ext.el",
+        "sha256": "7d8cb9963bfec9cc2b61ef6b7e9acd99f207448d90316b8c07304f55d25eddc3",
+        "lines": 384
+      },
+      {
+        "path": "sources/eshell/esh-io.el",
+        "sha256": "e3e1eb244688163708f11157f5e38417eb295c7136a9e956927574c1c8665290",
+        "lines": 798
+      },
+      {
+        "path": "sources/eshell/esh-mode.el",
+        "sha256": "ca63679052ba25852aa7e35c2711acd0557542c781761607f2bd211465200150",
+        "lines": 1043
+      },
+      {
+        "path": "sources/eshell/esh-module-loaddefs.el",
+        "sha256": "c1bb865cf2e281d14fa2155638038cf2309ff18aaa2483bc57c2383ae95bd224",
+        "lines": 213
+      },
+      {
+        "path": "sources/eshell/esh-module.el",
+        "sha256": "7fda26d0a39288d30d4d4095f49b1bdd0e3b55f52bf313ced1a09af58760e6eb",
+        "lines": 170
+      },
+      {
+        "path": "sources/eshell/esh-opt.el",
+        "sha256": "7a82ee2acd546f821342e5f1ecf37447c0324ade896e65b86716c999f51a320d",
+        "lines": 318
+      },
+      {
+        "path": "sources/eshell/esh-proc.el",
+        "sha256": "730e49a30c900cfd5e5e07cf3038a432fa419d3b1f3717bcfb7a50d4a3c010e3",
+        "lines": 719
+      },
+      {
+        "path": "sources/eshell/esh-util.el",
+        "sha256": "b97da574a5279253889f6fa9cfbfa37c0e8d7c55b175b25af804e01aa486bf0d",
+        "lines": 890
+      },
+      {
+        "path": "sources/eshell/esh-var.el",
+        "sha256": "f2d4835c0a5fd162a8dd7134ddeb477bc738cb2bbc76353738e5ff720e33fbed",
+        "lines": 899
+      },
+      {
+        "path": "sources/eshell/eshell.el",
+        "sha256": "304ac4d976b757ee7bea28a859991a83011c5dc95cdbc9dc1f6a22145971f1de",
+        "lines": 392
+      }
+    ]
+  },
+  {
+    "id": "tab-bar",
+    "url": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "version": "30.1",
+    "status": "builtin",
+    "files": [
+      {
+        "path": "sources/tab-bar/tab-bar.el",
+        "sha256": "b088322debff3b165221f5fb7debe8d495318fe60c7c252573c77f74b4e4d43b",
+        "lines": 2972
+      }
+    ]
+  },
+  {
+    "id": "terminal",
+    "url": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "version": "30.1",
+    "status": "builtin",
+    "files": [
+      {
+        "path": "sources/terminal/terminal.el",
+        "sha256": "d809b5b3d960b6788868879bb3e3d285512ce29b6b5726e83591f34020c33f03",
+        "lines": 1333
+      }
+    ]
+  },
+  {
+    "id": "ob-screen",
+    "url": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "version": "30.1",
+    "status": "builtin",
+    "files": [
+      {
+        "path": "sources/ob-screen/ob-screen.el",
+        "sha256": "ec773f322b85a19e228d4e239169dccbb2869d34cdeab03bd3744cb11b1c4d2b",
+        "lines": 147
+      }
+    ]
+  }
+]

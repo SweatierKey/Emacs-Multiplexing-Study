@@ -1,0 +1,167 @@
+[
+  {
+    "at": 2.621,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.921,
+    "keys": "term-sessions-open",
+    "input_hex": "7465726d2d73657373696f6e732d6f70656e"
+  },
+  {
+    "at": 3.422,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.222,
+    "keys": "web",
+    "input_hex": "776562"
+  },
+  {
+    "at": 4.422,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.738,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 5.938,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.938,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 7.138,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.14,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 8.341,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.142,
+    "keys": "C-c C-j: term line mode",
+    "input_hex": "030a"
+  },
+  {
+    "at": 9.544,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 9.844,
+    "keys": "term-sessions-open",
+    "input_hex": "7465726d2d73657373696f6e732d6f70656e"
+  },
+  {
+    "at": 10.344,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.145,
+    "keys": "db",
+    "input_hex": "6462"
+  },
+  {
+    "at": 11.345,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.648,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 12.848,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 13.848,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 14.048,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.051,
+    "keys": "C-c C-j: term line mode",
+    "input_hex": "030a"
+  },
+  {
+    "at": 15.451,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 15.851,
+    "keys": "*term-session:web: ~/Emacs-Multiplexing-Study*",
+    "input_hex": "2a7465726d2d73657373696f6e3a7765623a207e2f456d6163732d4d756c7469706c6578696e672d53747564792a"
+  },
+  {
+    "at": 16.251,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 16.655,
+    "keys": "C-c C-k: term char mode",
+    "input_hex": "030b"
+  },
+  {
+    "at": 17.055,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 17.255,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 17.957,
+    "keys": "less service.log",
+    "input_hex": "6c65737320736572766963652e6c6f67"
+  },
+  {
+    "at": 18.157,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 18.859,
+    "keys": "q: leave less",
+    "input_hex": "71"
+  },
+  {
+    "at": 19.359,
+    "keys": "printf 'PAGER_%s\\n' RETURNED",
+    "input_hex": "7072696e7466202750414745525f25735c6e272052455455524e4544"
+  },
+  {
+    "at": 19.559,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

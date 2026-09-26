@@ -1,0 +1,1580 @@
+[
+  {
+    "id": "abysl-term",
+    "category": "esterno",
+    "source": "https://github.com/abysl/abysl-term.git",
+    "revision": "7a5de7fb1bd50a56c0ccf6c808fb817a84c49247",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "alacritty",
+    "category": "emulatore",
+    "source": "https://github.com/ArthurHeymans/emacs-alacritty.git",
+    "revision": "a81152af4702bd3b8fd8c737ce8a5abeb7593121",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "alacritty"
+    ]
+  },
+  {
+    "id": "aweshell",
+    "category": "gestore",
+    "source": "https://github.com/manateelazycat/aweshell.git",
+    "revision": "db495f29eef9013cf6b3796c3797e0ec76352e3f",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "aweshell"
+    ]
+  },
+  {
+    "id": "better-shell",
+    "category": "gestore",
+    "source": "https://github.com/killdash9/better-shell.git",
+    "revision": "70c787b981caeef8c5f8012b170eb7b9f167cd13",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "failed",
+    "scenario_ids": [
+      "better-shell"
+    ]
+  },
+  {
+    "id": "bshell",
+    "category": "gestore",
+    "source": "https://github.com/plandes/bshell.git",
+    "revision": "c13907ac0d2d8eda58c0e35d99179ed8c0e4c25a",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "choice-program-complete",
+    "category": "irrisolto",
+    "source": "https://github.com/emacsorphanage/choice-program-complete.git",
+    "revision": "non acquisita",
+    "acquisition": "fetch-failed",
+    "load": "not-acquired",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "cooked",
+    "category": "emulatore",
+    "source": "https://github.com/vodik/cooked.git",
+    "revision": "dd8e9fcc3c09d85d9dd598682dbe6390bd138262",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "cooked"
+    ]
+  },
+  {
+    "id": "coterm",
+    "category": "emulatore",
+    "source": "https://github.com/emacsmirror/coterm.git",
+    "revision": "ce3206fbd7156685e2d2f3fbc39b3eea3334754b",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "coterm"
+    ]
+  },
+  {
+    "id": "deskel",
+    "category": "workspace",
+    "source": "https://github.com/andrejlamov/deskel.git",
+    "revision": "48899d99c1de20d69cbfda48c27872eded73f787",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "detached",
+    "category": "persistenza",
+    "source": "https://git.sr.ht/~niklaseklund/detached.el",
+    "revision": "6b64d4d8064cee781e071e825857b442ea96c3d9",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "dropdown-remote",
+    "category": "esterno",
+    "source": "https://github.com/SleepyBag/dropdown-remote.git",
+    "revision": "0445c065373f809a6cca31dde3217d9aee970f07",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "dtache",
+    "category": "irrisolto",
+    "source": "https://codeberg.org/akib/emacs-dtache.git",
+    "revision": "non acquisita",
+    "acquisition": "fetch-failed",
+    "load": "not-acquired",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "e2wm",
+    "category": "workspace",
+    "source": "https://github.com/kiwanami/emacs-window-manager.git",
+    "revision": "33efca5504db9d8b3fdbd412c3d79663c9eec77a",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "e2wm-term",
+    "category": "workspace",
+    "source": "https://github.com/aki2o/e2wm-term.git",
+    "revision": "4542e52138484933dd99a497ff1b048ea42f9246",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eaf",
+    "category": "framework",
+    "source": "https://github.com/emacs-eaf/emacs-application-framework.git",
+    "revision": "6edd20450b2f31936847c4c5678b3ba6d2579a87",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eaf-pyqterminal",
+    "category": "emulatore-gui",
+    "source": "https://github.com/mumu-lhl/eaf-pyqterminal.git",
+    "revision": "41ed08eb8253c5d316794622ed52153607f9ae60",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eaf-terminal",
+    "category": "emulatore-gui",
+    "source": "https://github.com/emacs-eaf/eaf-terminal.git",
+    "revision": "46cbe4f1730970e3db34b3ad86d3fa48fbe92c5b",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eat",
+    "category": "emulatore",
+    "source": "https://codeberg.org/akib/emacs-eat.git",
+    "revision": "c8d54d649872bfe7b2b9f49ae5c2addbf12d3b99",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "eat",
+      "eat-eshell"
+    ]
+  },
+  {
+    "id": "eat-lucasec",
+    "category": "fork",
+    "source": "https://github.com/lucasec/emacs-eat.git",
+    "revision": "d29c8ecf3ee15ad6739e5372f702e2ab9073035d",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eat-serial",
+    "category": "integrazione",
+    "source": "https://github.com/ArthurHeymans/eat-serial.git",
+    "revision": "5510c23cd97994e98c068903c93545f3e4077881",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "edger",
+    "category": "navigazione",
+    "source": "https://github.com/suderman/edger.git",
+    "revision": "d7af1643454e8d2025976f31531aee15d0224bb0",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eee",
+    "category": "integrazione",
+    "source": "https://github.com/eval-exec/eee.el.git",
+    "revision": "ba62f385963d67d48abdec56c70fb08a3a14f656",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eev",
+    "category": "integrazione",
+    "source": "https://github.com/edrx/eev.git",
+    "revision": "4850e9c7a465684a0fdb79a6be83055e0ef9537b",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "eev"
+    ]
+  },
+  {
+    "id": "el-be-back",
+    "category": "emulatore",
+    "source": "https://github.com/ArthurHeymans/el-be-back.git",
+    "revision": "e7a4b2d3b340aa98fd99d593054cca834601f4d6",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "el-be-back"
+    ]
+  },
+  {
+    "id": "elscreen",
+    "category": "workspace",
+    "source": "https://github.com/knu/elscreen.git",
+    "revision": "cc58337faf5ba1eae7e87f75f6ff3758675688f2",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "elscreen"
+    ]
+  },
+  {
+    "id": "elscreen-buffer-group",
+    "category": "workspace",
+    "source": "https://github.com/jeffgran/elscreen-buffer-group.git",
+    "revision": "b48e71d4782adfeb2958f227d78c04164d26e4bd",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "elscreen-multi-term",
+    "category": "workspace",
+    "source": "https://github.com/wamei/elscreen-multi-term.git",
+    "revision": "4ea89bae0444d9d4377515929f76cb3e98140f1f",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "failed",
+    "scenario_ids": [
+      "elscreen-multi-term"
+    ]
+  },
+  {
+    "id": "emacs-herdr",
+    "category": "persistenza",
+    "source": "https://github.com/baongoc124/emacs-herdr.git",
+    "revision": "4c84bfe4d7487df53f03dd073a91d3f43b18643d",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "emacs-tabbar",
+    "category": "escluso",
+    "source": "https://github.com/sundarvenkata-personal/emacs-tabbar.git",
+    "revision": "b782ba0d83c86a7f1cc8b8fd4f4a7b320581164b",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "emacs-tunnel",
+    "category": "controller",
+    "source": "https://github.com/mimunzar/emacs-tunnel.git",
+    "revision": "ace3afdf5d3c68a4acf43d07bf7054ab5b8108c4",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "emamux",
+    "category": "controller",
+    "source": "https://github.com/emacsorphanage/emamux.git",
+    "revision": "93bb7e8b8cfb0ced5b9b38044a031d40342201a1",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "emamux"
+    ]
+  },
+  {
+    "id": "emux",
+    "category": "gestore",
+    "source": "https://github.com/re5et/emux.git",
+    "revision": "ab000ab78fb6a96b00ac8332575871a31f6f9548",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "emux"
+    ]
+  },
+  {
+    "id": "emux-attic",
+    "category": "fork",
+    "source": "https://github.com/emacsattic/emux.git",
+    "revision": "d41d6ac2803e8c5c368f012f05bce50d61a21631",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "emux-el",
+    "category": "gestore",
+    "source": "https://github.com/luozengbin/emux-el.git",
+    "revision": "acc8db2b25d394364165ddeee13019a28eff4fba",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "emux-el"
+    ]
+  },
+  {
+    "id": "emux-jcguu95",
+    "category": "distribuzione",
+    "source": "https://github.com/jcguu95/emux.git",
+    "revision": "54ce53ea351db4d34e70cee6973214f116d8a659",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "emux-rock",
+    "category": "fork",
+    "source": "https://github.com/rockneurotiko/emux.git",
+    "revision": "0695452583055485e848a4948cdaec1da8f64188",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "emux-shcv",
+    "category": "integrazione",
+    "source": "https://github.com/shcv/emux.git",
+    "revision": "156829a9ee823b24a94108c95c34dbca8ca5a4d1",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "equake",
+    "category": "popup-gui",
+    "source": "https://github.com/emacsomancer/equake.git",
+    "revision": "4469dd9eb1519f4d699d43d6cdb3a59488021fe8",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eshell",
+    "category": "baseline",
+    "source": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "revision": "30.1",
+    "acquisition": "builtin",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "eshell"
+    ]
+  },
+  {
+    "id": "eshell-toggle",
+    "category": "popup",
+    "source": "https://github.com/4DA/eshell-toggle.git",
+    "revision": "04e501e02c475bd9067eebcf8807c951f2316194",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "eshell-toggle"
+    ]
+  },
+  {
+    "id": "eshell-vterm",
+    "category": "integrazione",
+    "source": "https://github.com/iostapyshyn/eshell-vterm.git",
+    "revision": "20f4b246fa605a1533cdfbe3cb7faf31a24e3d2e",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "eshell-vterm"
+    ]
+  },
+  {
+    "id": "eterm-256color",
+    "category": "estensione",
+    "source": "https://git.sr.ht/~dieggsy/eterm-256color",
+    "revision": "868eeaa958de1deab690fe8ac8f5477452ccdb6a",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "eterm-256color"
+    ]
+  },
+  {
+    "id": "evil-tmux-navigator",
+    "category": "navigazione",
+    "source": "https://github.com/keith/evil-tmux-navigator.git",
+    "revision": "b455b255854d1c7af6123d6cb15054f504fa6ac0",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "eyebrowse",
+    "category": "workspace",
+    "source": "https://depp.brause.cc/eyebrowse.git",
+    "revision": "473381f4f9e847eb50a40ef2306c027432789754",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "eyebrowse"
+    ]
+  },
+  {
+    "id": "friendly-shell",
+    "category": "gestore",
+    "source": "https://github.com/p3r7/friendly-shell.git",
+    "revision": "5cafa3f6313ce04a47c8996ea1ac6b617d155d46",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "friendly-shell"
+    ]
+  },
+  {
+    "id": "ghostel",
+    "category": "emulatore",
+    "source": "https://github.com/dakra/ghostel.git",
+    "revision": "c2c411f2b0051465a5f5e7826ebab4ed216d4c0e",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "ghostel"
+    ]
+  },
+  {
+    "id": "ghostel-mux",
+    "category": "gestore",
+    "source": "https://github.com/SweatierKey/ghostel-mux.git",
+    "revision": "c03055c8c081f5afe9ea35cfa431b844f415f949",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "ghostel-mux"
+    ]
+  },
+  {
+    "id": "ghostel-switch",
+    "category": "gestore",
+    "source": "https://github.com/JulHee/ghostel-switch.git",
+    "revision": "e33a981aaffeb555e453e86b2b4a81a2af40a4e1",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "failed",
+    "scenario_ids": [
+      "ghostel-switch"
+    ]
+  },
+  {
+    "id": "ghostherd",
+    "category": "persistenza",
+    "source": "https://github.com/ionrock/ghostherd.git",
+    "revision": "2a505e62512e97d2090d76a2ea004e10f86a6a3d",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "helm-switch-shell",
+    "category": "selettore",
+    "source": "https://github.com/jamesnvc/helm-switch-shell.git",
+    "revision": "8d7ba1d99ff12a8f1d6ce3b9684ae8aebf494cf3",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "herdr",
+    "category": "persistenza",
+    "source": "https://github.com/eddof13/herdr.el.git",
+    "revision": "6500aa6e272aaf125111150a62dd12c7644f1825",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "herdr-emacs",
+    "category": "esterno",
+    "source": "https://github.com/valdezm/herdr-emacs.git",
+    "revision": "f5ae573569fbd2137b09dfe69abb5150b53afd26",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "kuro",
+    "category": "emulatore",
+    "source": "https://github.com/takeokunn/kuro.git",
+    "revision": "30a4ff96bdde62c789f42a443766632e8c379873",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "kuro"
+    ]
+  },
+  {
+    "id": "lazy-emacs-terminal",
+    "category": "distribuzione",
+    "source": "https://github.com/lizqwerscott/lazy-emacs-terminal.git",
+    "revision": "75eee8341b0c2e64376f482577e76b19c0c4a530",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "libgterm",
+    "category": "emulatore",
+    "source": "https://github.com/rwc9u/emacs-libgterm.git",
+    "revision": "5f5516dccb0de06b2233b3492f175c3477f00ef0",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "lterm",
+    "category": "terminale-lineare",
+    "source": "https://github.com/TaylanUB/lterm.git",
+    "revision": "734cb5bd91fff337cefd266c4e43a9ae306e4c51",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "lterm"
+    ]
+  },
+  {
+    "id": "mistty",
+    "category": "emulatore",
+    "source": "https://github.com/szermatt/mistty.git",
+    "revision": "baba2dcd18cac75fc9953da20e8c0a9886441319",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "mistty"
+    ]
+  },
+  {
+    "id": "multi-buf",
+    "category": "gestore",
+    "source": "https://github.com/djr7C4/multi-buf.git",
+    "revision": "dcd28e9d18b4757431eb99a22b2193efb8f87841",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "multi-buf"
+    ]
+  },
+  {
+    "id": "multi-buffer",
+    "category": "gestore",
+    "source": "https://gitlab.com/vslavkin/multi-buffer.el.git",
+    "revision": "4459d83bb0e2a5399d5cace0016f13778a1f5869",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "passed",
+    "scenario_ids": [
+      "multi-buffer"
+    ]
+  },
+  {
+    "id": "multi-eshell",
+    "category": "gestore",
+    "source": "https://github.com/emacsattic/multi-eshell.git",
+    "revision": "ac10d93d64e6ea9706ae4396df186faeecaaea12",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "multi-eshell"
+    ]
+  },
+  {
+    "id": "multi-run",
+    "category": "broadcast",
+    "source": "https://github.com/sagarjha/multi-run.git",
+    "revision": "13d4d923535b5e8482b13ff76185203075fb26a3",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "multi-shell",
+    "category": "gestore",
+    "source": "https://github.com/emacsmirror/multi-shell.git",
+    "revision": "57490c1be4a42b3d0e062a3ea5ebfe53ab21c74d",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "multi-shell"
+    ]
+  },
+  {
+    "id": "multi-term",
+    "category": "gestore",
+    "source": "https://github.com/manateelazycat/multi-term.git",
+    "revision": "017c77c550115936860e2ea71b88e585371475d5",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "multi-term"
+    ]
+  },
+  {
+    "id": "multi-term-roman",
+    "category": "fork",
+    "source": "https://github.com/roman/multi-term.git",
+    "revision": "06f6b49ef53a5f2ea779b1608eb5a7b38660e6bb",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "multi-term-tmux",
+    "category": "persistenza",
+    "source": "https://github.com/beyondmetis/multi-term-tmux.git",
+    "revision": "d064fbdbfc585b8d1ca53a38d169d021abbab038",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "multi-vterm",
+    "category": "gestore",
+    "source": "https://github.com/suonlight/multi-vterm.git",
+    "revision": "36746d85870dac5aaee6b9af4aa1c3c0ef21a905",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "multi-vterm"
+    ]
+  },
+  {
+    "id": "myterminal-controls",
+    "category": "escluso",
+    "source": "https://github.com/myTerminal/myterminal-controls.git",
+    "revision": "c635868e13ee898ec77925d98b36421640e22aa4",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "navorski",
+    "category": "gestore",
+    "source": "https://github.com/roman/navorski.el.git",
+    "revision": "698c1c62da70164aebe9a7a5d034778fbc30ea5b",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "navorski"
+    ]
+  },
+  {
+    "id": "nssh",
+    "category": "launcher-remoto",
+    "source": "https://codeberg.org/emacs-weirdware/nssh.git",
+    "revision": "74d43738565749af680e4d1388e0c2f88e93498d",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "ob-screen",
+    "category": "controller",
+    "source": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "revision": "30.1",
+    "acquisition": "builtin",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "ob-tmux",
+    "category": "controller",
+    "source": "https://github.com/ahendriksen/ob-tmux.git",
+    "revision": "cb4f151554a653f8f6b22ab8edbe3420d7f5e377",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "persp-mode",
+    "category": "workspace",
+    "source": "https://github.com/Bad-ptr/persp-mode.el.git",
+    "revision": "703f3b5ad502cfe5b027586611421900bed1fb40",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "perspective",
+    "category": "workspace",
+    "source": "https://github.com/nex3/perspective-el.git",
+    "revision": "62e6f6de03423d0cede0ea0f821e6fcd3e195c83",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "popper",
+    "category": "gestore-finestre",
+    "source": "https://github.com/karthink/popper.git",
+    "revision": "d83b894ee7a9daf7c8e9b864c23d08f1b23d78f6",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "popterm",
+    "category": "popup",
+    "source": "https://github.com/ChetanKoneru/popterm.el.git",
+    "revision": "d086833f7762d7f9a96954451328ee9a57378b93",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "popterm"
+    ]
+  },
+  {
+    "id": "project-shells",
+    "category": "gestore",
+    "source": "https://github.com/hying-caritas/project-shells.git",
+    "revision": "15f70d99b6d5f078f490ceb64b6f13c000b37e24",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "project-terminal",
+    "category": "gestore",
+    "source": "https://github.com/cowboyd/project-terminal.el.git",
+    "revision": "79a4cb4fe4bd30c4088f634a108ef24b54769943",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "project-terminal"
+    ]
+  },
+  {
+    "id": "quick-shell-keybind",
+    "category": "estensione",
+    "source": "https://github.com/eyeinsky/quick-shell-keybind.git",
+    "revision": "eae4ef3673794a202f097b1619ba7cfb79424dfc",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "rswitcher",
+    "category": "irrisolto",
+    "source": "https://github.com/DamienCassou/rswitcher.git",
+    "revision": "non acquisita",
+    "acquisition": "fetch-failed",
+    "load": "not-acquired",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "screensend",
+    "category": "controller",
+    "source": "https://github.com/benwbooth/screensend.el.git",
+    "revision": "a298f87a6776bdb4afd99a1bb367fdf09bc29411",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "session",
+    "category": "irrisolto",
+    "source": "https://github.com/emacsorphanage/session.git",
+    "revision": "non acquisita",
+    "acquisition": "fetch-failed",
+    "load": "not-acquired",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "shell",
+    "category": "baseline",
+    "source": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "revision": "30.1",
+    "acquisition": "builtin",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "shell"
+    ]
+  },
+  {
+    "id": "shell-command-x",
+    "category": "estensione",
+    "source": "https://github.com/elizagamedev/shell-command-x.el.git",
+    "revision": "d2fe4d08be306d6570f3c316ea06b0e6931ea5d5",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "shell-here",
+    "category": "launcher-interno",
+    "source": "https://codeberg.org/emacs-weirdware/shell-here.git",
+    "revision": "eeb437ff26d62a5009046b1b3b4503b768e3131a",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "shell-here"
+    ]
+  },
+  {
+    "id": "shell-pop",
+    "category": "popup",
+    "source": "https://github.com/kyagi/shell-pop-el.git",
+    "revision": "446b1691454e65be648dcb7e316639aa7dd73be2",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "shell-pop"
+    ]
+  },
+  {
+    "id": "shell-switcher",
+    "category": "gestore",
+    "source": "https://github.com/DamienCassou/shell-switcher.git",
+    "revision": "4c96dc27afb519bdbf7bbe42d49a51497f078192",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "shell-switcher"
+    ]
+  },
+  {
+    "id": "shell-toggle",
+    "category": "popup",
+    "source": "https://github.com/knu/shell-toggle.el.git",
+    "revision": "0d01bd9a780fdb7fe6609c552523f4498649a3b9",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "shell-toggle-plus",
+    "category": "popup",
+    "source": "https://github.com/xcodebuild/shell-toggle-plus.git",
+    "revision": "78200c1da8a4d9f2e6559a7e032702f4cb37eb09",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "simple-screen",
+    "category": "workspace",
+    "source": "https://github.com/wachikun/simple-screen.git",
+    "revision": "66eb5ddab259025ef5790084ca33018c266d6940",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "ssh",
+    "category": "launcher-remoto",
+    "source": "https://github.com/emacsmirror/ssh.git",
+    "revision": "812e27409d01c38d74906a1816640506d6e7e3ef",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "sticky-shell",
+    "category": "estensione",
+    "source": "https://github.com/andrewdea/sticky-shell.git",
+    "revision": "2aec19f60539faf21f567e89701a8e28492eccd1",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "sticky-shell"
+    ]
+  },
+  {
+    "id": "tab-bar",
+    "category": "workspace",
+    "source": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "revision": "30.1",
+    "acquisition": "builtin",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "tab-bar"
+    ]
+  },
+  {
+    "id": "tab-group",
+    "category": "workspace",
+    "source": "https://github.com/tarao/tab-group-el.git",
+    "revision": "5a290ec2608e4100fb188fd60ecb77affcc3465b",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "term",
+    "category": "emulatore",
+    "source": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "revision": "30.1",
+    "acquisition": "builtin",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "term",
+      "ansi-term"
+    ]
+  },
+  {
+    "id": "term+",
+    "category": "estensione",
+    "source": "https://github.com/tarao/term-plus-el.git",
+    "revision": "c3c9239b339c127231860de43abfa08c44c0201a",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "failed",
+    "scenario_ids": [
+      "term+"
+    ]
+  },
+  {
+    "id": "term+key-intercept",
+    "category": "estensione",
+    "source": "https://github.com/tarao/term-plus-ki-el.git",
+    "revision": "2d98e976877a5ca71500ab57377b6e5a129fa2f3",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "term-alert",
+    "category": "estensione",
+    "source": "https://codeberg.org/calliecameron/term-alert.git",
+    "revision": "2236864975b9909e8499780a7fc4d92022c17b61",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "term-cmd",
+    "category": "estensione",
+    "source": "https://codeberg.org/calliecameron/term-cmd.git",
+    "revision": "4799725894028c2e693d34472715130bdefc529b",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "term-control",
+    "category": "gestore",
+    "source": "https://github.com/Pablololo12/term-control.el.git",
+    "revision": "d5c0bf282e0e292881b24c4816de5fde0897034c",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "term-control"
+    ]
+  },
+  {
+    "id": "term-manager",
+    "category": "gestore",
+    "source": "https://github.com/colonelpanic8/term-manager.git",
+    "revision": "1581a90ff9b359449e056da55259b9f42e749f0c",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "term-manager"
+    ]
+  },
+  {
+    "id": "term-mux",
+    "category": "gestore",
+    "source": "https://github.com/merrickluo/term-mux.el.git",
+    "revision": "0b1770318c892de0d9dce5a5eb6cde38b9c03d78",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "term-mux"
+    ]
+  },
+  {
+    "id": "term-plus-fork",
+    "category": "fork",
+    "source": "https://github.com/ZpullZ/term-plus-el.git",
+    "revision": "699fed40378c9d43ee3a0bf80db33df3ae9f9a0e",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "term-plus-mux",
+    "category": "gestore",
+    "source": "https://github.com/tarao/term-plus-mux-el.git",
+    "revision": "cd12a3744d4b7d37a002f4f7fcc4a45ea5be95c3",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "failed",
+    "scenario_ids": [
+      "term-plus-mux"
+    ]
+  },
+  {
+    "id": "term-plus-xterm",
+    "category": "duplicato",
+    "source": "https://github.com/tarao/term-plus-el.git",
+    "revision": "c3c9239b339c127231860de43abfa08c44c0201a",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "term-run",
+    "category": "launcher-interno",
+    "source": "https://github.com/10sr/term-run-el.git",
+    "revision": "0fd135d55fcf864598b1fb8dd880833a1a322910",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "term-run"
+    ]
+  },
+  {
+    "id": "term-sessions",
+    "category": "persistenza",
+    "source": "https://github.com/ArthurHeymans/emacs-term-sessions.git",
+    "revision": "29084b6a8a73b612f60a73ef798303384bd44215",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "term-sessions",
+      "term-sessions-persistence"
+    ]
+  },
+  {
+    "id": "term-toggle",
+    "category": "popup",
+    "source": "https://github.com/amno1/emacs-term-toggle.git",
+    "revision": "8d3258bc8d03bbb4c735afc681a3c415bb0bbcc6",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "term-toggle"
+    ]
+  },
+  {
+    "id": "terminal",
+    "category": "emulatore-storico",
+    "source": "https://git.savannah.gnu.org/cgit/emacs.git",
+    "revision": "30.1",
+    "acquisition": "builtin",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "terminal"
+    ]
+  },
+  {
+    "id": "terminal-here",
+    "category": "esterno",
+    "source": "https://github.com/davidshepherd7/terminal-here.git",
+    "revision": "d90bc3e1c8c660e11dba002a1ce1d82940b260b1",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "terminal-toggle",
+    "category": "popup",
+    "source": "https://gitlab.com/mtekman/terminal-toggle.el.git",
+    "revision": "f824d634aef3600cb7a8e2ddf9e8444c6607c160",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "terminal-toggle"
+    ]
+  },
+  {
+    "id": "terminology",
+    "category": "gestore",
+    "source": "https://github.com/timjstewart/terminology.git",
+    "revision": "f18d28163e5a408e3250f22f2705c9349a43256c",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "termint",
+    "category": "integrazione",
+    "source": "https://github.com/milanglacier/termint.el.git",
+    "revision": "bf97d0a417902417febc2b6925152dab5610057f",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tiling",
+    "category": "workspace",
+    "source": "https://github.com/lgfang/tiling.git",
+    "revision": "95c8cf543214eda33202a417a4ef7bb5095991c0",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tmux-cc",
+    "category": "controller",
+    "source": "https://github.com/wcy123/tmux-cc.git",
+    "revision": "7f493a8d7f15e16fdf47da44756e1212e438dc6b",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tmux-control",
+    "category": "persistenza",
+    "source": "https://github.com/csheaff/tmux-control.git",
+    "revision": "ebe07f4caff0c1be21e1c92323de6d00744c2891",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "tmux-control"
+    ]
+  },
+  {
+    "id": "tmux-control-mode",
+    "category": "persistenza",
+    "source": "https://github.com/stephenjayakar/emacs-tmux-control-mode.git",
+    "revision": "d2a93a336f7d6a4a770cb9e740d5e6cfb602843b",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "failed",
+    "scenario_ids": [
+      "tmux-control-mode"
+    ]
+  },
+  {
+    "id": "tmux-el",
+    "category": "controller",
+    "source": "https://github.com/abougouffa/tmux.el.git",
+    "revision": "26b2673eb5a15150f8f05b109aca77b33db22b53",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tmux-head",
+    "category": "controller",
+    "source": "https://github.com/jeffyql/tmux-head.git",
+    "revision": "12c6fa6fa1fef1c6af738086dceea53344483ef6",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tmux-pane",
+    "category": "navigazione",
+    "source": "https://github.com/laishulu/emacs-tmux-pane.git",
+    "revision": "0ab0d40b497e984a589189358e04e322b8165985",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tmux-runner",
+    "category": "controller",
+    "source": "https://github.com/joaofnds/emacs-tmux-runner.git",
+    "revision": "1dfdefd2569848024c581a933e3ebc09b93b41e3",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tmux-tandem",
+    "category": "navigazione",
+    "source": "https://github.com/alberti42/emacs-tmux-tandem.git",
+    "revision": "82c1e8e4c15ef9576f1472d8b4e387c4b1e96c3a",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tmux-view",
+    "category": "viewer",
+    "source": "https://github.com/mgalgs/tmux-view.el.git",
+    "revision": "3f0339f568a68f128a678e684ebf351a0b647bd2",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "tmux-view"
+    ]
+  },
+  {
+    "id": "tmuxbuf",
+    "category": "escluso",
+    "source": "https://github.com/tmshort/tmuxbuf.git",
+    "revision": "aa9e78798c8cb8d094300892973e63954d2f32f7",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "tmuxmacs",
+    "category": "controller",
+    "source": "https://github.com/andrewppar/tmuxmacs.git",
+    "revision": "e569afd48a7649607bd569af388c5311763fd935",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "toggle-term",
+    "category": "popup",
+    "source": "https://github.com/justinlime/toggle-term.el.git",
+    "revision": "ebfce6283e53fda7f69ccda73109a02b646623af",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "toggle-term"
+    ]
+  },
+  {
+    "id": "tramp-term",
+    "category": "launcher-remoto",
+    "source": "https://github.com/cuspymd/tramp-term.el.git",
+    "revision": "276c4d1cb79cc2685df89a02209e2082f74167ea",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "turnip",
+    "category": "controller",
+    "source": "https://github.com/kljohann/turnip.el.git",
+    "revision": "2fd32562fc6fc1cda6d91aa939cfb29f9b16e9de",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "vterm",
+    "category": "emulatore",
+    "source": "https://github.com/akermu/emacs-libvterm.git",
+    "revision": "6d715a93fa0e5182bc137d4db09f376e06938aa5",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "vterm",
+      "tmux-nested"
+    ]
+  },
+  {
+    "id": "vterm-anti-flicker-filter",
+    "category": "estensione",
+    "source": "https://github.com/martinbaillie/vterm-anti-flicker-filter.git",
+    "revision": "b17b013982b7a4eed0c31a3fee068bcbcac002ea",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "vterm-editor",
+    "category": "estensione",
+    "source": "https://git.andros.dev/andros/vterm-editor.el.git",
+    "revision": "239782cdf2411aed27a4f053c30e05c90047351b",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "vterm-hotkey",
+    "category": "estensione",
+    "source": "https://github.com/rootatpixel/vterm-hotkey.git",
+    "revision": "039033a4c30dabca625d6924d1796bb9e13d85c7",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "vterm-manager",
+    "category": "gestore",
+    "source": "https://github.com/laishulu/emacs-vterm-manager.git",
+    "revision": "d770fd8cff7c24688199392ad93c01485c6a9569",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "vterm-manager"
+    ]
+  },
+  {
+    "id": "vterm-ring",
+    "category": "gestore",
+    "source": "https://github.com/daniel-ts/vterm-ring.git",
+    "revision": "b251259cb7a73fe468dcead17beac2901e952fbf",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "vterm-ring"
+    ]
+  },
+  {
+    "id": "vterm-toggle",
+    "category": "popup",
+    "source": "https://github.com/jixiuf/vterm-toggle.git",
+    "revision": "a0051a8b8eaa85f8df54ddb032f5710c1f62779d",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "vterm-toggle"
+    ]
+  },
+  {
+    "id": "vterms",
+    "category": "gestore",
+    "source": "https://github.com/t0yv0/vterms.el.git",
+    "revision": "e823b788ebc787374950a0e10bf606019b8443f4",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "vterms"
+    ]
+  },
+  {
+    "id": "vtermux",
+    "category": "gestore",
+    "source": "https://github.com/pcmantz/vtermux.git",
+    "revision": "98db8bfde835ba2c100e5dd835d5772ab2becf0a",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "passed",
+    "scenario_ids": [
+      "vtermux"
+    ]
+  },
+  {
+    "id": "vtplex",
+    "category": "gestore",
+    "source": "https://github.com/mitch-kyle/vtplex.git",
+    "revision": "f853c0f6f32499b24300a0519d348356645c1a33",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "failed",
+    "scenario_ids": [
+      "vtplex"
+    ]
+  },
+  {
+    "id": "winterm",
+    "category": "prototipo-windows",
+    "source": "https://github.com/Borwe/emacs-winterm.git",
+    "revision": "8549cd42593f22b6c6ff61015cbcd08862c028e8",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "workgroups",
+    "category": "workspace",
+    "source": "https://github.com/tlh/workgroups.el.git",
+    "revision": "9572b3492ee09054dc329f64ed846c962b395e39",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "workgroups2",
+    "category": "workspace",
+    "source": "https://github.com/pashinin/workgroups2.git",
+    "revision": "aff9d76b7be5eed33f30be2fabf111818749cbd5",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "wterm",
+    "category": "emulatore-windows",
+    "source": "https://github.com/admmq/wterm.el.git",
+    "revision": "08a78cc300f3d39432e53f15bbc558ceacec35a8",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "xterm-256color",
+    "category": "irrisolto",
+    "source": "https://github.com/tarao/xterm-256color-el.git",
+    "revision": "non acquisita",
+    "acquisition": "fetch-failed",
+    "load": "not-acquired",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "xterm-color",
+    "category": "estensione",
+    "source": "https://github.com/atomontage/xterm-color.git",
+    "revision": "ffdad85e584dfc0857f2a1fb970f5ef0f5d31ba3",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "yantra",
+    "category": "escluso",
+    "source": "https://github.com/alix559/yantra.git",
+    "revision": "abd9d94f3cb60abd0200e5427fe9ba715d7c9103",
+    "acquisition": "fetched",
+    "load": "error",
+    "scenario": "not-run",
+    "scenario_ids": []
+  },
+  {
+    "id": "zellij",
+    "category": "controller",
+    "source": "https://github.com/mandoo180/zellij.el.git",
+    "revision": "985ebccd222d5e288c178729328ab8e94eda3ba3",
+    "acquisition": "fetched",
+    "load": "loaded",
+    "scenario": "not-run",
+    "scenario_ids": []
+  }
+]

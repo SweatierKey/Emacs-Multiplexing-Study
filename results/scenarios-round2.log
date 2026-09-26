@@ -1,0 +1,17 @@
+shell passed 
+eshell passed 
+shell-pop passed 
+multi-shell passed 
+multi-eshell passed 
+better-shell failed Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web
+
+SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/
+friendly-shell passed 
+project-terminal passed 
+vterm-ring passed 
+vterm-toggle failed Launch did not enter a terminal: {'name': '*scratch*', 'mode': 'lisp-interaction-mode', 'vertico': True, 'marginalia': True, 'text': ''}
+vterms passed 
+term-mux passed 
+term-manager passed 
+lterm passed 

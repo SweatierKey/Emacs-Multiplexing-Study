@@ -1,0 +1,117 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>aweshell</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/manateelazycat/aweshell">Sorgente upstream</a>. Revisione: <code>db495f29eef9013cf6b3796c3797e0ec76352e3f</code>.</p>
+<h2>Funzionamento</h2>
+<p>Estende Eshell con più buffer e helper di interazione.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x aweshell-new e aweshell-prev. Scenario lineare verificato; dipendenze caricate dal bundle.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/aweshell.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/aweshell.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario aweshell: passed</h3>
+<p><a href="../../results/aweshell.json">Esito e snapshot</a> · <a href="../../results/aweshell-keys.json">Traccia dei tasti</a> · <a href="../../recordings/aweshell.cast">Registrazione asciinema</a> · <a href="../../index.html#aweshell">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>aweshell-new</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.71</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.91</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.91</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.12</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.12</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.42</td>
+<td><code>aweshell-new</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.92</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.22</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.42</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.42</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.62</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.63</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.93</td>
+<td><code>aweshell-prev</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.43</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.23</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.43</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

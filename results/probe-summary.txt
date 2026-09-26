@@ -1,0 +1,134 @@
+abysl-term loaded 
+alacritty loaded 
+dropdown-remote loaded 
+eaf-pyqterminal error Symbol’s value as variable is void: eaf-app-binding-alist
+eat-lucasec loaded 
+eat-serial loaded 
+edger loaded 
+emacs-tabbar error Cannot open load file: No such file or directory, emacs-tabbar
+emux-rock loaded 
+evil-tmux-navigator error Cannot open load file: No such file or directory, evil-tmux-navigator
+ghostel-switch loaded 
+ghostherd loaded 
+lazy-emacs-terminal error Cannot open load file: No such file or directory, lazy-emacs-terminal
+multi-term-roman error Symbol’s function definition is void: ad-advised-definition-p
+project-terminal loaded 
+term-control loaded 
+term-plus-fork loaded 
+terminology loaded 
+vterm-anti-flicker-filter loaded 
+winterm error Cannot open load file: No such file or directory, winterm
+yantra error Cannot open load file: No such file or directory, yantra
+bshell error Cannot open load file: No such file or directory, choice-program-complete
+cooked loaded 
+coterm loaded 
+deskel error Cannot open load file: No such file or directory, deskel
+detached loaded 
+dtache error Cannot open load file: No such file or directory, dtache
+eee loaded 
+el-be-back loaded 
+emacs-herdr loaded 
+emux-el loaded 
+emux-shcv loaded 
+eterm-256color loaded 
+herdr loaded 
+herdr-emacs loaded 
+kuro loaded 
+libgterm error gterm module not compiled. Compile now? (y or n) {"status":"error","error":"End of file during parsing: Error reading from stdin"}
+lterm loaded 
+multi-buf loaded 
+multi-eshell loaded 
+multi-run loaded 
+multi-shell loaded 
+multi-term-tmux loaded 
+popterm loaded 
+screensend loaded 
+term-plus-mux loaded 
+tiling loaded 
+tmux-cc loaded 
+tmux-control loaded 
+tmux-el loaded 
+tmux-head loaded 
+tmux-pane loaded 
+tmux-tandem loaded 
+tmux-view loaded 
+tmuxbuf loaded 
+tmuxmacs loaded 
+turnip loaded 
+vterm-manager error Cannot open load file: No such file or directory, vterm-manager
+vterm-ring loaded 
+vterms loaded 
+vtermux loaded 
+vtplex loaded 
+wterm error wterm: /home/admin/Emacs-Multiplexing-Study/sources/wterm/wterm-module.dll not found
+xterm-256color loaded 
+zellij loaded 
+better-shell loaded 
+e2wm loaded 
+e2wm-term error Symbol’s function definition is void: defstruct
+eaf loaded 
+elscreen loaded 
+elscreen-buffer-group loaded 
+elscreen-multi-term loaded 
+emacs-tunnel error Cannot open load file: No such file or directory, emacs-tunnel
+emux-attic loaded 
+eyebrowse loaded 
+friendly-shell loaded 
+helm-switch-shell error Cannot open load file: No such file or directory, async
+navorski loaded 
+persp-mode loaded 
+perspective loaded 
+project-shells loaded 
+quick-shell-keybind loaded 
+rswitcher loaded 
+session error Cannot open load file: No such file or directory, session
+shell-command-x loaded 
+shell-switcher loaded 
+shell-toggle loaded 
+shell-toggle-plus loaded 
+simple-screen loaded 
+sticky-shell loaded 
+term+key-intercept error Cannot open load file: No such file or directory, key-intercept
+term-alert error Cannot open load file: No such file or directory, alert
+term-cmd loaded 
+term-mux loaded 
+term-plus-xterm loaded 
+term-run loaded 
+term-sessions loaded 
+termint loaded 
+tmux-control-mode error Cannot open load file: No such file or directory, tmux-control-mode
+tmux-runner error Cannot open load file: No such file or directory, tmux-runner
+toggle-term loaded 
+tramp-term loaded 
+vterm-editor loaded 
+workgroups loaded 
+workgroups2 loaded 
+xterm-color loaded 
+tab-group loaded 
+aweshell loaded 
+eaf-terminal error Symbol’s value as variable is void: eaf-app-binding-alist
+eat loaded 
+emamux loaded 
+emux loaded 
+equake loaded 
+eshell-toggle loaded 
+eshell-vterm loaded 
+ghostel loaded 
+ghostel-mux loaded 
+mistty loaded 
+multi-term loaded 
+multi-vterm loaded 
+popper loaded 
+shell-here loaded 
+shell-pop loaded 
+term+ loaded 
+term-manager loaded 
+terminal-here loaded 
+terminal-toggle loaded 
+vterm loaded 
+vterm-hotkey loaded 
+vterm-toggle loaded 
+term loaded 
+shell loaded 
+eshell loaded 
+tab-bar loaded 

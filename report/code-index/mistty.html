@@ -1,0 +1,869 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: mistty</h1>
+<p>Fonte: https://github.com/szermatt/mistty.git</p>
+<p>Revisione: <code>baba2dcd18cac75fc9953da20e8c0a9886441319</code>.</p>
+<h2>extras/mistty-reverse-input-decode-map.el</h2>
+<ul>
+<li>L25: <code>(require 'seq)</code></li>
+<li>L26: <code>(require 'help-fns)</code></li>
+<li>L31: <code>(defun mistty-reverse-input-decode-map (map)</code></li>
+<li>L77: <code>(defun mistty--reverse-input-decode-map-1 (event-type binding prefix exists-table)</code></li>
+<li>L104: <code>"    (define-key map (kbd %S) \"%s\")\n"</code></li>
+<li>L108: <code>(defun mistty--char-string (c)</code></li>
+<li>L118: <code>(provide 'mistty-reverse-input-decode-map)</code></li>
+</ul>
+<h2>mistty-accum-macros.el</h2>
+<ul>
+<li>L29: <code>(require 'rx)</code></li>
+<li>L30: <code>(require 'cl-lib)</code></li>
+<li>L31: <code>(require 'mistty-accum)</code></li>
+<li>L54: <code>(defmacro mistty--accum-add-processor (accum rx-regexp processor)</code></li>
+<li>L125: <code>(defun mistty--accum-unquote-rx-regexp (arg)</code></li>
+<li>L136: <code>(defun mistty--accum-strip-let (tree)</code></li>
+<li>L146: <code>(defun mistty--accum-expand-shortcuts (tree)</code></li>
+<li>L181: <code>(defun mistty--accum-build-hold-back (tree)</code></li>
+<li>L267: <code>(provide 'mistty-accum-macros)</code></li>
+</ul>
+<h2>mistty-accum.el</h2>
+<ul>
+<li>L23: <code>(require 'seq)</code></li>
+<li>L24: <code>(require 'subr-x)</code></li>
+<li>L25: <code>(require 'pcase)</code></li>
+<li>L26: <code>(require 'oclosure)</code></li>
+<li>L27: <code>(require 'cl-lib)</code></li>
+<li>L28: <code>(require 'ring)</code></li>
+<li>L30: <code>(require 'mistty-util)</code></li>
+<li>L31: <code>(require 'mistty-log)</code></li>
+<li>L188: <code>(defun mistty--make-accumulator (dest)</code></li>
+<li>L433: <code>(defun mistty--split-incomplete-chars (str)</code></li>
+<li>L457: <code>(defun mistty--eight-bit-char-p (str index)</code></li>
+<li>L467: <code>(provide 'mistty-accum)</code></li>
+</ul>
+<h2>mistty-alacritty.el</h2>
+<ul>
+<li>L23: <code>(require 'mistty-util)</code></li>
+<li>L24: <code>(require 'mistty-kbd)</code></li>
+<li>L25: <code>(require 'mistty-log)</code></li>
+<li>L26: <code>(require 'mistty-scrolline)</code></li>
+<li>L31: <code>(require 'ansi-osc) ; links use ansi-osc-hyperlink</code></li>
+<li>L55: <code>(defun mistty-alacritty-modulename ()</code></li>
+<li>L65: <code>(defun mistty-alacritty-load ()</code></li>
+<li>L99: <code>(defcustom mistty-alacritty-osc52 'only-copy</code></li>
+<li>L134: <code>(defcustom mistty-alacritty-term-name nil</code></li>
+<li>L180: <code>(defvar mistty-alacritty-mode-map</code></li>
+<li>L186: <code>(define-key map (make-string 1 c) 'mistty-send-key)))</code></li>
+<li>L187: <code>(define-key map "\e" esc-map)</code></li>
+<li>L190: <code>(define-key esc-map (make-string 1 c) 'mistty-send-key)))</code></li>
+<li>L193: <code>(define-key map "\C-q" '(keymap (t . mistty-send-last-key)))</code></li>
+<li>L199: <code>(define-key map key 'mistty-send-key))</code></li>
+<li>L202: <code>(keymap-set map "C-c C-c" #'mistty-send-last-key)</code></li>
+<li>L203: <code>(keymap-set map "C-c C-z" #'mistty-send-last-key)</code></li>
+<li>L204: <code>(keymap-set map "C-c C-\\" #'mistty-send-last-key)</code></li>
+<li>L205: <code>(keymap-set map "C-c C-g" #'mistty-send-last-key)</code></li>
+<li>L206: <code>(keymap-set map "C-c C-q" #'mistty-send-key-sequence)</code></li>
+<li>L215: <code>(define-derived-mode mistty-alacritty-mode fundamental-mode "MisTTY/FS"</code></li>
+<li>L229: <code>(defun mistty-alacritty-available-p ()</code></li>
+<li>L235: <code>(defun mistty-alacritty-exec (name program args width height)</code></li>
+<li>L300: <code>(defun mistty-alacritty-auto-resize (enabled)</code></li>
+<li>L315: <code>(defun mistty-alacritty--resize-from-window (proc win)</code></li>
+<li>L331: <code>(defun mistty-alacritty-resize (width height)</code></li>
+<li>L342: <code>(defun mistty-alacritty--alt-screen-p ()</code></li>
+<li>L349: <code>(defun mistty-alacritty--cursor-linecol ()</code></li>
+<li>L355: <code>(defun mistty-alacritty--cursor-column ()</code></li>
+<li>L359: <code>(defun mistty-alacritty--cursor-chars ()</code></li>
+<li>L367: <code>(defun mistty-alacritty--cursor-line ()</code></li>
+<li>L371: <code>(defun mistty-alacritty--process-filter (proc str)</code></li>
+<li>L381: <code>(defun mistty-alacritty--process-bytes (str)</code></li>
+<li>L396: <code>(defun mistty-alacritty--render ()</code></li>
+<li>L412: <code>(defun mistty-alacritty--sentinel (proc msg)</code></li>
+<li>L425: <code>(defun mistty-alacritty--TERM ()</code></li>
+<li>L434: <code>(defun mistty-alacritty--clear-to-eol (pos)</code></li>
+<li>L442: <code>(defun mistty-alacritty--cleanup-prompt-sp (pos)</code></li>
+<li>L454: <code>(provide 'mistty-alacritty)</code></li>
+</ul>
+<h2>mistty-changeset.el</h2>
+<ul>
+<li>L37: <code>(require 'generator)</code></li>
+<li>L44: <code>(require 'mistty-util)</code></li>
+<li>L86: <code>(defun mistty--activate-changeset ()</code></li>
+<li>L99: <code>(defun mistty--release-changeset (changeset)</code></li>
+<li>L112: <code>(defun mistty--active-changeset ()</code></li>
+<li>L123: <code>(defun mistty--changeset-mark-region (changeset beg end old-end)</code></li>
+<li>L159: <code>(defun mistty--changeset-single-insert (cs)</code></li>
+<li>L169: <code>(defun mistty--changeset-collect (changeset)</code></li>
+<li>L198: <code>(defun mistty--changeset-restrict (changeset min-pos)</code></li>
+<li>L237: <code>(defun mistty--changeset-modifications (changeset)</code></li>
+<li>L294: <code>(provide 'mistty-changeset)</code></li>
+</ul>
+<h2>mistty-install.el</h2>
+<ul>
+<li>L22: <code>(require 'mistty-alacritty)</code></li>
+<li>L23: <code>(require 'cl-lib)</code></li>
+<li>L24: <code>(require 'url)</code></li>
+<li>L34: <code>(defcustom mistty-install-dir nil</code></li>
+<li>L46: <code>(defcustom mistty-install-keep-output nil</code></li>
+<li>L94: <code>(defun mistty-install ()</code></li>
+<li>L141: <code>(defun mistty-install-dwim ()</code></li>
+<li>L155: <code>(defun mistty--install-setup ()</code></li>
+<li>L235: <code>(defun mistty--setup-install-buffer ()</code></li>
+<li>L251: <code>(defun mistty--run-with-output-buffer (func)</code></li>
+<li>L282: <code>(defun mistty--run-with-temp-dir (name func)</code></li>
+<li>L289: <code>(defun mistty--choose-install-dir ()</code></li>
+<li>L299: <code>(defun mistty--interactive-download ()</code></li>
+<li>L318: <code>(defun mistty--interactive-download-source ()</code></li>
+<li>L339: <code>(defun mistty--interactive-compile ()</code></li>
+<li>L358: <code>(defun mistty--interactive-rust ()</code></li>
+<li>L364: <code>(defun mistty--interactive-check-installed (install-dir)</code></li>
+<li>L385: <code>(defun mistty--download-module-issues ()</code></li>
+<li>L404: <code>(defun mistty--download-source-issues ()</code></li>
+<li>L419: <code>(defun mistty--compile-module-issues (src-dir)</code></li>
+<li>L434: <code>(defun mistty--compile-module (src-dir target-dir install-dir)</code></li>
+<li>L468: <code>(defun mistty--terminfo-issues ()</code></li>
+<li>L480: <code>(defun mistty--install-terminfo ()</code></li>
+<li>L503: <code>(defun mistty--install-url-spec ()</code></li>
+<li>L510: <code>(defun mistty--install-message (type &amp;rest parts)</code></li>
+<li>L556: <code>(provide 'mistty-install)</code></li>
+<li>L558: <code>(provide 'mistty-install)</code></li>
+</ul>
+<h2>mistty-kbd.el</h2>
+<ul>
+<li>L35: <code>(defvar mistty-term-key-map</code></li>
+<li>L37: <code>(define-key map (kbd "&lt;tab&gt;") "\t")</code></li>
+<li>L38: <code>(define-key map (kbd "&lt;return&gt;") "\C-m")</code></li>
+<li>L39: <code>(define-key map (kbd "&lt;backspace&gt;") mistty-del)</code></li>
+<li>L40: <code>(define-key map (kbd "&lt;escape&gt;") "\e")</code></li>
+<li>L45: <code>(define-key map (kbd "&lt;delete&gt;") "\e[3~")</code></li>
+<li>L46: <code>(define-key map (kbd "&lt;down&gt;") "\eOB")</code></li>
+<li>L47: <code>(define-key map (kbd "&lt;end&gt;") "\eOF")</code></li>
+<li>L48: <code>(define-key map (kbd "&lt;f10&gt;") "\e[21~")</code></li>
+<li>L49: <code>(define-key map (kbd "&lt;f11&gt;") "\e[23~")</code></li>
+<li>L50: <code>(define-key map (kbd "&lt;f12&gt;") "\e[24~")</code></li>
+<li>L51: <code>(define-key map (kbd "&lt;f1&gt;") "\eOP")</code></li>
+<li>L52: <code>(define-key map (kbd "&lt;f2&gt;") "\eOQ")</code></li>
+<li>L53: <code>(define-key map (kbd "&lt;f3&gt;") "\eOR")</code></li>
+<li>L54: <code>(define-key map (kbd "&lt;f4&gt;") "\eOS")</code></li>
+<li>L55: <code>(define-key map (kbd "&lt;f5&gt;") "\e[15~")</code></li>
+<li>L56: <code>(define-key map (kbd "&lt;f6&gt;") "\e[17~")</code></li>
+<li>L57: <code>(define-key map (kbd "&lt;f7&gt;") "\e[18~")</code></li>
+<li>L58: <code>(define-key map (kbd "&lt;f8&gt;") "\e[19~")</code></li>
+<li>L59: <code>(define-key map (kbd "&lt;f9&gt;") "\e[20~")</code></li>
+<li>L60: <code>(define-key map (kbd "&lt;home&gt;") "\e[1~")</code></li>
+<li>L61: <code>(define-key map (kbd "&lt;insert&gt;") "\e[2~")</code></li>
+<li>L62: <code>(define-key map (kbd "&lt;kp-0&gt;") "\eOp")</code></li>
+<li>L63: <code>(define-key map (kbd "&lt;kp-1&gt;") "\eOq")</code></li>
+<li>L64: <code>(define-key map (kbd "&lt;kp-2&gt;") "\eOr")</code></li>
+<li>L65: <code>(define-key map (kbd "&lt;kp-3&gt;") "\eOs")</code></li>
+<li>L66: <code>(define-key map (kbd "&lt;kp-4&gt;") "\eOt")</code></li>
+<li>L67: <code>(define-key map (kbd "&lt;kp-5&gt;") "\eOu")</code></li>
+<li>L68: <code>(define-key map (kbd "&lt;kp-6&gt;") "\eOv")</code></li>
+<li>L69: <code>(define-key map (kbd "&lt;kp-7&gt;") "\eOw")</code></li>
+<li>L70: <code>(define-key map (kbd "&lt;kp-8&gt;") "\eOx")</code></li>
+<li>L71: <code>(define-key map (kbd "&lt;kp-9&gt;") "\eOy")</code></li>
+<li>L72: <code>(define-key map (kbd "&lt;kp-add&gt;") "\eOk")</code></li>
+<li>L73: <code>(define-key map (kbd "&lt;kp-divide&gt;") "\eOo")</code></li>
+<li>L74: <code>(define-key map (kbd "&lt;kp-equal&gt;") "\eOX")</code></li>
+<li>L75: <code>(define-key map (kbd "&lt;kp-multiply&gt;") "\eOj")</code></li>
+<li>L76: <code>(define-key map (kbd "&lt;kp-separator&gt;") "\eOl")</code></li>
+<li>L77: <code>(define-key map (kbd "&lt;kp-subtract&gt;") "\eOm")</code></li>
+<li>L78: <code>(define-key map (kbd "&lt;left&gt;") "\eOD")</code></li>
+<li>L79: <code>(define-key map (kbd "&lt;menu&gt;") "\e[29~")</code></li>
+<li>L80: <code>(define-key map (kbd "&lt;next&gt;") "\e[6~")</code></li>
+<li>L81: <code>(define-key map (kbd "&lt;prior&gt;") "\e[5~")</code></li>
+<li>L82: <code>(define-key map (kbd "&lt;right&gt;") "\eOC")</code></li>
+<li>L83: <code>(define-key map (kbd "&lt;select&gt;") "\e[4~")</code></li>
+<li>L84: <code>(define-key map (kbd "&lt;up&gt;") "\eOA")</code></li>
+<li>L85: <code>(define-key map (kbd "C-!") "\e[33;6u")</code></li>
+<li>L86: <code>(define-key map (kbd "C-#") "\e[35;6u")</code></li>
+<li>L87: <code>(define-key map (kbd "C-$") "\e[36;6u")</code></li>
+<li>L88: <code>(define-key map (kbd "C-%") "\e[37;6u")</code></li>
+<li>L89: <code>(define-key map (kbd "C-&amp;") "\e[38;6u")</code></li>
+<li>L90: <code>(define-key map (kbd "C-'") "\e[39;5u")</code></li>
+<li>L91: <code>(define-key map (kbd "C-(") "\e[40;6u")</code></li>
+<li>L92: <code>(define-key map (kbd "C-)") "\e[41;6u")</code></li>
+<li>L93: <code>(define-key map (kbd "C-*") "\e[42;6u")</code></li>
+<li>L94: <code>(define-key map (kbd "C-+") "\e[43;6u")</code></li>
+<li>L95: <code>(define-key map (kbd "C-,") "\e[44;5u")</code></li>
+<li>L96: <code>(define-key map (kbd "C--") "\e[45;5u")</code></li>
+<li>L97: <code>(define-key map (kbd "C-.") "\e[46;5u")</code></li>
+<li>L98: <code>(define-key map (kbd "C-/") "\e[47;5u")</code></li>
+<li>L99: <code>(define-key map (kbd "C-0") "\e[48;5u")</code></li>
+<li>L100: <code>(define-key map (kbd "C-1") "\e[49;5u")</code></li>
+<li>L101: <code>(define-key map (kbd "C-9") "\e[57;5u")</code></li>
+<li>L102: <code>(define-key map (kbd "C-:") "\e[58;6u")</code></li>
+<li>L103: <code>(define-key map (kbd "C-;") "\e[59;5u")</code></li>
+<li>L104: <code>(define-key map (kbd "C-&lt;") "\e[60;6u")</code></li>
+<li>L105: <code>(define-key map (kbd "C-&lt;delete&gt;") "\e[3;5~")</code></li>
+<li>L106: <code>(define-key map (kbd "C-&lt;down&gt;") "\e[1;5B")</code></li>
+<li>L107: <code>(define-key map (kbd "C-&lt;end&gt;") "\e[1;5F")</code></li>
+<li>L108: <code>(define-key map (kbd "C-&lt;f10&gt;") "\e[21;5~")</code></li>
+<li>L109: <code>(define-key map (kbd "C-&lt;f11&gt;") "\e[23;5~")</code></li>
+<li>L110: <code>(define-key map (kbd "C-&lt;f12&gt;") "\e[24;5~")</code></li>
+<li>L111: <code>(define-key map (kbd "C-&lt;f1&gt;") "\eO5P")</code></li>
+<li>L112: <code>(define-key map (kbd "C-&lt;f2&gt;") "\eO5Q")</code></li>
+<li>L113: <code>(define-key map (kbd "C-&lt;f3&gt;") "\eO5R")</code></li>
+<li>L114: <code>(define-key map (kbd "C-&lt;f4&gt;") "\eO5S")</code></li>
+<li>L115: <code>(define-key map (kbd "C-&lt;f5&gt;") "\e[15;5~")</code></li>
+<li>L116: <code>(define-key map (kbd "C-&lt;f6&gt;") "\e[17;5~")</code></li>
+<li>L117: <code>(define-key map (kbd "C-&lt;f7&gt;") "\e[18;5~")</code></li>
+<li>L118: <code>(define-key map (kbd "C-&lt;f8&gt;") "\e[19;5~")</code></li>
+<li>L119: <code>(define-key map (kbd "C-&lt;f9&gt;") "\e[20;5~")</code></li>
+<li>L120: <code>(define-key map (kbd "C-&lt;home&gt;") "\e[1;5H")</code></li>
+<li>L121: <code>(define-key map (kbd "C-&lt;insert&gt;") "\e[2;5~")</code></li>
+<li>L122: <code>(define-key map (kbd "C-&lt;left&gt;") "\e[1;5D")</code></li>
+<li>L123: <code>(define-key map (kbd "C-&lt;next&gt;") "\e[6;5~")</code></li>
+<li>L124: <code>(define-key map (kbd "C-&lt;prior&gt;") "\e[5;5~")</code></li>
+<li>L125: <code>(define-key map (kbd "C-&lt;return&gt;") "\e[13;5u")</code></li>
+<li>L126: <code>(define-key map (kbd "C-&lt;right&gt;") "\e[1;5C")</code></li>
+<li>L127: <code>(define-key map (kbd "C-&lt;tab&gt;") "\e[9;5u")</code></li>
+<li>L128: <code>(define-key map (kbd "C-&lt;up&gt;") "\e[1;5A")</code></li>
+<li>L129: <code>(define-key map (kbd "C-=") "\e[61;5u")</code></li>
+<li>L130: <code>(define-key map (kbd "C-&gt;") "\e[62;6u")</code></li>
+<li>L131: <code>(define-key map (kbd "C-?") "\e[63;6u")</code></li>
+<li>L132: <code>(define-key map (kbd "C-M-!") "\e[33;8u")</code></li>
+<li>L133: <code>(define-key map (kbd "C-M-#") "\e[35;8u")</code></li>
+<li>L134: <code>(define-key map (kbd "C-M-$") "\e[36;8u")</code></li>
+<li>L135: <code>(define-key map (kbd "C-M-%") "\e[37;8u")</code></li>
+<li>L136: <code>(define-key map (kbd "C-M-&amp;") "\e[38;8u")</code></li>
+<li>L137: <code>(define-key map (kbd "C-M-'") "\e[39;7u")</code></li>
+<li>L138: <code>(define-key map (kbd "C-M-(") "\e[40;8u")</code></li>
+<li>L139: <code>(define-key map (kbd "C-M-)") "\e[41;8u")</code></li>
+<li>L140: <code>(define-key map (kbd "C-M-*") "\e[42;8u")</code></li>
+<li>L141: <code>(define-key map (kbd "C-M-+") "\e[43;8u")</code></li>
+<li>L142: <code>(define-key map (kbd "C-M-,") "\e[44;7u")</code></li>
+<li>L143: <code>(define-key map (kbd "C-M--") "\e[45;7u")</code></li>
+<li>L144: <code>(define-key map (kbd "C-M-.") "\e[46;7u")</code></li>
+<li>L145: <code>(define-key map (kbd "C-M-/") "\e[47;7u")</code></li>
+<li>L146: <code>(define-key map (kbd "C-M-0") "\e[48;7u")</code></li>
+<li>L147: <code>(define-key map (kbd "C-M-1") "\e[49;7u")</code></li>
+<li>L148: <code>(define-key map (kbd "C-M-2") "\e[50;7u")</code></li>
+<li>L149: <code>(define-key map (kbd "C-M-3") "\e[51;7u")</code></li>
+<li>L150: <code>(define-key map (kbd "C-M-4") "\e[52;7u")</code></li>
+<li>L151: <code>(define-key map (kbd "C-M-5") "\e[53;7u")</code></li>
+<li>L152: <code>(define-key map (kbd "C-M-6") "\e[54;7u")</code></li>
+<li>L153: <code>(define-key map (kbd "C-M-7") "\e[55;7u")</code></li>
+<li>L154: <code>(define-key map (kbd "C-M-8") "\e[56;7u")</code></li>
+<li>L155: <code>(define-key map (kbd "C-M-9") "\e[57;7u")</code></li>
+<li>L156: <code>(define-key map (kbd "C-M-:") "\e[58;8u")</code></li>
+<li>L157: <code>(define-key map (kbd "C-M-;") "\e[59;7u")</code></li>
+<li>L158: <code>(define-key map (kbd "C-M-&lt;") "\e[60;8u")</code></li>
+<li>L159: <code>(define-key map (kbd "C-M-&lt;delete&gt;") "\e[3;7~")</code></li>
+<li>L160: <code>(define-key map (kbd "C-M-&lt;down&gt;") "\e[1;7B")</code></li>
+<li>L161: <code>(define-key map (kbd "C-M-&lt;end&gt;") "\e[1;7F")</code></li>
+<li>L162: <code>(define-key map (kbd "C-M-&lt;home&gt;") "\e[1;7H")</code></li>
+<li>L163: <code>(define-key map (kbd "C-M-&lt;insert&gt;") "\e[2;7~")</code></li>
+<li>L164: <code>(define-key map (kbd "C-M-&lt;left&gt;") "\e[1;7D")</code></li>
+<li>L165: <code>(define-key map (kbd "C-M-&lt;next&gt;") "\e[6;7~")</code></li>
+<li>L166: <code>(define-key map (kbd "C-M-&lt;prior&gt;") "\e[5;7~")</code></li>
+<li>L167: <code>(define-key map (kbd "C-M-&lt;return&gt;") "\e[13;7u")</code></li>
+<li>L168: <code>(define-key map (kbd "C-M-&lt;right&gt;") "\e[1;7C")</code></li>
+<li>L169: <code>(define-key map (kbd "C-M-&lt;tab&gt;") "\e[9;7u")</code></li>
+<li>L170: <code>(define-key map (kbd "C-M-&lt;up&gt;") "\e[1;7A")</code></li>
+<li>L171: <code>(define-key map (kbd "C-M-=") "\e[61;7u")</code></li>
+<li>L172: <code>(define-key map (kbd "C-M-&gt;") "\e[62;8u")</code></li>
+<li>L173: <code>(define-key map (kbd "C-M-?") "\e[63;8u")</code></li>
+<li>L174: <code>(define-key map (kbd "C-M-S-&lt;delete&gt;") "\e[3;8~")</code></li>
+<li>L175: <code>(define-key map (kbd "C-M-S-&lt;down&gt;") "\e[1;8B")</code></li>
+<li>L176: <code>(define-key map (kbd "C-M-S-&lt;end&gt;") "\e[1;8F")</code></li>
+<li>L177: <code>(define-key map (kbd "C-M-S-&lt;home&gt;") "\e[1;8H")</code></li>
+<li>L178: <code>(define-key map (kbd "C-M-S-&lt;insert&gt;") "\e[2;8~")</code></li>
+<li>L179: <code>(define-key map (kbd "C-M-S-&lt;kp-0&gt;") "\eO8p")</code></li>
+<li>L180: <code>(define-key map (kbd "C-M-S-&lt;kp-1&gt;") "\eO8q")</code></li>
+<li>L181: <code>(define-key map (kbd "C-M-S-&lt;kp-2&gt;") "\eO8r")</code></li>
+<li>L182: <code>(define-key map (kbd "C-M-S-&lt;kp-3&gt;") "\eO8s")</code></li>
+<li>L183: <code>(define-key map (kbd "C-M-S-&lt;kp-4&gt;") "\eO8t")</code></li>
+<li>L184: <code>(define-key map (kbd "C-M-S-&lt;kp-5&gt;") "\eO8u")</code></li>
+<li>L185: <code>(define-key map (kbd "C-M-S-&lt;kp-6&gt;") "\eO8v")</code></li>
+<li>L186: <code>(define-key map (kbd "C-M-S-&lt;kp-7&gt;") "\eO8w")</code></li>
+<li>L187: <code>(define-key map (kbd "C-M-S-&lt;kp-8&gt;") "\eO8x")</code></li>
+<li>L188: <code>(define-key map (kbd "C-M-S-&lt;kp-9&gt;") "\eO8y")</code></li>
+<li>L189: <code>(define-key map (kbd "C-M-S-&lt;kp-add&gt;") "\eO8k")</code></li>
+<li>L190: <code>(define-key map (kbd "C-M-S-&lt;kp-divide&gt;") "\eO8o")</code></li>
+<li>L191: <code>(define-key map (kbd "C-M-S-&lt;kp-multiply&gt;") "\eO8j")</code></li>
+<li>L192: <code>(define-key map (kbd "C-M-S-&lt;kp-separator&gt;") "\eO8l")</code></li>
+<li>L193: <code>(define-key map (kbd "C-M-S-&lt;kp-subtract&gt;") "\eO8m")</code></li>
+<li>L194: <code>(define-key map (kbd "C-M-S-&lt;left&gt;") "\e[1;8D")</code></li>
+<li>L195: <code>(define-key map (kbd "C-M-S-&lt;next&gt;") "\e[6;8~")</code></li>
+<li>L196: <code>(define-key map (kbd "C-M-S-&lt;prior&gt;") "\e[5;8~")</code></li>
+<li>L197: <code>(define-key map (kbd "C-M-S-&lt;right&gt;") "\e[1;8C")</code></li>
+<li>L198: <code>(define-key map (kbd "C-M-S-&lt;up&gt;") "\e[1;8A")</code></li>
+<li>L199: <code>(define-key map (kbd "C-M-SPC") "\e[32;7u")</code></li>
+<li>L200: <code>(define-key map (kbd "C-M-\"") "\e[34;8u")</code></li>
+<li>L201: <code>(define-key map (kbd "C-M-\\") "\e[92;7u")</code></li>
+<li>L202: <code>(define-key map (kbd "C-S-&lt;delete&gt;") "\e[3;6~")</code></li>
+<li>L203: <code>(define-key map (kbd "C-S-&lt;down&gt;") "\e[1;6B")</code></li>
+<li>L204: <code>(define-key map (kbd "C-S-&lt;end&gt;") "\e[1;6F")</code></li>
+<li>L205: <code>(define-key map (kbd "C-S-&lt;f10&gt;") "\e[21;6~")</code></li>
+<li>L206: <code>(define-key map (kbd "C-S-&lt;f11&gt;") "\e[23;6~")</code></li>
+<li>L207: <code>(define-key map (kbd "C-S-&lt;f12&gt;") "\e[24;6~")</code></li>
+<li>L208: <code>(define-key map (kbd "C-S-&lt;f1&gt;") "\eO6P")</code></li>
+<li>L209: <code>(define-key map (kbd "C-S-&lt;f2&gt;") "\eO6Q")</code></li>
+<li>L210: <code>(define-key map (kbd "C-S-&lt;f3&gt;") "\eO6R")</code></li>
+<li>L211: <code>(define-key map (kbd "C-S-&lt;f4&gt;") "\eO6S")</code></li>
+<li>L212: <code>(define-key map (kbd "C-S-&lt;f5&gt;") "\e[15;6~")</code></li>
+<li>L213: <code>(define-key map (kbd "C-S-&lt;f6&gt;") "\e[17;6~")</code></li>
+<li>L214: <code>(define-key map (kbd "C-S-&lt;f7&gt;") "\e[18;6~")</code></li>
+<li>L215: <code>(define-key map (kbd "C-S-&lt;f8&gt;") "\e[19;6~")</code></li>
+<li>L216: <code>(define-key map (kbd "C-S-&lt;f9&gt;") "\e[20;6~")</code></li>
+<li>L217: <code>(define-key map (kbd "C-S-&lt;home&gt;") "\e[1;6H")</code></li>
+<li>L218: <code>(define-key map (kbd "C-S-&lt;insert&gt;") "\e[2;6~")</code></li>
+<li>L219: <code>(define-key map (kbd "C-S-&lt;kp-0&gt;") "\eO6p")</code></li>
+<li>L220: <code>(define-key map (kbd "C-S-&lt;kp-1&gt;") "\eO6q")</code></li>
+<li>L221: <code>(define-key map (kbd "C-S-&lt;kp-2&gt;") "\eO6r")</code></li>
+<li>L222: <code>(define-key map (kbd "C-S-&lt;kp-3&gt;") "\eO6s")</code></li>
+<li>L223: <code>(define-key map (kbd "C-S-&lt;kp-4&gt;") "\eO6t")</code></li>
+<li>L224: <code>(define-key map (kbd "C-S-&lt;kp-5&gt;") "\eO6u")</code></li>
+<li>L225: <code>(define-key map (kbd "C-S-&lt;kp-6&gt;") "\eO6v")</code></li>
+<li>L226: <code>(define-key map (kbd "C-S-&lt;kp-7&gt;") "\eO6w")</code></li>
+<li>L227: <code>(define-key map (kbd "C-S-&lt;kp-8&gt;") "\eO6x")</code></li>
+<li>L228: <code>(define-key map (kbd "C-S-&lt;kp-9&gt;") "\eO6y")</code></li>
+<li>L229: <code>(define-key map (kbd "C-S-&lt;kp-add&gt;") "\eO6k")</code></li>
+<li>L230: <code>(define-key map (kbd "C-S-&lt;kp-divide&gt;") "\eO6o")</code></li>
+<li>L231: <code>(define-key map (kbd "C-S-&lt;kp-multiply&gt;") "\eO6j")</code></li>
+<li>L232: <code>(define-key map (kbd "C-S-&lt;kp-separator&gt;") "\eO6l")</code></li>
+<li>L233: <code>(define-key map (kbd "C-S-&lt;kp-subtract&gt;") "\eO6m")</code></li>
+<li>L234: <code>(define-key map (kbd "C-S-&lt;left&gt;") "\e[1;6D")</code></li>
+<li>L235: <code>(define-key map (kbd "C-S-&lt;next&gt;") "\e[6;6~")</code></li>
+<li>L236: <code>(define-key map (kbd "C-S-&lt;prior&gt;") "\e[5;6~")</code></li>
+<li>L237: <code>(define-key map (kbd "C-S-&lt;return&gt;") "\e[13;6u")</code></li>
+<li>L238: <code>(define-key map (kbd "C-S-&lt;right&gt;") "\e[1;6C")</code></li>
+<li>L239: <code>(define-key map (kbd "C-S-&lt;tab&gt;") "\e[9;6u")</code></li>
+<li>L240: <code>(define-key map (kbd "C-S-&lt;up&gt;") "\e[1;6A")</code></li>
+<li>L241: <code>(define-key map (kbd "C-\"") "\e[34;6u")</code></li>
+<li>L242: <code>(define-key map (kbd "C-\\") "\e[92;5u")</code></li>
+<li>L243: <code>(define-key map (kbd "M-&lt;delete&gt;") "\e[3;3~")</code></li>
+<li>L244: <code>(define-key map (kbd "M-&lt;down&gt;") "\e[1;3B")</code></li>
+<li>L245: <code>(define-key map (kbd "M-&lt;end&gt;") "\e[1;3F")</code></li>
+<li>L246: <code>(define-key map (kbd "M-&lt;f10&gt;") "\e[21;3~")</code></li>
+<li>L247: <code>(define-key map (kbd "M-&lt;f11&gt;") "\e[23;3~")</code></li>
+<li>L248: <code>(define-key map (kbd "M-&lt;f12&gt;") "\e[24;3~")</code></li>
+<li>L249: <code>(define-key map (kbd "M-&lt;f1&gt;") "\eO3P")</code></li>
+<li>L250: <code>(define-key map (kbd "M-&lt;f2&gt;") "\eO3Q")</code></li>
+<li>L251: <code>(define-key map (kbd "M-&lt;f3&gt;") "\eO3R")</code></li>
+<li>L252: <code>(define-key map (kbd "M-&lt;f4&gt;") "\eO3S")</code></li>
+<li>L253: <code>(define-key map (kbd "M-&lt;f5&gt;") "\e[15;3~")</code></li>
+<li>L254: <code>(define-key map (kbd "M-&lt;f6&gt;") "\e[17;3~")</code></li>
+<li>L255: <code>(define-key map (kbd "M-&lt;f7&gt;") "\e[18;3~")</code></li>
+<li>L256: <code>(define-key map (kbd "M-&lt;f8&gt;") "\e[19;3~")</code></li>
+<li>L257: <code>(define-key map (kbd "M-&lt;f9&gt;") "\e[20;3~")</code></li>
+<li>L258: <code>(define-key map (kbd "M-&lt;home&gt;") "\e[1;3H")</code></li>
+<li>L259: <code>(define-key map (kbd "M-&lt;insert&gt;") "\e[2;3~")</code></li>
+<li>L260: <code>(define-key map (kbd "M-&lt;left&gt;") "\e[1;3D")</code></li>
+<li>L261: <code>(define-key map (kbd "M-&lt;next&gt;") "\e[6;3~")</code></li>
+<li>L262: <code>(define-key map (kbd "M-&lt;prior&gt;") "\e[5;3~")</code></li>
+<li>L263: <code>(define-key map (kbd "M-&lt;right&gt;") "\e[1;3C")</code></li>
+<li>L264: <code>(define-key map (kbd "M-&lt;up&gt;") "\e[1;3A")</code></li>
+<li>L265: <code>(define-key map (kbd "M-S-&lt;delete&gt;") "\e[3;4~")</code></li>
+<li>L266: <code>(define-key map (kbd "M-S-&lt;down&gt;") "\e[1;4B")</code></li>
+<li>L267: <code>(define-key map (kbd "M-S-&lt;end&gt;") "\e[1;4F")</code></li>
+<li>L268: <code>(define-key map (kbd "M-S-&lt;f10&gt;") "\e[21;4~")</code></li>
+<li>L269: <code>(define-key map (kbd "M-S-&lt;f11&gt;") "\e[23;4~")</code></li>
+<li>L270: <code>(define-key map (kbd "M-S-&lt;f12&gt;") "\e[24;4~")</code></li>
+<li>L271: <code>(define-key map (kbd "M-S-&lt;f1&gt;") "\eO4P")</code></li>
+<li>L272: <code>(define-key map (kbd "M-S-&lt;f2&gt;") "\eO4Q")</code></li>
+<li>L273: <code>(define-key map (kbd "M-S-&lt;f3&gt;") "\eO4R")</code></li>
+<li>L274: <code>(define-key map (kbd "M-S-&lt;f4&gt;") "\eO4S")</code></li>
+<li>L275: <code>(define-key map (kbd "M-S-&lt;f5&gt;") "\e[15;4~")</code></li>
+<li>L276: <code>(define-key map (kbd "M-S-&lt;f6&gt;") "\e[17;4~")</code></li>
+<li>L277: <code>(define-key map (kbd "M-S-&lt;f7&gt;") "\e[18;4~")</code></li>
+<li>L278: <code>(define-key map (kbd "M-S-&lt;f8&gt;") "\e[19;4~")</code></li>
+<li>L279: <code>(define-key map (kbd "M-S-&lt;f9&gt;") "\e[20;4~")</code></li>
+<li>L280: <code>(define-key map (kbd "M-S-&lt;home&gt;") "\e[1;4H")</code></li>
+<li>L281: <code>(define-key map (kbd "M-S-&lt;insert&gt;") "\e[2;4~")</code></li>
+<li>L282: <code>(define-key map (kbd "M-S-&lt;kp-0&gt;") "\eO4p")</code></li>
+<li>L283: <code>(define-key map (kbd "M-S-&lt;kp-1&gt;") "\eO4q")</code></li>
+<li>L284: <code>(define-key map (kbd "M-S-&lt;kp-2&gt;") "\eO4r")</code></li>
+<li>L285: <code>(define-key map (kbd "M-S-&lt;kp-3&gt;") "\eO4s")</code></li>
+<li>L286: <code>(define-key map (kbd "M-S-&lt;kp-4&gt;") "\eO4t")</code></li>
+<li>L287: <code>(define-key map (kbd "M-S-&lt;kp-5&gt;") "\eO4u")</code></li>
+<li>L288: <code>(define-key map (kbd "M-S-&lt;kp-6&gt;") "\eO4v")</code></li>
+<li>L289: <code>(define-key map (kbd "M-S-&lt;kp-7&gt;") "\eO4w")</code></li>
+<li>L290: <code>(define-key map (kbd "M-S-&lt;kp-8&gt;") "\eO4x")</code></li>
+<li>L291: <code>(define-key map (kbd "M-S-&lt;kp-9&gt;") "\eO4y")</code></li>
+<li>L292: <code>(define-key map (kbd "M-S-&lt;kp-add&gt;") "\eO4k")</code></li>
+<li>L293: <code>(define-key map (kbd "M-S-&lt;kp-divide&gt;") "\eO4o")</code></li>
+<li>L294: <code>(define-key map (kbd "M-S-&lt;kp-multiply&gt;") "\eO4j")</code></li>
+<li>L295: <code>(define-key map (kbd "M-S-&lt;kp-separator&gt;") "\eO4l")</code></li>
+<li>L296: <code>(define-key map (kbd "M-S-&lt;kp-subtract&gt;") "\eO4m")</code></li>
+<li>L297: <code>(define-key map (kbd "M-S-&lt;left&gt;") "\e[1;4D")</code></li>
+<li>L298: <code>(define-key map (kbd "M-S-&lt;next&gt;") "\e[6;4~")</code></li>
+<li>L299: <code>(define-key map (kbd "M-S-&lt;prior&gt;") "\e[5;4~")</code></li>
+<li>L300: <code>(define-key map (kbd "M-S-&lt;right&gt;") "\e[1;4C")</code></li>
+<li>L301: <code>(define-key map (kbd "M-S-&lt;up&gt;") "\e[1;4A")</code></li>
+<li>L302: <code>(define-key map (kbd "S-&lt;delete&gt;") "\e[3;2~")</code></li>
+<li>L303: <code>(define-key map (kbd "S-&lt;down&gt;") "\e[1;2B")</code></li>
+<li>L304: <code>(define-key map (kbd "S-&lt;end&gt;") "\e[1;2F")</code></li>
+<li>L305: <code>(define-key map (kbd "S-&lt;f10&gt;") "\e[21;2~")</code></li>
+<li>L306: <code>(define-key map (kbd "S-&lt;f11&gt;") "\e[23;2~")</code></li>
+<li>L307: <code>(define-key map (kbd "S-&lt;f12&gt;") "\e[24;2~")</code></li>
+<li>L308: <code>(define-key map (kbd "S-&lt;f1&gt;") "\e[1;2P")</code></li>
+<li>L309: <code>(define-key map (kbd "S-&lt;f2&gt;") "\e[1;2Q")</code></li>
+<li>L310: <code>(define-key map (kbd "S-&lt;f3&gt;") "\e[1;2R")</code></li>
+<li>L311: <code>(define-key map (kbd "S-&lt;f4&gt;") "\e[1;2S")</code></li>
+<li>L312: <code>(define-key map (kbd "S-&lt;f5&gt;") "\e[15;2~")</code></li>
+<li>L313: <code>(define-key map (kbd "S-&lt;f6&gt;") "\e[17;2~")</code></li>
+<li>L314: <code>(define-key map (kbd "S-&lt;f7&gt;") "\e[18;2~")</code></li>
+<li>L315: <code>(define-key map (kbd "S-&lt;f8&gt;") "\e[19;2~")</code></li>
+<li>L316: <code>(define-key map (kbd "S-&lt;f9&gt;") "\e[20;2~")</code></li>
+<li>L317: <code>(define-key map (kbd "S-&lt;home&gt;") "\e[1;2H")</code></li>
+<li>L318: <code>(define-key map (kbd "S-&lt;insert&gt;") "\e[2;2~")</code></li>
+<li>L319: <code>(define-key map (kbd "S-&lt;kp-0&gt;") "\eO2p")</code></li>
+<li>L320: <code>(define-key map (kbd "S-&lt;kp-1&gt;") "\eO2q")</code></li>
+<li>L321: <code>(define-key map (kbd "S-&lt;kp-2&gt;") "\eO2r")</code></li>
+<li>L322: <code>(define-key map (kbd "S-&lt;kp-3&gt;") "\eO2s")</code></li>
+<li>L323: <code>(define-key map (kbd "S-&lt;kp-4&gt;") "\eO2t")</code></li>
+<li>L324: <code>(define-key map (kbd "S-&lt;kp-5&gt;") "\eO2u")</code></li>
+<li>L325: <code>(define-key map (kbd "S-&lt;kp-6&gt;") "\eO2v")</code></li>
+<li>L326: <code>(define-key map (kbd "S-&lt;kp-7&gt;") "\eO2w")</code></li>
+<li>L327: <code>(define-key map (kbd "S-&lt;kp-8&gt;") "\eO2x")</code></li>
+<li>L328: <code>(define-key map (kbd "S-&lt;kp-9&gt;") "\eO2y")</code></li>
+<li>L329: <code>(define-key map (kbd "S-&lt;kp-add&gt;") "\eO2k")</code></li>
+<li>L330: <code>(define-key map (kbd "S-&lt;kp-divide&gt;") "\eO2o")</code></li>
+<li>L331: <code>(define-key map (kbd "S-&lt;kp-multiply&gt;") "\eO2j")</code></li>
+<li>L332: <code>(define-key map (kbd "S-&lt;kp-separator&gt;") "\eO2l")</code></li>
+<li>L333: <code>(define-key map (kbd "S-&lt;kp-subtract&gt;") "\eO2m")</code></li>
+<li>L334: <code>(define-key map (kbd "S-&lt;left&gt;") "\e[1;2D")</code></li>
+<li>L335: <code>(define-key map (kbd "S-&lt;next&gt;") "\e[6;2~")</code></li>
+<li>L336: <code>(define-key map (kbd "S-&lt;prior&gt;") "\e[5;2~")</code></li>
+<li>L337: <code>(define-key map (kbd "S-&lt;return&gt;") "\e[13;2u")</code></li>
+<li>L338: <code>(define-key map (kbd "S-&lt;right&gt;") "\e[1;2C")</code></li>
+<li>L339: <code>(define-key map (kbd "S-&lt;tab&gt;") "\e[9;2u")</code></li>
+<li>L340: <code>(define-key map (kbd "S-&lt;up&gt;") "\e[1;2A")</code></li>
+<li>L376: <code>(defun mistty--send-default (str _key _n _positional)</code></li>
+<li>L383: <code>(defun mistty-send-key (&amp;optional n key positional)</code></li>
+<li>L399: <code>(defun mistty-send-last-key (&amp;optional n)</code></li>
+<li>L414: <code>(defun mistty-send-key-sequence ()</code></li>
+<li>L436: <code>(defun mistty-translate-key (key &amp;optional n)</code></li>
+<li>L471: <code>(defun mistty--maybe-bracketed-str (str)</code></li>
+<li>L477: <code>(defun mistty--bracketed-str (str)</code></li>
+<li>L481: <code>(defun mistty--untabify (str)</code></li>
+<li>L485: <code>(provide 'mistty-kbd)</code></li>
+</ul>
+<h2>mistty-launch.el</h2>
+<ul>
+<li>L22: <code>(require 'pcmpl-unix)</code></li>
+<li>L38: <code>(defun mistty-ssh (&amp;optional host command other-window)</code></li>
+<li>L68: <code>(defun mistty-docker (&amp;optional instance command other-window)</code></li>
+<li>L108: <code>(provide 'mistty-launch)</code></li>
+</ul>
+<h2>mistty-log.el</h2>
+<ul>
+<li>L29: <code>(require 'ring)</code></li>
+<li>L30: <code>(require 'backtrace)</code></li>
+<li>L47: <code>(defcustom mistty-backlog-size 0</code></li>
+<li>L58: <code>(defcustom mistty-log-max-backtrace-length 800</code></li>
+<li>L97: <code>(defun mistty-start-log ()</code></li>
+<li>L116: <code>(defun mistty-stop-log ()</code></li>
+<li>L125: <code>(defun mistty-drop-log ()</code></li>
+<li>L133: <code>(defun mistty--log (format-str args &amp;optional event-time)</code></li>
+<li>L187: <code>(defun mistty--log-format (format-str args)</code></li>
+<li>L199: <code>(defun mistty--log-header (event-time buf)</code></li>
+<li>L209: <code>(defmacro mistty-with-errors-logged (context &amp;rest body)</code></li>
+<li>L235: <code>(defun mistty-log-error (context err)</code></li>
+<li>L255: <code>(provide 'mistty-log)</code></li>
+</ul>
+<h2>mistty-osc-colors.el</h2>
+<ul>
+<li>L23: <code>(require 'faces)</code></li>
+<li>L27: <code>(defun mistty-osc-query-color (code seq)</code></li>
+<li>L46: <code>(provide 'mistty-osc-colors)</code></li>
+</ul>
+<h2>mistty-osc7.el</h2>
+<ul>
+<li>L24: <code>(require 'url-util)</code></li>
+<li>L28: <code>(defcustom mistty-allow-tramp-paths t</code></li>
+<li>L41: <code>(defcustom mistty-host-to-tramp-path-alist nil</code></li>
+<li>L64: <code>(defun mistty-osc7 (_ osc-seq)</code></li>
+<li>L134: <code>(provide 'mistty-osc7)</code></li>
+</ul>
+<h2>mistty-project.el</h2>
+<ul>
+<li>L27: <code>(require 'project)</code></li>
+<li>L28: <code>(require 'mistty)</code></li>
+<li>L33: <code>(defun mistty-in-project (&amp;optional other-window)</code></li>
+<li>L65: <code>(defun mistty-in-project-other-window ()</code></li>
+<li>L78: <code>(defun mistty-project-init-kill-buffer ()</code></li>
+<li>L98: <code>(provide 'mistty-project)</code></li>
+</ul>
+<h2>mistty-queue.el</h2>
+<ul>
+<li>L29: <code>(require 'mistty-log)</code></li>
+<li>L30: <code>(require 'mistty-util)</code></li>
+<li>L172: <code>(defun mistty--interact-take-cb (interact)</code></li>
+<li>L187: <code>(defun mistty--interact-done (&amp;optional _)</code></li>
+<li>L198: <code>(defun mistty--queue-interact-type (queue)</code></li>
+<li>L203: <code>(defun mistty--queue-last-interact (queue)</code></li>
+<li>L211: <code>(defun mistty--send-string (proc str)</code></li>
+<li>L218: <code>(defun mistty--enqueue-str (queue str &amp;optional fire-and-forget)</code></li>
+<li>L231: <code>(defun mistty--enqueue (queue interact &amp;optional prepend)</code></li>
+<li>L265: <code>(defun mistty--dequeue (queue &amp;optional value)</code></li>
+<li>L288: <code>(cl-defun mistty--dequeue-1 (queue value)</code></li>
+<li>L326: <code>(defun mistty--dequeue-with-timer (queue &amp;optional value)</code></li>
+<li>L343: <code>(defun mistty--cancel-queue (queue)</code></li>
+<li>L356: <code>(defun mistty--cancel-timeout (queue)</code></li>
+<li>L362: <code>(defun mistty--cancel-timer (queue)</code></li>
+<li>L368: <code>(defun mistty--timeout-handler (buf queue)</code></li>
+<li>L386: <code>(defun mistty--queue-timer-handler (buf queue value)</code></li>
+<li>L399: <code>(defun mistty--interact-next (interact &amp;optional val)</code></li>
+<li>L411: <code>(defun mistty--interact-close (interact)</code></li>
+<li>L424: <code>(defun mistty--interact-send (interact str)</code></li>
+<li>L430: <code>(cl-defun mistty--interact-wait-for-output-then (then &amp;key pred on-timeout)</code></li>
+<li>L488: <code>(defun mistty--call-interact (interact type &amp;rest args)</code></li>
+<li>L501: <code>(provide 'mistty-queue)</code></li>
+</ul>
+<h2>mistty-scrolline.el</h2>
+<ul>
+<li>L58: <code>(defun mistty--init-scrolline (marker number)</code></li>
+<li>L69: <code>(defun mistty--update-scrolline (pos number)</code></li>
+<li>L79: <code>(defun mistty--scrolline-at (pos)</code></li>
+<li>L89: <code>(defun mistty--find-scrolline (num)</code></li>
+<li>L101: <code>(defun mistty--scrolline-start-pos ()</code></li>
+<li>L107: <code>(defun mistty--scrolline-end-pos ()</code></li>
+<li>L116: <code>(defun mistty--scrolline-range ()</code></li>
+<li>L121: <code>(defun mistty--goto-scrolline-start ()</code></li>
+<li>L129: <code>(defun mistty--goto-scrolline-end ()</code></li>
+<li>L140: <code>(defun mistty--move-scrollines (num)</code></li>
+<li>L167: <code>(defun mistty--count-scrollines (beg end)</code></li>
+<li>L183: <code>(defun mistty--for-each-scrolline (func &amp;optional beg end)</code></li>
+<li>L208: <code>(defun mistty--unwrap-lines (beg end)</code></li>
+<li>L227: <code>(defun mistty--unwrapped-scrolline-text ()</code></li>
+<li>L236: <code>(defun mistty--unwrapped-scrolline-text-to-point ()</code></li>
+<li>L245: <code>(provide 'mistty-scrolline)</code></li>
+</ul>
+<h2>mistty-term-alacritty.el</h2>
+<ul>
+<li>L23: <code>(require 'cl-lib)</code></li>
+<li>L24: <code>(require 'mistty-term-base)</code></li>
+<li>L25: <code>(require 'mistty-alacritty)</code></li>
+<li>L26: <code>(require 'mistty-term)</code></li>
+<li>L27: <code>(require 'mistty-accum)</code></li>
+<li>L28: <code>(require 'mistty-scrolline)</code></li>
+<li>L213: <code>(defun mistty--term-alacritty-add-osc-detection (accum term)</code></li>
+<li>L229: <code>(provide 'mistty-term-alacritty)</code></li>
+</ul>
+<h2>mistty-term-base.el</h2>
+<ul>
+<li>L22: <code>(require 'cl-lib)</code></li>
+<li>L77: <code>(defun mistty--term-sentinel (proc msg)</code></li>
+<li>L93: <code>(defun mistty--term-is-term-buffer (buffer)</code></li>
+<li>L150: <code>(provide 'mistty-term-base)</code></li>
+</ul>
+<h2>mistty-term-eterm.el</h2>
+<ul>
+<li>L23: <code>(require 'cl-lib)</code></li>
+<li>L24: <code>(require 'term)</code></li>
+<li>L31: <code>(require 'mistty-term-base)</code></li>
+<li>L32: <code>(require 'mistty-term)</code></li>
+<li>L33: <code>(require 'mistty-accum)</code></li>
+<li>L34: <code>(require 'mistty-scrolline)</code></li>
+<li>L43: <code>(defcustom mistty-osc-handlers</code></li>
+<li>L84: <code>(defcustom mistty-term-mode-hook (list #'mistty-call-term-mode-hook)</code></li>
+<li>L111: <code>(defvar-keymap mistty-term-mode-map</code></li>
+<li>L409: <code>(defun mistty--term-postprocess-changed (accum term)</code></li>
+<li>L431: <code>(defun mistty--add-skip-unsupported (accum)</code></li>
+<li>L442: <code>(defun mistty--add-da1 (accum)</code></li>
+<li>L455: <code>(defun mistty-call-term-mode-hook ()</code></li>
+<li>L465: <code>(defun mistty--after-change-on-term (beg end _old-length)</code></li>
+<li>L490: <code>(defun mistty--changed (beg end)</code></li>
+<li>L500: <code>(defun mistty--around-move-to-column (orig-fun &amp;rest args)</code></li>
+<li>L512: <code>(defun mistty--emulate-terminal (proc str)</code></li>
+<li>L593: <code>(defun mistty--adjust-scrolline-base ()</code></li>
+<li>L602: <code>(defun mistty-term--exec (program args)</code></li>
+<li>L680: <code>(defun mistty--term-command-hook (string)</code></li>
+<li>L707: <code>(defun mistty--add-osc-detection (accum)</code></li>
+<li>L721: <code>(defun mistty--term-postprocess (region-start window-width)</code></li>
+<li>L751: <code>(defun mistty--detect-right-prompt (bol eol window-width)</code></li>
+<li>L774: <code>(defun mistty--detect-continue-prompt (bol)</code></li>
+<li>L790: <code>(defun mistty--detect-indent (bol eol)</code></li>
+<li>L805: <code>(defun mistty--detect-trailing-spaces (bol eol)</code></li>
+<li>L826: <code>(defun mistty--previous-line-indent ()</code></li>
+<li>L843: <code>(defun mistty--hide-line-wraps (beg end column-count)</code></li>
+<li>L865: <code>(defun mistty--mark-empty-line-at-eob (beg)</code></li>
+<li>L881: <code>(provide 'mistty-term-eterm)</code></li>
+</ul>
+<h2>mistty-term.el</h2>
+<ul>
+<li>L22: <code>(require 'pcase)</code></li>
+<li>L23: <code>(require 'subr-x)</code></li>
+<li>L27: <code>(require 'mistty-scrolline)</code></li>
+<li>L28: <code>(require 'mistty-util)</code></li>
+<li>L29: <code>(require 'mistty-log)</code></li>
+<li>L30: <code>(require 'mistty-accum)</code></li>
+<li>L33: <code>(require 'mistty-kbd)</code></li>
+<li>L34: <code>(require 'mistty-osc7)</code></li>
+<li>L35: <code>(require 'mistty-term-base)</code></li>
+<li>L39: <code>(defcustom mistty-set-EMACS nil</code></li>
+<li>L74: <code>(defcustom mistty-multi-line-continue-prompts</code></li>
+<li>L180: <code>(defun mistty--prompt ()</code></li>
+<li>L185: <code>(defun mistty--prompt-archive ()</code></li>
+<li>L190: <code>(defun mistty--prompt-counter ()</code></li>
+<li>L208: <code>(defun mistty--prompt-contains (prompt scrolline)</code></li>
+<li>L214: <code>(defun mistty--add-prompt-detection (accum term)</code></li>
+<li>L323: <code>(defun mistty--regexp-prompt-detector ()</code></li>
+<li>L363: <code>(defun mistty-register-text-properties (id props)</code></li>
+<li>L376: <code>(defun mistty-unregister-text-properties (id)</code></li>
+<li>L384: <code>(defun mistty--hide-cursor ()</code></li>
+<li>L394: <code>(defun mistty--show-cursor ()</code></li>
+<li>L404: <code>(defun mistty--clear-term-face-value (value)</code></li>
+<li>L419: <code>(defun mistty--detect-dead-spaces-after-insert (term content beg)</code></li>
+<li>L455: <code>(defun mistty--term-reset-scrolline (scrolline)</code></li>
+<li>L464: <code>(defun mistty--term-scrolline-at-screen-start()</code></li>
+<li>L468: <code>(defun mistty-osc133 (_ osc-seq)</code></li>
+<li>L520: <code>(defun mistty-call-term-mode-hook ()</code></li>
+<li>L529: <code>(provide 'mistty-term)</code></li>
+</ul>
+<h2>mistty-undo.el</h2>
+<ul>
+<li>L23: <code>(require 'mistty-util)</code></li>
+<li>L49: <code>(defmacro mistty--inhibit-undo (&amp;rest body)</code></li>
+<li>L55: <code>(defun mistty--pre-command-for-undo ()</code></li>
+<li>L61: <code>(defun mistty--post-command-for-undo ()</code></li>
+<li>L67: <code>(defun mistty--maybe-add-key-to-undo (n key cursor)</code></li>
+<li>L138: <code>(provide 'mistty-undo)</code></li>
+</ul>
+<h2>mistty-util.el</h2>
+<ul>
+<li>L24: <code>(require 'cl-lib)</code></li>
+<li>L26: <code>(defmacro mistty--with-live-buffer (buf &amp;rest body)</code></li>
+<li>L38: <code>(defun mistty--bol (pos &amp;optional n)</code></li>
+<li>L44: <code>(defun mistty--eol (pos &amp;optional n)</code></li>
+<li>L50: <code>(defun mistty--column-count ()</code></li>
+<li>L56: <code>(defun mistty--repeat-string (n segment)</code></li>
+<li>L67: <code>(defun mistty--safe-bufstring (start end)</code></li>
+<li>L79: <code>(defun mistty--safe-pos (pos)</code></li>
+<li>L83: <code>(defun mistty--lines ()</code></li>
+<li>L92: <code>(defun mistty--col (pos)</code></li>
+<li>L96: <code>(defun mistty--line (pos)</code></li>
+<li>L110: <code>(defun mistty--same-line-p (a b)</code></li>
+<li>L114: <code>(defun mistty--remove-text-with-property (prop &amp;optional pred)</code></li>
+<li>L126: <code>(defun mistty--cleanup-scrollback (start end)</code></li>
+<li>L157: <code>(defun mistty-self-insert-p (key)</code></li>
+<li>L165: <code>(defun mistty--truncate-string (str n)</code></li>
+<li>L173: <code>(defun mistty--last-non-ws ()</code></li>
+<li>L180: <code>(defun mistty--cap-at-blank-end (pos)</code></li>
+<li>L184: <code>(defun mistty--blank-end-start ()</code></li>
+<li>L198: <code>(defun mistty--has-text-properties (pos props)</code></li>
+<li>L213: <code>(defun mistty--count-lines (beg end &amp;optional pred)</code></li>
+<li>L233: <code>(defun mistty--fake-nl-p (&amp;optional pos)</code></li>
+<li>L239: <code>(defun mistty--real-nl-p (&amp;optional pos)</code></li>
+<li>L256: <code>(defun mistty--fifo-empty-p (fifo)</code></li>
+<li>L260: <code>(defun mistty--fifo-clear (fifo)</code></li>
+<li>L265: <code>(defun mistty--fifo-enqueue (fifo item)</code></li>
+<li>L274: <code>(defun mistty--fifo-dequeue (fifo)</code></li>
+<li>L288: <code>(defun mistty--fifo-to-list (fifo)</code></li>
+<li>L302: <code>(provide 'mistty-util)</code></li>
+</ul>
+<h2>mistty.el</h2>
+<ul>
+<li>L35: <code>(require 'seq)</code></li>
+<li>L36: <code>(require 'subr-x)</code></li>
+<li>L37: <code>(require 'pcase)</code></li>
+<li>L38: <code>(require 'text-property-search)</code></li>
+<li>L39: <code>(require 'fringe)</code></li>
+<li>L40: <code>(require 'cl-lib)</code></li>
+<li>L41: <code>(require 'imenu)</code></li>
+<li>L42: <code>(require 'shell)</code></li>
+<li>L47: <code>(require 'mistty-changeset)</code></li>
+<li>L48: <code>(require 'mistty-accum)</code></li>
+<li>L51: <code>(require 'mistty-term)</code></li>
+<li>L52: <code>(require 'mistty-util)</code></li>
+<li>L53: <code>(require 'mistty-log)</code></li>
+<li>L54: <code>(require 'mistty-queue)</code></li>
+<li>L55: <code>(require 'mistty-scrolline)</code></li>
+<li>L56: <code>(require 'mistty-undo)</code></li>
+<li>L57: <code>(require 'mistty-term-base)</code></li>
+<li>L58: <code>(require 'mistty-term-alacritty)</code></li>
+<li>L59: <code>(require 'mistty-term-eterm)</code></li>
+<li>L68: <code>(defcustom mistty-shell-command nil</code></li>
+<li>L90: <code>(defcustom mistty-terminal-type nil</code></li>
+<li>L110: <code>(defcustom mistty-variables-to-copy</code></li>
+<li>L122: <code>(defcustom mistty-positional-keys "\t\C-d\C-w\C-t\C-k\C-y"</code></li>
+<li>L137: <code>(defcustom mistty-fringe-enabled t</code></li>
+<li>L155: <code>(defcustom mistty-skip-empty-spaces t</code></li>
+<li>L167: <code>(defcustom mistty-buffer-name '("mistty" mistty-buffer-name-user mistty-buffer-name-host)</code></li>
+<li>L203: <code>(defcustom mistty-buffer-maximum-size 8192</code></li>
+<li>L211: <code>(defcustom mistty-move-vertically-regexps</code></li>
+<li>L225: <code>(defcustom mistty-forbid-edit-regexps</code></li>
+<li>L252: <code>(defcustom mistty-detect-foreign-overlays t</code></li>
+<li>L271: <code>(defcustom mistty-foreign-overlay-properties</code></li>
+<li>L300: <code>(defcustom mistty-wrap-capf-functions t</code></li>
+<li>L327: <code>(defcustom mistty-simulate-self-insert-command nil</code></li>
+<li>L352: <code>(defcustom mistty-at-end 'kill-buffer-and-window</code></li>
+<li>L372: <code>(defcustom mistty-force-reuse-buffer-name t</code></li>
+<li>L381: <code>(defcustom mistty-allow-clearing-scrollback nil</code></li>
+<li>L396: <code>(defcustom mistty-newline-replacement "; "</code></li>
+<li>L408: <code>(defcustom mistty-default-terminal-size nil</code></li>
+<li>L434: <code>(defcustom mistty-bracketed-paste-command-alist</code></li>
+<li>L461: <code>(defcustom mistty-bracketed-paste-default nil</code></li>
+<li>L485: <code>(defvar-keymap mistty-mode-map</code></li>
+<li>L518: <code>(defvar mistty-send-last-key-map '(keymap (t . mistty-send-last-key))</code></li>
+<li>L521: <code>(defvar-keymap mistty-prompt-map</code></li>
+<li>L557: <code>(defvar mistty-send-last-key-map '(keymap (t . mistty-send-last-key))</code></li>
+<li>L560: <code>(defvar-keymap mistty-forbid-edit-map</code></li>
+<li>L576: <code>(defvar-keymap mistty-fullscreen-mode-map</code></li>
+<li>L583: <code>(define-minor-mode mistty-fullscreen-mode</code></li>
+<li>L924: <code>(define-derived-mode mistty-mode fundamental-mode "misTTY" "Line-based TTY."</code></li>
+<li>L960: <code>(define-minor-mode mistty-fringe-mode</code></li>
+<li>L1009: <code>(cl-defun mistty-exec (program &amp;key width height)</code></li>
+<li>L1063: <code>(defun mistty--attach (term)</code></li>
+<li>L1137: <code>(defun mistty--add-toggle-cursor (accum buf)</code></li>
+<li>L1156: <code>(defun mistty--create-or-reuse-marker (m initial-pos)</code></li>
+<li>L1166: <code>(defun mistty--detach ()</code></li>
+<li>L1189: <code>(defun mistty--kill-term-buffer ()</code></li>
+<li>L1202: <code>(defun mistty-buffer-p (buffer)</code></li>
+<li>L1215: <code>(defun mistty-live-buffer-p (buffer)</code></li>
+<li>L1230: <code>(defun mistty-list-live-buffers (&amp;optional accept-buffer)</code></li>
+<li>L1246: <code>(defun mistty (&amp;optional other-window accept-buffer)</code></li>
+<li>L1290: <code>(defun mistty-cycle-or-create (accept-buffer create-buffer other-window)</code></li>
+<li>L1327: <code>(defun mistty-other-window ()</code></li>
+<li>L1340: <code>(defun mistty--goto-next (existing &amp;optional other-window)</code></li>
+<li>L1350: <code>(defun mistty--pop-to-buffer (buf other-window)</code></li>
+<li>L1365: <code>(defun mistty-create (&amp;optional command other-window)</code></li>
+<li>L1424: <code>(defun mistty--generate-new-buffer-name (bufname)</code></li>
+<li>L1453: <code>(defun mistty-create-other-window (&amp;optional command)</code></li>
+<li>L1474: <code>(defun mistty--read-default-directory ()</code></li>
+<li>L1478: <code>(defun mistty--process-sentinel (proc msg)</code></li>
+<li>L1518: <code>(defun mistty--run-after-process-end-hooks (buf proc)</code></li>
+<li>L1533: <code>(defun mistty--fs-process-sentinel (proc msg)</code></li>
+<li>L1554: <code>(defun mistty--add-sync-buffers (accum work-buffer term-buffer)</code></li>
+<li>L1629: <code>(defun mistty--scroll-after-reset ()</code></li>
+<li>L1645: <code>(defun mistty--clear-scrollback ()</code></li>
+<li>L1657: <code>(defun mistty--maybe-scroll-window-down ()</code></li>
+<li>L1677: <code>(defun mistty--detect-write-before-sync-mark (func term-buffer)</code></li>
+<li>L1718: <code>(defun mistty--maybe-truncate-term-buffer ()</code></li>
+<li>L1739: <code>(defun mistty-goto-cursor ()</code></li>
+<li>L1750: <code>(defun mistty-cursor ()</code></li>
+<li>L1762: <code>(defun mistty--from-pos-of (pos buffer-of-pos)</code></li>
+<li>L1767: <code>(defun mistty--from-term-pos (pos)</code></li>
+<li>L1775: <code>(defun mistty--needs-refresh ()</code></li>
+<li>L1780: <code>(defun mistty--refresh ()</code></li>
+<li>L1902: <code>(defun mistty--mark-continue-prompts (prompt prompt-start)</code></li>
+<li>L1914: <code>(defun mistty--mark-right-prompt (prompt-beg)</code></li>
+<li>L1921: <code>(defun mistty--mark-prompt-fields (prompt prompt-beg)</code></li>
+<li>L1973: <code>(defun mistty--report-self-inserted-text ()</code></li>
+<li>L1991: <code>(defun mistty--run-hook-ignoring-errors (func)</code></li>
+<li>L1999: <code>(defun mistty-simulate-self-insert-command ()</code></li>
+<li>L2014: <code>(defun mistty--wrap-pre-post-command (func)</code></li>
+<li>L2022: <code>(defun mistty--match-forbid-edit-regexp-p ()</code></li>
+<li>L2043: <code>(defun mistty--can-move-vertically-p ()</code></li>
+<li>L2055: <code>(defun mistty--sync-buffer (source-buffer &amp;optional quick)</code></li>
+<li>L2118: <code>(defun mistty--copy-buffer-local-variables (variables source-buffer)</code></li>
+<li>L2127: <code>(defun mistty--maybe-truncate-when-idle ()</code></li>
+<li>L2135: <code>(defun mistty--maybe-truncate (buf)</code></li>
+<li>L2148: <code>(defun mistty-truncate (cutoff)</code></li>
+<li>L2160: <code>(defun mistty--save-properties (start)</code></li>
+<li>L2175: <code>(defun mistty--restore-properties (intervals start)</code></li>
+<li>L2182: <code>(defun mistty--maybe-move-sync-mark (scrolline)</code></li>
+<li>L2195: <code>(defun mistty--set-sync-mark (sync-pos scrolline)</code></li>
+<li>L2234: <code>(defun mistty--update-sync-marker-scrolline ()</code></li>
+<li>L2247: <code>(defun mistty--process-archived-prompts (limit-pos)</code></li>
+<li>L2287: <code>(defun mistty--prepare-for-scrollback (beg scrolline end)</code></li>
+<li>L2305: <code>(defun mistty--mark-scrollines (beg scrolline end)</code></li>
+<li>L2316: <code>(defun mistty-send-string (str)</code></li>
+<li>L2323: <code>(defun mistty-send-command ()</code></li>
+<li>L2348: <code>(defun mistty-newline (&amp;optional n)</code></li>
+<li>L2382: <code>(defun mistty-positional-p (key)</code></li>
+<li>L2403: <code>(defun mistty--should-fallback-to-emacs ()</code></li>
+<li>L2420: <code>(defun mistty-self-insert (&amp;optional n c)</code></li>
+<li>L2431: <code>(defun mistty-backward-delete-char (&amp;optional n)</code></li>
+<li>L2443: <code>(defun mistty-delete-char (&amp;optional n)</code></li>
+<li>L2456: <code>(defun mistty-tab-command (&amp;optional n)</code></li>
+<li>L2465: <code>(defun mistty--send-for-mistty-mode (translated-key key n positional)</code></li>
+<li>L2509: <code>(defun mistty-send-C-r (n)</code></li>
+<li>L2516: <code>(defun mistty-send-C-p (n)</code></li>
+<li>L2523: <code>(defun mistty-send-C-n (n)</code></li>
+<li>L2530: <code>(defun mistty-beginning-of-line (&amp;optional n)</code></li>
+<li>L2558: <code>(defun mistty-end-of-line-or-goto-cursor (&amp;optional n)</code></li>
+<li>L2579: <code>(defun mistty-end-of-line (&amp;optional n)</code></li>
+<li>L2611: <code>(defun mistty--after-change-on-work (beg end old-length)</code></li>
+<li>L2638: <code>(defun mistty--replay-interaction (cs)</code></li>
+<li>L3030: <code>(defun mistty--format-string-for-insert (str cs)</code></li>
+<li>L3045: <code>(defun mistty--refresh-after-changeset ()</code></li>
+<li>L3051: <code>(defun mistty--move-horizontally-str (direction)</code></li>
+<li>L3066: <code>(defun mistty--move-vertically-str (direction)</code></li>
+<li>L3085: <code>(defun mistty-next-input (n)</code></li>
+<li>L3099: <code>(defun mistty-previous-input (n)</code></li>
+<li>L3114: <code>(defun mistty-next-output (n)</code></li>
+<li>L3135: <code>(defun mistty-previous-output (n)</code></li>
+<li>L3155: <code>(defun mistty-current-output-range ()</code></li>
+<li>L3168: <code>(defun mistty-clear (n)</code></li>
+<li>L3176: <code>(defun mistty-select-output (&amp;optional n)</code></li>
+<li>L3183: <code>(defun mistty-create-buffer-with-output (buffer-name &amp;optional n)</code></li>
+<li>L3211: <code>(defun mistty--user-input-start (prompt-ranges)</code></li>
+<li>L3242: <code>(defun mistty--command-for-output (prompt-ranges)</code></li>
+<li>L3284: <code>(defun mistty--prompt-ranges-for-current-or-previous-output (&amp;optional n)</code></li>
+<li>L3309: <code>(defun mistty--prompt-ranges-around (pos active-prompt-ranges)</code></li>
+<li>L3329: <code>(defun mistty--prompt-ranges-at (start active-prompt-ranges)</code></li>
+<li>L3349: <code>(defun mistty--active-or-potential-prompt-ranges ()</code></li>
+<li>L3360: <code>(defun mistty--forward-prompt-ranges (accept)</code></li>
+<li>L3379: <code>(defun mistty--backward-prompt-ranges (accept)</code></li>
+<li>L3394: <code>(defun mistty--pre-command ()</code></li>
+<li>L3405: <code>(defun mistty--post-command-undo ()</code></li>
+<li>L3410: <code>(defun mistty--post-command-cursor ()</code></li>
+<li>L3416: <code>(defun mistty--post-command-quit ()</code></li>
+<li>L3430: <code>(defun mistty--post-command-schedule ()</code></li>
+<li>L3439: <code>(defun mistty--inhibit-add (sym)</code></li>
+<li>L3451: <code>(defun mistty--inhibit-remove (sym noschedule)</code></li>
+<li>L3467: <code>(defun mistty--inhibit-set (sym val &amp;optional noschedule)</code></li>
+<li>L3478: <code>(defun mistty--inhibit-clear (&amp;optional noschedule)</code></li>
+<li>L3486: <code>(defun mistty--detect-foreign-overlays (noschedule)</code></li>
+<li>L3524: <code>(defun mistty--ignore-foreign-overlays ()</code></li>
+<li>L3532: <code>(defun mistty--detect-completion-in-region ()</code></li>
+<li>L3537: <code>(defun mistty--post-command-1 (buf point-moved)</code></li>
+<li>L3559: <code>(defun mistty--release-all-changesets ()</code></li>
+<li>L3565: <code>(defun mistty--cancel-pickup-changes ()</code></li>
+<li>L3572: <code>(defun mistty--schedule-pickup-changes ()</code></li>
+<li>L3582: <code>(defun mistty--pickup-changes ()</code></li>
+<li>L3616: <code>(defun mistty--should-replay (cs)</code></li>
+<li>L3657: <code>(defun mistty--cursor-to-point-interaction ()</code></li>
+<li>L3721: <code>(defun mistty--same-pos-ignoring-skipped (posa posb)</code></li>
+<li>L3732: <code>(defun mistty-terminal-size-tracks-window ()</code></li>
+<li>L3746: <code>(defun mistty--check-terminal-size (width height)</code></li>
+<li>L3755: <code>(defun mistty-set-terminal-size (width height)</code></li>
+<li>L3777: <code>(defun mistty--window-size-change (win)</code></li>
+<li>L3784: <code>(defun mistty--set-process-window-size-from-windows ()</code></li>
+<li>L3798: <code>(defun mistty--set-process-window-size (width height)</code></li>
+<li>L3808: <code>(defun mistty--enter-fullscreen (work-buffer proc)</code></li>
+<li>L3844: <code>(defun mistty--report-fullscreen (buf msg)</code></li>
+<li>L3856: <code>(defun mistty--fullscreen-message ()</code></li>
+<li>L3882: <code>(defun mistty--leave-fullscreen (work-buffer proc)</code></li>
+<li>L3908: <code>(defun mistty--update-mode-lines (&amp;optional proc)</code></li>
+<li>L3977: <code>(defun mistty--swap-buffer-in-windows (a b)</code></li>
+<li>L3994: <code>(defun mistty-toggle-buffers ()</code></li>
+<li>L4007: <code>(defun mistty-sudo ()</code></li>
+<li>L4012: <code>(defun mistty-on-prompt-p (pos)</code></li>
+<li>L4022: <code>(defun mistty-before-positional ()</code></li>
+<li>L4041: <code>(defun mistty-maybe-realize-possible-prompt (&amp;optional pos)</code></li>
+<li>L4051: <code>(defun mistty--realize-possible-prompt ()</code></li>
+<li>L4064: <code>(defun mistty--possible-prompt-p ()</code></li>
+<li>L4083: <code>(defun mistty--prompt-contains-pos (prompt pos)</code></li>
+<li>L4093: <code>(defun mistty--create-backstage (proc)</code></li>
+<li>L4114: <code>(defun mistty--update-backstage ()</code></li>
+<li>L4127: <code>(defun mistty--delete-backstage (backstage)</code></li>
+<li>L4132: <code>(defun mistty--cursor-skip (win)</code></li>
+<li>L4200: <code>(defun mistty--cursor-skip-forward (pos)</code></li>
+<li>L4206: <code>(defun mistty--cursor-skip-ranges (pos &amp;optional type-condition)</code></li>
+<li>L4244: <code>(defun mistty--line-indent (pos)</code></li>
+<li>L4253: <code>(defun mistty--cursor-incomplete-skip-forward (pos type-condition)</code></li>
+<li>L4279: <code>(defun mistty--cursor-incomplete-skip-backward (pos type-condition)</code></li>
+<li>L4303: <code>(defun mistty--vertical-distance (beg end)</code></li>
+<li>L4310: <code>(defun mistty--distance (beg end)</code></li>
+<li>L4345: <code>(defun mistty--same-buffer-content-p (beg end)</code></li>
+<li>L4358: <code>(defun mistty-report-long-running-command (id active)</code></li>
+<li>L4389: <code>(defun mistty-long-running-command-p ()</code></li>
+<li>L4396: <code>(defun mistty-ignore-long-running-command ()</code></li>
+<li>L4414: <code>(defun mistty--wrap-capf-functions ()</code></li>
+<li>L4429: <code>(defun mistty-capf-wrapper (func &amp;rest args)</code></li>
+<li>L4443: <code>(defun mistty-kill-buffer (proc)</code></li>
+<li>L4457: <code>(defun mistty-kill-buffer-and-window (proc)</code></li>
+<li>L4471: <code>(defun mistty--at-end (proc &amp;optional option-override)</code></li>
+<li>L4495: <code>(defun mistty--active-prompt-map ()</code></li>
+<li>L4502: <code>(defun mistty-new-buffer-name ()</code></li>
+<li>L4518: <code>(defun mistty-buffer-name-shell ()</code></li>
+<li>L4532: <code>(defun mistty-buffer-name-user ()</code></li>
+<li>L4541: <code>(defun mistty-buffer-name-host ()</code></li>
+<li>L4550: <code>(defun mistty--realign-buffers()</code></li>
+<li>L4586: <code>(defun mistty--skip-identical-rows (pos scrolline)</code></li>
+<li>L4610: <code>(defun mistty-beginning-of-defun (&amp;optional n)</code></li>
+<li>L4631: <code>(defun mistty-end-of-defun ()</code></li>
+<li>L4643: <code>(defun mistty-imenu-create-index ()</code></li>
+<li>L4679: <code>(provide 'mistty)</code></li>
+</ul></main></html>

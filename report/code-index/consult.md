@@ -1,0 +1,404 @@
+# Indice del codice: consult
+
+Fonte: https://github.com/minad/consult.git
+
+Revisione: `3c64214db5cd61a8f8186e4dce89c0e04be1652c`.
+
+
+## consult-compile.el
+
+- L29: `(require 'consult)`
+- L30: `(require 'compile)`
+- L39: `(defun consult-compile--candidates (grep buffer)`
+- L59: `(defun consult-compile--lookup (marker)`
+- L71: `(defun consult-compile--buffers (grep file)`
+- L82: `(defun consult-compile--state ()`
+- L96: `(defun consult-compile-error (&optional arg grep)`
+- L122: `(provide 'consult-compile)`
+
+## consult-flymake.el
+
+- L27: `(require 'consult)`
+- L28: `(require 'flymake)`
+- L36: `(defun consult-flymake--candidates (diags)`
+- L92: `(defun consult-flymake (&optional project)`
+- L113: `(provide 'consult-flymake)`
+
+## consult-imenu.el
+
+- L27: `(require 'consult)`
+- L28: `(require 'imenu)`
+- L30: `(defcustom consult-imenu-config`
+- L55: `(defun consult-imenu--switch-buffer (name pos buf fn &rest args)`
+- L65: `(defun consult-imenu--normalize (pos)`
+- L78: `(defun consult-imenu--flatten (prefix face list types)`
+- L107: `(defun consult-imenu--compute ()`
+- L128: `(defun consult-imenu--deduplicate (items)`
+- L138: `(defun consult-imenu--items ()`
+- L144: `(defun consult-imenu--items-safe ()`
+- L152: `(defun consult-imenu--multi-items (buffers)`
+- L166: `(defun consult-imenu--jump (item)`
+- L179: `(defun consult-imenu--narrow ()`
+- L186: `(defun consult-imenu--group ()`
+- L197: `(defun consult-imenu--select (prompt items)`
+- L226: `(defun consult-imenu ()`
+- L241: `(defun consult-imenu-multi (&optional query)`
+- L257: `(provide 'consult-imenu)`
+
+## consult-info.el
+
+- L27: `(require 'consult)`
+- L28: `(require 'info)`
+- L34: `(defun consult-info--candidates (buffers input callback)`
+- L86: `(defun consult-info--position (cand)`
+- L93: `(defun consult-info--action (cand &optional buf)`
+- L103: `(defun consult-info--state ()`
+- L120: `(defun consult-info--group (cand transform)`
+- L125: `(defun consult-info--buffer (manual init)`
+- L141: `(defun consult-info--prepare-buffers (manuals fun)`
+- L173: `(defun consult-info (&rest manuals)`
+- L216: `(provide 'consult-info)`
+
+## consult-kmacro.el
+
+- L27: `(require 'consult)`
+- L28: `(require 'kmacro)`
+- L33: `(defun consult-kmacro--candidates ()`
+- L61: `(defun consult-kmacro (arg)`
+- L82: `(provide 'consult-kmacro)`
+
+## consult-org.el
+
+- L27: `(require 'consult)`
+- L28: `(require 'org)`
+- L32: `(defun consult-org--narrow ()`
+- L57: `(defun consult-org--headings (prefix match scope &rest skip)`
+- L92: `(defun consult-org--annotate (cand)`
+- L101: `(defun consult-org--group (cand transform)`
+- L108: `(defun consult-org-heading (&optional match scope)`
+- L133: `(defun consult-org-agenda (&optional match)`
+- L143: `(provide 'consult-org)`
+
+## consult-register.el
+
+- L27: `(require 'consult)`
+- L28: `(require 'kmacro)`
+- L30: `(defcustom consult-register-prefix #("#" 0 1 (face consult-key))`
+- L48: `(cl-defun consult-register--format-value (val)`
+- L80: `(defmacro consult-register--describe-kmacro ()`
+- L121: `(defun consult-register-window (buffer &optional show-empty pred)`
+- L143: `(defun consult-register-format (reg &optional completion)`
+- L167: `(defun consult-register--alist (&optional noerror pred)`
+- L181: `(defun consult-register--candidates (&optional pred)`
+- L187: `(defun consult-register (&optional arg)`
+- L218: `(defun consult-register-load (reg &optional arg)`
+- L235: `(defun consult-register--action (action-list)`
+- L296: `(defun consult-register-store (arg)`
+- L327: `(provide 'consult-register)`
+
+## consult-xref.el
+
+- L27: `(require 'consult)`
+- L28: `(require 'xref)`
+- L42: `(defun consult-xref--candidates ()`
+- L58: `(defun consult-xref--preview (display)`
+- L86: `(defun consult-xref (fetcher &optional alist)`
+- L119: `(provide 'consult-xref)`
+
+## consult.el
+
+- L56: `(require 'compat)`
+- L57: `(require 'bookmark)`
+- L72: `(defcustom consult-narrow-key nil`
+- L79: `(defcustom consult-widen-key nil`
+- L86: `(defcustom consult-project-function`
+- L98: `(defcustom consult-async-refresh-delay 0.2`
+- L106: `(defcustom consult-async-input-throttle 0.5`
+- L114: `(defcustom consult-async-input-debounce 0.2`
+- L122: `(defcustom consult-async-min-input 3`
+- L128: `(defcustom consult-async-split-style 'perl`
+- L135: `(defcustom consult-async-split-styles-alist`
+- L143: `(defcustom consult-async-indicator`
+- L152: `(defcustom consult-mode-histories`
+- L167: `(defcustom consult-themes nil`
+- L172: `(defcustom consult-after-jump-hook (list #'recenter)`
+- L181: `(defcustom consult-line-start-from-top nil`
+- L186: `(defcustom consult-point-placement 'match-beginning`
+- L193: `(defcustom consult-line-numbers-widen t`
+- L199: `(defcustom consult-goto-line-numbers t`
+- L203: `(defcustom consult-fontify-preserve t`
+- L207: `(defcustom consult-fontify-max-size (* 1024 1024)`
+- L212: `(defcustom consult-buffer-filter`
+- L228: `(defcustom consult-buffer-list-function #'buffer-list`
+- L239: `(defcustom consult-buffer-sources`
+- L256: `(defcustom consult-project-buffer-sources`
+- L265: `(defcustom consult-mode-command-filter`
+- L273: `(defcustom consult-grep-max-columns 300`
+- L284: `(defcustom consult-grep-args`
+- L293: `(defcustom consult-git-grep-args`
+- L301: `(defcustom consult-ripgrep-args`
+- L309: `(defcustom consult-find-args`
+- L316: `(defcustom consult-fd-args`
+- L324: `(defcustom consult-locate-args`
+- L331: `(defcustom consult-man-args`
+- L338: `(defcustom consult-preview-key 'any`
+- L351: `(defcustom consult-preview-partial-size (* 1024 1024)`
+- L355: `(defcustom consult-preview-partial-chunk (* 10 1024)`
+- L361: `(defcustom consult-preview-max-count 10`
+- L365: `(defcustom consult-preview-excluded-buffers nil`
+- L371: `(defcustom consult-preview-excluded-files`
+- L377: `(defcustom consult-preview-allowed-hooks`
+- L385: `(defcustom consult-preview-variables`
+- L394: `(defcustom consult-bookmark-narrow`
+- L610: `(defun consult--plist-remove (keys plist)`
+- L620: `(defun consult--key-parse (key)`
+- L626: `(defun consult--in-buffer (fun &optional buffer)`
+- L633: `(defun consult--completion-table-in-buffer (table &optional buffer)`
+- L655: `(defun consult--build-args (arg)`
+- L667: `(defun consult--command-split (str)`
+- L689: `(defmacro consult--keep! (list form)`
+- L704: `(defun consult--completion-filter (pattern cands category highlight)`
+- L724: `(defun consult--completion-filter-complement (pattern cands category)`
+- L729: `(defun consult--completion-filter-dispatch (pattern cands category highlight)`
+- L741: `(defmacro consult--each-line (beg end &rest body)`
+- L755: `(defun consult--display-width (string)`
+- L771: `(defun consult--string-hash (strings)`
+- L778: `(defmacro consult--local-let (binds &rest body)`
+- L798: `(defun consult--fast-abbreviate-file-name (name)`
+- L813: `(defun consult--left-truncate-file (file)`
+- L829: `(defun consult--directory-prompt (prompt dir)`
+- L887: `(defun consult--default-project-function (may-prompt)`
+- L894: `(defun consult--project-root (&optional may-prompt)`
+- L904: `(defun consult--project-known-roots ()`
+- L913: `(defun consult--project-name (dir)`
+- L919: `(defun consult--format-file-line-match (file line match)`
+- L928: `(defun consult--make-overlay (beg end &rest props)`
+- L936: `(defun consult--remove-dups (list)`
+- L944: `(defun consult--completion-window-p ()`
+- L949: `(defun consult--original-window ()`
+- L958: `(defun consult--forbid-minibuffer ()`
+- L963: `(defun consult--require-minibuffer ()`
+- L973: `(defun consult--with-increased-gc-f (fun)`
+- L981: `(defmacro consult--with-increased-gc (&rest body)`
+- L986: `(defmacro consult--slow-operation (message &rest body)`
+- L993: `(defun consult--count-lines (pos)`
+- L1003: `(defun consult--marker-from-line-column (buffer line column)`
+- L1029: `(defun consult--copy-faces (beg end str)`
+- L1036: `(defun consult--line-fontify (&optional curr-line)`
+- L1082: `(defun consult--line-with-mark (marker)`
+- L1099: `(defun consult--tofu-strip (str)`
+- L1121: `(defun consult--tofu-encode (n)`
+- L1136: `(defun consult--find-highlights (str start &rest ignored-faces)`
+- L1154: `(defun consult--point-placement (str start &rest ignored-faces)`
+- L1168: `(defun consult--highlight-regexps (regexps ignore-case str)`
+- L1190: `(defun consult--highlight-literals (literals ignore-case str)`
+- L1223: `(defun consult--convert-regexp (regexp type)`
+- L1245: `(defun consult--default-regexp-compiler (input type ignore-case)`
+- L1253: `(defun consult--compile-regexp (input type ignore-case)`
+- L1262: `(defun consult--split-escaped (str)`
+- L1272: `(defun consult--join-regexps (regexps type)`
+- L1289: `(defun consult--join-regexps-permutations (regexps esc)`
+- L1302: `(defun consult--valid-regexp-p (re)`
+- L1308: `(defun consult--regexp-filter (regexps)`
+- L1316: `(defun consult--lookup-member (selected candidates &rest _)`
+- L1320: `(defun consult--lookup-cons (selected candidates &rest _)`
+- L1324: `(defun consult--lookup-cdr (selected candidates &rest _)`
+- L1328: `(defun consult--lookup-location (selected candidates &rest _)`
+- L1336: `(defun consult--lookup-prop (prop selected candidates &rest _)`
+- L1341: `(defun consult--lookup-candidate (selected candidates &rest _)`
+- L1347: `(defun consult--preview-rename-buffer (buf &optional name)`
+- L1353: `(defun consult--preview-add-buffer (list buf &optional name)`
+- L1364: `(defun consult--preview-allowed-p (fun)`
+- L1380: `(defun consult--filter-find-file-hook (orig &rest hooks)`
+- L1392: `(defun consult--minibuffer-message (&rest msg)`
+- L1398: `(defun consult--find-file-temporarily-1 (name)`
+- L1440: `(defun consult--find-file-temporarily (name)`
+- L1466: `(defun consult--temporary-files ()`
+- L1546: `(defun consult--invisible-open-permanently ()`
+- L1554: `(defun consult--invisible-open-temporarily ()`
+- L1570: `(defun consult--jump-ensure-buffer (pos)`
+- L1581: `(defun consult--jump (pos)`
+- L1604: `(defun consult--jump-preview ()`
+- L1674: `(defun consult--jump-state ()`
+- L1678: `(defun consult--get-location (cand)`
+- L1686: `(defun consult--location-state (candidates)`
+- L1705: `(defun consult--state-with-return (state return)`
+- L1712: `(defmacro consult--define-state (type)`
+- L1720: `(defun consult--preview-key-normalize (preview-key)`
+- L1736: `(defun consult--preview-key-debounce (preview-key cand)`
+- L1746: `(define-key map k '(lambda () ,d))))`
+- L1750: `(defun consult--preview-append-local-pch (fun)`
+- L1764: `(defun consult--with-preview-f (preview-key state transform candidate save-input body)`
+- L1855: `(defmacro consult--with-preview (preview-key state transform candidate save-input &rest body)`
+- L1903: `(defun consult--group-prop (cand transform)`
+- L1908: `(defun consult--prefix-group (cand transform)`
+- L1915: `(defun consult--type-group (types)`
+- L1921: `(defun consult--type-narrow (types)`
+- L1927: `(defun consult--widen-key ()`
+- L1937: `(defun consult-narrow (key)`
+- L1981: `(defun consult-narrow-help ()`
+- L1998: `(defun consult--narrow-setup (config map)`
+- L2005: `(define-key map (vconcat key (vector (car pair)))`
+- L2008: `(define-key map widen (cons "All" #'consult-narrow))))`
+- L2012: `(defun consult--split-perl (str &optional _plist)`
+- L2032: `(defun consult--split-none (str &optional _plist)`
+- L2036: `(defun consult--split-separator (str plist)`
+- L2049: `(defun consult--split-setup (split)`
+- L2084: `(defun consult--async-pipeline (&rest async)`
+- L2148: `(defun consult--async-wrap (async)`
+- L2158: `(defun consult--async-p (fun)`
+- L2162: `(defmacro consult--with-async (async &rest body)`
+- L2168: `(defun consult--with-async-f (async body)`
+- L2207: `(defun consult--async-sink ()`
+- L2240: `(defun consult--async-dynamic (fun &optional restart)`
+- L2299: `(defun consult--async-static (items)`
+- L2316: `(defun consult--async-merge-sink (sink indicator tail idx)`
+- L2354: `(defun consult--async-merge (asyncs)`
+- L2370: `(defun consult--async-debug (prefix)`
+- L2378: `(defun consult--async-predicate (pred)`
+- L2393: `(defun consult--async-min-input (&optional min-input)`
+- L2409: `(defun consult--async-split (&optional style)`
+- L2439: `(defun consult--async-options ()`
+- L2459: `(defun consult--async-indicator ()`
+- L2483: `(defun consult--async-log (formatted &rest args)`
+- L2489: `(defun consult--async-process (builder &rest props)`
+- L2588: `(defun consult--async-highlight (&optional highlight)`
+- L2607: `(defun consult--async-throttle (&optional throttle debounce)`
+- L2646: `(defun consult--async-refresh (&optional delay)`
+- L2671: `(defun consult--async-transform-by-input (fun)`
+- L2685: `(defun consult--async-transform (fun)`
+- L2691: `(defun consult--async-map (fun)`
+- L2695: `(defun consult--async-filter (fun)`
+- L2701: `(cl-defun consult--dynamic-collection (fun &key min-input throttle debounce`
+- L2721: `(cl-defun consult--process-collection (builder &rest props &key min-input`
+- L2748: `(defvar-keymap consult-async-map`
+- L2757: `(defvar-keymap consult-narrow-map`
+- L2765: `(defun consult--annotate-align (cand ann)`
+- L2777: `(defun consult--add-history (async items)`
+- L2806: `(defun consult--setup-keymap (keymap async narrow preview-key)`
+- L2827: `(define-key map key #'ignore))))`
+- L2838: `(defun consult--tofu-hide-in-minibuffer (&rest _)`
+- L2848: `(defun consult--read-affixate (fun cands)`
+- L2864: `(cl-defun consult--read-1 ( table &key`
+- L2926: `(cl-defun consult--read ( table &rest options &key`
+- L2987: `(cl-defun consult--prompt-1 ( &key prompt history add-history initial default`
+- L3002: `(cl-defun consult--prompt ( &rest options &key prompt history add-history initial default`
+- L3041: `(defun consult--multi-narrow (sources)`
+- L3054: `(defun consult--multi-annotate (sources cand)`
+- L3063: `(defun consult--multi-group (sources cand transform)`
+- L3068: `(defun consult--multi-preview-key (sources)`
+- L3085: `(defun consult--multi-lookup (sources selected candidates &rest _)`
+- L3116: `(defun consult--multi-format (idx src items)`
+- L3133: `(defun consult--multi-async-predicate (sources cand)`
+- L3137: `(defun consult--multi-async (sources)`
+- L3155: `(defun consult--multi-enabled-sources (sources)`
+- L3166: `(defun consult--multi-state (sources)`
+- L3200: `(defun consult--multi-static (sources)`
+- L3222: `(defun consult--multi (sources &rest options)`
+- L3302: `(defun consult--customize-put (cmds prop form)`
+- L3313: `(defmacro consult-customize (&rest args)`
+- L3329: `(defun consult--customize-args (options &rest defaults)`
+- L3344: `(defun consult--insertion-preview (start end)`
+- L3376: `(defun consult--in-region (start end table predicate)`
+- L3446: `(defun consult-completion-in-region (start end table predicate)`
+- L3464: `(defun consult--outline-candidates ()`
+- L3497: `(defun consult-outline (&optional level)`
+- L3533: `(defun consult--mark-candidates (markers)`
+- L3561: `(defun consult-mark (&optional markers)`
+- L3581: `(defun consult--global-mark-candidates (markers)`
+- L3605: `(defun consult-global-mark (&optional markers)`
+- L3628: `(defun consult--line-candidates (top curr-line)`
+- L3654: `(defun consult--line-point-placement (selected candidates highlighted &rest ignored-faces)`
+- L3672: `(defun consult--line-match (selected candidates input &rest _)`
+- L3686: `(defun consult-line (&optional initial start)`
+- L3721: `(defun consult--line-multi-match (selected candidates &rest _)`
+- L3728: `(defun consult--line-multi-group (cand transform)`
+- L3738: `(defun consult--line-multi-candidates (buffers input callback)`
+- L3773: `(defun consult-line-multi (query &optional initial)`
+- L3809: `(defun consult--keep-lines-state (filter)`
+- L3896: `(defun consult-keep-lines (filter &optional initial)`
+- L3935: `(defun consult--focus-lines-state (filter)`
+- L4011: `(defun consult--focus-lines-revert ()`
+- L4016: `(defun consult-focus-lines (filter &optional show initial)`
+- L4063: `(defun consult--goto-line-position (str)`
+- L4082: `(defun consult-goto-line (&optional arg)`
+- L4106: `(defun consult--file-preview ()`
+- L4118: `(defun consult--file-action (file)`
+- L4128: `(defun consult-recent-file ()`
+- L4145: `(defun consult--mode-name (mode)`
+- L4157: `(defun consult--mode-command-candidates (modes)`
+- L4217: `(defun consult-mode-command (&rest modes)`
+- L4249: `(defun consult--read-from-kill-ring ()`
+- L4275: `(defun consult-yank-from-kill-ring (string &optional arg)`
+- L4305: `(defun consult-yank-pop (&optional arg)`
+- L4321: `(defun consult-yank-replace (string)`
+- L4345: `(defun consult--bookmark-preview ()`
+- L4363: `(defun consult--bookmark-action (bm)`
+- L4369: `(defun consult--bookmark-candidates ()`
+- L4382: `(defun consult-bookmark (name)`
+- L4410: `(defun consult-complex-command ()`
+- L4432: `(defun consult--current-history ()`
+- L4464: `(defun consult-history (&optional history index bol)`
+- L4510: `(defun consult-isearch-forward (&optional reverse)`
+- L4518: `(defun consult-isearch-backward (&optional reverse)`
+- L4524: `(defvar-keymap consult-isearch-history-map`
+- L4529: `(defun consult--isearch-history-candidates ()`
+- L4563: `(defun consult-isearch-history ()`
+- L4620: `(defun consult--minor-mode-candidates ()`
+- L4656: `(defun consult-minor-mode-menu ()`
+- L4682: `(defun consult-theme (theme)`
+- L4733: `(defun consult--buffer-sort-alpha (buffers)`
+- L4744: `(defun consult--buffer-sort-alpha-current (buffers)`
+- L4752: `(defun consult--buffer-sort-visibility (buffers)`
+- L4762: `(defun consult--normalize-directory (dir)`
+- L4769: `(defun consult--buffer-query-prompt (prompt query)`
+- L4787: `(defun consult--frame-buffer-list ()`
+- L4796: `(cl-defun consult--buffer-query ( &key sort directory mode as predicate (filter t)`
+- L4851: `(defun consult--buffer-file-hash ()`
+- L4855: `(defun consult--buffer-pair (buffer)`
+- L4859: `(defun consult--buffer-preview ()`
+- L4895: `(defun consult--buffer-action (buffer &optional norecord)`
+- L5065: `(defun consult--buffer-register-p (reg)`
+- L5079: `(defun consult--file-register-p (reg)`
+- L5118: `(defun consult-buffer (&optional sources)`
+- L5139: `(defmacro consult--with-project (&rest body)`
+- L5144: `(defun consult--with-project-f (fun)`
+- L5152: `(defun consult-project-buffer ()`
+- L5161: `(defun consult-buffer-other-window ()`
+- L5168: `(defun consult-buffer-other-frame ()`
+- L5175: `(defun consult-buffer-other-tab ()`
+- L5183: `(defun consult--grep-format (builder)`
+- L5220: `(defun consult--grep-position (cand &optional find-file)`
+- L5234: `(defun consult--grep-state ()`
+- L5245: `(defun consult--grep-exclude-args ()`
+- L5255: `(defun consult--grep (prompt make-builder dir initial)`
+- L5280: `(defun consult--grep-lookahead-p (&rest cmd)`
+- L5286: `(defun consult--grep-make-builder (paths)`
+- L5308: `(defun consult-grep-match (&optional arg)`
+- L5320: `(defun consult-grep (&optional dir initial)`
+- L5367: `(defun consult--git-grep-make-builder (paths)`
+- L5385: `(defun consult-git-grep (&optional dir initial)`
+- L5393: `(defun consult--ripgrep-make-builder (paths)`
+- L5418: `(defun consult-ripgrep (&optional dir initial)`
+- L5426: `(defun consult--find (prompt builder initial)`
+- L5447: `(defun consult--find-make-builder (paths)`
+- L5489: `(defun consult-find (&optional dir initial)`
+- L5502: `(defun consult--fd-make-builder (paths)`
+- L5532: `(defun consult-fd (&optional dir initial)`
+- L5545: `(defun consult--locate-builder (input)`
+- L5554: `(defun consult-locate (&optional initial)`
+- L5567: `(defun consult--man-builder (input)`
+- L5577: `(defun consult--man-format (lines)`
+- L5595: `(defun consult--man-preview ()`
+- L5616: `(defun consult--man-action (page &optional nodisplay)`
+- L5631: `(defun consult-man (&optional initial)`
+- L5656: `(defun consult--default-completion-list-preview ()`
+- L5663: `(defun consult--default-completion-list-preview-setup ()`
+- L5668: `(defun consult--default-completion-minibuffer-candidate ()`
+- L5683: `(defun consult--default-completion-list-candidate ()`
+- L5699: `(defun consult--default-completion-list-refresh ()`
+- L5712: `(defun consult--vertico-candidate ()`
+- L5717: `(defun consult--vertico-refresh ()`
+- L5727: `(define-key consult-async-map [remap vertico-insert] 'vertico-next-group))`
+- L5736: `(defun consult--icomplete-refresh ()`
+- L5763: `(provide 'consult)`

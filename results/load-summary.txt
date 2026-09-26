@@ -1,0 +1,145 @@
+abysl-term loaded 
+alacritty loaded 
+dropdown-remote loaded 
+eaf-pyqterminal error Symbol’s value as variable is void: eaf-app-binding-alist
+eat-lucasec loaded 
+eat-serial loaded 
+edger loaded 
+emacs-tabbar error Cannot open load file: No such file or directory, emacs-tabbar
+emux-rock loaded 
+evil-tmux-navigator error Cannot open load file: No such file or directory, evil
+ghostel-switch loaded 
+ghostherd loaded 
+lazy-emacs-terminal error Cannot open load file: No such file or directory, lazy-emacs-terminal
+multi-term-roman error Symbol’s function definition is void: ad-advised-definition-p
+project-terminal loaded 
+term-control loaded 
+term-plus-fork loaded 
+terminology loaded 
+vterm-anti-flicker-filter loaded 
+winterm error Loading file /home/admin/Emacs-Multiplexing-Study/sources/winterm/emacs-winterm.el failed to provide feature ‘emacs-winterm’
+yantra error Cannot open load file: No such file or directory, yantra
+eev loaded 
+bshell loaded 
+cooked loaded 
+coterm loaded 
+deskel error Loading file /home/admin/Emacs-Multiplexing-Study/sources/deskel/desk.el failed to provide feature ‘desk’
+detached loaded 
+dtache not-acquired Source acquisition failed; not tested
+eee loaded 
+el-be-back loaded 
+emacs-herdr loaded 
+emux-el loaded 
+emux-shcv loaded 
+eterm-256color loaded 
+herdr loaded 
+herdr-emacs error Cannot open load file: No such file or directory, herdr-emacs
+kuro loaded 
+libgterm error gterm module not compiled. Compile now? (y or n) {"status":"error","error":"End of file during parsing: Error reading from stdin"}
+lterm loaded 
+multi-buf loaded 
+multi-eshell loaded 
+multi-run loaded 
+multi-shell loaded 
+multi-term-tmux loaded 
+popterm loaded 
+screensend loaded 
+term-plus-mux loaded 
+tiling loaded 
+tmux-cc loaded 
+tmux-control loaded 
+tmux-el loaded 
+tmux-head loaded 
+tmux-pane loaded 
+tmux-tandem loaded 
+tmux-view loaded 
+tmuxbuf loaded 
+tmuxmacs loaded 
+turnip loaded 
+vterm-manager loaded 
+vterm-ring loaded 
+vterms loaded 
+vtermux loaded 
+vtplex loaded 
+wterm error wterm: /home/admin/Emacs-Multiplexing-Study/sources/wterm/wterm-module.dll not found
+xterm-256color not-acquired Source acquisition failed; not tested
+zellij loaded 
+emux-jcguu95 error Cannot open load file: No such file or directory, emux-jcguu95
+ob-tmux loaded 
+myterminal-controls loaded 
+choice-program-complete not-acquired Source acquisition failed; not tested
+ssh loaded 
+multi-buffer error Loading file /home/admin/Emacs-Multiplexing-Study/sources/multi-buffer/multi-buffer.el failed to provide feature ‘multi-buffer’
+term-toggle loaded 
+nssh loaded 
+better-shell loaded 
+e2wm loaded 
+e2wm-term error Symbol’s function definition is void: defstruct
+eaf loaded 
+elscreen loaded 
+elscreen-buffer-group loaded 
+elscreen-multi-term loaded 
+emacs-tunnel loaded 
+emux-attic loaded 
+eyebrowse loaded 
+friendly-shell loaded 
+helm-switch-shell error Cannot open load file: No such file or directory, async
+navorski loaded 
+persp-mode loaded 
+perspective loaded 
+project-shells loaded 
+quick-shell-keybind loaded 
+rswitcher not-acquired Source acquisition failed; not tested
+session not-acquired Source acquisition failed; not tested
+shell-command-x loaded 
+shell-switcher loaded 
+shell-toggle loaded 
+shell-toggle-plus loaded 
+simple-screen loaded 
+sticky-shell loaded 
+term+key-intercept loaded 
+term-alert loaded 
+term-cmd loaded 
+term-mux loaded 
+term-plus-xterm loaded 
+term-run loaded 
+term-sessions loaded 
+termint loaded 
+tmux-control-mode loaded 
+tmux-runner loaded 
+toggle-term loaded 
+tramp-term loaded 
+vterm-editor loaded 
+workgroups loaded 
+workgroups2 loaded 
+xterm-color loaded 
+tab-group loaded 
+aweshell loaded 
+eaf-terminal error Symbol’s value as variable is void: eaf-app-binding-alist
+eat loaded 
+emamux loaded 
+emux loaded 
+equake loaded 
+eshell-toggle loaded 
+eshell-vterm loaded 
+ghostel loaded 
+ghostel-mux loaded 
+mistty loaded 
+multi-term loaded 
+multi-vterm loaded 
+popper loaded 
+shell-here loaded 
+shell-pop loaded 
+term+ loaded 
+term-manager loaded 
+terminal-here loaded 
+terminal-toggle loaded 
+vterm loaded 
+vterm-hotkey loaded 
+vterm-toggle loaded 
+term loaded 
+shell loaded 
+eshell loaded 
+tab-bar loaded 
+terminal loaded 
+ob-screen loaded 

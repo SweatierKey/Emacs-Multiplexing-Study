@@ -1,0 +1,54 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: shell-pop</h1>
+<p>Fonte: https://github.com/kyagi/shell-pop-el.git</p>
+<p>Revisione: <code>446b1691454e65be648dcb7e316639aa7dd73be2</code>.</p>
+<h2>shell-pop.el</h2>
+<ul>
+<li>L94: <code>(defcustom shell-pop-window-size 30</code></li>
+<li>L103: <code>(defcustom shell-pop-full-span nil</code></li>
+<li>L108: <code>(defcustom shell-pop-window-position "bottom"</code></li>
+<li>L118: <code>(defcustom shell-pop-default-directory nil</code></li>
+<li>L123: <code>(defun shell-pop--set-shell-type (symbol value)</code></li>
+<li>L132: <code>(define-key term-raw-map (read-kbd-macro shell-pop-universal-key) 'shell-pop)))</code></li>
+<li>L134: <code>(defcustom shell-pop-shell-type '("shell" "*shell*" (lambda () (shell)))</code></li>
+<li>L178: <code>(defcustom shell-pop-term-shell (or (bound-and-true-p explicit-shell-file-name)</code></li>
+<li>L185: <code>(defcustom shell-pop-autocd-to-working-dir t</code></li>
+<li>L190: <code>(defcustom shell-pop-restore-window-configuration 'buffer-view</code></li>
+<li>L209: <code>(defcustom shell-pop-cleanup-buffer-at-process-exit t</code></li>
+<li>L214: <code>(defcustom shell-pop-prevent-scroll t</code></li>
+<li>L222: <code>(defcustom shell-pop-per-window nil</code></li>
+<li>L233: <code>(defcustom shell-pop-pop-under-shell nil</code></li>
+<li>L243: <code>(defun shell-pop--set-universal-key (symbol value)</code></li>
+<li>L246: <code>(when value (global-set-key (read-kbd-macro value) 'shell-pop))</code></li>
+<li>L250: <code>(define-key term-raw-map (read-kbd-macro value) 'shell-pop)))</code></li>
+<li>L253: <code>(defcustom shell-pop-universal-key nil</code></li>
+<li>L261: <code>(defcustom shell-pop-in-hook nil</code></li>
+<li>L266: <code>(defcustom shell-pop-in-after-hook nil</code></li>
+<li>L271: <code>(defcustom shell-pop-out-hook nil</code></li>
+<li>L276: <code>(defcustom shell-pop-process-exit-hook nil</code></li>
+<li>L283: <code>(defun shell-pop--shell-buffer-name (index)</code></li>
+<li>L290: <code>(defun shell-pop-check-internal-mode-buffer (index)</code></li>
+<li>L305: <code>(defun shell-pop-get-internal-mode-buffer-window (index)</code></li>
+<li>L310: <code>(defun shell-pop (arg)</code></li>
+<li>L346: <code>(defun shell-pop--cd-to-cwd-eshell (cwd)</code></li>
+<li>L353: <code>(defun shell-pop--cd-to-cwd-shell (cwd)</code></li>
+<li>L363: <code>(defun shell-pop--cd-to-cwd-term (cwd)</code></li>
+<li>L371: <code>(defun shell-pop--cd-to-cwd-vterm (cwd)</code></li>
+<li>L376: <code>(defun shell-pop--cd-to-cwd-eat (cwd)</code></li>
+<li>L383: <code>(defun shell-pop--cd-to-cwd-ghostel (cwd)</code></li>
+<li>L388: <code>(defun shell-pop--cd-to-cwd (cwd)</code></li>
+<li>L409: <code>(defun shell-pop--per-window-p ()</code></li>
+<li>L415: <code>(defun shell-pop--pop-under-shell-p ()</code></li>
+<li>L420: <code>(defun shell-pop--popup-window-for-source-window (source-window &amp;optional index)</code></li>
+<li>L433: <code>(defun shell-pop--target-index (arg)</code></li>
+<li>L441: <code>(defun shell-pop--toggle-target-from-shell (index)</code></li>
+<li>L462: <code>(defun shell-pop--calculate-window-size ()</code></li>
+<li>L470: <code>(defun shell-pop--eshell-exit-hook-delete-window ()</code></li>
+<li>L499: <code>(defun shell-pop--set-exit-action ()</code></li>
+<li>L549: <code>(defun shell-pop--switch-to-shell-buffer (index)</code></li>
+<li>L560: <code>(defun shell-pop--translate-position (pos)</code></li>
+<li>L568: <code>(defun shell-pop-get-unused-internal-mode-buffer-window ()</code></li>
+<li>L580: <code>(defun shell-pop-up (index)</code></li>
+<li>L657: <code>(defun shell-pop-out ()</code></li>
+<li>L740: <code>(defun shell-pop-split-window ()</code></li>
+<li>L753: <code>(provide 'shell-pop)</code></li>
+</ul></main></html>

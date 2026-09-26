@@ -1,0 +1,125 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: popterm</h1>
+<p>Fonte: https://github.com/ChetanKoneru/popterm.el.git</p>
+<p>Revisione: <code>d086833f7762d7f9a96954451328ee9a57378b93</code>.</p>
+<h2>popterm-tests.el</h2>
+<ul>
+<li>L23: <code>(require 'bytecomp)</code></li>
+<li>L24: <code>(require 'ert)</code></li>
+<li>L25: <code>(require 'popterm)</code></li>
+<li>L26: <code>(require 'shell)</code></li>
+<li>L28: <code>(defvar vterm-keymap-exceptions)</code></li>
+<li>L1117: <code>(define-key global-map test-key #'popterm-window-toggle)</code></li>
+<li>L1118: <code>(define-key popterm-term-map test-key nil)</code></li>
+<li>L1124: <code>(define-key global-map test-key old-global-binding)</code></li>
+<li>L1125: <code>(define-key popterm-term-map test-key old-term-binding))))</code></li>
+<li>L1498: <code>(defun popterm-run-all-tests ()</code></li>
+<li>L1504: <code>(provide 'popterm-tests)</code></li>
+</ul>
+<h2>popterm.el</h2>
+<ul>
+<li>L57: <code>(require 'cl-lib)</code></li>
+<li>L58: <code>(require 'seq)</code></li>
+<li>L59: <code>(require 'comint)</code></li>
+<li>L68: <code>(defcustom popterm-backend 'vterm</code></li>
+<li>L78: <code>(defcustom popterm-display-method 'posframe</code></li>
+<li>L88: <code>(defcustom popterm-scope nil</code></li>
+<li>L100: <code>(defcustom popterm-auto-cd nil</code></li>
+<li>L109: <code>(defcustom popterm-cd-auto-create-buffer t</code></li>
+<li>L117: <code>(defcustom popterm-posframe-width-ratio 0.62</code></li>
+<li>L122: <code>(defcustom popterm-posframe-height-ratio 0.62</code></li>
+<li>L127: <code>(defcustom popterm-posframe-min-width 100</code></li>
+<li>L132: <code>(defcustom popterm-posframe-border-width 3</code></li>
+<li>L137: <code>(defcustom popterm-posframe-poshandler</code></li>
+<li>L146: <code>(defcustom popterm-posframe-focus-delay 0.35</code></li>
+<li>L159: <code>(defcustom popterm-window-height-ratio 0.30</code></li>
+<li>L164: <code>(defcustom popterm-window-side 'below</code></li>
+<li>L248: <code>(defun popterm--buffer-backend-p (buffer backend)</code></li>
+<li>L258: <code>(defun popterm--buffer-instance-matches-p (buffer name backend)</code></li>
+<li>L271: <code>(defun popterm--buffer-p (&amp;optional buffer-or-name backend)</code></li>
+<li>L290: <code>(defun popterm--preserve-buffer-during-posframe-delete (orig buffer-or-name)</code></li>
+<li>L312: <code>(defun popterm--install-posframe-kill-buffer-advice ()</code></li>
+<li>L335: <code>(defvar popterm-term-map</code></li>
+<li>L337: <code>(define-key map (kbd "C-&lt;next&gt;")  #'popterm-next)</code></li>
+<li>L338: <code>(define-key map (kbd "C-&lt;prior&gt;") #'popterm-prev)</code></li>
+<li>L339: <code>(define-key map (kbd "C-q")       #'popterm-return)</code></li>
+<li>L345: <code>(define-key popterm-term-map [remap ghostel-send-C-g]</code></li>
+<li>L348: <code>(defun popterm--keyboard-key-sequence-p (key)</code></li>
+<li>L354: <code>(defun popterm--global-terminal-command-bindings ()</code></li>
+<li>L370: <code>(defun popterm--refresh-terminal-command-bindings ()</code></li>
+<li>L377: <code>(define-key popterm-term-map (car binding) (cdr binding))))</code></li>
+<li>L379: <code>(define-minor-mode popterm-mode</code></li>
+<li>L406: <code>(defun popterm--vterm-passthrough-key-descriptions ()</code></li>
+<li>L414: <code>(defun popterm--vterm-setup ()</code></li>
+<li>L427: <code>(defun popterm--refresh-buffer-terminal-command-bindings (buffer)</code></li>
+<li>L478: <code>(defun popterm--mode (backend)</code></li>
+<li>L487: <code>(defun popterm--reset-cursor-point (buffer)</code></li>
+<li>L502: <code>(defun popterm--buffer-name (&amp;optional name backend)</code></li>
+<li>L514: <code>(defun popterm--ghostel-create (buffer-name)</code></li>
+<li>L537: <code>(defun popterm--create (name backend)</code></li>
+<li>L602: <code>(defun popterm--buffer-directory (&amp;optional buffer)</code></li>
+<li>L614: <code>(defun popterm--project-root ()</code></li>
+<li>L627: <code>(defun popterm--not-in-other-frame (cur-frame buf)</code></li>
+<li>L634: <code>(defun popterm--buffer-list (&amp;optional backend)</code></li>
+<li>L653: <code>(defun popterm--get-or-create (&amp;optional name backend)</code></li>
+<li>L673: <code>(defun popterm-cd-string (source-buf)</code></li>
+<li>L688: <code>(defun popterm--terminal-directory (term-buf)</code></li>
+<li>L699: <code>(defun popterm--same-directory-p (left right)</code></li>
+<li>L706: <code>(defun popterm--remote-identity (dir)</code></li>
+<li>L711: <code>(defun popterm--same-remote-p (source-dir term-dir)</code></li>
+<li>L716: <code>(defun popterm--directory-tracking-enabled-p (term-buf)</code></li>
+<li>L736: <code>(defun popterm--terminal-process (term-buf)</code></li>
+<li>L748: <code>(defun popterm--local-process-has-child-p (process)</code></li>
+<li>L759: <code>(defun popterm--terminal-busy-p (term-buf)</code></li>
+<li>L777: <code>(defun popterm--send-cd (term-buf source-buf)</code></li>
+<li>L847: <code>(defun popterm--display-buffer-guard-p (buffer-or-name _action)</code></li>
+<li>L860: <code>(defun popterm--effective-display-method ()</code></li>
+<li>L864: <code>(defun popterm--install-display-buffer-guard ()</code></li>
+<li>L870: <code>(defun popterm--remove-display-buffer-guard ()</code></li>
+<li>L876: <code>(defun popterm--posframe-focus-guard ()</code></li>
+<li>L910: <code>(defun popterm--install-focus-guard ()</code></li>
+<li>L917: <code>(defun popterm--remove-focus-guard ()</code></li>
+<li>L924: <code>(defun popterm--cancel-focus-timer ()</code></li>
+<li>L930: <code>(defun popterm--hide-buffer-mode-line (buffer)</code></li>
+<li>L939: <code>(defun popterm--restore-buffer-mode-line (buffer)</code></li>
+<li>L949: <code>(defun popterm--restore-posframe-buffer-state ()</code></li>
+<li>L954: <code>(defun popterm--frame-descendant-p (frame ancestor)</code></li>
+<li>L968: <code>(defun popterm--dismiss-descendant-posframes ()</code></li>
+<li>L991: <code>(defun popterm--ghostel-send-C-g ()</code></li>
+<li>L997: <code>(defun popterm--delete-descendant-minibuffer-posframes ()</code></li>
+<li>L1022: <code>(defun popterm--cleanup-posframe-state ()</code></li>
+<li>L1036: <code>(defun popterm--refresh-posframe-after-theme-change ()</code></li>
+<li>L1057: <code>(defun popterm--queue-theme-refresh (&amp;rest _args)</code></li>
+<li>L1069: <code>(defun popterm--install-theme-watch ()</code></li>
+<li>L1078: <code>(defun popterm--remove-theme-watch ()</code></li>
+<li>L1092: <code>(defun popterm--posframe-hidehandler (_info)</code></li>
+<li>L1150: <code>(defun popterm--posframe-show (buffer)</code></li>
+<li>L1209: <code>(defun popterm--posframe-hide ()</code></li>
+<li>L1240: <code>(defun popterm--posframe-visible-p ()</code></li>
+<li>L1256: <code>(defun popterm--window-show (buffer)</code></li>
+<li>L1269: <code>(defun popterm--window-hide ()</code></li>
+<li>L1277: <code>(defun popterm--window-visible-p ()</code></li>
+<li>L1283: <code>(defun popterm--eject-to-source ()</code></li>
+<li>L1294: <code>(defun popterm--visible-p ()</code></li>
+<li>L1308: <code>(defun popterm--hide ()</code></li>
+<li>L1321: <code>(defun popterm--show (buffer)</code></li>
+<li>L1336: <code>(defun popterm--next-numeric-index (&amp;optional backend)</code></li>
+<li>L1354: <code>(defun popterm--show-in-place (buffer)</code></li>
+<li>L1379: <code>(defun popterm--cycle-message (buffer &amp;optional backend)</code></li>
+<li>L1392: <code>(defun popterm-toggle (&amp;optional name backend)</code></li>
+<li>L1463: <code>(defun popterm-toggle-cd (&amp;optional name backend)</code></li>
+<li>L1477: <code>(defun popterm-window-toggle ()</code></li>
+<li>L1484: <code>(defun popterm-posframe-toggle ()</code></li>
+<li>L1491: <code>(defun popterm-toggle-named (name)</code></li>
+<li>L1499: <code>(defun popterm-vterm (&amp;optional name)</code></li>
+<li>L1506: <code>(defun popterm-ghostel (&amp;optional name)</code></li>
+<li>L1513: <code>(defun popterm-eat (&amp;optional name)</code></li>
+<li>L1520: <code>(defun popterm-shell (&amp;optional name)</code></li>
+<li>L1526: <code>(defun popterm-eshell (&amp;optional name)</code></li>
+<li>L1534: <code>(defun popterm-next (&amp;optional backend)</code></li>
+<li>L1559: <code>(defun popterm-prev (&amp;optional backend)</code></li>
+<li>L1584: <code>(defun popterm-find ()</code></li>
+<li>L1606: <code>(defun popterm-return ()</code></li>
+<li>L1630: <code>(defun popterm--on-buffer-kill ()</code></li>
+<li>L1644: <code>(define-minor-mode popterm-global-mode</code></li>
+<li>L1668: <code>(provide 'popterm)</code></li>
+</ul></main></html>

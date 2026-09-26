@@ -1,0 +1,146 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>multi-term</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/manateelazycat/multi-term">Sorgente upstream</a>. Revisione: <code>017c77c550115936860e2ea71b88e585371475d5</code>.</p>
+<h2>Funzionamento</h2>
+<p>Lista di buffer term, creazione e cycling, mappe per passare tasti al processo.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x multi-term, ripetere per nuovo terminale, M-x multi-term-prev. M-n/M-p non vanno confusi con switching: possono agire sulla cronologia shell.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/multi-term.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/multi-term.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario multi-term: passed</h3>
+<p><a href="../../results/multi-term.json">Esito e snapshot</a> · <a href="../../results/multi-term-keys.json">Traccia dei tasti</a> · <a href="../../recordings/multi-term.cast">Registrazione asciinema</a> · <a href="../../index.html#multi-term">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.32</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.62</td>
+<td><code>multi-term</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.42</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.62</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.62</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.82</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.82</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.02</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.83</td>
+<td><code>C-c C-j: term line mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.23</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.53</td>
+<td><code>multi-term</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.03</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.33</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.53</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.53</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.73</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.73</td>
+<td><code>C-c C-j: term line mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.13</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.43</td>
+<td><code>multi-term-prev</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.93</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.74</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.94</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.64</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.84</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.55</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.05</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.25</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

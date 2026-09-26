@@ -1,0 +1,248 @@
+# Indice del codice: s
+
+Fonte: https://github.com/magnars/s.el.git
+
+Revisione: `d7c04b84d03481a1ed62ee13dbe595224ccbe57c`.
+
+
+## dev/ert.el
+
+- L59: `(require 'button)`
+- L60: `(require 'debug)`
+- L61: `(require 'easymenu)`
+- L62: `(require 'ewoc)`
+- L63: `(require 'find-func)`
+- L64: `(require 'help)`
+- L91: `(defun ert--cl-do-remf (plist tag)`
+- L97: `(defun ert--remprop (sym tag)`
+- L104: `(defun ert--remove-if-not (ert-pred ert-list)`
+- L112: `(defun ert--intersection (a b)`
+- L120: `(defun ert--set-difference (a b)`
+- L128: `(defun ert--set-difference-eq (a b)`
+- L136: `(defun ert--union (a b)`
+- L154: `(defun ert--coerce-to-vector (x)`
+- L161: `(defun* ert--remove* (x list &key key test)`
+- L169: `(defun ert--string-position (c s)`
+- L175: `(defun ert--mismatch (a b)`
+- L197: `(defun ert--subseq (seq start &optional end)`
+- L211: `(defun ert-equal-including-properties (a b)`
+- L236: `(defun ert-test-boundp (symbol)`
+- L240: `(defun ert-get-test (symbol)`
+- L245: `(defun ert-set-test (symbol definition)`
+- L259: `(defun ert-make-test-unbound (symbol)`
+- L264: `(defun ert--parse-keys-and-body (keys-and-body)`
+- L292: `(defmacro* ert-deftest (name () &body docstring-keys-and-body)`
+- L362: `(defun ert-pass ()`
+- L366: `(defun ert-fail (data)`
+- L376: `(defun ert--signal-should-execution (form-description)`
+- L381: `(defun ert--special-operator-p (thing)`
+- L388: `(defun ert--expand-should-1 (whole form inner-expander)`
+- L439: `(defun ert--expand-should (whole form inner-expander)`
+- L468: `(defmacro* should (form)`
+- L477: `(defmacro* should-not (form)`
+- L486: `(defun ert--should-error-handle-error (form-description-fn`
+- L515: `(defmacro* should-error (form &rest keys &key type exclude-subtypes)`
+- L561: `(defun ert--proper-list-p (x)`
+- L573: `(defun ert--explain-format-atom (x)`
+- L579: `(defun ert--explain-not-equal (a b)`
+- L632: `(defun ert--significant-plist-keys (plist)`
+- L639: `(defun ert--plist-difference-explanation (a b)`
+- L672: `(defun ert--abbreviate-string (s len suffixp)`
+- L684: `(defun ert--explain-not-equal-including-properties (a b)`
+- L728: `(defmacro* ert-info ((message-form &key ((:prefix prefix-form) "Info: "))`
+- L763: `(defun ert--record-backtrace ()`
+- L782: `(defun ert--print-backtrace (backtrace)`
+- L825: `(defun ert--run-test-debugger (info debugger-args)`
+- L867: `(defun ert--run-test-internal (ert-test-execution-info)`
+- L893: `(defun ert--force-message-log-buffer-truncation ()`
+- L923: `(defun ert-run-test (ert-test)`
+- L959: `(defun ert-running-test ()`
+- L966: `(defun ert-test-result-type-p (result result-type)`
+- L1008: `(defun ert-test-result-expected-p (test result)`
+- L1012: `(defun ert-select-tests (selector universe)`
+- L1134: `(defun ert--insert-human-readable-selector (selector)`
+- L1203: `(defun ert-stats-completed-expected (stats)`
+- L1208: `(defun ert-stats-completed-unexpected (stats)`
+- L1213: `(defun ert-stats-completed (stats)`
+- L1218: `(defun ert-stats-total (stats)`
+- L1226: `(defun ert--stats-test-key (test)`
+- L1232: `(defun ert--stats-set-test-and-result (stats pos test result)`
+- L1264: `(defun ert--make-stats (tests selector)`
+- L1282: `(defun ert-run-or-rerun-test (stats test listener)`
+- L1304: `(defun ert-run-tests (selector listener)`
+- L1325: `(defun ert--stats-test-pos (stats test)`
+- L1333: `(defun ert--format-time-iso8601 (time)`
+- L1337: `(defun ert-char-for-test-result (result expectedp)`
+- L1348: `(defun ert-string-for-test-result (result expectedp)`
+- L1359: `(defun ert--pp-with-indentation-and-newline (object)`
+- L1369: `(defun ert--insert-infos (result)`
+- L1398: `(defun ert-run-tests-batch (&optional selector)`
+- L1494: `(defun ert-run-tests-batch-and-exit (&optional selector)`
+- L1513: `(defun ert--activate-font-lock-keywords ()`
+- L1521: `(defun* ert--remove-from-list (list-var element &key key test)`
+- L1536: `(defun ert-read-test-name (prompt &optional default history`
+- L1568: `(defun ert-read-test-name-at-point (prompt)`
+- L1575: `(defun ert-find-test-other-window (test-name)`
+- L1580: `(defun ert-delete-test (test-name)`
+- L1587: `(defun ert-delete-all-tests ()`
+- L1635: `(defun ert-insert-test-name-button (test-name)`
+- L1641: `(defun ert--results-format-expected-unexpected (expected unexpected)`
+- L1647: `(defun ert--results-update-ewoc-hf (ewoc stats)`
+- L1743: `(defun ert--results-update-stats-display (ewoc stats)`
+- L1752: `(defun ert--results-update-stats-display-maybe (ewoc stats)`
+- L1759: `(defun ert--tests-running-mode-line-indicator ()`
+- L1774: `(defun ert--make-xrefs-region (begin end)`
+- L1786: `(defun ert--string-first-line (s)`
+- L1792: `(defun ert-face-for-test-result (expectedp)`
+- L1799: `(defun ert-face-for-stats (stats)`
+- L1808: `(defun ert--print-test-for-ewoc (entry)`
+- L1860: `(defun ert--results-font-lock-function (enabledp)`
+- L1869: `(defun ert--setup-results-buffer (stats listener buffer-name)`
+- L1911: `(defun ert-run-tests-interactively (selector`
+- L2000: `(define-derived-mode ert-simple-view-mode fundamental-mode "ERT-View"`
+- L2007: `(define-key ert-simple-view-mode-map key binding))`
+- L2012: `(define-derived-mode ert-results-mode fundamental-mode "ERT-Results"`
+- L2037: `(define-key ert-results-mode-map key binding))`
+- L2070: `(defun ert--results-test-node-or-null-at-point ()`
+- L2088: `(defun ert--results-test-node-at-point ()`
+- L2095: `(defun ert-results-next-test ()`
+- L2103: `(defun ert-results-previous-test ()`
+- L2111: `(defun ert--results-move (node ewoc-fn error-message)`
+- L2125: `(defun ert--results-expand-collapse-button-action (button)`
+- L2136: `(defun ert-results-find-test-at-point-other-window ()`
+- L2146: `(defun ert--test-name-button-action (button)`
+- L2151: `(defun ert--ewoc-position (ewoc node)`
+- L2160: `(defun ert-results-jump-between-summary-and-result ()`
+- L2192: `(defun ert-test-at-point ()`
+- L2202: `(defun ert--results-test-at-point-no-redefinition ()`
+- L2219: `(defun ert--results-test-at-point-allow-redefinition ()`
+- L2256: `(defun ert--results-update-after-test-redefinition (pos new-test)`
+- L2272: `(defun ert--button-action-position ()`
+- L2280: `(defun ert--results-progress-bar-button-action (button)`
+- L2285: `(defun ert-results-rerun-all-tests ()`
+- L2294: `(defun ert-results-rerun-test-at-point ()`
+- L2329: `(defun ert-results-rerun-test-at-point-debugging-errors ()`
+- L2337: `(defun ert-results-pop-to-backtrace-for-test-at-point ()`
+- L2367: `(defun ert-results-pop-to-messages-for-test-at-point ()`
+- L2389: `(defun ert-results-pop-to-should-forms-for-test-at-point ()`
+- L2424: `(defun ert-results-toggle-printer-limits-for-test-at-point ()`
+- L2436: `(defun ert-results-pop-to-timings ()`
+- L2474: `(defun ert-describe-test (test-or-test-name)`
+- L2514: `(defun ert-results-describe-test-at-point ()`
+- L2530: `(defun ert--unload-function ()`
+- L2542: `(provide 'ert)`
+
+## dev/examples-to-docs.el
+
+- L3: `(defun example-to-string (example)`
+- L16: `(defun examples-to-strings (examples)`
+- L27: `(defun docs--signature (cmd)`
+- L37: `(defun docs--docstring (cmd)`
+- L47: `(defmacro defexamples (cmd &rest examples)`
+- L55: `(defmacro def-example-group (group &rest examples)`
+- L60: `(defun quote-and-downcase (string)`
+- L63: `(defun quote-docstring (docstring)`
+- L69: `(defun function-to-md (function)`
+- L82: `(defun docs--chop-suffix (suffix s)`
+- L90: `(defun github-id (command-name signature)`
+- L95: `(defun function-summary (function)`
+- L102: `(defun simplify-quotes ()`
+- L116: `(defun goto-and-remove (s)`
+- L121: `(defun create-docs-file ()`
+- L134: `(defun three-first (list)`
+
+## dev/examples-to-tests.el
+
+- L1: `(require 'ert)`
+- L3: `(defun examples-to-should-1 (examples)`
+- L8: `(defun examples-to-should (examples)`
+- L15: `(defmacro defexamples (cmd &rest examples)`
+- L20: `(defun def-example-group (&rest _)) ; ignore`
+- L22: `(provide 'examples-to-tests)`
+
+## dev/examples.el
+
+- L7: `(require 's)`
+
+## dev/undercover-init.el
+
+
+## s.el
+
+- L35: `(defun s-trim-left (s)`
+- L43: `(defun s-trim-right (s)`
+- L51: `(defun s-trim (s)`
+- L56: `(defun s-collapse-whitespace (s)`
+- L61: `(defun s-unindent (s &optional bol)`
+- L69: `(defun s-split (separator s &optional omit-nulls)`
+- L78: `(defun s-split-up-to (separator s n &optional omit-nulls)`
+- L105: `(defun s-lines (s)`
+- L110: `(defun s-join (separator strings)`
+- L115: `(defun s-concat (&rest strings)`
+- L120: `(defun s-prepend (prefix s)`
+- L125: `(defun s-append (suffix s)`
+- L130: `(defun s-splice (needle n s)`
+- L142: `(defun s-repeat (num s)`
+- L151: `(defun s-chop-suffix (suffix s)`
+- L160: `(defun s-chop-suffixes (suffixes s)`
+- L168: `(defun s-chop-prefix (prefix s)`
+- L177: `(defun s-chop-prefixes (prefixes s)`
+- L185: `(defun s-shared-start (s1 s2)`
+- L191: `(defun s-shared-end (s1 s2)`
+- L211: `(defun s-chomp (s)`
+- L216: `(defun s-truncate (len s &optional ellipsis)`
+- L230: `(defun s-word-wrap (len s)`
+- L240: `(defun s-center (len s)`
+- L249: `(defun s-pad-left (len padding s)`
+- L256: `(defun s-pad-right (len padding s)`
+- L263: `(defun s-left (len s)`
+- L270: `(defun s-right (len s)`
+- L278: `(defun s-chop-left (len s)`
+- L285: `(defun s-chop-right (len s)`
+- L292: `(defun s-ends-with? (suffix s &optional ignore-case)`
+- L305: `(defun s-starts-with? (prefix s &optional ignore-case)`
+- L316: `(defun s--truthy? (val)`
+- L320: `(defun s-contains? (needle s &optional ignore-case)`
+- L329: `(defun s-equals? (s1 s2)`
+- L336: `(defun s-less? (s1 s2)`
+- L343: `(defun s-matches? (regexp s &optional start)`
+- L351: `(defun s-blank? (s)`
+- L356: `(defun s-blank-str? (s)`
+- L361: `(defun s-present? (s)`
+- L366: `(defun s-presence (s)`
+- L371: `(defun s-lowercase? (s)`
+- L377: `(defun s-uppercase? (s)`
+- L383: `(defun s-mixedcase? (s)`
+- L390: `(defun s-capitalized? (s)`
+- L397: `(defun s-numeric? (s)`
+- L403: `(defun s-replace (old new s)`
+- L410: `(defun s--aget (alist key)`
+- L415: `(defun s-replace-all (replacements s)`
+- L423: `(defun s-downcase (s)`
+- L430: `(defun s-upcase (s)`
+- L437: `(defun s-capitalize (s)`
+- L442: `(defun s-titleize (s)`
+- L449: `(defmacro s-with (s form &rest more)`
+- L463: `(defun s-index-of (needle s &optional ignore-case)`
+- L472: `(defun s-reverse (s)`
+- L489: `(defun s-match-strings-all (regex string)`
+- L511: `(defun s-matched-positions-all (regexp string &optional subexp-depth)`
+- L525: `(defun s-match (regexp s &optional start)`
+- L550: `(defun s-slice-at (regexp s)`
+- L566: `(defun s-split-words (s)`
+- L577: `(defun s--mapcar-head (fn-head fn-rest list)`
+- L582: `(defun s-lower-camel-case (s)`
+- L587: `(defun s-upper-camel-case (s)`
+- L592: `(defun s-snake-case (s)`
+- L597: `(defun s-dashed-words (s)`
+- L602: `(defun s-spaced-words (s)`
+- L607: `(defun s-capitalized-words (s)`
+- L613: `(defun s-titleized-words (s)`
+- L618: `(defun s-word-initials (s)`
+- L633: `(defun s-format (template replacer &optional extra)`
+- L687: `(defun s-lex-fmt|expand (fmt)`
+- L702: `(defmacro s-lex-format (format-str)`
+- L717: `(defun s-count-matches (regexp s &optional start end)`
+- L735: `(defun s-count-matches-all (regexp s &optional start end)`
+- L759: `(defun s-wrap (s prefix &optional suffix)`
+- L793: `(provide 's)`

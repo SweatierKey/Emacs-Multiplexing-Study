@@ -1,0 +1,50 @@
+{
+  "id": "tmux-nested",
+  "scenario": "tmux-two-ssh-and-persistence",
+  "status": "passed",
+  "checks": {
+    "ssh_web": true,
+    "ssh_db": true,
+    "return_preserves_shell": true,
+    "survives_emacs_exit": true,
+    "restart_reconnect": true
+  },
+  "snapshots": [
+    {
+      "name": "*vterm*",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:/study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:/study/lab/fixtures/web$ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[ops] 0:ssh*                                                                   \"aead6adf0aec\" 12:10 26-Sep-26\n"
+    },
+    {
+      "name": "*vterm*",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/study$ lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:/study/lab/fixtures/db$ cat status.txt; tail -n 3 service.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:/study/lab/fixtures/db$ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[ops] 0:ssh- 1:ssh*                                                            \"aead6adf0aec\" 12:10 26-Sep-26\n"
+    },
+    {
+      "name": "*vterm*",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:/study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:/study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:/study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:/study/lab/fixtures/web$ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[ops] 0:ssh* 1:ssh-                                                            \"aead6adf0aec\" 12:10 26-Sep-26\n"
+    },
+    {
+      "name": "*vterm*",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:/study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:/study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:/study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:/study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:/study/lab/fixtures/web$ \n\n\n\n\n\n\n\n\n\n\n\n\n[ops] 0:ssh* 1:ssh-                                                            \"aead6adf0aec\" 12:10 26-Sep-26\n"
+    },
+    {
+      "name": "*vterm*",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:/study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:/study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:/study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:/study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:/study/lab/fixtures/web$ \n\n\n\n\n\n\n\n\n\n\n\n\n[ops] 0:ssh* 1:ssh-                                                            \"aead6adf0aec\" 12:10 26-Sep-26\n"
+    }
+  ],
+  "resume_recording": "tmux-nested-resume.cast"
+}

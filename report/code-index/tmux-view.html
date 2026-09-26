@@ -1,0 +1,30 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tmux-view</h1>
+<p>Fonte: https://github.com/mgalgs/tmux-view.el.git</p>
+<p>Revisione: <code>3f0339f568a68f128a678e684ebf351a0b647bd2</code>.</p>
+<h2>tmux-view-test.el</h2>
+<ul>
+<li>L29: <code>(require 'ert)</code></li>
+<li>L30: <code>(require 'cl-lib)</code></li>
+<li>L31: <code>(require 'tmux-view)</code></li>
+<li>L41: <code>(defun tmux-view-test--mock-shell-command-to-string (command)</code></li>
+<li>L52: <code>(defun tmux-view-test--with-mock-shell (thunk)</code></li>
+<li>L184: <code>(provide 'tmux-view-test)</code></li>
+</ul>
+<h2>tmux-view.el</h2>
+<ul>
+<li>L45: <code>(require 'ansi-color)</code></li>
+<li>L57: <code>(defun tmux-view--truncate-string (str max-len)</code></li>
+<li>L64: <code>(defun tmux-view--list-panes ()</code></li>
+<li>L92: <code>(defun tmux-view--capture-pane (pane-id)</code></li>
+<li>L101: <code>(defun tmux-view--create-buffer (session window pane pane-id)</code></li>
+<li>L122: <code>(defun tmux-view--display (session window pane pane-id)</code></li>
+<li>L131: <code>(defvar tmux-view-mode-map</code></li>
+<li>L133: <code>(define-key map "g" #'tmux-view-refresh)</code></li>
+<li>L134: <code>(define-key map "q" #'quit-window)</code></li>
+<li>L135: <code>(define-key map "s" #'tmux-view-save)</code></li>
+<li>L139: <code>(define-derived-mode tmux-view-mode special-mode "Tmux-View"</code></li>
+<li>L150: <code>(defun tmux-view-refresh ()</code></li>
+<li>L166: <code>(defun tmux-view-save ()</code></li>
+<li>L176: <code>(defun tmux-view ()</code></li>
+<li>L192: <code>(provide 'tmux-view)</code></li>
+</ul></main></html>

@@ -1,0 +1,150 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>term-manager</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/colonelpanic8/term-manager">Sorgente upstream</a>. Revisione: <code>1581a90ff9b359449e056da55259b9f42e749f0c</code>.</p>
+<h2>Funzionamento</h2>
+<p>Gestione indicizzata dei terminali con backend e frontend per directory, project.el e Projectile.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x term-project-default-directory-create-new e term-project-default-directory-backward. Snapshot mostra il backend effettivo.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/term-manager.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/term-manager.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario term-manager: passed</h3>
+<p><a href="../../results/term-manager.json">Esito e snapshot</a> · <a href="../../results/term-manager-keys.json">Traccia dei tasti</a> · <a href="../../recordings/term-manager.cast">Registrazione asciinema</a> · <a href="../../index.html#term-manager">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.31</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>term-project-default-directory-create-new</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.41</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.61</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.61</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.81</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.82</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.01</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.82</td>
+<td><code>C-c C-j: term line mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.23</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.53</td>
+<td><code>term-project-default-directory-create-new</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.03</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.33</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.53</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.54</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.73</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.74</td>
+<td><code>C-c C-j: term line mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.14</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.44</td>
+<td><code>term-project-default-directory-backward</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.94</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.74</td>
+<td><code>C-c C-k: term char mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.14</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.34</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.05</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.25</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.95</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.45</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.65</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

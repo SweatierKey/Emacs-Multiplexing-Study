@@ -1,0 +1,68 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="style.css"><main><a href="../index.html">← Catalogo e video</a><h1>Ricerca, provenienza e limiti del censimento</h1>
+<p>Data: 26 settembre 2026. Sono stati incrociati ricerca web, discussioni Reddit, API GitHub/GitLab/Codeberg, ricette MELPA e riferimenti nei README/codice. La ricerca include progetti molto piccoli, fork storici e nomi ambigui; non impone una soglia minima di stelle.</p>
+<h2>Evidenza conservata</h2>
+<table>
+<thead>
+<tr>
+<th>Canale</th>
+<th>Traccia riproducibile</th>
+<th>Limite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub</td>
+<td><code>research/queries.json</code>, <code>expanded-queries.json</code>, <code>github-search-*.json</code>, <code>expanded-github-*.json</code></td>
+<td>Risultati paginati e limiti API; non è l'intero grafo dei repository</td>
+</tr>
+<tr>
+<td>GitLab</td>
+<td><code>research/gitlab-broad-*.json</code>, <code>gitlab-emacs-*.json</code></td>
+<td>Ricerca per parole e pagine, nomi/descriptions spesso insufficienti</td>
+</tr>
+<tr>
+<td>Codeberg</td>
+<td><code>research/codeberg-broad-*.json</code>, <code>codeberg-emacs-*.json</code></td>
+<td>API e clone utili anche quando il browser incontra robots; non comprende repository privati/cancellati</td>
+</tr>
+<tr>
+<td>Google</td>
+<td><code>research/google-queries.json</code>, <code>google-*.html</code></td>
+<td>HTTP 200 ma pagina/interstitial JavaScript: non rivendichiamo lettura completa dei risultati Google</td>
+</tr>
+<tr>
+<td>Reddit e ricerca web</td>
+<td>Link sotto e <code>web-discovery.json</code></td>
+<td>Motore web disponibile non identificato come Google; discussioni usate per scoprire nomi, non come prova del codice</td>
+</tr>
+<tr>
+<td>MELPA</td>
+<td><code>research/melpa-recipes/</code></td>
+<td>Include solo pacchetti presenti nel catalogo e snapshot delle ricette consultate</td>
+</tr>
+<tr>
+<td>Sorgenti</td>
+<td><code>research/acquisition*.json</code>, <code>source-lock.json</code>, <code>source-index.json</code></td>
+<td>Uno snapshot non è tutta la storia del progetto</td>
+</tr>
+</tbody>
+</table>
+<p>Le query GitHub combinano <code>emacs terminal emulator</code>, <code>terminal multiplexer</code>, <code>multiplex</code>, <code>vterm</code>, <code>terminal manager</code>, <code>eshell multiple</code>, <code>tmux</code>, e ricerche nei README per progetti piccoli. Le ricerche GitLab e Codeberg usano combinazioni di Emacs con terminal/shell/tmux/multiplexer. I file grezzi conservano i risultati effettivamente restituiti; le pagine non richieste non sono implicitamente coperte.</p>
+<h2>Catene di scoperta verificabili</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/emacs/comments/1wc2d3v/announcing_multibuf_a_generalized_buffer/">Annuncio multi-buf su Reddit</a> → <a href="https://github.com/djr7C4/multi-buf">djr7C4/multi-buf</a>; commenti → vtermux e multi-buffer.</li>
+<li><a href="https://www.reddit.com/r/emacs/comments/1anp6a4">Annuncio storico multi-buffer</a> → <a href="https://gitlab.com/vslavkin/multi-buffer.el">vslavkin/multi-buffer.el su GitLab</a>. Piccolo minor mode di rinomina, acquisito e dimostrato separatamente da multi-buf.</li>
+<li><a href="https://www.reddit.com/r/emacs/comments/ptqa2g">Discussione sul workflow tmux in Emacs</a> → <a href="https://github.com/amno1/emacs-term-toggle">amno1/emacs-term-toggle</a>.</li>
+<li><a href="https://github.com/dakra/ghostel">Ghostel upstream</a>, <a href="https://dakra.github.io/ghostel/">documentazione</a> e <a href="https://www.reddit.com/r/emacs/comments/1sc4n6k/ghostel_terminal_emulator_powered_by_libghostty/">annuncio</a> → motore, release e integrazioni. Le prestazioni riportate dai commenti non sono risultati del laboratorio.</li>
+<li><a href="https://github.com/ArthurHeymans/el-be-back">Ebb</a>, <a href="https://github.com/ArthurHeymans/emacs-term-sessions">term-sessions</a>, <a href="https://github.com/rwc9u/emacs-libgterm">libgterm</a> e <a href="https://github.com/takeokunn/kuro">Kuro</a> sono trattati come progetti distinti, senza appiattirli sui nomi più noti.</li>
+<li><a href="https://codeberg.org/emacs-weirdware/nssh">nssh su Codeberg</a>, <a href="https://codeberg.org/akib/emacs-eat">Eat</a>, <a href="https://codeberg.org/emacs-weirdware/shell-here">shell-here</a> e i pacchetti term-cmd/term-alert sono stati acquisiti dal loro host.</li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Terminal-emulator.html">Manuale GNU del terminale Emacs</a> chiarisce la distinzione fra shell e terminale; le versioni effettive sono quelle del laboratorio, non quelle eventualmente cambiate online.</li>
+</ul>
+<h2>Inclusioni, duplicati, falsi positivi</h2>
+<p>Inclusi nel nucleo: motori VT incorporati, shell baseline, gestori di terminali, adapter a multiplexer persistenti. Inclusi per confronto ma separati: popup, workspace, controller send-only, renderer di output, estensioni di colori/tasti, distribuzioni e progetti GUI/Windows.</p>
+<p><code>term</code> e <code>ansi-term</code> sono due comandi del medesimo term.el. <code>term+</code> e <code>term-plus-xterm</code> puntano allo stesso upstream. Fork di Eat, multi-term ed emux restano visibili con SHA separati, ma non diventano nuovi motori indipendenti. Repository omonimi emux/herdr/tmux-cc richiedono controllo del percorso realmente caricato.</p>
+<p>Esclusi dal nucleo: terminal-here/abysl-term e D-Bus dropdown-remote perché aprono/controllano applicazioni esterne; tmuxbuf per clipboard; myterminal-controls per controlli generici; dotfiles e temi senza implementazione distinta; <a href="https://gitlab.com/jpellegrini/eltr">eltr</a>, che è un REPL Lisp nel terminale, non un terminale dentro Emacs. Non sono stati espansi tutti i fork senza differenze funzionali, tutte le distribuzioni o ogni snippet di configurazione.</p>
+<p>Le righe <code>fetch-failed</code> non sono prova dell'esistenza di un progetto pertinente. Gli errori dei tentativi iniziali restano nei registri, anche quando un URL successivo è stato corretto.</p>
+<h2>Acquisizioni preesistenti e lavoro eseguito</h2>
+<p>Il repository fornito dall'utente conteneva già workflow e artifact di acquisizione. Sono stati recuperati e riutilizzati, non presentati come esecuzioni nuove di questo laboratorio. Run ID: 36234155070, 36234425022, 36234700164, 36235331001, 36235772598. I workflow in <code>.github/workflows/</code> descrivono il recupero iniziale e le build native. Gli script aggiunti importano gli artifact, completano i sorgenti, indicizzano, provano, registrano e costruiscono il dossier.</p>
+<p>La chiusura di questa ricerca non dimostra saturazione matematica del web. Nuovi progetti e vecchi frammenti possono continuare a emergere; aggiungerli è possibile mantenendo separate scoperta, acquisizione, analisi e dimostrazione.</p></main></html>

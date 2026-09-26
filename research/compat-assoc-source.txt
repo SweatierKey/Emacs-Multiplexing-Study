@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/emacs-mirror/emacs/emacs-28.2/lisp/obsolete/assoc.el
+Historical compatibility only, GNU Emacs 28.2.

@@ -1,0 +1,86 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: ace-window</h1>
+<p>Fonte: https://github.com/abo-abo/ace-window.git</p>
+<p>Revisione: <code>77115afc1b0b9f633084cf7479c767988106c196</code>.</p>
+<h2>ace-window-posframe.el</h2>
+<ul>
+<li>L5: <code>(require 'ace-window)</code></li>
+<li>L17: <code>(defun aw--lead-overlay-posframe (path leaf)</code></li>
+<li>L37: <code>(defun aw--remove-leading-chars-posframe ()</code></li>
+<li>L42: <code>(defun ace-window-posframe-enable ()</code></li>
+<li>L49: <code>(defun ace-window-posframe-disable ()</code></li>
+<li>L54: <code>(define-minor-mode ace-window-posframe-mode</code></li>
+<li>L64: <code>(provide 'ace-window-posframe)</code></li>
+</ul>
+<h2>ace-window.el</h2>
+<ul>
+<li>L38: <code>;;    (global-set-key (kbd "M-o") 'ace-window)</code></li>
+<li>L65: <code>(require 'avy)</code></li>
+<li>L66: <code>(require 'ring)</code></li>
+<li>L67: <code>(require 'subr-x)</code></li>
+<li>L75: <code>(defcustom aw-keys '(?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9)</code></li>
+<li>L79: <code>(defcustom aw-scope 'global</code></li>
+<li>L86: <code>(defcustom aw-translate-char-function #'identity</code></li>
+<li>L95: <code>(defcustom aw-minibuffer-flag nil</code></li>
+<li>L99: <code>(defcustom aw-ignored-buffers '("*Calc Trail*" " *LV*")</code></li>
+<li>L104: <code>(defcustom aw-ignore-on t</code></li>
+<li>L109: <code>(defcustom aw-ignore-current nil</code></li>
+<li>L113: <code>(defcustom aw-background t</code></li>
+<li>L117: <code>(defcustom aw-leading-char-style 'char</code></li>
+<li>L123: <code>(defcustom aw-dispatch-always nil</code></li>
+<li>L129: <code>(defcustom aw-dispatch-when-more-than 2</code></li>
+<li>L133: <code>(defcustom aw-reverse-frame-list nil</code></li>
+<li>L138: <code>(defcustom aw-frame-offset '(13 . 23)</code></li>
+<li>L143: <code>(defcustom aw-frame-size nil</code></li>
+<li>L149: <code>(defcustom aw-char-position 'top-left</code></li>
+<li>L179: <code>(defun aw-set-make-frame-char (option value)</code></li>
+<li>L191: <code>(defcustom aw-make-frame-char ?z</code></li>
+<li>L220: <code>(defun aw-ignored-p (window)</code></li>
+<li>L241: <code>(defun aw-window-list ()</code></li>
+<li>L285: <code>(defun aw--done ()</code></li>
+<li>L305: <code>(defun aw--restore-windows-hscroll ()</code></li>
+<li>L316: <code>(defun aw--overlay-str (wnd pos path)</code></li>
+<li>L345: <code>(defun aw--point-visible-p ()</code></li>
+<li>L352: <code>(defun aw--lead-overlay (path leaf)</code></li>
+<li>L413: <code>(defun aw--remove-leading-chars ()</code></li>
+<li>L419: <code>(defun aw--make-backgrounds (wnd-list)</code></li>
+<li>L438: <code>(defun aw-set-mode-line (str)</code></li>
+<li>L445: <code>(defun aw--dispatch-action (char)</code></li>
+<li>L449: <code>(defun aw-make-frame ()</code></li>
+<li>L476: <code>(defun aw-use-frame (window)</code></li>
+<li>L484: <code>(defun aw-clean-up-avy-current-path ()</code></li>
+<li>L494: <code>(defun aw-dispatch-default (char)</code></li>
+<li>L528: <code>(defcustom aw-display-mode-overlay t</code></li>
+<li>L534: <code>(defun aw-select (mode-line &amp;optional action)</code></li>
+<li>L596: <code>(defun ace-select-window ()</code></li>
+<li>L603: <code>(defun ace-delete-window ()</code></li>
+<li>L610: <code>(defun ace-swap-window ()</code></li>
+<li>L617: <code>(defun ace-delete-other-windows ()</code></li>
+<li>L624: <code>(defun ace-display-buffer (buffer alist)</code></li>
+<li>L640: <code>(defun aw-transpose-frame (w)</code></li>
+<li>L645: <code>(defun ace-window (arg)</code></li>
+<li>L680: <code>(defun aw-window&lt; (wnd1 wnd2)</code></li>
+<li>L705: <code>(defun aw--push-window (window)</code></li>
+<li>L713: <code>(defun aw--pop-window ()</code></li>
+<li>L728: <code>(defun aw-switch-to-window (window)</code></li>
+<li>L739: <code>(defun aw-flip-window ()</code></li>
+<li>L744: <code>(defun aw-show-dispatch-help ()</code></li>
+<li>L763: <code>(defun aw-delete-window (window &amp;optional kill-buffer)</code></li>
+<li>L779: <code>(defun aw-switch-buffer-in-window (window)</code></li>
+<li>L786: <code>(defun aw--switch-buffer ()</code></li>
+<li>L794: <code>(defcustom aw-swap-invert nil</code></li>
+<li>L798: <code>(defun aw-swap-window (window)</code></li>
+<li>L819: <code>(defun aw-move-window (window)</code></li>
+<li>L827: <code>(defun aw-copy-window (window)</code></li>
+<li>L837: <code>(defun aw-split-window-vert (window)</code></li>
+<li>L842: <code>(defun aw-split-window-horz (window)</code></li>
+<li>L847: <code>(defcustom aw-fair-aspect-ratio 2</code></li>
+<li>L853: <code>(defun aw-split-window-fair (window)</code></li>
+<li>L862: <code>(defun aw-switch-buffer-other-window (window)</code></li>
+<li>L869: <code>(defun aw-execute-command-other-window (window)</code></li>
+<li>L879: <code>(defun aw--face-rel-height ()</code></li>
+<li>L891: <code>(defun aw-offset (window)</code></li>
+<li>L914: <code>(defun aw--after-make-frame (f)</code></li>
+<li>L920: <code>(define-minor-mode ace-window-display-mode</code></li>
+<li>L945: <code>(defun aw-update ()</code></li>
+<li>L963: <code>(provide 'ace-window)</code></li>
+</ul></main></html>

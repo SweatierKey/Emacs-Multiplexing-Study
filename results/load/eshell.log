@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"eshell","library":"/home/admin/Emacs-Multiplexing-Study/sources/eshell/eshell.el","commands":["eshell","eshell-arg-mode","eshell-command","eshell-command-mode","eshell-command-mode-exit","eshell-insert-buffer-name","eshell-insert-marker","eshell-insert-process","eshell-insert-special-reference","eshell-interrupt-process","eshell-kill-process","eshell-proc-mode","eshell-quit-process","eshell-return-exits-minibuffer"]}
+STDERR:

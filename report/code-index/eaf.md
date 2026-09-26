@@ -1,0 +1,365 @@
+# Indice del codice: eaf
+
+Fonte: https://github.com/emacs-eaf/emacs-application-framework.git
+
+Revisione: `6edd20450b2f31936847c4c5678b3ba6d2579a87`.
+
+
+## core/eaf-epc.el
+
+- L27: `(require 'cl-lib)`
+- L28: `(require 'subr-x)`
+- L31: `(defmacro eaf-deferred-chain (&rest elements)`
+- L48: `(defun eaf-deferred-log (&rest args)`
+- L63: `(defmacro eaf-deferred-condition-case (var protected-form &rest handlers)`
+- L87: `(defun eaf-deferred-post-task (d which &optional arg)`
+- L98: `(defun eaf-deferred-worker ()`
+- L129: `(defun eaf-deferred-resignal (err)`
+- L146: `(defun eaf-deferred-default-cancel (d)`
+- L154: `(defun eaf-deferred-exec-task (d which &optional arg)`
+- L200: `(defun eaf-deferred-set-next (prev next)`
+- L218: `(defun eaf-deferred-new (&optional callback)`
+- L224: `(defun eaf-deferred-callback (d &optional arg)`
+- L228: `(defun eaf-deferred-errorback (d &optional arg)`
+- L233: `(defun eaf-deferred-callback-post (d &optional arg)`
+- L238: `(defun eaf-deferred-next (&optional callback arg)`
+- L248: `(defun eaf-deferred-nextc (d callback)`
+- L254: `(defun eaf-deferred-error (d callback)`
+- L262: `(defun eaf-epc-log (&rest args)`
+- L269: `(defun eaf-epc-make-procbuf (name)`
+- L279: `(defun eaf-epc-uid ()`
+- L297: `(defun eaf-epc-connect (host port)`
+- L323: `(defun eaf-epc-process-sentinel (connection process msg)`
+- L328: `(defun eaf-epc-net-send (connection sexp)`
+- L336: `(defun eaf-epc-disconnect (connection)`
+- L347: `(defun eaf-epc-process-filter (connection process message)`
+- L354: `(defun eaf-epc-signal-connect (channel event-sym &optional callback)`
+- L367: `(defun eaf-epc-signal-send (channel event-sym &rest args)`
+- L384: `(defun eaf-epc-process-available-input (connection process)`
+- L401: `(defun eaf-epc-net-have-input-p ()`
+- L407: `(defun eaf-epc-net-read-or-lose (_process)`
+- L414: `(defun eaf-epc-net-read ()`
+- L428: `(defun eaf-epc-net-decode-length ()`
+- L432: `(defun eaf-epc-prin1-to-string (sexp)`
+- L473: `(defun eaf-epc-stop-epc (mngr)`
+- L486: `(defun eaf-epc-args (args)`
+- L492: `(defun eaf-epc-init-epc-layer (mngr)`
+- L524: `(defun eaf-epc-manager-send (mngr method &rest messages)`
+- L529: `(defun eaf-epc-manager-get-method (mngr method-name)`
+- L535: `(defun eaf-epc-handler-methods (mngr uid)`
+- L546: `(defun eaf-epc-handler-called-method (mngr uid name args)`
+- L568: `(defun eaf-epc-manager-remove-session (mngr uid)`
+- L577: `(defun eaf-epc-handler-return (mngr uid args)`
+- L588: `(defun eaf-epc-handler-return-error (mngr uid args)`
+- L599: `(defun eaf-epc-handler-epc-error (mngr uid args)`
+- L610: `(defun eaf-epc-call-deferred (mngr method-name args)`
+- L621: `(defun eaf-epc-define-method (mngr method-name task &optional arg-specs docstring)`
+- L630: `(defun eaf-epc-sync (mngr d)`
+- L648: `(defun eaf-epc-call-sync (mngr method-name args)`
+- L653: `(defun eaf-epc-live-p (mngr)`
+- L681: `(defun eaf-epc-server-get-manager-by-process (proc)`
+- L688: `(defun eaf-epc-server-accept (process)`
+- L711: `(defun eaf-epc-server-sentinel (process message connect-function)`
+- L741: `(defun eaf-epc-server-start (connect-function &optional port)`
+- L767: `(provide 'eaf-epc)`
+
+## eaf.el
+
+- L75: `(require 'cl-lib)`
+- L76: `(require 'json)`
+- L77: `(require 'map)`
+- L78: `(require 'seq)`
+- L79: `(require 'subr-x)`
+- L80: `(require 'bookmark)`
+- L125: `(defun eaf--alist-to-defcustom-const (entry)`
+- L129: `(defun eaf--json-to-defcustom-set ()`
+- L138: `(defcustom eaf-apps-to-install nil`
+- L143: `(defun eaf-add-subdirs-to-load-path (search-dir)`
+- L167: `(require 'eaf-epc)`
+- L173: `(defcustom eaf-mode-hook '()`
+- L177: `(defcustom eaf-mode-line-format mode-line-format`
+- L180: `(defcustom eaf-frame-title-format frame-title-format`
+- L183: `(defvar eaf-mode-map*`
+- L185: `(define-key map (kbd "C-h m") #'eaf-describe-bindings)`
+- L186: `(define-key map (kbd "C-o") #'eaf-duplicate-current-buffer)`
+- L187: `(define-key map [remap describe-bindings] #'eaf-describe-bindings)`
+- L188: `(define-key map (kbd "C-c b") #'eaf-open-bookmark)`
+- L189: `(define-key map (kbd "C-c i") #'eaf-import-chrome-bookmarks)`
+- L190: `(define-key map (kbd "C-c e") #'eaf-open-external)`
+- L191: `(define-key map (kbd "C-h k") #'describe-key)`
+- L192: `(define-key map (kbd "C-h v") #'describe-variable)`
+- L193: `(define-key map (kbd "C-h f") #'describe-function)`
+- L194: `(define-key map (kbd "C-h V") #'apropos-variable)`
+- L195: `(define-key map (kbd "C-h F") #'apropos-function)`
+- L196: `(define-key map (kbd "M-0") #'eaf-get-buffer-screenshot)`
+- L197: `(define-key map (kbd "M-'") #'eaf-toggle-fullscreen)`
+- L198: `(define-key map (kbd "M-/") #'eaf-get-path-or-url)`
+- L199: `(define-key map (kbd "M-[") #'eaf-share-path-or-url)`
+- L200: `(define-key map (vector 'remap #'keyboard-quit) #'eaf-keyboard-quit)`
+- L201: `(define-key map (vector 'remap #'self-insert-command) #'eaf-send-key)`
+- L203: `(define-key map (kbd single-key) #'eaf-send-key))`
+- L207: `(defvar eaf-mode-map nil`
+- L217: `(defvar eaf-edit-mode-map`
+- L219: `(define-key map (kbd "C-c C-t") #'eaf-edit-buffer-switch-to-org-mode)`
+- L220: `(define-key map (kbd "C-c C-k") #'eaf-edit-buffer-cancel)`
+- L221: `(define-key map (kbd "C-c C-c") #'eaf-edit-buffer-confirm)`
+- L224: `(define-derived-mode eaf-edit-mode text-mode "EAF/edit"`
+- L227: `(defun eaf-describe-bindings ()`
+- L252: `(define-derived-mode eaf-mode fundamental-mode "EAF"`
+- L296: `(defun eaf--start-epc-server ()`
+- L313: `(defun eaf--get-emacs-func-result (sexp-string)`
+- L316: `(defun eaf--eval-in-emacs (sexp-string)`
+- L321: `(defun eaf--get-emacs-var (var-name)`
+- L329: `(defun eaf--get-emacs-vars (&rest vars)`
+- L332: `(defun get-emacs-face-foregrounds (&rest faces)`
+- L335: `(defun eaf-color-int-to-hex (int)`
+- L338: `(defun eaf-color-name-to-hex (color)`
+- L358: `(defcustom eaf-name "*eaf*"`
+- L362: `(defcustom eaf-python-command (if (memq system-type '(cygwin windows-nt ms-dos)) "python.exe" "python3")`
+- L366: `(defcustom eaf-config-location (expand-file-name (locate-user-emacs-file "eaf/"))`
+- L370: `(defcustom eaf-marker-letters "ASDFHJKLWEOPCNM"`
+- L374: `(defcustom eaf-marker-quit-keys " "`
+- L378: `(defcustom eaf-marker-fontsize 11.5`
+- L382: `(defcustom eaf-buffer-background-color "#000000"`
+- L386: `(defcustom eaf-webengine-show-hover-link nil`
+- L390: `(defcustom eaf-find-file-ext-blacklist '("md" "org" "html" "htm" "epub")`
+- L394: `(defcustom eaf-proxy-host ""`
+- L398: `(defcustom eaf-proxy-port ""`
+- L402: `(defcustom eaf-proxy-type ""`
+- L406: `(defcustom eaf-webengine-default-zoom 1.0`
+- L410: `(defcustom eaf-webengine-zoom-step 0.1`
+- L414: `(defcustom eaf-webengine-scroll-step 400`
+- L418: `(defcustom eaf-webengine-pc-user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"`
+- L422: `(defcustom eaf-webengine-phone-user-agent "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"`
+- L426: `(defcustom eaf-webengine-font-family ""`
+- L430: `(defcustom eaf-webengine-font-size 16`
+- L434: `(defcustom eaf-webengine-fixed-font-family ""`
+- L438: `(defcustom eaf-webengine-fixed-font-size 16`
+- L442: `(defcustom eaf-webengine-serif-font-family ""`
+- L446: `(defcustom eaf-webengine-enable-plugin t`
+- L450: `(defcustom eaf-webengine-enable-javascript t`
+- L454: `(defcustom eaf-webengine-enable-javascript-access-clipboard t`
+- L458: `(defcustom eaf-webengine-enable-scrollbar nil`
+- L462: `(defcustom eaf-webengine-unknown-url-scheme-policy "AllowUnknownUrlSchemesFromUserInteraction"`
+- L466: `(defcustom eaf-webengine-download-path "~/Downloads"`
+- L470: `(defcustom eaf-enable-debug nil`
+- L475: `(defcustom eaf-kill-process-after-last-buffer-closed nil`
+- L483: `(defcustom eaf-wm-name ""`
+- L487: `(defcustom eaf-wm-focus-fix-wms`
+- L510: `(defcustom eaf-start-python-process-when-require t`
+- L516: `(defcustom eaf-byte-compile-apps nil`
+- L519: `(defcustom eaf-clean-duplicate-buffers t`
+- L523: `(defcustom eaf-goto-right-after-close-buffer nil`
+- L529: `(defcustom eaf-duplicate-buffer-survival-time 60`
+- L534: `(defcustom eaf-rebuild-buffer-after-crash t`
+- L542: `(defcustom eaf-dired-advisor-enable t`
+- L548: `(defcustom eaf-find-file-advisor-enable t`
+- L570: `(defmacro eaf-for-each-eaf-buffer (&rest body)`
+- L578: `(defun eaf--bookmark-make-record ()`
+- L589: `(defun eaf--bookmark-restore (bookmark)`
+- L595: `(defun eaf-open-bookmark ()`
+- L617: `(defun eaf--load-existing-bookmarks()`
+- L626: `(defun eaf-open-external ()`
+- L638: `(defun eaf-call-async (method &rest args)`
+- L643: `(defun eaf-call-sync (method &rest args)`
+- L647: `(defun eaf--called-from-wsl-on-windows-p ()`
+- L652: `(defun eaf-get-emacs-xid (frame)`
+- L658: `(defun eaf--build-process-environment ()`
+- L698: `(defun eaf-start-process ()`
+- L740: `(defun eaf-kill-process (&optional restart)`
+- L778: `(defun eaf--kill-python-process ()`
+- L791: `(defun eaf--kill-devtools-buffers ()`
+- L797: `(defun eaf-restart-process ()`
+- L814: `(defun eaf--encode-string (str)`
+- L818: `(defun eaf-get-render-size ()`
+- L828: `(defun eaf-get-window-allocation (&optional window)`
+- L841: `(defun eaf--generate-id ()`
+- L852: `(defun eaf-execute-app-cmd (cmd &optional buf)`
+- L862: `(defun eaf-copy-to-clipboard (string)`
+- L869: `(defun eaf-get-path-or-url ()`
+- L880: `(defun eaf-toggle-fullscreen ()`
+- L885: `(defun eaf--enter-fullscreen-request ()`
+- L894: `(defun eaf--exit_fullscreen_request ()`
+- L900: `(defun eaf--make-py-proxy-function (fun)`
+- L919: `(defun eaf--make-js-proxy-function (fun &optional args)`
+- L939: `(defun eaf--gen-keybinding-map (keybinding &optional no-inherit-eaf-mode-map*)`
+- L946: `do (define-key map (kbd key)`
+- L967: `(defun eaf--get-app-bindings (app-name)`
+- L975: `(defun eaf--get-app-module-path (app-name)`
+- L979: `(defun eaf--get-app-hook (app-name)`
+- L983: `(defun eaf--create-buffer (url app-name args)`
+- L1012: `(defun eaf-monitor-window-size-change (frame)`
+- L1021: `(defun eaf-try-adjust-view-with-frame-size (frame)`
+- L1030: `(defun eaf--schedule-monitor-configuration-change (&rest _)`
+- L1041: `(defun eaf--frame-left (frame)`
+- L1046: `(defun eaf--frame-top (frame)`
+- L1051: `(defun eaf--frame-internal-height (frame)`
+- L1058: `(defun eaf--buffer-x-position-adjust (frame)`
+- L1064: `(defun eaf--buffer-y-position-adjust (frame)`
+- L1221: `(defun eaf--monitor-configuration-change-now (&rest _)`
+- L1270: `(defun eaf-monitor-configuration-change (&rest _)`
+- L1276: `(defun eaf--split-number (string)`
+- L1279: `(defun eaf--get-frame-coordinate ()`
+- L1305: `(defun eaf--get-titlebar-height ()`
+- L1322: `(defun eaf--get-eaf-buffers ()`
+- L1330: `(defun eaf--monitor-buffer-kill ()`
+- L1345: `(defun eaf--monitor-emacs-kill ()`
+- L1363: `(defun eaf-keyboard-quit ()`
+- L1369: `(defun eaf-send-key ()`
+- L1374: `(defun eaf-send-key-sequence ()`
+- L1379: `(defmacro eaf-create-send-key-function (key &optional value)`
+- L1385: `(defmacro eaf-create-send-sequence-function (key value)`
+- L1407: `(defmacro eaf-bind-key (command key eaf-app-keybinding)`
+- L1427: `(defun eaf-get-buffer (buffer-id)`
+- L1435: `(defun eaf-get-window-size-by-buffer-id (buffer-id)`
+- L1440: `(defun eaf-focus-buffer (buffer-id)`
+- L1454: `(defun eaf-update-focus-state (buffer-id state)`
+- L1460: `(defun eaf--show-message (format-string eaf-prefix logging)`
+- L1471: `(defun eaf--clear-message ()`
+- L1475: `(defun eaf--set-emacs-var (name value)`
+- L1479: `(defun eaf-request-kill-buffer (buffer-id)`
+- L1490: `(defun eaf--first-start (eaf-epc-port)`
+- L1511: `(defun eaf--update-buffer-details (buffer-id title url)`
+- L1539: `(defun eaf--input-message (input-buffer-id interactive-string callback-tag interactive-type initial-content completion-list)`
+- L1552: `(defun eaf-read-input (interactive-string interactive-type initial-content completion-list)`
+- L1569: `(defun eaf--open-internal (url app-name args)`
+- L1574: `(defun eaf--open-new-buffer (buffer)`
+- L1592: `(defun eaf--rebuild-buffer ()`
+- L1604: `(defun eaf--update-modeline-icon ()`
+- L1610: `(defun eaf-goto-left-tab ()`
+- L1615: `(defun eaf-goto-right-tab ()`
+- L1620: `(defun eaf-translate-text (text)`
+- L1624: `(defun eaf--non-remote-default-directory ()`
+- L1631: `(defun eaf--get-app-for-extension (url)`
+- L1647: `(defun eaf-get-file-name-extension (file)`
+- L1651: `(defun eaf--translate-wsl-url-to-windows (path)`
+- L1656: `(defun eaf-open (url &optional app-name args always-new)`
+- L1737: `(defun eaf-duplicate-current-buffer ()`
+- L1748: `(defun eaf--preview-display-buffer (app-name buffer)`
+- L1755: `(defun eaf-split-preview-windows (url)`
+- L1766: `(defun eaf-edit-buffer-popup (buffer-id buffer-template confirm-action text)`
+- L1783: `(defun eaf-edit-set-header-line ()`
+- L1795: `(defun eaf-edit-buffer-switch-to-org-mode ()`
+- L1814: `(defun eaf-edit-buffer-confirm ()`
+- L1831: `(defun eaf-get-theme-mode ()`
+- L1834: `(defun eaf-get-theme-background-color ()`
+- L1837: `(defun eaf-get-theme-foreground-color ()`
+- L1840: `(defun eaf--get-current-desktop-name ()`
+- L1854: `(defun eaf--activate-emacs-win32-window()`
+- L1865: `(defun eaf--activate-emacs-linux-window (&optional buffer_id)`
+- L1885: `(defun eaf--activate-emacs-mac-window()`
+- L1889: `(defun eaf-activate-emacs-window(&optional buffer_id)`
+- L1901: `(defun eaf--change-default-directory (buffer-id directory)`
+- L1910: `(defun eaf-generate-keymap-doc (var)`
+- L1922: `(defun eaf--match-app-extension-p (ext)`
+- L1928: `(defun eaf--buffer-file-p ()`
+- L1935: `(defun eaf-open-this-buffer ()`
+- L1942: `(defun eaf--find-file-ext-p (ext)`
+- L1950: `(defun eaf-next-buffer-same-app ()`
+- L1960: `(defun eaf-previous-buffer-same-app ()`
+- L1970: `(defun eaf-share-path-or-url ()`
+- L1977: `(defun eaf-open-devtool-page ()`
+- L1989: `(defun eaf--scroll-other-window (orig-fun &optional arg &rest args)`
+- L2001: `(defun eaf--scroll-other-window-down (orig-fun &optional arg &rest args)`
+- L2013: `(defun eaf--watch-other-window-internal (orig-fun &optional direction line`
+- L2028: `(defun eaf--find-file (orig-fn file diredp &rest args)`
+- L2060: `(defun eaf--find-file-advisor (orig-fn file &rest args)`
+- L2070: `(defun eaf--dired-find-file-advisor (orig-fn)`
+- L2080: `(defun eaf--load-theme (&rest _ignores)`
+- L2085: `(defun eaf-ocr-buffer ()`
+- L2089: `(defun eaf-ocr-buffer-record (result)`
+- L2093: `(defun eaf-get-buffer-screenshot ()`
+- L2098: `(defun eaf-install-and-update (&rest apps)`
+- L2118: `(defun eaf-record-log ()`
+- L2122: `(defun eaf--post-install-sentinel (process string-signal)`
+- L2128: `(defun eaf--symlink-directory (old new)`
+- L2133: `(defun eaf--post-install ()`
+- L2151: `(defun eaf-monitor-window-buffer-change ()`
+- L2168: `(defun eaf-clean-file-manager-buffers ()`
+- L2186: `(defun eaf-has-duplicate-path-buffer-p (eaf-buffer)`
+- L2198: `(defun eaf--isearch-forward-advisor (orig-fun &optional arg &rest args)`
+- L2207: `(defun eaf--isearch-backward-advisor (orig-fun &optional arg &rest args)`
+- L2215: `(provide 'eaf)`
+
+## extension/eaf-all-the-icons.el
+
+- L33: `(require 'all-the-icons)`
+- L54: `(defun eaf-all-the-icons-icon (mode-name &rest arg-overrides)`
+- L94: `(defun eaf-all-the-icons-update-icon ()`
+- L115: `(provide 'eaf-all-the-icons)`
+
+## extension/eaf-evil.el
+
+- L40: `(defcustom eaf-evil-leader-key "C-SPC"`
+- L43: `(defcustom eaf-evil-leader-keymap #'doom/leader`
+- L48: `(defun eaf-enable-evil-intergration ()`
+- L55: `(define-key eaf-mode-map (kbd eaf-evil-leader-key) eaf-evil-leader-keymap)`
+- L66: `(provide 'eaf-evil)`
+
+## extension/eaf-interleave.el
+
+- L44: `(require 'org)`
+- L45: `(require 'org-element)`
+- L47: `(defcustom eaf-interleave-org-notes-dir-list '("~/org/interleave_notes" ".")`
+- L68: `(defcustom eaf-interleave-split-direction 'vertical`
+- L74: `(defcustom eaf-interleave-split-lines nil`
+- L87: `(defcustom eaf-interleave-disable-narrowing nil`
+- L106: `(defvar eaf-interleave-mode-map (make-sparse-keymap)`
+- L110: `(define-minor-mode eaf-interleave-mode`
+- L138: `(defvar eaf-interleave-app-mode-map (make-sparse-keymap)`
+- L142: `(define-minor-mode eaf-interleave-app-mode`
+- L148: `(defun eaf-interleave-sync-current-note ()`
+- L158: `(defun eaf-interleave-sync-pdf-page-current ()`
+- L174: `(defun eaf-interleave-sync-next-note ()`
+- L186: `(defun eaf-interleave-add-note ()`
+- L199: `(defun eaf-interleave-add-file-url ()`
+- L205: `(defun eaf-interleave-sync-previous-note ()`
+- L218: `(defun eaf-interleave-open-notes-file ()`
+- L228: `(defun eaf-interleave-quit ()`
+- L239: `(defun eaf-interleave--open-notes-file-for-pdf ()`
+- L247: `(defun eaf-interleave--open-notes-file-for-browser ()`
+- L256: `(defun eaf-interleave--open-notes-file-for-app (org-file)`
+- L271: `(defun eaf-interleave--select-split-function ()`
+- L288: `(defun eaf-interleave--go-to-page-note (url page)`
+- L317: `(defun eaf-interleave--narrow-to-subtree (&optional force)`
+- L330: `(defun eaf-interleave--switch-to-org-buffer (&optional insert-newline-maybe position)`
+- L354: `(defun eaf-interleave--insert-heading-respect-content ()`
+- L372: `(defun eaf-interleave--create-new-note (url &optional title page)`
+- L388: `(defun eaf-interleave-sync-browser-url-current ()`
+- L397: `(defun eaf-interleave--display-buffer (buffer)`
+- L403: `(defun eaf-interleave--goto-parent-headline (property)`
+- L417: `(defun eaf-interleave--pdf-add-note ()`
+- L426: `(defun eaf-interleave--browser-add-note ()`
+- L430: `(defun eaf-interleave--headlines-available-p ()`
+- L436: `(defun eaf-interleave--open-pdf (pdf-file-name)`
+- L441: `(defun eaf-interleave--open-web-url (url)`
+- L446: `(defun eaf-interleave--find-buffer (url)`
+- L459: `(defun eaf-interleave--kill-buffer (url)`
+- L464: `(defun eaf-interleave--pdf-viewer-current-page (url)`
+- L469: `(defun eaf-interleave--pdf-viewer-goto-page (url page)`
+- L474: `(defun eaf-interleave--ensure-buffer-window (buffer)`
+- L481: `(defun eaf-interleave--parse-current-dir (dir url)`
+- L488: `(defun eaf-interleave--find-match-org (dir-list url)`
+- L501: `(defun eaf-interleave--ensure-org-file-exist (dir-list file-name)`
+- L511: `(provide 'eaf-interleave)`
+
+## extension/eaf-mail.el
+
+- L87: `(defcustom eaf-mua-get-html`
+- L94: `(defun eaf--gnus-htmlp (part)`
+- L99: `(defun eaf--notmuch-htmlp (part)`
+- L104: `(defun eaf--get-html-func ()`
+- L112: `(defun eaf-gnus-get-html ()`
+- L123: `(defun eaf-mu4e-get-html ()`
+- L128: `(defun eaf-notmuch-get-html ()`
+- L145: `(defun eaf-open-mail-as-html ()`
+- L160: `(provide 'eaf-mail)`
+
+## extension/eaf-org.el
+
+- L46: `(defcustom eaf-org-override-pdf-links-open nil`
+- L58: `(defcustom eaf-org-override-pdf-links-store nil`
+- L64: `(defun eaf-org-export-to-pdf-and-open ()`
+- L96: `(defun eaf-org-store-link ()`
+- L140: `(defun eaf-org-open (link &optional _)`
+- L186: `(provide 'eaf-org)`

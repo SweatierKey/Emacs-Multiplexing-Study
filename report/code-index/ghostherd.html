@@ -1,0 +1,153 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: ghostherd</h1>
+<p>Fonte: https://github.com/ionrock/ghostherd.git</p>
+<p>Revisione: <code>2a505e62512e97d2090d76a2ea004e10f86a6a3d</code>.</p>
+<h2>lisp/ghostherd-client.el</h2>
+<ul>
+<li>L39: <code>(require 'json)</code></li>
+<li>L40: <code>(require 'cl-lib)</code></li>
+<li>L47: <code>(defcustom ghostherd-herdr-program "herdr"</code></li>
+<li>L51: <code>(defcustom ghostherd-socket-path nil</code></li>
+<li>L58: <code>(defcustom ghostherd-session nil</code></li>
+<li>L62: <code>(defcustom ghostherd-request-timeout 5.0</code></li>
+<li>L66: <code>(defcustom ghostherd-herdr-auto-start t</code></li>
+<li>L74: <code>(defcustom ghostherd-herdr-start-timeout 10.0</code></li>
+<li>L83: <code>(defun ghostherd-client--config-dir ()</code></li>
+<li>L90: <code>(defun ghostherd-client-socket-path ()</code></li>
+<li>L106: <code>(defun ghostherd-client--connect (name filter sentinel path)</code></li>
+<li>L118: <code>(defun ghostherd-client--start-herdr (path)</code></li>
+<li>L149: <code>(defun ghostherd-client--open (name filter &amp;optional sentinel)</code></li>
+<li>L169: <code>(defun ghostherd-client--json-encode (object)</code></li>
+<li>L174: <code>(defun ghostherd-client--json-parse (line)</code></li>
+<li>L184: <code>(defun ghostherd-client-request (method &amp;optional params)</code></li>
+<li>L226: <code>(defun ghostherd-client-ping ()</code></li>
+<li>L230: <code>(defun ghostherd-client-snapshot ()</code></li>
+<li>L268: <code>(defun ghostherd-client--events-filter (_proc chunk)</code></li>
+<li>L305: <code>(defun ghostherd-client--events-sentinel (_proc event)</code></li>
+<li>L318: <code>(defun ghostherd-client--subscription-specs ()</code></li>
+<li>L325: <code>(defun ghostherd-client-events-connect ()</code></li>
+<li>L347: <code>(defun ghostherd-client-events-reconnect ()</code></li>
+<li>L364: <code>(defun ghostherd-client-events-disconnect ()</code></li>
+<li>L371: <code>(provide 'ghostherd-client)</code></li>
+</ul>
+<h2>lisp/ghostherd-notify.el</h2>
+<ul>
+<li>L21: <code>(require 'ghostherd)</code></li>
+<li>L23: <code>(defcustom ghostherd-notify-function #'ghostherd-notify-message</code></li>
+<li>L31: <code>(defcustom ghostherd-notify-statuses '("blocked" "done")</code></li>
+<li>L49: <code>(defun ghostherd-notify--face (status)</code></li>
+<li>L59: <code>(defun ghostherd-notify--pane-desc (pane)</code></li>
+<li>L68: <code>(defun ghostherd-notify-message (pane status)</code></li>
+<li>L81: <code>(defun ghostherd-notify--pane-visible-p (pane-id)</code></li>
+<li>L87: <code>(defun ghostherd-notify--on-event (name data)</code></li>
+<li>L121: <code>(defun ghostherd-notify--counts ()</code></li>
+<li>L132: <code>(defvar ghostherd-notify-lighter-map</code></li>
+<li>L134: <code>(define-key map [mode-line mouse-1] #'ghostherd-sidebar-toggle)</code></li>
+<li>L139: <code>(defun ghostherd-notify--update-lighter ()</code></li>
+<li>L169: <code>(define-minor-mode ghostherd-notify-mode</code></li>
+<li>L202: <code>(provide 'ghostherd-notify)</code></li>
+</ul>
+<h2>lisp/ghostherd-sidebar.el</h2>
+<ul>
+<li>L27: <code>(require 'ghostherd)</code></li>
+<li>L28: <code>(require 'ghostherd-notify)                   ; faces</code></li>
+<li>L30: <code>(defcustom ghostherd-sidebar-buffer-name "*ghostherd*"</code></li>
+<li>L35: <code>(defcustom ghostherd-sidebar-width 34</code></li>
+<li>L40: <code>(defcustom ghostherd-sidebar-side 'left</code></li>
+<li>L45: <code>(defcustom ghostherd-sidebar-refresh-interval 2.0</code></li>
+<li>L63: <code>(defun ghostherd-sidebar--forget-frame (frame)</code></li>
+<li>L71: <code>(defun ghostherd-sidebar--status-glyph (status)</code></li>
+<li>L82: <code>(defun ghostherd-sidebar--insert-space (w)</code></li>
+<li>L113: <code>(defun ghostherd-sidebar--render ()</code></li>
+<li>L129: <code>(defun ghostherd-sidebar--tab-at-point ()</code></li>
+<li>L132: <code>(defun ghostherd-sidebar--space-at-point ()</code></li>
+<li>L137: <code>(defun ghostherd-sidebar--visible-p ()</code></li>
+<li>L142: <code>(defun ghostherd-sidebar--stop-refresh-timer ()</code></li>
+<li>L149: <code>(defun ghostherd-sidebar--refresh-tick ()</code></li>
+<li>L162: <code>(defun ghostherd-sidebar--start-refresh-timer ()</code></li>
+<li>L174: <code>(defun ghostherd-sidebar--tab-candidates ()</code></li>
+<li>L191: <code>(defun ghostherd-sidebar--read-layout-tabs ()</code></li>
+<li>L203: <code>(defun ghostherd-sidebar--prepare-buffer ()</code></li>
+<li>L213: <code>(defun ghostherd-sidebar--display-window ()</code></li>
+<li>L221: <code>(defun ghostherd-sidebar--main-leaf-window (frame)</code></li>
+<li>L228: <code>(defun ghostherd-sidebar--install-terminal-windows (main buffers)</code></li>
+<li>L244: <code>(defun ghostherd-sidebar-layout (tab-ids)</code></li>
+<li>L275: <code>(defun ghostherd-sidebar-restore-layout ()</code></li>
+<li>L289: <code>(defun ghostherd-sidebar-visit ()</code></li>
+<li>L299: <code>(defun ghostherd-sidebar-toggle-fold ()</code></li>
+<li>L308: <code>(defun ghostherd-sidebar-new-tab ()</code></li>
+<li>L316: <code>(defun ghostherd-sidebar-new-space ()</code></li>
+<li>L321: <code>(defun ghostherd-sidebar-close ()</code></li>
+<li>L328: <code>(defun ghostherd-sidebar-rename ()</code></li>
+<li>L338: <code>(defun ghostherd-sidebar-refresh ()</code></li>
+<li>L343: <code>(defvar ghostherd-sidebar-mode-map</code></li>
+<li>L345: <code>(define-key map (kbd "RET") #'ghostherd-sidebar-visit)</code></li>
+<li>L346: <code>(define-key map (kbd "TAB") #'ghostherd-sidebar-toggle-fold)</code></li>
+<li>L347: <code>(define-key map (kbd "c") #'ghostherd-sidebar-new-tab)</code></li>
+<li>L348: <code>(define-key map (kbd "C") #'ghostherd-sidebar-new-space)</code></li>
+<li>L349: <code>(define-key map (kbd "k") #'ghostherd-sidebar-close)</code></li>
+<li>L350: <code>(define-key map (kbd "r") #'ghostherd-sidebar-rename)</code></li>
+<li>L351: <code>(define-key map (kbd "b") #'ghostherd-next-blocked)</code></li>
+<li>L352: <code>(define-key map (kbd "g") #'ghostherd-sidebar-refresh)</code></li>
+<li>L353: <code>(define-key map (kbd "l") #'ghostherd-sidebar-layout)</code></li>
+<li>L354: <code>(define-key map (kbd "L") #'ghostherd-sidebar-restore-layout)</code></li>
+<li>L355: <code>(define-key map (kbd "n") #'next-line)</code></li>
+<li>L356: <code>(define-key map (kbd "p") #'previous-line)</code></li>
+<li>L360: <code>(define-derived-mode ghostherd-sidebar-mode special-mode "ghostherd"</code></li>
+<li>L369: <code>(defun ghostherd-sidebar-open ()</code></li>
+<li>L378: <code>(defun ghostherd-sidebar-toggle ()</code></li>
+<li>L391: <code>(define-key ghostherd-command-map (kbd "w") #'ghostherd-sidebar-toggle)</code></li>
+<li>L393: <code>(provide 'ghostherd-sidebar)</code></li>
+</ul>
+<h2>lisp/ghostherd.el</h2>
+<ul>
+<li>L26: <code>(require 'ghostherd-client)</code></li>
+<li>L27: <code>(require 'cl-lib)</code></li>
+<li>L28: <code>(require 'subr-x)</code></li>
+<li>L29: <code>(require 'project)</code></li>
+<li>L35: <code>(defcustom ghostherd-attach-buffer-name-format "*herd:%s/%s*"</code></li>
+<li>L64: <code>(defun ghostherd--schedule-resync ()</code></li>
+<li>L95: <code>(defun ghostherd--cache-reset (snapshot)</code></li>
+<li>L138: <code>(defun ghostherd--apply-event (name data)</code></li>
+<li>L259: <code>(defun ghostherd--sync-pane-subscriptions ()</code></li>
+<li>L285: <code>(defun ghostherd-connect ()</code></li>
+<li>L300: <code>(defun ghostherd-disconnect ()</code></li>
+<li>L309: <code>(defun ghostherd--on-subscribe-error (err)</code></li>
+<li>L329: <code>(defun ghostherd-resync ()</code></li>
+<li>L335: <code>(defun ghostherd--ensure ()</code></li>
+<li>L344: <code>(defun ghostherd-spaces ()</code></li>
+<li>L351: <code>(defun ghostherd-tabs (workspace-id)</code></li>
+<li>L361: <code>(defun ghostherd-tab-pane (tab-id)</code></li>
+<li>L382: <code>(defun ghostherd-current-space ()</code></li>
+<li>L393: <code>(defun ghostherd--space-annotation (w)</code></li>
+<li>L400: <code>(defun ghostherd--read-space (prompt)</code></li>
+<li>L420: <code>(defun ghostherd--read-tab (prompt workspace-id)</code></li>
+<li>L434: <code>(defun ghostherd--attach-buffer-name (workspace-id tab-id)</code></li>
+<li>L442: <code>(defun ghostherd--find-attach-buffer (tab-id)</code></li>
+<li>L452: <code>(defun ghostherd--attach (tab-id &amp;optional display)</code></li>
+<li>L482: <code>(defun ghostherd-detach ()</code></li>
+<li>L492: <code>(defun ghostherd-switch-space (workspace-id)</code></li>
+<li>L504: <code>(defun ghostherd-new-space (dir &amp;optional label)</code></li>
+<li>L534: <code>(defun ghostherd-switch-tab (tab-id)</code></li>
+<li>L542: <code>(defun ghostherd-new-tab (&amp;optional label)</code></li>
+<li>L564: <code>(defun ghostherd--tabs-around (tab-id)</code></li>
+<li>L576: <code>(defun ghostherd-next-tab ()</code></li>
+<li>L583: <code>(defun ghostherd-previous-tab ()</code></li>
+<li>L590: <code>(defun ghostherd-close-tab (tab-id)</code></li>
+<li>L608: <code>(defun ghostherd-rename-tab (tab-id name)</code></li>
+<li>L619: <code>(defun ghostherd-rename-space (workspace-id name)</code></li>
+<li>L632: <code>(defun ghostherd-blocked-panes ()</code></li>
+<li>L642: <code>(defun ghostherd-next-blocked ()</code></li>
+<li>L655: <code>(defvar ghostherd-command-map</code></li>
+<li>L657: <code>(define-key map (kbd "s") #'ghostherd-switch-space)</code></li>
+<li>L658: <code>(define-key map (kbd "S") #'ghostherd-new-space)</code></li>
+<li>L659: <code>(define-key map (kbd "t") #'ghostherd-switch-tab)</code></li>
+<li>L660: <code>(define-key map (kbd "c") #'ghostherd-new-tab)</code></li>
+<li>L661: <code>(define-key map (kbd "n") #'ghostherd-next-tab)</code></li>
+<li>L662: <code>(define-key map (kbd "p") #'ghostherd-previous-tab)</code></li>
+<li>L663: <code>(define-key map (kbd "b") #'ghostherd-next-blocked)</code></li>
+<li>L664: <code>(define-key map (kbd "k") #'ghostherd-close-tab)</code></li>
+<li>L665: <code>(define-key map (kbd "r") #'ghostherd-rename-tab)</code></li>
+<li>L666: <code>(define-key map (kbd "R") #'ghostherd-rename-space)</code></li>
+<li>L667: <code>(define-key map (kbd "g") #'ghostherd-resync)</code></li>
+<li>L677: <code>(provide 'ghostherd)</code></li>
+</ul></main></html>

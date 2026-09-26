@@ -1,0 +1,3 @@
+{"status":"loaded","feature":"herdr","library":"/home/admin/Emacs-Multiplexing-Study/sources/emacs-herdr/herdr.el","commands":["herdr","herdr-agents","herdr-agents-attach","herdr-agents-mode","herdr-agents-show","herdr-agents-sort","herdr-attach-agent","herdr-goto-blocked","herdr-hide","herdr-last-agent","herdr-menu","herdr-mode","herdr-new-agent","herdr-send-region","herdr-submit-region","herdr-switch-agent","herdr-toggle"]}
+STDERR:
+WARNING: transient-define-prefix: When :setup-children is used, :class must also be specified

@@ -1,0 +1,29 @@
+{
+  "id": "elscreen-multi-term",
+  "status": "failed",
+  "scenario": "two-ssh-endpoints",
+  "started": "2026-09-26T11:43:49Z",
+  "snapshots": [
+    {
+      "name": "*screen terminal<F1-0>*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "*screen terminal<F1-0>*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ lab-ssh lab-db\nbash: lab-ssh: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    }
+  ],
+  "checks": {
+    "completion_enabled": true,
+    "ssh_web": true
+  },
+  "error": "Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ lab-ssh lab-db\nbash: lab-ssh: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ ",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 47, in run\n    emacs_keys(s);s.mx(cmd)\n    \n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 31, in check_role\n    snap=s.snapshot()\n    \nAssertionError: Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ lab-ssh lab-db\nbash: lab-ssh: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n",
+  "messages": "\"For information about GNU Emacs and the GNU system, type C-h C-a.\\nsources/elscreen-multi-term/elscreen-multi-term.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead. [2 times]\\nPackage cl is deprecated\\nYou can run the command ‘emt-multi-term’ with M-x emt-m\\nC-c C-j is undefined\\nYou can run the command ‘emt-multi-term’ with M-x emt-m\\n\""
+}

@@ -1,0 +1,220 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: vertico</h1>
+<p>Fonte: https://github.com/minad/vertico.git</p>
+<p>Revisione: <code>a9998a777f1d92348f84d091bb15b87df933a7a2</code>.</p>
+<h2>extensions/vertico-buffer.el</h2>
+<ul>
+<li>L37: <code>(require 'vertico)</code></li>
+<li>L39: <code>(defcustom vertico-buffer-hide-prompt t</code></li>
+<li>L44: <code>(defcustom vertico-buffer-display-action</code></li>
+<li>L92: <code>(defun vertico-buffer--redisplay (_)</code></li>
+<li>L122: <code>(defun vertico-buffer--setup ()</code></li>
+<li>L196: <code>(define-minor-mode vertico-buffer-mode</code></li>
+<li>L215: <code>(provide 'vertico-buffer)</code></li>
+</ul>
+<h2>extensions/vertico-directory.el</h2>
+<ul>
+<li>L30: <code>;; (keymap-set vertico-map "RET" #'vertico-directory-enter)</code></li>
+<li>L31: <code>;; (keymap-set vertico-map "DEL" #'vertico-directory-delete-char)</code></li>
+<li>L32: <code>;; (keymap-set vertico-map "M-DEL" #'vertico-directory-delete-word)</code></li>
+<li>L45: <code>(require 'vertico)</code></li>
+<li>L49: <code>(defcustom vertico-directory-tidy t</code></li>
+<li>L59: <code>(defun vertico-directory-enter (&amp;optional arg)</code></li>
+<li>L86: <code>(defun vertico-directory-up (&amp;optional n)</code></li>
+<li>L105: <code>(defun vertico-directory-delete-char (n)</code></li>
+<li>L113: <code>(defun vertico-directory-delete-word (n)</code></li>
+<li>L120: <code>(defun vertico-directory-tidy ()</code></li>
+<li>L131: <code>(defvar-keymap vertico-directory-map</code></li>
+<li>L140: <code>(provide 'vertico-directory)</code></li>
+</ul>
+<h2>extensions/vertico-flat.el</h2>
+<ul>
+<li>L39: <code>(require 'vertico)</code></li>
+<li>L42: <code>(defcustom vertico-flat-max-lines 1</code></li>
+<li>L47: <code>(defcustom vertico-flat-format</code></li>
+<li>L62: <code>(defcustom vertico-flat-annotate nil</code></li>
+<li>L67: <code>(defvar-keymap vertico-flat-map</code></li>
+<li>L73: <code>(define-minor-mode vertico-flat-mode</code></li>
+<li>L84: <code>(defun vertico-flat--format (prop)</code></li>
+<li>L141: <code>(provide 'vertico-flat)</code></li>
+</ul>
+<h2>extensions/vertico-grid.el</h2>
+<ul>
+<li>L35: <code>(require 'vertico)</code></li>
+<li>L40: <code>(defcustom vertico-grid-min-columns 2</code></li>
+<li>L45: <code>(defcustom vertico-grid-max-columns 8</code></li>
+<li>L50: <code>(defcustom vertico-grid-annotate 0</code></li>
+<li>L55: <code>(defcustom vertico-grid-separator</code></li>
+<li>L61: <code>(defcustom vertico-grid-lookahead 100</code></li>
+<li>L67: <code>(defvar-keymap vertico-grid-map</code></li>
+<li>L77: <code>(defun vertico-grid-left (&amp;optional n)</code></li>
+<li>L82: <code>(defun vertico-grid-right (&amp;optional n)</code></li>
+<li>L94: <code>(defun vertico-grid-scroll-down (&amp;optional n)</code></li>
+<li>L99: <code>(defun vertico-grid-scroll-up (&amp;optional n)</code></li>
+<li>L105: <code>(define-minor-mode vertico-grid-mode</code></li>
+<li>L170: <code>(provide 'vertico-grid)</code></li>
+</ul>
+<h2>extensions/vertico-indexed.el</h2>
+<ul>
+<li>L33: <code>(require 'vertico)</code></li>
+<li>L40: <code>(defcustom vertico-indexed-start 0</code></li>
+<li>L51: <code>(define-minor-mode vertico-indexed-mode</code></li>
+<li>L80: <code>(provide 'vertico-indexed)</code></li>
+</ul>
+<h2>extensions/vertico-mouse.el</h2>
+<ul>
+<li>L30: <code>(require 'vertico)</code></li>
+<li>L37: <code>(defun vertico-mouse--index (event)</code></li>
+<li>L43: <code>(defun vertico-mouse--click (key)</code></li>
+<li>L53: <code>(defvar-keymap vertico-mouse-map</code></li>
+<li>L65: <code>(define-minor-mode vertico-mouse-mode</code></li>
+<li>L83: <code>(provide 'vertico-mouse)</code></li>
+</ul>
+<h2>extensions/vertico-multiform.el</h2>
+<ul>
+<li>L59: <code>(require 'vertico)</code></li>
+<li>L62: <code>(defcustom vertico-multiform-commands nil</code></li>
+<li>L72: <code>(defcustom vertico-multiform-categories nil</code></li>
+<li>L82: <code>(defun vertico-multiform--toggle (arg)</code></li>
+<li>L93: <code>(defun vertico-multiform--lookup (key list)</code></li>
+<li>L105: <code>(defun vertico-multiform--exit ()</code></li>
+<li>L110: <code>(defun vertico-multiform--setup ()</code></li>
+<li>L149: <code>(defvar-keymap vertico-multiform-map</code></li>
+<li>L153: <code>(define-minor-mode vertico-multiform-mode</code></li>
+<li>L168: <code>(defun vertico-multiform--display-menu (menu _event)</code></li>
+<li>L170: <code>(define-key menu [vertico-multiform--display-menu]</code></li>
+<li>L183: <code>(defun vertico-multiform--toggle-mode-1 (mode arg)</code></li>
+<li>L204: <code>(defun vertico-multiform--toggle-mode (mode)</code></li>
+<li>L228: <code>(define-key vertico-multiform-map (vector toggle) (cons label toggle))</code></li>
+<li>L229: <code>(keymap-set vertico-multiform-map (format "M-%c" (aref label 0)) toggle)))</code></li>
+<li>L231: <code>(provide 'vertico-multiform)</code></li>
+</ul>
+<h2>extensions/vertico-quick.el</h2>
+<ul>
+<li>L31: <code>;; (keymap-set vertico-map "M-q" #'vertico-quick-insert)</code></li>
+<li>L32: <code>;; (keymap-set vertico-map "C-q" #'vertico-quick-exit)</code></li>
+<li>L36: <code>(require 'vertico)</code></li>
+<li>L59: <code>(defcustom vertico-quick1 "asdfgh"</code></li>
+<li>L64: <code>(defcustom vertico-quick2 "jkluionm"</code></li>
+<li>L69: <code>(defun vertico-quick--keys (two index start)</code></li>
+<li>L99: <code>(defun vertico-quick--read (&amp;optional first)</code></li>
+<li>L117: <code>(defun vertico-quick-jump ()</code></li>
+<li>L127: <code>(defun vertico-quick-exit ()</code></li>
+<li>L134: <code>(defun vertico-quick-insert ()</code></li>
+<li>L140: <code>(provide 'vertico-quick)</code></li>
+</ul>
+<h2>extensions/vertico-repeat.el</h2>
+<ul>
+<li>L37: <code>;; (keymap-global-set "M-R" #'vertico-repeat)</code></li>
+<li>L38: <code>;; (keymap-set vertico-map "M-P" #'vertico-repeat-previous)</code></li>
+<li>L39: <code>;; (keymap-set vertico-map "M-N" #'vertico-repeat-next)</code></li>
+<li>L40: <code>;; (keymap-set vertico-map "S-&lt;prior&gt;" #'vertico-repeat-previous)</code></li>
+<li>L41: <code>;; (keymap-set vertico-map "S-&lt;next&gt;" #'vertico-repeat-next)</code></li>
+<li>L51: <code>(require 'vertico)</code></li>
+<li>L54: <code>(defcustom vertico-repeat-filter</code></li>
+<li>L63: <code>(defcustom vertico-repeat-transformers</code></li>
+<li>L78: <code>(defun vertico-repeat--filter-commands (session)</code></li>
+<li>L82: <code>(defun vertico-repeat--filter-empty (session)</code></li>
+<li>L86: <code>(defun vertico-repeat--remove-long (session)</code></li>
+<li>L93: <code>(defun vertico-repeat--remember-input ()</code></li>
+<li>L97: <code>(defun vertico-repeat--current ()</code></li>
+<li>L110: <code>(defun vertico-repeat--save-on-exit ()</code></li>
+<li>L122: <code>(defun vertico-repeat--restore (session)</code></li>
+<li>L142: <code>(defun vertico-repeat--run (session)</code></li>
+<li>L153: <code>(defun vertico-repeat-save ()</code></li>
+<li>L164: <code>(defun vertico-repeat-next (n)</code></li>
+<li>L172: <code>(defun vertico-repeat-previous (n)</code></li>
+<li>L194: <code>(defun vertico-repeat-select ()</code></li>
+<li>L240: <code>(defun vertico-repeat (&amp;optional arg)</code></li>
+<li>L246: <code>(provide 'vertico-repeat)</code></li>
+</ul>
+<h2>extensions/vertico-reverse.el</h2>
+<ul>
+<li>L36: <code>(require 'vertico)</code></li>
+<li>L39: <code>(defcustom vertico-reverse-candidates t</code></li>
+<li>L44: <code>(defcustom vertico-reverse-prompt t</code></li>
+<li>L49: <code>(defvar-keymap vertico-reverse-map</code></li>
+<li>L64: <code>(define-minor-mode vertico-reverse-mode</code></li>
+<li>L92: <code>(provide 'vertico-reverse)</code></li>
+</ul>
+<h2>extensions/vertico-sort.el</h2>
+<ul>
+<li>L35: <code>(require 'vertico)</code></li>
+<li>L41: <code>(defcustom vertico-sort-history-duplicate 10</code></li>
+<li>L50: <code>(defcustom vertico-sort-history-decay 10</code></li>
+<li>L57: <code>(defun vertico-sort--history ()</code></li>
+<li>L89: <code>(defun vertico-sort--length-string&lt; (x y)</code></li>
+<li>L93: <code>(defun vertico-sort--decorated (list)</code></li>
+<li>L99: <code>(defmacro vertico-sort--define (by bsize bindex bpred pred)</code></li>
+<li>L125: <code>(defun vertico-sort-directories-first (list)</code></li>
+<li>L131: <code>(provide 'vertico-sort)</code></li>
+</ul>
+<h2>extensions/vertico-suspend.el</h2>
+<ul>
+<li>L35: <code>;; (keymap-global-set "M-S" #'vertico-suspend)</code></li>
+<li>L47: <code>(require 'vertico)</code></li>
+<li>L53: <code>(defun vertico-suspend ()</code></li>
+<li>L91: <code>(defun vertico-suspend--unselect (&amp;rest _)</code></li>
+<li>L99: <code>(defun vertico-suspend--message (&amp;rest app)</code></li>
+<li>L105: <code>(provide 'vertico-suspend)</code></li>
+</ul>
+<h2>extensions/vertico-unobtrusive.el</h2>
+<ul>
+<li>L37: <code>(require 'vertico-flat)</code></li>
+<li>L42: <code>(define-minor-mode vertico-unobtrusive-mode</code></li>
+<li>L64: <code>(provide 'vertico-unobtrusive)</code></li>
+</ul>
+<h2>vertico.el</h2>
+<ul>
+<li>L37: <code>(require 'compat)</code></li>
+<li>L52: <code>(defcustom vertico-count-format (cons "%-6s " "%s/%s")</code></li>
+<li>L56: <code>(defcustom vertico-group-format</code></li>
+<li>L63: <code>(defcustom vertico-count 10</code></li>
+<li>L67: <code>(defcustom vertico-preselect 'directory</code></li>
+<li>L75: <code>(defcustom vertico-scroll-margin 2</code></li>
+<li>L80: <code>(defcustom vertico-resize resize-mini-windows</code></li>
+<li>L86: <code>(defcustom vertico-cycle nil</code></li>
+<li>L90: <code>(defcustom vertico-multiline</code></li>
+<li>L95: <code>(defcustom vertico-sort-function</code></li>
+<li>L106: <code>(defcustom vertico-sort-override-function nil</code></li>
+<li>L127: <code>(defvar-keymap vertico-map</code></li>
+<li>L195: <code>(defun vertico--affixate (cands)</code></li>
+<li>L209: <code>(defun vertico--move-to-front (elem list)</code></li>
+<li>L216: <code>(defun vertico--metadata-get (prop)</code></li>
+<li>L220: <code>(defun vertico--sort-function ()</code></li>
+<li>L226: <code>(defun vertico--compute (input)</code></li>
+<li>L295: <code>(defun vertico--hilit (cand)</code></li>
+<li>L301: <code>(defun vertico--cycle (list n)</code></li>
+<li>L305: <code>(defun vertico--group-by (fun elems)</code></li>
+<li>L333: <code>(defun vertico--remote-p (path)</code></li>
+<li>L337: <code>(defun vertico--update (&amp;optional interruptible)</code></li>
+<li>L365: <code>(defun vertico--display-string (str)</code></li>
+<li>L388: <code>(defun vertico--window-width ()</code></li>
+<li>L392: <code>(defun vertico--truncate-multiline (str max)</code></li>
+<li>L402: <code>(defun vertico--compute-scroll ()</code></li>
+<li>L410: <code>(defun vertico--format-group-title (title cand)</code></li>
+<li>L420: <code>(defun vertico--format-count ()</code></li>
+<li>L429: <code>(defun vertico--display-count ()</code></li>
+<li>L435: <code>(defun vertico--prompt-selection ()</code></li>
+<li>L442: <code>(defun vertico--remove-face (beg end face &amp;optional obj)</code></li>
+<li>L450: <code>(defun vertico--debug (&amp;rest _)</code></li>
+<li>L462: <code>(defun vertico--protect (fun)</code></li>
+<li>L479: <code>(defun vertico--exhibit ()</code></li>
+<li>L489: <code>(defun vertico--goto (index)</code></li>
+<li>L496: <code>(defun vertico--candidate (&amp;optional hl)</code></li>
+<li>L510: <code>(defun vertico--match-p (input)</code></li>
+<li>L615: <code>(defun vertico-first ()</code></li>
+<li>L620: <code>(defun vertico-last ()</code></li>
+<li>L625: <code>(defun vertico-scroll-down (&amp;optional n)</code></li>
+<li>L630: <code>(defun vertico-scroll-up (&amp;optional n)</code></li>
+<li>L635: <code>(defun vertico-next (&amp;optional n)</code></li>
+<li>L646: <code>(defun vertico-previous (&amp;optional n)</code></li>
+<li>L651: <code>(defun vertico-exit (&amp;optional arg)</code></li>
+<li>L659: <code>(defun vertico-next-group (&amp;optional n)</code></li>
+<li>L672: <code>(defun vertico-previous-group (&amp;optional n)</code></li>
+<li>L678: <code>(defun vertico-exit-input ()</code></li>
+<li>L683: <code>(defun vertico-save ()</code></li>
+<li>L690: <code>(defun vertico-insert ()</code></li>
+<li>L703: <code>(define-minor-mode vertico-mode</code></li>
+<li>L711: <code>(defun vertico--command-p (_sym buffer)</code></li>
+<li>L725: <code>(provide 'vertico)</code></li>
+</ul></main></html>

@@ -1,0 +1,582 @@
+
+### detached
+sources/detached/detached-eshell.el
+81:                    ((symbol-function #'eshell-add-to-history) #'ignore))
+82:           (let ((kill-ring nil))
+83:             (eshell-kill-input))
+84:           ;; Hide the input from the user
+85:           (let ((begin (point))
+86:                 (end))
+109:              (dtach-process (detached-eshell--get-dtach-process)))
+110:     (setq detached-buffer-session nil)
+111:     (process-send-string dtach-process
+112:                          detached--dtach-detach-character)))
+113: 
+114: ;;;; Minor mode
+sources/detached/detached-init.el
+98: 											(dired-rsync . detached-init--dired-rsync)
+99: 											(embark . detached-init--embark)
+100: 											(eshell . detached-init--eshell)
+101: 											(nano-modeline . detached-init--nano-modeline)
+102: 											(org . detached-init--org)
+103: 											(projectile . detached-init--projectile)
+104: 											(shell . detached-init--shell)
+105: 											(vterm . detached-init--vterm))
+106:   "Alist which contain names of packages and their initialization function.")
+107: 
+108: ;;;; Functions
+sources/detached/detached-list.el
+130:       (if all
+131:           (seq-do #'detached-list--initialize-directory uninitialized-directories)
+132:         (when-let ((directory (completing-read "Initialize directory: " uninitialized-directories)))
+133:           (detached-list--initialize-directory directory)))
+134:     (message "All session directories have been initialized")))
+135: 
+319:                               (seq-map #'detached-session-host-name)
+320:                               (seq-uniq))))
+321:       (completing-read
+322:        "Select host: "
+323:        hostnames))))
+324:   (when hostname
+392:                               (seq-map #'detached-session-directory)
+393:                               (seq-uniq))))
+394:       (completing-read
+395:        "Select session directory: "
+396:        directories))))
+397:   (when session-directory
+461:                               (complete-with-action action detached-list-filters string predicate))))
+462:               (filter-name
+463:                (completing-read "Select filter: " collection nil t)))
+464:     (detached-list--apply-filter
+
+### term-sessions
+sources/term-sessions/term-sessions-actions.el
+411:   "Send shell-quoted FILE path to a selected term session."
+412:   (interactive "fFile path to send: ")
+413:   (term-sessions-action-send-text-to-session (shell-quote-argument file)))
+414: 
+415: ;;;###autoload
+416: (defun term-sessions-action-run-file-in-session (file)
+421:    (lambda (entry)
+422:      (term-sessions-run (term-sessions--entry-name entry)
+423:                         (shell-quote-argument file)
+424:                         nil))))
+425: 
+426: ;;;###autoload
+sources/term-sessions/term-sessions-frontends.el
+88:       (setq default-directory directory)
+89:       (if (term-sessions--ghostel-live-process-p)
+90:           (ghostel-semi-char-mode)
+91:         ;; Ghostel may process initial OSC 7 directory reports before
+92:         ;; `term-sessions--open-ghostel' gets a chance to install the final
+93:         ;; title tracker.  Seed a safe buffer-local name function first so
+95:         ;; rename to nil.
+96:         (unless (derived-mode-p 'ghostel-mode)
+97:           (let ((ghostel-buffer-name-function nil))
+98:             (ghostel-mode)))
+99:         (when (boundp 'ghostel-buffer-name-function)
+100:           (setq-local ghostel-buffer-name-function
+101:                       (lambda (_title) buffer-name)))
+102:         (ghostel-exec buffer "/bin/sh" (list "-lc" command))
+103:         (rename-buffer buffer-name t)
+104:         ;; Semi-char mode sends ordinary text to the terminal while preserving
+105:         ;; Ghostel/Emacs escape keybindings.  Char mode captures almost every
+106:         ;; key, which makes normal Emacs navigation/control feel broken.
+107:         (ghostel-semi-char-mode)))
+108:     buffer))
+109: 
+110: (defun term-sessions--short-directory-name (directory)
+sources/term-sessions/term-sessions-list.el
+1019:   "Narrow to sessions for HOST."
+1020:   (interactive
+1021:    (list (completing-read
+1022:           "Host: "
+1023:           (delete-dups (mapcar (lambda (row) (plist-get (car row) :where))
+1024:                                tabulated-list-entries))
+sources/term-sessions/term-sessions-org.el
+234:   (if-let* ((value (plist-get components :frontend))
+235:             (frontend (intern-soft value)))
+236:       (if (memq frontend '(vterm eat ghostel term shell))
+237:           frontend
+238:         (user-error "Unsupported term-session frontend: %s" value))
+
+### tmux-control
+sources/tmux-control/tmux-control.el
+1216: typing a new name creates that session on connect."
+1217:   (let ((sessions (tmux-control--list-sessions host socket-name)))
+1218:     (completing-read "Session: " sessions nil nil nil nil
+1219:                      tmux-control-default-session)))
+1220: 
+1221: ;;;###autoload
+1268:             ;; when pane-directory mode made this buffer a TRAMP context.
+1269:             (let ((default-directory temporary-file-directory))
+1270:               (make-process
+1271:                :name name
+1272:                :buffer buffer
+1273:                :command command
+1289:       (process-put tmux-control--process 'adjust-window-size-function
+1290:                    #'tmux-control--adjust-window-size)
+1291:       (setf (eat-term-parameter tmux-control--terminal 'eat--process)
+1292:             tmux-control--process)
+1293:       (setf (eat-term-parameter tmux-control--terminal 'eat--input-process)
+1294:             tmux-control--process)
+1295:       (setf (eat-term-parameter tmux-control--terminal 'eat--output-process)
+1296:             tmux-control--process)
+1297:       (add-hook 'kill-buffer-hook #'tmux-control--kill-process nil t))
+1298:     (pop-to-buffer buffer)
+
+### tmux-control-mode
+sources/tmux-control-mode/tmux-cc.el
+447:             (if (and (bound-and-true-p display-line-numbers)
+448:                      (fboundp 'vterm--get-margin-width))
+449:                 (vterm--get-margin-width)
+450:               0)))))
+451: 
+452: (defun tmux-cc--resize-pane-vterm (window)
+458:                  (derived-mode-p 'vterm-mode))
+459:         (let ((inhibit-read-only t))
+460:           (vterm--set-size vterm--term
+461:                            (window-body-height window)
+462:                            (tmux-cc--pane-window-width window)))))))
+463: 
+732: 
+733:   (setq tmux-cc-process
+734:         (make-process
+735:          :name "tmux-cc"
+736:          :buffer (generate-new-buffer "*tmux-cc*")
+737:          :command (split-string-and-unquote command)
+888: (defun tmux-cc--pane-emulate-terminal (proc string)
+889:   "Feed terminal output STRING for PROC into the pane's vterm emulator."
+890:   (vterm--filter proc string))
+891: 
+892: (defun tmux-cc--pane-copy-mode-active-p (buffer)
+893:   "Return non-nil when BUFFER is a tmux pane in `vterm-copy-mode'."
+1020:     (puthash pane-id buf tmux-cc-panes)
+1021:     (with-current-buffer buf
+1022:       (let ((vterm-shell tmux-cc-vterm-shell-command)
+1023:             (vterm-kill-buffer-on-exit nil)
+1024:             (vterm-buffer-name-string nil))
+1025:         (vterm-mode))
+
+### emamux
+sources/emamux/emamux.el
+99: 
+100: (defsubst emamux:tmux-running-p ()
+101:   (zerop (process-file "tmux" nil nil nil "has-session")))
+102: 
+103: (defun emamux:tmux-run-command (output &rest args)
+104:   (let ((retval (apply 'process-file "tmux" nil output nil args)))
+427: 
+428: (defsubst emamux:pane-alive-p (target)
+429:   (zerop (process-file "tmux" nil nil nil "list-panes" "-t" target)))
+430: 
+431: (defun emamux:runner-alive-p ()
+432:   (let ((pane-id
+534:   (let ((new-window-id (emamux:current-active-window-id))
+535:         (chdir-cmd (format " cd %s" default-directory))
+536:         (emacsclient-cmd " emacsclient -t -e '(run-with-timer 0.01 nil (lambda () (window-state-put emamux:cloning-window-state nil (quote safe))))'"))
+537:     (emamux:send-keys chdir-cmd new-window-id)
+538:     (emamux:send-keys emacsclient-cmd new-window-id)))
+539: 
+
+### tmux-cc
+sources/tmux-cc/tmux-cc.el
+59: (defun tmux-cc--delete-process-on-exit()
+60:   (when (and tmux-cc--shell-process (process-live-p tmux-cc--shell-process))
+61:     (process-send-string tmux-cc--shell-process "exit\n")
+62:     (sleep-for 1)
+63:     (delete-process tmux-cc--shell-process)))
+64: 
+94: ")
+95:               )
+96:             (call-process "osascript" nil nil nil "-e"
+97:                         (concat
+98:                          "
+99: tell application \"com.googlecode.iterm2\"
+
+### tmux-el
+sources/tmux-el/tmux.el
+77:                            (let ((message-log-max (and tmux-verbose message-log-max)))
+78:                              (if tmux-verbose
+79:                                  (shell-command cmdstr stdout stderr)
+80:                                (with-temp-message (or (current-message) "")
+81:                                  (shell-command cmdstr stdout stderr))))))
+82:               (with-current-buffer stdout
+83:                 (setq tmux-last-command `(,(substring cmdstr (+ 1 (length bin))) ,@args))
+84:                 (buffer-string))
+92: If NORETURN is non-nil, send the commands as keypresses but do not execute them."
+93:   (interactive (list (read-string "tmux $ " nil 'tmux-command-history) current-prefix-arg))
+94:   (tmux (concat "send-keys C-u " (shell-quote-argument command) (unless noreturn " Enter"))))
+95: 
+96: ;;;###autoload
+97: (defun tmux-send-region (beg end &optional noreturn)
+156:              (tmux (format "list-windows %s -F '#{window_id};#{session_id};#{window_active};#{window_name};#{window_activity_flag}'"
+157:                            (if session
+158:                                (concat "-t " (shell-quote-argument (car session)))
+159:                              "-a")))))
+160:       (cl-loop for line in (split-string lines "\n" t)
+161:                collect (let ((window (split-string line ";")))
+175:                                (concat (if (string-prefix-p "$" (car sess-or-win)) "-s ")
+176:                                        "-t "
+177:                                        (shell-quote-argument (car sess-or-win)))
+178:                              "-a")))))
+179:       (cl-loop for line in (split-string lines "\n" t)
+180:                collect (let ((pane (split-string line ";")))
+
+### tmux-head
+sources/tmux-head/tmux-head-ipython.el
+28: 
+29: (defun tmux-python-console-p ()
+30:   (let ((shell (tmux-pane-1-login-type)))
+31:     (and (stringp shell)
+32:          (>= (length shell) 6)
+33:          (equal "python" (substring shell 0 6)))))
+
+### tmux-view
+sources/tmux-view/tmux-view.el
+67:   (let* ((format-string
+68:           "#{session_name}/#{window_name}/#{pane_index}: #{pane_current_command} #{pane_current_command} #{pane_id}")
+69:          (output (shell-command-to-string
+70:                   (concat "tmux list-panes -a -F '" format-string "'")))
+71:          (lines (split-string output "\n" t))
+72:          result)
+93:   "Capture the content and scrollback of tmux pane PANE-ID.
+94: Returns a string with ANSI escape sequences preserved."
+95:   (shell-command-to-string
+96:    (format "tmux capture-pane -e -p -S - -t %s" pane-id)))
+97: 
+98: (defvar-local tmux-view--current-pane-id nil
+180:     (if (null panes)
+181:         (user-error "No tmux panes found. Is tmux running?")
+182:       (let* ((choice (completing-read "Select tmux pane: " panes nil t))
+183:              (pane-id (cdr (assoc choice panes))))
+184:         (when pane-id
+185:           ;; Parse the choice to get session, window, and pane index
+
+### tmuxbuf
+sources/tmuxbuf/tmuxbuf.el
+32:   (if (not (getenv "TMUX"))
+33:       nil
+34:     (setq tmux-copy-process (make-process :name "tmux"
+35:                                           :buffer nil
+36:                                           :command '("tmux" "load-buffer" "-b" "emacs" "-")
+37:                                           :connection-type 'pipe))
+38:     (process-send-string tmux-copy-process text)
+39:     (process-send-eof tmux-copy-process)))
+40: 
+41: (defun tmux-paste ()
+42:   (if (not (getenv "TMUX"))
+43:       nil
+44:     (shell-command-to-string "tmux show-buffer -b emacs")))
+45:   
+46: ;;;###autoload
+47: (defun turn-on-tmux-buffer ()
+
+### tmuxmacs
+sources/tmuxmacs/tmuxmacs-core.el
+28: 		      (format "%s -F \"%s\"" command-base (tmuxmacs-core--output fields))
+29: 		    command-base))
+30: 	 (response (shell-command-to-string command)))
+31:     (json-parse-string
+32:      (format "[%s]" (string-join (string-split response "\n" t " ") ","))
+33:    :object-type 'plist
+36: 
+37: (defun tmuxmacs-core/pane-output (pane-id)
+38:   (shell-command-to-string
+39:    (format "tmux capture-pane -p -t '%s'" pane-id)))
+40: 
+41: (defun tmuxmacs-core/entity-map ()
+sources/tmuxmacs/tmuxmacs-view.el
+222: 		      (cons (plist-get session name-key) (plist-get session id-key)))
+223: 		    (tmuxmacs-core/entity-map)))
+224: 	 (selection (completing-read prompt (mapcar #'car name->id) nil t)))
+225:     (assoc selection name->id #'equal)))
+226: 
+227: 
+sources/tmuxmacs/tmuxmacs.el
+160:   (interactive)
+161:   (let* ((panes (tmuxmacs--formatted-panes))
+162: 	 (selected-pane (car (split-string (completing-read "select a pane: " panes nil t))))
+163: 	 (command (read-string "command: ")))
+164:     (tmuxmacs-pane/send-command selected-pane command)))
+165: 
+
+### screensend
+sources/screensend/screensend.el
+82:     (with-output-to-string
+83:       (with-current-buffer standard-output
+84:         (call-process "osascript" nil '(t nil) nil "-e"
+85:                       "tell application \"Terminal\" to tell windows to tell tabs to return tty"))))
+86:     ",[ \n]*" 't))
+87: 
+90:   "Select a Mac OS X Terminal session"
+91:   (interactive
+92:    (list (completing-read "Select a terminal session: " (macosx-terminal-list))))
+93:   (setq macosx-terminal-session session))
+94: 
+95: ;;;###autoload
+114:                 (erase-buffer)
+115:                 (insert (mapconcat 'identity chunk "\n")))
+116:               (call-process "osascript" nil nil nil
+117:                             "-e" (concat "set f to \"" tmpfile "\"")
+118:                             "-e" "open for access f"
+119:                             "-e" "set c to (read f)"
+136:     (with-output-to-string
+137:       (with-current-buffer standard-output
+138:         (call-process "osascript" nil '(t nil) nil "-e"
+139:                       "tell application \"iTerm\" to tell windows to tell tabs to return sessions")))
+140:     "," 't)))
+141: 
+144:   "Select an iTerm session"
+145:   (interactive
+146:    (list (completing-read "Select an iTerm session: " (iterm-list))))
+147:   (setq iterm-session session))
+148: 
+149: ;;;###autoload
+
+### turnip
+sources/turnip/turnip.el
+295:                (command-names (-map #'car commands))
+296:                (choice (or (pop initial-arguments)
+297:                            (completing-read "tmux " command-names nil t))))
+298:     (let* ((options (cdr (assoc choice commands)))
+299:            (option-names
+300:             (-map
+318:           (if (not takes-argument)
+319:               (setq choice (or (pop initial-arguments)
+320:                                (completing-read prompt option-names)))
+321:             (setq choice "")
+322:             (while (s-equals? choice "")
+323:               (setq choice
+324:                     (or (pop initial-arguments)
+325:                         (completing-read
+326:                          (format "%s[%s] " prompt takes-argument)
+327:                          (turnip:completions-for-argument takes-argument session)))))
+328:             (setq choice
+349:           (choice (if (= (length sessions) 1)
+350:                       (car sessions)
+351:                     (completing-read "Session: " sessions nil t))))
+352:      (when (s-equals? choice "")
+353:        (user-error "No session name provided"))
+354:      (list choice)))
+366:                       (concat "Pane [" default "]: ")
+367:                     "Pane: "))
+368:           (choice (completing-read prompt (turnip:list-panes)
+369:                                    nil t nil nil default)))
+370: 
+371:      (when (s-equals? choice "")
+
+### tmux-runner
+sources/tmux-runner/emacs-tmux-runner.el
+146:   "Run a tmux shell command.
+147:   COMMAND is concated with 'tmux '"
+148:   (shell-command-to-string (concat "tmux " command)))
+149: 
+150: (cl-defun etr:send-keys (input &optional (target (etr:target-pane)))
+151:   (interactive)
+205:    This is intented to by applied to strings that are going to be
+206:    sended to a terminal."
+207:   (string-trim (shell-quote-argument str)))
+208: 
+209: (cl-defun etr:send-lines ()
+210:   "Sends current selected text (or current line if no selection) to tmux."
+
+### tmux-pane
+sources/tmux-pane/tmux-pane.el
+59:     ;; At edges, send command to tmux
+60:     (run-hooks 'tmux-pane-before-leave-hook)
+61:     (tmux-pane--ensure-dir (call-process "tmux" nil nil nil "select-pane" flag))
+62:     (run-hooks 'tmux-pane-after-leave-hook)))
+63: 
+64: :autoload
+67:   (interactive)
+68:   (tmux-pane--ensure-dir
+69:    (call-process "tmux" nil nil nil
+70:                  "split-window" "-h" "-p" (format "%s" tmux-pane-vertical-percent))))
+71: 
+72: :autoload
+75:   (interactive)
+76:   (tmux-pane--ensure-dir
+77:    (call-process "tmux" nil nil nil
+78:                  "split-window" "-v" "-p" (format "%s" tmux-pane-vertical-percent))))
+79: 
+80: :autoload
+83:   (interactive)
+84:   (tmux-pane--ensure-dir
+85:    (call-process "tmux" nil nil nil "kill-pane" "-t" "{last}")))
+86: 
+87: :autoload
+88: (defun tmux-pane-rerun ()
+90:   (interactive)
+91:   (tmux-pane--ensure-dir
+92:    (call-process "tmux" nil nil nil "send-keys" "-t" "{last}" "C-c")
+93:    (call-process "tmux" nil nil nil "send-keys" "-t" "{last}" "Up" "Enter")))
+94: 
+95: :autoload
+
+### tmux-tandem
+
+### zellij
+sources/zellij/zellij.el
+294:   (let ((sessions (zellij-list-sessions)))
+295:     (if sessions
+296:         (completing-read "Session: " sessions nil t)
+297:       (zellij--error "No Zellij sessions found"))))
+298: 
+299: (defun zellij-session-exists-p (session)
+462: 
+463:         ;; Execute the entire command chain at once
+464:         (let ((result (shell-command-to-string full-cmd)))
+465:           (zellij--log "Command chain executed")
+466:           (when (and result (not (string-empty-p result)))
+467:             (zellij--log "Output: %s" result)))))))
+738:   (interactive)
+739:   (let* ((command (read-string "Command (leave empty for shell): "))
+740:          (direction (completing-read "Direction: "
+741:                                     '("right" "down" "floating")
+742:                                     nil t
+743:                                     zellij-default-pane-direction))
+819:   (let* ((sessions (zellij-list-sessions))
+820:          (session (when (> (length sessions) 1)
+821:                    (completing-read "Session: " sessions nil t)))
+822:          (tab (read-string "Tab (number or name): "))
+823:          (pane-offset (read-number "Pane offset (0 for first): " 0))
+824:          (tab-num (if (string-match-p "^[0-9]+$" tab)
+837:   (let ((all-panes (zellij--get-all-panes-for-selection)))
+838:     (if all-panes
+839:         (let* ((choice (completing-read "Select target pane: "
+840:                                        (mapcar #'car all-panes)
+841:                                        nil t))
+842:                (target (cdr (assoc choice all-panes))))
+
+### herdr
+sources/herdr/herdr-agents.el
+202:         (when (equal workspace-id (alist-get 'workspace_id pane))
+203:           (let* ((id (alist-get 'pane_id pane))
+204:                  (shell (herdr-state-shell-pane-p pane))
+205:                  (agent (if shell "shell*" (alist-get 'agent pane)))
+206:                  (status (unless shell (alist-get 'agent_status pane)))
+207:                  (glyph (if shell "~"
+sources/herdr/herdr-call.el
+40:                                  (annotation-function . herdr-call--annotate))
+41:                     (complete-with-action action methods string predicate)))))
+42:     (completing-read "herdr method: " table nil t)))
+43: 
+44: (defun herdr-call--read-value (method name)
+45:   "Read METHOD's parameter NAME, offering pane pickers where they fit."
+sources/herdr/herdr-cmd.el
+137: scrollback with terminal line-wrapping undone, which is what makes the
+138: result greppable."
+139:   (completing-read (or prompt "Source: ")
+140:                    '("recent_unwrapped" "recent" "visible" "detection")
+141:                    nil t nil nil "recent_unwrapped"))
+142: 
+186:   "Resize the split around PANE-ID by AMOUNT toward DIRECTION."
+187:   (interactive
+188:    (list (completing-read "Direction: " '("left" "right" "up" "down") nil t)
+189:          (read-number "Amount: " 0.1)))
+190:   (herdr-rpc-call "pane.resize"
+191:                   `((pane_id . ,(or pane-id (herdr-select-target-pane)))
+196:   "Swap PANE-ID with its neighbour toward DIRECTION."
+197:   (interactive
+198:    (list (completing-read "Direction: " '("left" "right" "up" "down") nil t)))
+199:   (herdr-rpc-call "pane.swap"
+200:                   `((pane_id . ,(or pane-id (herdr-select-target-pane)))
+201:                     (direction . ,direction))))
+547:   (interactive
+548:    (list (read-string "Agent name: ")
+549:          (completing-read "Agent kind: " herdr-agent-kinds nil nil)))
+550:   (let ((pane (or pane-id (herdr-select-available-shell))))
+551:     (when (eq pane :create-new)
+552:       (setq pane (herdr-cmd--split-new-shell)))
+sources/herdr/herdr-rpc.el
+113:   (let ((path (expand-file-name herdr-socket-path)))
+114:     (condition-case err
+115:         (make-network-process
+116:          :name name :family 'local :service path
+117:          :coding 'utf-8-unix :noquery t
+118:          :filter filter :sentinel sentinel)
+142:     (unwind-protect
+143:         (progn
+144:           (process-send-string proc (herdr-rpc-encode (herdr-rpc--next-id)
+
+### emacs-herdr
+sources/emacs-herdr/herdr.el
+175:   "Run herdr with ARGS asynchronously, call CALLBACK with parsed JSON or nil."
+176:   (let ((buf (generate-new-buffer " *herdr-async*")))
+177:     (make-process
+178:      :name "herdr-async"
+179:      :buffer buf
+180:      :command (cons herdr-executable args)
+277:     (unless candidates
+278:       (user-error "No herdr agents"))
+279:     (cdr (assoc (completing-read (or prompt "Agent: ") candidates nil t)
+280:                 candidates))))
+281: 
+282: ;;; Workspace labels
+353:   (let ((buf (generate-new-buffer herdr--buffer-name)))
+354:     (with-current-buffer buf
+355:       (ghostel-mode)
+356:       ;; A side-by-side popup halves the PTY width; Herdr's reflow then
+357:       ;; exposes rows that agents drew full-width as duplicated/merged lines.
+358:       (setq-local split-width-threshold nil))
+359:     (pop-to-buffer buf '((display-buffer-same-window)))
+360:     (ghostel-exec buf herdr-executable nil '((kind . herdr)))
+361:     buf))
+362: 
+363: ;;;###autoload
+401:          (buf (generate-new-buffer (herdr--attach-buffer-name agent))))
+402:     (with-current-buffer buf
+403:       (ghostel-mode)
+404:       (setq-local herdr--attached-pane pane
+405:                   split-width-threshold nil))
+406:     (pop-to-buffer buf '((display-buffer-same-window)))
+
+### ghostherd
+sources/ghostherd/lisp/ghostherd-client.el
+107:   "Open a socket connection to PATH.
+108: NAME names the process; FILTER and SENTINEL are attached to it."
+109:   (make-network-process
+110:    :name name
+111:    :family 'local
+112:    :service path
+130:     (message "ghostherd: herdr not running, starting `%s server'..."
+131:              ghostherd-herdr-program)
+132:     (call-process-shell-command cmd)
+133:     (let ((deadline (+ (float-time) ghostherd-herdr-start-timeout)))
+134:       (catch 'up
+135:         (while (< (float-time) deadline)
+136:           (when (file-exists-p path)
+137:             (condition-case nil
+138:                 (let ((probe (make-network-process
+139:                               :name "ghostherd-herdr-probe"
+140:                               :family 'local :service path :noquery t)))
+141:                   (delete-process probe)
+199:     (unwind-protect
+200:         (progn
+201:           (process-send-string
+202:            proc
+203:            (ghostherd-client--json-encode
+204:             `((id . ,id)
+335:                    #'ghostherd-client--events-sentinel)))
+336:         (setq ghostherd-client--events-buffer "")
+337:         (process-send-string
+338:          proc
+339:          (ghostherd-client--json-encode
+340:           `((id . "gh_sub")
+sources/ghostherd/lisp/ghostherd-sidebar.el
+195:                         (ghostherd-sidebar--tab-at-point)))
+196:          (default (car (rassoc at-point candidates)))
+197:          (chosen (completing-read-multiple
+198:                   "Terminals (comma-separated): " candidates nil t
+199:                   nil nil default)))
+200:     (delete-dups (delq nil (mapcar (lambda (name) (cdr (assoc name candidates)))
+267:             (select-window (car windows))))
+268:       (error
+269:        (set-window-configuration old-config)
+270:        (unless already-saved
+271:          (remhash frame ghostherd-sidebar--saved-configurations))
+272:        (signal (car err) (cdr err))))))
+281:       (user-error "No saved ghostherd layout for this frame"))
+282:     (remhash frame ghostherd-sidebar--saved-configurations)
+283:     (set-window-configuration configuration)

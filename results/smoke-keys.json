@@ -1,0 +1,42 @@
+[
+  {
+    "at": 2.304,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.605,
+    "keys": "ansi-term",
+    "input_hex": "616e73692d7465726d"
+  },
+  {
+    "at": 3.105,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 3.905,
+    "keys": "accept default shell",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.905,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 5.105,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.105,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 6.306,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

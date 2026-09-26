@@ -1,0 +1,822 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: cooked</h1>
+<p>Fonte: https://github.com/vodik/cooked.git</p>
+<p>Revisione: <code>dd8e9fcc3c09d85d9dd598682dbe6390bd138262</code>.</p>
+<h2>lisp/cooked-command-decorations.el</h2>
+<ul>
+<li>L43: <code>(require 'cooked)</code></li>
+<li>L44: <code>(require 'cooked-mode)</code></li>
+<li>L45: <code>(require 'seq)</code></li>
+<li>L57: <code>(defcustom cooked-command-decoration-bitmap 'cooked-command-bar</code></li>
+<li>L110: <code>(defvar cooked-command-decorations--marker-map</code></li>
+<li>L112: <code>(define-key map [mouse-1] #'cooked-command-decorations--click)</code></li>
+<li>L113: <code>(define-key map [left-fringe mouse-1] #'cooked-command-decorations--click)</code></li>
+<li>L123: <code>(defun cooked-command-decorations--anchor (command)</code></li>
+<li>L134: <code>(defun cooked-command-decorations--decoration-at (position command)</code></li>
+<li>L174: <code>(defun cooked-command-decorations--decoration (command)</code></li>
+<li>L181: <code>(defun cooked-command-decorations--place (overlay pos face help &amp;optional keymap)</code></li>
+<li>L225: <code>(defun cooked-command-decorations--paint (command)</code></li>
+<li>L278: <code>(defun cooked-command-decorations--drop-running ()</code></li>
+<li>L284: <code>(defun cooked-command-decorations--sync-running ()</code></li>
+<li>L311: <code>(defun cooked-command-decorations--started (_anchor)</code></li>
+<li>L319: <code>(defun cooked-command-decorations--add (command)</code></li>
+<li>L337: <code>(defun cooked-command-decorations--rearm (_beg _end)</code></li>
+<li>L385: <code>(defun cooked-command-decorations--help (command)</code></li>
+<li>L391: <code>(defun cooked-command-decorations--running-help ()</code></li>
+<li>L401: <code>(defun cooked-command-decorations--clear-live ()</code></li>
+<li>L432: <code>(defun cooked-command-decorations--command-at (position)</code></li>
+<li>L447: <code>(defun cooked-command-decorations--act (command)</code></li>
+<li>L468: <code>(defun cooked-command-decorations-menu ()</code></li>
+<li>L481: <code>(defun cooked-command-decorations--click (event)</code></li>
+<li>L489: <code>(define-key cooked-mode-map (kbd "C-c C-o") #'cooked-command-decorations-menu)</code></li>
+<li>L491: <code>(provide 'cooked-command-decorations)</code></li>
+</ul>
+<h2>lisp/cooked-command.el</h2>
+<ul>
+<li>L24: <code>(require 'cl-lib)</code></li>
+<li>L25: <code>(require 'seq)</code></li>
+<li>L26: <code>(require 'cooked-util)</code></li>
+<li>L63: <code>(defun cooked--command-start-position (command)</code></li>
+<li>L67: <code>(defun cooked--command-end-position (command)</code></li>
+<li>L71: <code>(defun cooked--command-prompt-position (command)</code></li>
+<li>L93: <code>(defcustom cooked-command-started-functions nil</code></li>
+<li>L117: <code>(defun cooked--running-anchor ()</code></li>
+<li>L130: <code>(defcustom cooked-command-finished-functions nil</code></li>
+<li>L152: <code>(defun cooked--mark-command-end (code end)</code></li>
+<li>L179: <code>(defun cooked-last-exit-code ()</code></li>
+<li>L184: <code>(defun cooked-goto-last-command ()</code></li>
+<li>L199: <code>(defun cooked--command-at (point)</code></li>
+<li>L207: <code>(defun cooked--prompt-starts ()</code></li>
+<li>L229: <code>(defun cooked--command-region (command &amp;optional outer)</code></li>
+<li>L248: <code>(defun cooked--command-around (position)</code></li>
+<li>L286: <code>(defun cooked--goto-nth-command (n direction)</code></li>
+<li>L299: <code>(defun cooked-previous-command (&amp;optional n)</code></li>
+<li>L309: <code>(defun cooked-next-command (&amp;optional n)</code></li>
+<li>L315: <code>(defun cooked--output-region-at-point ()</code></li>
+<li>L336: <code>(defun cooked--command-here (&amp;optional command)</code></li>
+<li>L352: <code>(defun cooked-show-output (&amp;optional command)</code></li>
+<li>L377: <code>(defun cooked-write-output (file &amp;optional outer command)</code></li>
+<li>L398: <code>(defun cooked-copy-command (&amp;optional command)</code></li>
+<li>L405: <code>(defun cooked-copy-output (&amp;optional command)</code></li>
+<li>L412: <code>(provide 'cooked-command)</code></li>
+</ul>
+<h2>lisp/cooked-completion.el</h2>
+<ul>
+<li>L24: <code>(require 'cooked)</code></li>
+<li>L53: <code>(defun cooked--executable-table ()</code></li>
+<li>L63: <code>(defun cooked-flush-executables ()</code></li>
+<li>L68: <code>(defun cooked--completion-bounds ()</code></li>
+<li>L76: <code>(defun cooked--native-completion ()</code></li>
+<li>L107: <code>(defun cooked-completion-at-point ()</code></li>
+<li>L120: <code>(provide 'cooked-completion)</code></li>
+</ul>
+<h2>lisp/cooked-deco.el</h2>
+<ul>
+<li>L25: <code>(require 'cooked-util)</code></li>
+<li>L26: <code>(require 'cooked-face)</code></li>
+<li>L27: <code>(require 'cooked-glyph)</code></li>
+<li>L34: <code>(defcustom cooked-inline-images t</code></li>
+<li>L48: <code>(defcustom cooked-box-drawing-images t</code></li>
+<li>L102: <code>(defcustom cooked-box-glyph-run-cache-limit 512</code></li>
+<li>L240: <code>(defun cooked--cell-size (window)</code></li>
+<li>L261: <code>(defun cooked--deco-cell-size ()</code></li>
+<li>L293: <code>(defun cooked--box-glyph-cell (bits size &amp;optional phase)</code></li>
+<li>L306: <code>(defun cooked--box-glyph-bits (bits size &amp;optional phase count)</code></li>
+<li>L319: <code>(defun cooked--box-glyph-ascent (window height)</code></li>
+<li>L339: <code>(defun cooked--box-phase (bits size column row)</code></li>
+<li>L359: <code>(defun cooked--box-glyph-image (bits window size phase &amp;optional count)</code></li>
+<li>L385: <code>(defun cooked--uncolored (image)</code></li>
+<li>L412: <code>(defun cooked--box-glyph-image-1 (bits window size phase count)</code></li>
+<li>L456: <code>(defun cooked--apply-deco (start deco &amp;optional origin row)</code></li>
+<li>L519: <code>(defun cooked--reset-images ()</code></li>
+<li>L542: <code>(defun cooked--image-order-append (id)</code></li>
+<li>L553: <code>(defun cooked--image-order-set (order)</code></li>
+<li>L563: <code>(defun cooked--install-images (images)</code></li>
+<li>L591: <code>(defcustom cooked-image-cache-size (* 64 1024 1024)</code></li>
+<li>L650: <code>(defun cooked--displayed-image-table ()</code></li>
+<li>L660: <code>(defun cooked--evict-images (&amp;optional arriving)</code></li>
+<li>L715: <code>(defun cooked--image-displayed-p (id)</code></li>
+<li>L725: <code>(defun cooked--forget-image (id)</code></li>
+<li>L758: <code>(defun cooked--flush-image-specs (id)</code></li>
+<li>L798: <code>(defun cooked--image-ids-between (beg end)</code></li>
+<li>L812: <code>(defun cooked--release-images (beg end)</code></li>
+<li>L821: <code>(defun cooked--collect-images (ids)</code></li>
+<li>L844: <code>(defun cooked--image-spec (id cells size)</code></li>
+<li>L885: <code>(defun cooked--deco-image (deco size window &amp;optional count)</code></li>
+<li>L923: <code>(defun cooked--deco-display (deco image size)</code></li>
+<li>L962: <code>(defun cooked--deco-display-value (deco size window)</code></li>
+<li>L991: <code>(defun cooked--apply-image-deco (start packed size)</code></li>
+<li>L1058: <code>(defun cooked--apply-glyph-deco (start packed window size origin row)</code></li>
+<li>L1112: <code>(defun cooked--rescale-deco ()</code></li>
+<li>L1193: <code>(defun cooked--rescale-deco-on-zoom (_symbol _newval operation where)</code></li>
+<li>L1223: <code>(defun cooked--flush-deco-cache ()</code></li>
+<li>L1233: <code>(provide 'cooked-deco)</code></li>
+</ul>
+<h2>lisp/cooked-evil.el</h2>
+<ul>
+<li>L52: <code>;; 'cooked-input-map' included.  A plain '(define-key cooked-input-map ...)'</code></li>
+<li>L74: <code>(require 'cooked-mode)</code></li>
+<li>L75: <code>(require 'cl-lib)</code></li>
+<li>L82: <code>(defcustom cooked-evil-integration t</code></li>
+<li>L88: <code>(defcustom cooked-evil-child-state 'emacs</code></li>
+<li>L107: <code>(defcustom cooked-evil-normal-state-render 'still</code></li>
+<li>L124: <code>(defcustom cooked-evil-visual-state-render 'frozen</code></li>
+<li>L136: <code>(defcustom cooked-evil-hybrid-insert t</code></li>
+<li>L144: <code>(defun cooked-evil-sync ()</code></li>
+<li>L166: <code>(defun cooked-evil--come-back-to (state)</code></li>
+<li>L186: <code>(defun cooked-evil--input-mode ()</code></li>
+<li>L209: <code>(defun cooked-evil--state-changed ()</code></li>
+<li>L227: <code>(defcustom cooked-evil-insert-state-submits t</code></li>
+<li>L245: <code>(defcustom cooked-evil-normal-state-pastes t</code></li>
+<li>L272: <code>(defun cooked-evil-paste ()</code></li>
+<li>L291: <code>(defun cooked-evil-undo (count)</code></li>
+<li>L312: <code>(defun cooked-evil--visual-writable-p ()</code></li>
+<li>L326: <code>(defun cooked-evil-visual-case ()</code></li>
+<li>L363: <code>(defun cooked-evil--goto-input-first-non-blank ()</code></li>
+<li>L371: <code>(defun cooked-evil-insert-line (count &amp;optional vcount)</code></li>
+<li>L400: <code>(defcustom cooked-evil-command-text-object "c"</code></li>
+<li>L414: <code>(defcustom cooked-evil-section-motions t</code></li>
+<li>L423: <code>(defun cooked-evil--command-at-point (outer)</code></li>
+<li>L429: <code>(defun cooked-evil--command-range (count outer)</code></li>
+<li>L567: <code>(provide 'cooked-evil)</code></li>
+</ul>
+<h2>lisp/cooked-face.el</h2>
+<ul>
+<li>L16: <code>(require 'cooked-util)</code></li>
+<li>L30: <code>(defcustom cooked-color-names</code></li>
+<li>L52: <code>(defun cooked--xterm-256 (index)</code></li>
+<li>L64: <code>(defun cooked--color (spec)</code></li>
+<li>L79: <code>(defun cooked--flush-face-cache (&amp;rest _)</code></li>
+<li>L107: <code>(defun cooked--underline-spec (attrs ul)</code></li>
+<li>L207: <code>(defun cooked--face-key (fgc bgc ulc attrs)</code></li>
+<li>L230: <code>(defun cooked--face-packed (packed i)</code></li>
+<li>L283: <code>(defun cooked--face (fg bg attrs &amp;optional ul)</code></li>
+<li>L306: <code>(defun cooked--face-build (fg bg attrs ul)</code></li>
+<li>L331: <code>(provide 'cooked-face)</code></li>
+</ul>
+<h2>lisp/cooked-file-link.el</h2>
+<ul>
+<li>L48: <code>(require 'cooked)</code></li>
+<li>L49: <code>(require 'cooked-link)</code></li>
+<li>L50: <code>(require 'ffap)</code></li>
+<li>L51: <code>(require 'compile)</code></li>
+<li>L52: <code>(require 'project)</code></li>
+<li>L54: <code>(defcustom cooked-file-link-highlight t</code></li>
+<li>L63: <code>(defcustom cooked-file-link-scan-limit 400</code></li>
+<li>L74: <code>(defcustom cooked-file-link-display #'find-file-other-window</code></li>
+<li>L84: <code>(defcustom cooked-file-link-error-rules '(gnu gcc-include)</code></li>
+<li>L117: <code>(defun cooked-file-link--split (string)</code></li>
+<li>L135: <code>(defun cooked-file-link--exists (name)</code></li>
+<li>L162: <code>(defun cooked-file-link--at-point ()</code></li>
+<li>L174: <code>(defun cooked-file-link--group (spec)</code></li>
+<li>L181: <code>(defun cooked-file-link--position (name)</code></li>
+<li>L210: <code>(defun cooked-file-link-follow ()</code></li>
+<li>L222: <code>(defun cooked-file-link-scan (beg end)</code></li>
+<li>L264: <code>(provide 'cooked-file-link)</code></li>
+</ul>
+<h2>lisp/cooked-glyph.el</h2>
+<ul>
+<li>L33: <code>(require 'cl-lib)</code></li>
+<li>L69: <code>(defun cooked--box-block-p (bits)</code></li>
+<li>L73: <code>(defun cooked--box-shade-p (bits)</code></li>
+<li>L78: <code>(defun cooked--box-weight (bits edge)</code></li>
+<li>L82: <code>(defun cooked--box-dashes (bits)</code></li>
+<li>L100: <code>(defun cooked--bitmap-make (width height)</code></li>
+<li>L118: <code>(defun cooked--bitmap-fill (bitmap x0 y0 x1 y1 &amp;optional clear)</code></li>
+<li>L145: <code>(defun cooked--bitmap-extent (bitmap axis)</code></li>
+<li>L151: <code>(defun cooked--bitmap-fill-axis (bitmap axis along0 along1 across0 across1 &amp;optional clear)</code></li>
+<li>L158: <code>(defun cooked--bitmap-set-axis (bitmap axis along across)</code></li>
+<li>L164: <code>(defun cooked--bitmap-stroke (bitmap axis along0 along1 center thickness)</code></li>
+<li>L176: <code>(defun cooked--bitmap-band (bitmap axis along0 along1 &amp;optional clear)</code></li>
+<li>L188: <code>(defun cooked--bitmap-pack (bitmap)</code></li>
+<li>L213: <code>(defun cooked--box-edge-span (bitmap edge cx cy)</code></li>
+<li>L225: <code>(defun cooked--box-draw-edge (bitmap edge weight cx cy light heavy)</code></li>
+<li>L240: <code>(defun cooked--box-draw-arc (bitmap cx cy thickness down-p right-p)</code></li>
+<li>L277: <code>(defun cooked--box-draw-diagonal (bitmap thickness forward backward)</code></li>
+<li>L331: <code>(defun cooked--box-draw-dashes (bitmap axis count)</code></li>
+<li>L365: <code>(defun cooked--box-draw-line (bitmap bits)</code></li>
+<li>L410: <code>(defun cooked--box-draw-shade (bitmap level phase)</code></li>
+<li>L436: <code>(defun cooked--box-draw-quadrant (bitmap mask)</code></li>
+<li>L449: <code>(defun cooked--box-draw-block (bitmap bits phase)</code></li>
+<li>L471: <code>(defun cooked--bitmap-repeat (bitmap count)</code></li>
+<li>L505: <code>(defun cooked--render-box-glyph-cell (bits width height &amp;optional phase)</code></li>
+<li>L523: <code>(defun cooked--pack-box-glyph-cell (bitmap count)</code></li>
+<li>L536: <code>(defun cooked--render-box-glyph (bits width height &amp;optional phase count)</code></li>
+<li>L548: <code>(provide 'cooked-glyph)</code></li>
+</ul>
+<h2>lisp/cooked-keys.el</h2>
+<ul>
+<li>L36: <code>(require 'cl-lib)</code></li>
+<li>L37: <code>(require 'cooked)</code></li>
+<li>L38: <code>(require 'cooked-util)</code></li>
+<li>L39: <code>(require 'cooked-mouse)</code></li>
+<li>L182: <code>(defun cooked--key-sequence (entry)</code></li>
+<li>L199: <code>(defun cooked--modifier-param (mods)</code></li>
+<li>L206: <code>(defun cooked--app-keypad-p ()</code></li>
+<li>L224: <code>(defun cooked--encode-literal (entry code param mods)</code></li>
+<li>L242: <code>(defun cooked--encode-entry (entry param mods)</code></li>
+<li>L280: <code>(defun cooked--encode-event (event)</code></li>
+<li>L317: <code>(defun cooked-send-key ()</code></li>
+<li>L329: <code>(defun cooked-send-meta-key ()</code></li>
+<li>L346: <code>(defvar cooked-send-string-map</code></li>
+<li>L349: <code>(define-key map (kbd "S-&lt;return&gt;") #'newline)</code></li>
+<li>L350: <code>(define-key map (kbd "M-RET") #'newline)</code></li>
+<li>L369: <code>(defun cooked-send-string (string)</code></li>
+<li>L384: <code>(defcustom cooked-paste-confirm-lines t</code></li>
+<li>L398: <code>(defun cooked--bracketed-paste (text)</code></li>
+<li>L408: <code>(defun cooked--send-paste (text)</code></li>
+<li>L427: <code>(defun cooked-paste ()</code></li>
+<li>L476: <code>(defcustom cooked-key-overrides nil</code></li>
+<li>L554: <code>(defun cooked--foreground-program ()</code></li>
+<li>L584: <code>(defun cooked--update-foreground-label ()</code></li>
+<li>L604: <code>(defun cooked--override-applies-p (condition)</code></li>
+<li>L611: <code>(defun cooked--override-bytes-for (action event)</code></li>
+<li>L625: <code>(defun cooked-send-override ()</code></li>
+<li>L634: <code>(defun cooked--build-override-map ()</code></li>
+<li>L649: <code>(define-key map keys action)</code></li>
+<li>L655: <code>(define-key map keys #'cooked-send-override)))))))</code></li>
+<li>L658: <code>(defun cooked--update-key-overrides ()</code></li>
+<li>L678: <code>(defcustom cooked-key-protocol-overrides '(("\\'claude\\'" . kitty))</code></li>
+<li>L719: <code>(defun cooked--assumed-key-protocol ()</code></li>
+<li>L744: <code>(defun cooked-meta-x ()</code></li>
+<li>L772: <code>(defun cooked--exception-code (key)</code></li>
+<li>L784: <code>(defun cooked--build-passthrough-map (exceptions &amp;optional reserve-meta)</code></li>
+<li>L806: <code>(define-key map [remap self-insert-command] #'cooked-send-key)</code></li>
+<li>L811: <code>(define-key map (vector code) #'cooked-send-key)))</code></li>
+<li>L819: <code>(define-key map (vector (intern (concat prefix (symbol-name (car entry)))))</code></li>
+<li>L826: <code>(define-key map (vector event) #'cooked-mouse-event))</code></li>
+<li>L837: <code>(defun cooked--build-meta-overlay (map)</code></li>
+<li>L864: <code>(define-key esc (vector code) #'cooked-send-meta-key)))</code></li>
+<li>L865: <code>(define-key overlay (vector meta-prefix-char) esc)</code></li>
+<li>L866: <code>(define-key overlay [escape] #'cooked-send-key)</code></li>
+<li>L870: <code>(defun cooked--frame-keymap-type (&amp;optional frame)</code></li>
+<li>L891: <code>(defun cooked--forwarding-map (map)</code></li>
+<li>L915: <code>(defun cooked--replace-keymap (map fresh)</code></li>
+<li>L931: <code>(defun cooked--passthrough-setter (map &amp;optional reserve-meta)</code></li>
+<li>L947: <code>(defcustom cooked-raw-exceptions '("C-g" "C-x" "C-h" "C-u" "C-l")</code></li>
+<li>L988: <code>(defvar cooked-raw-map</code></li>
+<li>L992: <code>(defvar cooked-command-map</code></li>
+<li>L1003: <code>(defvar cooked-alt-map</code></li>
+<li>L1014: <code>(defcustom cooked-semi-exceptions '("C-g" "C-x" "C-h" "C-u" "C-l")</code></li>
+<li>L1028: <code>(defvar cooked-semi-map</code></li>
+<li>L1061: <code>(defvar cooked-peek-map</code></li>
+<li>L1063: <code>(define-key map [remap self-insert-command] #'cooked--peek-resume-and-send)</code></li>
+<li>L1064: <code>(define-key map (kbd "RET") #'cooked--peek-resume-and-send)</code></li>
+<li>L1065: <code>(define-key map (kbd "&lt;return&gt;") #'cooked--peek-resume-and-send)</code></li>
+<li>L1079: <code>(defun cooked-send-literal-key ()</code></li>
+<li>L1102: <code>(defun cooked--build-input-map (delegated)</code></li>
+<li>L1111: <code>(define-key map (kbd "RET") #'cooked-send-input)</code></li>
+<li>L1112: <code>(define-key map (kbd "&lt;S-return&gt;") #'cooked-newline)</code></li>
+<li>L1113: <code>(define-key map (kbd "C-d") #'cooked-delete-char-or-eof)</code></li>
+<li>L1114: <code>(define-key map (kbd "TAB") #'completion-at-point)</code></li>
+<li>L1115: <code>(define-key map (kbd "M-p") #'cooked-previous-input)</code></li>
+<li>L1116: <code>(define-key map (kbd "M-n") #'cooked-next-input)</code></li>
+<li>L1121: <code>(define-key map [remap move-beginning-of-line] #'cooked-beginning-of-line)</code></li>
+<li>L1125: <code>(define-key map (kbd key) #'cooked-delegate-this-key))</code></li>
+<li>L1128: <code>(defvar cooked-input-map</code></li>
+<li>L1139: <code>(defun cooked-delegate-key (key)</code></li>
+<li>L1175: <code>(defun cooked-delegate-this-key ()</code></li>
+<li>L1183: <code>(defcustom cooked-delegate-keys '("C-r")</code></li>
+<li>L1209: <code>(provide 'cooked-keys)</code></li>
+</ul>
+<h2>lisp/cooked-link.el</h2>
+<ul>
+<li>L53: <code>(require 'seq)</code></li>
+<li>L54: <code>(require 'goto-addr)</code></li>
+<li>L55: <code>(require 'browse-url)</code></li>
+<li>L56: <code>(require 'thingatpt)</code></li>
+<li>L64: <code>(require 'cooked-util)</code></li>
+<li>L76: <code>(defcustom cooked-detect-links t</code></li>
+<li>L86: <code>(defcustom cooked-detect-links-on-alt-screen nil</code></li>
+<li>L145: <code>(defun cooked--install-links (links)</code></li>
+<li>L159: <code>(defun cooked-link-uri (&amp;optional pos)</code></li>
+<li>L167: <code>(defun cooked--link-forwarding-keys-p ()</code></li>
+<li>L171: <code>(defun cooked--open-link-at-point ()</code></li>
+<li>L186: <code>(defun cooked-follow-link (&amp;optional event)</code></li>
+<li>L220: <code>(defun cooked-follow-link-at-point ()</code></li>
+<li>L231: <code>(defvar-keymap cooked-link-map</code></li>
+<li>L249: <code>(defun cooked-link--claimed-p (pos)</code></li>
+<li>L272: <code>(defun cooked-link--propertize (beg end &amp;rest extra)</code></li>
+<li>L289: <code>(defun cooked--link-help-echo (_window object pos)</code></li>
+<li>L312: <code>(defun cooked--render-link-spans (start spans)</code></li>
+<li>L342: <code>(defun cooked--url-scheme-regexp ()</code></li>
+<li>L350: <code>(defun cooked--fontify-links (beg end)</code></li>
+<li>L396: <code>(provide 'cooked-link)</code></li>
+</ul>
+<h2>lisp/cooked-mode-line.el</h2>
+<ul>
+<li>L16: <code>(require 'cooked)</code></li>
+<li>L17: <code>(require 'cooked-command)</code></li>
+<li>L57: <code>(defcustom cooked-integration-hint t</code></li>
+<li>L67: <code>(defcustom cooked-integration-hint-delay 3</code></li>
+<li>L87: <code>(defun cooked--mode-line-bare (state)</code></li>
+<li>L106: <code>(defun cooked--schedule-integration-hint (buffer)</code></li>
+<li>L132: <code>(defun cooked--mode-line-click (command help)</code></li>
+<li>L142: <code>(defun cooked--mode-line-state ()</code></li>
+<li>L164: <code>(defun cooked--mode-line-subject ()</code></li>
+<li>L185: <code>(defun cooked--mode-line ()</code></li>
+<li>L239: <code>(defcustom cooked-sticky-scroll nil</code></li>
+<li>L259: <code>(defcustom cooked-sticky-scroll-style 'window</code></li>
+<li>L282: <code>(defun cooked--sticky-command (window)</code></li>
+<li>L297: <code>(defun cooked--sticky-label (input width)</code></li>
+<li>L308: <code>(defun cooked--sticky-header ()</code></li>
+<li>L344: <code>(provide 'cooked-mode-line)</code></li>
+</ul>
+<h2>lisp/cooked-mode.el</h2>
+<ul>
+<li>L26: <code>(require 'cl-lib)</code></li>
+<li>L27: <code>(require 'format-spec)</code></li>
+<li>L28: <code>(require 'seq)</code></li>
+<li>L29: <code>(require 'cooked)</code></li>
+<li>L30: <code>(require 'cooked-osc)</code></li>
+<li>L31: <code>(require 'cooked-render)</code></li>
+<li>L32: <code>(require 'cooked-scrollback)</code></li>
+<li>L33: <code>(require 'cooked-keys)</code></li>
+<li>L34: <code>(require 'cooked-completion)</code></li>
+<li>L35: <code>(require 'cooked-mouse)</code></li>
+<li>L36: <code>(require 'cooked-shell-integration)</code></li>
+<li>L37: <code>(require 'cooked-mode-line)</code></li>
+<li>L38: <code>(require 'cooked-secret)</code></li>
+<li>L39: <code>(require 'comint)</code></li>
+<li>L57: <code>(defcustom cooked-buffer-name "*cooked: %p*"</code></li>
+<li>L77: <code>(defcustom cooked-buffer-name-auto-update nil</code></li>
+<li>L88: <code>(defun cooked--format-buffer-name (dir title host)</code></li>
+<li>L95: <code>(defun cooked--buffer-name (&amp;optional directory)</code></li>
+<li>L101: <code>(defun cooked--buffer-name-shows-title-p ()</code></li>
+<li>L113: <code>(defun cooked--update-buffer-name ()</code></li>
+<li>L135: <code>(defcustom cooked-rejoin-wrapped-lines t</code></li>
+<li>L147: <code>(defun cooked-toggle-rejoin-wrapped-lines ()</code></li>
+<li>L174: <code>(defcustom cooked-shell (or (bound-and-true-p explicit-shell-file-name) shell-file-name)</code></li>
+<li>L194: <code>(defun cooked--track-wandering ()</code></li>
+<li>L234: <code>(defun cooked--snap-to-cursor ()</code></li>
+<li>L286: <code>(defvar cooked-mode-map)                ; 'define-derived-mode' below makes it</code></li>
+<li>L288: <code>(defun cooked--peek-resume-and-send ()</code></li>
+<li>L300: <code>(defun cooked--resume-forwarding ()</code></li>
+<li>L323: <code>(defun cooked-toggle-peek ()</code></li>
+<li>L357: <code>(defun cooked-send-input ()</code></li>
+<li>L378: <code>(defun cooked--send-input-string (text)</code></li>
+<li>L418: <code>(defun cooked-newline ()</code></li>
+<li>L454: <code>(defun cooked--replace-input (text)</code></li>
+<li>L464: <code>(defun cooked--history-record (text)</code></li>
+<li>L475: <code>(defun cooked--history-move (delta)</code></li>
+<li>L496: <code>(defun cooked--history-key (key n)</code></li>
+<li>L510: <code>(defun cooked-previous-input (&amp;optional n)</code></li>
+<li>L525: <code>(defun cooked-next-input (&amp;optional n)</code></li>
+<li>L534: <code>(defun cooked--eof-byte ()</code></li>
+<li>L550: <code>(defun cooked-delete-char-or-eof ()</code></li>
+<li>L557: <code>(defun cooked-send-eof ()</code></li>
+<li>L574: <code>(defun cooked--send-job-control (session key signal)</code></li>
+<li>L599: <code>(defun cooked-suspend ()</code></li>
+<li>L607: <code>(defun cooked-quit ()</code></li>
+<li>L620: <code>(defun cooked-interrupt ()</code></li>
+<li>L633: <code>(defun cooked-kill-session ()</code></li>
+<li>L656: <code>(defun cooked-continue ()</code></li>
+<li>L680: <code>(defun cooked--resample-mode ()</code></li>
+<li>L737: <code>(defun cooked--guard-insertion ()</code></li>
+<li>L783: <code>(defun cooked--set-mode (mode)</code></li>
+<li>L792: <code>(defcustom cooked-state-change-hook nil</code></li>
+<li>L838: <code>(defun cooked--default-input-mode ()</code></li>
+<li>L847: <code>(defun cooked--state-keymap (mode policy)</code></li>
+<li>L886: <code>(defun cooked--refresh-keymap (&amp;optional quiet)</code></li>
+<li>L986: <code>(defun cooked--get-old-input ()</code></li>
+<li>L996: <code>(defun cooked-delete-output ()</code></li>
+<li>L1033: <code>(defun cooked-toggle-fold ()</code></li>
+<li>L1068: <code>(defun cooked-rerun-command (&amp;optional command)</code></li>
+<li>L1094: <code>(defun cooked--sync-size (&amp;optional _frame)</code></li>
+<li>L1165: <code>(defun cooked--session-cell-size ()</code></li>
+<li>L1176: <code>(defun cooked--frame-size-changed (frame)</code></li>
+<li>L1190: <code>(defun cooked--keymap-frame-stale-p (&amp;optional frame)</code></li>
+<li>L1201: <code>(defun cooked--window-selection-changed (frame)</code></li>
+<li>L1234: <code>(defun cooked--user-window ()</code></li>
+<li>L1245: <code>(defun cooked--defer (function)</code></li>
+<li>L1257: <code>(defun cooked--update-attention (&amp;rest _)</code></li>
+<li>L1307: <code>(defun cooked--install-global-hooks ()</code></li>
+<li>L1345: <code>(defun cooked--focused-p ()</code></li>
+<li>L1352: <code>(defun cooked--report-focus ()</code></li>
+<li>L1361: <code>(defun cooked--frame-focus-changed (&amp;rest _)</code></li>
+<li>L1369: <code>(defcustom cooked-kill-buffer-on-exit nil</code></li>
+<li>L1386: <code>(defun cooked--kill-buffer-on-exit-p (code)</code></li>
+<li>L1394: <code>(defun cooked--stop-session ()</code></li>
+<li>L1413: <code>(defun cooked--on-exit (code)</code></li>
+<li>L1490: <code>(defun cooked--imenu-prompt-line (command)</code></li>
+<li>L1502: <code>(defun cooked--imenu-label (command)</code></li>
+<li>L1543: <code>(defun cooked--imenu-index ()</code></li>
+<li>L1593: <code>(defun cooked--outline-heading-list ()</code></li>
+<li>L1614: <code>(defun cooked--outline-headings ()</code></li>
+<li>L1623: <code>(defun cooked--outline-search (&amp;optional bound move backward looking-at)</code></li>
+<li>L1665: <code>(defun cooked--outline-level ()</code></li>
+<li>L1670: <code>(defun cooked--session-in-directory (directory)</code></li>
+<li>L1681: <code>(defun cooked--bookmark-record ()</code></li>
+<li>L1717: <code>(defun cooked-bookmark-jump (bookmark)</code></li>
+<li>L1740: <code>(define-derived-mode cooked-mode comint-mode "cooked"</code></li>
+<li>L1900: <code>(define-key cooked-mode-map (kbd "C-c C-c") #'cooked-interrupt)</code></li>
+<li>L1901: <code>(define-key cooked-mode-map (kbd "C-c C-d") #'cooked-send-eof)</code></li>
+<li>L1902: <code>(define-key cooked-mode-map (kbd "C-c C-e") #'cooked-send-string)</code></li>
+<li>L1903: <code>(define-key cooked-mode-map (kbd "C-c M-x") #'cooked-meta-x)</code></li>
+<li>L1904: <code>(define-key cooked-mode-map (kbd "C-c C-z") #'cooked-suspend)</code></li>
+<li>L1905: <code>(define-key cooked-mode-map (kbd "C-c C-y") #'cooked-paste)</code></li>
+<li>L1906: <code>(define-key cooked-mode-map (kbd "C-c C-q") #'cooked-send-literal-key)</code></li>
+<li>L1907: <code>(define-key cooked-mode-map (kbd "C-c C-v") #'cooked-toggle-peek)</code></li>
+<li>L1908: <code>(define-key cooked-mode-map (kbd "C-c C-p") #'cooked-previous-command)</code></li>
+<li>L1909: <code>(define-key cooked-mode-map (kbd "C-c C-n") #'cooked-next-command)</code></li>
+<li>L1910: <code>(define-key cooked-mode-map (kbd "C-c TAB") #'cooked-toggle-fold)</code></li>
+<li>L1911: <code>(define-key cooked-mode-map (kbd "C-c C-l") #'cooked-refresh)</code></li>
+<li>L1917: <code>(define-key cooked-mode-map (kbd "C-c C-&gt;") #'cooked-goto-last-command)</code></li>
+<li>L1923: <code>(define-key cooked-mode-map (kbd "C-c RET") #'cooked-follow-link-at-point)</code></li>
+<li>L1930: <code>(define-key cooked-mode-map (kbd "C-c C-\\") #'cooked-quit)</code></li>
+<li>L1931: <code>(define-key cooked-mode-map (kbd "C-c M-o") #'cooked-clear-scrollback)</code></li>
+<li>L1932: <code>(define-key cooked-mode-map (kbd "C-c SPC") #'cooked-newline)</code></li>
+<li>L1952: <code>(define-key cooked-mode-map [mouse-2] #'cooked-paste)</code></li>
+<li>L1999: <code>(define-key cooked-mode-map (vector 'remap (car remap)) (cdr remap)))</code></li>
+<li>L2034: <code>(define-key cooked-mode-map [menu-bar inout] nil)</code></li>
+<li>L2035: <code>(define-key cooked-mode-map [menu-bar signals] nil)</code></li>
+<li>L2036: <code>(define-key cooked-mode-map [menu-bar completion] nil)</code></li>
+<li>L2193: <code>(defun cooked--context-menu (menu click)</code></li>
+<li>L2233: <code>(defun cooked-kill-input ()</code></li>
+<li>L2239: <code>(defcustom cooked-beginning-of-line-skips-prompt t</code></li>
+<li>L2264: <code>(defun cooked--input-line-start ()</code></li>
+<li>L2279: <code>(defun cooked-beginning-of-line (&amp;optional n)</code></li>
+<li>L2303: <code>(defun cooked--cleanup ()</code></li>
+<li>L2313: <code>(defun cooked--kill-emacs ()</code></li>
+<li>L2339: <code>(defun cooked--live-buffers ()</code></li>
+<li>L2346: <code>(defun cooked--display (buffer action)</code></li>
+<li>L2356: <code>(defun cooked--start-session (&amp;optional command)</code></li>
+<li>L2368: <code>(provide 'cooked-mode)</code></li>
+</ul>
+<h2>lisp/cooked-module.el</h2>
+<ul>
+<li>L24: <code>(require 'cooked-util)</code></li>
+<li>L29: <code>(defcustom cooked-term-name "cooked-256color"</code></li>
+<li>L45: <code>(defun cooked--terminfo-source ()</code></li>
+<li>L49: <code>(defun cooked--terminfo-entry (database name)</code></li>
+<li>L59: <code>(defun cooked--terminfo-usable-p (database name)</code></li>
+<li>L73: <code>(defun cooked--terminfo-install (&amp;optional database)</code></li>
+<li>L92: <code>(defun cooked--terminfo-database ()</code></li>
+<li>L117: <code>(defun cooked--terminfo ()</code></li>
+<li>L126: <code>(defun cooked-version ()</code></li>
+<li>L140: <code>(defun cooked-install-terminfo ()</code></li>
+<li>L157: <code>(defun cooked-install-terminfo-remote (host)</code></li>
+<li>L173: <code>(defcustom cooked-native-module nil</code></li>
+<li>L180: <code>(defun cooked--module-stale-p (built root)</code></li>
+<li>L210: <code>(defun cooked--build-module (root built)</code></li>
+<li>L264: <code>(defun cooked--check-core-drift (built)</code></li>
+<li>L293: <code>(defun cooked--load-module ()</code></li>
+<li>L314: <code>(provide 'cooked-module)</code></li>
+</ul>
+<h2>lisp/cooked-mouse.el</h2>
+<ul>
+<li>L31: <code>(require 'cl-lib)</code></li>
+<li>L32: <code>(require 'cooked)</code></li>
+<li>L33: <code>(require 'cooked-util)</code></li>
+<li>L98: <code>(define-key map (vector event) #'cooked-mouse-event))</code></li>
+<li>L129: <code>(define-key map (vector event) #'cooked-mouse-event))</code></li>
+<li>L190: <code>(defun cooked--set-mouse-state (enabled sgr drag motion)</code></li>
+<li>L225: <code>(defvar cooked--mouse-map-alist</code></li>
+<li>L248: <code>(defcustom cooked-alternate-scroll-lines 3</code></li>
+<li>L254: <code>(defun cooked--alt-scroll-active-p ()</code></li>
+<li>L261: <code>(defun cooked--update-mouse-grab ()</code></li>
+<li>L282: <code>(defun cooked--mouse-cell (posn)</code></li>
+<li>L299: <code>(defun cooked--mouse-report (button row col pressed)</code></li>
+<li>L312: <code>(defun cooked--send-mouse (button row col pressed)</code></li>
+<li>L333: <code>(defun cooked--report-button (button row col pressed)</code></li>
+<li>L341: <code>(defun cooked--report-motion (row col)</code></li>
+<li>L354: <code>(defun cooked--mouse-track (window)</code></li>
+<li>L386: <code>(defun cooked--alt-scroll-keys (button)</code></li>
+<li>L397: <code>(defun cooked--mouse-buffer (window)</code></li>
+<li>L402: <code>(defun cooked-mouse-event ()</code></li>
+<li>L502: <code>(defun cooked--mouse-fallback (event)</code></li>
+<li>L535: <code>(provide 'cooked-mouse)</code></li>
+</ul>
+<h2>lisp/cooked-next-error.el</h2>
+<ul>
+<li>L41: <code>(require 'cooked)</code></li>
+<li>L42: <code>(require 'compile)</code></li>
+<li>L43: <code>(require 'cl-lib)</code></li>
+<li>L56: <code>(defun cooked-next-error--command ()</code></li>
+<li>L78: <code>(defun cooked-next-error--safe-region (command)</code></li>
+<li>L101: <code>(defun cooked-next-error--parse-region (start end)</code></li>
+<li>L131: <code>(defun cooked-next-error--key (loc)</code></li>
+<li>L140: <code>(defun cooked-next-error--locate (matches key)</code></li>
+<li>L149: <code>(defun cooked-next-error--visit (position message)</code></li>
+<li>L159: <code>(defun cooked-next-error-function (n reset)</code></li>
+<li>L182: <code>(defun cooked-next-error--setup ()</code></li>
+<li>L188: <code>(provide 'cooked-next-error)</code></li>
+</ul>
+<h2>lisp/cooked-osc-eval.el</h2>
+<ul>
+<li>L43: <code>(require 'cooked)</code></li>
+<li>L45: <code>(require 'cooked-scrollback)</code></li>
+<li>L56: <code>(defun cooked-osc-eval-visit-file (name)</code></li>
+<li>L61: <code>(defun cooked-osc-eval-visit-file-other-window (name)</code></li>
+<li>L66: <code>(defun cooked-osc-eval-dired (name)</code></li>
+<li>L71: <code>(defcustom cooked-eval-commands nil</code></li>
+<li>L102: <code>(defun cooked-osc-eval-named (payload)</code></li>
+<li>L117: <code>(defun cooked-osc-eval-request (payload)</code></li>
+<li>L147: <code>(provide 'cooked-osc-eval)</code></li>
+</ul>
+<h2>lisp/cooked-osc.el</h2>
+<ul>
+<li>L26: <code>(require 'cooked)</code></li>
+<li>L27: <code>(require 'url-util)</code></li>
+<li>L73: <code>(defun cooked--handle-osc (code bell parts)</code></li>
+<li>L94: <code>(defun cooked--osc-title (parts)</code></li>
+<li>L98: <code>(defun cooked--set-title (title)</code></li>
+<li>L111: <code>(defun cooked--handle-title-stack (push)</code></li>
+<li>L124: <code>(defun cooked--osc-cwd (parts)</code></li>
+<li>L136: <code>(defcustom cooked-allow-color-set nil</code></li>
+<li>L146: <code>(defcustom cooked-allow-notifications nil</code></li>
+<li>L156: <code>(defcustom cooked-notification-rate '(3 . 10)</code></li>
+<li>L180: <code>(defun cooked--notification-clean (text limit)</code></li>
+<li>L186: <code>(defun cooked--notification-allowed-p ()</code></li>
+<li>L196: <code>(defun cooked--notify (title body)</code></li>
+<li>L211: <code>(defun cooked--osc-99-metadata (meta)</code></li>
+<li>L223: <code>(defun cooked--osc-notify (parts)</code></li>
+<li>L251: <code>(defun cooked--osc-notify-777 (parts)</code></li>
+<li>L264: <code>(defun cooked--default-color (kind)</code></li>
+<li>L285: <code>(defun cooked--color-scheme ()</code></li>
+<li>L302: <code>(defun cooked--sync-color-scheme ()</code></li>
+<li>L318: <code>(defun cooked--color-to-osc (color)</code></li>
+<li>L324: <code>(defun cooked--parse-osc-color (spec)</code></li>
+<li>L341: <code>(defun cooked--osc-color (parts)</code></li>
+<li>L359: <code>(defun cooked--set-default-color (kind spec)</code></li>
+<li>L381: <code>(defun cooked--reset-default-color (kind)</code></li>
+<li>L388: <code>(defun cooked--osc-color-reset (_parts)</code></li>
+<li>L455: <code>(defun cooked--osc-announce (payload)</code></li>
+<li>L478: <code>(defun cooked--osc-emacs (parts)</code></li>
+<li>L517: <code>(defcustom cooked-clipboard-write t</code></li>
+<li>L524: <code>(defcustom cooked-clipboard-max-size 100000</code></li>
+<li>L531: <code>(defun cooked--osc-clipboard (parts)</code></li>
+<li>L543: <code>(defun cooked--set-directory (url)</code></li>
+<li>L582: <code>(provide 'cooked-osc)</code></li>
+</ul>
+<h2>lisp/cooked-process.el</h2>
+<ul>
+<li>L125: <code>(require 'cl-lib)</code></li>
+<li>L126: <code>(require 'cooked)</code></li>
+<li>L140: <code>(defcustom cooked-process-rows 8</code></li>
+<li>L149: <code>(defcustom cooked-process-columns 120</code></li>
+<li>L166: <code>(defcustom cooked-process-styled t</code></li>
+<li>L181: <code>(defcustom cooked-process-live-tail t</code></li>
+<li>L243: <code>(defun cooked-process--environment ()</code></li>
+<li>L251: <code>(defun cooked-process--size (buffer)</code></li>
+<li>L259: <code>(defun cooked-process-start (name buffer argv &amp;optional directory)</code></li>
+<li>L310: <code>(defun cooked-process-start-shell-command (name buffer command)</code></li>
+<li>L321: <code>(defun cooked-process--text (block)</code></li>
+<li>L375: <code>(defun cooked-process--emit (text)</code></li>
+<li>L389: <code>(defun cooked-process--remember-rows (rows height)</code></li>
+<li>L408: <code>(defun cooked-process--tail-text ()</code></li>
+<li>L418: <code>(defun cooked-process--refresh-tail (host)</code></li>
+<li>L453: <code>(defun cooked-process--drop-tail ()</code></li>
+<li>L469: <code>(defun cooked-process--pump (host)</code></li>
+<li>L493: <code>(defun cooked-process--residue (host)</code></li>
+<li>L525: <code>(defun cooked-process--finish (host exit)</code></li>
+<li>L542: <code>(defun cooked-process--report (host exit)</code></li>
+<li>L576: <code>(defun cooked-process-reap (host)</code></li>
+<li>L608: <code>(defun cooked-process--buffer-killed ()</code></li>
+<li>L612: <code>(defun cooked-process-interrupt (buffer)</code></li>
+<li>L623: <code>(defun cooked-process-send-string (buffer string)</code></li>
+<li>L639: <code>(defcustom cooked-process-commands nil</code></li>
+<li>L648: <code>(defcustom cooked-process-excluded-modes '(grep-mode)</code></li>
+<li>L661: <code>(defun cooked-process--wanted-p (command)</code></li>
+<li>L666: <code>(defun cooked-process--around-compilation-start (fn command &amp;rest args)</code></li>
+<li>L702: <code>(defun cooked-process--around-kill-compilation (fn &amp;rest args)</code></li>
+<li>L711: <code>(define-minor-mode cooked-process-mode</code></li>
+<li>L733: <code>(provide 'cooked-process)</code></li>
+</ul>
+<h2>lisp/cooked-project.el</h2>
+<ul>
+<li>L28: <code>(require 'project)</code></li>
+<li>L29: <code>(require 'cooked)</code></li>
+<li>L39: <code>(defun cooked-project--session (root new display-action)</code></li>
+<li>L49: <code>(defun cooked-project--here-root ()</code></li>
+<li>L56: <code>(defun cooked-project (&amp;optional new)</code></li>
+<li>L68: <code>(defun cooked-project-other-window (&amp;optional new)</code></li>
+<li>L77: <code>(defun cooked-here (&amp;optional new)</code></li>
+<li>L88: <code>(defun cooked-here-other-window (&amp;optional new)</code></li>
+<li>L111: <code>;;   (keymap-set project-prefix-map "t" #'cooked-project)</code></li>
+<li>L144: <code>(provide 'cooked-project)</code></li>
+</ul>
+<h2>lisp/cooked-render.el</h2>
+<ul>
+<li>L49: <code>(require 'cl-lib)</code></li>
+<li>L50: <code>(require 'seq)</code></li>
+<li>L51: <code>(require 'cooked)</code></li>
+<li>L52: <code>(require 'cooked-util)</code></li>
+<li>L53: <code>(require 'cooked-deco)</code></li>
+<li>L54: <code>(require 'cooked-link)</code></li>
+<li>L55: <code>(require 'cooked-mouse)</code></li>
+<li>L56: <code>(require 'cooked-osc)</code></li>
+<li>L57: <code>(require 'cooked-scrollback)</code></li>
+<li>L109: <code>(defun cooked--schedule-repaint ()</code></li>
+<li>L116: <code>(defun cooked--flush-pending-repaint ()</code></li>
+<li>L134: <code>(defun cooked--drain-and-apply ()</code></li>
+<li>L209: <code>(defun cooked--on-wake (buffer)</code></li>
+<li>L250: <code>(defcustom cooked-clear-selection-on-output t</code></li>
+<li>L270: <code>(defun cooked--following-windows ()</code></li>
+<li>L291: <code>(defun cooked--install-resources (update)</code></li>
+<li>L347: <code>(defun cooked--capture-viewport ()</code></li>
+<li>L361: <code>(defun cooked--apply-levels (update)</code></li>
+<li>L374: <code>(defun cooked--place-point (viewport)</code></li>
+<li>L396: <code>(defun cooked--scroll-windows (viewport)</code></li>
+<li>L419: <code>(defun cooked--pin-alt-screen (windows)</code></li>
+<li>L437: <code>(defun cooked--pin-transcript-bottom (windows &amp;optional pos bottom)</code></li>
+<li>L491: <code>(defun cooked--scroll-transcript (viewport here others)</code></li>
+<li>L516: <code>(defun cooked--apply (update)</code></li>
+<li>L598: <code>(defun cooked--handle-event (event batch-start)</code></li>
+<li>L632: <code>(defun cooked-refresh ()</code></li>
+<li>L663: <code>(provide 'cooked-render)</code></li>
+</ul>
+<h2>lisp/cooked-scrollback.el</h2>
+<ul>
+<li>L40: <code>(require 'seq)</code></li>
+<li>L41: <code>(require 'cooked)</code></li>
+<li>L42: <code>(require 'cooked-util)</code></li>
+<li>L43: <code>(require 'cooked-command)</code></li>
+<li>L44: <code>(require 'cooked-deco)</code></li>
+<li>L60: <code>(defcustom cooked-scrollback-lines 10000</code></li>
+<li>L93: <code>(defun cooked--split-seam ()</code></li>
+<li>L140: <code>(defun cooked--trim-scrollback ()</code></li>
+<li>L185: <code>(defun cooked--discard-scrollback (end)</code></li>
+<li>L228: <code>(defun cooked--discard-scrollback-region (beg end)</code></li>
+<li>L258: <code>(defun cooked-clear-scrollback ()</code></li>
+<li>L286: <code>(provide 'cooked-scrollback)</code></li>
+</ul>
+<h2>lisp/cooked-secret.el</h2>
+<ul>
+<li>L18: <code>(require 'cooked)</code></li>
+<li>L23: <code>(defcustom cooked-password-function nil</code></li>
+<li>L29: <code>(defcustom cooked-secret-debounce 0.03</code></li>
+<li>L46: <code>(defun cooked--schedule-secret ()</code></li>
+<li>L75: <code>(defun cooked--resume-secret ()</code></li>
+<li>L92: <code>(defun cooked--cancel-secret ()</code></li>
+<li>L117: <code>(defun cooked--dismiss-secret (minibuffer)</code></li>
+<li>L124: <code>(defvar cooked-secret-map</code></li>
+<li>L126: <code>(define-key map (kbd "C-c C-c") #'cooked-secret-abort)</code></li>
+<li>L137: <code>(defun cooked-secret-abort ()</code></li>
+<li>L146: <code>(defun cooked--read-passwd (prompt)</code></li>
+<li>L164: <code>(defun cooked--prompt-secret (buffer)</code></li>
+<li>L209: <code>(provide 'cooked-secret)</code></li>
+</ul>
+<h2>lisp/cooked-shell-completion.el</h2>
+<ul>
+<li>L59: <code>(require 'cooked)</code></li>
+<li>L60: <code>(require 'cooked-completion)</code></li>
+<li>L61: <code>(require 'cl-lib)</code></li>
+<li>L62: <code>(require 'seq)</code></li>
+<li>L66: <code>(defcustom cooked-completion-backend 'shell</code></li>
+<li>L86: <code>(defcustom cooked-completion-timeout 0.4</code></li>
+<li>L128: <code>(defun cooked--completion-encode (string)</code></li>
+<li>L134: <code>(defun cooked--completion-candidates (blob)</code></li>
+<li>L143: <code>(defun cooked--completion-handle (payload)</code></li>
+<li>L166: <code>(defun cooked--shell-completions (line point)</code></li>
+<li>L206: <code>(defun cooked--completion-annotation (display match)</code></li>
+<li>L219: <code>(defun cooked--completion-group (group)</code></li>
+<li>L236: <code>(defun cooked--completion-index (records extra annotations groups)</code></li>
+<li>L262: <code>(defun cooked--completion-settled-p (word cached-word cached-matches)</code></li>
+<li>L279: <code>(defun cooked--completion-dynamic (head tail annotations groups seed)</code></li>
+<li>L330: <code>(defun cooked--shell-completion-at-point (region)</code></li>
+<li>L400: <code>(provide 'cooked-shell-completion)</code></li>
+</ul>
+<h2>lisp/cooked-shell-integration.el</h2>
+<ul>
+<li>L19: <code>(require 'cooked-util)</code></li>
+<li>L20: <code>(require 'cooked-completion)</code></li>
+<li>L22: <code>(defcustom cooked-shell-integration 'detect</code></li>
+<li>L64: <code>(defcustom cooked-shell-integration-features</code></li>
+<li>L113: <code>(defun cooked--integration-shell (shell)</code></li>
+<li>L131: <code>(defun cooked--integration-feature-p (feature)</code></li>
+<li>L135: <code>(defun cooked--integration-environment ()</code></li>
+<li>L150: <code>(defun cooked--integration-directory ()</code></li>
+<li>L158: <code>(defun cooked--scratch-directory ()</code></li>
+<li>L162: <code>(defun cooked--remove-scratch ()</code></li>
+<li>L175: <code>(defun cooked--zsh-source-user (file)</code></li>
+<li>L184: <code>(defun cooked--write-zsh-startup (scratch integration capture-p)</code></li>
+<li>L220: <code>(defun cooked--shell-invocation (shell)</code></li>
+<li>L271: <code>(provide 'cooked-shell-integration)</code></li>
+</ul>
+<h2>lisp/cooked-util.el</h2>
+<ul>
+<li>L17: <code>(require 'cl-lib)</code></li>
+<li>L36: <code>(defun cooked-session-p (object)</code></li>
+<li>L45: <code>(defmacro cooked--dolist-buffers (&amp;rest body)</code></li>
+<li>L69: <code>(defmacro cooked--protect-hook (&amp;rest body)</code></li>
+<li>L102: <code>(defmacro cooked--protect-seam (key &amp;rest body)</code></li>
+<li>L132: <code>(defun cooked--seam-failed (key err)</code></li>
+<li>L155: <code>(defun cooked--seam-notify (fn &amp;rest args)</code></li>
+<li>L160: <code>(defun cooked--seam-answer (fn &amp;rest args)</code></li>
+<li>L165: <code>(defun cooked--run-seam (seam &amp;rest args)</code></li>
+<li>L181: <code>(defun cooked--run-seam-until-success (seam &amp;rest args)</code></li>
+<li>L196: <code>(defmacro cooked--dolist-windows (var windows &amp;rest body)</code></li>
+<li>L235: <code>(defmacro cooked--cached (table key &amp;rest body)</code></li>
+<li>L256: <code>(defmacro cooked--cached-bounded (table limit key &amp;rest body)</code></li>
+<li>L279: <code>(defmacro cooked--with-child-edit (&amp;rest body)</code></li>
+<li>L307: <code>(defun cooked--live-session ()</code></li>
+<li>L316: <code>(defun cooked--require-session ()</code></li>
+<li>L325: <code>(defun cooked--send-to-child (bytes)</code></li>
+<li>L329: <code>(defun cooked--send-if-live (bytes)</code></li>
+<li>L351: <code>(defun cooked--root ()</code></li>
+<li>L370: <code>(defun cooked--local-name (name)</code></li>
+<li>L394: <code>(provide 'cooked-util)</code></li>
+</ul>
+<h2>lisp/cooked.el</h2>
+<ul>
+<li>L55: <code>(require 'cl-lib)</code></li>
+<li>L56: <code>(require 'jit-lock)</code></li>
+<li>L57: <code>(require 'comint)</code></li>
+<li>L58: <code>(require 'face-remap)</code></li>
+<li>L59: <code>(require 'cooked-util)</code></li>
+<li>L60: <code>(require 'cooked-module)</code></li>
+<li>L61: <code>(require 'cooked-command)</code></li>
+<li>L62: <code>(require 'cooked-face)</code></li>
+<li>L63: <code>(require 'cooked-deco)</code></li>
+<li>L64: <code>(require 'cooked-link)</code></li>
+<li>L107: <code>(defun cooked--cursor-decode (spec)</code></li>
+<li>L113: <code>(defun cooked--cursor-cell ()</code></li>
+<li>L141: <code>(defun cooked--screen-start-position ()</code></li>
+<li>L206: <code>(defun cooked--suspended-p ()</code></li>
+<li>L236: <code>(defun cooked--frozen-p ()</code></li>
+<li>L247: <code>(defun cooked--follow-p ()</code></li>
+<li>L310: <code>(defun cooked--foreign-host-p ()</code></li>
+<li>L333: <code>(defun cooked--csi (final &amp;rest params)</code></li>
+<li>L361: <code>(defun cooked--csi-private (prefix final &amp;rest params)</code></li>
+<li>L380: <code>(defun cooked--ss3 (final)</code></li>
+<li>L394: <code>(defun cooked--cursor-key (final)</code></li>
+<li>L421: <code>(defun cooked--render-block (block &amp;optional row)</code></li>
+<li>L586: <code>(defun cooked--policy ()</code></li>
+<li>L632: <code>(defun cooked--ownership-license ()</code></li>
+<li>L666: <code>(defun cooked--secret-p ()</code></li>
+<li>L672: <code>(defun cooked--input-state-p ()</code></li>
+<li>L676: <code>(defun cooked--child-owns-keyboard-p ()</code></li>
+<li>L686: <code>(defun cooked--input-mark ()</code></li>
+<li>L703: <code>(defun cooked--set-input-mark (position)</code></li>
+<li>L708: <code>(defun cooked--clear-input-region ()</code></li>
+<li>L713: <code>(defun cooked--input-region ()</code></li>
+<li>L726: <code>(defun cooked--check-undo-anchor ()</code></li>
+<li>L757: <code>(defun cooked--discard-undo ()</code></li>
+<li>L791: <code>(defun cooked--input-start-position ()</code></li>
+<li>L795: <code>(defun cooked--pending-input ()</code></li>
+<li>L829: <code>(defun cooked--snap-to-input ()</code></li>
+<li>L849: <code>(defun cooked--take-pending-input ()</code></li>
+<li>L856: <code>(defun cooked--restore-pending-input (text)</code></li>
+<li>L882: <code>(defun cooked--point-after-input ()</code></li>
+<li>L887: <code>(defun cooked--register-mark (id at batch-start)</code></li>
+<li>L901: <code>(defun cooked--relocate-marks (marks batch-start)</code></li>
+<li>L927: <code>(defun cooked--prune-marks ()</code></li>
+<li>L947: <code>(defun cooked--handle-semantic (event batch-start)</code></li>
+<li>L1058: <code>(defun cooked--goto-screen-row (index &amp;optional extend)</code></li>
+<li>L1087: <code>(defun cooked--pad-to-cursor ()</code></li>
+<li>L1122: <code>(defun cooked--render-scrolled (block)</code></li>
+<li>L1171: <code>(defcustom cooked-cursor-shapes</code></li>
+<li>L1182: <code>(defun cooked--cursor-type ()</code></li>
+<li>L1230: <code>(defun cooked--restore-point (window)</code></li>
+<li>L1249: <code>(defun cooked--sync-cursor-type ()</code></li>
+<li>L1284: <code>(defun cooked--ghost-cursor-visible-p ()</code></li>
+<li>L1304: <code>(defun cooked--update-ghost-cursor ()</code></li>
+<li>L1332: <code>(defcustom cooked-alt-change-hook nil</code></li>
+<li>L1350: <code>(defun cooked--set-alt (on)</code></li>
+<li>L1370: <code>(defun cooked--sync-fontification ()</code></li>
+<li>L1400: <code>(defun cooked--apply-alt-pin ()</code></li>
+<li>L1422: <code>(defun cooked--screen-restricted-p ()</code></li>
+<li>L1433: <code>(defun cooked--release-alt-pin ()</code></li>
+<li>L1439: <code>(defun cooked--pin-alt-windows ()</code></li>
+<li>L1483: <code>(defun cooked--fit-screen ()</code></li>
+<li>L1532: <code>(defun cooked--check-seam ()</code></li>
+<li>L1566: <code>(defun cooked--protect (limit)</code></li>
+<li>L1629: <code>(defcustom cooked-wrap-cache-limit 4096</code></li>
+<li>L1683: <code>(defun cooked--layout-stamp (window)</code></li>
+<li>L1738: <code>(defun cooked--string-pixel-width (string)</code></li>
+<li>L1752: <code>(defun cooked--ascii-fixed-pitch-p (window)</code></li>
+<li>L1800: <code>(defun cooked--wrap-cache (window)</code></li>
+<li>L1815: <code>(defun cooked--row-mismeasured-p (width uniform fixed-pitch)</code></li>
+<li>L1853: <code>(defun cooked--row-wraps-p (start end window memo)</code></li>
+<li>L1894: <code>(defun cooked--trim-to-one-line (start window)</code></li>
+<li>L1917: <code>(defun cooked--guard-row-width (start width &amp;optional window uniform cache)</code></li>
+<li>L1997: <code>(defcustom cooked-truncation-bitmap nil</code></li>
+<li>L2008: <code>(defun cooked--mark-truncation (start cut window)</code></li>
+<li>L2047: <code>(defun cooked--truncation-bitmap ()</code></li>
+<li>L2059: <code>(defun cooked--truncation-glyph ()</code></li>
+<li>L2096: <code>(defun cooked--render-rows (rows &amp;optional alt)</code></li>
+<li>L2203: <code>(defun cooked--notify-rows-rendered (bounds)</code></li>
+<li>L2217: <code>(defun cooked--fontify-region (beg end)</code></li>
+<li>L2266: <code>(defun cooked--cursor-position ()</code></li>
+<li>L2274: <code>(defun cooked--anchor-position (anchor batch-start)</code></li>
+<li>L2304: <code>(defun cooked--screen-cell (&amp;optional pos)</code></li>
+<li>L2326: <code>(defun cooked--goto-screen-cell (cell)</code></li>
+<li>L2331: <code>(defun cooked--at-child-cursor-p ()</code></li>
+<li>L2345: <code>(defun cooked--window-size ()</code></li>
+<li>L2368: <code>(defun cooked--window-rows (window)</code></li>
+<li>L2379: <code>(defun cooked--layout-window ()</code></li>
+<li>L2412: <code>(defun cooked--set-tuning-option (symbol value)</code></li>
+<li>L2448: <code>(defcustom cooked-min-redisplay-interval 0.008</code></li>
+<li>L2489: <code>(defcustom cooked-backlog-limit 8000</code></li>
+<li>L2513: <code>(defcustom cooked-confirm-kill 'auto</code></li>
+<li>L2557: <code>(defun cooked--query-on-kill-p ()</code></li>
+<li>L2565: <code>(defun cooked--sync-query-flag ()</code></li>
+<li>L2575: <code>(defun cooked--start (argv &amp;optional directory extra-env)</code></li>
+<li>L2667: <code>(defun cooked--child-environment (&amp;optional extra)</code></li>
+<li>L2744: <code>(defun cooked--deactivate-mark ()</code></li>
+<li>L2786: <code>(defcustom cooked-display-action '((display-buffer-same-window</code></li>
+<li>L2829: <code>(defun cooked--open-session (new command action)</code></li>
+<li>L2841: <code>(defun cooked (&amp;optional new command)</code></li>
+<li>L2850: <code>(defun cooked-other-window (&amp;optional new command)</code></li>
+<li>L2857: <code>(provide 'cooked)</code></li>
+</ul></main></html>

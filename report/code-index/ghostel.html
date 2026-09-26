@@ -1,0 +1,828 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: ghostel</h1>
+<p>Fonte: https://github.com/dakra/ghostel.git</p>
+<p>Revisione: <code>c2c411f2b0051465a5f5e7826ebab4ed216d4c0e</code>.</p>
+<h2>extensions/consult-ghostel/consult-ghostel.el</h2>
+<ul>
+<li>L61: <code>(require 'cl-lib)</code></li>
+<li>L62: <code>(require 'consult)</code></li>
+<li>L63: <code>(require 'ghostel)</code></li>
+<li>L64: <code>(require 'marginalia nil 'noerror)</code></li>
+<li>L69: <code>(defun consult-ghostel--pairs (buffers)</code></li>
+<li>L162: <code>(defun consult-ghostel--display (buffer &amp;optional norecord)</code></li>
+<li>L172: <code>(defun consult-ghostel--spawn (name &amp;optional identity)</code></li>
+<li>L179: <code>(defun consult-ghostel--switch (sources prompt)</code></li>
+<li>L191: <code>(defun consult-ghostel (&amp;optional arg)</code></li>
+<li>L206: <code>(defun consult-ghostel-project (&amp;optional arg)</code></li>
+<li>L233: <code>(defun consult-ghostel--input-start (cursor)</code></li>
+<li>L258: <code>(defun consult-ghostel--input-region ()</code></li>
+<li>L273: <code>(defun consult-ghostel-history ()</code></li>
+<li>L334: <code>(defun consult-ghostel-marginalia-annotate (cand)</code></li>
+<li>L343: <code>(defun consult-ghostel--line-candidates (orig top curr-line)</code></li>
+<li>L397: <code>(defun consult-ghostel--wrap-corrected-dest (pos offset)</code></li>
+<li>L412: <code>(defun consult-ghostel--line-point-placement</code></li>
+<li>L439: <code>(define-minor-mode consult-ghostel-mode</code></li>
+<li>L483: <code>(provide 'consult-ghostel)</code></li>
+</ul>
+<h2>extensions/evil-ghostel/evil-ghostel.el</h2>
+<ul>
+<li>L46: <code>(require 'evil)</code></li>
+<li>L47: <code>(require 'ghostel)</code></li>
+<li>L62: <code>(defcustom evil-ghostel-initial-state 'insert</code></li>
+<li>L74: <code>(defcustom evil-ghostel-escape 'auto</code></li>
+<li>L88: <code>(defcustom evil-ghostel-sync-render-max-iterations 10</code></li>
+<li>L98: <code>(defcustom evil-ghostel-word-boundaries "!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^'{|}~"</code></li>
+<li>L136: <code>(defun evil-ghostel--prompt-active-p ()</code></li>
+<li>L144: <code>(defun evil-ghostel--terminal-live-p ()</code></li>
+<li>L152: <code>(defun evil-ghostel--line-mode-active-p ()</code></li>
+<li>L165: <code>(defun evil-ghostel--scrollback-lines ()</code></li>
+<li>L169: <code>(defun evil-ghostel--reset-cursor-point ()</code></li>
+<li>L177: <code>(defun evil-ghostel--point-viewport-row ()</code></li>
+<li>L183: <code>(defun evil-ghostel--following-window-p ()</code></li>
+<li>L195: <code>(defun evil-ghostel--around-redraw (orig-fn term &amp;optional full force-sync)</code></li>
+<li>L252: <code>(defun evil-ghostel--anchor-inhibit (_window force)</code></li>
+<li>L264: <code>(defun evil-ghostel--override-cursor-style (orig-fn)</code></li>
+<li>L280: <code>(defun evil-ghostel--insert-state-entry ()</code></li>
+<li>L292: <code>(defun evil-ghostel--escape-stay ()</code></li>
+<li>L301: <code>(defun evil-ghostel--fg-color (pos)</code></li>
+<li>L309: <code>(defun evil-ghostel--greyed-out-p (color)</code></li>
+<li>L320: <code>(defun evil-ghostel--suggestion-p (cursor region-end)</code></li>
+<li>L337: <code>(defun evil-ghostel--input-end ()</code></li>
+<li>L364: <code>(defun evil-ghostel--input-start ()</code></li>
+<li>L372: <code>(defun evil-ghostel--clamp (beg end)</code></li>
+<li>L391: <code>(defun evil-ghostel--sync-render ()</code></li>
+<li>L403: <code>(defun evil-ghostel-goto-input-position (pos)</code></li>
+<li>L431: <code>(defun evil-ghostel-delete-input-region (beg end)</code></li>
+<li>L445: <code>(defun evil-ghostel-replace-input-region (beg end string)</code></li>
+<li>L514: <code>(defun evil-ghostel-insert ()</code></li>
+<li>L530: <code>(defun evil-ghostel-insert-line ()</code></li>
+<li>L543: <code>(defun evil-ghostel-append ()</code></li>
+<li>L566: <code>(defun evil-ghostel-append-line ()</code></li>
+<li>L722: <code>(defun evil-ghostel--do-paste (count register advance)</code></li>
+<li>L738: <code>(defun evil-ghostel-paste-after (&amp;optional count register yank-handler)</code></li>
+<li>L746: <code>(defun evil-ghostel-paste-before (&amp;optional count register yank-handler)</code></li>
+<li>L758: <code>(defun evil-ghostel-undo (count)</code></li>
+<li>L766: <code>(defun evil-ghostel-redo (count)</code></li>
+<li>L777: <code>(defvar evil-ghostel-mode-map (make-sparse-keymap)</code></li>
+<li>L789: <code>(defun evil-ghostel--fallback-key (keys)</code></li>
+<li>L799: <code>(defun evil-ghostel--passthrough-ctrl (key)</code></li>
+<li>L817: <code>(defun evil-ghostel--passthrough-delete ()</code></li>
+<li>L881: <code>(defun evil-ghostel--escape ()</code></li>
+<li>L904: <code>(defun evil-ghostel-toggle-send-escape (&amp;optional arg)</code></li>
+<li>L932: <code>(define-key evil-ghostel-mode-map (kbd "C-c C-r")</code></li>
+<li>L940: <code>(define-key evil-ghostel-mode-map (kbd "C-c &lt;escape&gt;")</code></li>
+<li>L947: <code>(defun evil-ghostel--evil-escape-skip-insert ()</code></li>
+<li>L965: <code>(defun evil-ghostel--install-word-boundaries ()</code></li>
+<li>L977: <code>(defun evil-ghostel--restore-word-boundaries ()</code></li>
+<li>L983: <code>(defun evil-ghostel--any-active-elsewhere-p (except-buffer)</code></li>
+<li>L993: <code>(define-minor-mode evil-ghostel-mode</code></li>
+<li>L1041: <code>(provide 'evil-ghostel)</code></li>
+</ul>
+<h2>lisp/ghostel-bookmark.el</h2>
+<ul>
+<li>L23: <code>(require 'bookmark)</code></li>
+<li>L24: <code>(require 'ghostel)</code></li>
+<li>L26: <code>(defcustom ghostel-bookmark-check-dir t</code></li>
+<li>L35: <code>(defun ghostel-bookmark-make-record ()</code></li>
+<li>L49: <code>(defun ghostel-bookmark-handler (bmk)</code></li>
+<li>L134: <code>(defun ghostel-bookmark--shell-idle-p ()</code></li>
+<li>L155: <code>(provide 'ghostel-bookmark)</code></li>
+</ul>
+<h2>lisp/ghostel-comint.el</h2>
+<ul>
+<li>L44: <code>(require 'comint)</code></li>
+<li>L45: <code>(require 'ghostel)</code></li>
+<li>L65: <code>(defun ghostel-comint--apply-palette (state)</code></li>
+<li>L82: <code>(defun ghostel-comint--update-dir (uri)</code></li>
+<li>L94: <code>(defun ghostel-comint--face-to-font-lock-face (string)</code></li>
+<li>L122: <code>(defun ghostel-comint-filter (string)</code></li>
+<li>L142: <code>(define-minor-mode ghostel-comint-mode</code></li>
+<li>L182: <code>(define-minor-mode ghostel-comint-global-mode</code></li>
+<li>L205: <code>(provide 'ghostel-comint)</code></li>
+</ul>
+<h2>lisp/ghostel-compile.el</h2>
+<ul>
+<li>L68: <code>(require 'ghostel)</code></li>
+<li>L69: <code>(require 'compile)</code></li>
+<li>L84: <code>(defcustom ghostel-compile-buffer-name "*ghostel-compile*"</code></li>
+<li>L88: <code>(defcustom ghostel-compile-finished-major-mode 'ghostel-compile-view-mode</code></li>
+<li>L103: <code>(defcustom ghostel-compile-debug nil</code></li>
+<li>L108: <code>(defcustom ghostel-compile-finish-functions nil</code></li>
+<li>L164: <code>(defvar ghostel-compile-view-mode-map</code></li>
+<li>L169: <code>(define-key map "n" #'compilation-next-error)</code></li>
+<li>L170: <code>(define-key map "p" #'compilation-previous-error)</code></li>
+<li>L171: <code>(define-key map "g" #'ghostel-recompile)</code></li>
+<li>L183: <code>(define-derived-mode ghostel-compile-view-mode</code></li>
+<li>L225: <code>(defun ghostel-compile--anchor-inhibit (_window force)</code></li>
+<li>L230: <code>(defun ghostel-compile--format-duration (seconds)</code></li>
+<li>L238: <code>(defun ghostel-compile--status-message (exit)</code></li>
+<li>L245: <code>(defun ghostel-compile--header-text (command start-time)</code></li>
+<li>L256: <code>(defun ghostel-compile--footer-text (exit start-time end-time)</code></li>
+<li>L269: <code>(defun ghostel-compile--set-mode-line-running ()</code></li>
+<li>L281: <code>(defun ghostel-compile--set-mode-line-exit (exit)</code></li>
+<li>L291: <code>(defun ghostel-compile--auto-jump (buffer)</code></li>
+<li>L301: <code>(defun ghostel-compile--teardown-terminal ()</code></li>
+<li>L325: <code>(defun ghostel-compile--trim-trailing-blanks (start)</code></li>
+<li>L338: <code>(defun ghostel-compile--unwrap-soft-wraps ()</code></li>
+<li>L357: <code>(defun ghostel-compile--render-header-live (header)</code></li>
+<li>L374: <code>(defun ghostel-compile--reenter-or-abort (buffer)</code></li>
+<li>L384: <code>(defun ghostel-compile--finalize (buffer exit end-time)</code></li>
+<li>L541: <code>(defun ghostel-compile--commit-pending-frame (buffer)</code></li>
+<li>L562: <code>(defun ghostel-compile--sentinel (process _event)</code></li>
+<li>L601: <code>(defun ghostel-compile--spawn (command buffer height width &amp;optional interactive)</code></li>
+<li>L675: <code>(defun ghostel-compile--prepare-buffer (name dir &amp;optional interactive)</code></li>
+<li>L811: <code>(defun ghostel-compile--start (command buffer-name dir</code></li>
+<li>L932: <code>(defun ghostel-compile (command &amp;optional interactive)</code></li>
+<li>L977: <code>(defun ghostel-recompile (&amp;optional edit-command)</code></li>
+<li>L1025: <code>(defun ghostel-compile--assert-live-run ()</code></li>
+<li>L1037: <code>(defun ghostel-compile--set-pty-echo (enable)</code></li>
+<li>L1057: <code>(defun ghostel-compile--set-compilation-style-input (enable)</code></li>
+<li>L1066: <code>(defun ghostel-compile--restore-compilation-style ()</code></li>
+<li>L1082: <code>(defun ghostel-compile-switch-to-interactive ()</code></li>
+<li>L1122: <code>(defun ghostel-compile-switch-to-compilation-style ()</code></li>
+<li>L1148: <code>(defvar ghostel-compile-toggle-mode-map</code></li>
+<li>L1150: <code>(define-key m (kbd "C-c C-j") #'ghostel-compile-switch-to-interactive)</code></li>
+<li>L1151: <code>(define-key m (kbd "C-c C-e") #'ghostel-compile-switch-to-compilation-style)</code></li>
+<li>L1156: <code>(define-key m (kbd "C-c C-t") #'ghostel-compile-switch-to-compilation-style)</code></li>
+<li>L1167: <code>(define-minor-mode ghostel-compile-toggle-mode</code></li>
+<li>L1180: <code>(defcustom ghostel-compile-global-mode-excluded-modes '(grep-mode)</code></li>
+<li>L1188: <code>(defun ghostel-compile--compilation-start-advice</code></li>
+<li>L1252: <code>(define-minor-mode ghostel-compile-global-mode</code></li>
+<li>L1285: <code>(provide 'ghostel-compile)</code></li>
+</ul>
+<h2>lisp/ghostel-debug.el</h2>
+<ul>
+<li>L32: <code>(require 'cl-lib)</code></li>
+<li>L33: <code>(require 'lisp-mnt)</code></li>
+<li>L34: <code>(require 'ghostel)</code></li>
+<li>L145: <code>(defun ghostel-debug--log-password-edge (orig &amp;rest args)</code></li>
+<li>L179: <code>(defun ghostel-debug-password-events-show ()</code></li>
+<li>L215: <code>(defun ghostel-debug-start ()</code></li>
+<li>L244: <code>(defun ghostel-debug-stop ()</code></li>
+<li>L264: <code>(defun ghostel--debug-log-vt (level scope message)</code></li>
+<li>L276: <code>(defun ghostel-debug--log-filter (_proc output)</code></li>
+<li>L289: <code>(defun ghostel-debug--log-send (key)</code></li>
+<li>L299: <code>(defun ghostel-debug--log-encoded (key-name mods &amp;optional utf8)</code></li>
+<li>L308: <code>(defun ghostel-debug--snapshot (buffer)</code></li>
+<li>L335: <code>(defun ghostel-debug--fmt-wins (wins)</code></li>
+<li>L343: <code>(defun ghostel-debug--log-redraw (orig-fn buffer &amp;optional force)</code></li>
+<li>L378: <code>(defun ghostel-debug--log-resize (orig-fn window &amp;optional force)</code></li>
+<li>L416: <code>(defun ghostel-debug-typing-latency (&amp;optional count)</code></li>
+<li>L447: <code>(defun ghostel-debug--latency-on-send (_key)</code></li>
+<li>L452: <code>(defun ghostel-debug--latency-on-echo (_proc _output)</code></li>
+<li>L462: <code>(defun ghostel-debug--latency-on-render (_buffer &amp;rest _)</code></li>
+<li>L477: <code>(defun ghostel-debug--latency-report ()</code></li>
+<li>L557: <code>(defun ghostel-debug--vref (vector index)</code></li>
+<li>L563: <code>(defun ghostel-debug--prin1 (value)</code></li>
+<li>L570: <code>(defun ghostel-debug--insert-field (label value)</code></li>
+<li>L575: <code>(defun ghostel-debug--char-summary (char)</code></li>
+<li>L585: <code>(defun ghostel-debug--find-gstring (pos end window)</code></li>
+<li>L622: <code>(defun ghostel-debug--insert-font-info (font font-info)</code></li>
+<li>L640: <code>(defun ghostel-debug--insert-renderer-metrics (font-info gstring)</code></li>
+<li>L660: <code>(defun ghostel-debug--insert-glyph (index glyph)</code></li>
+<li>L682: <code>(defun ghostel-debug-glyph-at-point ()</code></li>
+<li>L745: <code>(defun ghostel-debug-info (&amp;optional with-remote-probes)</code></li>
+<li>L1235: <code>(defun ghostel-debug--count-compilation-messages ()</code></li>
+<li>L1248: <code>(defun ghostel-debug--insert-compile-run (buf)</code></li>
+<li>L1308: <code>(defun ghostel-debug--insert-compile-routing ()</code></li>
+<li>L1329: <code>(defun ghostel-debug--insert-tramp-section (dir)</code></li>
+<li>L1402: <code>(defun ghostel-debug--insert-command-cells (cmd nil-message)</code></li>
+<li>L1420: <code>(defun ghostel-debug--insert-spawn-capture (cap)</code></li>
+<li>L1504: <code>(defun ghostel-debug--insert-spawn-phase-timings (cap)</code></li>
+<li>L1559: <code>(defun ghostel-debug--insert-spawn-timeline (cap)</code></li>
+<li>L1611: <code>(defun ghostel-debug--insert-remote-probes (ghostel-buf)</code></li>
+<li>L1725: <code>(defun ghostel-debug-ghostel (&amp;optional arg)</code></li>
+<li>L1748: <code>(defun ghostel-debug--capture-start-process (orig &amp;rest args)</code></li>
+<li>L1758: <code>(defun ghostel-debug--capture-spawn-pty</code></li>
+<li>L1839: <code>(defun ghostel-debug--capture-filter (proc output)</code></li>
+<li>L1876: <code>(defun ghostel-debug--capture-send-string (string)</code></li>
+<li>L1904: <code>(defun ghostel-debug-keypress ()</code></li>
+<li>L1926: <code>(defun ghostel--debug-kp-add-call (kind value)</code></li>
+<li>L1934: <code>(defun ghostel--debug-kp-record-write-pty (_term data)</code></li>
+<li>L1940: <code>(defun ghostel--debug-kp-record-send-string (string)</code></li>
+<li>L1946: <code>(defun ghostel--debug-kp-record-encode-key (bytes)</code></li>
+<li>L1956: <code>(defun ghostel--debug-kp-pre-command ()</code></li>
+<li>L1976: <code>(defun ghostel--debug-kp-post-command ()</code></li>
+<li>L1983: <code>(defun ghostel--debug-kp-teardown ()</code></li>
+<li>L1992: <code>(defun ghostel--debug-kp-fmt-bytes (s)</code></li>
+<li>L2001: <code>(defun ghostel--debug-kp-show (state)</code></li>
+<li>L2078: <code>(provide 'ghostel-debug)</code></li>
+</ul>
+<h2>lisp/ghostel-desktop.el</h2>
+<ul>
+<li>L22: <code>(require 'desktop)</code></li>
+<li>L23: <code>(require 'ghostel)</code></li>
+<li>L26: <code>(defun ghostel-desktop-save-buffer (_desktop-dirname)</code></li>
+<li>L33: <code>(defun ghostel-desktop-restore-buffer (_file-name buffer-name misc)</code></li>
+<li>L53: <code>(defun ghostel-desktop--reuse (identity buffer-name)</code></li>
+<li>L73: <code>(defun ghostel-desktop--spawn (dir identity buffer-name)</code></li>
+<li>L110: <code>(defun ghostel-desktop--shield-replay (buf)</code></li>
+<li>L120: <code>(defun ghostel-desktop--undo-replay (buf mode had-region)</code></li>
+<li>L132: <code>(provide 'ghostel-desktop)</code></li>
+</ul>
+<h2>lisp/ghostel-eshell.el</h2>
+<ul>
+<li>L31: <code>(require 'ghostel)</code></li>
+<li>L41: <code>(defcustom ghostel-eshell-track-title nil</code></li>
+<li>L49: <code>(defun ghostel-eshell--visual-exit (buffer _event)</code></li>
+<li>L66: <code>(keymap-set map "q" #'kill-current-buffer)</code></li>
+<li>L71: <code>(defun ghostel-eshell--exec-visual (&amp;rest args)</code></li>
+<li>L107: <code>(defun eshell/ghostel (&amp;rest args)</code></li>
+<li>L118: <code>(define-minor-mode ghostel-eshell-visual-command-mode</code></li>
+<li>L134: <code>(provide 'ghostel-eshell)</code></li>
+</ul>
+<h2>lisp/ghostel-faces.el</h2>
+<ul>
+<li>L17: <code>(require 'ansi-color)</code></li>
+<li>L167: <code>(defun ghostel--face-hex-color (face attr)</code></li>
+<li>L185: <code>(defun ghostel--hex-color-scheme (hex)</code></li>
+<li>L193: <code>(provide 'ghostel-faces)</code></li>
+</ul>
+<h2>lisp/ghostel-ime.el</h2>
+<ul>
+<li>L49: <code>(require 'ghostel)</code></li>
+<li>L67: <code>(defun ghostel-ime--active-quail-overlay-p (buffer)</code></li>
+<li>L79: <code>(defun ghostel-ime-lisp-composing-p (&amp;optional buffer)</code></li>
+<li>L88: <code>(defun ghostel-ime--wrap-input-method (key)</code></li>
+<li>L118: <code>(defun ghostel-ime--install ()</code></li>
+<li>L135: <code>(defun ghostel-ime--reassert ()</code></li>
+<li>L144: <code>(defun ghostel-ime--uninstall ()</code></li>
+<li>L154: <code>(define-minor-mode ghostel-ime-mode</code></li>
+<li>L184: <code>(provide 'ghostel-ime)</code></li>
+</ul>
+<h2>lisp/ghostel-kitty.el</h2>
+<ul>
+<li>L12: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(defcustom ghostel-kitty-graphics-storage-limit (* 320 1024 1024)  ; 320 MiB</code></li>
+<li>L34: <code>(defcustom ghostel-kitty-graphics-mediums '(file temp-file shared-mem)</code></li>
+<li>L69: <code>(defun ghostel--kitty-mediums-bits ()</code></li>
+<li>L78: <code>(defun ghostel--kitty-apply-row-slice (row cw ch img</code></li>
+<li>L125: <code>(defun ghostel--kitty-display-image (data abs-row vp-col grid-cols grid-rows pixel-w pixel-h)</code></li>
+<li>L197: <code>(defun ghostel--kitty-display-virtual (data row-up nth img-row img-col</code></li>
+<li>L246: <code>(defun ghostel--kitty-clear ()</code></li>
+<li>L283: <code>(defun ghostel--kitty-slice-y-at (pos)</code></li>
+<li>L301: <code>(defun ghostel--kitty-strip-orphan-top ()</code></li>
+<li>L352: <code>(defun ghostel--kitty-any-remaining-p (start end)</code></li>
+<li>L365: <code>(provide 'ghostel-kitty)</code></li>
+</ul>
+<h2>lisp/ghostel-line-mode.el</h2>
+<ul>
+<li>L18: <code>(require 'comint)</code></li>
+<li>L19: <code>(require 'compat)</code></li>
+<li>L47: <code>(defvar ghostel-semi-char-mode-map)</code></li>
+<li>L53: <code>(defcustom ghostel-line-mode-history-size 200</code></li>
+<li>L58: <code>(defcustom ghostel-line-mode-completion-at-point-functions</code></li>
+<li>L73: <code>(defcustom ghostel-line-mode-use-bash-completion 'auto</code></li>
+<li>L94: <code>(defcustom ghostel-line-mode-bash-completion-prespawn nil</code></li>
+<li>L175: <code>(defvar-keymap ghostel-line-mode-map</code></li>
+<li>L196: <code>(defun ghostel-line-mode-send-or-open-link ()</code></li>
+<li>L204: <code>(defun ghostel-line-mode-self-insert (&amp;optional n)</code></li>
+<li>L219: <code>(defun ghostel-line-mode-newline ()</code></li>
+<li>L238: <code>(defun ghostel--line-mode-prompt-on-screen-p ()</code></li>
+<li>L248: <code>(defun ghostel--line-mode-on-live-edge-p (window)</code></li>
+<li>L261: <code>(defun ghostel--line-mode-apply-readonly (marker-pos)</code></li>
+<li>L276: <code>(defun ghostel--line-mode-input-end-pos (start)</code></li>
+<li>L286: <code>(defun ghostel--line-mode-trim-trailing-blank (start)</code></li>
+<li>L298: <code>(defun ghostel--line-mode-snapshot ()</code></li>
+<li>L330: <code>(defun ghostel--line-mode-restore (snapshot)</code></li>
+<li>L385: <code>(defun ghostel--line-mode-enter ()</code></li>
+<li>L477: <code>(defun ghostel-line-mode (&amp;optional force)</code></li>
+<li>L520: <code>(defun ghostel--line-mode-input-text ()</code></li>
+<li>L532: <code>(defun ghostel--line-mode-delete-input ()</code></li>
+<li>L544: <code>(defun ghostel--line-mode-clear-shell-readline ()</code></li>
+<li>L562: <code>(defun ghostel--line-mode-teardown (&amp;optional pause)</code></li>
+<li>L616: <code>(defun ghostel--line-mode-pause ()</code></li>
+<li>L634: <code>(defun ghostel--line-mode-try-resume ()</code></li>
+<li>L647: <code>(defun ghostel--line-mode-defer-entry ()</code></li>
+<li>L661: <code>(defun ghostel--line-mode-pre-redraw ()</code></li>
+<li>L675: <code>(defun ghostel--line-mode-post-redraw ()</code></li>
+<li>L689: <code>(defun ghostel--line-mode-startup-prompt-ready-p ()</code></li>
+<li>L705: <code>(defun ghostel--line-mode-maybe-enter-initial ()</code></li>
+<li>L718: <code>(defun ghostel-line-mode-send ()</code></li>
+<li>L751: <code>(defun ghostel-line-mode-interrupt ()</code></li>
+<li>L764: <code>(defun ghostel-line-mode-delete-char-or-eof ()</code></li>
+<li>L775: <code>(defun ghostel--line-mode-replace-input (text)</code></li>
+<li>L787: <code>(defun ghostel-line-mode-history-previous ()</code></li>
+<li>L799: <code>(defun ghostel-line-mode-history-next ()</code></li>
+<li>L814: <code>(defun ghostel--line-mode-bash-completion-available-p ()</code></li>
+<li>L824: <code>(defun ghostel--line-mode-effective-capfs ()</code></li>
+<li>L836: <code>(defun ghostel--line-mode-maybe-prespawn-bash-completion ()</code></li>
+<li>L847: <code>(defun ghostel-line-mode-complete-at-point ()</code></li>
+<li>L876: <code>(provide 'ghostel-line-mode)</code></li>
+</ul>
+<h2>lisp/ghostel-links.el</h2>
+<ul>
+<li>L28: <code>(require 'cl-lib)</code></li>
+<li>L29: <code>(require 'compat)</code></li>
+<li>L30: <code>(require 'seq)</code></li>
+<li>L31: <code>(require 'text-property-search)</code></li>
+<li>L32: <code>(require 'thingatpt)</code></li>
+<li>L42: <code>(defcustom ghostel-enable-url-detection t</code></li>
+<li>L49: <code>(defcustom ghostel-enable-file-detection t</code></li>
+<li>L59: <code>(defcustom ghostel-plain-link-detection-delay 0.1</code></li>
+<li>L68: <code>(defcustom ghostel-file-detection-path-regex</code></li>
+<li>L145: <code>(defvar-keymap ghostel-link-map</code></li>
+<li>L154: <code>(defun ghostel--uri-at-pos (pos)</code></li>
+<li>L159: <code>(defun ghostel--eldoc-link (callback &amp;rest _)</code></li>
+<li>L169: <code>(defun ghostel--open-link (url)</code></li>
+<li>L194: <code>(defun ghostel-open-link-at-click (event)</code></li>
+<li>L199: <code>(defun ghostel-open-link-at-point ()</code></li>
+<li>L204: <code>(defun ghostel--find-link-1 (direction from)</code></li>
+<li>L236: <code>(defun ghostel--find-next-link (from)</code></li>
+<li>L242: <code>(defun ghostel--find-previous-link (from)</code></li>
+<li>L246: <code>(defun ghostel--goto-hyperlink (direction)</code></li>
+<li>L262: <code>(defun ghostel-next-hyperlink (&amp;optional n)</code></li>
+<li>L273: <code>(defun ghostel-previous-hyperlink (&amp;optional n)</code></li>
+<li>L284: <code>(defvar-keymap ghostel-hyperlink-repeat-map</code></li>
+<li>L302: <code>(defun ghostel--soft-wrap-line-beginning (pos limit)</code></li>
+<li>L318: <code>(defun ghostel--soft-wrap-line-end (pos limit)</code></li>
+<li>L332: <code>(defun ghostel--wrap-joined-region (begin end limit)</code></li>
+<li>L367: <code>(defun ghostel--wrap-offset-to-pos (offset chunks)</code></li>
+<li>L382: <code>(defun ghostel--wrap-fragments (beg end)</code></li>
+<li>L398: <code>(defun ghostel--url-link-p (pos)</code></li>
+<li>L408: <code>(defun ghostel--range-overlaps-p (beg end ranges)</code></li>
+<li>L415: <code>(defun ghostel--linkify (fragments uri raw)</code></li>
+<li>L433: <code>(defun ghostel--detected-link-p (pos)</code></li>
+<li>L437: <code>(defun ghostel--foreign-link-p (beg end)</code></li>
+<li>L450: <code>(defun ghostel--skip-match-p (fragments raw active-bounds)</code></li>
+<li>L476: <code>(defun ghostel--drop-stranded-links (begin end matched urls files)</code></li>
+<li>L500: <code>(defun ghostel--detect-urls (&amp;optional begin end)</code></li>
+<li>L615: <code>(defun ghostel--wrap-pos-to-offset (pos chunks)</code></li>
+<li>L626: <code>(defun ghostel--logical-line-at-point ()</code></li>
+<li>L643: <code>(defun ghostel--joined-token-at-point (chars)</code></li>
+<li>L661: <code>(defun ghostel--link-uri-at-point ()</code></li>
+<li>L668: <code>(defun ghostel--fileref-file-at-point ()</code></li>
+<li>L678: <code>(defun ghostel--thing-at-point-filename ()</code></li>
+<li>L694: <code>(defun ghostel--thing-at-point-url ()</code></li>
+<li>L716: <code>(defun ghostel--link-bounds (pos)</code></li>
+<li>L743: <code>(defun ghostel--bounds-of-file-link-at-point ()</code></li>
+<li>L749: <code>(defun ghostel--bounds-of-url-link-at-point ()</code></li>
+<li>L759: <code>(defun ghostel-find-file-at-point ()</code></li>
+<li>L775: <code>(defun ghostel--clear-plain-link-detection-bounds ()</code></li>
+<li>L784: <code>(defun ghostel--run-queued-plain-link-detection (buffer)</code></li>
+<li>L809: <code>(defun ghostel--flush-plain-link-detection ()</code></li>
+<li>L821: <code>(defun ghostel--queue-plain-link-detection (begin end)</code></li>
+<li>L843: <code>(defun ghostel-links-setup ()</code></li>
+<li>L863: <code>(provide 'ghostel-links)</code></li>
+</ul>
+<h2>lisp/ghostel-module-install.el</h2>
+<ul>
+<li>L18: <code>(require 'compat)</code></li>
+<li>L19: <code>(require 'compile)</code></li>
+<li>L20: <code>(require 'url-parse)</code></li>
+<li>L28: <code>(defcustom ghostel-module-directory nil</code></li>
+<li>L39: <code>(defcustom ghostel-module-auto-install 'ask</code></li>
+<li>L54: <code>(defcustom ghostel-module-compile-command</code></li>
+<li>L62: <code>(defcustom ghostel-github-release-url</code></li>
+<li>L78: <code>(defun ghostel--module-platform-tag ()</code></li>
+<li>L101: <code>(defun ghostel--module-asset-name ()</code></li>
+<li>L107: <code>(defun ghostel--release-asset-url (asset-name &amp;optional version)</code></li>
+<li>L116: <code>(defun ghostel--module-download-url (&amp;optional version)</code></li>
+<li>L122: <code>(defun ghostel--windows-support-assets ()</code></li>
+<li>L139: <code>(defun ghostel--install-support-assets (dir &amp;optional version)</code></li>
+<li>L155: <code>(defun ghostel--release-version-from-url (url)</code></li>
+<li>L164: <code>(defun ghostel--download-module (dir &amp;optional version latest-release)</code></li>
+<li>L206: <code>(defun ghostel--compile-module (dest-dir)</code></li>
+<li>L245: <code>(defun ghostel--ensure-module (dir)</code></li>
+<li>L256: <code>(defun ghostel--read-module-download-version ()</code></li>
+<li>L267: <code>(defun ghostel--ask-install-action (_dir)</code></li>
+<li>L287: <code>(defun ghostel--download-file (url dest)</code></li>
+<li>L331: <code>(defun ghostel--package-directory ()</code></li>
+<li>L337: <code>(defun ghostel--resource-root ()</code></li>
+<li>L355: <code>(defun ghostel--module-directory ()</code></li>
+<li>L363: <code>(defun ghostel--module-sidecar-path (dir)</code></li>
+<li>L371: <code>(defun ghostel--read-module-sidecar-version (dir)</code></li>
+<li>L381: <code>(defun ghostel--write-module-sidecar-version (dir version)</code></li>
+<li>L394: <code>(defun ghostel--make-module-build-dir (dest-dir)</code></li>
+<li>L403: <code>(defun ghostel--install-module-pair (built-mod final-mod</code></li>
+<li>L415: <code>(defun ghostel-download-module (&amp;optional prompt-for-version)</code></li>
+<li>L445: <code>(defun ghostel--install-built-module-after-compilation (buf status)</code></li>
+<li>L475: <code>(define-derived-mode ghostel-module-compilation-mode compilation-mode "Compilation"</code></li>
+<li>L481: <code>(defun ghostel--module-compilation-buffer-name (_mode-name)</code></li>
+<li>L485: <code>(defun ghostel--install-built-module-on-finish (compile-buf build-dir dest-dir)</code></li>
+<li>L491: <code>(defun ghostel-module-compile ()</code></li>
+<li>L510: <code>(defun ghostel--check-module-version (dir &amp;optional prompt-user)</code></li>
+<li>L528: <code>(defun ghostel--load-module (&amp;optional prompt-user)</code></li>
+<li>L621: <code>(provide 'ghostel-module-install)</code></li>
+</ul>
+<h2>lisp/ghostel-org.el</h2>
+<ul>
+<li>L28: <code>(require 'compat)</code></li>
+<li>L29: <code>(require 'ol)</code></li>
+<li>L30: <code>(require 'ghostel)</code></li>
+<li>L31: <code>(require 'ghostel-bookmark)</code></li>
+<li>L33: <code>(defun ghostel-org-store-link (&amp;optional _interactive)</code></li>
+<li>L42: <code>(defun ghostel-org-open (path _arg)</code></li>
+<li>L70: <code>(defun ghostel-org-complete-link (&amp;optional _arg)</code></li>
+<li>L80: <code>(provide 'ghostel-org)</code></li>
+</ul>
+<h2>lisp/ghostel-shell.el</h2>
+<ul>
+<li>L29: <code>(require 'cl-lib)</code></li>
+<li>L30: <code>(require 'compat)</code></li>
+<li>L31: <code>(require 'imenu)</code></li>
+<li>L32: <code>(require 'seq)</code></li>
+<li>L33: <code>(require 'subr-x)</code></li>
+<li>L34: <code>(require 'tramp)</code></li>
+<li>L50: <code>(defcustom ghostel-shell-integration t</code></li>
+<li>L58: <code>(defcustom ghostel-tramp-shells</code></li>
+<li>L88: <code>(defcustom ghostel-tramp-shell-integration nil</code></li>
+<li>L103: <code>(defcustom ghostel-macos-login-shell (eq system-type 'darwin)</code></li>
+<li>L129: <code>(defcustom ghostel-shell-history-commands</code></li>
+<li>L154: <code>(defcustom ghostel-command-finish-functions nil</code></li>
+<li>L173: <code>(defcustom ghostel-command-start-functions nil</code></li>
+<li>L207: <code>(defun ghostel--detect-shell (shell)</code></li>
+<li>L216: <code>(defun ghostel--tramp-shell-spec (method)</code></li>
+<li>L245: <code>(defun ghostel--shell-program-and-args (spec)</code></li>
+<li>L255: <code>(defun ghostel--default-remote-shell-args (program &amp;optional integration)</code></li>
+<li>L266: <code>(defun ghostel--resolve-shell-spec ()</code></li>
+<li>L284: <code>(defun ghostel--macos-login-wrap (program args)</code></li>
+<li>L314: <code>(defun ghostel--setup-local-integration (shell-type ghostel-dir)</code></li>
+<li>L361: <code>(defun ghostel--read-local-file (path)</code></li>
+<li>L367: <code>(defun ghostel--write-remote-file (tramp-path content)</code></li>
+<li>L379: <code>(defun ghostel--push-remote-terminfo (remote-prefix)</code></li>
+<li>L421: <code>(defun ghostel--cleanup-temp-paths (files dirs)</code></li>
+<li>L434: <code>(defun ghostel--merge-integration-plists (base extra)</code></li>
+<li>L446: <code>(defun ghostel--setup-remote-integration (shell-type)</code></li>
+<li>L555: <code>(defun ghostel--osc133-marker (type param)</code></li>
+<li>L586: <code>(defun ghostel--prompt-input-start ()</code></li>
+<li>L595: <code>(defun ghostel--navigate-next-prompt (&amp;optional n)</code></li>
+<li>L613: <code>(defun ghostel--navigate-previous-prompt (&amp;optional n)</code></li>
+<li>L645: <code>(defun ghostel-next-prompt (&amp;optional n)</code></li>
+<li>L653: <code>(defun ghostel-previous-prompt (&amp;optional n)</code></li>
+<li>L689: <code>(defun ghostel--imenu-stamp-cwd (buffer)</code></li>
+<li>L695: <code>(defun ghostel--imenu--collect-prompt-regions ()</code></li>
+<li>L708: <code>(defun ghostel--imenu-create-index ()</code></li>
+<li>L749: <code>(defun ghostel--imenu-goto (_name position &amp;rest _)</code></li>
+<li>L762: <code>(defun ghostel-imenu-setup ()</code></li>
+<li>L775: <code>(defun ghostel--shell-history-run (command)</code></li>
+<li>L797: <code>(defun ghostel-shell-history ()</code></li>
+<li>L817: <code>(provide 'ghostel-shell)</code></li>
+</ul>
+<h2>lisp/ghostel.el</h2>
+<ul>
+<li>L88: <code>(require 'ansi-color)</code></li>
+<li>L89: <code>(require 'cl-lib)</code></li>
+<li>L90: <code>(require 'comint)</code></li>
+<li>L91: <code>(require 'compat)</code></li>
+<li>L92: <code>(require 'dnd)</code></li>
+<li>L93: <code>(require 'format-spec)</code></li>
+<li>L94: <code>(require 'project)</code></li>
+<li>L95: <code>(require 'shell)</code></li>
+<li>L96: <code>(require 'text-property-search)</code></li>
+<li>L97: <code>(require 'tramp)</code></li>
+<li>L98: <code>(require 'url-parse)</code></li>
+<li>L99: <code>(require 'face-remap)</code></li>
+<li>L100: <code>(require 'ghostel-faces)</code></li>
+<li>L101: <code>(require 'ghostel-kitty)</code></li>
+<li>L102: <code>(require 'ghostel-line-mode)</code></li>
+<li>L103: <code>(require 'ghostel-links)</code></li>
+<li>L104: <code>(require 'ghostel-module-install)</code></li>
+<li>L105: <code>(require 'ghostel-shell)</code></li>
+<li>L116: <code>(defcustom ghostel-shell</code></li>
+<li>L139: <code>(defcustom ghostel-term "xterm-ghostty"</code></li>
+<li>L164: <code>(defcustom ghostel-environment nil</code></li>
+<li>L205: <code>(defcustom ghostel-use-native-pty t</code></li>
+<li>L212: <code>(defun ghostel--safe-environment-p (value)</code></li>
+<li>L221: <code>(defcustom ghostel-ssh-install-terminfo 'auto</code></li>
+<li>L237: <code>(defcustom ghostel-max-scrollback (* 5 1024 1024)  ; 5MB</code></li>
+<li>L251: <code>(defcustom ghostel-cell-pixel-scale 'auto</code></li>
+<li>L284: <code>(defcustom ghostel-glyph-scale-floor 0.0</code></li>
+<li>L292: <code>(defcustom ghostel-line-spacing 0</code></li>
+<li>L310: <code>(defcustom ghostel-timer-delay 0.033</code></li>
+<li>L316: <code>(defcustom ghostel-inhibit-redraw-functions nil</code></li>
+<li>L326: <code>(defcustom ghostel-inhibit-input-forwarding-functions nil</code></li>
+<li>L334: <code>(defcustom ghostel-inhibit-anchor-functions nil</code></li>
+<li>L344: <code>(defcustom ghostel-adaptive-fps t</code></li>
+<li>L351: <code>(defcustom ghostel-immediate-redraw-interval 0.05</code></li>
+<li>L357: <code>(defcustom ghostel-buffer-name "*ghostel*"</code></li>
+<li>L361: <code>(defcustom ghostel-project-buffer-scope 'both</code></li>
+<li>L384: <code>(defcustom ghostel-buffer-name-function nil</code></li>
+<li>L401: <code>(defcustom ghostel-buffer-identification-format "%b (%.30t)"</code></li>
+<li>L415: <code>(defcustom ghostel-annotation-title-width 30</code></li>
+<li>L420: <code>(defcustom ghostel-kill-buffer-on-exit t</code></li>
+<li>L424: <code>(defcustom ghostel-query-before-killing 'auto</code></li>
+<li>L436: <code>(defcustom ghostel-exit-functions nil</code></li>
+<li>L442: <code>(defcustom ghostel-pre-spawn-hook nil</code></li>
+<li>L454: <code>(defcustom ghostel-eval-cmds '(("find-file" find-file)</code></li>
+<li>L465: <code>(defcustom ghostel-enable-osc52 nil</code></li>
+<li>L476: <code>(defcustom ghostel-password-prompt-regex comint-password-prompt-regexp</code></li>
+<li>L484: <code>(defcustom ghostel-password-prompt-functions</code></li>
+<li>L521: <code>(defcustom ghostel-detect-password-prompts t</code></li>
+<li>L528: <code>(defcustom ghostel-password-prompt-debounce 0.2</code></li>
+<li>L537: <code>(defcustom ghostel-notification-function #'ghostel-default-notify</code></li>
+<li>L548: <code>(defcustom ghostel-progress-function</code></li>
+<li>L569: <code>(defcustom ghostel-spinner-type 'progress-bar</code></li>
+<li>L578: <code>(defcustom ghostel-tramp-default-method nil</code></li>
+<li>L587: <code>(defcustom ghostel-keymap-exceptions</code></li>
+<li>L597: <code>(defcustom ghostel-tty-escape-delay 0.01</code></li>
+<li>L604: <code>(defcustom ghostel-ignore-cursor-change nil</code></li>
+<li>L614: <code>(defcustom ghostel-readonly-fast-exit t</code></li>
+<li>L637: <code>(defcustom ghostel-readonly-fake-cursor t</code></li>
+<li>L650: <code>(defcustom ghostel-window-padding-balance 'top</code></li>
+<li>L659: <code>(defcustom ghostel-initial-input-mode 'semi-char</code></li>
+<li>L668: <code>(defcustom ghostel-readonly-default-mode 'copy</code></li>
+<li>L683: <code>(defcustom ghostel-mouse-drag-input-mode 'default</code></li>
+<li>L706: <code>(defcustom ghostel-mark-activation-input-mode 'default</code></li>
+<li>L718: <code>(defcustom ghostel-point-leave-input-mode 'default</code></li>
+<li>L731: <code>(defcustom ghostel-prompt-navigation-input-mode 'default</code></li>
+<li>L740: <code>(defcustom ghostel-word-boundary-string " \t\"''|:;,()[]{}&lt;&gt;$│"</code></li>
+<li>L760: <code>(defun ghostel--realize-word-boundaries (table boundary-string)</code></li>
+<li>L773: <code>(defun ghostel--rebuild-mode-syntax-table ()</code></li>
+<li>L783: <code>(defcustom ghostel-scroll-on-input t</code></li>
+<li>L790: <code>(defcustom ghostel-prompt-regexp</code></li>
+<li>L897: <code>(defcustom ghostel-bold-color nil</code></li>
+<li>L1043: <code>(defun ghostel--ensure-ghostel-buffer ()</code></li>
+<li>L1048: <code>(defun ghostel--run-hook-safely (hook &amp;rest args)</code></li>
+<li>L1070: <code>(defun ghostel--event-window (event)</code></li>
+<li>L1077: <code>(defun ghostel--scroll-intercept-up (event)</code></li>
+<li>L1092: <code>(defun ghostel--scroll-intercept-down (event)</code></li>
+<li>L1104: <code>(defun ghostel--redispatch-scroll-event (event)</code></li>
+<li>L1119: <code>(defun ghostel--reenable-scroll-intercept ()</code></li>
+<li>L1124: <code>(defvar-keymap ghostel--scroll-intercept-map</code></li>
+<li>L1133: <code>(defvar-keymap ghostel--dnd-area-map</code></li>
+<li>L1171: <code>(defun ghostel-alt-screen-p ()</code></li>
+<li>L1181: <code>(defun ghostel--define-terminal-keys (map &amp;optional no-exceptions)</code></li>
+<li>L1186: <code>(define-key map [remap self-insert-command] #'ghostel--self-insert)</code></li>
+<li>L1199: <code>(define-key map (kbd key) #'ghostel--send-event))</code></li>
+<li>L1205: <code>(define-key map (kbd key-str) #'ghostel--send-event))))))</code></li>
+<li>L1207: <code>(define-key map (kbd "RET") #'ghostel--send-event)</code></li>
+<li>L1208: <code>(define-key map (kbd "TAB") #'ghostel--send-event)</code></li>
+<li>L1209: <code>(define-key map (kbd "DEL") #'ghostel--send-event)</code></li>
+<li>L1211: <code>(define-key map (kbd "&lt;backtab&gt;") #'ghostel--send-event)</code></li>
+<li>L1223: <code>(define-key map (kbd key-str) #'ghostel--send-event)))))</code></li>
+<li>L1233: <code>(define-key map (kbd key-str) #'ghostel--send-event))))))</code></li>
+<li>L1238: <code>(define-key map (kbd key-str) #'ghostel--send-event)))</code></li>
+<li>L1246: <code>(define-key map (kbd key-str) #'ghostel--send-event)))</code></li>
+<li>L1255: <code>(define-key map (kbd key-str) #'ghostel--send-event)))</code></li>
+<li>L1260: <code>(define-key map (kbd "M-DEL") #'ghostel--send-event)</code></li>
+<li>L1264: <code>(define-key map (kbd "C-@") #'ghostel--send-event)</code></li>
+<li>L1268: <code>(define-key map (kbd "C-SPC") #'ghostel--send-event)</code></li>
+<li>L1269: <code>(define-key map (kbd "C-\\") #'ghostel--send-event)</code></li>
+<li>L1270: <code>(define-key map (kbd "M-:") #'ghostel--send-event)))</code></li>
+<li>L1272: <code>(defvar-keymap ghostel-mode-map</code></li>
+<li>L1334: <code>(defvar-keymap ghostel-prompt-repeat-map</code></li>
+<li>L1344: <code>(defvar-keymap ghostel-semi-char-mode-map</code></li>
+<li>L1352: <code>(defun ghostel--rebuild-semi-char-keymap ()</code></li>
+<li>L1370: <code>(define-key fresh (kbd "C-q") #'ghostel-send-next-key))</code></li>
+<li>L1373: <code>(define-key ghostel-mode-map (kbd "C-g")</code></li>
+<li>L1380: <code>(defvar-keymap ghostel-char-mode-map</code></li>
+<li>L1411: <code>(defvar-keymap ghostel-readonly-mode-map</code></li>
+<li>L1438: <code>(defvar-keymap ghostel-readonly-fast-exit-mode-map</code></li>
+<li>L1533: <code>(defun ghostel-send-next-key ()</code></li>
+<li>L1553: <code>(defun ghostel--send-string (string)</code></li>
+<li>L1562: <code>(defun ghostel--send-encoded (key-name mods &amp;optional utf8)</code></li>
+<li>L1574: <code>(defun ghostel--raw-key-sequence (key-name mods)</code></li>
+<li>L1631: <code>(defun ghostel--modifier-number (mods)</code></li>
+<li>L1639: <code>(defun ghostel--csi-letter (letter mod-num)</code></li>
+<li>L1645: <code>(defun ghostel--csi-tilde (param mod-num)</code></li>
+<li>L1651: <code>(defun ghostel--on-user-input ()</code></li>
+<li>L1660: <code>(defun ghostel--self-insert ()</code></li>
+<li>L1671: <code>(defun ghostel--event-key-spec (event &amp;optional meta)</code></li>
+<li>L1728: <code>(defun ghostel--send-event ()</code></li>
+<li>L1760: <code>(defun ghostel--forward-inserts-p ()</code></li>
+<li>L1766: <code>(defun ghostel--forward-inserts-after-change (beg end old-len)</code></li>
+<li>L1787: <code>(defun ghostel--sync-read-only ()</code></li>
+<li>L1801: <code>(defun ghostel-send-string (string)</code></li>
+<li>L1810: <code>(defun ghostel-send-key (key-name &amp;optional mods)</code></li>
+<li>L1822: <code>(defun ghostel-paste-string (string)</code></li>
+<li>L1838: <code>(defun ghostel-send-C-c ()</code></li>
+<li>L1846: <code>(defun ghostel-send-C-z ()</code></li>
+<li>L1854: <code>(defun ghostel-send-C-backslash ()</code></li>
+<li>L1860: <code>(defun ghostel-send-C-d ()</code></li>
+<li>L1868: <code>(defun ghostel-send-C-g ()</code></li>
+<li>L1885: <code>(defun ghostel--decode-paste-bytes (text)</code></li>
+<li>L1898: <code>(defun ghostel--paste-text (text)</code></li>
+<li>L1903: <code>(defun ghostel-paste ()</code></li>
+<li>L1911: <code>(defun ghostel-yank ()</code></li>
+<li>L1920: <code>(defun ghostel-yank-pop ()</code></li>
+<li>L1944: <code>(defun ghostel-xterm-paste (event)</code></li>
+<li>L1967: <code>(defun ghostel--dnd-send-files (files)</code></li>
+<li>L1972: <code>(defun ghostel--dnd-handle-file (uri action)</code></li>
+<li>L1989: <code>(defun ghostel--yank-media-data (mimetype data)</code></li>
+<li>L2006: <code>(defun ghostel--drop (event)</code></li>
+<li>L2033: <code>(defun ghostel-clear-scrollback ()</code></li>
+<li>L2044: <code>(defun ghostel-clear ()</code></li>
+<li>L2074: <code>(defvar ghostel--mouse-drag-map</code></li>
+<li>L2076: <code>(define-key map [mouse-movement] #'ghostel--mouse-drag-motion)</code></li>
+<li>L2085: <code>(define-key map (vector prefix) map))</code></li>
+<li>L2092: <code>(defun ghostel--posn-cell (posn)</code></li>
+<li>L2107: <code>(defun ghostel--mouse-button-number (event)</code></li>
+<li>L2115: <code>(defun ghostel--mouse-mods (event)</code></li>
+<li>L2131: <code>(defun ghostel--forward-scroll-event (event button)</code></li>
+<li>L2167: <code>(defun ghostel--mouse-press (event)</code></li>
+<li>L2190: <code>(defun ghostel--mouse-begin-drag-tracking (event)</code></li>
+<li>L2211: <code>(defun ghostel--mouse-drag-motion (event)</code></li>
+<li>L2231: <code>(defun ghostel--mouse-release (event)</code></li>
+<li>L2247: <code>(defun ghostel--mouse-drag (event)</code></li>
+<li>L2268: <code>(defun ghostel-mouse-press-or-copy-mode (event)</code></li>
+<li>L2299: <code>(defun ghostel-mouse-release-or-set-point (event &amp;optional promote-to-region)</code></li>
+<li>L2326: <code>(defun ghostel-mouse-drag-or-set-region (event)</code></li>
+<li>L2350: <code>(defun ghostel-mouse-down-2-or-noop (event)</code></li>
+<li>L2357: <code>(defun ghostel-mouse-paste-primary-or-release (event)</code></li>
+<li>L2397: <code>(defun ghostel--mode-line-tag-mouse-exit (event)</code></li>
+<li>L2407: <code>(defvar ghostel--mode-line-tag-mouse-map</code></li>
+<li>L2409: <code>(define-key map [mode-line mouse-1] #'ghostel--mode-line-tag-mouse-exit)</code></li>
+<li>L2413: <code>(defun ghostel--mode-line-tag-help-echo-text (mode)</code></li>
+<li>L2429: <code>(defun ghostel--mode-line-tag-make (mode label)</code></li>
+<li>L2437: <code>(defun ghostel--mode-line-refresh ()</code></li>
+<li>L2476: <code>(defun ghostel--enter-readonly-state ()</code></li>
+<li>L2488: <code>(defun ghostel--leave-readonly-state ()</code></li>
+<li>L2499: <code>(defun ghostel--freeze-terminal ()</code></li>
+<li>L2509: <code>(defun ghostel--fake-cursor-style ()</code></li>
+<li>L2524: <code>(defun ghostel--fake-cursor-clear ()</code></li>
+<li>L2530: <code>(defun ghostel--fake-cursor-update (&amp;optional _window)</code></li>
+<li>L2573: <code>(defun ghostel-semi-char-mode ()</code></li>
+<li>L2601: <code>(defun ghostel-char-mode ()</code></li>
+<li>L2650: <code>(defun ghostel--readonly-keymap ()</code></li>
+<li>L2656: <code>(defun ghostel--enter-readonly-input-mode (spec)</code></li>
+<li>L2664: <code>(defun ghostel-readonly-enter ()</code></li>
+<li>L2670: <code>(defun ghostel--enter-readonly (mode freeze label entry-message)</code></li>
+<li>L2712: <code>(defun ghostel-emacs-mode ()</code></li>
+<li>L2730: <code>(defun ghostel-copy-mode ()</code></li>
+<li>L2749: <code>(defun ghostel--mark-activated ()</code></li>
+<li>L2765: <code>(defun ghostel-maybe-leave-input (&amp;rest _)</code></li>
+<li>L2781: <code>(defun ghostel-readonly-exit ()</code></li>
+<li>L2803: <code>(defun ghostel-readonly-exit-and-clear ()</code></li>
+<li>L2809: <code>(defun ghostel-readonly-exit-and-send ()</code></li>
+<li>L2821: <code>(defun ghostel-readonly-RET-or-exit-and-send ()</code></li>
+<li>L2842: <code>(defun ghostel-readonly-end-of-buffer ()</code></li>
+<li>L2856: <code>(defun ghostel-readonly-end-of-line ()</code></li>
+<li>L2866: <code>(defun ghostel--filter-soft-wraps (text)</code></li>
+<li>L2884: <code>(defun ghostel--clean-copy-text (text)</code></li>
+<li>L2891: <code>(defun ghostel--filter-buffer-substring (beg end delete)</code></li>
+<li>L2897: <code>(defun ghostel-readonly-copy ()</code></li>
+<li>L2908: <code>(defun ghostel-copy-all ()</code></li>
+<li>L2921: <code>(defun ghostel--regex-prompt-end (pos)</code></li>
+<li>L2935: <code>(defun ghostel-input-start-point ()</code></li>
+<li>L2984: <code>(defun ghostel-beginning-of-input-or-line ()</code></li>
+<li>L3033: <code>(defun ghostel-cursor-point ()</code></li>
+<li>L3043: <code>(defun ghostel--pos-on-cursor-p (pos)</code></li>
+<li>L3050: <code>(defun ghostel--viewport-row-at (pos)</code></li>
+<li>L3061: <code>(defun ghostel-point-on-cursor-row-p (&amp;optional pos)</code></li>
+<li>L3137: <code>(defun ghostel--remote-shell-p ()</code></li>
+<li>L3147: <code>(defun ghostel--cursor-row-text ()</code></li>
+<li>L3165: <code>(defun ghostel--password-prompt-detected-p ()</code></li>
+<li>L3183: <code>(defun ghostel--password-regex-matches-cursor-row-p ()</code></li>
+<li>L3191: <code>(defun ghostel--cancel-password-confirm-timer ()</code></li>
+<li>L3197: <code>(defun ghostel--cancel-password-prompt ()</code></li>
+<li>L3220: <code>(defun ghostel--confirm-and-prompt (buf)</code></li>
+<li>L3234: <code>(defun ghostel--detect-password-prompt ()</code></li>
+<li>L3283: <code>(defun ghostel--default-password-source (row)</code></li>
+<li>L3292: <code>(defun ghostel--prompt-password ()</code></li>
+<li>L3351: <code>(defun ghostel--osc52-eval (str)</code></li>
+<li>L3373: <code>(defun ghostel--osc52-handle (_selection base64-data)</code></li>
+<li>L3385: <code>(defun ghostel-default-notify (title body)</code></li>
+<li>L3403: <code>(defun ghostel-tty-forward-notify (title body)</code></li>
+<li>L3418: <code>(defun ghostel-default-progress (state progress)</code></li>
+<li>L3443: <code>(defun ghostel--spinner-stop ()</code></li>
+<li>L3452: <code>(defun ghostel-spinner-progress (state progress)</code></li>
+<li>L3485: <code>(defun ghostel--defer (function &amp;rest args)</code></li>
+<li>L3495: <code>(defun ghostel--handle-notification (title body)</code></li>
+<li>L3523: <code>(defun ghostel--osc-progress (state-str progress)</code></li>
+<li>L3544: <code>(defun ghostel-buffer-name-by-title (title)</code></li>
+<li>L3549: <code>(defun ghostel-buffer-name-by-directory (_title)</code></li>
+<li>L3555: <code>(defun ghostel--rename-managed (new-name)</code></li>
+<li>L3565: <code>(defun ghostel--set-title (title)</code></li>
+<li>L3582: <code>(defun ghostel--buffer-identification (format)</code></li>
+<li>L3613: <code>(defun ghostel--buffer-identification-update ()</code></li>
+<li>L3625: <code>(defun ghostel--windows-local-path (path)</code></li>
+<li>L3641: <code>(defun ghostel--local-host-p (host)</code></li>
+<li>L3658: <code>(defun ghostel--update-directory (dir)</code></li>
+<li>L3748: <code>(defun ghostel--cursor-blink-stop ()</code></li>
+<li>L3762: <code>(defun ghostel--cursor-blink-restore-window (window)</code></li>
+<li>L3774: <code>(defun ghostel--cursor-blink-tick (buffer)</code></li>
+<li>L3789: <code>(defun ghostel--cursor-blink-start ()</code></li>
+<li>L3806: <code>(defun ghostel--apply-cursor-style ()</code></li>
+<li>L3829: <code>(defun ghostel--apply-palette (term)</code></li>
+<li>L3845: <code>(defun ghostel--apply-bold-config (term)</code></li>
+<li>L3858: <code>(defun ghostel-sync-theme ()</code></li>
+<li>L3873: <code>(defun ghostel--on-theme-change (&amp;rest _args)</code></li>
+<li>L3895: <code>(defun ghostel--buffer-focused-p (buf)</code></li>
+<li>L3906: <code>(defun ghostel--frame-focus-flags (&amp;rest _)</code></li>
+<li>L3916: <code>(defun ghostel--focus-change (&amp;rest _)</code></li>
+<li>L3934: <code>(defun ghostel--filter (process output)</code></li>
+<li>L3950: <code>(defun ghostel--events-filter (pipe output)</code></li>
+<li>L3990: <code>(defun ghostel--sentinel (process event)</code></li>
+<li>L4012: <code>(defun ghostel--resolve-local-executable (program)</code></li>
+<li>L4043: <code>(defun ghostel--terminfo-directory ()</code></li>
+<li>L4056: <code>(defun ghostel--ssh-install-enabled-p ()</code></li>
+<li>L4067: <code>(defun ghostel-ssh-clear-terminfo-cache ()</code></li>
+<li>L4084: <code>(defun ghostel--terminal-env ()</code></li>
+<li>L4121: <code>(defun ghostel--remote-term-preamble ()</code></li>
+<li>L4170: <code>(defun ghostel--logical-pwd-env (remote-p)</code></li>
+<li>L4181: <code>(defun ghostel--spawn-pty (program program-args extra-env &amp;optional remote-p)</code></li>
+<li>L4224: <code>(defun ghostel--spawn-process (program program-args remote-p)</code></li>
+<li>L4243: <code>(defun ghostel--spawn-via-emacs (program program-args &amp;optional remote-p)</code></li>
+<li>L4287: <code>(defun ghostel--spawn-via-native (command)</code></li>
+<li>L4314: <code>(defun ghostel--kill-native-processes-on-exit ()</code></li>
+<li>L4322: <code>(defun ghostel--kill-native-process-hook ()</code></li>
+<li>L4336: <code>(defun ghostel--start-process ()</code></li>
+<li>L4404: <code>(defun ghostel--get-render-window (buffer)</code></li>
+<li>L4414: <code>(defun ghostel--invalidate ()</code></li>
+<li>L4450: <code>(defun ghostel--viewport-start ()</code></li>
+<li>L4459: <code>(defun ghostel--schedule-link-detection ()</code></li>
+<li>L4472: <code>(defun ghostel--deactivate-repainted-region ()</code></li>
+<li>L4488: <code>(defun ghostel--daemon-dummy-frame-p (frame)</code></li>
+<li>L4496: <code>(defun ghostel--windows (&amp;optional buffer all-frames)</code></li>
+<li>L4512: <code>(defun ghostel--window-on-cursor-p (window)</code></li>
+<li>L4523: <code>(defun ghostel--window-follows-p (window)</code></li>
+<li>L4535: <code>(defun ghostel--window-anchored-p (window &amp;optional body-pixel-height)</code></li>
+<li>L4567: <code>(defun ghostel--anchored-windows (&amp;optional buffer all-frames)</code></li>
+<li>L4573: <code>(defun ghostel--window-buffer-pairs (windows)</code></li>
+<li>L4577: <code>(defun ghostel--window-buffer-pair-live-p (entry)</code></li>
+<li>L4590: <code>(defun ghostel--set-window-vscroll (window vscroll &amp;optional pixels-p preserve-vscroll-p)</code></li>
+<li>L4608: <code>(defun ghostel--pixel-anchor (window target)</code></li>
+<li>L4619: <code>(defun ghostel--top-pad-set (pad)</code></li>
+<li>L4638: <code>(defun ghostel--top-pad-leftover (window target anchor)</code></li>
+<li>L4649: <code>(defun ghostel--balance-top-pad (window target)</code></li>
+<li>L4672: <code>(defun ghostel--anchor-window (&amp;optional window force following)</code></li>
+<li>L4738: <code>(defun ghostel--maybe-defer-redraw (buffer)</code></li>
+<li>L4750: <code>(defun ghostel--redraw-now (buffer &amp;optional force)</code></li>
+<li>L4814: <code>(defun ghostel-force-redraw ()</code></li>
+<li>L4826: <code>(defun ghostel--cell-pixel-scale ()</code></li>
+<li>L4835: <code>(defun ghostel--detect-cell-pixel-scale ()</code></li>
+<li>L4855: <code>(defun ghostel--reported-cell-width ()</code></li>
+<li>L4859: <code>(defun ghostel--cell-height ()</code></li>
+<li>L4871: <code>(defun ghostel--reported-cell-height ()</code></li>
+<li>L4875: <code>(defun ghostel--set-size-with-cell-dims (term rows cols)</code></li>
+<li>L4883: <code>(defun ghostel--adjust-size (window &amp;optional force)</code></li>
+<li>L4920: <code>(defun ghostel--around-font-scale (fn args &amp;optional buffer)</code></li>
+<li>L4934: <code>(defun ghostel--around-local-font-scale (fn &amp;rest args)</code></li>
+<li>L4938: <code>(defun ghostel--around-global-font-scale (fn &amp;rest args)</code></li>
+<li>L4957: <code>(defun ghostel--sync-tty-composition (window)</code></li>
+<li>L4971: <code>(defun ghostel--tty-esc (map)</code></li>
+<li>L4993: <code>(defun ghostel--tty-esc-init (&amp;optional frame)</code></li>
+<li>L5021: <code>(define-key input-decode-map (vector ?\e)</code></li>
+<li>L5024: <code>(defun ghostel--tty-esc-window-change (window)</code></li>
+<li>L5031: <code>(defun ghostel--pre-redisplay (_window)</code></li>
+<li>L5036: <code>(defun ghostel--window-buffer-change (window)</code></li>
+<li>L5042: <code>(defun ghostel--minibuffer-exit ()</code></li>
+<li>L5054: <code>(defun ghostel--minibuffer-exit-maybe-leave ()</code></li>
+<li>L5072: <code>(defun ghostel--query-before-killing-p ()</code></li>
+<li>L5078: <code>(defun ghostel--kill-buffer-query ()</code></li>
+<li>L5084: <code>(defun ghostel--kill-emacs-query ()</code></li>
+<li>L5100: <code>(defun ghostel--change-major-mode-guard ()</code></li>
+<li>L5113: <code>(define-derived-mode ghostel-mode fundamental-mode "Ghostel"</code></li>
+<li>L5229: <code>(defun ghostel--suppress-interfering-modes ()</code></li>
+<li>L5249: <code>(defun ghostel--identity-normalize (identity)</code></li>
+<li>L5254: <code>(defun ghostel--identity-equal (a b)</code></li>
+<li>L5258: <code>(defun ghostel-identity-match-p (pattern identity)</code></li>
+<li>L5265: <code>(defun ghostel--normalize-root (root)</code></li>
+<li>L5273: <code>(defun ghostel--next-instance (context)</code></li>
+<li>L5285: <code>(defun ghostel--find-buffer-by-identity (identity &amp;optional predicate)</code></li>
+<li>L5304: <code>(defun ghostel--init-buffer (buffer &amp;optional rows cols)</code></li>
+<li>L5399: <code>(defun ghostel--create (name &amp;optional display-action rows cols)</code></li>
+<li>L5422: <code>(defun ghostel--apply-initial-input-mode ()</code></li>
+<li>L5430: <code>(defun ghostel--start (context name &amp;optional arg)</code></li>
+<li>L5457: <code>(defun ghostel (&amp;optional arg)</code></li>
+<li>L5470: <code>(defun ghostel-exec (buffer program &amp;optional args identity)</code></li>
+<li>L5511: <code>(defun ghostel-create (&amp;optional name display identity)</code></li>
+<li>L5552: <code>(defun ghostel--project-buffer-name (root)</code></li>
+<li>L5565: <code>(defun ghostel-project (&amp;optional arg)</code></li>
+<li>L5583: <code>(defun ghostel-other ()</code></li>
+<li>L5598: <code>(defun ghostel-buffer-list ()</code></li>
+<li>L5607: <code>(defun ghostel-project-buffer-list ()</code></li>
+<li>L5644: <code>(defun ghostel--cycle (bufs direction empty-msg single-msg)</code></li>
+<li>L5666: <code>(defun ghostel-next ()</code></li>
+<li>L5674: <code>(defun ghostel-previous ()</code></li>
+<li>L5682: <code>(defun ghostel-project-next ()</code></li>
+<li>L5691: <code>(defun ghostel-project-previous ()</code></li>
+<li>L5699: <code>(defun ghostel-annotate-buffer (name)</code></li>
+<li>L5710: <code>(defun ghostel--read-buffer (prompt bufs)</code></li>
+<li>L5732: <code>(defun ghostel-list-buffers ()</code></li>
+<li>L5740: <code>(defun ghostel-project-list-buffers ()</code></li>
+<li>L5749: <code>(provide 'ghostel)</code></li>
+</ul>
+<h2>tools/ghostel-dape.el</h2>
+<ul>
+<li>L18: <code>(require 'cl-lib)</code></li>
+<li>L19: <code>(require 'subr-x)</code></li>
+<li>L34: <code>(defcustom ghostel-dape-build-command</code></li>
+<li>L41: <code>(defcustom ghostel-dape-hypothesis-failure-case-file</code></li>
+<li>L50: <code>(defun ghostel-dape--root ()</code></li>
+<li>L57: <code>(defun ghostel-dape--relative-file (file)</code></li>
+<li>L61: <code>(defun ghostel-dape--vector (&amp;rest args)</code></li>
+<li>L65: <code>(defun ghostel-dape--launch-emacs (&amp;rest args)</code></li>
+<li>L83: <code>(defun ghostel-dape--current-ert-test ()</code></li>
+<li>L90: <code>(defun ghostel-dape--ert-eval (test-regexp)</code></li>
+<li>L94: <code>(defun ghostel-dape--current-file ()</code></li>
+<li>L102: <code>(defun ghostel-dape--evil-checkout-dir ()</code></li>
+<li>L110: <code>(defun ghostel-dape--evil-p (file)</code></li>
+<li>L115: <code>(defun ghostel-dape--ert-load-path-args (file)</code></li>
+<li>L131: <code>(defun ghostel-dape--read-hypothesis-case-file ()</code></li>
+<li>L146: <code>(defun ghostel-dape--hypothesis-replay-eval (case-file)</code></li>
+<li>L150: <code>(defun ghostel-dape--launch-hypothesis-case (case-file)</code></li>
+<li>L161: <code>(defun ghostel-dape-ert-test-at-point (&amp;optional test-name)</code></li>
+<li>L183: <code>(defun ghostel-dape-ert-file ()</code></li>
+<li>L200: <code>(defun ghostel-dape-hypothesis-case-file (case-file)</code></li>
+<li>L211: <code>(defun ghostel-dape-hypothesis-latest-failure ()</code></li>
+<li>L216: <code>(provide 'ghostel-dape)</code></li>
+</ul>
+<h2>tools/ghostel-lint.el</h2>
+<ul>
+<li>L14: <code>(require 'checkdoc)</code></li>
+<li>L16: <code>(defun ghostel-lint--files ()</code></li>
+<li>L22: <code>(defun ghostel-lint-checkdoc ()</code></li>
+<li>L39: <code>(defun ghostel-lint-docquotes ()</code></li>
+<li>L56: <code>(provide 'ghostel-lint)</code></li>
+</ul></main></html>

@@ -1,0 +1,71 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>tmux-view</h1>
+<p>Categoria: <strong>viewer</strong>. <a href="https://github.com/mgalgs/tmux-view.el">Sorgente upstream</a>. Revisione: <code>3f0339f568a68f128a678e684ebf351a0b647bd2</code>.</p>
+<h2>Funzionamento</h2>
+<p>Cattura la pane tmux e rende lo scrollback/ANSI in un buffer di visualizzazione.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x tmux-view sceglie pane web/db con Vertico; nel test legge output SSH predisposto nella fixture. Il video dimostra consultazione, non input interattivo o resize sincronizzato.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/tmux-view.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/tmux-view.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario tmux-view: passed</h3>
+<p><a href="../../results/tmux-view.json">Esito e snapshot</a> · <a href="../../results/tmux-view-keys.json">Traccia dei tasti</a> · <a href="../../recordings/tmux-view.cast">Registrazione asciinema</a> · <a href="../../index.html#tmux-view">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>remote_web_capture_visible</code>: <code>True</code></li>
+<li><code>remote_db_capture_visible</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">3.55</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.85</td>
+<td><code>tmux-view</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.35</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.15</td>
+<td><code>ops/web/0:</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.35</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.76</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.06</td>
+<td><code>tmux-view</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.56</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.36</td>
+<td><code>ops/db/0:</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.56</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

@@ -1,0 +1,54 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: multi-run</h1>
+<p>Fonte: https://github.com/sagarjha/multi-run.git</p>
+<p>Revisione: <code>13d4d923535b5e8482b13ff76185203075fb26a3</code>.</p>
+<h2>multi-run-helpers.el</h2>
+<ul>
+<li>L32: <code>(require 'multi-run-vars)</code></li>
+<li>L38: <code>(defun multi-run-get-buffer-name (term-num)</code></li>
+<li>L42: <code>(defun multi-run-get-working-directory ()</code></li>
+<li>L49: <code>(defun multi-run-get-full-remote-path (file-path term-num root)</code></li>
+<li>L56: <code>(defun multi-run-open-terminal (term-num)</code></li>
+<li>L63: <code>(defun multi-run-display-buffers (master-buffer-name num-buffers window-batch symbol-prefix hint-fun)</code></li>
+<li>L78: <code>(defun multi-run-on-single-terminal (command term-num)</code></li>
+<li>L85: <code>(defun multi-run-on-terminals (command term-nums &amp;optional delay)</code></li>
+<li>L100: <code>(defun multi-run-create-terminals ()</code></li>
+<li>L104: <code>(defun calculate-window-batch (num-terminals)</code></li>
+<li>L108: <code>(defun multi-run-make-vertical-or-horizontal-pane (num-terminals offset sym-vec)</code></li>
+<li>L115: <code>(defun multi-run-make-internal-recipe (num-terminals window-batch sym-vec)</code></li>
+<li>L130: <code>(defun multi-run-make-symbols (hint)</code></li>
+<li>L134: <code>(defun multi-run-make-dict (hint-fun sym-list)</code></li>
+<li>L140: <code>(defun multi-run-copy-one-file-sudo (source-file destination-file-or-directory &amp;optional non-root)</code></li>
+<li>L155: <code>(defun multi-run-copy-one-file (source-file destination-file-or-directory)</code></li>
+<li>L159: <code>(defun multi-run-flatten (list)</code></li>
+<li>L162: <code>(defun multi-run-copy-generic (copy-fun &amp;rest files)</code></li>
+<li>L168: <code>(provide 'multi-run-helpers)</code></li>
+</ul>
+<h2>multi-run-vars.el</h2>
+<ul>
+<li>L51: <code>(provide 'multi-run-vars)</code></li>
+</ul>
+<h2>multi-run.el</h2>
+<ul>
+<li>L30: <code>(require 'window-layout)</code></li>
+<li>L31: <code>(require 'multi-run-vars)</code></li>
+<li>L32: <code>(require 'multi-run-helpers)</code></li>
+<li>L38: <code>(defun multi-run-configure-terminals (&amp;optional num-terminals window-batch)</code></li>
+<li>L49: <code>(defun multi-run-with-delay (delay &amp;rest cmd)</code></li>
+<li>L57: <code>(defun multi-run-with-delay2 (delay &amp;rest cmd)</code></li>
+<li>L65: <code>(defun multi-run (&amp;rest cmd)</code></li>
+<li>L69: <code>(defun multi-run-loop (cmd &amp;optional times delay)</code></li>
+<li>L82: <code>(defun multi-run-ssh ()</code></li>
+<li>L88: <code>(defun multi-run-find-remote-files-sudo (file-path &amp;optional window-batch non-root)</code></li>
+<li>L101: <code>(defun multi-run-find-remote-files (file-path &amp;optional window-batch)</code></li>
+<li>L105: <code>(defun multi-run-execute-on-single-buffer (buffer)</code></li>
+<li>L111: <code>(defun multi-run-execute-command ()</code></li>
+<li>L120: <code>(defun multi-run-edit-files (&amp;optional window-batch)</code></li>
+<li>L133: <code>(defun multi-run-edit-files-quit ()</code></li>
+<li>L138: <code>(defun multi-run-execute-function-on-single-buffer (buffer fun)</code></li>
+<li>L144: <code>(defun multi-run-execute-function-on-files (fun)</code></li>
+<li>L148: <code>(defun multi-run-copy-sudo (file1 file-or-directory1 &amp;rest files)</code></li>
+<li>L152: <code>(defun multi-run-copy (file1 file-or-directory1 &amp;rest files)</code></li>
+<li>L156: <code>(defun multi-run-kill-terminals ()</code></li>
+<li>L161: <code>(defun multi-run-kill-all-timers ()</code></li>
+<li>L166: <code>(provide 'multi-run)</code></li>
+</ul></main></html>

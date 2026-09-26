@@ -1,0 +1,98 @@
+# Indice del codice: emamux
+
+Fonte: https://github.com/emacsorphanage/emamux.git
+
+Revisione: `93bb7e8b8cfb0ced5b9b38044a031d40342201a1`.
+
+
+## emamux.el
+
+- L42: `(require 'cl-lib)`
+- L43: `(require 'tramp)`
+- L50: `(defcustom emamux:default-orientation 'vertical`
+- L55: `(defcustom emamux:runner-pane-height 20`
+- L59: `(defcustom emamux:use-nearest-pane nil`
+- L66: `(defcustom emamux:completing-read-type (if ido-mode`
+- L77: `(defcustom emamux:get-buffers-regexp`
+- L86: `(defcustom emamux:show-buffers-with-index t`
+- L103: `(defun emamux:tmux-run-command (output &rest args)`
+- L110: `(defun emamux:set-parameters ()`
+- L115: `(defun emamux:unset-parameters ()`
+- L118: `(defun emamux:set-parameters-p ()`
+- L121: `(defun emamux:select-completing-read-function ()`
+- L126: `(defun emamux:mode-function ()`
+- L131: `(defun emamux:completing-read (prompt &rest args)`
+- L139: `(defun emamux:read-parameter-session ()`
+- L145: `(defun emamux:set-parameter-session ()`
+- L148: `(defun emamux:read-parameter-window ()`
+- L155: `(defun emamux:set-parameter-window ()`
+- L158: `(defun emamux:read-parameter-pane ()`
+- L164: `(defun emamux:set-parameter-pane ()`
+- L167: `(cl-defun emamux:target-session (&optional (session emamux:session)`
+- L172: `(defun emamux:get-sessions ()`
+- L181: `(defun emamux:get-buffers ()`
+- L193: `(defun emamux:show-buffer (index)`
+- L200: `(defun emamux:get-window ()`
+- L209: `(defun emamux:get-pane ()`
+- L219: `(defun emamux:read-command (prompt use-last-cmd)`
+- L224: `(defun emamux:check-tmux-running ()`
+- L229: `(defun emamux:send-command (&optional command target)`
+- L245: `(defun emamux:send-region (beg end)`
+- L261: `(defun emamux:copy-kill-ring (arg)`
+- L272: `(defun emamux:yank-from-list-buffers ()`
+- L283: `(defun emamux:kill-session ()`
+- L293: `(cl-defun emamux:send-keys (input &optional (target (emamux:target-session)))`
+- L297: `(defun emamux:set-buffer-argument (index data)`
+- L302: `(defun emamux:set-buffer (data index)`
+- L306: `(defun emamux:in-tmux-p ()`
+- L310: `(defvar emamux:runner-pane-id-map nil)`
+- L312: `(defun emamux:gc-runner-pane-map ()`
+- L321: `(defun emamux:run-command (cmd &optional cmddir)`
+- L337: `(defun emamux:run-last-command ()`
+- L343: `(defun emamux:reset-prompt (pane)`
+- L346: `(defun emamux:chdir-pane (dir)`
+- L350: `(defun emamux:get-runner-pane-id ()`
+- L353: `(defun emamux:add-to-assoc (key value alist-variable)`
+- L360: `(defun emamux:setup-runner-pane ()`
+- L372: `(defun emamux:select-pane (target)`
+- L378: `(defun emamux:split-runner-pane ()`
+- L386: `(defun emamux:list-panes ()`
+- L393: `(defun emamux:active-pane-id (panes)`
+- L398: `(defun emamux:current-active-pane-id ()`
+- L401: `(defun emamux:nearest-inactive-pane-id (panes)`
+- L408: `(defun emamux:close-runner-pane ()`
+- L416: `(defun emamux:close-panes ()`
+- L422: `(defun emamux:kill-all-panes ()`
+- L425: `(defun emamux:kill-pane (target)`
+- L431: `(defun emamux:runner-alive-p ()`
+- L438: `(defun emamux:check-runner-alive ()`
+- L443: `(defun emamux:inspect-runner ()`
+- L451: `(defun emamux:interrupt-runner ()`
+- L458: `(defun emamux:clear-runner-history ()`
+- L465: `(defun emamux:zoom-runner ()`
+- L471: `(defmacro emamux:ensure-ssh-and-cd (&rest body)`
+- L496: `(defun emamux:new-window ()`
+- L504: `(defun emamux:list-windows ()`
+- L511: `(defun emamux:window-ids ()`
+- L516: `(defun emamux:active-window-id (windows)`
+- L521: `(defun emamux:current-active-window-id ()`
+- L527: `(defun emamux:clone-current-frame ()`
+- L541: `(defun emamux:split-window ()`
+- L547: `(defun emamux:split-window-horizontally ()`
+- L553: `(defun emamux:run-region (beg end)`
+- L560: `(defvar emamux:keymap`
+- L562: `(define-key map "\C-s" #'emamux:send-command)`
+- L563: `(define-key map "\C-y" #'emamux:yank-from-list-buffers)`
+- L565: `(define-key map "\M-!" #'emamux:run-command)`
+- L566: `(define-key map "\M-r" #'emamux:run-last-command)`
+- L567: `(define-key map "\M-s" #'emamux:run-region)`
+- L568: `(define-key map "\C-i" #'emamux:inspect-runner)`
+- L569: `(define-key map "\C-k" #'emamux:close-panes)`
+- L570: `(define-key map "\C-c" #'emamux:interrupt-runner)`
+- L571: `(define-key map "\M-k" #'emamux:clear-runner-history)`
+- L572: `(define-key map "c"    #'emamux:new-window)`
+- L573: `(define-key map "C"    #'emamux:clone-current-frame)`
+- L574: `(define-key map "2"    #'emamux:split-window)`
+- L575: `(define-key map "3"    #'emamux:split-window-horizontally))`
+- L578: `\(global-set-key (kbd \"M-g\") emamux:keymap\)`
+- L599: `(provide 'emamux)`

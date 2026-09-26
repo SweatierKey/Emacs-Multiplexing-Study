@@ -1,0 +1,47 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: vtplex</h1>
+<p>Fonte: https://github.com/mitch-kyle/vtplex.git</p>
+<p>Revisione: <code>f853c0f6f32499b24300a0519d348356645c1a33</code>.</p>
+<h2>vtplex-spaceline.el</h2>
+<ul>
+<li>L30: <code>(require 'vtplex)</code></li>
+<li>L31: <code>(require 'spaceline)</code></li>
+<li>L41: <code>(defcustom vtplex-spaceline-max-title-length 30</code></li>
+<li>L47: <code>(defcustom vtplex-spaceline-title-overflow-suffix "..."</code></li>
+<li>L76: <code>(defun vtplex-spaceline--indicator-text (index buffer)</code></li>
+<li>L93: <code>(defun vtplex-spaceline-buffer-indicator (n</code></li>
+<li>L127: <code>(define-key map</code></li>
+<li>L146: <code>(defun vtplex-spaceline--set (&amp;rest _)</code></li>
+<li>L157: <code>(defun vtplex-spaceline-compile (&amp;rest additional-segments)</code></li>
+<li>L194: <code>(defun vtplex-spaceline-enable (&amp;rest additional-segments)</code></li>
+<li>L204: <code>(defun vtplex-spaceline-disable ()</code></li>
+<li>L212: <code>(provide 'vtplex-spaceline)</code></li>
+</ul>
+<h2>vtplex.el</h2>
+<ul>
+<li>L43: <code>(require 'vterm)</code></li>
+<li>L44: <code>(require 'seq)</code></li>
+<li>L68: <code>(defun vtplex--exit ()</code></li>
+<li>L76: <code>(defun vtplex-switch (&amp;optional title)</code></li>
+<li>L92: <code>(defun vtplex-switch-index (index)</code></li>
+<li>L98: <code>(defun vtplex--current-index ()</code></li>
+<li>L105: <code>(defun vtplex-next ()</code></li>
+<li>L115: <code>(defun vtplex-prev ()</code></li>
+<li>L125: <code>(defun vtplex-bury ()</code></li>
+<li>L131: <code>(defun vtplex-hide ()</code></li>
+<li>L139: <code>(defun vtplex-last ()</code></li>
+<li>L150: <code>(defun vtplex-create ()</code></li>
+<li>L157: <code>(defun vtplex-execute (command)</code></li>
+<li>L164: <code>(defun vtplex ()</code></li>
+<li>L176: <code>(defvar vtplex-mode-map</code></li>
+<li>L178: <code>(define-key map (kbd "C-a C-a") 'vterm-send-C-a)</code></li>
+<li>L179: <code>(define-key map (kbd "C-a [")   'vterm-copy-mode)</code></li>
+<li>L180: <code>(define-key map (kbd "C-a c")   'vtplex-create)</code></li>
+<li>L181: <code>(define-key map (kbd "C-a r")   'vtplex-execute)</code></li>
+<li>L182: <code>(define-key map (kbd "C-a b")   'vtplex-switch)</code></li>
+<li>L183: <code>(define-key map (kbd "C-a n")   'vtplex-next)</code></li>
+<li>L184: <code>(define-key map (kbd "C-a p")   'vtplex-prev)</code></li>
+<li>L185: <code>(define-key map (kbd "C-a d")   'vtplex-bury)</code></li>
+<li>L188: <code>(define-key map (kbd (format "C-a %s" i))</code></li>
+<li>L195: <code>(define-minor-mode vtplex-mode</code></li>
+<li>L213: <code>(provide 'vtplex)</code></li>
+</ul></main></html>

@@ -1,0 +1,3 @@
+{"status":"loaded","feature":"emux-base","library":"/home/admin/Emacs-Multiplexing-Study/sources/emux-rock/emux-base.el","commands":["emux-mode"]}
+STDERR:
+sources/emux-rock/emux-base.el: Warning: Use keywords rather than deprecated positional arguments to ‘define-minor-mode’

@@ -1,0 +1,8 @@
+{
+  "emacs": "GNU Emacs 30.1",
+  "tmux": "tmux 3.5a",
+  "ssh": "OpenSSH_10.0p2 Debian-7+deb13u4, OpenSSL 3.5.7 9 Jun 2026",
+  "cmake": "cmake version 3.31.6",
+  "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+  "python3": "Python 3.13.5"
+}

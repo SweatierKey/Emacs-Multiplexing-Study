@@ -1,0 +1,377 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: e2wm</h1>
+<p>Fonte: https://github.com/kiwanami/emacs-window-manager.git</p>
+<p>Revisione: <code>33efca5504db9d8b3fdbd412c3d79663c9eec77a</code>.</p>
+<h2>e2wm-config.el</h2>
+<ul>
+<li>L33: <code>(require 'e2wm)</code></li>
+<li>L436: <code>(provide 'e2wm-config)</code></li>
+</ul>
+<h2>e2wm-vcs.el</h2>
+<ul>
+<li>L32: <code>(require 'e2wm)</code></li>
+<li>L33: <code>(require 'magit nil t)</code></li>
+<li>L34: <code>(require 'monky nil t)</code></li>
+<li>L35: <code>(require 'dsvn nil t)</code></li>
+<li>L51: <code>(defun e2wm:def-plugin-vcs-na-buffer (title)</code></li>
+<li>L61: <code>(defun e2wm:def-plugin-vcs-with-window (topdir-func body-func na-buffer-func)</code></li>
+<li>L85: <code>(defun e2wm:vcs-select-if-plugin (buf)</code></li>
+<li>L101: <code>(defun e2wm:def-plugin-magit-branches (frame wm winfo)</code></li>
+<li>L113: <code>(defun e2wm:def-plugin-magit-logs (frame wm winfo)</code></li>
+<li>L124: <code>(defun e2wm:def-plugin-magit-status (frame wm winfo)</code></li>
+<li>L177: <code>(defun e2wm:dp-magit-leave (wm)</code></li>
+<li>L181: <code>(defun e2wm:dp-magit-start (wm)</code></li>
+<li>L184: <code>(defun e2wm:dp-magit-init ()</code></li>
+<li>L192: <code>(defun e2wm:dp-magit-switch (buf)</code></li>
+<li>L197: <code>(defun e2wm:dp-magit-popup (buf)</code></li>
+<li>L223: <code>(defun e2wm:dp-magit ()</code></li>
+<li>L227: <code>(defvar e2wm:dp-magit-minor-mode-map</code></li>
+<li>L237: <code>(defun e2wm:monky-get-root-dir (dir)</code></li>
+<li>L240: <code>(defun e2wm:def-plugin-monky-branches (frame wm winfo)</code></li>
+<li>L251: <code>(defun e2wm:def-plugin-monky-logs (frame wm winfo)</code></li>
+<li>L261: <code>(defun e2wm:def-plugin-monky-status (frame wm winfo)</code></li>
+<li>L314: <code>(defun e2wm:dp-vcs-monky (wm)</code></li>
+<li>L318: <code>(defun e2wm:dp-monky-start (wm)</code></li>
+<li>L321: <code>(defun e2wm:dp-monky-init ()</code></li>
+<li>L329: <code>(defun e2wm:dp-monky-update (wm)</code></li>
+<li>L333: <code>(defun e2wm:dp-monky-switch (buf)</code></li>
+<li>L337: <code>(defun e2wm:dp-monky-popup (buf)</code></li>
+<li>L366: <code>(defun e2wm:dp-monky ()</code></li>
+<li>L370: <code>(defvar e2wm:dp-monky-minor-mode-map</code></li>
+<li>L382: <code>(defun e2wm:def-plugin-svn-top-dir (dir)</code></li>
+<li>L396: <code>(defun e2wm:def-plugin-svn-logs (frame wm winfo)</code></li>
+<li>L420: <code>(defun e2wm:def-plugin-svn-status (frame wm winfo)</code></li>
+<li>L466: <code>(defun e2wm:dp-svn-leave (wm)</code></li>
+<li>L469: <code>(defun e2wm:dp-svn-init ()</code></li>
+<li>L477: <code>(defun e2wm:dp-svn-switch (buf)</code></li>
+<li>L481: <code>(defun e2wm:dp-svn-popup (buf)</code></li>
+<li>L495: <code>(defun e2wm:dp-svn ()</code></li>
+<li>L499: <code>(defvar e2wm:dp-svn-minor-mode-map</code></li>
+<li>L505: <code>(provide 'e2wm-vcs)</code></li>
+</ul>
+<h2>e2wm.el</h2>
+<ul>
+<li>L154: <code>(require 'cl-lib)</code></li>
+<li>L156: <code>(require 'imenu)</code></li>
+<li>L157: <code>(require 'easymenu)</code></li>
+<li>L158: <code>(require 'windmove)</code></li>
+<li>L160: <code>(require 'window-layout)</code></li>
+<li>L188: <code>(defmacro e2wm:aif (test-form then-form &amp;rest else-forms)</code></li>
+<li>L195: <code>(defmacro e2wm:aand (test &amp;rest rest)</code></li>
+<li>L201: <code>(defmacro e2wm:not-minibuffer (&amp;rest body)</code></li>
+<li>L207: <code>(defmacro e2wm:safe-call (method object &amp;rest args)</code></li>
+<li>L216: <code>(defun e2wm:find (name name-func seq)</code></li>
+<li>L223: <code>(defmacro e2wm:delete! (name name-func seq)</code></li>
+<li>L236: <code>(defun e2wm:message (&amp;rest args)</code></li>
+<li>L249: <code>(defun e2wm:message-mark () ; debug</code></li>
+<li>L257: <code>(defun e2wm:define-keymap (keymap-list &amp;optional prefix)</code></li>
+<li>L264: <code>(define-key map</code></li>
+<li>L275: <code>(defun e2wm:add-keymap (keymap keymap-list &amp;optional prefix)</code></li>
+<li>L279: <code>(define-key keymap</code></li>
+<li>L296: <code>(defmacro e2wm:with-advice (&amp;rest body)</code></li>
+<li>L306: <code>(defun e2wm:string-trim (txt)</code></li>
+<li>L319: <code>(defun e2wm:strtime (time)</code></li>
+<li>L349: <code>(defun e2wm:rt (text face)</code></li>
+<li>L354: <code>(defun e2wm:rt-format (text &amp;rest args)</code></li>
+<li>L364: <code>(defun e2wm:tp (text prop value)</code></li>
+<li>L370: <code>(defun e2wm:format-byte-unit (size)</code></li>
+<li>L380: <code>(defun e2wm:num (number)</code></li>
+<li>L404: <code>(defun e2wm:max-length (rows)</code></li>
+<li>L418: <code>(defun e2wm:frame-param-get (name &amp;optional frame)</code></li>
+<li>L422: <code>(defun e2wm:frame-param-set (name val &amp;optional frame)</code></li>
+<li>L426: <code>(defun e2wm:document-buffer-p (buffer)</code></li>
+<li>L431: <code>(defun e2wm:get-blank-buffer ()</code></li>
+<li>L453: <code>(defun e2wm:history-get ()</code></li>
+<li>L458: <code>(defun e2wm:history-save (buffer-history)</code></li>
+<li>L464: <code>(defun e2wm:history-get-backup ()</code></li>
+<li>L470: <code>(defun e2wm:history-save-backup (buffer-history-backup)</code></li>
+<li>L477: <code>(defun e2wm:history-filter-killed-buffers (history)</code></li>
+<li>L483: <code>(defun e2wm:buffer-completion-p (buf)</code></li>
+<li>L487: <code>(defun e2wm:history-recordable-p (buffer)</code></li>
+<li>L493: <code>(defun e2wm:history-add (buffer)</code></li>
+<li>L530: <code>(defun e2wm:history-back ()</code></li>
+<li>L539: <code>(defun e2wm:history-forward ()</code></li>
+<li>L548: <code>(defun e2wm:history-delete (buffer)</code></li>
+<li>L559: <code>(defun e2wm:history-get-next (buffer)</code></li>
+<li>L572: <code>(defun e2wm:history-get-prev (buffer)</code></li>
+<li>L585: <code>(defun e2wm:history-get-nearest (buffer n)</code></li>
+<li>L610: <code>(defun e2wm:history-get-main-buffer ()</code></li>
+<li>L616: <code>(defun e2wm:managed-p (&amp;optional frame)</code></li>
+<li>L620: <code>(defun e2wm:internal-buffer-p (buf)</code></li>
+<li>L687: <code>(defun e2wm:pst-class-register (pst-class)</code></li>
+<li>L699: <code>(defun e2wm:pst-class-remove (pst-class)</code></li>
+<li>L707: <code>(defun e2wm:pst-class-get (name)</code></li>
+<li>L711: <code>(defun e2wm:pst-class-abstract-p (pst-class)</code></li>
+<li>L730: <code>(defun e2wm:$pst-get-prop (name pst)</code></li>
+<li>L735: <code>(defun e2wm:$pst-class-get-prop-gen (slot-name pst-class)</code></li>
+<li>L741: <code>(defun e2wm:method-call (method-name class error-on-nil &amp;rest args)</code></li>
+<li>L758: <code>(defmacro e2wm:pst-method-call (method-name pst-instance &amp;rest args)</code></li>
+<li>L764: <code>(defun e2wm:$pst-class-super ()</code></li>
+<li>L777: <code>(defun e2wm:$pst-title (pst)</code></li>
+<li>L779: <code>(defun e2wm:$pst-main (pst)</code></li>
+<li>L781: <code>(defun e2wm:$pst-keymap (pst)</code></li>
+<li>L785: <code>(defun e2wm:$pst-start (pst)</code></li>
+<li>L787: <code>(defun e2wm:$pst-update (pst)</code></li>
+<li>L789: <code>(defun e2wm:$pst-switch (pst)</code></li>
+<li>L791: <code>(defun e2wm:$pst-popup (pst)</code></li>
+<li>L793: <code>(defun e2wm:$pst-leave (pst)</code></li>
+<li>L795: <code>(defun e2wm:$pst-save (pst)</code></li>
+<li>L797: <code>(defun e2wm:$pst-super (pst)</code></li>
+<li>L800: <code>(defun e2wm:pst-get-instance (&amp;optional frame)</code></li>
+<li>L802: <code>(defun e2wm:pst-set-instance (pst-instance &amp;optional frame)</code></li>
+<li>L805: <code>(defun e2wm:pst-get-prev-pst ()</code></li>
+<li>L807: <code>(defun e2wm:pst-set-prev-pst (pst-name)</code></li>
+<li>L810: <code>(defun e2wm:pst-copy-instance ()</code></li>
+<li>L822: <code>(defun e2wm:pst-get-wm ()</code></li>
+<li>L827: <code>(defun e2wm:pst-update-windows (&amp;optional rebuild-windows)</code></li>
+<li>L849: <code>(defun e2wm:pst-switch-to-buffer (buf)</code></li>
+<li>L854: <code>(defun e2wm:pst-pop-to-buffer (buf)</code></li>
+<li>L859: <code>(defun e2wm:pst-display-buffer (buf)</code></li>
+<li>L864: <code>(defun e2wm:pst-after-bury-buffer (buried-buffer window)</code></li>
+<li>L869: <code>(defun e2wm:pst-change (next-pst-name)</code></li>
+<li>L904: <code>(defun e2wm:pst-change-prev ()</code></li>
+<li>L911: <code>(defvar e2wm:pst-minor-mode-keymap</code></li>
+<li>L921: <code>(defun e2wm:pst-change-keymap (new-keymap)</code></li>
+<li>L930: <code>(defun e2wm:pst-resume (pst-instance)</code></li>
+<li>L939: <code>(defun e2wm:pst-finish (&amp;optional frame)</code></li>
+<li>L950: <code>(defun e2wm:pst-window-option-get (wm window-name)</code></li>
+<li>L955: <code>(defun e2wm:pst-window-plugin-get (wm window-name)</code></li>
+<li>L960: <code>(defun e2wm:pst-window-plugin-set (wm window-name plugin-name)</code></li>
+<li>L965: <code>(defun e2wm:pst-buffer-get (window-name)</code></li>
+<li>L971: <code>(defun e2wm:pst-buffer-set (window-name buffer &amp;optional showp selectp)</code></li>
+<li>L985: <code>(defun e2wm:pst-window-select (window-name)</code></li>
+<li>L991: <code>(defun e2wm:pst-window-select-main ()</code></li>
+<li>L999: <code>(defun e2wm:pst-window-toggle (window-name &amp;optional selectp next-window)</code></li>
+<li>L1012: <code>(defun e2wm:pst-show-history-main ()</code></li>
+<li>L1022: <code>(defun e2wm:pst-after-save-hook ()</code></li>
+<li>L1033: <code>(defun e2wm:pst-change-command ()</code></li>
+<li>L1042: <code>(defun e2wm:pst-window-select-main-command ()</code></li>
+<li>L1045: <code>(defun e2wm:pst-update-windows-command ()</code></li>
+<li>L1052: <code>(defun e2wm:pst-change-prev-pst-command ()</code></li>
+<li>L1056: <code>(defun e2wm:pst-history-forward-command ()</code></li>
+<li>L1061: <code>(defun e2wm:pst-history-back-command ()</code></li>
+<li>L1077: <code>(define-minor-mode e2wm:pst-minor-mode</code></li>
+<li>L1094: <code>(defun e2wm:pst-minor-mode-setup ()</code></li>
+<li>L1100: <code>(defun e2wm:pst-minor-mode-abort ()</code></li>
+<li>L1109: <code>(defvar e2wm:pst-minor-mode-keymap-blank (make-sparse-keymap) "[internal]")</code></li>
+<li>L1111: <code>(defun e2wm:pst-minor-mode-disable-frame (&amp;optional frame)</code></li>
+<li>L1130: <code>(defun e2wm:pst-minor-mode-enable-frame (&amp;optional frame)</code></li>
+<li>L1145: <code>(defun e2wm:pst-minor-mode-switch-frame (frame)</code></li>
+<li>L1160: <code>(defun e2wm:override-after-make-frame (frame)</code></li>
+<li>L1173: <code>(defun e2wm:other-managed-frames (frame)</code></li>
+<li>L1178: <code>(defun e2wm:delete-frame-functions (frame)</code></li>
+<li>L1193: <code>(defun e2wm:pstset-defaults()</code></li>
+<li>L1202: <code>(defun e2wm:pstset-define (names)</code></li>
+<li>L1209: <code>(defun e2wm:pstset-get-current-pstset ()</code></li>
+<li>L1212: <code>(defun e2wm:pstset-next-pst-command ()</code></li>
+<li>L1222: <code>(defun e2wm:pstset-prev-pst-command ()</code></li>
+<li>L1291: <code>(defun e2wm:after-bury-buffer (buried-buffer window)</code></li>
+<li>L1341: <code>(defun e2wm:override-special-display-function (buf &amp;optional args)</code></li>
+<li>L1371: <code>(defun e2wm:kill-buffer-hook ()</code></li>
+<li>L1420: <code>(defun e2wm:move-window-point (&amp;optional buf)</code></li>
+<li>L1431: <code>(defun e2wm:select-window-point (&amp;optional buf)</code></li>
+<li>L1448: <code>(defun e2wm:debug-windows (wm)</code></li>
+<li>L1459: <code>(defun e2wm:override-custom-wcfg-p (cfg)</code></li>
+<li>L1465: <code>(defun e2wm:override-window-cfg-change ()</code></li>
+<li>L1479: <code>(defun e2wm:override-setup-completion ()</code></li>
+<li>L1490: <code>(defun e2wm:override-restore-window-cfg ()</code></li>
+<li>L1577: <code>(defun e2wm:plugin-register (name title update-function)</code></li>
+<li>L1586: <code>(defun e2wm:plugin-delete (name)</code></li>
+<li>L1590: <code>(defun e2wm:plugin-get (name)</code></li>
+<li>L1596: <code>(defun e2wm:plugin-exec-update (frame wm)</code></li>
+<li>L1607: <code>(defun e2wm:plugin-exec-update-by-plugin-name (frame wm exec-plugin-name)</code></li>
+<li>L1619: <code>(defun e2wm:plugin-switch (plugin-name)</code></li>
+<li>L1630: <code>(defun e2wm:plugin-switch-command ()</code></li>
+<li>L1648: <code>(defun e2wm:plugin-remove-command ()</code></li>
+<li>L1664: <code>(defun e2wm:menu-pst-selected-p (name)</code></li>
+<li>L1668: <code>(defun e2wm:menu-plugin-selected-p (name)</code></li>
+<li>L1675: <code>(defun e2wm:menu-plugin-working-p ()</code></li>
+<li>L1681: <code>(defun e2wm:menu-define ()</code></li>
+<li>L1740: <code>(defun e2wm:def-plugin-history-list (frame wm winfo)</code></li>
+<li>L1782: <code>(defvar e2wm:def-plugin-history-list-mode-map</code></li>
+<li>L1792: <code>(define-derived-mode e2wm:def-plugin-history-list-mode fundamental-mode "History")</code></li>
+<li>L1794: <code>(defun e2wm:def-plugin-history-list-kill-command ()</code></li>
+<li>L1804: <code>(defun e2wm:def-plugin-history-list-forward-command ()</code></li>
+<li>L1809: <code>(defun e2wm:def-plugin-history-list-back-command ()</code></li>
+<li>L1814: <code>(defun e2wm:def-plugin-history-list-select-command ()</code></li>
+<li>L1820: <code>(defun e2wm:def-plugin-history-list-show-command ()</code></li>
+<li>L1838: <code>(defun e2wm:def-plugin-history-list2-get-plugin-buffer (wm)</code></li>
+<li>L1846: <code>(defun e2wm:def-plugin-history-list2 (frame wm winfo)</code></li>
+<li>L1895: <code>(defvar e2wm:def-plugin-history-list2-mode-map</code></li>
+<li>L1919: <code>(define-derived-mode e2wm:def-plugin-history-list2-mode fundamental-mode "History")</code></li>
+<li>L1921: <code>(defun e2wm:def-plugin-history-list2-show-right-command ()</code></li>
+<li>L1933: <code>(defun e2wm:def-plugin-history-list2-show-left-command ()</code></li>
+<li>L1949: <code>(defun e2wm:def-plugin-history-list2-select-command ()</code></li>
+<li>L1965: <code>(defun e2wm:def-plugin-dired (frame wm winfo)</code></li>
+<li>L1985: <code>(defun e2wm:def-plugin-imenu (frame wm winfo)</code></li>
+<li>L2014: <code>(defun e2wm:def-plugin-imenu-entries ()</code></li>
+<li>L2032: <code>(defun e2wm:def-plugin-imenu-create-entries (entries indent result)</code></li>
+<li>L2061: <code>(defun e2wm:def-plugin-imenu-jump (elm)</code></li>
+<li>L2068: <code>(defun e2wm:def-plugin-imenu-jump-command ()</code></li>
+<li>L2075: <code>(defun e2wm:def-plugin-imenu-show-command ()</code></li>
+<li>L2084: <code>(defvar e2wm:def-plugin-imenu-mode-map</code></li>
+<li>L2099: <code>(define-derived-mode e2wm:def-plugin-imenu-mode fundamental-mode "Imenu")</code></li>
+<li>L2101: <code>(defun e2wm:def-plugin-imenu-which-func ()</code></li>
+<li>L2117: <code>(defun e2wm:def-plugin-imenu-start-timer ()</code></li>
+<li>L2126: <code>(defun e2wm:def-plugin-imenu-stop-timer ()</code></li>
+<li>L2133: <code>(defun e2wm:def-plugin-imenu-update-which-func ()</code></li>
+<li>L2169: <code>(defun e2wm:def-plugin-top (frame wm winfo)</code></li>
+<li>L2184: <code>(defun e2wm:def-plugin-top-timer ()</code></li>
+<li>L2197: <code>(defun e2wm:def-plugin-top-update ()</code></li>
+<li>L2239: <code>(defun e2wm:def-plugin-history-nth (frame wm winfo)</code></li>
+<li>L2255: <code>(defun e2wm:def-plugin-main-prev (frame wm winfo)</code></li>
+<li>L2281: <code>(defun e2wm:def-plugin-clock (frame wm winfo)</code></li>
+<li>L2298: <code>(defun e2wm:def-plugin-clock-timer ()</code></li>
+<li>L2312: <code>(defun e2wm:def-plugin-clock-update ()</code></li>
+<li>L2326: <code>(defun e2wm:def-plugin-clock-download ()</code></li>
+<li>L2350: <code>(defun e2wm:def-plugin-clock-resize ()</code></li>
+<li>L2377: <code>(defun e2wm:def-plugin-clock-show-image ()</code></li>
+<li>L2382: <code>(define-key map [mouse-1] 'e2wm:def-plugin-clock-onclick)</code></li>
+<li>L2391: <code>(defun e2wm:def-plugin-clock-onclick ()</code></li>
+<li>L2395: <code>(defun e2wm:def-plugin-clock-show-text (&amp;optional text)</code></li>
+<li>L2434: <code>(defun e2wm:def-plugin-files (frame wm winfo)</code></li>
+<li>L2489: <code>(defun e2wm:def-plugin-files-update-by-command()</code></li>
+<li>L2498: <code>(defun e2wm:def-plugin-files-sort (records order)</code></li>
+<li>L2549: <code>(defun e2wm:def-plugin-files-update-buffer (dir)</code></li>
+<li>L2604: <code>(defun e2wm:def-plugin-files-insert-by-name (rows-file rows-time rows-size)</code></li>
+<li>L2616: <code>(defun e2wm:def-plugin-files-insert-by-time (rows-file rows-time rows-size rows)</code></li>
+<li>L2658: <code>(defun e2wm:def-plugin-files-insert-by-size (rows-file rows-time rows-size)</code></li>
+<li>L2670: <code>(defun e2wm:def-plugin-files-get-file ()</code></li>
+<li>L2675: <code>(defun e2wm:def-plugin-files-mkdir-command ()</code></li>
+<li>L2681: <code>(defun e2wm:def-plugin-files-delete-command ()</code></li>
+<li>L2691: <code>(defun e2wm:def-plugin-files-updir-command ()</code></li>
+<li>L2697: <code>(defun e2wm:def-plugin-files-rename-command ()</code></li>
+<li>L2705: <code>(defun e2wm:def-plugin-files-sort-size-command ()</code></li>
+<li>L2710: <code>(defun e2wm:def-plugin-files-sort-time-command ()</code></li>
+<li>L2715: <code>(defun e2wm:def-plugin-files-sort-name-command ()</code></li>
+<li>L2720: <code>(defun e2wm:def-plugin-files-show-command ()</code></li>
+<li>L2725: <code>(defun e2wm:def-plugin-files-select-command ()</code></li>
+<li>L2736: <code>(defun e2wm:def-plugin-files-toggle-hidden-files-command ()</code></li>
+<li>L2742: <code>(defun e2wm:def-plugin-files-open-dired-command ()</code></li>
+<li>L2746: <code>(defvar e2wm:def-plugin-files-mode-map</code></li>
+<li>L2768: <code>(define-derived-mode e2wm:def-plugin-files-mode fundamental-mode "Files")</code></li>
+<li>L2778: <code>(defun e2wm:def-plugin-open (frame wm winfo)</code></li>
+<li>L2810: <code>(defun e2wm:dp-base-update (wm)</code></li>
+<li>L2814: <code>(defun e2wm:dp-base-display (buf)</code></li>
+<li>L2818: <code>(defun e2wm:dp-base-after-bury (buried-buffer window)</code></li>
+<li>L2875: <code>(defun e2wm:dp-code-init ()</code></li>
+<li>L2890: <code>(defun e2wm:dp-code-switch (buf)</code></li>
+<li>L2898: <code>(defun e2wm:dp-code-popup (buf)</code></li>
+<li>L2937: <code>(defun e2wm:dp-code-popup-sub (buf)</code></li>
+<li>L2943: <code>(defun e2wm:dp-code-after-bury (buried-buffer window)</code></li>
+<li>L2955: <code>(defun e2wm:dp-code ()</code></li>
+<li>L2959: <code>(defun e2wm:dp-code-imenu-toggle-command ()</code></li>
+<li>L2963: <code>(defun e2wm:dp-code-sub-toggle-command ()</code></li>
+<li>L2967: <code>(defun e2wm:dp-code-navi-main-command ()</code></li>
+<li>L2970: <code>(defun e2wm:dp-code-navi-files-command ()</code></li>
+<li>L2973: <code>(defun e2wm:dp-code-navi-history-command ()</code></li>
+<li>L2976: <code>(defun e2wm:dp-code-navi-imenu-command ()</code></li>
+<li>L2979: <code>(defun e2wm:dp-code-navi-sub-command ()</code></li>
+<li>L2982: <code>(defun e2wm:dp-code-main-maximize-toggle-command ()</code></li>
+<li>L2986: <code>(defun e2wm:dp-code-toggle-clock-command ()</code></li>
+<li>L2995: <code>(defvar e2wm:dp-code-minor-mode-map</code></li>
+<li>L3034: <code>(defun e2wm:dp-two-init ()</code></li>
+<li>L3054: <code>(defun e2wm:dp-two-switch (buf)</code></li>
+<li>L3083: <code>(defun e2wm:dp-two-popup (buf)</code></li>
+<li>L3098: <code>(defun e2wm:dp-two-popup-sub (buf)</code></li>
+<li>L3104: <code>(defun e2wm:dp-two-display (buf)</code></li>
+<li>L3133: <code>(defun e2wm:dp-two-after-bury (buried-buffer window)</code></li>
+<li>L3145: <code>(defun e2wm:dp-two ()</code></li>
+<li>L3149: <code>(defun e2wm:dp-two-navi-left-command ()</code></li>
+<li>L3152: <code>(defun e2wm:dp-two-navi-right-command ()</code></li>
+<li>L3155: <code>(defun e2wm:dp-two-navi-sub-command ()</code></li>
+<li>L3158: <code>(defun e2wm:dp-two-navi-history-command ()</code></li>
+<li>L3162: <code>(defun e2wm:dp-two-history-toggle-command ()</code></li>
+<li>L3166: <code>(defun e2wm:dp-two-sub-toggle-command ()</code></li>
+<li>L3171: <code>(defun e2wm:dp-two-update-history-list ()</code></li>
+<li>L3175: <code>(defun e2wm:dp-two-double-column-command ()</code></li>
+<li>L3180: <code>(defun e2wm:dp-two-get-right-buffer ()</code></li>
+<li>L3189: <code>(defun e2wm:dp-two-right-history-forward-command ()</code></li>
+<li>L3195: <code>(defun e2wm:dp-two-right-history-back-command ()</code></li>
+<li>L3204: <code>(defun e2wm:dp-two-swap-buffers-command ()</code></li>
+<li>L3212: <code>(defun e2wm:dp-two-main-maximize-toggle-command ()</code></li>
+<li>L3216: <code>(defvar e2wm:dp-two-minor-mode-map</code></li>
+<li>L3252: <code>(defun e2wm:dp-htwo-init ()</code></li>
+<li>L3272: <code>(defun e2wm:dp-htwo ()</code></li>
+<li>L3304: <code>(defun e2wm:dp-doc-set-doc-buffer (buf)</code></li>
+<li>L3307: <code>(defun e2wm:dp-doc-get-doc-buffer ()</code></li>
+<li>L3310: <code>(defun e2wm:dp-doc-init ()</code></li>
+<li>L3325: <code>(defun e2wm:dp-doc-start (wm)</code></li>
+<li>L3329: <code>(defun e2wm:dp-doc-update (wm)</code></li>
+<li>L3340: <code>(defun e2wm:dp-doc-set-main-buffer (buf)</code></li>
+<li>L3347: <code>(defun e2wm:dp-doc-switch (buf)</code></li>
+<li>L3359: <code>(defun e2wm:dp-doc-popup (buf)</code></li>
+<li>L3371: <code>(defun e2wm:dp-doc-popup-sub (buf)</code></li>
+<li>L3377: <code>(defun e2wm:dp-doc-leave (wm)</code></li>
+<li>L3390: <code>(defun e2wm:dp-doc ()</code></li>
+<li>L3394: <code>(defun e2wm:dp-doc-navi-main-command ()</code></li>
+<li>L3397: <code>(defun e2wm:dp-doc-navi-sub-command ()</code></li>
+<li>L3400: <code>(defun e2wm:dp-doc-sub-toggle-command ()</code></li>
+<li>L3404: <code>(defun e2wm:dp-doc-main-maximize-toggle-command ()</code></li>
+<li>L3408: <code>(defvar e2wm:dp-doc-minor-mode-map</code></li>
+<li>L3436: <code>(defun e2wm:dp-dashboard-init ()</code></li>
+<li>L3446: <code>(defun e2wm:dp-dashboard-arrange-plugins (wm)</code></li>
+<li>L3465: <code>(defun e2wm:dp-dashboard-start (wm)</code></li>
+<li>L3468: <code>(defun e2wm:dp-dashboard-leave (wm)</code></li>
+<li>L3473: <code>(defun e2wm:dp-dashboard-update-summary ()</code></li>
+<li>L3489: <code>(defun e2wm:dp-dashboard-parse-garbage-collect-1 (gc-info)</code></li>
+<li>L3515: <code>(defun e2wm:dp-dashboard-parse-garbage-collect-2 (gc-info)</code></li>
+<li>L3546: <code>(defun e2wm:dp-dashboard-parse-garbage-collect ()</code></li>
+<li>L3555: <code>(defun e2wm:dp-dashboard-insert-summary-info ()</code></li>
+<li>L3594: <code>(defun e2wm:dp-dashboard ()</code></li>
+<li>L3623: <code>(defun e2wm:dp-array-make-recipe (cols rows)</code></li>
+<li>L3665: <code>(defun e2wm:dp-array-make-winfo (cols rows)</code></li>
+<li>L3682: <code>(defun e2wm:dp-array-calculate-size (num)</code></li>
+<li>L3700: <code>(defun e2wm:dp-array-make-wm (buffers)</code></li>
+<li>L3725: <code>(defun e2wm:dp-array-init ()</code></li>
+<li>L3733: <code>(defvar e2wm:dp-array-backup-globalmap nil)</code></li>
+<li>L3735: <code>(defun e2wm:dp-array-start (wm)</code></li>
+<li>L3743: <code>(defun e2wm:dp-array-leave (wm)</code></li>
+<li>L3751: <code>(defun e2wm:dp-array-arrange-buffers (wm buffers)</code></li>
+<li>L3762: <code>(defun e2wm:dp-array-get-recordable-buffers ()</code></li>
+<li>L3775: <code>(defun e2wm:dp-array-get-more-buffers ()</code></li>
+<li>L3788: <code>(defun e2wm:dp-array-get-smart-buffers ()</code></li>
+<li>L3794: <code>(defun e2wm:dp-array-get-same-mode-buffers ()</code></li>
+<li>L3800: <code>(defun e2wm:dp-array-get-same-mode-buffers-if-not-recordable ()</code></li>
+<li>L3804: <code>(defun e2wm:dp-array-popup (buf)</code></li>
+<li>L3811: <code>(defun e2wm:dp-array-decrease-fontsize ()</code></li>
+<li>L3818: <code>(defun e2wm:dp-array-increase-fontsize ()</code></li>
+<li>L3825: <code>(defun e2wm:dp-array-update-summary ()</code></li>
+<li>L3846: <code>(defun e2wm:dp-array-insert-summary-info (selected-buf)</code></li>
+<li>L3879: <code>(defun e2wm:dp-array-hilite-focus ()</code></li>
+<li>L3888: <code>(defun e2wm:dp-array ()</code></li>
+<li>L3892: <code>(defun e2wm:dp-array-move-left-command ()</code></li>
+<li>L3897: <code>(defun e2wm:dp-array-move-right-command ()</code></li>
+<li>L3902: <code>(defun e2wm:dp-array-move-up-command ()</code></li>
+<li>L3907: <code>(defun e2wm:dp-array-move-down-command ()</code></li>
+<li>L3916: <code>(defun e2wm:dp-array-goto-prev-pst-command ()</code></li>
+<li>L3923: <code>(defun e2wm:dp-array-toggle-more-buffers-command ()</code></li>
+<li>L3932: <code>(defun e2wm:dp-array-cancel-command ()</code></li>
+<li>L3939: <code>(defvar e2wm:dp-array-minor-mode-map</code></li>
+<li>L3984: <code>(defun e2wm:history-add-loaded-buffers ()</code></li>
+<li>L3995: <code>(defun e2wm:initialize-for-frame (pstset &amp;optional not-pst-change)</code></li>
+<li>L4005: <code>(defun e2wm:start-management (&amp;optional pstset force-restart not-pst-change)</code></li>
+<li>L4051: <code>(defun e2wm:stop-management (&amp;optional force-stop)</code></li>
+<li>L4084: <code>(provide 'e2wm)</code></li>
+</ul>
+<h2>features/step-definitions/e2wm-steps.el</h2>
+<ul>
+<li>L118: <code>(defun e2wm:testing-separate-table (rows)</code></li>
+<li>L178: <code>(defun e2wm:testing-dummy-display-buffer (buffer &amp;optional action)</code></li>
+</ul>
+<h2>features/support/e2wm-testing.el</h2>
+<ul>
+<li>L1: <code>(require 'e2wm)</code></li>
+<li>L16: <code>(defun e2wm:dp-stwo-switch (buf)</code></li>
+<li>L26: <code>(defun e2wm:dp-stwo-popup (buf)</code></li>
+</ul>
+<h2>features/support/env.el</h2>
+<ul>
+<li>L18: <code>(require 'e2wm)</code></li>
+<li>L19: <code>(require 'espuds)</code></li>
+<li>L20: <code>(require 'ert)</code></li>
+</ul>
+<h2>test-e2wm-pst-class.el</h2>
+<ul>
+<li>L9: <code>(require 'ert)</code></li>
+<li>L10: <code>(require 'e2wm)</code></li>
+</ul></main></html>

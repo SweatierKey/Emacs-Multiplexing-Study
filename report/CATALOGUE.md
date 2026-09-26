@@ -1,0 +1,149 @@
+# Catalogo dei progetti
+
+Data dello snapshot: 26 settembre 2026. Le schede distinguono revisione architetturale, caricamento e prove end-to-end. Un indice automatico dei simboli non è una revisione completa di ogni riga.
+
+- [abysl-term](projects/abysl-term.md) — esterno; caricamento `loaded`; scenario `not-run`. Costruisce comandi/script temporanei e avvia shell/terminali esterni per comandi e output.
+- [alacritty](projects/alacritty.md) — emulatore; caricamento `loaded`; scenario `passed`. ArthurHeymans/emacs-alacritty: modulo Rust che espone il motore Alacritty a un terminale nel buffer.
+- [aweshell](projects/aweshell.md) — gestore; caricamento `loaded`; scenario `passed`. Estende Eshell con più buffer e helper di interazione.
+- [better-shell](projects/better-shell.md) — gestore; caricamento `loaded`; scenario `failed`. Rileva shell inattive e directory per riuso, con helper host remoti e privilegi.
+- [bshell](projects/bshell.md) — gestore; caricamento `loaded`; scenario `not-run`. Classi buffer-manage che creano comint shell e ne gestiscono directory e selezione.
+- [choice-program-complete](projects/choice-program-complete.md) — irrisolto; caricamento `not-acquired`; scenario `not-run`. Nome iniziale ipotizzato per una dipendenza, corretto successivamente nel repository choice-program.
+- [cooked](projects/cooked.md) — emulatore; caricamento `loaded`; scenario `passed`. Core Rust con PTY e gestione dell'ownership dei tasti in base a stato del terminale e shell integration.
+- [coterm](projects/coterm.md) — emulatore; caricamento `loaded`; scenario `passed`. Aggiunge emulazione terminale a comint, con gestione automatica dell'input per applicazioni interattive.
+- [deskel](projects/deskel.md) — workspace; caricamento `error`; scenario `not-run`. Feature desk: gestione di desktop salvati e caricati, con prefisso C-t e integrazione Helm.
+- [detached](projects/detached.md) — persistenza; caricamento `loaded`; scenario `not-run`. Gestisce lavori e riattacco tramite dtach, database e log; distingue job conclusi e processi vivi.
+- [dropdown-remote](projects/dropdown-remote.md) — esterno; caricamento `loaded`; scenario `not-run`. Wrapper D-Bus per Yakuake/Guake: visibilità, tab e invio comandi.
+- [dtache](projects/dtache.md) — irrisolto; caricamento `not-acquired`; scenario `not-run`. URL ipotizzato non acquisito; possibile confusione con detached/dtach.
+- [e2wm](projects/e2wm.md) — workspace; caricamento `loaded`; scenario `not-run`. Framework di prospettive e gestione finestre Emacs.
+- [e2wm-term](projects/e2wm-term.md) — workspace; caricamento `error`; scenario `not-run`. Prospettiva con terminale, input, output, cronologia e aiuto sopra shell.
+- [eaf](projects/eaf.md) — framework; caricamento `loaded`; scenario `not-run`. Infrastruttura di embedding e RPC Python/Qt usata dalle applicazioni terminali EAF.
+- [eaf-pyqterminal](projects/eaf-pyqterminal.md) — emulatore-gui; caricamento `error`; scenario `not-run`. Alternativa EAF con PyQt6, pyte e PTY; su Windows usa pywinpty.
+- [eaf-terminal](projects/eaf-terminal.md) — emulatore-gui; caricamento `error`; scenario `not-run`. Frontend EAF/Python/Qt con xterm.js, WebSocket e backend node-pty; richiede una sessione grafica EAF.
+- [eat](projects/eat.md) — emulatore; caricamento `loaded`; scenario `passed`. Macchina terminale in Lisp, renderer nel buffer, modalità semi-char/char/emacs; integrazione Eshell.
+- [eat-lucasec](projects/eat-lucasec.md) — fork; caricamento `loaded`; scenario `not-run`. Snapshot di un fork di Eat, non una famiglia indipendente.
+- [eat-serial](projects/eat-serial.md) — integrazione; caricamento `loaded`; scenario `not-run`. Collega il motore Eat a un processo seriale anziché a una shell PTY.
+- [edger](projects/edger.md) — navigazione; caricamento `loaded`; scenario `not-run`. Gestione del movimento ai bordi delle finestre e integrazione con multiplexer esterni.
+- [eee](projects/eee.md) — integrazione; caricamento `loaded`; scenario `not-run`. Framework ampio con backend eee-eat/eee-vterm che aprono terminali/frame per comandi e callback.
+- [eev](projects/eev.md) — integrazione; caricamento `loaded`; scenario `passed`. Eepitch conserva un buffer sorgente di istruzioni e un target shell/terminale; F8 invia una riga al target o valuta una riga di controllo contrassegnata dalla stella rossa.
+- [el-be-back](projects/el-be-back.md) — emulatore; caricamento `loaded`; scenario `passed`. Ebb: Lisp, separazione dello stato dello schermo dal rendering del buffer, discendenza architetturale da Eat.
+- [elscreen](projects/elscreen.md) — workspace; caricamento `loaded`; scenario `passed`. Configurazioni di finestre dette screen, con prefisso C-z e lista di schermi.
+- [elscreen-buffer-group](projects/elscreen-buffer-group.md) — workspace; caricamento `loaded`; scenario `not-run`. Raggruppa buffer per ElScreen.
+- [elscreen-multi-term](projects/elscreen-multi-term.md) — workspace; caricamento `loaded`; scenario `failed`. Collega la creazione di multi-term a schermi ElScreen.
+- [emacs-herdr](projects/emacs-herdr.md) — persistenza; caricamento `loaded`; scenario `not-run`. baongoc124: feature herdr, CLI JSON e polling, attach tramite Ghostel e gestione workspace/agent.
+- [emacs-tabbar](projects/emacs-tabbar.md) — escluso; caricamento `error`; scenario `not-run`. Snapshot composto da archivi di configurazione, non una libreria terminale identificabile dal nome del repo.
+- [emacs-tunnel](projects/emacs-tunnel.md) — controller; caricamento `loaded`; scenario `not-run`. Snapshot contiene tslime e helper per sessioni GNU screen e scambio di comandi via file/processi.
+- [emamux](projects/emamux.md) — controller; caricamento `loaded`; scenario `passed`. Invia testo/comandi a tmux con process-file, selezione pane e runner.
+- [emux](projects/emux.md) — gestore; caricamento `loaded`; scenario `passed`. Progetto re5et: sessioni, screen e configurazioni di finestre sopra multi-term; moduli emux-base/emux-screen/emux-session.
+- [emux-attic](projects/emux-attic.md) — fork; caricamento `loaded`; scenario `not-run`. Versione storica della famiglia emux conservata in emacsattic.
+- [emux-el](projects/emux-el.md) — gestore; caricamento `loaded`; scenario `passed`. Implementazione luozengbin distinta: lista doppiamente collegata di terminali e interfaccia a tab, term-exec.
+- [emux-jcguu95](projects/emux-jcguu95.md) — distribuzione; caricamento `error`; scenario `not-run`. Distribuzione/configurazione Emacs orientata al terminale, con bootstrap e proprie scelte di tasti.
+- [emux-rock](projects/emux-rock.md) — fork; caricamento `loaded`; scenario `not-run`. Fork di emux con gestione sessioni/layout.
+- [emux-shcv](projects/emux-shcv.md) — integrazione; caricamento `loaded`; scenario `not-run`. Shim CLI che richiama Emacsclient e modella sessioni tramite layout/tab/perspective; non il progetto re5et.
+- [equake](projects/equake.md) — popup-gui; caricamento `loaded`; scenario `not-run`. Frame Emacs a comparsa con terminali e navigazione, pensato per desktop grafici.
+- [eshell](projects/eshell.md) — baseline; caricamento `loaded`; scenario `passed`. Shell implementata in Emacs Lisp; alcuni programmi visuali vengono delegati a terminali esterni al suo interprete.
+- [eshell-toggle](projects/eshell-toggle.md) — popup; caricamento `loaded`; scenario `passed`. Mostra/nasconde Eshell e conserva il contesto della finestra.
+- [eshell-vterm](projects/eshell-vterm.md) — integrazione; caricamento `loaded`; scenario `passed`. Delega programmi visuali di Eshell a vterm; non sostituisce l'interprete Eshell.
+- [eterm-256color](projects/eterm-256color.md) — estensione; caricamento `loaded`; scenario `passed`. Terminfo e hook per colori estesi in term.
+- [evil-tmux-navigator](projects/evil-tmux-navigator.md) — navigazione; caricamento `error`; scenario `not-run`. Passaggio del focus fra finestre Evil e pane tmux adiacenti.
+- [eyebrowse](projects/eyebrowse.md) — workspace; caricamento `loaded`; scenario `passed`. Slot numerati di configurazioni di finestre con ripristino dei buffer.
+- [friendly-shell](projects/friendly-shell.md) — gestore; caricamento `loaded`; scenario `passed`. Shell comint con nomi e ambiente coerenti, supporto a directory TRAMP.
+- [ghostel](projects/ghostel.md) — emulatore; caricamento `loaded`; scenario `passed`. Modulo Zig basato su libghostty-vt, con parsing nativo e resa nel buffer Emacs; modalità di input separate.
+- [ghostel-mux](projects/ghostel-mux.md) — gestore; caricamento `loaded`; scenario `passed`. Sessioni, finestre e pannelli Emacs contenenti Ghostel; gestione del layout e dell'input sincronizzato.
+- [ghostel-switch](projects/ghostel-switch.md) — gestore; caricamento `loaded`; scenario `failed`. Completamento di buffer Ghostel globali/per progetto con creazione tramite input vuoto.
+- [ghostherd](projects/ghostherd.md) — persistenza; caricamento `loaded`; scenario `not-run`. Client herdr con Ghostel per attach e sidebar, socket/eventi per aggiornare lo stato.
+- [helm-switch-shell](projects/helm-switch-shell.md) — selettore; caricamento `error`; scenario `not-run`. Selezione delle shell mediante sorgenti Helm.
+- [herdr](projects/herdr.md) — persistenza; caricamento `loaded`; scenario `not-run`. eddof13/herdr.el: client JSON-RPC via socket Unix con eventi e stato del daemon herdr; integrazione con frontend terminali.
+- [herdr-emacs](projects/herdr-emacs.md) — esterno; caricamento `error`; scenario `not-run`. Fork del programma herdr con configurazione di tasti in stile Emacs; non pacchetto Emacs Lisp equivalente ai client sopra.
+- [kuro](projects/kuro.md) — emulatore; caricamento `loaded`; scenario `passed`. Core Rust, parser VTE e trasporto binario degli aggiornamenti verso Emacs Lisp.
+- [lazy-emacs-terminal](projects/lazy-emacs-terminal.md) — distribuzione; caricamento `error`; scenario `not-run`. Configurazione Emacs completa con submodule e bootstrap.
+- [libgterm](projects/libgterm.md) — emulatore; caricamento `error`; scenario `not-run`. Prototipo distinto di integrazione Ghostty via Zig e modulo dinamico; dipendenza vendor/ghostty.
+- [lterm](projects/lterm.md) — terminale-lineare; caricamento `loaded`; scenario `passed`. Usa lui di Circe e xterm-color per output orientato alle righe; il codice dichiara esplicitamente i limiti rispetto a un vero emulatore completo.
+- [mistty](projects/mistty.md) — emulatore; caricamento `loaded`; scenario `passed`. Buffer di lavoro modificabile sincronizzato con un terminale sottostante; le modifiche vengono tradotte in input e riconciliate con l'output.
+- [multi-buf](projects/multi-buf.md) — gestore; caricamento `loaded`; scenario `passed`. Backend modulari e registro di buffer, con classi e comandi DWIM coerenti fra terminali e altri modi.
+- [multi-buffer](projects/multi-buffer.md) — gestore; caricamento `error`; scenario `passed`. Piccolo progetto GitLab: minor mode che rinomina per major-mode e indice e aggiorna gli indici alla chiusura; manca un launcher/cycler proprio.
+- [multi-eshell](projects/multi-eshell.md) — gestore; caricamento `loaded`; scenario `passed`. Gestore storico di shell: il costruttore predefinito nello snapshot è shell, non Eshell nonostante il nome.
+- [multi-run](projects/multi-run.md) — broadcast; caricamento `loaded`; scenario `not-run`. Crea Eshell numerate e distribuisce comandi su un insieme di buffer, con funzioni helper.
+- [multi-shell](projects/multi-shell.md) — gestore; caricamento `loaded`; scenario `passed`. Gestisce molte shell comint e il loro passaggio.
+- [multi-term](projects/multi-term.md) — gestore; caricamento `loaded`; scenario `passed`. Lista di buffer term, creazione e cycling, mappe per passare tasti al processo.
+- [multi-term-roman](projects/multi-term-roman.md) — fork; caricamento `error`; scenario `not-run`. Fork storico del gestore multi-term.
+- [multi-term-tmux](projects/multi-term-tmux.md) — persistenza; caricamento `loaded`; scenario `not-run`. Wrapper che crea o attacca tmux locale/remoto tramite make-term e ssh -t.
+- [multi-vterm](projects/multi-vterm.md) — gestore; caricamento `loaded`; scenario `passed`. Lista di vterm, cycling, terminale dedicato e helper per progetti.
+- [myterminal-controls](projects/myterminal-controls.md) — escluso; caricamento `loaded`; scenario `not-run`. Menu di controlli/toggle generici, dal nome dell'autore myTerminal.
+- [navorski](projects/navorski.md) — gestore; caricamento `loaded`; scenario `passed`. Profili e macro per terminali locali/remoti; opzione GNU screen per sessioni persistenti.
+- [nssh](projects/nssh.md) — launcher-remoto; caricamento `loaded`; scenario `not-run`. TRAMP e shell mode, cronologia e completamento host; modalità cluster che distribuisce input alle connessioni.
+- [ob-screen](projects/ob-screen.md) — controller; caricamento `loaded`; scenario `not-run`. Backend Org Babel incluso in Emacs per inviare blocchi a GNU Screen e avviare un terminale esterno, predefinito xterm.
+- [ob-tmux](projects/ob-tmux.md) — controller; caricamento `loaded`; scenario `not-run`. Backend Org Babel che invia blocchi a sessioni tmux e può avviare un terminale esterno.
+- [persp-mode](projects/persp-mode.md) — workspace; caricamento `loaded`; scenario `not-run`. Gestione di prospettive con serializzazione dello stato di finestre/buffer.
+- [perspective](projects/perspective.md) — workspace; caricamento `loaded`; scenario `not-run`. Insiemi nominati di buffer e layout con selezione della prospettiva.
+- [popper](projects/popper.md) — gestore-finestre; caricamento `loaded`; scenario `not-run`. Classifica e richiama buffer popup generici, shell incluse; non crea un parser terminale.
+- [popterm](projects/popterm.md) — popup; caricamento `loaded`; scenario `passed`. Terminali nominati e per contesto con vari backend e display window/posframe.
+- [project-shells](projects/project-shells.md) — gestore; caricamento `loaded`; scenario `not-run`. Registro di shell per progetto, con costruttori vterm/term/shell/eshell e invio comandi.
+- [project-terminal](projects/project-terminal.md) — gestore; caricamento `loaded`; scenario `passed`. Terminali per progetto, side window e tab-line; default Eshell.
+- [quick-shell-keybind](projects/quick-shell-keybind.md) — estensione; caricamento `loaded`; scenario `not-run`. Associa dinamicamente combinazioni scelte dall'utente a buffer shell esistenti.
+- [rswitcher](projects/rswitcher.md) — irrisolto; caricamento `not-acquired`; scenario `not-run`. URL candidato non acquisito con successo.
+- [screensend](projects/screensend.md) — controller; caricamento `loaded`; scenario `not-run`. Backend per inviare testo a GNU screen, tmux e terminali di sistema.
+- [session](projects/session.md) — irrisolto; caricamento `not-acquired`; scenario `not-run`. URL candidato di pacchetto storico non acquisito con successo.
+- [shell](projects/shell.md) — baseline; caricamento `loaded`; scenario `passed`. comint con processo shell, editing delle righe e riconoscimento del prompt; non un emulatore VT completo.
+- [shell-command-x](projects/shell-command-x.md) — estensione; caricamento `loaded`; scenario `not-run`. Advice e hook di shell-command/async-shell-command, nomi buffer e comportamento all'uscita.
+- [shell-here](projects/shell-here.md) — launcher-interno; caricamento `loaded`; scenario `passed`. Apre shell nel contesto/directory corrente, incluse integrazioni con buffer e progetti.
+- [shell-pop](projects/shell-pop.md) — popup; caricamento `loaded`; scenario `passed`. Mostra/nasconde una shell e memorizza finestre/buffer; backend configurabili.
+- [shell-switcher](projects/shell-switcher.md) — gestore; caricamento `loaded`; scenario `passed`. Registro di shell e costruttori configurabili; selezione e cycling.
+- [shell-toggle](projects/shell-toggle.md) — popup; caricamento `loaded`; scenario `not-run`. Toggle storico di un buffer shell con ripristino della finestra precedente.
+- [shell-toggle-plus](projects/shell-toggle-plus.md) — popup; caricamento `loaded`; scenario `not-run`. Variante di shell-toggle con opzioni aggiuntive di posizionamento e riuso.
+- [simple-screen](projects/simple-screen.md) — workspace; caricamento `loaded`; scenario `not-run`. Vettore di configurazioni di finestre, indice corrente e aggiornamento mode-line.
+- [ssh](projects/ssh.md) — launcher-remoto; caricamento `loaded`; scenario `not-run`. Pacchetto storico di sessioni SSH con comint e gestione dei parametri di connessione.
+- [sticky-shell](projects/sticky-shell.md) — estensione; caricamento `loaded`; scenario `passed`. Minor mode per shell persistente nell'interfaccia Emacs, sopra comint.
+- [tab-bar](projects/tab-bar.md) — workspace; caricamento `loaded`; scenario `passed`. Configurazioni di finestre integrate in Emacs; ogni tab può mostrare buffer terminali già vivi.
+- [tab-group](projects/tab-group.md) — workspace; caricamento `loaded`; scenario `not-run`. Raggruppa buffer in tab e fornisce l'infrastruttura usata da term+mux.
+- [term](projects/term.md) — emulatore; caricamento `loaded`; scenario `passed`. Parser e schermo in Lisp, processo PTY gestito da term.el. ansi-term è un secondo comando dello stesso motore, non un altro progetto.
+- [term+](projects/term+.md) — estensione; caricamento `loaded`; scenario `failed`. Estende term con editing, logging, cronologia, trasferimento file e protocollo di escape verso Emacs.
+- [term+key-intercept](projects/term+key-intercept.md) — estensione; caricamento `loaded`; scenario `not-run`. Collega term+ alla libreria key-intercept per gestire il passaggio dei tasti.
+- [term-alert](projects/term-alert.md) — estensione; caricamento `loaded`; scenario `not-run`. Notifica completamento attraverso term-cmd e integrazione shell.
+- [term-cmd](projects/term-cmd.md) — estensione; caricamento `loaded`; scenario `not-run`. Protocollo di escape estensibile per chiamare callback Emacs dal programma terminale.
+- [term-control](projects/term-control.md) — gestore; caricamento `loaded`; scenario `passed`. Terminali vterm nominati, associazione allo stato delle tab e completamento dei nomi.
+- [term-manager](projects/term-manager.md) — gestore; caricamento `loaded`; scenario `passed`. Gestione indicizzata dei terminali con backend e frontend per directory, project.el e Projectile.
+- [term-mux](projects/term-mux.md) — gestore; caricamento `loaded`; scenario `passed`. Registro di sessioni e slot di buffer con backend selezionabile fra terminali disponibili.
+- [term-plus-fork](projects/term-plus-fork.md) — fork; caricamento `loaded`; scenario `not-run`. Fork ZpullZ della famiglia term-plus.
+- [term-plus-mux](projects/term-plus-mux.md) — gestore; caricamento `loaded`; scenario `failed`. Sessioni e tab-group sopra term+, con helper SSH e connessioni persistenti lato SSH.
+- [term-plus-xterm](projects/term-plus-xterm.md) — duplicato; caricamento `loaded`; scenario `not-run`. Stesso URL upstream di term+ acquisito con un altro identificatore.
+- [term-run](projects/term-run.md) — launcher-interno; caricamento `loaded`; scenario `passed`. Avvia un comando arbitrario in term e ne visualizza il buffer con display-buffer.
+- [term-sessions](projects/term-sessions.md) — persistenza; caricamento `loaded`; scenario `passed`. Frontend Emacs per sessioni zmx; adapter term/vterm/eat/ghostel/ebb/shell e integrazione Org/TRAMP.
+- [term-toggle](projects/term-toggle.md) — popup; caricamento `loaded`; scenario `passed`. Console a comparsa per directory/progetto con molte shell supportate e animazione opzionale.
+- [terminal](projects/terminal.md) — emulatore-storico; caricamento `loaded`; scenario `passed`. terminal.el di GNU Emacs, codice storico dal 1986, marcato obsoleto da Emacs 24.4; parser, filtro di processo e schermo in Lisp, distinto dal successivo term.el.
+- [terminal-here](projects/terminal-here.md) — esterno; caricamento `loaded`; scenario `not-run`. Lancia un'applicazione terminale esterna nel contesto della directory corrente.
+- [terminal-toggle](projects/terminal-toggle.md) — popup; caricamento `loaded`; scenario `passed`. Piccolo progetto GitLab per mostrare/nascondere un terminale interno.
+- [terminology](projects/terminology.md) — gestore; caricamento `loaded`; scenario `not-run`. Terminali vterm nominati con selezione Helm e integrazione Evil.
+- [termint](projects/termint.md) — integrazione; caricamento `loaded`; scenario `not-run`. Macro/helper per programmi e REPL dentro un terminale, con invio di input dal buffer sorgente.
+- [tiling](projects/tiling.md) — workspace; caricamento `loaded`; scenario `not-run`. Riordina finestre Emacs in modo simile a tmux.
+- [tmux-cc](projects/tmux-cc.md) — controller; caricamento `loaded`; scenario `not-run`. wcy123: progetto omonimo ma distinto da tmux-control-mode; wrapper con shell/processi e integrazioni anche osascript.
+- [tmux-control](projects/tmux-control.md) — persistenza; caricamento `loaded`; scenario `passed`. csheaff: protocollo tmux control-mode, processo a pipe ed emulazione delle pane con Eat.
+- [tmux-control-mode](projects/tmux-control-mode.md) — persistenza; caricamento `loaded`; scenario `failed`. stephenjayakar: feature tmux-cc, manager di sessioni e renderer vterm per le pane, protocollo -CC.
+- [tmux-el](projects/tmux-el.md) — controller; caricamento `loaded`; scenario `not-run`. Wrapper Lisp del CLI tmux per comandi, invio testo, directory e selezione.
+- [tmux-head](projects/tmux-head.md) — controller; caricamento `loaded`; scenario `not-run`. Interfaccia di comandi tmux con menu/prefissi e dipendenze UI.
+- [tmux-pane](projects/tmux-pane.md) — navigazione; caricamento `loaded`; scenario `not-run`. Fa cooperare la navigazione delle finestre Emacs con le pane tmux.
+- [tmux-runner](projects/tmux-runner.md) — controller; caricamento `loaded`; scenario `not-run`. Feature emacs-tmux-runner, invio di comandi a un runner tmux.
+- [tmux-tandem](projects/tmux-tandem.md) — navigazione; caricamento `loaded`; scenario `not-run`. Coordina finestre/processi Emacs con tmux attraverso callback e comandi esterni.
+- [tmux-view](projects/tmux-view.md) — viewer; caricamento `loaded`; scenario `passed`. Cattura la pane tmux e rende lo scrollback/ANSI in un buffer di visualizzazione.
+- [tmuxbuf](projects/tmuxbuf.md) — escluso; caricamento `loaded`; scenario `not-run`. Integrazione buffer/copia-incolla con tmux.
+- [tmuxmacs](projects/tmuxmacs.md) — controller; caricamento `loaded`; scenario `not-run`. Albero di sessioni/finestre/pane, invio comandi e cattura dell'output tramite CLI tmux.
+- [toggle-term](projects/toggle-term.md) — popup; caricamento `loaded`; scenario `passed`. Terminali nominati e scelta del backend/posizione attraverso completing-read e annotazioni.
+- [tramp-term](projects/tramp-term.md) — launcher-remoto; caricamento `loaded`; scenario `not-run`. Avvia ssh in ansi-term e inizializza directory tracking e integrazione TRAMP senza richiedere configurazione remota permanente.
+- [turnip](projects/turnip.md) — controller; caricamento `loaded`; scenario `not-run`. Connessione a sessioni tmux, completamento opzioni e invio della regione/testo.
+- [vterm](projects/vterm.md) — emulatore; caricamento `loaded`; scenario `passed`. Modulo C interfaccia libvterm; il filtro di processo alimenta parser e aggiornamenti del buffer.
+- [vterm-anti-flicker-filter](projects/vterm-anti-flicker-filter.md) — estensione; caricamento `loaded`; scenario `not-run`. Filtro/advice sulla pipeline vterm per limitare aggiornamenti che producono sfarfallio.
+- [vterm-editor](projects/vterm-editor.md) — estensione; caricamento `loaded`; scenario `not-run`. Buffer temporaneo di editing che reinvia il contenuto a vterm.
+- [vterm-hotkey](projects/vterm-hotkey.md) — estensione; caricamento `loaded`; scenario `not-run`. Associa tasti scelti dall'utente a buffer vterm nominati e ne pulisce il registro alla chiusura.
+- [vterm-manager](projects/vterm-manager.md) — gestore; caricamento `loaded`; scenario `passed`. Feature vtm, non vterm-manager; apre file .vtm contenenti plist con nome e sequenze di comandi da inviare a vterm.
+- [vterm-ring](projects/vterm-ring.md) — gestore; caricamento `loaded`; scenario `passed`. Anello di buffer vterm e hook di pulizia, con creazione e navigazione.
+- [vterm-toggle](projects/vterm-toggle.md) — popup; caricamento `loaded`; scenario `passed`. Mostra/nasconde vterm e offre selezione per progetto e cambi directory.
+- [vterms](projects/vterms.md) — gestore; caricamento `loaded`; scenario `passed`. Wrapper di vterm orientato al progetto e alla creazione ripetuta.
+- [vtermux](projects/vtermux.md) — gestore; caricamento `loaded`; scenario `passed`. Macro che genera launcher per programmi e backend vterm/ghostel/term; liste di istanze, etichette e cycling.
+- [vtplex](projects/vtplex.md) — gestore; caricamento `loaded`; scenario `failed`. Piccolo wrapper di vterm con prefisso C-a e comandi create/next/prev.
+- [winterm](projects/winterm.md) — prototipo-windows; caricamento `error`; scenario `not-run`. Snapshot molto piccolo con infrastruttura Zig/Windows; non equivalente a wterm.
+- [workgroups](projects/workgroups.md) — workspace; caricamento `loaded`; scenario `not-run`. Gruppi di configurazioni di finestre e ripristino del contesto.
+- [workgroups2](projects/workgroups2.md) — workspace; caricamento `loaded`; scenario `not-run`. Evoluzione di workgroups con persistenza dei layout e restore di buffer supportati.
+- [wterm](projects/wterm.md) — emulatore-windows; caricamento `error`; scenario `not-run`. Bridge ConPTY e libvterm su Windows; componenti nativi specifici della piattaforma.
+- [xterm-256color](projects/xterm-256color.md) — irrisolto; caricamento `not-acquired`; scenario `not-run`. URL del repository separato non acquisito. Un file xterm-256color.el è invece incluso e leggibile nello snapshot term+.
+- [xterm-color](projects/xterm-color.md) — estensione; caricamento `loaded`; scenario `not-run`. Filtro di sequenze SGR e trasformazione in proprietà di testo Emacs.
+- [yantra](projects/yantra.md) — escluso; caricamento `error`; scenario `not-run`. Applicazione web con autenticazione, route e ponte verso editor Emacs.
+- [zellij](projects/zellij.md) — controller; caricamento `loaded`; scenario `not-run`. Interfaccia al CLI Zellij per sessioni, pane e invio input.

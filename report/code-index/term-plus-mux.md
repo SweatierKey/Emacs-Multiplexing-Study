@@ -1,0 +1,91 @@
+# Indice del codice: term-plus-mux
+
+Fonte: https://github.com/tarao/term-plus-mux-el.git
+
+Revisione: `cd12a3744d4b7d37a002f4f7fcc4a45ea5be95c3`.
+
+
+## term+mux.el
+
+- L28: `(require 'term+)`
+- L29: `(require 'tab-group)`
+- L30: `(require 'tramp)`
+- L52: `(defcustom term+mux-char-prefix "C-t"`
+- L58: `(defcustom term+mux-line-prefix "C-x t"`
+- L64: `(defcustom term+mux-session-buffer t`
+- L70: `(defcustom term+mux-mode-line-tabbar t`
+- L77: `(defcustom term+mux-local-shell-command nil`
+- L108: `(defcustom term+mux-local-command '(command)`
+- L119: `(defcustom term+mux-remote-shell-command '(term+mux-ssh-shell-command)`
+- L135: `(defcustom term+mux-remote-command '(term+mux-ssh-command)`
+- L151: `(defcustom term+mux-su-shell-command '(term+mux-sudo-shell-command)`
+- L168: `(defcustom term+mux-su-command '(term+mux-sudo-command)`
+- L185: `(defcustom term+mux-user-complete-method 'term+mux-su-shell-command`
+- L198: `(defcustom term+mux-host-complete-method 'term+mux-remote-shell-command`
+- L204: `(defcustom term+mux-ssh-options '("-t")`
+- L210: `(defcustom term+mux-ssh-forward-x 'auto`
+- L217: `(defcustom term+mux-ssh-control-master nil`
+- L224: `(defcustom term+mux-ssh-control-path "~/.ssh/emacs-term+mux-%r@%h:%p"`
+- L229: `(defcustom term+mux-ssh-control-persist 10`
+- L234: `(defcustom term+mux-sudo-options '()`
+- L249: `(defcustom term+mux-shell-exec`
+- L277: `(defcustom term+mux-command-exec '("exec" command)`
+- L288: `(defvar term+mux-map`
+- L291: `(define-key map (kbd "N") #'term+mux-new)`
+- L292: `(define-key map (kbd "c") #'term+mux-new)`
+- L293: `(define-key map (kbd "o") #'term+mux-other-window)`
+- L294: `(define-key map (kbd "O") #'term+mux-new-other-window)`
+- L295: `(define-key map (kbd "C") #'term+mux-new-command)`
+- L296: `(define-key map (kbd "S") #'term+mux-new-session)`
+- L297: `(define-key map (kbd "R") #'term+mux-remote-session)`
+- L298: `(define-key map (kbd "r") #'term+mux-set-title)`
+- L299: `(define-key map (kbd "t") #'term+mux-set-title)`
+- L300: `(define-key map (kbd "u") #'term+mux-unset-title)`
+- L303: `(defmacro term+mux-with-prefix (bind &rest body)`
+- L310: `(define-key term+char-map prefix term+mux-map)))`
+- L313: `(define-key term+line-map prefix term+mux-map)))`
+- L348: `(defmacro term+mux-session-as-group (session &optional method)`
+- L365: `(defun term+mux-read-string (what)`
+- L380: `(defun term+mux-session-name (user host)`
+- L400: `(defun term+mux-resolve-arg (session command arg)`
+- L417: `(defun term+mux-resolve-args (session command args)`
+- L425: `(defun term+mux-resolve-command (session command)`
+- L449: `(defun term+mux-x-available-p ()`
+- L456: `(defun term+mux-ssh-control-persist-enabled-p ()`
+- L468: `(defun term+mux-ssh-make-command (session command exec)`
+- L495: `(defun term+mux-ssh-shell-command (session command)`
+- L519: `(defun term+mux-ssh-command (session command)`
+- L534: `(defun term+mux-sudo-make-command (session command exec)`
+- L545: `(defun term+mux-sudo-shell-command (session command)`
+- L560: `(defun term+mux-sudo-command (session command)`
+- L574: `(defun term+mux-complete-method (method)`
+- L582: `(defun term+mux-tramp-complete (method)`
+- L590: `(defun term+mux-complete-user ()`
+- L596: `(defun term+mux-complete-host ()`
+- L605: `(defun term+mux-make-term-buffer (session name command)`
+- L618: `(defun term+mux-remove-session (session)`
+- L625: `(defun term+mux-maybe-remove-session (&optional session)`
+- L636: `(defun term+mux-mode-line-tabbar-edit ()`
+- L650: `(defun term+mux-mode-line-tabbar-indirect-buffer-setup ()`
+- L673: `(define-minor-mode term+mux-mode-line-tabbar-mode`
+- L701: `(defun term+mux-noselect (&optional session name command)`
+- L734: `(defun term+mux-new (&optional session name command)`
+- L751: `(defun term+mux-new-other-window (&optional session name command)`
+- L760: `(defun term+mux-other-window (&optional session)`
+- L783: `(defun term+mux-new-command ()`
+- L790: `(defun term+mux-new-session (&optional name user host)`
+- L843: `(defun term+mux-remote-session ()`
+- L851: `(defun term+mux-set-title (&optional title)`
+- L875: `(defun term+mux-unset-title ()`
+- L894: `(defun term+mux-cdd-put-overlay ()`
+- L902: `(defun term+mux-cdd-delete-overlay ()`
+- L907: `(defun term+mux-cdd-update-search (beg end len)`
+- L911: `(defun term+mux-cdd-end-search ()`
+- L915: `(defun term+mux-cdd-select (tabs)`
+- L919: `(defun term+mux-cdd-search (prompt)`
+- L926: `(defun term+mux-cdd-find (pattern)`
+- L930: `(defun term+mux-cdd (pattern)`
+- L952: `(defun term+mux-session-color (session)`
+- L965: `(defun term+mux-colored-group-label (group)`
+- L971: `(defun term+mux-set-group-color-function (session own-group)`
+- L979: `(provide 'term+mux)`

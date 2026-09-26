@@ -1,0 +1,67 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: eee</h1>
+<p>Fonte: https://github.com/eval-exec/eee.el.git</p>
+<p>Revisione: <code>ba62f385963d67d48abdec56c70fb08a3a14f656</code>.</p>
+<h2>eee-eat.el</h2>
+<ul>
+<li>L11: <code>(require 'eat)</code></li>
+<li>L15: <code>(define-derived-mode ee-eat-mode eat-mode "Eat[EEE]" )</code></li>
+<li>L17: <code>(defun ee-eat--setup-buffer ()</code></li>
+<li>L36: <code>(defun ee-eat-start-terminal (name command callback)</code></li>
+<li>L53: <code>(provide 'eee-eat)</code></li>
+</ul>
+<h2>eee-transient.el</h2>
+<ul>
+<li>L28: <code>(require 'cl-lib)</code></li>
+<li>L29: <code>(require 'transient)</code></li>
+<li>L41: <code>(defun ee--rewrite-sanitize-overlays ()</code></li>
+<li>L52: <code>(defun ee--set-with-scope (sym value &amp;optional scope)</code></li>
+<li>L75: <code>(defun ee--get-directive (args)</code></li>
+<li>L83: <code>(defun ee--instructions-make-overlay (text &amp;optional ov)</code></li>
+<li>L122: <code>(defun ee--read-with-prefix (prefix)</code></li>
+<li>L177: <code>(defun ee--transient-read-variable (prompt initial-input history)</code></li>
+<li>L185: <code>(defun ee-system-prompt--format (&amp;optional message)</code></li>
+<li>L210: <code>(defun ee--crowdsourced-prompts ()</code></li>
+<li>L505: <code>(defun ee--setup-directive-menu (sym msg &amp;optional external)</code></li>
+<li>L1005: <code>(defun ee--merge-additional-directive (additional &amp;optional full)</code></li>
+<li>L1030: <code>(defun ee--regenerate ()</code></li>
+<li>L1053: <code>(defun ee--read-crowdsourced-prompt ()</code></li>
+<li>L1101: <code>(defun ee--edit-directive (sym &amp;optional callback-cmd)</code></li>
+<li>L1215: <code>(provide 'ee-transient)</code></li>
+</ul>
+<h2>eee-vterm.el</h2>
+<ul>
+<li>L11: <code>(require 'vterm)</code></li>
+<li>L13: <code>(define-derived-mode ee-vterm-mode vterm-mode "VTerm[EEE]")</code></li>
+<li>L16: <code>(defun ee-vterm-start-terminal (name command callback)</code></li>
+<li>L35: <code>(provide 'eee-vterm)</code></li>
+</ul>
+<h2>eee.el</h2>
+<ul>
+<li>L15: <code>(defcustom ee-terminal-command "wezterm"</code></li>
+<li>L20: <code>(defcustom ee-terminal-options</code></li>
+<li>L36: <code>(defcustom ee-debug-message nil</code></li>
+<li>L41: <code>(defun ee-message (format-string &amp;rest args)</code></li>
+<li>L47: <code>(defun ee-get-terminal-options()</code></li>
+<li>L55: <code>(defun ee-script-path(script-name)</code></li>
+<li>L86: <code>(defun ee-start-external-terminal (name command callback)</code></li>
+<li>L100: <code>(defcustom ee-start-terminal-function #'ee-start-external-terminal</code></li>
+<li>L107: <code>(defun ee-start-process-shell-command-in-terminal (name command callback)</code></li>
+<li>L123: <code>(defun ee--normalize-path (path)</code></li>
+<li>L126: <code>(defun ee-get-project-dir-or-current-dir()</code></li>
+<li>L135: <code>(defun ee-integer-p(str)</code></li>
+<li>L139: <code>(defun ee-jump (destination)</code></li>
+<li>L192: <code>(defun ee-jump-from (destination-file)</code></li>
+<li>L201: <code>(defun ee-join-args(args)</code></li>
+<li>L207: <code>(defun ee-run(name working-directory command &amp;optional args callback)</code></li>
+<li>L241: <code>(defmacro ee-define (name working-directory script-path &amp;optional args callback)</code></li>
+<li>L256: <code>(defun ee-region-text()</code></li>
+<li>L344: <code>(defun ee-recentf-dump ()</code></li>
+<li>L367: <code>(defvar ee-keymap (make-sparse-keymap)</code></li>
+<li>L369: <code>(define-key ee-keymap (kbd "f") 'ee-find)</code></li>
+<li>L370: <code>(define-key ee-keymap (kbd "g") 'ee-lazygit)</code></li>
+<li>L371: <code>(define-key ee-keymap (kbd "y") 'ee-yazi)</code></li>
+<li>L372: <code>(define-key ee-keymap (kbd "Y") 'ee-yazi-project)</code></li>
+<li>L373: <code>(define-key ee-keymap (kbd "r") 'ee-rg)</code></li>
+<li>L374: <code>(define-key ee-keymap (kbd "l") 'ee-line)</code></li>
+<li>L377: <code>(provide 'eee)</code></li>
+</ul></main></html>

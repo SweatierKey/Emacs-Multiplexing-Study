@@ -1,0 +1,147 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: libgterm</h1>
+<p>Fonte: https://github.com/rwc9u/emacs-libgterm.git</p>
+<p>Revisione: <code>5f5516dccb0de06b2233b3492f175c3477f00ef0</code>.</p>
+<h2>gterm.el</h2>
+<ul>
+<li>L24: <code>(require 'cl-lib)</code></li>
+<li>L28: <code>(defvar gterm-link-map</code></li>
+<li>L30: <code>(define-key map [mouse-1] #'gterm-open-link-at-click)</code></li>
+<li>L31: <code>(define-key map [mouse-2] #'gterm-open-link-at-click)</code></li>
+<li>L32: <code>(define-key map (kbd "RET") #'gterm-open-link-at-point)</code></li>
+<li>L36: <code>(defun gterm-open-link-at-click (event)</code></li>
+<li>L44: <code>(defun gterm-open-link-at-point ()</code></li>
+<li>L63: <code>(defcustom gterm-always-compile-module nil</code></li>
+<li>L68: <code>(defun gterm--detect-emacs-include ()</code></li>
+<li>L85: <code>(defun gterm-module-compile ()</code></li>
+<li>L144: <code>(defcustom gterm-shell "/bin/zsh"</code></li>
+<li>L149: <code>(defcustom gterm-term-environment-variable "xterm-256color"</code></li>
+<li>L154: <code>(defcustom gterm-max-scrollback 10000</code></li>
+<li>L187: <code>(defun gterm--refresh ()</code></li>
+<li>L207: <code>(defun gterm--full-refresh ()</code></li>
+<li>L212: <code>(defun gterm--schedule-refresh ()</code></li>
+<li>L229: <code>(defun gterm--filter (process output)</code></li>
+<li>L245: <code>(defun gterm--sentinel (process _event)</code></li>
+<li>L257: <code>(defun gterm-open-file-at-click (event)</code></li>
+<li>L295: <code>(defun gterm-send-string (string)</code></li>
+<li>L305: <code>(defun gterm-send-key ()</code></li>
+<li>L320: <code>(defun gterm-send-return ()</code></li>
+<li>L325: <code>(defun gterm-send-backspace ()</code></li>
+<li>L330: <code>(defun gterm-send-escape ()</code></li>
+<li>L337: <code>(defun gterm-send-ctrl-key ()</code></li>
+<li>L346: <code>(defun gterm-send-next-key ()</code></li>
+<li>L375: <code>(defun gterm-send-ctrl-c ()</code></li>
+<li>L380: <code>(defun gterm-send-ctrl-d ()</code></li>
+<li>L385: <code>(defun gterm-send-ctrl-z ()</code></li>
+<li>L392: <code>(defun gterm--send-escape-seq (seq)</code></li>
+<li>L396: <code>(defun gterm--app-cursor-p ()</code></li>
+<li>L404: <code>(defun gterm-send-up ()    (interactive) (gterm--send-escape-seq (if (gterm--app-cursor-p) "OA" "[A")))</code></li>
+<li>L405: <code>(defun gterm-send-down ()  (interactive) (gterm--send-escape-seq (if (gterm--app-cursor-p) "OB" "[B")))</code></li>
+<li>L406: <code>(defun gterm-send-right () (interactive) (gterm--send-escape-seq (if (gterm--app-cursor-p) "OC" "[C")))</code></li>
+<li>L407: <code>(defun gterm-send-left ()  (interactive) (gterm--send-escape-seq (if (gterm--app-cursor-p) "OD" "[D")))</code></li>
+<li>L411: <code>(defun gterm-send-home ()      (interactive) (gterm--send-escape-seq (if (gterm--app-cursor-p) "OH" "[H")))</code></li>
+<li>L412: <code>(defun gterm-send-end ()       (interactive) (gterm--send-escape-seq (if (gterm--app-cursor-p) "OF" "[F")))</code></li>
+<li>L413: <code>(defun gterm-send-delete ()    (interactive) (gterm--send-escape-seq "[3~"))</code></li>
+<li>L414: <code>(defun gterm-send-insert ()    (interactive) (gterm--send-escape-seq "[2~"))</code></li>
+<li>L415: <code>(defun gterm-send-page-up ()   (interactive) (gterm--send-escape-seq "[5~"))</code></li>
+<li>L416: <code>(defun gterm-send-page-down () (interactive) (gterm--send-escape-seq "[6~"))</code></li>
+<li>L420: <code>(defun gterm-send-f1 ()  (interactive) (gterm--send-escape-seq "OP"))</code></li>
+<li>L421: <code>(defun gterm-send-f2 ()  (interactive) (gterm--send-escape-seq "OQ"))</code></li>
+<li>L422: <code>(defun gterm-send-f3 ()  (interactive) (gterm--send-escape-seq "OR"))</code></li>
+<li>L423: <code>(defun gterm-send-f4 ()  (interactive) (gterm--send-escape-seq "OS"))</code></li>
+<li>L424: <code>(defun gterm-send-f5 ()  (interactive) (gterm--send-escape-seq "[15~"))</code></li>
+<li>L425: <code>(defun gterm-send-f6 ()  (interactive) (gterm--send-escape-seq "[17~"))</code></li>
+<li>L426: <code>(defun gterm-send-f7 ()  (interactive) (gterm--send-escape-seq "[18~"))</code></li>
+<li>L427: <code>(defun gterm-send-f8 ()  (interactive) (gterm--send-escape-seq "[19~"))</code></li>
+<li>L428: <code>(defun gterm-send-f9 ()  (interactive) (gterm--send-escape-seq "[20~"))</code></li>
+<li>L429: <code>(defun gterm-send-f10 () (interactive) (gterm--send-escape-seq "[21~"))</code></li>
+<li>L430: <code>(defun gterm-send-f11 () (interactive) (gterm--send-escape-seq "[23~"))</code></li>
+<li>L431: <code>(defun gterm-send-f12 () (interactive) (gterm--send-escape-seq "[24~"))</code></li>
+<li>L435: <code>(defun gterm-send-S-up ()    (interactive) (gterm--send-escape-seq "[1;2A"))</code></li>
+<li>L436: <code>(defun gterm-send-S-down ()  (interactive) (gterm--send-escape-seq "[1;2B"))</code></li>
+<li>L437: <code>(defun gterm-send-S-right () (interactive) (gterm--send-escape-seq "[1;2C"))</code></li>
+<li>L438: <code>(defun gterm-send-S-left ()  (interactive) (gterm--send-escape-seq "[1;2D"))</code></li>
+<li>L439: <code>(defun gterm-send-C-right () (interactive) (gterm--send-escape-seq "[1;5C"))</code></li>
+<li>L440: <code>(defun gterm-send-C-left ()  (interactive) (gterm--send-escape-seq "[1;5D"))</code></li>
+<li>L441: <code>(defun gterm-send-M-right () (interactive) (gterm--send-escape-seq "[1;3C"))</code></li>
+<li>L442: <code>(defun gterm-send-M-left ()  (interactive) (gterm--send-escape-seq "[1;3D"))</code></li>
+<li>L446: <code>(defun gterm-yank ()</code></li>
+<li>L457: <code>(defun gterm-copy-mode ()</code></li>
+<li>L467: <code>(defun gterm--copy-mode-enter ()</code></li>
+<li>L474: <code>(defun gterm--copy-mode-exit ()</code></li>
+<li>L483: <code>(defun gterm-copy-mode-copy-and-exit ()</code></li>
+<li>L491: <code>(defvar gterm-copy-mode-map</code></li>
+<li>L496: <code>(define-key map (kbd "q") #'gterm--copy-mode-exit)</code></li>
+<li>L497: <code>(define-key map (kbd "C-c C-c") #'gterm--copy-mode-exit)</code></li>
+<li>L499: <code>(define-key map (kbd "y") #'gterm-copy-mode-copy-and-exit)</code></li>
+<li>L500: <code>(define-key map (kbd "M-w") #'gterm-copy-mode-copy-and-exit)</code></li>
+<li>L502: <code>(define-key map (kbd "C-SPC") #'set-mark-command)</code></li>
+<li>L503: <code>(define-key map (kbd "C-@") #'set-mark-command)</code></li>
+<li>L509: <code>(defun gterm-scroll-up ()</code></li>
+<li>L517: <code>(defun gterm-scroll-down ()</code></li>
+<li>L526: <code>(defcustom gterm-mouse-scroll-lines 5</code></li>
+<li>L531: <code>(defun gterm-scroll-up-lines (n)</code></li>
+<li>L539: <code>(defun gterm-scroll-down-lines (n)</code></li>
+<li>L548: <code>(defun gterm-mouse-scroll-up (_event)</code></li>
+<li>L553: <code>(defun gterm-mouse-scroll-down (_event)</code></li>
+<li>L558: <code>(defun gterm-scroll-to-bottom ()</code></li>
+<li>L568: <code>(defun gterm--bracketed-paste-p ()</code></li>
+<li>L574: <code>(defun gterm--send-paste (text)</code></li>
+<li>L580: <code>(defun gterm-handle-drop (event)</code></li>
+<li>L595: <code>(defun gterm--setup-drag-drop ()</code></li>
+<li>L604: <code>(defun gterm--dnd-handler (uri _action)</code></li>
+<li>L615: <code>(defun gterm--calculate-size ()</code></li>
+<li>L621: <code>(defun gterm--maybe-resize ()</code></li>
+<li>L638: <code>(defvar gterm-mode-map</code></li>
+<li>L642: <code>do (define-key map (char-to-string c) #'gterm-send-key))</code></li>
+<li>L644: <code>(define-key map (kbd "RET") #'gterm-send-return)</code></li>
+<li>L645: <code>(define-key map (kbd "DEL") #'gterm-send-backspace)</code></li>
+<li>L646: <code>(define-key map (kbd "TAB") #'gterm-send-key)</code></li>
+<li>L649: <code>(define-key map (kbd "C-c C-c") #'gterm-send-ctrl-c)</code></li>
+<li>L650: <code>(define-key map (kbd "C-c C-d") #'gterm-send-ctrl-d)</code></li>
+<li>L651: <code>(define-key map (kbd "C-c C-z") #'gterm-send-ctrl-z)</code></li>
+<li>L657: <code>do (define-key map (vector 'control c) #'gterm-send-ctrl-key))</code></li>
+<li>L659: <code>(define-key map (kbd "&lt;up&gt;") #'gterm-send-up)</code></li>
+<li>L660: <code>(define-key map (kbd "&lt;down&gt;") #'gterm-send-down)</code></li>
+<li>L661: <code>(define-key map (kbd "&lt;right&gt;") #'gterm-send-right)</code></li>
+<li>L662: <code>(define-key map (kbd "&lt;left&gt;") #'gterm-send-left)</code></li>
+<li>L664: <code>(define-key map (kbd "&lt;home&gt;") #'gterm-send-home)</code></li>
+<li>L665: <code>(define-key map (kbd "&lt;end&gt;") #'gterm-send-end)</code></li>
+<li>L666: <code>(define-key map (kbd "&lt;deletechar&gt;") #'gterm-send-delete)</code></li>
+<li>L667: <code>(define-key map (kbd "&lt;insert&gt;") #'gterm-send-insert)</code></li>
+<li>L668: <code>(define-key map (kbd "&lt;prior&gt;") #'gterm-send-page-up)</code></li>
+<li>L669: <code>(define-key map (kbd "&lt;next&gt;") #'gterm-send-page-down)</code></li>
+<li>L671: <code>(define-key map (kbd "&lt;f1&gt;") #'gterm-send-f1)</code></li>
+<li>L672: <code>(define-key map (kbd "&lt;f2&gt;") #'gterm-send-f2)</code></li>
+<li>L673: <code>(define-key map (kbd "&lt;f3&gt;") #'gterm-send-f3)</code></li>
+<li>L674: <code>(define-key map (kbd "&lt;f4&gt;") #'gterm-send-f4)</code></li>
+<li>L675: <code>(define-key map (kbd "&lt;f5&gt;") #'gterm-send-f5)</code></li>
+<li>L676: <code>(define-key map (kbd "&lt;f6&gt;") #'gterm-send-f6)</code></li>
+<li>L677: <code>(define-key map (kbd "&lt;f7&gt;") #'gterm-send-f7)</code></li>
+<li>L678: <code>(define-key map (kbd "&lt;f8&gt;") #'gterm-send-f8)</code></li>
+<li>L679: <code>(define-key map (kbd "&lt;f9&gt;") #'gterm-send-f9)</code></li>
+<li>L680: <code>(define-key map (kbd "&lt;f10&gt;") #'gterm-send-f10)</code></li>
+<li>L681: <code>(define-key map (kbd "&lt;f11&gt;") #'gterm-send-f11)</code></li>
+<li>L682: <code>(define-key map (kbd "&lt;f12&gt;") #'gterm-send-f12)</code></li>
+<li>L684: <code>(define-key map (kbd "S-&lt;up&gt;") #'gterm-send-S-up)</code></li>
+<li>L685: <code>(define-key map (kbd "S-&lt;down&gt;") #'gterm-send-S-down)</code></li>
+<li>L686: <code>(define-key map (kbd "S-&lt;right&gt;") #'gterm-send-S-right)</code></li>
+<li>L687: <code>(define-key map (kbd "S-&lt;left&gt;") #'gterm-send-S-left)</code></li>
+<li>L688: <code>(define-key map (kbd "C-&lt;right&gt;") #'gterm-send-C-right)</code></li>
+<li>L689: <code>(define-key map (kbd "C-&lt;left&gt;") #'gterm-send-C-left)</code></li>
+<li>L690: <code>(define-key map (kbd "M-&lt;right&gt;") #'gterm-send-M-right)</code></li>
+<li>L691: <code>(define-key map (kbd "M-&lt;left&gt;") #'gterm-send-M-left)</code></li>
+<li>L693: <code>(define-key map (kbd "C-q") #'gterm-send-next-key)</code></li>
+<li>L695: <code>(define-key map (kbd "C-y") #'gterm-yank)</code></li>
+<li>L696: <code>(define-key map (kbd "s-v") #'gterm-yank)  ; Cmd-V on macOS</code></li>
+<li>L698: <code>(define-key map (kbd "C-c C-k") #'gterm-copy-mode)</code></li>
+<li>L700: <code>(define-key map (kbd "S-&lt;prior&gt;") #'gterm-scroll-up)</code></li>
+<li>L701: <code>(define-key map (kbd "S-&lt;next&gt;") #'gterm-scroll-down)</code></li>
+<li>L702: <code>(define-key map (kbd "C-c C-v") #'gterm-scroll-to-bottom)</code></li>
+<li>L704: <code>(define-key map (kbd "&lt;wheel-up&gt;") #'gterm-mouse-scroll-up)</code></li>
+<li>L705: <code>(define-key map (kbd "&lt;wheel-down&gt;") #'gterm-mouse-scroll-down)</code></li>
+<li>L707: <code>(define-key map [mouse-1] #'gterm-open-file-at-click)</code></li>
+<li>L711: <code>(define-derived-mode gterm-mode fundamental-mode "GTerm"</code></li>
+<li>L732: <code>(defun gterm--kill-buffer ()</code></li>
+<li>L745: <code>(defun gterm ()</code></li>
+<li>L778: <code>(provide 'gterm)</code></li>
+</ul></main></html>

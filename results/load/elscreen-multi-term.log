@@ -1,0 +1,5 @@
+{"status":"loaded","feature":"elscreen-multi-term","library":"/home/admin/Emacs-Multiplexing-Study/sources/elscreen-multi-term/elscreen-multi-term.el","commands":["emt-multi-term","emt-nothing-to-buffer","emt-pop-multi-term","emt-toggle-multi-term"]}
+STDERR:
+Package cl is deprecated
+sources/elscreen-multi-term/elscreen-multi-term.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/elscreen-multi-term/elscreen-multi-term.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.

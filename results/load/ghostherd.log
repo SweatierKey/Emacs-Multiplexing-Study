@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"ghostherd","library":"/home/admin/Emacs-Multiplexing-Study/sources/ghostherd/lisp/ghostherd.el","commands":["ghostherd-close-tab","ghostherd-connect","ghostherd-detach","ghostherd-disconnect","ghostherd-new-space","ghostherd-new-tab","ghostherd-next-blocked","ghostherd-next-tab","ghostherd-previous-tab","ghostherd-rename-space","ghostherd-rename-tab","ghostherd-resync","ghostherd-switch-space","ghostherd-switch-tab"]}
+STDERR:

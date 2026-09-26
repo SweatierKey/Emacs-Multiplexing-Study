@@ -1,0 +1,17 @@
+[
+  {
+    "at": 2.308,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.608,
+    "keys": "vterm-toggle",
+    "input_hex": "767465726d2d746f67676c65"
+  },
+  {
+    "at": 3.108,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

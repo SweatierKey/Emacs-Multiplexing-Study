@@ -1,0 +1,314 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: term</h1>
+<p>Fonte: https://git.savannah.gnu.org/cgit/emacs.git</p>
+<p>Revisione: <code>30.1</code>.</p>
+<h2>term.el</h2>
+<ul>
+<li>L306: <code>(require 'comint) ; Password regexp.</code></li>
+<li>L307: <code>(require 'ansi-color)</code></li>
+<li>L308: <code>(require 'ehelp)</code></li>
+<li>L309: <code>(require 'ring)</code></li>
+<li>L310: <code>(require 'shell)</code></li>
+<li>L388: <code>(defvar term-old-mode-map nil "Saves the old keymap when in char mode.")</code></li>
+<li>L390: <code>(defvar term-pager-old-local-map nil "Saves old keymap while paging.")</code></li>
+<li>L420: <code>(defcustom term-input-autoexpand nil</code></li>
+<li>L433: <code>(defcustom term-input-ignoredups nil</code></li>
+<li>L441: <code>(defcustom term-input-ring-file-name nil</code></li>
+<li>L449: <code>(defcustom term-char-mode-buffer-read-only t</code></li>
+<li>L463: <code>(defcustom term-set-terminal-size nil</code></li>
+<li>L468: <code>(defcustom term-char-mode-point-at-process-mark t</code></li>
+<li>L489: <code>(defcustom term-scroll-to-bottom-on-output nil</code></li>
+<li>L507: <code>(defcustom term-scroll-snap-to-bottom t</code></li>
+<li>L515: <code>(defcustom term-scroll-show-maximum-output nil</code></li>
+<li>L524: <code>(defcustom term-suppress-hard-newline nil</code></li>
+<li>L533: <code>(defcustom term-clear-full-screen-programs t</code></li>
+<li>L583: <code>(defcustom term-eol-on-send t</code></li>
+<li>L589: <code>(defcustom term-mode-hook '()</code></li>
+<li>L595: <code>(defcustom term-exec-hook '()</code></li>
+<li>L604: <code>(defvar term-mode-map</code></li>
+<li>L606: <code>(define-key map "\ep" 'term-previous-input)</code></li>
+<li>L607: <code>(define-key map "\en" 'term-next-input)</code></li>
+<li>L608: <code>(define-key map "\er" 'term-previous-matching-input)</code></li>
+<li>L609: <code>(define-key map "\es" 'term-next-matching-input)</code></li>
+<li>L610: <code>(define-key map [?\A-\M-r]</code></li>
+<li>L612: <code>(define-key map [?\A-\M-s] 'term-next-matching-input-from-input)</code></li>
+<li>L613: <code>(define-key map "\e\C-l" 'term-show-output)</code></li>
+<li>L614: <code>(define-key map "\C-m" 'term-send-input)</code></li>
+<li>L615: <code>(define-key map "\C-d" 'term-delchar-or-maybe-eof)</code></li>
+<li>L616: <code>(define-key map "\C-c\C-a" 'term-bol)</code></li>
+<li>L617: <code>(define-key map "\C-c\C-u" 'term-kill-input)</code></li>
+<li>L618: <code>(define-key map "\C-c\C-w" 'backward-kill-word)</code></li>
+<li>L619: <code>(define-key map "\C-c\C-c" 'term-interrupt-subjob)</code></li>
+<li>L620: <code>(define-key map "\C-c\C-z" 'term-stop-subjob)</code></li>
+<li>L621: <code>(define-key map "\C-c\C-\\" 'term-quit-subjob)</code></li>
+<li>L622: <code>(define-key map "\C-c\C-m" 'term-copy-old-input)</code></li>
+<li>L623: <code>(define-key map "\C-c\C-o" 'term-kill-output)</code></li>
+<li>L624: <code>(define-key map "\C-c\C-r" 'term-show-output)</code></li>
+<li>L625: <code>(define-key map "\C-c\C-e" 'term-show-maximum-output)</code></li>
+<li>L626: <code>(define-key map "\C-c\C-l" 'term-dynamic-list-input-ring)</code></li>
+<li>L627: <code>(define-key map "\C-c\C-n" 'term-next-prompt)</code></li>
+<li>L628: <code>(define-key map "\C-c\C-p" 'term-previous-prompt)</code></li>
+<li>L629: <code>(define-key map "\C-c\C-d" 'term-send-eof)</code></li>
+<li>L630: <code>(define-key map "\C-c\C-k" 'term-char-mode)</code></li>
+<li>L631: <code>(define-key map "\C-c\C-j" 'term-line-mode)</code></li>
+<li>L632: <code>(define-key map "\C-c\C-q" 'term-pager-toggle)</code></li>
+<li>L670: <code>(defvar term-pager-break-map</code></li>
+<li>L673: <code>;;   (define-key map (make-string 1 i) 'term-send-raw))</code></li>
+<li>L674: <code>(define-key map "\e" (lookup-key (current-global-map) "\e"))</code></li>
+<li>L675: <code>(define-key map "\C-x" (lookup-key (current-global-map) "\C-x"))</code></li>
+<li>L676: <code>(define-key map "\C-u" (lookup-key (current-global-map) "\C-u"))</code></li>
+<li>L677: <code>(define-key map " " 'term-pager-page)</code></li>
+<li>L678: <code>(define-key map "\r" 'term-pager-line)</code></li>
+<li>L679: <code>(define-key map "?" 'term-pager-help)</code></li>
+<li>L680: <code>(define-key map "h" 'term-pager-help)</code></li>
+<li>L681: <code>(define-key map "b" 'term-pager-back-page)</code></li>
+<li>L682: <code>(define-key map "\177" 'term-pager-back-line)</code></li>
+<li>L683: <code>(define-key map "q" 'term-pager-discard)</code></li>
+<li>L684: <code>(define-key map "D" 'term-pager-disable)</code></li>
+<li>L685: <code>(define-key map "&lt;" 'term-pager-bob)</code></li>
+<li>L686: <code>(define-key map "&gt;" 'term-pager-eob)</code></li>
+<li>L716: <code>(defmacro term-in-char-mode () '(eq (current-local-map) term-raw-map))</code></li>
+<li>L717: <code>(defmacro term-in-line-mode () '(not (term-in-char-mode)))</code></li>
+<li>L719: <code>(defmacro term-pager-enabled () 'term-pager-count)</code></li>
+<li>L720: <code>(defmacro term-handling-pager () 'term-pager-old-local-map)</code></li>
+<li>L721: <code>(defmacro term-using-alternate-sub-buffer () 'term-saved-home-marker)</code></li>
+<li>L903: <code>(defcustom term-buffer-maximum-size 8192</code></li>
+<li>L912: <code>(defcustom term-bind-function-keys nil</code></li>
+<li>L923: <code>(defvar term-raw-map</code></li>
+<li>L928: <code>(define-key map (make-string 1 i) 'term-send-raw)</code></li>
+<li>L931: <code>(define-key esc-map (make-string 1 i) 'term-send-raw-meta))</code></li>
+<li>L933: <code>(define-key map [remap self-insert-command] 'term-send-raw)</code></li>
+<li>L934: <code>(define-key map "\e" esc-map)</code></li>
+<li>L938: <code>(define-key map [mouse-2] 'term-mouse-paste)</code></li>
+<li>L939: <code>(define-key map [up] 'term-send-up)</code></li>
+<li>L940: <code>(define-key map [down] 'term-send-down)</code></li>
+<li>L941: <code>(define-key map [right] 'term-send-right)</code></li>
+<li>L942: <code>(define-key map [left] 'term-send-left)</code></li>
+<li>L943: <code>(define-key map [C-up] 'term-send-ctrl-up)</code></li>
+<li>L944: <code>(define-key map [C-down] 'term-send-ctrl-down)</code></li>
+<li>L945: <code>(define-key map [C-right] 'term-send-ctrl-right)</code></li>
+<li>L946: <code>(define-key map [C-left] 'term-send-ctrl-left)</code></li>
+<li>L947: <code>(define-key map [delete] 'term-send-del)</code></li>
+<li>L948: <code>(define-key map [deletechar] 'term-send-del)</code></li>
+<li>L949: <code>(define-key map [backspace] 'term-send-backspace)</code></li>
+<li>L950: <code>(define-key map [home] 'term-send-home)</code></li>
+<li>L951: <code>(define-key map [end] 'term-send-end)</code></li>
+<li>L952: <code>(define-key map [insert] 'term-send-insert)</code></li>
+<li>L953: <code>(define-key map [S-prior] 'scroll-down)</code></li>
+<li>L954: <code>(define-key map [S-next] 'scroll-up)</code></li>
+<li>L955: <code>(define-key map [S-insert] 'term-paste)</code></li>
+<li>L956: <code>(define-key map [prior] 'term-send-prior)</code></li>
+<li>L957: <code>(define-key map [next] 'term-send-next)</code></li>
+<li>L958: <code>(define-key map [xterm-paste] #'term--xterm-paste)</code></li>
+<li>L959: <code>(define-key map [?\C-/] #'term-send-C-_)</code></li>
+<li>L960: <code>(define-key map [?\C- ] #'term-send-C-@)</code></li>
+<li>L961: <code>(define-key map [?\C-\M-/] #'term-send-C-M-_)</code></li>
+<li>L962: <code>(define-key map [?\C-\M- ] #'term-send-C-M-@)</code></li>
+<li>L966: <code>(keymap-set map (format "&lt;f%d&gt;" key) #'term-send-function-key)))</code></li>
+<li>L983: <code>(defun term--update-term-menu (&amp;optional force)</code></li>
+<li>L1031: <code>(defvar term-raw-escape-map</code></li>
+<li>L1035: <code>(define-key map "\C-v" (lookup-key (current-global-map) "\C-v"))</code></li>
+<li>L1036: <code>(define-key map "\C-u" (lookup-key (current-global-map) "\C-u"))</code></li>
+<li>L1037: <code>(define-key map "\C-q" 'term-pager-toggle)</code></li>
+<li>L1039: <code>(define-key map "\C-k" 'term-char-mode)</code></li>
+<li>L1040: <code>(define-key map "\C-j" 'term-line-mode)</code></li>
+<li>L1042: <code>(define-key map [?\M-x] 'execute-extended-command)</code></li>
+<li>L1045: <code>(defun term-set-escape-char (key)</code></li>
+<li>L1049: <code>(define-key term-raw-map term-escape-char 'term-send-raw)</code></li>
+<li>L1050: <code>(define-key term-raw-escape-map term-escape-char nil t))</code></li>
+<li>L1052: <code>(define-key term-raw-map term-escape-char term-raw-escape-map)</code></li>
+<li>L1053: <code>(define-key term-raw-escape-map term-escape-char 'term-send-raw))</code></li>
+<li>L1082: <code>(defun term-ansi-reset ()</code></li>
+<li>L1097: <code>(define-derived-mode term-mode fundamental-mode "Term"</code></li>
+<li>L1251: <code>(defun term--remove-fake-newlines ()</code></li>
+<li>L1261: <code>(defun term--last-line ()</code></li>
+<li>L1264: <code>(defun term--filter-buffer-substring (content)</code></li>
+<li>L1270: <code>(defun term--unwrap-visible-long-lines (width)</code></li>
+<li>L1292: <code>(defun term-reset-size (height width)</code></li>
+<li>L1332: <code>(defun term-check-kill-echo-list ()</code></li>
+<li>L1352: <code>(defun term-send-raw-string (chars)</code></li>
+<li>L1364: <code>(defun term-send-raw ()</code></li>
+<li>L1370: <code>(defun term-send-raw-meta ()</code></li>
+<li>L1389: <code>(defun term-mouse-paste (click)</code></li>
+<li>L1403: <code>(defun term-paste ()</code></li>
+<li>L1408: <code>(defun term--xterm-paste (event)</code></li>
+<li>L1424: <code>(defun term-send-up    () (interactive) (term-send-raw-string "\eOA"))</code></li>
+<li>L1425: <code>(defun term-send-down  () (interactive) (term-send-raw-string "\eOB"))</code></li>
+<li>L1426: <code>(defun term-send-right () (interactive) (term-send-raw-string "\eOC"))</code></li>
+<li>L1427: <code>(defun term-send-left  () (interactive) (term-send-raw-string "\eOD"))</code></li>
+<li>L1428: <code>(defun term-send-ctrl-up    () (interactive) (term-send-raw-string "\e[1;5A"))</code></li>
+<li>L1429: <code>(defun term-send-ctrl-down  () (interactive) (term-send-raw-string "\e[1;5B"))</code></li>
+<li>L1430: <code>(defun term-send-ctrl-right () (interactive) (term-send-raw-string "\e[1;5C"))</code></li>
+<li>L1431: <code>(defun term-send-ctrl-left  () (interactive) (term-send-raw-string "\e[1;5D"))</code></li>
+<li>L1432: <code>(defun term-send-home  () (interactive) (term-send-raw-string "\e[1~"))</code></li>
+<li>L1433: <code>(defun term-send-insert() (interactive) (term-send-raw-string "\e[2~"))</code></li>
+<li>L1434: <code>(defun term-send-end   () (interactive) (term-send-raw-string "\e[4~"))</code></li>
+<li>L1435: <code>(defun term-send-prior () (interactive) (term-send-raw-string "\e[5~"))</code></li>
+<li>L1436: <code>(defun term-send-next  () (interactive) (term-send-raw-string "\e[6~"))</code></li>
+<li>L1437: <code>(defun term-send-del   () (interactive) (term-send-raw-string "\e[3~"))</code></li>
+<li>L1438: <code>(defun term-send-backspace  () (interactive) (term-send-raw-string "\C-?"))</code></li>
+<li>L1439: <code>(defun term-send-C-_  () (interactive) (term-send-raw-string "\C-_"))</code></li>
+<li>L1440: <code>(defun term-send-C-@  () (interactive) (term-send-raw-string "\C-@"))</code></li>
+<li>L1441: <code>(defun term-send-C-M-_  () (interactive) (term-send-raw-string "\e\C-_"))</code></li>
+<li>L1442: <code>(defun term-send-C-M-@  () (interactive) (term-send-raw-string "\e\C-@"))</code></li>
+<li>L1444: <code>(defun term-send-function-key ()</code></li>
+<li>L1465: <code>(defun term-char-mode ()</code></li>
+<li>L1493: <code>(defun term-line-mode  ()</code></li>
+<li>L1506: <code>(defun term-line-mode-buffer-read-only-update ()</code></li>
+<li>L1513: <code>(defun term-update-mode-line ()</code></li>
+<li>L1567: <code>(defun term-check-proc (buffer)</code></li>
+<li>L1574: <code>(defun make-term (name program &amp;optional startfile &amp;rest switches)</code></li>
+<li>L1590: <code>(defun term (program)</code></li>
+<li>L1605: <code>(defun term-exec (buffer name command startfile switches)</code></li>
+<li>L1636: <code>(defun term-sentinel (proc msg)</code></li>
+<li>L1655: <code>(defun term-handle-exit (process-name msg)</code></li>
+<li>L1707: <code>(defun term--bash-needs-EMACSp ()</code></li>
+<li>L1721: <code>(defun term-generate-db-directory ()</code></li>
+<li>L1748: <code>(defun term-exec-1 (name buffer command switches)</code></li>
+<li>L1818: <code>(defun term-read-input-ring (&amp;optional silent)</code></li>
+<li>L1861: <code>(defun term-write-input-ring ()</code></li>
+<li>L1892: <code>(defun term-dynamic-list-input-ring ()</code></li>
+<li>L1922: <code>(defun term-regexp-arg (prompt)</code></li>
+<li>L1934: <code>(defun term-search-arg (arg)</code></li>
+<li>L1948: <code>(defun term-search-start (arg)</code></li>
+<li>L1959: <code>(defun term-previous-input-string (arg)</code></li>
+<li>L1967: <code>(defun term-previous-input (arg)</code></li>
+<li>L1972: <code>(defun term-next-input (arg)</code></li>
+<li>L1977: <code>(defun term-previous-matching-input-string (regexp arg)</code></li>
+<li>L1983: <code>(defun term-previous-matching-input-string-position</code></li>
+<li>L2011: <code>(defun term-previous-matching-input (regexp n)</code></li>
+<li>L2029: <code>(defun term-next-matching-input (regexp n)</code></li>
+<li>L2037: <code>(defun term-previous-matching-input-from-input (n)</code></li>
+<li>L2055: <code>(defun term-next-matching-input-from-input (n)</code></li>
+<li>L2064: <code>(defun term-replace-by-expanded-history (&amp;optional silent)</code></li>
+<li>L2093: <code>(defun term-replace-by-expanded-history-before-point (silent)</code></li>
+<li>L2179: <code>(defun term-magic-space (arg)</code></li>
+<li>L2187: <code>(defun term-within-quotes (beg end)</code></li>
+<li>L2194: <code>(defun term-how-many-region (regexp beg end)</code></li>
+<li>L2204: <code>(defun term-args (string begin end)</code></li>
+<li>L2225: <code>(defun term-delim-arg (arg)</code></li>
+<li>L2244: <code>(defun term-arguments (string nth mth)</code></li>
+<li>L2288: <code>(defun term-send-input ()</code></li>
+<li>L2378: <code>(defun term-get-old-input-default ()</code></li>
+<li>L2389: <code>(defun term-copy-old-input ()</code></li>
+<li>L2400: <code>(defun term-skip-prompt ()</code></li>
+<li>L2409: <code>(defun term-after-pmark-p ()</code></li>
+<li>L2419: <code>(defun term-simple-send (proc string)</code></li>
+<li>L2426: <code>(defun term-bol (arg)</code></li>
+<li>L2441: <code>(defun term-read-noecho (prompt &amp;optional stars)</code></li>
+<li>L2490: <code>(defun term-send-invisible (str &amp;optional proc)</code></li>
+<li>L2506: <code>(defun term-watch-for-password-prompt (string)</code></li>
+<li>L2526: <code>(defcustom term-input-chunk-size 512</code></li>
+<li>L2532: <code>(defun term-send-string (proc str)</code></li>
+<li>L2547: <code>(defun term-send-region (proc start end)</code></li>
+<li>L2557: <code>(defun term-kill-output ()</code></li>
+<li>L2566: <code>(defun term-show-output ()</code></li>
+<li>L2576: <code>(defun term-interrupt-subjob ()</code></li>
+<li>L2581: <code>(defun term-kill-subjob ()</code></li>
+<li>L2586: <code>(defun term-quit-subjob ()</code></li>
+<li>L2591: <code>(defun term-stop-subjob ()</code></li>
+<li>L2600: <code>(defun term-continue-subjob ()</code></li>
+<li>L2606: <code>(defun term-kill-input ()</code></li>
+<li>L2614: <code>(defun term-delchar-or-maybe-eof (arg)</code></li>
+<li>L2621: <code>(defun term-send-eof ()</code></li>
+<li>L2626: <code>(defun term-backward-matching-input (regexp n)</code></li>
+<li>L2642: <code>(defun term-forward-matching-input (regexp n)</code></li>
+<li>L2651: <code>(defun term-next-prompt (n)</code></li>
+<li>L2660: <code>(defun term-previous-prompt (n)</code></li>
+<li>L2729: <code>(defun term-source-default (previous-dir/file source-modes)</code></li>
+<li>L2746: <code>(defun term-check-source (fname)</code></li>
+<li>L2778: <code>(defun term-extract-string ()</code></li>
+<li>L2792: <code>(defun term-get-source (prompt prev-dir/file source-modes mustmatch-p)</code></li>
+<li>L2835: <code>(defun term-proc-query (proc str)</code></li>
+<li>L2858: <code>(defun term-horizontal-column ()</code></li>
+<li>L2862: <code>(defmacro term-vertical-motion (count)</code></li>
+<li>L2868: <code>(defun term-buffer-vertical-motion (count)</code></li>
+<li>L2908: <code>(defun term-start-line-column ()</code></li>
+<li>L2917: <code>(defun term-current-column ()</code></li>
+<li>L2921: <code>(defun term-move-to-column (column)</code></li>
+<li>L2932: <code>(defun term-move-columns (delta)</code></li>
+<li>L2937: <code>(defun term-insert-char (char count)</code></li>
+<li>L2942: <code>(defun term-current-row ()</code></li>
+<li>L2950: <code>(defun term-adjust-current-row-cache (delta)</code></li>
+<li>L2955: <code>(defun term-terminal-pos ()</code></li>
+<li>L2967: <code>(defun term-handle-ansi-terminal-messages (message)</code></li>
+<li>L3049: <code>(defun term-emulate-terminal (proc str)</code></li>
+<li>L3388: <code>(defun term-set-goto-process-mark ()</code></li>
+<li>L3403: <code>(defun term-goto-process-mark-maybe ()</code></li>
+<li>L3422: <code>(defun term-process-mark ()</code></li>
+<li>L3426: <code>(defun term-handle-deferred-scroll ()</code></li>
+<li>L3435: <code>(defun term-reset-terminal ()</code></li>
+<li>L3444: <code>(defun term--color-as-hex (for-foreground)</code></li>
+<li>L3464: <code>(defun term-handle-colors-array (parameter)</code></li>
+<li>L3468: <code>(defun term--handle-colors-list (parameters)</code></li>
+<li>L3582: <code>(defun term-handle-ansi-escape (proc params char)</code></li>
+<li>L3679: <code>(defun term--reset-scroll-region ()</code></li>
+<li>L3683: <code>(defun term-set-scroll-region (top bottom)</code></li>
+<li>L3703: <code>(defun term-switch-to-alternate-sub-buffer (set)</code></li>
+<li>L3735: <code>(defun term-command-hook (string)</code></li>
+<li>L3761: <code>(defun term-display-line (true-file line)</code></li>
+<li>L3764: <code>(defun term-display-buffer-line (buffer line)</code></li>
+<li>L3786: <code>(defun term-goto-home ()</code></li>
+<li>L3793: <code>(defun term-goto (row col)</code></li>
+<li>L3807: <code>(defun term-process-pager ()</code></li>
+<li>L3820: <code>(defun term-pager-line (lines)</code></li>
+<li>L3830: <code>(defun term-pager-page (arg)</code></li>
+<li>L3836: <code>(defun term-pager-bob ()</code></li>
+<li>L3844: <code>(defun term-pager-eob ()</code></li>
+<li>L3850: <code>(defun term-pager-back-line (lines)</code></li>
+<li>L3861: <code>(defun term-pager-back-page (arg)</code></li>
+<li>L3865: <code>(defun term-pager-discard ()</code></li>
+<li>L3873: <code>(defun term-pager-disable ()</code></li>
+<li>L3881: <code>(defun term-pager-enable ()</code></li>
+<li>L3887: <code>(defun term-pager-toggle ()</code></li>
+<li>L3891: <code>(defun term-pager-help ()</code></li>
+<li>L3918: <code>(defun term-pager-continue (new-count)</code></li>
+<li>L3932: <code>(defun term-handle-scroll (down)</code></li>
+<li>L3977: <code>(defun term-down (down &amp;optional check-for-scroll)</code></li>
+<li>L4010: <code>(defun term-unwrap-line ()</code></li>
+<li>L4017: <code>(defun term-erase-in-line (kind)</code></li>
+<li>L4044: <code>(defun term-erase-in-display (kind)</code></li>
+<li>L4065: <code>(defun term-delete-chars (count)</code></li>
+<li>L4077: <code>(defun term-insert-spaces (count)</code></li>
+<li>L4096: <code>(defun term-delete-lines (lines)</code></li>
+<li>L4116: <code>(defun term-insert-lines (lines)</code></li>
+<li>L4147: <code>(defun term-start-output-log (name)</code></li>
+<li>L4168: <code>(defun term-stop-output-log ()</code></li>
+<li>L4173: <code>(defun term-show-maximum-output ()</code></li>
+<li>L4204: <code>;; (define-key shell-mode-map "\t" 'term-dynamic-complete)</code></li>
+<li>L4205: <code>;; (define-key shell-mode-map "\M-?"</code></li>
+<li>L4211: <code>(defcustom term-completion-autolist nil</code></li>
+<li>L4217: <code>(defcustom term-completion-addsuffix t</code></li>
+<li>L4227: <code>(defcustom term-completion-recexact nil</code></li>
+<li>L4235: <code>(defcustom term-completion-fignore nil</code></li>
+<li>L4250: <code>(defun term-directory (directory)</code></li>
+<li>L4257: <code>(defun term-word (word-chars)</code></li>
+<li>L4274: <code>(defun term-match-partial-filename ()</code></li>
+<li>L4281: <code>(defun term-dynamic-complete ()</code></li>
+<li>L4290: <code>(defun term-dynamic-complete-filename ()</code></li>
+<li>L4310: <code>(defun term-dynamic-complete-as-filename ()</code></li>
+<li>L4359: <code>(defun term-replace-by-expanded-filename ()</code></li>
+<li>L4372: <code>(defun term-dynamic-list-filename-completions ()</code></li>
+<li>L4386: <code>(defun term-dynamic-list-completions (completions)</code></li>
+<li>L4414: <code>(defun term-ansi-make-term (name program &amp;optional startfile &amp;rest switches)</code></li>
+<li>L4434: <code>(defun ansi-term (program &amp;optional new-buffer-name)</code></li>
+<li>L4486: <code>(defun serial-port-is-file-p ()</code></li>
+<li>L4508: <code>(defun serial-nice-speed-history ()</code></li>
+<li>L4525: <code>(defun serial-supported-or-barf ()</code></li>
+<li>L4530: <code>(defun serial-read-name ()</code></li>
+<li>L4571: <code>(defun serial-read-speed ()</code></li>
+<li>L4597: <code>(defun serial-term (port speed &amp;optional line-mode)</code></li>
+<li>L4638: <code>(defun serial-speed ()</code></li>
+<li>L4643: <code>(defun serial-mode-line-speed-menu-1 (event)</code></li>
+<li>L4653: <code>(defun serial-mode-line-speed-menu (event)</code></li>
+<li>L4656: <code>(defun serial-update-speed-menu ()</code></li>
+<li>L4658: <code>(define-key serial-mode-line-speed-menu [serial-mode-line-speed-menu-other]</code></li>
+<li>L4678: <code>(defun serial-mode-line-config-menu-1 (event)</code></li>
+<li>L4688: <code>(defun serial-mode-line-config-menu (event)</code></li>
+<li>L4691: <code>(defun serial-update-config-menu ()</code></li>
+<li>L4705: <code>(define-key serial-mode-line-config-menu</code></li>
+<li>L4771: <code>;;     (define-key map "\C-c\C-f" 'shell-forward-command)</code></li>
+<li>L4772: <code>;;     (define-key map "\C-c\C-b" 'shell-backward-command)</code></li>
+<li>L4773: <code>;;     (define-key map "\t" 'term-dynamic-complete)</code></li>
+<li>L4774: <code>;;     (define-key map "\M-?"</code></li>
+<li>L4792: <code>(provide 'term)</code></li>
+</ul></main></html>

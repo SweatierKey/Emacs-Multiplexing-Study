@@ -1,0 +1,51 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: dropdown-remote</h1>
+<p>Fonte: https://github.com/SleepyBag/dropdown-remote.git</p>
+<p>Revisione: <code>0445c065373f809a6cca31dde3217d9aee970f07</code>.</p>
+<h2>dropdown-remote.el</h2>
+<ul>
+<li>L32: <code>(require 'emacs-guake)</code></li>
+<li>L33: <code>(require 'emacs-yakuake)</code></li>
+<li>L38: <code>(defun dropdown-toggle-window ()</code></li>
+<li>L47: <code>(defun dropdown-close-current-tab ()</code></li>
+<li>L53: <code>(defun dropdown-run-command-in-current-tab (command)</code></li>
+<li>L59: <code>(defun dropdown-current-tab ()</code></li>
+<li>L67: <code>(defun dropdown-add-tab ()</code></li>
+<li>L76: <code>(defun dropdown-close-tab (tab)</code></li>
+<li>L84: <code>(defun dropdown-run-command-in-tab (tab command)</code></li>
+<li>L92: <code>(defun dropdown-set-tab-title (tab title)</code></li>
+<li>L101: <code>(defun dropdown-terminal-here ()</code></li>
+<li>L113: <code>(provide 'dropdown-remote)</code></li>
+</ul>
+<h2>emacs-guake.el</h2>
+<ul>
+<li>L12: <code>(defun guake-call-method (method &amp;rest args)</code></li>
+<li>L21: <code>(defun guake-show-hide ()</code></li>
+<li>L28: <code>(defun guake-add-tab (&amp;optional directory)</code></li>
+<li>L35: <code>(defun guake-get-selected-uuid-tab ()</code></li>
+<li>L41: <code>(defun guake-close-tab (tab)</code></li>
+<li>L45: <code>(defun guake-run-command-in-tab (tab command)</code></li>
+<li>L50: <code>(defun guake-rename-tab-uuid (tab title)</code></li>
+<li>L58: <code>(defun guake-split-current-terminal-horizontally ()</code></li>
+<li>L63: <code>(defun guake-split-current-terminal-vertically ()</code></li>
+<li>L68: <code>(provide 'emacs-guake)</code></li>
+</ul>
+<h2>emacs-yakuake.el</h2>
+<ul>
+<li>L14: <code>(defun yakuake-call-session-method (method &amp;rest args)</code></li>
+<li>L22: <code>(defun yakuake-call-tab-method (method &amp;rest args)</code></li>
+<li>L29: <code>(defun yakuake-call-window-method (method &amp;rest args)</code></li>
+<li>L38: <code>(defun yakuake-toggle-window ()</code></li>
+<li>L45: <code>(defun yakuake-add-session ()</code></li>
+<li>L50: <code>(defun yakuake-remove-session (session)</code></li>
+<li>L55: <code>(defun yakuake-run-command-in-session (session command)</code></li>
+<li>L61: <code>(defun yakuake-split-session-horizontally (session)</code></li>
+<li>L66: <code>(defun yakuake-split-session-vertically (session)</code></li>
+<li>L71: <code>(defun yakuake-set-tab-title (session title)</code></li>
+<li>L77: <code>(defun yakuake-active-session-id ()</code></li>
+<li>L83: <code>(defun yakuake-get-terminal-ids-in-session (session)</code></li>
+<li>L91: <code>(defun yakuake-run-command-in-terminal (terminal command)</code></li>
+<li>L96: <code>(defun yakuake-split-terminal-horizontally (session)</code></li>
+<li>L101: <code>(defun yakuake-split-terminal-vertically (session)</code></li>
+<li>L106: <code>(defun yakuake-active-terminal-id ()</code></li>
+<li>L111: <code>(provide 'emacs-yakuake)</code></li>
+</ul></main></html>

@@ -1,0 +1,78 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: wterm</h1>
+<p>Fonte: https://github.com/admmq/wterm.el.git</p>
+<p>Revisione: <code>08a78cc300f3d39432e53f15bbc558ceacec35a8</code>.</p>
+<h2>wterm.el</h2>
+<ul>
+<li>L28: <code>(require 'subr-x)</code></li>
+<li>L29: <code>(require 'ansi-color)</code></li>
+<li>L30: <code>(require 'url-util)</code></li>
+<li>L40: <code>(defcustom wterm-shell</code></li>
+<li>L45: <code>(defcustom wterm-conpty-program</code></li>
+<li>L50: <code>(defcustom wterm-max-scrollback 10000</code></li>
+<li>L54: <code>(defcustom wterm-timer-delay 0.01</code></li>
+<li>L60: <code>(defcustom wterm-buffer-name "*wterm*"</code></li>
+<li>L64: <code>(defcustom wterm-buffer-name-string nil</code></li>
+<li>L69: <code>(defcustom wterm-kill-buffer-on-exit t</code></li>
+<li>L73: <code>(defcustom wterm-environment</code></li>
+<li>L78: <code>(defcustom wterm-track-directory t</code></li>
+<li>L84: <code>(defcustom wterm-bell t</code></li>
+<li>L88: <code>(defcustom wterm-keymap-exceptions</code></li>
+<li>L129: <code>(defun wterm--special-keys ()</code></li>
+<li>L138: <code>(defvar wterm-mode-map</code></li>
+<li>L140: <code>(define-key map [remap self-insert-command] #'wterm--self-insert)</code></li>
+<li>L142: <code>(define-key map (kbd key) #'wterm--self-insert))</code></li>
+<li>L148: <code>(define-key map (kbd key) #'wterm--self-insert)))))</code></li>
+<li>L152: <code>(define-key map (kbd key) #'wterm--self-insert))))</code></li>
+<li>L153: <code>(define-key map (kbd "C-_") #'wterm--self-insert)</code></li>
+<li>L154: <code>(define-key map (kbd "C-/") #'wterm--self-insert)</code></li>
+<li>L155: <code>(define-key map (kbd "M-DEL") #'wterm--self-insert)</code></li>
+<li>L160: <code>(define-key map (vector (event-convert-list (append mods (list k))))</code></li>
+<li>L163: <code>(define-key map (kbd "C-c C-c") #'wterm-send-C-c)</code></li>
+<li>L164: <code>(define-key map (kbd "C-c C-z") #'wterm-send-C-z)</code></li>
+<li>L165: <code>(define-key map (kbd "C-c C-t") #'wterm-copy-mode)</code></li>
+<li>L166: <code>(define-key map (kbd "C-c C-l") #'wterm-clear-scrollback)</code></li>
+<li>L167: <code>(define-key map (kbd "C-q") #'wterm-send-next-key)</code></li>
+<li>L168: <code>(define-key map (kbd "C-y") #'wterm-yank)</code></li>
+<li>L169: <code>(define-key map (kbd "M-w") #'wterm-copy-region-or-send)</code></li>
+<li>L170: <code>(define-key map [S-insert] #'wterm-yank)</code></li>
+<li>L171: <code>(define-key map [mouse-2] #'wterm-yank-primary)</code></li>
+<li>L175: <code>(defvar wterm-copy-mode-map</code></li>
+<li>L177: <code>(define-key map (kbd "C-c C-t") #'wterm-copy-mode)</code></li>
+<li>L178: <code>(define-key map (kbd "q") #'wterm-copy-mode)</code></li>
+<li>L179: <code>(define-key map (kbd "RET") #'wterm-copy-mode-done)</code></li>
+<li>L180: <code>(define-key map (kbd "M-w") #'wterm-copy-mode-done)</code></li>
+<li>L186: <code>(define-derived-mode wterm-mode fundamental-mode "WTerm"</code></li>
+<li>L212: <code>(defun wterm (&amp;optional arg)</code></li>
+<li>L232: <code>(defun wterm-other-window (&amp;optional arg)</code></li>
+<li>L240: <code>(defun wterm--window-size ()</code></li>
+<li>L248: <code>(defun wterm--start (command)</code></li>
+<li>L279: <code>(defun wterm--palette ()</code></li>
+<li>L291: <code>(defun wterm--update-palettes (&amp;rest _)</code></li>
+<li>L304: <code>(defun wterm--send-bytes (bytes)</code></li>
+<li>L309: <code>(defun wterm--sanitize (string)</code></li>
+<li>L313: <code>(defun wterm--filter (proc output)</code></li>
+<li>L326: <code>(defun wterm--schedule-redraw ()</code></li>
+<li>L344: <code>(defun wterm--redraw-now (buf)</code></li>
+<li>L365: <code>(defun wterm--handle-events ()</code></li>
+<li>L379: <code>(defun wterm--set-cursor-visible (visible)</code></li>
+<li>L399: <code>(defun wterm--handle-osc (cmd text)</code></li>
+<li>L411: <code>(defun wterm--local-directory (path)</code></li>
+<li>L419: <code>(defun wterm--sentinel (proc event)</code></li>
+<li>L433: <code>(defun wterm--on-kill ()</code></li>
+<li>L441: <code>(defun wterm--adjust-process-window-size (process windows)</code></li>
+<li>L454: <code>(defun wterm--resize (rows cols)</code></li>
+<li>L461: <code>(defun wterm--mod-bits (mods)</code></li>
+<li>L466: <code>(defun wterm-send-event (event)</code></li>
+<li>L486: <code>(defun wterm--self-insert ()</code></li>
+<li>L491: <code>(defun wterm-send-next-key ()</code></li>
+<li>L496: <code>(defun wterm-send-C-c ()</code></li>
+<li>L501: <code>(defun wterm-send-C-z ()</code></li>
+<li>L506: <code>(defun wterm-send-string (string &amp;optional paste)</code></li>
+<li>L518: <code>(defun wterm-yank (&amp;optional arg)</code></li>
+<li>L526: <code>(defun wterm-yank-primary (event)</code></li>
+<li>L532: <code>(defun wterm-copy-region-or-send ()</code></li>
+<li>L539: <code>(defun wterm-clear-scrollback ()</code></li>
+<li>L549: <code>(define-minor-mode wterm-copy-mode</code></li>
+<li>L563: <code>(defun wterm-copy-mode-done ()</code></li>
+<li>L570: <code>(provide 'wterm)</code></li>
+</ul></main></html>

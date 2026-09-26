@@ -1,0 +1,97 @@
+[
+  {
+    "at": 2.321,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.621,
+    "keys": "vterm",
+    "input_hex": "767465726d"
+  },
+  {
+    "at": 3.122,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 3.922,
+    "keys": "tmux -L ems-tmux-nested -f /dev/null new-session -s ops",
+    "input_hex": "746d7578202d4c20656d732d746d75782d6e6573746564202d66202f6465762f6e756c6c206e65772d73657373696f6e202d73206f7073"
+  },
+  {
+    "at": 4.122,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.124,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 5.324,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.324,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 6.524,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.526,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 7.726,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.526,
+    "keys": "C-b c: tmux new-window",
+    "input_hex": "0263"
+  },
+  {
+    "at": 9.528,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 9.728,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 10.728,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 10.928,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.93,
+    "keys": "C-b p: tmux previous-window",
+    "input_hex": "0270"
+  },
+  {
+    "at": 12.93,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 13.13,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

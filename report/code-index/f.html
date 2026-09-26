@@ -1,0 +1,85 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: f</h1>
+<p>Fonte: https://github.com/rejeep/f.el.git</p>
+<p>Revisione: <code>931b6d0667fe03e7bf1c6c282d6d8d7006143c52</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>bin/docs.el</h2>
+<ul>
+<li>L15: <code>(require 'f f-lib-file)</code></li>
+</ul>
+<h2>f-shortdoc.el</h2>
+<ul>
+<li>L436: <code>(provide 'f-shortdoc)</code></li>
+</ul>
+<h2>f.el</h2>
+<ul>
+<li>L41: <code>(require 's)</code></li>
+<li>L42: <code>(require 'dash)</code></li>
+<li>L55: <code>(defmacro f--destructive (path &amp;rest body)</code></li>
+<li>L71: <code>(defun f-join (&amp;rest args)</code></li>
+<li>L90: <code>(defun f-split (path)</code></li>
+<li>L97: <code>(defun f-expand (path &amp;optional dir)</code></li>
+<li>L106: <code>(defun f-filename (path)</code></li>
+<li>L112: <code>(defun f-dirname (path)</code></li>
+<li>L121: <code>(defun f-common-parent (paths)</code></li>
+<li>L145: <code>(defun f-swap-ext (path ext)</code></li>
+<li>L152: <code>(defun f-base (path)</code></li>
+<li>L161: <code>(defun f-long (path)</code></li>
+<li>L167: <code>(defun f-slash (path)</code></li>
+<li>L176: <code>(defun f-full (path)</code></li>
+<li>L180: <code>(defun f--uniquify (paths)</code></li>
+<li>L202: <code>(defun f-uniquify (files)</code></li>
+<li>L208: <code>(defun f-uniquify-alist (files)</code></li>
+<li>L218: <code>(defun f-read-bytes (path &amp;optional beg end)</code></li>
+<li>L231: <code>(defun f-read-text (path &amp;optional coding)</code></li>
+<li>L240: <code>(defun f-write-text (text coding path)</code></li>
+<li>L247: <code>(defun f-unibyte-string-p (s)</code></li>
+<li>L251: <code>(defun f-write-bytes (data path)</code></li>
+<li>L258: <code>(defun f-append-text (text coding path)</code></li>
+<li>L264: <code>(defun f-append-bytes (data path)</code></li>
+<li>L270: <code>(defun f--write-bytes (data filename append)</code></li>
+<li>L286: <code>(defun f-mkdir (&amp;rest dirs)</code></li>
+<li>L306: <code>(defun f-mkdir-full-path (dir)</code></li>
+<li>L313: <code>(defun f-delete (path &amp;optional force)</code></li>
+<li>L322: <code>(defun f-symlink (source path)</code></li>
+<li>L326: <code>(defun f-move (from to)</code></li>
+<li>L331: <code>(defun f-copy (from to)</code></li>
+<li>L351: <code>(defun f-copy-contents (from to)</code></li>
+<li>L360: <code>(defun f-touch (path)</code></li>
+<li>L383: <code>(defun f-symlink-p (path)</code></li>
+<li>L401: <code>(defun f-relative-p (path)</code></li>
+<li>L407: <code>(defun f-root-p (path)</code></li>
+<li>L413: <code>(defun f-ext-p (path &amp;optional ext)</code></li>
+<li>L430: <code>(defun f-same-p (path-a path-b)</code></li>
+<li>L438: <code>(defun f-parent-of-p (path-a path-b)</code></li>
+<li>L445: <code>(defun f-child-of-p (path-a path-b)</code></li>
+<li>L452: <code>(defun f-ancestor-of-p (path-a path-b)</code></li>
+<li>L460: <code>(defun f-descendant-of-p (path-a path-b)</code></li>
+<li>L475: <code>(defun f-hidden-p (path &amp;optional behavior)</code></li>
+<li>L509: <code>(defun f-empty-p (path)</code></li>
+<li>L522: <code>(defun f-size (path)</code></li>
+<li>L531: <code>(defun f-depth (path)</code></li>
+<li>L543: <code>(defun f--get-time (path timestamp-p fn)</code></li>
+<li>L578: <code>(defun f-change-time (path &amp;optional timestamp-p)</code></li>
+<li>L590: <code>(defun f-modification-time (path &amp;optional timestamp-p)</code></li>
+<li>L601: <code>(defun f-access-time (path &amp;optional timestamp-p)</code></li>
+<li>L612: <code>(defun f--three-way-compare (a b)</code></li>
+<li>L623: <code>(defun f--date-compare (file other method)</code></li>
+<li>L650: <code>(defun f-older-p (file other &amp;optional method)</code></li>
+<li>L658: <code>(defun f-newer-p (file other &amp;optional method)</code></li>
+<li>L666: <code>(defun f-same-time-p (file other &amp;optional method)</code></li>
+<li>L678: <code>(defun f-this-file ()</code></li>
+<li>L689: <code>(defun f-path-separator ()</code></li>
+<li>L694: <code>(defun f-glob (pattern &amp;optional path)</code></li>
+<li>L699: <code>(defun f--collect-entries (path recursive)</code></li>
+<li>L720: <code>(defmacro f--entries (path body &amp;optional recursive)</code></li>
+<li>L729: <code>(defun f-entries (path &amp;optional fn recursive)</code></li>
+<li>L738: <code>(defmacro f--directories (path body &amp;optional recursive)</code></li>
+<li>L747: <code>(defun f-directories (path &amp;optional fn recursive)</code></li>
+<li>L752: <code>(defmacro f--files (path body &amp;optional recursive)</code></li>
+<li>L761: <code>(defun f-files (path &amp;optional fn recursive)</code></li>
+<li>L766: <code>(defmacro f--traverse-upwards (body &amp;optional path)</code></li>
+<li>L774: <code>(defun f-traverse-upwards (fn &amp;optional path)</code></li>
+<li>L789: <code>(defun f-root ()</code></li>
+<li>L793: <code>(defmacro f-with-sandbox (path-or-paths &amp;rest body)</code></li>
+<li>L804: <code>(provide 'f)</code></li>
+</ul></main></html>

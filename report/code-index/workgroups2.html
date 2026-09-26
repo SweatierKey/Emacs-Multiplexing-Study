@@ -1,0 +1,214 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: workgroups2</h1>
+<p>Fonte: https://github.com/pashinin/workgroups2.git</p>
+<p>Revisione: <code>aff9d76b7be5eed33f30be2fabf111818749cbd5</code>.</p>
+<h2>src/workgroups2-sdk.el</h2>
+<ul>
+<li>L23: <code>(require 'cl-lib)</code></li>
+<li>L24: <code>(require 'disass)</code></li>
+<li>L26: <code>(defcustom wg-restore-remote-buffers t</code></li>
+<li>L71: <code>(defmacro wg-with-gensyms (syms &amp;rest body)</code></li>
+<li>L76: <code>(defmacro wg-dbind (args expr &amp;rest body)</code></li>
+<li>L82: <code>(defmacro wg-dohash (spec &amp;rest body)</code></li>
+<li>L90: <code>(defmacro wg-asetf (&amp;rest items)</code></li>
+<li>L107: <code>(defmacro wg-destructuring-dolist (spec &amp;rest body)</code></li>
+<li>L126: <code>(defun wg-int-to-b36-one-digit (i)</code></li>
+<li>L133: <code>(defun wg-b36-to-int-one-digit (i)</code></li>
+<li>L142: <code>(defun wg-int-to-b36 (i)</code></li>
+<li>L151: <code>(defun wg-b36-to-int (str)</code></li>
+<li>L161: <code>(defun wg-insert-before (elt list index)</code></li>
+<li>L170: <code>(defun wg-string-list-union (&amp;optional list1 list2)</code></li>
+<li>L175: <code>(defun wg-aget (alist key &amp;optional default)</code></li>
+<li>L180: <code>(defun wg-aput (alist key value)</code></li>
+<li>L188: <code>(defun wg-file-buffer-error (file error)</code></li>
+<li>L194: <code>(defun wg-symbol-of-compiled-function (object)</code></li>
+<li>L208: <code>(provide 'workgroups2-sdk)</code></li>
+</ul>
+<h2>src/workgroups2-support.el</h2>
+<ul>
+<li>L25: <code>(require 'workgroups2-sdk)</code></li>
+<li>L26: <code>(require 'dframe)</code></li>
+<li>L28: <code>(defmacro wg-switch-to-buffer (buffer &amp;rest body)</code></li>
+<li>L34: <code>(defun wg-switch-to-shell-buffer (buffer)</code></li>
+<li>L39: <code>(defmacro wg-support (mode pkg params)</code></li>
+<li>L113: <code>(defun wg-support-help-mode-serialize (_buffer)</code></li>
+<li>L130: <code>(defun wg-support-help-mode-deserialize (_buffer vars)</code></li>
+<li>L175: <code>(defun wg-get-org-agenda-view-commands ()</code></li>
+<li>L191: <code>(defun wg-run-agenda-cmd (f)</code></li>
+<li>L345: <code>(defun wg-deserialize-slime-buffer (buf)</code></li>
+<li>L365: <code>(defun wg-serialize-comint-buffer (buffer)</code></li>
+<li>L391: <code>(defun wg-temporarily-rename-buffer-if-exists (buffer)</code></li>
+<li>L571: <code>(provide 'workgroups2-support)</code></li>
+</ul>
+<h2>src/workgroups2.el</h2>
+<ul>
+<li>L80: <code>(require 'pp)</code></li>
+<li>L81: <code>(require 'workgroups2-sdk)</code></li>
+<li>L89: <code>(defcustom wg-session-file "~/.emacs_workgroups"</code></li>
+<li>L94: <code>(defcustom wg-prefix-key "C-c z"</code></li>
+<li>L101: <code>(defcustom workgroups-mode nil</code></li>
+<li>L108: <code>(defcustom wg-first-wg-name "First workgroup"</code></li>
+<li>L113: <code>(defcustom wg-control-frames t</code></li>
+<li>L118: <code>(defcustom wg-after-switch-to-workgroup-hook nil</code></li>
+<li>L124: <code>(defcustom wg-buffer-local-variables-alist</code></li>
+<li>L172: <code>(defcustom wg-default-buffer "*scratch*"</code></li>
+<li>L178: <code>(defcustom wg-major-mode-excludes '(dired-mode</code></li>
+<li>L190: <code>(defun buffer-list (&amp;optional frame)</code></li>
+<li>L206: <code>(defmacro wg-defstruct (name-form &amp;rest slot-defs)</code></li>
+<li>L296: <code>(defmacro wg-with-slots (obj slot-bindings &amp;rest body)</code></li>
+<li>L307: <code>(defmacro wg-set-parameter (place parameter value)</code></li>
+<li>L317: <code>(defun wg-time-to-b36 ()</code></li>
+<li>L322: <code>(defun wg-generate-uid ()</code></li>
+<li>L329: <code>(defun wg-get-current-session (&amp;optional noerror)</code></li>
+<li>L334: <code>(defun wg-get-first-existing-dir (&amp;optional dir)</code></li>
+<li>L413: <code>(defun wg-pickelable-or-error (obj)</code></li>
+<li>L429: <code>(defun wg-pickel-p (obj)</code></li>
+<li>L434: <code>(defun wg-pickel-default-serializer (object)</code></li>
+<li>L438: <code>(defun wg-pickel-object-serializer (obj)</code></li>
+<li>L443: <code>(defun wg-pickel-link-serializer (obj)</code></li>
+<li>L447: <code>(defun wg-pickel-object-deserializer (key)</code></li>
+<li>L452: <code>(defun wg-pickel-link-deserializer (key)</code></li>
+<li>L458: <code>(defun wg-pickel-make-bindings-table (obj)</code></li>
+<li>L481: <code>(defun wg-pickel-symbol-serializer (symbol)</code></li>
+<li>L488: <code>(defun wg-pickel-deserialize-symbol (name)</code></li>
+<li>L494: <code>(defun wg-pickel-buffer-serializer (buffer)</code></li>
+<li>L498: <code>(defun wg-pickel-deserialize-buffer (uid)</code></li>
+<li>L504: <code>(defun wg-pickel-marker-serializer (marker)</code></li>
+<li>L509: <code>(defun wg-pickel-deserialize-marker (data)</code></li>
+<li>L514: <code>(defun wg-pickel-deserialize-default (object)</code></li>
+<li>L519: <code>(defun wg-pickel-cons-serializer (_cons)</code></li>
+<li>L522: <code>(defun wg-pickel-deserialize-cons ()</code></li>
+<li>L525: <code>(defun wg-pickel-cons-link-serializer (cons binds)</code></li>
+<li>L532: <code>(defun wg-pickel-cons-link-deserializer (cons-id car-id cdr-id binds)</code></li>
+<li>L538: <code>(defun wg-pickel-vector-serializer (vector)</code></li>
+<li>L541: <code>(defun wg-pickel-deserialize-vector (length)</code></li>
+<li>L545: <code>(defun wg-pickel-vector-link-serializer (vector binds)</code></li>
+<li>L556: <code>(defun wg-pickel-vector-link-deserializer (vector-id index value-id binds)</code></li>
+<li>L561: <code>(defun wg-pickel-hash-table-serializer (table)</code></li>
+<li>L570: <code>(defun wg-pickel-deserialize-hash-table (test size rsize rthresh weakness)</code></li>
+<li>L575: <code>(defun wg-pickel-hash-table-link-serializer (table binds)</code></li>
+<li>L586: <code>(defun wg-pickel-hash-table-link-deserializer (key-id value-id table-id binds)</code></li>
+<li>L592: <code>(defun wg-pickel-serialize-objects (binds)</code></li>
+<li>L600: <code>(defun wg-pickel-deserialize-objects (serial-objects)</code></li>
+<li>L610: <code>(defun wg-pickel-serialize-links (binds)</code></li>
+<li>L617: <code>(defun wg-pickel-deserialize-links (serial-links binds)</code></li>
+<li>L622: <code>(defun wg-pickel (obj)</code></li>
+<li>L635: <code>(defun wg-unpickel (pickel)</code></li>
+<li>L656: <code>(defvar workgroups-mode-map</code></li>
+<li>L658: <code>(define-key map (kbd (format "%s %s" wg-prefix-key "C-c")) 'wg-create-workgroup)</code></li>
+<li>L659: <code>(define-key map (kbd (format "%s %s" wg-prefix-key "C-v")) 'wg-open-workgroup)</code></li>
+<li>L660: <code>(define-key map (kbd (format "%s %s" wg-prefix-key "C-k")) 'wg-kill-workgroup)</code></li>
+<li>L664: <code>(defun wg-add-workgroups-mode-minor-mode-entries ()</code></li>
+<li>L674: <code>(defmacro wg-with-edges (w spec &amp;rest body)</code></li>
+<li>L679: <code>(defmacro wg-with-bounds (wtree dir spec &amp;rest body)</code></li>
+<li>L691: <code>(defun wg-set-bounds (w dir ls hs lb hb)</code></li>
+<li>L695: <code>(defun wg-w-size (width &amp;optional height)</code></li>
+<li>L700: <code>(defun wg-win-parameter (win parameter &amp;optional default)</code></li>
+<li>L706: <code>(defun wg-restore-window (win)</code></li>
+<li>L740: <code>(defun wg-window-point (window)</code></li>
+<li>L745: <code>(defun wg-set-win-parameter (win parameter value)</code></li>
+<li>L753: <code>(defun wg-window-to-win (&amp;optional window)</code></li>
+<li>L782: <code>(defun wg-w-edges (w)</code></li>
+<li>L788: <code>(defun wg-copy-w (w)</code></li>
+<li>L794: <code>(defun wg-set-edges (w edges)</code></li>
+<li>L801: <code>(defun wg-normalize-wtree (wtree)</code></li>
+<li>L829: <code>(defun wg-scale-wtree (wtree wscale hscale)</code></li>
+<li>L843: <code>(defun wg-wtree-buf-uids (wtree)</code></li>
+<li>L849: <code>(defun wg-wtree-unique-buf-uids (wtree)</code></li>
+<li>L853: <code>(defun wg-reset-window-tree ()</code></li>
+<li>L859: <code>(defun wg-restore-window-tree-helper (w)</code></li>
+<li>L873: <code>(defun wg-restore-window-tree (wtree)</code></li>
+<li>L883: <code>(defun wg-window-tree-to-wtree (&amp;optional window-tree)</code></li>
+<li>L900: <code>(defun wg-flatten-wtree (wtree &amp;optional key)</code></li>
+<li>L909: <code>(defun wg-frame-to-wconfig (&amp;optional frame)</code></li>
+<li>L925: <code>(defun wg-current-wconfig ()</code></li>
+<li>L932: <code>(defun wg-wconfig-buf-uids (wconfig)</code></li>
+<li>L938: <code>(defun wg-wconfig-restore-frame-position (wconfig &amp;optional frame)</code></li>
+<li>L951: <code>(defun wg-wconfig-restore-scroll-bars (wconfig)</code></li>
+<li>L958: <code>(defun wg-scale-wconfigs-wtree (wconfig new-width new-height)</code></li>
+<li>L973: <code>(defun wg-scale-wconfig-to-frame (wconfig)</code></li>
+<li>L981: <code>(defun wg-restore-frames ()</code></li>
+<li>L997: <code>(defun wg-restore-wconfig (wconfig &amp;optional frame)</code></li>
+<li>L1028: <code>(require 'workgroups2-support)</code></li>
+<li>L1032: <code>(defun wg-serialize-buffer-mark-ring ()</code></li>
+<li>L1036: <code>(defun wg-deserialize-buffer-mark-ring (positions)</code></li>
+<li>L1042: <code>(defun wg-deserialize-buffer-major-mode (major-mode-symbol)</code></li>
+<li>L1048: <code>(defun wg-deserialize-buffer-local-variables (buf)</code></li>
+<li>L1058: <code>(defmacro wg-workgroup-list ()</code></li>
+<li>L1063: <code>(defmacro wg-buf-list ()</code></li>
+<li>L1067: <code>(defun wg-restore-default-buffer (&amp;optional switch)</code></li>
+<li>L1073: <code>(defun wg-restore-existing-buffer (buf &amp;optional switch)</code></li>
+<li>L1082: <code>(defun wg-restore-file-buffer (buf &amp;optional switch)</code></li>
+<li>L1117: <code>(defun wg-restore-special-buffer (buf &amp;optional switch)</code></li>
+<li>L1145: <code>(defun wg-restore-buffer (buf &amp;optional switch)</code></li>
+<li>L1170: <code>(defun wg-buffer-uid (buffer-or-name)</code></li>
+<li>L1174: <code>(defun wg-bufobj-uid (bufobj)</code></li>
+<li>L1181: <code>(defun wg-bufobj-name (bufobj)</code></li>
+<li>L1188: <code>(defun wg-bufobj-file-name (bufobj)</code></li>
+<li>L1196: <code>(defun wg-equal-bufobjs (bufobj1 bufobj2)</code></li>
+<li>L1204: <code>(defun wg-find-bufobj (bufobj bufobj-list)</code></li>
+<li>L1208: <code>(defun wg-find-bufobj-by-uid (uid bufobj-list)</code></li>
+<li>L1212: <code>(defun wg-find-buffer-in-buf-list (buffer-or-name buf-list)</code></li>
+<li>L1218: <code>(defun wg-find-buf-in-buffer-list (buf buffer-list)</code></li>
+<li>L1223: <code>(defun wg-find-buf-by-uid (uid)</code></li>
+<li>L1228: <code>(defun wg-set-buffer-uid-or-error (uid)</code></li>
+<li>L1232: <code>(defun wg-buffer-special-data (buffer)</code></li>
+<li>L1246: <code>(defun wg-serialize-buffer-local-variables ()</code></li>
+<li>L1254: <code>(defun wg-buffer-to-buf (buffer)</code></li>
+<li>L1265: <code>(defun wg-add-buffer-to-buf-list (buffer)</code></li>
+<li>L1279: <code>(defun wg-buffer-uid-or-add (buffer)</code></li>
+<li>L1285: <code>(defun wg-bufobj-uid-or-add (bufobj)</code></li>
+<li>L1293: <code>(defun wg-update-buffer-in-buf-list (&amp;optional buffer)</code></li>
+<li>L1304: <code>(defcustom wg-no-confirm-on-destructive-operation nil</code></li>
+<li>L1309: <code>(defcustom wg-minibuffer-message-timeout 0.75</code></li>
+<li>L1315: <code>(defun wg-read-object (prompt test warning &amp;optional initial-contents keymap</code></li>
+<li>L1331: <code>(defun wg-read-new-workgroup-name (&amp;optional prompt)</code></li>
+<li>L1342: <code>(defun wg-minibuffer-inactive-p ()</code></li>
+<li>L1346: <code>(defun wg-barf-on-active-minibuffer ()</code></li>
+<li>L1351: <code>(defun wg-flag-workgroup-modified (&amp;optional workgroup)</code></li>
+<li>L1358: <code>(defun wg-get-current-workgroup (&amp;optional noerror frame)</code></li>
+<li>L1366: <code>(defun wg-set-current-workgroup (workgroup &amp;optional frame)</code></li>
+<li>L1372: <code>(defun wg-current-workgroup-p (workgroup &amp;optional frame)</code></li>
+<li>L1376: <code>(defun wg-get-workgroup (obj &amp;optional noerror)</code></li>
+<li>L1386: <code>(defun wg-workgroup-saved-wconfigs-buf-uids (workgroup)</code></li>
+<li>L1392: <code>(defun wg-workgroup-all-buf-uids (workgroup)</code></li>
+<li>L1398: <code>(defun wg-restore-workgroup (workgroup)</code></li>
+<li>L1403: <code>(defun wg-workgroup-list-or-error (&amp;optional noerror)</code></li>
+<li>L1410: <code>(defun wg-find-workgroup-by (slotkey value &amp;optional noerror)</code></li>
+<li>L1420: <code>(defun wg-get-session-from-file ()</code></li>
+<li>L1429: <code>(defun wg-workgroup-names ()</code></li>
+<li>L1439: <code>(defun wg-new-default-workgroup-name ()</code></li>
+<li>L1448: <code>(defun wg-query-and-save-if-modified ()</code></li>
+<li>L1456: <code>(defun wg-add-workgroup (workgroup)</code></li>
+<li>L1469: <code>(defun wg-make-and-add-workgroup (name)</code></li>
+<li>L1487: <code>(defun wg-get-workgroup-create (workgroup)</code></li>
+<li>L1497: <code>(defun wg-switch-to-workgroup-internal (workgroup-name)</code></li>
+<li>L1512: <code>(defun wg-get-session-file ()</code></li>
+<li>L1518: <code>(defun wg-create-workgroup (name)</code></li>
+<li>L1541: <code>(defun wg-workgroup-state-table (&amp;optional frame)</code></li>
+<li>L1548: <code>(defun wg-get-workgroup-state (workgroup &amp;optional frame)</code></li>
+<li>L1561: <code>(defmacro wg-with-undo (workgroup spec &amp;rest body)</code></li>
+<li>L1570: <code>(defun wg-set-workgroup-working-wconfig (workgroup wconfig)</code></li>
+<li>L1577: <code>(defun wg-workgroup-working-wconfig (workgroup &amp;optional no-update)</code></li>
+<li>L1588: <code>(defun wg-update-current-workgroup-working-wconfig ()</code></li>
+<li>L1593: <code>(defun wg-workgroup-gc-buf-uids (workgroup)</code></li>
+<li>L1600: <code>(defun wg-pickel-workgroup-parameters (workgroup)</code></li>
+<li>L1609: <code>(defun wg-unpickel-workgroup-parameters (workgroup)</code></li>
+<li>L1618: <code>(defun wg-delete-workgroup (workgroup)</code></li>
+<li>L1628: <code>(defun wg-read-text (path)</code></li>
+<li>L1638: <code>(defun wg-open-session ()</code></li>
+<li>L1655: <code>(defmacro wg-insert-and-indent (string)</code></li>
+<li>L1666: <code>(defun wg-write-sexp-to-file (sexp file)</code></li>
+<li>L1675: <code>(defun wg-perform-session-maintenance ()</code></li>
+<li>L1698: <code>(defun wg-save-session (&amp;optional workgroup-name)</code></li>
+<li>L1728: <code>(defun wg-reset-internal (session)</code></li>
+<li>L1742: <code>(defun wg-all-buf-uids ()</code></li>
+<li>L1750: <code>(defun wg-mark-everything-unmodified ()</code></li>
+<li>L1755: <code>(defun wg-session-parameter (parameter &amp;optional default session)</code></li>
+<li>L1762: <code>(defun wg-set-session-parameter (parameter value)</code></li>
+<li>L1771: <code>(defun wg-unpickel-session-parameters (session)</code></li>
+<li>L1781: <code>(defun wg-workgroup-associated-buf-uids ()</code></li>
+<li>L1789: <code>(defun workgroups-mode (&amp;optional arg)</code></li>
+<li>L1807: <code>(defun wg-open-workgroup (&amp;optional group-name)</code></li>
+<li>L1824: <code>(defun wg-kill-workgroup ()</code></li>
+<li>L1845: <code>(provide 'workgroups2)</code></li>
+</ul></main></html>

@@ -1,0 +1,69 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: navorski</h1>
+<p>Fonte: https://github.com/roman/navorski.el.git</p>
+<p>Revisione: <code>698c1c62da70164aebe9a7a5d034778fbc30ea5b</code>.</p>
+<h2>navorski.el</h2>
+<ul>
+<li>L27: <code>(require 'time-stamp)</code></li>
+<li>L28: <code>(require 'multi-term)</code></li>
+<li>L29: <code>(require 'assoc)</code></li>
+<li>L30: <code>(require 'dash)</code></li>
+<li>L40: <code>(defcustom navorski-buffer-name "terminal"</code></li>
+<li>L45: <code>(defcustom navorski-verbose nil</code></li>
+<li>L50: <code>(defvar navorski-profile-map (make-hash-table :test 'equal)</code></li>
+<li>L53: <code>(defvar navorski-read-only-term-map (suppress-keymap (make-sparse-keymap))</code></li>
+<li>L62: <code>(defun -navorski-term-reverse-search ()</code></li>
+<li>L68: <code>(defun -navorski-term-dabbrev ()</code></li>
+<li>L75: <code>(defun -navorski-term-backward-kill-word ()</code></li>
+<li>L81: <code>(defun -navorski-insert-path (file)</code></li>
+<li>L86: <code>(defun -navorski-term-insert-path ()</code></li>
+<li>L93: <code>(defun -navorski-term-yank ()</code></li>
+<li>L99: <code>(defun -navorski-interrupt-process ()</code></li>
+<li>L160: <code>(defun -navorski-merge-alist (a1 a2)</code></li>
+<li>L169: <code>(defun -navorski-profile-setting-to-list (setting)</code></li>
+<li>L178: <code>(defun -navorski-put-profile (profile-name profile)</code></li>
+<li>L181: <code>(defun -navorski-get-profile (profile-name)</code></li>
+<li>L189: <code>(defun -navorski-profile-get (profile key &amp;optional def)</code></li>
+<li>L195: <code>(defun -navorski-profile-set (profile0 key val)</code></li>
+<li>L204: <code>(defun -navorski-profile-modify (profile key f)</code></li>
+<li>L212: <code>(defun -navorski-get-kill-buffer-on-stop (profile)</code></li>
+<li>L215: <code>(defun -navorski-get-profile-name (profile)</code></li>
+<li>L218: <code>(defun -navorski-get-interactive (profile)</code></li>
+<li>L221: <code>(defun -navorski-get-shell-path (profile)</code></li>
+<li>L230: <code>(defun -navorski-indexed-buffer-name (buffer-name &amp;optional current-index)</code></li>
+<li>L237: <code>(defun -navorski-get-unnamed-terminal-count ()</code></li>
+<li>L241: <code>(defun -navorski-next-buffer-name (&amp;optional buffer-name)</code></li>
+<li>L247: <code>(defun -navorski-get-buffer-name (profile)</code></li>
+<li>L258: <code>(defun -navorski-get-default-directory (profile)</code></li>
+<li>L264: <code>(defun -navorski-get-init-script (profile)</code></li>
+<li>L268: <code>(defun -navorski-get-read-only (profile)</code></li>
+<li>L271: <code>(defun -navorski-get-program-args (profile)</code></li>
+<li>L275: <code>(defun -navorski-get-hostname (profile)</code></li>
+<li>L284: <code>(defun -navorski-decorate-multi-term-sentinel (profile term-buffer)</code></li>
+<li>L301: <code>(defun -navorski-decorate-multi-term-process-filter (profile term-buffer)</code></li>
+<li>L315: <code>(defun -navorski-read-only-term-mode ()</code></li>
+<li>L321: <code>(defun -navorski-create-term-buffer (profile)</code></li>
+<li>L358: <code>(defun -navorski-get-raw-buffer (profile)</code></li>
+<li>L368: <code>(defun -navorski-get-buffer (profile0)</code></li>
+<li>L384: <code>(defun -navorski-remote-term-setup-tramp-string (&amp;optional remote-host)</code></li>
+<li>L425: <code>(defun -navorski-remote-term-setup-program-args (profile)</code></li>
+<li>L441: <code>(defun -navorski-remote-term-setup-tramp (profile)</code></li>
+<li>L453: <code>(defun -navorski-remote-term-setup-remote-host (profile)</code></li>
+<li>L463: <code>(defun -navorski-remote-term-setup-buffer-name (profile)</code></li>
+<li>L471: <code>(defun -navorski-remote-term-to-local-term (profile)</code></li>
+<li>L482: <code>(defun -navorski-persistent-term-setup-session-name (profile)</code></li>
+<li>L492: <code>(defun -navorski-persistent-term-setup-program-args (profile)</code></li>
+<li>L505: <code>(defun -navorski-persistent-term-to-local-term (profile)</code></li>
+<li>L514: <code>(defun nav/pop-to-buffer (profile)</code></li>
+<li>L517: <code>(defun nav/kill-buffer (profile &amp;optional kill-process)</code></li>
+<li>L524: <code>(defun nav/send-string (profile str)</code></li>
+<li>L529: <code>(defun nav/send-region (profile start end)</code></li>
+<li>L535: <code>(defmacro -navorski-def-interactive (profile-name profile)</code></li>
+<li>L570: <code>(defmacro nav/defterminal (profile-name &amp;rest args)</code></li>
+<li>L705: <code>(defun nav/term (&amp;optional profile)</code></li>
+<li>L711: <code>(defun nav/remote-term (&amp;optional remote-profile)</code></li>
+<li>L721: <code>(defun nav/persistent-term (&amp;optional profile)</code></li>
+<li>L731: <code>(defun nav/remote-persistent-term (&amp;optional profile)</code></li>
+<li>L743: <code>(defun nav/setup-tramp ()</code></li>
+<li>L752: <code>(defun nav/tramp-to-term ()</code></li>
+<li>L763: <code>(provide 'navorski)</code></li>
+</ul></main></html>

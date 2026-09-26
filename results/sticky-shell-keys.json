@@ -1,0 +1,127 @@
+[
+  {
+    "at": 2.308,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.608,
+    "keys": "shell",
+    "input_hex": "7368656c6c"
+  },
+  {
+    "at": 3.108,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.412,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 4.612,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.612,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 5.812,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.814,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 7.014,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.816,
+    "keys": "C-u",
+    "input_hex": "15"
+  },
+  {
+    "at": 8.221,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 8.521,
+    "keys": "shell",
+    "input_hex": "7368656c6c"
+  },
+  {
+    "at": 9.021,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.821,
+    "keys": "C-a C-k",
+    "input_hex": "010b"
+  },
+  {
+    "at": 10.221,
+    "keys": "*shell-db*",
+    "input_hex": "2a7368656c6c2d64622a"
+  },
+  {
+    "at": 10.422,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.724,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 11.924,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.925,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 13.125,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 14.128,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 14.528,
+    "keys": "*shell*",
+    "input_hex": "2a7368656c6c2a"
+  },
+  {
+    "at": 14.928,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.331,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 15.531,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

@@ -1,0 +1,475 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tmux-control</h1>
+<p>Fonte: https://github.com/csheaff/tmux-control.git</p>
+<p>Revisione: <code>ebe07f4caff0c1be21e1c92323de6d00744c2891</code>.</p>
+<h2>tmux-control.el</h2>
+<ul>
+<li>L54: <code>(require 'ansi-color)</code></li>
+<li>L55: <code>(require 'cl-lib)</code></li>
+<li>L56: <code>(require 'mwheel)</code></li>
+<li>L57: <code>(require 'seq)</code></li>
+<li>L58: <code>(require 'subr-x)</code></li>
+<li>L59: <code>(require 'eat)</code></li>
+<li>L69: <code>(defcustom tmux-control-default-host nil</code></li>
+<li>L75: <code>(defcustom tmux-control-default-socket-name "main"</code></li>
+<li>L79: <code>(defcustom tmux-control-default-session "emacs"</code></li>
+<li>L83: <code>(defcustom tmux-control-remote-tmux-socket-setup</code></li>
+<li>L88: <code>(defcustom tmux-control-ssh-options</code></li>
+<li>L103: <code>(defcustom tmux-control-scrollback-lines 10000</code></li>
+<li>L116: <code>(defcustom tmux-control-scrollback-initial-lines 500</code></li>
+<li>L126: <code>(defcustom tmux-control-scrollback-extend-lines 500</code></li>
+<li>L137: <code>(defcustom tmux-control-scrollback-prefetch-screens 3</code></li>
+<li>L143: <code>(defcustom tmux-control-live-scrollback-size 1048576</code></li>
+<li>L153: <code>(defcustom tmux-control-idle-gc-delay 1.0</code></li>
+<li>L159: <code>(defcustom tmux-control-idle-gc-cons-threshold 10000000</code></li>
+<li>L165: <code>(defcustom tmux-control-pause-after nil</code></li>
+<li>L185: <code>(defcustom tmux-control-auto-heal-drift nil</code></li>
+<li>L208: <code>(defcustom tmux-control-auto-reconnect nil</code></li>
+<li>L223: <code>(defcustom tmux-control-auto-heal-interval 2.0</code></li>
+<li>L236: <code>(defcustom tmux-control-scrollback-join-wrapped-lines nil</code></li>
+<li>L248: <code>(defcustom tmux-control-compact-scrollback nil</code></li>
+<li>L275: <code>(defcustom tmux-control-compact-scrollback-window 300</code></li>
+<li>L279: <code>(defcustom tmux-control-warn-on-alternate-screen-off t</code></li>
+<li>L290: <code>(defcustom tmux-control-scrollback-frame-start-regexp nil</code></li>
+<li>L306: <code>(defcustom tmux-control-scrollback-chrome-regexps nil</code></li>
+<li>L323: <code>(defcustom tmux-control-command-timeout 10</code></li>
+<li>L340: <code>(defcustom tmux-control-window-buffers t</code></li>
+<li>L356: <code>(defcustom tmux-control-split-pane-tiles t</code></li>
+<li>L367: <code>(defcustom tmux-control-wheel-enters-scrollback t</code></li>
+<li>L377: <code>(defcustom tmux-control-wheel-scrolls-live-history t</code></li>
+<li>L399: <code>(defcustom tmux-control-pane-aware-find-file t</code></li>
+<li>L411: <code>(defcustom tmux-control-pane-directory-sync-delay 0.15</code></li>
+<li>L418: <code>(defcustom tmux-control-window-preview t</code></li>
+<li>L434: <code>(defcustom tmux-control-session-preview t</code></li>
+<li>L444: <code>(defcustom tmux-control-window-preview-delay 0.15</code></li>
+<li>L451: <code>(defcustom tmux-control-scroll-position-indicator t</code></li>
+<li>L458: <code>(defcustom tmux-control-window-tab-bar t</code></li>
+<li>L470: <code>(defcustom tmux-control-allow-clipboard-write nil</code></li>
+<li>L484: <code>(defcustom tmux-control-tiled-hide-mode-line nil</code></li>
+<li>L493: <code>(defcustom tmux-control-session-activity t</code></li>
+<li>L504: <code>(defcustom tmux-control-session-label t</code></li>
+<li>L850: <code>(defvar tmux-control--override-map</code></li>
+<li>L852: <code>(define-key map (kbd "C-c C-e") #'tmux-control-scrollback)</code></li>
+<li>L853: <code>(define-key map (kbd "C-c C-k") #'tmux-control-disconnect)</code></li>
+<li>L854: <code>(define-key map (kbd "C-c C-l") #'tmux-control-clear-and-repaint)</code></li>
+<li>L855: <code>(define-key map (kbd "C-c M-o") #'tmux-control-clear-scrollback)</code></li>
+<li>L856: <code>(define-key map (kbd "C-c C-o") #'tmux-control-other-pane)</code></li>
+<li>L857: <code>(define-key map (kbd "C-c C-t") #'tmux-control-toggle-tiling)</code></li>
+<li>L858: <code>(define-key map (kbd "C-c C-n") #'tmux-control-next-window)</code></li>
+<li>L859: <code>(define-key map (kbd "C-c C-p") #'tmux-control-previous-window)</code></li>
+<li>L860: <code>(define-key map (kbd "C-c C-r") #'tmux-control-reconnect)</code></li>
+<li>L861: <code>(define-key map (kbd "C-c C-s") #'tmux-control-select-session)</code></li>
+<li>L862: <code>(define-key map (kbd "C-c C-f") #'tmux-control-toggle-flock)</code></li>
+<li>L864: <code>(define-key map (kbd "C-c C-w") #'tmux-control-select-window)</code></li>
+<li>L865: <code>(define-key map (kbd "C-c TAB") #'tmux-control-last-window)</code></li>
+<li>L866: <code>(define-key map (kbd "C-c x") #'tmux-control-kill-pane)</code></li>
+<li>L868: <code>(define-key map (kbd (format "C-c %d" i))</code></li>
+<li>L872: <code>(define-key map (kbd "C-c |") #'tmux-control-split-pane-right)</code></li>
+<li>L873: <code>(define-key map (kbd "C-c -") #'tmux-control-split-pane-below)</code></li>
+<li>L877: <code>(define-key map [wheel-up] #'tmux-control-wheel-scroll)</code></li>
+<li>L878: <code>(define-key map [wheel-down] #'tmux-control-wheel-down)</code></li>
+<li>L885: <code>(define-key map [double-wheel-up] #'tmux-control-wheel-scroll)</code></li>
+<li>L886: <code>(define-key map [triple-wheel-up] #'tmux-control-wheel-scroll)</code></li>
+<li>L887: <code>(define-key map [double-wheel-down] #'tmux-control-wheel-down)</code></li>
+<li>L888: <code>(define-key map [triple-wheel-down] #'tmux-control-wheel-down)</code></li>
+<li>L895: <code>(defvar tmux-control--char-mode-map</code></li>
+<li>L897: <code>(define-key map [wheel-up] #'tmux-control-wheel-scroll)</code></li>
+<li>L898: <code>(define-key map [wheel-down] #'tmux-control-wheel-down)</code></li>
+<li>L900: <code>(define-key map [double-wheel-up] #'tmux-control-wheel-scroll)</code></li>
+<li>L901: <code>(define-key map [triple-wheel-up] #'tmux-control-wheel-scroll)</code></li>
+<li>L902: <code>(define-key map [double-wheel-down] #'tmux-control-wheel-down)</code></li>
+<li>L903: <code>(define-key map [triple-wheel-down] #'tmux-control-wheel-down)</code></li>
+<li>L913: <code>(defvar tmux-control--emulation-mode-map-alist</code></li>
+<li>L949: <code>(defvar tmux-control-mode-map</code></li>
+<li>L952: <code>(define-key map (kbd "C-c C-e") #'tmux-control-scrollback)</code></li>
+<li>L953: <code>(define-key map (kbd "C-c C-k") #'tmux-control-disconnect)</code></li>
+<li>L954: <code>(define-key map (kbd "C-c C-l") #'tmux-control-clear-and-repaint)</code></li>
+<li>L955: <code>(define-key map (kbd "C-c M-o") #'tmux-control-clear-scrollback)</code></li>
+<li>L956: <code>(define-key map (kbd "C-c C-o") #'tmux-control-other-pane)</code></li>
+<li>L957: <code>(define-key map (kbd "C-c C-t") #'tmux-control-toggle-tiling)</code></li>
+<li>L958: <code>(define-key map (kbd "C-c C-n") #'tmux-control-next-window)</code></li>
+<li>L959: <code>(define-key map (kbd "C-c C-p") #'tmux-control-previous-window)</code></li>
+<li>L960: <code>(define-key map (kbd "C-c C-r") #'tmux-control-reconnect)</code></li>
+<li>L961: <code>(define-key map (kbd "C-c C-s") #'tmux-control-select-session)</code></li>
+<li>L962: <code>(define-key map (kbd "C-c C-f") #'tmux-control-toggle-flock)</code></li>
+<li>L964: <code>(define-key map (kbd "C-c C-w") #'tmux-control-select-window)</code></li>
+<li>L965: <code>(define-key map (kbd "C-c TAB") #'tmux-control-last-window)</code></li>
+<li>L966: <code>(define-key map (kbd "C-c x") #'tmux-control-kill-pane)</code></li>
+<li>L968: <code>(define-key map (kbd (format "C-c %d" i))</code></li>
+<li>L970: <code>(define-key map (kbd "C-c |") #'tmux-control-split-pane-right)</code></li>
+<li>L971: <code>(define-key map (kbd "C-c -") #'tmux-control-split-pane-below)</code></li>
+<li>L981: <code>(define-key map [escape] #'tmux-control-send-escape)</code></li>
+<li>L992: <code>(define-key map [remap yank] #'tmux-control-yank)</code></li>
+<li>L993: <code>(define-key map [remap clipboard-yank] #'tmux-control-yank)</code></li>
+<li>L994: <code>(define-key map [remap eat-yank] #'tmux-control-yank)</code></li>
+<li>L995: <code>(define-key map [remap yank-pop] #'tmux-control-yank-from-kill-ring)</code></li>
+<li>L996: <code>(define-key map [remap eat-yank-from-kill-ring] #'tmux-control-yank-from-kill-ring)</code></li>
+<li>L1002: <code>(define-key map [remap find-file] #'tmux-control-find-file)</code></li>
+<li>L1003: <code>(define-key map [remap find-file-other-window] #'tmux-control-find-file-other-window)</code></li>
+<li>L1004: <code>(define-key map [remap dired] #'tmux-control-dired)</code></li>
+<li>L1015: <code>(define-minor-mode tmux-control-idle-gc-mode</code></li>
+<li>L1046: <code>(defun tmux-control--idle-gc-options-valid-p ()</code></li>
+<li>L1052: <code>(defun tmux-control--idle-gc-note-command ()</code></li>
+<li>L1055: <code>(defun tmux-control--idle-gc-note-collection ()</code></li>
+<li>L1059: <code>(defun tmux-control--idle-gc-check ()</code></li>
+<li>L1076: <code>(defun tmux-control--idle-gc-stop ()</code></li>
+<li>L1084: <code>(defun tmux-control-idle-gc-status ()</code></li>
+<li>L1097: <code>(define-derived-mode tmux-control-mode eat-mode "tmux-control"</code></li>
+<li>L1118: <code>(defvar tmux-control-scrollback-mode-map</code></li>
+<li>L1121: <code>(define-key map (kbd "g") #'tmux-control-scrollback-refresh)</code></li>
+<li>L1122: <code>(define-key map (kbd "c") #'tmux-control-scrollback-toggle-compaction)</code></li>
+<li>L1123: <code>(define-key map (kbd "C-c C-r") #'tmux-control-reconnect)</code></li>
+<li>L1124: <code>(define-key map (kbd "C-c C-e") #'tmux-control-live)</code></li>
+<li>L1125: <code>(define-key map (kbd "RET") #'tmux-control-live)</code></li>
+<li>L1126: <code>(define-key map (kbd "q") #'tmux-control-live)</code></li>
+<li>L1129: <code>(define-key map (kbd "l") #'tmux-control-live)</code></li>
+<li>L1130: <code>(define-key map [escape] #'tmux-control-live)</code></li>
+<li>L1131: <code>(define-key map [wheel-down] #'tmux-control-scrollback-wheel-down)</code></li>
+<li>L1132: <code>(define-key map [double-wheel-down] #'tmux-control-scrollback-wheel-down)</code></li>
+<li>L1133: <code>(define-key map [triple-wheel-down] #'tmux-control-scrollback-wheel-down)</code></li>
+<li>L1134: <code>(define-key map [remap eat-semi-char-mode] #'tmux-control-live)</code></li>
+<li>L1135: <code>(define-key map [remap self-insert-command] #'tmux-control-live-self-insert)</code></li>
+<li>L1139: <code>(defvar tmux-control--scrollback-override-map</code></li>
+<li>L1141: <code>(define-key map [wheel-down] #'tmux-control-scrollback-wheel-down)</code></li>
+<li>L1142: <code>(define-key map [double-wheel-down] #'tmux-control-scrollback-wheel-down)</code></li>
+<li>L1143: <code>(define-key map [triple-wheel-down] #'tmux-control-scrollback-wheel-down)</code></li>
+<li>L1156: <code>(defvar tmux-control--scrollback-emulation-map-alist</code></li>
+<li>L1161: <code>(define-derived-mode tmux-control-scrollback-mode special-mode</code></li>
+<li>L1173: <code>(defun tmux-control--guard-scrollback-mode-command (orig-fun &amp;rest args)</code></li>
+<li>L1188: <code>(defun tmux-control--list-sessions (host socket-name)</code></li>
+<li>L1212: <code>(defun tmux-control--read-session (host socket-name)</code></li>
+<li>L1222: <code>(defun tmux-control-connect (&amp;optional host socket-name session)</code></li>
+<li>L1341: <code>(defun tmux-control--session-live-buffer (host session)</code></li>
+<li>L1353: <code>(defun tmux-control--connect-or-switch (host socket-name session)</code></li>
+<li>L1371: <code>(defun tmux-control--select-session-inline (host socket sessions current)</code></li>
+<li>L1394: <code>(defun tmux-control-select-session ()</code></li>
+<li>L1417: <code>(defun tmux-control--cycle-session (delta)</code></li>
+<li>L1435: <code>(defun tmux-control-next-session ()</code></li>
+<li>L1441: <code>(defun tmux-control-previous-session ()</code></li>
+<li>L1454: <code>(defun tmux-control--live-session-buffers ()</code></li>
+<li>L1472: <code>(defun tmux-control--flock-grid (buffers)</code></li>
+<li>L1494: <code>(defun tmux-control--flock-resize-all ()</code></li>
+<li>L1503: <code>(defun tmux-control--connect-all-sessions ()</code></li>
+<li>L1521: <code>(defun tmux-control--any-frame-flocked-p ()</code></li>
+<li>L1527: <code>(defun tmux-control--reflock ()</code></li>
+<li>L1548: <code>(defun tmux-control--schedule-reflock ()</code></li>
+<li>L1559: <code>(defun tmux-control-flock (&amp;optional connect-all)</code></li>
+<li>L1589: <code>(defun tmux-control-unflock ()</code></li>
+<li>L1599: <code>(defun tmux-control-toggle-flock (&amp;optional connect-all)</code></li>
+<li>L1608: <code>(defun tmux-control--sessions-frame ()</code></li>
+<li>L1619: <code>(defun tmux-control-flock-other-frame (&amp;optional connect-all)</code></li>
+<li>L1640: <code>(defun tmux-control-disconnect ()</code></li>
+<li>L1655: <code>(defun tmux-control-reconnect ()</code></li>
+<li>L1688: <code>(defun tmux-control-clear-and-repaint ()</code></li>
+<li>L1693: <code>(defun tmux-control-clear-scrollback ()</code></li>
+<li>L1722: <code>(defun tmux-control--walk-keymap (keymap fn &amp;optional prefix)</code></li>
+<li>L1744: <code>(defun tmux-control--walk-own-keymap (keymap fn)</code></li>
+<li>L1773: <code>(defun tmux-control--audit-rows ()</code></li>
+<li>L1809: <code>(defun tmux-control-audit-keys ()</code></li>
+<li>L1852: <code>(defun tmux-control--list-windows (host socket-name session)</code></li>
+<li>L1883: <code>(defun tmux-control--list-panes (host socket-name target)</code></li>
+<li>L1926: <code>(defun tmux-control--ensure-live ()</code></li>
+<li>L1933: <code>(defun tmux-control--refresh-active-pane (&amp;optional self-initiated)</code></li>
+<li>L1951: <code>(defun tmux-control--interpret-alt-screen-reply (output global-p)</code></li>
+<li>L1967: <code>(defun tmux-control--refresh-alt-screen-option ()</code></li>
+<li>L1979: <code>(defun tmux-control--maybe-warn-alternate-screen-off ()</code></li>
+<li>L2002: <code>(defun tmux-control--window-choices ()</code></li>
+<li>L2011: <code>(defun tmux-control--read-window-index (prompt)</code></li>
+<li>L2018: <code>(defun tmux-control--read-with-preview (prompt choices preview restore &amp;optional category)</code></li>
+<li>L2042: <code>(defun tmux-control--select-window-inline ()</code></li>
+<li>L2068: <code>(defun tmux-control--normalize-window-index (index)</code></li>
+<li>L2076: <code>(defun tmux-control--quote-tmux-arg (string)</code></li>
+<li>L2091: <code>(defun tmux-control--quote-tmux-name (name)</code></li>
+<li>L2103: <code>(defun tmux-control--window-target (session &amp;optional index)</code></li>
+<li>L2119: <code>(defun tmux-control--fallback-control-target ()</code></li>
+<li>L2133: <code>(defun tmux-control--quote-target (target)</code></li>
+<li>L2148: <code>(defun tmux-control-select-window (&amp;optional index)</code></li>
+<li>L2172: <code>(defun tmux-control-select-window-by-key ()</code></li>
+<li>L2183: <code>(defun tmux-control--do-select-window (index)</code></li>
+<li>L2219: <code>(defun tmux-control--switch-window (verb)</code></li>
+<li>L2244: <code>(defun tmux-control-next-window ()</code></li>
+<li>L2253: <code>(defun tmux-control-previous-window ()</code></li>
+<li>L2261: <code>(defun tmux-control-last-window ()</code></li>
+<li>L2268: <code>(defun tmux-control-new-window (&amp;optional name)</code></li>
+<li>L2290: <code>(defun tmux-control-kill-window (&amp;optional index)</code></li>
+<li>L2311: <code>(defun tmux-control-rename-window (&amp;optional index name)</code></li>
+<li>L2348: <code>(defun tmux-control--split-control-fields (line)</code></li>
+<li>L2361: <code>(defun tmux-control--window-state-fields-with-separator (line separator)</code></li>
+<li>L2383: <code>(defun tmux-control--window-state-fields (line)</code></li>
+<li>L2392: <code>(defun tmux-control--refresh-windows ()</code></li>
+<li>L2406: <code>(defun tmux-control--refresh-pane-window-map ()</code></li>
+<li>L2418: <code>(defun tmux-control--update-windows (lines)</code></li>
+<li>L2475: <code>(defun tmux-control--update-pane-window-map (lines)</code></li>
+<li>L2491: <code>(defun tmux-control--quiet-activity (&amp;optional secs)</code></li>
+<li>L2510: <code>(defun tmux-control--note-pane-activity (pane)</code></li>
+<li>L2539: <code>(defun tmux-control--note-session-activity ()</code></li>
+<li>L2557: <code>(defun tmux-control--connection-name (host session)</code></li>
+<li>L2566: <code>(defun tmux-control--mode-line-safe (string)</code></li>
+<li>L2575: <code>(defun tmux-control--tab-mouse-face ()</code></li>
+<li>L2583: <code>(defun tmux-control--flagged-other-session-buffers ()</code></li>
+<li>L2601: <code>(defun tmux-control--clear-self-activity ()</code></li>
+<li>L2610: <code>(defun tmux-control--server-label (host socket)</code></li>
+<li>L2622: <code>(defun tmux-control--switch-to-flagged-buffer (buffer)</code></li>
+<li>L2633: <code>(defun tmux-control--corner-session (buffer)</code></li>
+<li>L2643: <code>(define-key map [header-line mouse-1]</code></li>
+<li>L2653: <code>(defun tmux-control--corner-render (buffers)</code></li>
+<li>L2681: <code>(defun tmux-control-switch-to-flagged ()</code></li>
+<li>L2703: <code>(defun tmux-control--corner-collapsed (n)</code></li>
+<li>L2713: <code>(define-key map [header-line mouse-1]</code></li>
+<li>L2717: <code>(defun tmux-control--tab-keymap (index)</code></li>
+<li>L2720: <code>(define-key map [header-line mouse-1]</code></li>
+<li>L2726: <code>(defun tmux-control--window-tab-bar (&amp;optional no-keymap)</code></li>
+<li>L2767: <code>(defun tmux-control--session-label ()</code></li>
+<li>L2786: <code>(defvar tmux-control--scroll-position-map</code></li>
+<li>L2788: <code>(define-key map [header-line mouse-1] #'tmux-control-scroll-position-live)</code></li>
+<li>L2789: <code>(define-key map [mode-line mouse-1] #'tmux-control-scroll-position-live)</code></li>
+<li>L2793: <code>(defun tmux-control-scroll-position-live (event)</code></li>
+<li>L2816: <code>(defun tmux-control--scroll-position-indicator ()</code></li>
+<li>L2851: <code>(defun tmux-control--header-line ()</code></li>
+<li>L2888: <code>(defun tmux-control--scrollback-header ()</code></li>
+<li>L2931: <code>(defun tmux-control-other-pane ()</code></li>
+<li>L2942: <code>(defun tmux-control--read-pane ()</code></li>
+<li>L2955: <code>(defun tmux-control-select-pane (&amp;optional pane)</code></li>
+<li>L2997: <code>(defun tmux-control--remote-file-method (host)</code></li>
+<li>L3020: <code>(defun tmux-control--directory-for-pane-path (path)</code></li>
+<li>L3034: <code>(defun tmux-control--pane-directory-controller ()</code></li>
+<li>L3043: <code>(defun tmux-control--session-render-buffers ()</code></li>
+<li>L3057: <code>(defun tmux-control--propagate-pane-directory-mode (state)</code></li>
+<li>L3073: <code>(defun tmux-control--pane-directory-local-fallback ()</code></li>
+<li>L3080: <code>(defun tmux-control--restore-pane-directory-mode-after-reset ()</code></li>
+<li>L3087: <code>(defun tmux-control--initialize-render-buffer-mode (track-directory</code></li>
+<li>L3099: <code>(defun tmux-control--request-pane-directory-sync ()</code></li>
+<li>L3138: <code>(defun tmux-control--schedule-pane-directory-sync (&amp;optional immediate)</code></li>
+<li>L3157: <code>(defun tmux-control--cancel-pane-directory-sync ()</code></li>
+<li>L3166: <code>(defun tmux-control--pane-directory-buffer-displayed (window)</code></li>
+<li>L3175: <code>(defun tmux-control-refresh-pane-directory ()</code></li>
+<li>L3182: <code>(define-minor-mode tmux-control-pane-directory-mode</code></li>
+<li>L3215: <code>(defun tmux-control--pane-directory ()</code></li>
+<li>L3235: <code>(defun tmux-control--call-in-pane-directory (command arg)</code></li>
+<li>L3252: <code>(defun tmux-control-find-file (&amp;optional arg)</code></li>
+<li>L3264: <code>(defun tmux-control-find-file-other-window (&amp;optional arg)</code></li>
+<li>L3271: <code>(defun tmux-control-dired (&amp;optional arg)</code></li>
+<li>L3278: <code>(defun tmux-control--scrollback-capture-command (target lines trailing</code></li>
+<li>L3293: <code>(defun tmux-control--scrollback-populate (buffer text &amp;optional line column)</code></li>
+<li>L3329: <code>(defun tmux-control--scrollback-scroll-watch (window start)</code></li>
+<li>L3360: <code>(defun tmux-control--scrollback-extend-result (old-depth new-depth got history-rows)</code></li>
+<li>L3375: <code>(defun tmux-control--scrollback-update-history-rows (buffer)</code></li>
+<li>L3411: <code>(defun tmux-control--scrollback-extend (buffer)</code></li>
+<li>L3468: <code>(defun tmux-control--scrollback-drop-seam-overlap (new-lines head-lines)</code></li>
+<li>L3484: <code>(defun tmux-control--scrollback-prepend (text new-depth)</code></li>
+<li>L3531: <code>(defun tmux-control--scrollback-request (buffer target lines trailing</code></li>
+<li>L3566: <code>(defun tmux-control-scrollback ()</code></li>
+<li>L3660: <code>(defun tmux-control-scrollback-refresh ()</code></li>
+<li>L3693: <code>(defun tmux-control--scrollback-window-size (window)</code></li>
+<li>L3701: <code>(defun tmux-control--scrollback-cancel-resize-timer ()</code></li>
+<li>L3711: <code>(defun tmux-control--scrollback-follow-resize (frame)</code></li>
+<li>L3738: <code>(defun tmux-control--scrollback-resize-recapture (buffer)</code></li>
+<li>L3763: <code>(defun tmux-control-scrollback-toggle-compaction ()</code></li>
+<li>L3779: <code>(defun tmux-control-live ()</code></li>
+<li>L3793: <code>(defun tmux-control-live-self-insert ()</code></li>
+<li>L3807: <code>(defun tmux-control--dispatch-wheel (event)</code></li>
+<li>L3816: <code>(defun tmux-control-scrollback-wheel-down (event)</code></li>
+<li>L3857: <code>(defun tmux-control--alt-screen-effective-p (honored eat-alt-display-p)</code></li>
+<li>L3866: <code>(defun tmux-control--alt-screen-p ()</code></li>
+<li>L3887: <code>(defun tmux-control--effective-alt-screen-honored ()</code></li>
+<li>L3916: <code>(defun tmux-control--pane-grabs-mouse-p ()</code></li>
+<li>L3924: <code>(defun tmux-control--wheel-detectable-p ()</code></li>
+<li>L3929: <code>(defun tmux-control--wheel-should-enter-scrollback-p</code></li>
+<li>L3945: <code>(defun tmux-control--tiled-mode-p ()</code></li>
+<li>L3959: <code>(defun tmux-control-wheel-scroll (event)</code></li>
+<li>L4017: <code>(defun tmux-control--live-history-exhausted-p (window)</code></li>
+<li>L4036: <code>(defun tmux-control--scroll-live-history (event window)</code></li>
+<li>L4048: <code>(defun tmux-control-wheel-down (event)</code></li>
+<li>L4070: <code>(defun tmux-control--disable-line-numbers ()</code></li>
+<li>L4079: <code>(defun tmux-control--disable-margins ()</code></li>
+<li>L4088: <code>(defun tmux-control--no-line-wrap ()</code></li>
+<li>L4106: <code>(defun tmux-control--protect-terminal-text (&amp;optional input-method)</code></li>
+<li>L4124: <code>(defun tmux-control--input-method-activated ()</code></li>
+<li>L4131: <code>(defun tmux-control--input-method-deactivated ()</code></li>
+<li>L4139: <code>(defun tmux-control--eat-semi-char-mode-advice (orig-fn &amp;rest args)</code></li>
+<li>L4160: <code>(defun tmux-control--eat-char-mode-advice (orig-fn &amp;rest args)</code></li>
+<li>L4188: <code>(defun tmux-control-char-mode ()</code></li>
+<li>L4199: <code>(defun tmux-control--reset-buffer ()</code></li>
+<li>L4281: <code>(defun tmux-control--selection-function ()</code></li>
+<li>L4291: <code>(defun tmux-control--check-host (host)</code></li>
+<li>L4307: <code>(defun tmux-control--command (host socket-name session)</code></li>
+<li>L4320: <code>(defun tmux-control--tmux-command-string (args)</code></li>
+<li>L4324: <code>(defun tmux-control--ssh-args (host remote-command)</code></li>
+<li>L4332: <code>(defun tmux-control--capture-pane (host socket-name target lines</code></li>
+<li>L4358: <code>(defun tmux-control--call (program args)</code></li>
+<li>L4384: <code>(defun tmux-control--trim-trailing-blank-lines (text)</code></li>
+<li>L4388: <code>(defun tmux-control--colorize-scrollback (text)</code></li>
+<li>L4420: <code>(defun tmux-control--scrollback-match-key (line)</code></li>
+<li>L4447: <code>(defun tmux-control--prepare-scrollback-text (text)</code></li>
+<li>L4485: <code>(defvar tmux-control--window-chooser-override-map</code></li>
+<li>L4487: <code>(define-key map (kbd "n") #'tmux-control--window-chooser-next)</code></li>
+<li>L4488: <code>(define-key map (kbd "p") #'tmux-control--window-chooser-previous)</code></li>
+<li>L4489: <code>(define-key map (kbd "C-n") #'tmux-control--window-chooser-next)</code></li>
+<li>L4490: <code>(define-key map (kbd "C-p") #'tmux-control--window-chooser-previous)</code></li>
+<li>L4491: <code>(define-key map (kbd "&lt;down&gt;") #'tmux-control--window-chooser-next)</code></li>
+<li>L4492: <code>(define-key map (kbd "&lt;up&gt;") #'tmux-control--window-chooser-previous)</code></li>
+<li>L4493: <code>(define-key map (kbd "RET") #'tmux-control--window-chooser-select)</code></li>
+<li>L4494: <code>(define-key map (kbd "C-m") #'tmux-control--window-chooser-select)</code></li>
+<li>L4495: <code>(define-key map (kbd "q") #'tmux-control--window-chooser-abort)</code></li>
+<li>L4496: <code>(define-key map (kbd "C-g") #'tmux-control--window-chooser-abort)</code></li>
+<li>L4497: <code>(define-key map [mouse-1] #'tmux-control--window-chooser-mouse-select)</code></li>
+<li>L4498: <code>(define-key map [double-mouse-1] #'tmux-control--window-chooser-mouse-select)</code></li>
+<li>L4510: <code>(define-derived-mode tmux-control-window-chooser-mode special-mode</code></li>
+<li>L4528: <code>(defun tmux-control--chooser-line-index ()</code></li>
+<li>L4532: <code>(defun tmux-control--window-chooser-next ()</code></li>
+<li>L4541: <code>(defun tmux-control--window-chooser-previous ()</code></li>
+<li>L4547: <code>(defun tmux-control--chooser-goto-active ()</code></li>
+<li>L4564: <code>(defun tmux-control--capture-window-screen (host socket-name session index</code></li>
+<li>L4585: <code>(defun tmux-control--render-window-preview (host socket-name session index</code></li>
+<li>L4594: <code>(defun tmux-control--chooser-update-preview ()</code></li>
+<li>L4615: <code>(defun tmux-control--chooser-maybe-preview ()</code></li>
+<li>L4631: <code>(defun tmux-control--window-chooser-dispose ()</code></li>
+<li>L4647: <code>(defun tmux-control--window-chooser-cleanup ()</code></li>
+<li>L4664: <code>(defun tmux-control--window-chooser-select ()</code></li>
+<li>L4678: <code>(defun tmux-control--window-chooser-mouse-select (event)</code></li>
+<li>L4684: <code>(defun tmux-control--window-chooser-abort ()</code></li>
+<li>L4690: <code>(defun tmux-control--open-window-chooser ()</code></li>
+<li>L4759: <code>(defun tmux-control--compact-repeated-redraw-lines (text)</code></li>
+<li>L4769: <code>(defun tmux-control--scrollback-chunks (text)</code></li>
+<li>L4773: <code>(defun tmux-control--scrollback-chunks-from-lines (lines)</code></li>
+<li>L4789: <code>(defun tmux-control--regexp-matches-p (regexp string)</code></li>
+<li>L4804: <code>(defun tmux-control--scrollback-frame-start-line-p (line)</code></li>
+<li>L4825: <code>(defun tmux-control--auto-frame-evenly-spread-p (indices)</code></li>
+<li>L4833: <code>(defun tmux-control--frames-share-redraw-body-p (lines marker)</code></li>
+<li>L4858: <code>(defun tmux-control--auto-frame-start-line (lines)</code></li>
+<li>L4906: <code>(defun tmux-control--strip-scrollback-chrome (lines)</code></li>
+<li>L4911: <code>(defun tmux-control--scrollback-chrome-line-p (line)</code></li>
+<li>L4922: <code>(defun tmux-control--merge-scrollback-chunk (out chunk)</code></li>
+<li>L4958: <code>(defun tmux-control--redraw-run-distinctive-p (lines)</code></li>
+<li>L4966: <code>(defun tmux-control--redraw-run-distinctive-keys-p (keys)</code></li>
+<li>L4985: <code>(defun tmux-control--seen-run-length (hkeys ckeys start n)</code></li>
+<li>L5016: <code>(defun tmux-control--strip-seen-runs (out chunk)</code></li>
+<li>L5039: <code>(defun tmux-control--line-list-contains-p (haystack needle)</code></li>
+<li>L5047: <code>(defun tmux-control--line-list-overlap (left right)</code></li>
+<li>L5067: <code>(defun tmux-control--line-list-safe-overlap-p (lines)</code></li>
+<li>L5074: <code>(defun tmux-control--line-list-has-content-p (lines)</code></li>
+<li>L5080: <code>(defun tmux-control--trim-blank-line-list (lines)</code></li>
+<li>L5091: <code>(defun tmux-control--squeeze-blank-lines (text)</code></li>
+<li>L5095: <code>(defun tmux-control--filter (process chunk)</code></li>
+<li>L5144: <code>(defun tmux-control--schedule-retile (controller)</code></li>
+<li>L5162: <code>(defun tmux-control--flush-output-batch ()</code></li>
+<li>L5179: <code>(defun tmux-control--note-seed-capture (buffer)</code></li>
+<li>L5185: <code>(defun tmux-control--seed-raced-output-p (buffer)</code></li>
+<li>L5196: <code>(defun tmux-control--seed-stale-retry-p (buffer)</code></li>
+<li>L5210: <code>(defun tmux-control--batch-pane-output (pane payload)</code></li>
+<li>L5254: <code>(defun tmux-control--note-link-alive (line)</code></li>
+<li>L5268: <code>(defun tmux-control--handle-line (line)</code></li>
+<li>L5505: <code>(defun tmux-control--block-terminator-p (line)</code></li>
+<li>L5516: <code>(defun tmux-control--query (command callback)</code></li>
+<li>L5526: <code>(defun tmux-control--finish-command-output ()</code></li>
+<li>L5639: <code>(defun tmux-control--ensure-heal-timer ()</code></li>
+<li>L5649: <code>(defun tmux-control--rtrim-screen-lines (lines)</code></li>
+<li>L5658: <code>(defun tmux-control--displayed-render-buffers ()</code></li>
+<li>L5672: <code>(defun tmux-control--maybe-heal-drift ()</code></li>
+<li>L5695: <code>(defun tmux-control--visible-screen-lines (buffer)</code></li>
+<li>L5723: <code>(defun tmux-control--heal-on-arrival (buffer)</code></li>
+<li>L5754: <code>(defun tmux-control--heal-if-drifted (buffer)</code></li>
+<li>L5775: <code>(defun tmux-control--seed-screen ()</code></li>
+<li>L5801: <code>(defun tmux-control--seed-own-screen ()</code></li>
+<li>L5844: <code>(defun tmux-control--eat-cursor-xy ()</code></li>
+<li>L5862: <code>(defun tmux-control--verify-seed (buffer reseed)</code></li>
+<li>L5911: <code>(defun tmux-control--handle-pause (pane)</code></li>
+<li>L5952: <code>(defun tmux-control--strip-ansi (string)</code></li>
+<li>L5956: <code>(defun tmux-control--display-width (string)</code></li>
+<li>L5960: <code>(defun tmux-control--screen-seed-sequence (text &amp;optional cursor cursor-visible)</code></li>
+<li>L6014: <code>(defun tmux-control--decode-output (payload)</code></li>
+<li>L6039: <code>(defun tmux-control--octal-digit-p (char)</code></li>
+<li>L6043: <code>(defun tmux-control--keep-cursor-visible (windows)</code></li>
+<li>L6083: <code>(defun tmux-control--utf8-complete-len (bytes)</code></li>
+<li>L6105: <code>(defun tmux-control--utf8-decode-stream (carry output)</code></li>
+<li>L6118: <code>(defun tmux-control--current-sync-windows ()</code></li>
+<li>L6155: <code>(defun tmux-control--snap-to-live-screen (window)</code></li>
+<li>L6204: <code>(defun tmux-control--feed-terminal (output)</code></li>
+<li>L6243: <code>(defun tmux-control--flush-display (sync-windows)</code></li>
+<li>L6276: <code>(defun tmux-control--anchor-windows-to-screen-top (windows)</code></li>
+<li>L6296: <code>(defun tmux-control--write-terminal (output)</code></li>
+<li>L6317: <code>(defun tmux-control--send-input (_terminal string)</code></li>
+<li>L6361: <code>(defun tmux-control--bytes-to-hex-args (bytes start end)</code></li>
+<li>L6372: <code>(defun tmux-control--string-to-hex-args (string)</code></li>
+<li>L6377: <code>(defun tmux-control-send-escape ()</code></li>
+<li>L6403: <code>(defun tmux-control--quote-tmux-data (bytes start end)</code></li>
+<li>L6425: <code>(defun tmux-control--paste-to-pane (text)</code></li>
+<li>L6459: <code>(defun tmux-control-yank (&amp;optional _arg)</code></li>
+<li>L6468: <code>(defun tmux-control-yank-from-kill-ring (string &amp;optional _arg)</code></li>
+<li>L6476: <code>(defun tmux-control--send-command (command &amp;optional kind)</code></li>
+<li>L6494: <code>(defun tmux-control--arm-command-watchdog ()</code></li>
+<li>L6505: <code>(defun tmux-control--command-watchdog-check (buffer)</code></li>
+<li>L6554: <code>(defun tmux-control--adjust-window-size (process windows)</code></li>
+<li>L6566: <code>(defun tmux-control--resize-to-window ()</code></li>
+<li>L6576: <code>(defun tmux-control--resize (width height)</code></li>
+<li>L6616: <code>(defun tmux-control--apply-eat-size (width height)</code></li>
+<li>L6632: <code>(defun tmux-control--parse-pane-size (output)</code></li>
+<li>L6644: <code>(defun tmux-control--parse-cursor-pos (output)</code></li>
+<li>L6657: <code>(defun tmux-control--cursor-visible-from-flag (flag)</code></li>
+<li>L6666: <code>(defun tmux-control--parse-cursor-visible (output)</code></li>
+<li>L6677: <code>(defun tmux-control--parse-pane-modes (output)</code></li>
+<li>L6695: <code>(defun tmux-control--mode-seed-sequence (modes)</code></li>
+<li>L6736: <code>(defun tmux-control--capture-n-supported-p (version)</code></li>
+<li>L6745: <code>(defun tmux-control--refresh-pane-size ()</code></li>
+<li>L6757: <code>(defun tmux-control--maybe-warn-pinned-size (actual)</code></li>
+<li>L6804: <code>(defun tmux-control-adopt-window-size ()</code></li>
+<li>L6829: <code>(defun tmux-control--cancel-auto-reconnect ()</code></li>
+<li>L6837: <code>(defun tmux-control--auto-reconnect-now (buffer)</code></li>
+<li>L6868: <code>(defun tmux-control--schedule-auto-reconnect (buffer)</code></li>
+<li>L6884: <code>(defun tmux-control--sentinel (process message)</code></li>
+<li>L6933: <code>(defun tmux-control--kill-process ()</code></li>
+<li>L6976: <code>(defun tmux-control--message (text)</code></li>
+<li>L7002: <code>(defun tmux-control--wb-controller ()</code></li>
+<li>L7006: <code>(defun tmux-control--window-id-for-index (index)</code></li>
+<li>L7013: <code>(defun tmux-control--window-buffer (window-id)</code></li>
+<li>L7019: <code>(defun tmux-control--register-window-buffer (window-id buffer)</code></li>
+<li>L7025: <code>(defun tmux-control--kill-render-buffers (controller)</code></li>
+<li>L7045: <code>(defun tmux-control--session-display-buffer (&amp;optional ctrl)</code></li>
+<li>L7062: <code>(defun tmux-control--make-window-buffer (window-id ctrl)</code></li>
+<li>L7159: <code>(defun tmux-control--window-buffer-killed ()</code></li>
+<li>L7169: <code>(defun tmux-control--seed-window-buffer (buffer window-id)</code></li>
+<li>L7244: <code>(defun tmux-control--flush-window-buffers ()</code></li>
+<li>L7259: <code>(defun tmux-control--display-window-buffer (window-id)</code></li>
+<li>L7333: <code>(defun tmux-control--layout-strip-checksum (layout)</code></li>
+<li>L7343: <code>(defun tmux-control--parse-layout-int (s i)</code></li>
+<li>L7354: <code>(defun tmux-control--parse-layout-dims (s i)</code></li>
+<li>L7373: <code>(defun tmux-control--parse-layout-node (s i)</code></li>
+<li>L7402: <code>(defun tmux-control--parse-layout-list (s i close)</code></li>
+<li>L7419: <code>(defun tmux-control--parse-layout (layout)</code></li>
+<li>L7431: <code>(defun tmux-control--layout-leaves (node)</code></li>
+<li>L7444: <code>(defun tmux-control--run-tmux (args)</code></li>
+<li>L7476: <code>(defun tmux-control--window-state-command ()</code></li>
+<li>L7487: <code>(defun tmux-control--parse-window-state (lines)</code></li>
+<li>L7521: <code>(defun tmux-control--capture-pane-screen (pane)</code></li>
+<li>L7528: <code>(defun tmux-control--query-cursor (pane)</code></li>
+<li>L7554: <code>(defun tmux-control--pane-mode-line ()</code></li>
+<li>L7572: <code>(defun tmux-control--make-pane-buffer (pane-id leaf controller meta)</code></li>
+<li>L7655: <code>(defun tmux-control--eager-register-new-panes (controller layout)</code></li>
+<li>L7693: <code>(defun tmux-control--pane-buffer-killed ()</code></li>
+<li>L7701: <code>(defun tmux-control--pane-window-selected (frame)</code></li>
+<li>L7732: <code>(defun tmux-control--pane-screen-command (pane &amp;optional trailing)</code></li>
+<li>L7740: <code>(defun tmux-control--paint-seed (buffer text cursor cursor-visible</code></li>
+<li>L7763: <code>(defun tmux-control--seed-pane-buffer-sync (buffer)</code></li>
+<li>L7782: <code>(defun tmux-control--seed-pane-buffer-async (buffer controller)</code></li>
+<li>L7820: <code>(defun tmux-control--our-tiling-window-p (window controller)</code></li>
+<li>L7831: <code>(defun tmux-control--tiled-region-size (frame controller)</code></li>
+<li>L7874: <code>(defun tmux-control--collapse-tile-windows (keep)</code></li>
+<li>L7895: <code>(defun tmux-control--tile-arrange-node (node window panes collect)</code></li>
+<li>L7931: <code>(defun tmux-control--tile-arrange (controller tree panes)</code></li>
+<li>L7977: <code>(defun tmux-control--selected-pane-id (panes)</code></li>
+<li>L7981: <code>(defun tmux-control--tiling-controller ()</code></li>
+<li>L7994: <code>(defun tmux-control--flush-tiled-panes ()</code></li>
+<li>L8007: <code>(defun tmux-control--build-tiling (controller)</code></li>
+<li>L8029: <code>(defun tmux-control--build-tiling-callback (controller reply)</code></li>
+<li>L8048: <code>(defun tmux-control--build-tiling-apply (controller layout geometry)</code></li>
+<li>L8208: <code>(defun tmux-control--teardown-tiling (controller &amp;optional keep-windows)</code></li>
+<li>L8247: <code>(defun tmux-control-tile ()</code></li>
+<li>L8280: <code>(defun tmux-control--reassert-tiling-size (controller frame)</code></li>
+<li>L8300: <code>(defun tmux-control--on-frame-size-change (frame)</code></li>
+<li>L8316: <code>(defun tmux-control-untile ()</code></li>
+<li>L8379: <code>(defun tmux-control-toggle-tiling ()</code></li>
+<li>L8390: <code>(defun tmux-control--split-pane (flag)</code></li>
+<li>L8410: <code>(defun tmux-control-split-pane-right ()</code></li>
+<li>L8418: <code>(defun tmux-control-split-pane-below ()</code></li>
+<li>L8424: <code>(defun tmux-control-kill-pane ()</code></li>
+<li>L8436: <code>(provide 'tmux-control)</code></li>
+</ul></main></html>

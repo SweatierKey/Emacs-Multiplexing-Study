@@ -1,0 +1,469 @@
+# Indice del codice: detached
+
+Fonte: https://git.sr.ht/~niklaseklund/detached.el
+
+Revisione: `6b64d4d8064cee781e071e825857b442ea96c3d9`.
+
+
+## .dir-locals.el
+
+
+## detached-compile.el
+
+- L28: `(require 'compile)`
+- L29: `(require 'detached)`
+- L35: `(defcustom detached-compile-session-action`
+- L46: `(defun detached-compile (command &optional comint)`
+- L64: `(defun detached-compile-recompile (&optional edit-command)`
+- L79: `(defun detached-compile-kill ()`
+- L87: `(defun detached-compile-attach (session)`
+- L96: `(defun detached-compile-start-session (session)`
+- L104: `(defun detached-compile--start (_)`
+- L117: `(defun detached-compile--compilation-start (compilation-start &rest args)`
+- L147: `(defun detached-compile--replace-modesetter ()`
+- L157: `(defun detached-compile--compilation-detached-filter ()`
+- L166: `(defun detached-compile--compilation-eof-filter ()`
+- L182: `(defvar detached-compilation-mode-map`
+- L184: `(define-key map (kbd "C-c C-k") #'detached-compile-kill)`
+- L185: `(define-key map (kbd "C-c C-.") #'detached-describe-session)`
+- L186: `(define-key map (kbd detached-detach-key) #'detached-detach-session)`
+- L191: `(define-derived-mode detached-compilation-mode compilation-mode "Detached Compilation"`
+- L198: `(provide 'detached-compile)`
+
+## detached-consult.el
+
+- L31: `(require 'detached)`
+- L37: `(defcustom detached-consult-hidden-predicates nil`
+- L42: `(defcustom detached-consult-sources`
+- L194: `(defun detached-consult-session ()`
+- L204: `(provide 'detached-consult)`
+
+## detached-dired.el
+
+- L28: `(require 'dired)`
+- L29: `(require 'detached)`
+- L34: `(defun detached-dired-do-shell-command (dired-do-shell-command &rest args)`
+- L46: `(provide 'detached-dired)`
+
+## detached-eshell.el
+
+- L28: `(require 'detached)`
+- L29: `(require 'eshell)`
+- L30: `(require 'esh-mode)`
+- L31: `(require 'esh-ext)`
+- L32: `(require 'em-hist)`
+- L36: `(defcustom detached-eshell-session-action`
+- L47: `(defun detached-eshell-external-command (orig-fun &rest args)`
+- L62: `(defun detached-eshell-send-input (&optional detached)`
+- L72: `(defun detached-eshell-attach-session (session)`
+- L98: `(defun detached-eshell--get-dtach-process ()`
+- L116: `(defvar detached-eshell-mode-map`
+- L118: `(define-key map (kbd "<S-return>") #'detached-eshell-send-input)`
+- L119: `(define-key map (kbd "<C-return>") #'detached-eshell-attach-session)`
+- L120: `(define-key map (kbd "C-c C-.") #'detached-describe-session)`
+- L121: `(define-key map (kbd detached-detach-key) #'detached-detach-session)`
+- L126: `(define-minor-mode detached-eshell-mode`
+- L139: `(provide 'detached-eshell)`
+
+## detached-extra.el
+
+- L40: `(defun detached-extra-projectile-run-compilation (cmd &optional use-comint-mode)`
+- L50: `(defun detached-extra-dired-rsync (command _details)`
+- L59: `(defun detached-extra-alert-notification (session)`
+- L71: `(provide 'detached-extra)`
+
+## detached-init.el
+
+- L28: `(require 'subr-x)`
+- L64: `(defvar embark-general-map)`
+- L65: `(defvar embark-keymap-alist)`
+- L70: `(defcustom detached-init-block-list nil`
+- L75: `(defcustom detached-init-allow-list`
+- L81: `(defvar detached-embark-action-map`
+- L83: `(define-key map "a" #'detached-attach-session)`
+- L84: `(define-key map "c" #'detached-compile-session)`
+- L85: `(define-key map "d" #'detached-delete-session)`
+- L86: `(define-key map "i" #'detached-insert-session-command)`
+- L87: `(define-key map "f" #'detached-open-session-directory)`
+- L88: `(define-key map "k" #'detached-kill-session)`
+- L89: `(define-key map "r" #'detached-rerun-session)`
+- L90: `(define-key map "v" #'detached-view-session)`
+- L91: `(define-key map "w" #'detached-copy-session-command)`
+- L92: `(define-key map "W" #'detached-copy-session-output)`
+- L93: `(define-key map "=" #'detached-diff-session)`
+- L111: `(defun detached-init ()`
+- L127: `(defun detached-init--shell ()`
+- L132: `(defun detached-init--compile ()`
+- L137: `(defun detached-init--eshell ()`
+- L141: `(defun detached-init--org ()`
+- L146: `(defun detached-init--dired ()`
+- L151: `(defun detached-init--dired-rsync ()`
+- L156: `(defun detached-init--projectile ()`
+- L161: `(defun detached-init--vterm ()`
+- L166: `(defun detached-init--embark ()`
+- L172: `(defun detached-init--nano-modeline ()`
+- L180: `(defun detached-init--detached-list ()`
+- L188: `(defun detached-init--detached ()`
+- L196: `(provide 'detached-init)`
+
+## detached-list.el
+
+- L28: `(require 'detached)`
+- L29: `(require 'hl-line)`
+- L30: `(require 'imenu)`
+- L31: `(require 'tabulated-list)`
+- L35: `(defcustom detached-list-config`
+- L50: `(defcustom detached-list-display-buffer-action`
+- L57: `(defcustom detached-list-open-session-display-buffer-action`
+- L64: `(defcustom detached-list-filters nil`
+- L72: `(defcustom detached-list-session-identifier-function`
+- L78: `(defcustom detached-list-state-symbols`
+- L98: `(defun detached-list-imenu-index ()`
+- L109: `(defun detached-list-eldoc (_callback)`
+- L120: `(defun detached-list-initialize-session-directory (&optional all)`
+- L136: `(defun detached-list-quit ()`
+- L143: `(defun detached-list-remove-narrow-criterion ()`
+- L151: `(defun detached-list-widen ()`
+- L157: `(defun detached-list-detach-from-session (session)`
+- L167: `(defun detached-list-jump-to-directory (session)`
+- L173: `(defun detached-list-kill-session ()`
+- L188: `(defun detached-list-view-session (session)`
+- L196: `(defun detached-list-edit-and-run-session (session &optional toggle-suppress-output)`
+- L216: `(defun detached-list-rerun-session (session &optional toggle-session-mode)`
+- L236: `(defun detached-list-diff-marked-sessions ()`
+- L248: `(defun detached-list-open-session ()`
+- L260: `(defun detached-list-narrow-unique ()`
+- L275: `(defun detached-list-narrow-after-time (time-threshold)`
+- L294: `(defun detached-list-narrow-before-time (time-threshold)`
+- L313: `(defun detached-list-narrow-host (hostname)`
+- L334: `(defun detached-list-narrow-output (regexp)`
+- L346: `(defun detached-list-narrow-command (regexp)`
+- L366: `(defun detached-list-narrow-working-directory (regexp)`
+- L386: `(defun detached-list-narrow-session-directory (session-directory)`
+- L407: `(defun detached-list-narrow-annotation (regexp)`
+- L422: `(defun detached-list-narrow-localhost ()`
+- L431: `(defun detached-list-narrow-remotehost ()`
+- L440: `(defun detached-list-narrow-currenthost ()`
+- L452: `(defun detached-list-select-filter ()`
+- L467: `(defun detached-list-narrow-origin (origin)`
+- L491: `(defun detached-list-narrow-active ()`
+- L500: `(defun detached-list-narrow-inactive ()`
+- L509: `(defun detached-list-narrow-success ()`
+- L518: `(defun detached-list-narrow-failure ()`
+- L527: `(defun detached-list-mark-regexp (regexp)`
+- L545: `(defun detached-list-delete-session ()`
+- L560: `(defun detached-list-mark-session ()`
+- L567: `(defun detached-list-unmark-session ()`
+- L574: `(defun detached-list-unmark-sessions ()`
+- L580: `(defun detached-list-toggle-mark-session ()`
+- L588: `(defun detached-list-toggle-sessions ()`
+- L604: `(defun detached-list-revert ()`
+- L612: `(defun detached-list-sessions ()`
+- L630: `(defun detached-list-narrow-sessions (criteria)`
+- L642: `(defun detached-list--apply-filter (filter)`
+- L647: `(defun detached--revert-selection-change (&rest _)`
+- L651: `(defun detached-list--initialize-directory (directory)`
+- L657: `(defun detached--list-parse-time (time)`
+- L670: `(defun detached-list--db-update ()`
+- L676: `(defun detached-list--get-list-mode-buffer ()`
+- L683: `(defun detached-list--revert-sessions ()`
+- L689: `(defun detached-list--get-entry (session)`
+- L699: `(defun detached-list--get-format ()`
+- L706: `(defun detached-list--marked-session-p (session)`
+- L713: `(defun detached-list--attached-p (session)`
+- L724: `(defun detached-list--unmark-session (session)`
+- L734: `(defun detached-list--mark-session (session)`
+- L741: `(defun detached-list--restore-marks ()`
+- L751: `(defun detached-list--mark-identifier ()`
+- L756: `(defun detached-list--status-str (session)`
+- L792: `(defun detached-list--command-str (session)`
+- L799: `(defun detached-list--get-marked-or-current-sessions ()`
+- L804: `(defun detached-list--get-narrowed-sessions ()`
+- L817: `(defun detached--grep-sesssions-output (sessions regexp)`
+- L864: `(defvar detached-list-mode-map`
+- L866: `(define-key map (kbd "a") #'detached-edit-session-annotation)`
+- L867: `(define-key map (kbd "d") #'detached-list-delete-session)`
+- L868: `(define-key map (kbd "e") #'detached-edit-and-run-session)`
+- L869: `(define-key map (kbd "f") #'detached-list-select-filter)`
+- L870: `(define-key map (kbd "g") #'detached-list-revert)`
+- L871: `(define-key map (kbd "i") #'detached-list-initialize-session-directory)`
+- L872: `(define-key map (kbd "j") #'imenu)`
+- L873: `(define-key map (kbd "k") #'detached-list-kill-session)`
+- L874: `(define-key map (kbd "m") #'detached-list-mark-session)`
+- L876: `(define-key map (kbd "n a") #'detached-list-narrow-annotation)`
+- L877: `(define-key map (kbd "n c") #'detached-list-narrow-command)`
+- L878: `(define-key map (kbd "n d") #'detached-list-narrow-session-directory)`
+- L880: `(define-key map (kbd "n h h") #'detached-list-narrow-host)`
+- L881: `(define-key map (kbd "n h c") #'detached-list-narrow-currenthost)`
+- L882: `(define-key map (kbd "n h l") #'detached-list-narrow-localhost)`
+- L883: `(define-key map (kbd "n h r") #'detached-list-narrow-remotehost)`
+- L884: `(define-key map (kbd "n o") #'detached-list-narrow-output)`
+- L885: `(define-key map (kbd "n O") #'detached-list-narrow-origin)`
+- L887: `(define-key map (kbd "n s a") #'detached-list-narrow-active)`
+- L888: `(define-key map (kbd "n s f") #'detached-list-narrow-failure)`
+- L889: `(define-key map (kbd "n s i") #'detached-list-narrow-inactive)`
+- L890: `(define-key map (kbd "n s s") #'detached-list-narrow-success)`
+- L891: `(define-key map (kbd "n u") #'detached-list-narrow-unique)`
+- L892: `(define-key map (kbd "n w") #'detached-list-narrow-working-directory)`
+- L893: `(define-key map (kbd "n +") #'detached-list-narrow-after-time)`
+- L894: `(define-key map (kbd "n -") #'detached-list-narrow-before-time)`
+- L895: `(define-key map (kbd "q") #'detached-list-quit)`
+- L896: `(define-key map (kbd "r") #'detached-rerun-session)`
+- L897: `(define-key map (kbd "t") #'detached-list-toggle-mark-session)`
+- L898: `(define-key map (kbd "T") #'detached-list-toggle-sessions)`
+- L899: `(define-key map (kbd "u") #'detached-list-unmark-session)`
+- L900: `(define-key map (kbd "U") #'detached-list-unmark-sessions)`
+- L901: `(define-key map (kbd "v") #'detached-list-view-session)`
+- L902: `(define-key map (kbd "w") #'detached-copy-session-command)`
+- L903: `(define-key map (kbd "W") #'detached-copy-session-output)`
+- L904: `(define-key map (kbd "x") #'detached-list-detach-from-session)`
+- L905: `(define-key map (kbd "%") #'detached-list-mark-regexp)`
+- L906: `(define-key map (kbd "=") #'detached-list-diff-marked-sessions)`
+- L907: `(define-key map (kbd "-") #'detached-list-widen)`
+- L908: `(define-key map (kbd "!") #'detached-shell-command)`
+- L910: `(define-key map (kbd ". s") #'detached-describe-session)`
+- L911: `(define-key map (kbd ". d") #'detached-describe-duration)`
+- L912: `(define-key map (kbd "<backspace>") #'detached-list-remove-narrow-criterion)`
+- L913: `(define-key map (kbd "<return>") #'detached-list-open-session)`
+- L917: `(defun detached-list--mode-line-indicator ()`
+- L926: `(define-derived-mode detached-list-mode tabulated-list-mode "Detached List"`
+- L941: `(provide 'detached-list)`
+
+## detached-org.el
+
+- L29: `(require 'detached)`
+- L30: `(require 'ob-shell)`
+- L34: `(defcustom detached-org-session-action`
+- L45: `(defun detached-org-babel-sh (org-babel-sh-evaluate-fun &rest args)`
+- L71: `(provide 'detached-org)`
+
+## detached-shell.el
+
+- L28: `(require 'detached)`
+- L32: `(defcustom detached-shell-session-action`
+- L43: `(defun detached-shell-override-history (orig-fun &rest args)`
+- L55: `(defun detached-shell-save-history-on-kill ()`
+- L61: `(defun detached-shell-send-input (&optional detached)`
+- L72: `(defun detached-shell--create-input-sender (proc string)`
+- L82: `(defun detached-shell--comint-read-input-ring-advice (orig-fun &rest args)`
+- L98: `(defun detached-shell--save-history ()`
+- L107: `(define-key map (kbd "<S-return>") #'detached-shell-send-input)`
+- L108: `(define-key map (kbd "<C-return>") #'detached-shell-attach-session))`
+- L110: `(provide 'detached-shell)`
+
+## detached-vterm.el
+
+- L28: `(require 'detached)`
+- L41: `(defcustom detached-vterm-session-action`
+- L51: `(defun detached-vterm-send-input (&optional detached)`
+- L69: `(defun detached-vterm-attach (session)`
+- L95: `(defvar detached-vterm-mode-map`
+- L97: `(define-key map (kbd "<S-return>") #'detached-vterm-send-input)`
+- L98: `(define-key map (kbd "<C-return>") #'detached-vterm-attach)`
+- L99: `(define-key map (kbd "C-c C-.") #'detached-describe-session)`
+- L100: `(define-key map (kbd detached-detach-key) #'detached-detach-session)`
+- L105: `(define-minor-mode detached-vterm-mode`
+- L111: `(provide 'detached-vterm)`
+
+## detached.el
+
+- L46: `(require 'ansi-color)`
+- L47: `(require 'autorevert)`
+- L48: `(require 'comint)`
+- L49: `(require 'notifications)`
+- L50: `(require 'filenotify)`
+- L52: `(require 'simple)`
+- L53: `(require 'subr-x)`
+- L54: `(require 'tramp)`
+- L60: `(defcustom detached-session-directory`
+- L66: `(defcustom detached-db-directory`
+- L72: `(defcustom detached-dtach-program "dtach"`
+- L77: `(defcustom detached-tail-program "tail"`
+- L82: `(defcustom detached-grep-program "grep"`
+- L87: `(defcustom detached-tee-program "tee"`
+- L92: `(defcustom detached-script-program "script"`
+- L97: `(defcustom detached-shell-program shell-file-name`
+- L102: `(defcustom detached-session-context-lines 50`
+- L107: `(defcustom detached-show-session-context t`
+- L112: `(defcustom detached-terminal-data-command nil`
+- L125: `(defcustom detached-plain-text-commands nil`
+- L130: `(defcustom detached-annotation-format`
+- L143: `(defcustom detached-command-format`
+- L149: `(defcustom detached-shell-command-session-action`
+- L157: `(defcustom detached-session-command`
+- L163: `(defcustom detached-session-environment`
+- L169: `(defcustom detached-shell-command-initial-input t`
+- L177: `(defcustom detached-degraded-commands nil`
+- L182: `(defcustom detached-notification-function #'detached-state-transition-notifications-message`
+- L187: `(defcustom detached-detach-key "C-c C-d"`
+- L192: `(defcustom detached-filter-ansi-sequences t`
+- L197: `(defcustom detached-log-mode-hook '()`
+- L202: `(defcustom detached-shell-mode-filter-functions`
+- L209: `(defcustom detached-dtach-socket-creation-delay 1.0`
+- L214: `(defcustom detached-open-session-display-buffer-action`
+- L220: `(defcustom detached-session-info-buffer-action`
+- L228: `(defcustom detached-debug-enabled`
+- L236: `(defvar detached-session-map`
+- L238: `(define-key map "a" #'detached-edit-session-annotation)`
+- L239: `(define-key map "d" #'detached-detach-session)`
+- L240: `(define-key map "D" #'detached-describe-duration)`
+- L241: `(define-key map "e" #'detached-edit-and-run-session)`
+- L242: `(define-key map "k" #'detached-kill-session)`
+- L243: `(define-key map "r" #'detached-rerun-session)`
+- L244: `(define-key map "S" #'detached-describe-session)`
+- L245: `(define-key map "w" #'detached-copy-session-command)`
+- L246: `(define-key map "W" #'detached-copy-session-output)`
+- L418: `(defmacro detached-connection-local-variables (&rest body)`
+- L427: `(defmacro detached-with-session (session &rest body)`
+- L443: `(defun detached-shell-command (command &optional suppress-output)`
+- L467: `(defun detached-open-session (session)`
+- L480: `(defun detached-compile-session (session)`
+- L512: `(defun detached-edit-session-annotation (session)`
+- L524: `(defun detached-edit-and-run-session (session &optional toggle-session-mode)`
+- L547: `(defun detached-rerun-session (session &optional toggle-session-mode)`
+- L566: `(defun detached-describe-session ()`
+- L581: `(defun detached-describe-duration (session)`
+- L595: `(defun detached-attach-session (session)`
+- L608: `(defun detached-copy-session-output (session)`
+- L621: `(defun detached-copy-session-command (session)`
+- L628: `(defun detached-insert-session-command (session)`
+- L636: `(defun detached-delete-session (session)`
+- L646: `(defun detached-kill-session (session &optional delete)`
+- L662: `(defun detached-view-session (session)`
+- L686: `(defun detached-diff-session (session1 session2)`
+- L715: `(defun detached-open-session-directory (session)`
+- L726: `(defun detached-detach-session ()`
+- L738: `(defun detached-delete-sessions (&optional all-hosts)`
+- L753: `(defun detached-create-session (command)`
+- L780: `(defun detached--start-session-process (session start-command)`
+- L787: `(defun detached-session-candidates (sessions)`
+- L810: `(defun detached-session-annotation (item)`
+- L827: `(defun detached-initialize-sessions ()`
+- L861: `(defun detached-valid-session (session)`
+- L873: `(defun detached-session-exit-code-status (session)`
+- L886: `(defun detached-state-transitionion-echo-message (session)`
+- L894: `(defun detached-state-transition-notifications-message (session)`
+- L908: `(defun detached-view-dwim (session)`
+- L919: `(defun detached-get-sessions ()`
+- L930: `(defun detached-shell-attach-session (session)`
+- L949: `(defun detached-shell-command-attach-session (session)`
+- L965: `(defun detached-start-shell-command-session (session)`
+- L982: `(defun detached-start-session (session)`
+- L993: `(defun detached-watch-session (session)`
+- L1008: `(cl-defun detached-session-start-command (session &key type)`
+- L1048: `(cl-defun detached-session-attach-command (session &key type)`
+- L1074: `(defun detached-session-kill (session)`
+- L1107: `(defun detached-session-output (session)`
+- L1123: `(defun detached-session-state (session)`
+- L1127: `(defun detached-session-status (session)`
+- L1133: `(defun detached-session-host-name (session)`
+- L1139: `(defun detached-session-start-time (session)`
+- L1143: `(defun detached-session-end-time (session)`
+- L1147: `(defun detached-session-duration (session)`
+- L1154: `(defun detached-session-host-type (session)`
+- L1160: `(defun detached-session-exit-code (session)`
+- L1166: `(defun detached-session-id (session)`
+- L1170: `(defun detached-session-identifier (session)`
+- L1178: `(defun detached-session-view-function (session)`
+- L1184: `(defun detached-session-attach-function (session)`
+- L1190: `(defun detached-session-run-function (session)`
+- L1196: `(defun detached-session-callback-function (session)`
+- L1202: `(defun detached-session-environment-property (session property)`
+- L1206: `(defun detached-session-status-function (session)`
+- L1212: `(defun detached-session-command (session)`
+- L1216: `(defun detached-session-directory (session)`
+- L1220: `(defun detached-session-working-directory (session)`
+- L1224: `(defun detached-session-in-context ()`
+- L1232: `(defun detached-session-duration-statistics (session)`
+- L1242: `(defun detached-session-validated-p (session)`
+- L1248: `(defun detached-session-failed-p (session)`
+- L1252: `(defun detached-session-remotehost-p (session)`
+- L1256: `(defun detached-session-localhost-p (session)`
+- L1260: `(defun detached-session-started-p (session)`
+- L1264: `(defun detached-session-active-p (session)`
+- L1268: `(defun detached-session-inactive-p (session)`
+- L1272: `(defun detached-session-degraded-p (session)`
+- L1276: `(defun detached-session-uninitialized-p (session)`
+- L1281: `(defun detached-session-initialized-p (session)`
+- L1286: `(defun detached-session-terminal-data-p (session)`
+- L1291: `(defun detached-session-watched-p (session)`
+- L1298: `(defun detached-degraded-command-p (command)`
+- L1307: `(defun detached-metadata ()`
+- L1314: `(defun detached-select-host-session ()`
+- L1324: `(defun detached-completing-read (sessions)`
+- L1344: `(defun detached-command-str (session max-length)`
+- L1358: `(defun detached--determine-session-state (session)`
+- L1366: `(defun detached--valid-dtach-executable-p (session)`
+- L1374: `(defun detached--state-transition-p (session)`
+- L1380: `(defun detached--session-accessible-p (session)`
+- L1385: `(defun detached--watched-session-directory-p (directory)`
+- L1391: `(defun detached--session-local-p (session)`
+- L1395: `(defun detached--session-missing-p (session)`
+- L1401: `(defun detached--session-header (session)`
+- L1417: `(defun detached--session-deduplicate (sessions)`
+- L1439: `(defun detached--decode-session (item)`
+- L1443: `(defun detached--create-session-validator (session)`
+- L1467: `(defun detached--session-file (session file &optional local)`
+- L1484: `(defun detached--cleanup-host-sessions (hostname)`
+- L1491: `(defun detached--maybe-watch-session (session)`
+- L1498: `(defun detached--create-session-directory ()`
+- L1504: `(defun detached--get-working-directory ()`
+- L1512: `(defun detached--get-session-directory ()`
+- L1543: `(defun detached--detach-from-comint-process ()`
+- L1552: `(defun detached--quit-session-buffer ()`
+- L1560: `(defun detached--get-duration-statistics (sessions)`
+- L1572: `(defun detached-shell--attach-input-sender (proc _string)`
+- L1581: `(defun detached--db-initialize ()`
+- L1594: `(defun detached--db-session-version ()`
+- L1601: `(defun detached--db-insert-entry (session)`
+- L1607: `(defun detached--db-remove-entry (session)`
+- L1617: `(defun detached--db-update-entry (session)`
+- L1623: `(defun detached--db-get-session (id)`
+- L1627: `(defun detached--db-get-sessions ()`
+- L1631: `(defun detached--db-update-sessions ()`
+- L1639: `(defun detached--read-detached-emacsen ()`
+- L1648: `(defun detached--register-detached-emacs ()`
+- L1658: `(defun detached--primary-detached-emacs-p (session)`
+- L1677: `(defun detached--update-detached-emacsen ()`
+- L1683: `(defun detached--active-detached-emacsen ()`
+- L1696: `(defun detached--get-initialized-session (session)`
+- L1705: `(defun detached--verify-db-compatibility ()`
+- L1724: `(defun detached--decode-version-string (version)`
+- L1737: `(defun detached--dtach-arg ()`
+- L1745: `(defun detached--session-state-transition-update (session &optional approximate)`
+- L1769: `(defun detached--detached-command (session)`
+- L1797: `(defun detached--get-terminal-data-command ()`
+- L1805: `(defun detached--text-mode (command)`
+- L1813: `(defun detached--host ()`
+- L1820: `(defun detached--update-session-time (session &optional approximate)`
+- L1836: `(defun detached--create-id (command)`
+- L1841: `(defun detached--env-message-filter (str)`
+- L1845: `(defun detached--dtach-eof-message-filter (str)`
+- L1849: `(defun detached--dtach-detached-message-filter (str)`
+- L1853: `(defun detached--watch-session-directory (session-directory)`
+- L1863: `(defun detached-session-directory-event (event)`
+- L1916: `(defun detached--initialize-session (session)`
+- L1933: `(defun detached--uninitialized-sessions ()`
+- L1938: `(defun detached--db-directory-event (event)`
+- L1959: `(defun detached--annotation-widths (sessions annotation-format)`
+- L1963: `(defun detached--annotation-width (sessions annotation)`
+- L1974: `(defun detached--generate-buffer (name reuse-p &optional number)`
+- L1990: `(defun detached--metadata-git-branch ()`
+- L2001: `(defun detached--metadata-str (session)`
+- L2011: `(defun detached--duration-str (session)`
+- L2017: `(defun detached--duration-str2 (duration)`
+- L2027: `(defun detached--creation-str (session)`
+- L2035: `(defun detached--size-str (session)`
+- L2042: `(defun detached--status-str (session)`
+- L2049: `(defun detached--state-str (session)`
+- L2058: `(defun detached--working-dir-str (session)`
+- L2066: `(defun detached--host-str (session)`
+- L2072: `(defvar detached-shell-mode-map`
+- L2074: `(define-key map (kbd detached-detach-key) #'detached-detach-session)`
+- L2075: `(define-key map (kbd "C-c C-.") #'detached-describe-session)`
+- L2080: `(define-minor-mode detached-shell-mode`
+- L2093: `(defvar detached-log-mode-map`
+- L2095: `(define-key map (kbd detached-detach-key) #'detached-detach-session)`
+- L2096: `(define-key map (kbd "C-c C-.") #'detached-describe-session)`
+- L2101: `(define-derived-mode detached-log-mode nil "Detached Log"`
+- L2207: `(provide 'detached)`

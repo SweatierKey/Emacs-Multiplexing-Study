@@ -1,0 +1,106 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: terminal</h1>
+<p>Fonte: https://git.savannah.gnu.org/cgit/emacs.git</p>
+<p>Revisione: <code>30.1</code>.</p>
+<h2>terminal.el</h2>
+<ul>
+<li>L46: <code>(require 'ehelp)</code></li>
+<li>L47: <code>(require 'shell)</code></li>
+<li>L54: <code>(defcustom terminal-escape-char ?\C-^</code></li>
+<li>L63: <code>(defcustom terminal-scrolling t ;;&gt;&gt; Setting this to t sort-of defeats my whole aim in writing this package...</code></li>
+<li>L70: <code>(defcustom terminal-more-processing t</code></li>
+<li>L78: <code>(defcustom terminal-redisplay-interval 5000</code></li>
+<li>L89: <code>(defvar terminal-meta-map nil)</code></li>
+<li>L93: <code>(define-key map [t] #'te-pass-through)</code></li>
+<li>L96: <code>(defvar terminal-map nil)</code></li>
+<li>L102: <code>(define-key map [menu-bar] (make-sparse-keymap))</code></li>
+<li>L103: <code>(define-key map [t] #'te-pass-through)</code></li>
+<li>L104: <code>(define-key map [switch-frame] #'handle-switch-frame)</code></li>
+<li>L105: <code>(define-key map "\e" terminal-meta-map)</code></li>
+<li>L106: <code>;;(define-key map "\C-l"</code></li>
+<li>L110: <code>(defvar terminal-escape-map nil)</code></li>
+<li>L114: <code>(define-key map [t] #'undefined)</code></li>
+<li>L117: <code>(define-key map s #'digit-argument)))</code></li>
+<li>L118: <code>(define-key map "b" #'switch-to-buffer)</code></li>
+<li>L119: <code>(define-key map "o" #'other-window)</code></li>
+<li>L120: <code>(define-key map "e" #'te-set-escape-char)</code></li>
+<li>L121: <code>(define-key map "\C-l" #'redraw-display)</code></li>
+<li>L122: <code>(define-key map "\C-o" #'te-flush-pending-output)</code></li>
+<li>L123: <code>(define-key map "m" #'te-toggle-more-processing)</code></li>
+<li>L124: <code>(define-key map "x" #'te-escape-extended-command)</code></li>
+<li>L126: <code>(define-key map "w" #'te-edit)</code></li>
+<li>L127: <code>(define-key map "?" #'te-escape-help)</code></li>
+<li>L128: <code>(define-key map (char-to-string help-char) #'te-escape-help)</code></li>
+<li>L155: <code>(defvar terminal-more-break-map nil)</code></li>
+<li>L159: <code>(define-key map [t] #'te-more-break-unread)</code></li>
+<li>L160: <code>(define-key map (char-to-string help-char) #'te-more-break-help)</code></li>
+<li>L161: <code>(define-key map " " #'te-more-break-resume)</code></li>
+<li>L162: <code>(define-key map "\C-l" #'redraw-display)</code></li>
+<li>L163: <code>(define-key map "\C-o" #'te-more-break-flush-pending-output)</code></li>
+<li>L165: <code>;(define-key map "\^?" #'te-more-break-flush-pending-output) ;DEL</code></li>
+<li>L166: <code>(define-key map "\r" #'te-more-break-advance-one-line)</code></li>
+<li>L182: <code>(defvar te-more-old-local-map nil)</code></li>
+<li>L199: <code>(defun te-escape ()</code></li>
+<li>L237: <code>(defun te-escape-help ()</code></li>
+<li>L274: <code>(defun te-escape-extended-command ()</code></li>
+<li>L290: <code>(defun te-escape-extended-command-unread ()</code></li>
+<li>L297: <code>(defun te-set-escape-char (c)</code></li>
+<li>L309: <code>(defun te-stuff-string (string)</code></li>
+<li>L317: <code>(defun te-set-output-log (name)</code></li>
+<li>L338: <code>(defun te-tofu ()</code></li>
+<li>L344: <code>(defun te-toggle (sym arg)</code></li>
+<li>L350: <code>(defun te-toggle-more-processing (arg)</code></li>
+<li>L356: <code>(defun te-toggle-scrolling (arg)</code></li>
+<li>L361: <code>(defun te-enable-more-processing ()</code></li>
+<li>L366: <code>(defun te-disable-more-processing ()</code></li>
+<li>L371: <code>(defun te-do-scrolling ()</code></li>
+<li>L376: <code>(defun te-do-wrapping ()</code></li>
+<li>L382: <code>(defun te-set-redisplay-interval (arg)</code></li>
+<li>L398: <code>(defun te-more-break-unread ()</code></li>
+<li>L410: <code>(defun te-more-break-resume ()</code></li>
+<li>L417: <code>(defun te-more-break-help ()</code></li>
+<li>L436: <code>(defun te-more-break-advance-one-line ()</code></li>
+<li>L442: <code>(defun te-more-break-flush-pending-output ()</code></li>
+<li>L449: <code>(defun te-flush-pending-output ()</code></li>
+<li>L468: <code>(defun te-pass-through ()</code></li>
+<li>L499: <code>(defun te-set-window-start ()</code></li>
+<li>L512: <code>(defun te-pending-output-length ()</code></li>
+<li>L524: <code>(defvar terminal-edit-map nil)</code></li>
+<li>L528: <code>(define-key terminal-edit-map "\C-c\C-c" #'terminal-cease-edit))</code></li>
+<li>L533: <code>(defun terminal-edit-mode ()</code></li>
+<li>L544: <code>(defun te-edit ()</code></li>
+<li>L556: <code>(defun terminal-cease-edit ()</code></li>
+<li>L601: <code>(defun te-more-break ()</code></li>
+<li>L634: <code>(defun te-more-break-unwind ()</code></li>
+<li>L654: <code>(defun te-set-more-count (newline)</code></li>
+<li>L678: <code>(defun te-newline ()</code></li>
+<li>L703: <code>(defun te-move-to-position ()</code></li>
+<li>L718: <code>(defun te-clear-rest-of-line ()</code></li>
+<li>L726: <code>(defun te-clear-rest-of-screen ()</code></li>
+<li>L736: <code>(defun te-clear-screen ()</code></li>
+<li>L750: <code>(defun te-insert-lines ()</code></li>
+<li>L767: <code>(defun te-delete-lines ()</code></li>
+<li>L784: <code>(defun te-beginning-of-line ()</code></li>
+<li>L788: <code>(defun te-backward-char ()</code></li>
+<li>L793: <code>(defun te-forward-char ()</code></li>
+<li>L800: <code>(defun te-delete ()</code></li>
+<li>L808: <code>(defun te-beep ()</code></li>
+<li>L813: <code>(defun te-insert-spaces ()</code></li>
+<li>L825: <code>(defun te-delete-char ()</code></li>
+<li>L842: <code>(defun te-losing-unix ()</code></li>
+<li>L846: <code>(defun te-output-tab ()</code></li>
+<li>L858: <code>(defun te-down-vertically-or-scroll ()</code></li>
+<li>L883: <code>(defun te-filter (process string)</code></li>
+<li>L904: <code>(defun te-process-output (preemptible)</code></li>
+<li>L1004: <code>(defun te-get-char ()</code></li>
+<li>L1025: <code>(defun te-redisplay-if-necessary (length)</code></li>
+<li>L1033: <code>(defun te-update-pending-output-display ()</code></li>
+<li>L1045: <code>(defun te-sentinel (process message)</code></li>
+<li>L1068: <code>(defun terminal-emulator (buffer program args &amp;optional width height)</code></li>
+<li>L1168: <code>(defun te-parse-program-and-args (s)</code></li>
+<li>L1190: <code>(defun terminal-mode ()</code></li>
+<li>L1235: <code>(defun te-quote-arg-for-sh (string)</code></li>
+<li>L1266: <code>(defun te-create-terminfo ()</code></li>
+<li>L1308: <code>(defun te-create-termcap ()</code></li>
+<li>L1338: <code>(defun te-tic-sentinel (_proc state-change)</code></li>
+<li>L1344: <code>(provide 'terminal)</code></li>
+</ul></main></html>

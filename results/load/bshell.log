@@ -1,0 +1,11 @@
+{"status":"loaded","feature":"bshell","library":"/home/admin/Emacs-Multiplexing-Study/sources/bshell/bshell.el","commands":["bshell-display-all","bshell-jump-directory","bshell-list","bshell-new","bshell-rename","bshell-switch","bshell-switch-by-working-directory","bshell-toggle-cycle-method","bshell-toggle-include-frame-windows"]}
+STDERR:
+Created function ‘bshell-new’
+Created function ‘bshell-switch’
+Created function ‘bshell-toggle-cycle-method’
+Created function ‘bshell-toggle-include-frame-windows’
+Created function ‘bshell-list’
+Created function ‘bshell-rename’
+Created function ‘bshell-display-all’
+Created function ‘bshell-jump-directory’
+Created function ‘bshell-switch-by-working-directory’

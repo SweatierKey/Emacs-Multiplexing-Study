@@ -1,0 +1,141 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>multi-buffer</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://gitlab.com/vslavkin/multi-buffer.el">Sorgente upstream</a>. Revisione: <code>4459d83bb0e2a5399d5cace0016f13778a1f5869</code>.</p>
+<h2>Funzionamento</h2>
+<p>Piccolo progetto GitLab: minor mode che rinomina per major-mode e indice e aggiorna gli indici alla chiusura; manca un launcher/cycler proprio.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>Abilitato con eat-mode-hook nel profilo; poi M-x eat. Il README propone wrapper personalizzati, che non vengono spacciati per comandi predefiniti.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>error</code>.</li>
+<li><a href="../code-index/multi-buffer.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/multi-buffer.log">Log del caricamento</a>.</li>
+</ul>
+<p>Errore di caricamento osservato (non necessariamente difetto del progetto):</p>
+<pre><code class="language-text">Loading file /home/admin/Emacs-Multiplexing-Study/sources/multi-buffer/multi-buffer.el failed to provide feature ‘multi-buffer’
+</code></pre>
+<h3>Scenario multi-buffer: passed</h3>
+<p><a href="../../results/multi-buffer.json">Esito e snapshot</a> · <a href="../../results/multi-buffer-keys.json">Traccia dei tasti</a> · <a href="../../recordings/multi-buffer.cast">Registrazione asciinema</a> · <a href="../../index.html#multi-buffer">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>eat</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.73</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.93</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.93</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.13</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.13</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.33</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.13</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.43</td>
+<td><code>eat</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.93</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.25</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.45</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.45</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.65</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.65</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.05</td>
+<td><code>*eat 1*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.45</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.87</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.07</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.77</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.97</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.67</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.17</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.37</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

@@ -1,0 +1,52 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: with-editor</h1>
+<p>Fonte: https://github.com/magit/with-editor.git</p>
+<p>Revisione: <code>7bec41144ea197961c76c769cfc0acaf689ebac0</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>lisp/with-editor.el</h2>
+<ul>
+<li>L48: <code>;;   (keymap-global-set "&lt;remap&gt; &lt;async-shell-command&gt;"</code></li>
+<li>L50: <code>;;   (keymap-global-set "&lt;remap&gt; &lt;shell-command&gt;"</code></li>
+<li>L85: <code>(require 'cl-lib)</code></li>
+<li>L86: <code>(require 'compat)</code></li>
+<li>L87: <code>(require 'cond-let)</code></li>
+<li>L88: <code>(require 'llama)</code></li>
+<li>L89: <code>(require 'server)</code></li>
+<li>L90: <code>(require 'shell)</code></li>
+<li>L109: <code>(defun with-editor-locate-emacsclient ()</code></li>
+<li>L125: <code>(defun with-editor-locate-emacsclient-1 (path depth)</code></li>
+<li>L151: <code>(defun with-editor-emacsclient-version (exec)</code></li>
+<li>L156: <code>(defun with-editor-emacsclient-path ()</code></li>
+<li>L179: <code>(defcustom with-editor-emacsclient-executable (with-editor-locate-emacsclient)</code></li>
+<li>L185: <code>(defcustom with-editor-sleeping-editor "\</code></li>
+<li>L235: <code>(defcustom with-editor-finish-query-functions nil</code></li>
+<li>L249: <code>(defcustom with-editor-cancel-query-functions nil</code></li>
+<li>L263: <code>(defcustom with-editor-mode-lighter " WE"</code></li>
+<li>L285: <code>(defcustom with-editor-shell-command-use-emacsclient t</code></li>
+<li>L340: <code>(defun with-editor-finish (force)</code></li>
+<li>L358: <code>(defun with-editor-cancel (force)</code></li>
+<li>L378: <code>(defun with-editor-return (cancel)</code></li>
+<li>L419: <code>(defvar-keymap with-editor-mode-map</code></li>
+<li>L430: <code>(define-minor-mode with-editor-mode</code></li>
+<li>L448: <code>(defun with-editor-kill-buffer-noop ()</code></li>
+<li>L470: <code>(defun with-editor-usage-message ()</code></li>
+<li>L484: <code>(defmacro with-editor (&amp;rest body)</code></li>
+<li>L499: <code>(defmacro with-editor* (envvar &amp;rest body)</code></li>
+<li>L512: <code>(defun with-editor--setup ()</code></li>
+<li>L557: <code>(defun with-editor-server-window ()</code></li>
+<li>L602: <code>(cl-defun make-process@with-editor-process-filter</code></li>
+<li>L642: <code>(defun with-editor-set-process-filter (process filter)</code></li>
+<li>L669: <code>(defun with-editor-sleeping-editor-filter (process string)</code></li>
+<li>L725: <code>(defun with-editor-process-filter</code></li>
+<li>L748: <code>(cl-defun with-editor-export-editor</code></li>
+<li>L831: <code>(defun with-editor-export-git-editor (&amp;optional process interactive)</code></li>
+<li>L841: <code>(defun with-editor-export-hg-editor (&amp;optional process interactive)</code></li>
+<li>L850: <code>(defun with-editor-output-filter (string)</code></li>
+<li>L854: <code>(defun with-editor-emulate-terminal (process string)</code></li>
+<li>L863: <code>(cl-defun with-editor-read-envvar</code></li>
+<li>L873: <code>(define-minor-mode shell-command-with-editor-mode</code></li>
+<li>L892: <code>(defun with-editor-async-shell-command</code></li>
+<li>L915: <code>(defun with-editor-shell-command</code></li>
+<li>L926: <code>(defun with-editor-shell-command-read-args (prompt &amp;optional async)</code></li>
+<li>L976: <code>(defun with-editor-debug ()</code></li>
+<li>L1039: <code>(provide 'with-editor)</code></li>
+</ul></main></html>

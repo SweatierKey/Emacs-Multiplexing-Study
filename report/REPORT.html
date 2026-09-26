@@ -1,0 +1,149 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="style.css"><main><a href="../index.html">← Catalogo e video</a><h1>Terminal emulator e multiplexer per Emacs</h1>
+<p>Studio del 26 settembre 2026. Il risultato è un catalogo ampio con snapshot dei sorgenti, analisi architetturali, prove osservabili e un laboratorio riproducibile. <strong>Non è una dimostrazione di completezza su tutti i progetti mai creati, né una certificazione end-to-end di tutte le voci del catalogo.</strong> Progetti cancellati, non indicizzati, privati o citati soltanto in configurazioni personali possono mancare. Le voci senza video lo dichiarano esplicitamente.</p>
+<p>Aprire <a href="../index.html">il catalogo con i player</a>. I conteggi aggiornati sono generati dai risultati in <a href="summary.json">summary.json</a>; la tabella completa e leggibile anche su GitHub è <a href="CATALOGUE.html">CATALOGUE.md</a>. Non sommare dipendenze, fork e alias per ottenere un presunto numero di emulatori indipendenti.</p>
+<h2>Risultati che servono a scegliere un workflow</h2>
+<p>Per lavorare alternando più SSH, molti progetti non richiedono un layout con pannelli: un terminale per buffer e il normale <code>C-x b</code> bastano. I gestori aggiungono nomi, scope per progetto, cycling, popup o layout. Le prove riuscite verificano che la shell del server web conservi una variabile mentre si lavora sul server db e che la si ritrovi tornando indietro.</p>
+<table>
+<thead>
+<tr>
+<th>Esigenza</th>
+<th>Famiglie/progetti da confrontare</th>
+<th>Cosa dimostra questo studio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Terminale interattivo nel buffer</td>
+<td>term/ansi-term, Eat, vterm, Ghostel, Ebb, Alacritty, Kuro, Cooked, MisTTY, Coterm</td>
+<td>Due SSH, output riconoscibile, ritorno alla stessa shell; pager nei profili appropriati</td>
+</tr>
+<tr>
+<td>Creare e ritrovare buffer</td>
+<td>multi-term, multi-vterm, multi-buf, multi-buffer, term-manager, term-control, vtermux</td>
+<td>Scenario registrato e modalità effettiva nelle snapshot</td>
+</tr>
+<tr>
+<td>Layout e finestre</td>
+<td>ghostel-mux, tab-bar, ElScreen, Eyebrowse</td>
+<td>Cambio contesto mantenendo i processi; nessuna persistenza dopo chiusura dedotta dal layout</td>
+</tr>
+<tr>
+<td>Riattaccare processi dopo l'uscita di Emacs</td>
+<td>tmux annidato in vterm, tmux-control, term-sessions/zmx</td>
+<td>Chiusura reale di Emacs, nuovo processo Emacs e recupero della variabile della shell originale</td>
+</tr>
+<tr>
+<td>Richiamare velocemente una shell</td>
+<td>shell-pop, vterm-toggle, eshell-toggle, popterm, toggle-term, term-toggle</td>
+<td>Apertura/selezione con le differenze strutturali dichiarate nei copioni</td>
+</tr>
+<tr>
+<td>Amministrazione con output lineare</td>
+<td>shell, Eshell, friendly-shell, better-shell, multi-shell</td>
+<td>Baseline utili; non presentati come emulatori VT completi</td>
+</tr>
+<tr>
+<td>Controllare terminali esterni</td>
+<td>emamux, tmux.el, tmuxmacs, turnip, screensend, zellij.el</td>
+<td>emamux dimostrato come controller; tmux-view come viewer. Gli altri hanno analisi/probe senza attribuire un renderer in-buffer inesistente</td>
+</tr>
+</tbody>
+</table>
+<p>La distinzione importante è <strong>chi possiede il processo</strong>. Nei terminali ordinari il processo dipende da Emacs; un gestore di finestre può soltanto conservarne la visibilità mentre Emacs rimane vivo. Nei test di persistenza il processo è posseduto da un server tmux o zmx separato. Il riavvio di Emacs è realmente avvenuto, non è una semplice chiusura del buffer.</p>
+<h2>Metodo di studio del codice</h2>
+<p>Le revisioni sono elencate in <a href="../research/source-lock.json">source-lock.json</a>. Il bundle completo contiene il codice acquisito, non solo link a HEAD mobili. Per ogni progetto la scheda riporta architettura, utilizzo, limiti, stato del caricamento e risultato delle prove disponibili. Gli <a href="code-index/term.html">indici</a> danno punti di ingresso, <code>require</code>, opzioni e keymap con numeri di riga; sono generati automaticamente e <strong>non sostituiscono una revisione manuale di ogni riga</strong>.</p>
+<p>La lettura architetturale si è concentrata su creazione del processo/PTY, parser, aggiornamento del buffer, routing dei tasti, registro delle sessioni e durata dei processi. Gli estratti di supporto sono in <code>research/review-*.txt</code>. Non è un audit di sicurezza, né una prova formale o una revisione completa di tutti i test upstream.</p>
+<p>Esempi concreti nel codice incluso:</p>
+<ul>
+<li><code>sources/vterm/vterm-module.c</code>: <code>vterm_input_write</code> alimenta libvterm; le celle sono lette attraverso <code>vterm_screen_get_cell</code>. Il modulo registra l'interfaccia Lisp in <code>emacs_module_init</code>.</li>
+<li><code>sources/alacritty/src/lib.rs</code>: il codice dello snapshot affida il PTY a Emacs e riceve output tramite filtro; il modulo Rust gestisce <code>alacritty_terminal</code>. Non va descritto come finestra dell'applicazione Alacritty inglobata.</li>
+<li><code>sources/cooked/src/lib.rs</code> e moduli <code>pty</code>, <code>session</code>, <code>emu</code>: il core registra funzioni Lisp e mantiene stato del processo e degli aggiornamenti; il comportamento dei tasti cambia quando il processo richiede input raw.</li>
+<li><code>sources/kuro/rust-core/src/parser.rs</code>, <code>ffi/bridge/render.rs</code> e <code>emacs-lisp/rendering/</code>: parsing e trasporto/rendering sono livelli distinti.</li>
+<li><code>sources/ghostel/src/GhostelTerm.zig</code>, <code>Renderer.zig</code>, <code>PosixPtyProcess.zig</code> e Lisp: backend terminale, resa e processo sono separati. Il test usa il modulo della release corrispondente.</li>
+<li><code>sources/libgterm/src/gterm.zig</code>: renderer che percorre le celle dello schermo Ghostty. È un progetto separato da Ghostel anche se usa la stessa famiglia di motore.</li>
+<li><code>sources/mistty/mistty.el</code>: buffer di lavoro, buffer terminale, sincronizzazione e passaggio allo schermo intero spiegano perché editarne l'input non equivale a inviare ogni tasto direttamente al PTY.</li>
+<li><code>sources/multi-buffer/multi-buffer.el</code>: rinomina e registro per major-mode, senza launcher/cycler proprio. Lo snapshot non fornisce la feature omonima; il profilo dimostrativo usa <code>load</code> esplicito.</li>
+<li><code>sources/tmux-control/</code> e <code>sources/tmux-control-mode/</code>: entrambi usano il protocollo di controllo tmux ma hanno renderer e UI diversi. Il secondo fornisce <code>tmux-cc</code>, nome usato anche da un terzo progetto di wcy123: il probe controlla la provenienza della libreria.</li>
+</ul>
+<h2>Scenario amministratore di sistema</h2>
+<p>Il laboratorio avvia due <code>sshd</code> non privilegiati su <code>127.0.0.1</code>, porte 22461 e 22462, con identità host fissata e chiavi effimere del test. Alias: <code>lab-web</code> e <code>lab-db</code>. Sono <strong>due endpoint SSH reali sullo stesso host e kernel</strong>, non due macchine indipendenti. La shell forzata presenta fixture deterministiche: <code>status.txt</code> e <code>service.log</code>. Non vengono usate credenziali dell'utente e non si modifica <code>~/.ssh</code>.</p>
+<p>Il workflow comune è:</p>
+<ol>
+<li>Avviare Emacs <code>-Q -nw</code> con il profilo del progetto. Vertico e Marginalia sono caricati e abilitati prima di ogni comando.</li>
+<li>Aprire il terminale attraverso <code>M-x</code> e i prompt reali, senza chiamate Lisp nascoste per costruire la demo.</li>
+<li>Digitare <code>lab-ssh lab-web</code>, quindi <code>cat status.txt; tail -n 3 service.log</code>.</li>
+<li>Conservare <code>STUDY_KEEP=web-session-alive</code> nella shell remota.</li>
+<li>Creare una seconda sessione con il comando/prefisso appropriato; collegarsi a <code>lab-db</code> e controllarne stato e log.</li>
+<li>Tornare al primo terminale con il comando del pacchetto o <code>C-x b</code>; <code>printenv STUDY_KEEP</code> deve produrre la variabile precedente.</li>
+<li>Dove il profilo è un emulatore completo, aprire <code>less service.log</code>, uscire con <code>q</code> e verificare un nuovo output della shell.</li>
+<li>Nei copioni specifici tmux/zmx, uscire da Emacs, verificare la sessione esterna e riattaccarsi da un altro Emacs.</li>
+</ol>
+<p><code>passed</code> significa che le asserzioni di quello scenario sono riuscite. Non significa compatibilità universale con ncurses, Unicode complesso, mouse, immagini, clipboard, latenza di rete, TRAMP, resize arbitrari o perdita di connettività. Nessuna classifica di throughput è ricavata da queste registrazioni. I confronti prestazionali pubblicati da upstream/Reddit non sono stati riutilizzati come misure nostre.</p>
+<p><img alt="Schermo vterm ricostruito dal cast" src="vterm-replayed.png" /></p>
+<p>Fotogramma ricostruito dagli eventi reali del cast con pyte e FFmpeg; mostra il ritorno alla shell web e l’uscita dal pager. La registrazione completa è nel catalogo.</p>
+<h2>Tasti: cosa è davvero predefinito</h2>
+<p>Non sono state create rimappature globali per uniformare artificialmente i progetti. Quando il pacchetto non assegna un binding globale, si usa <code>M-x nome-comando RET</code>: questo è un uso umano dei comandi pubblici, non un'interfaccia appositamente costruita. Gli hook e le opzioni necessarie sono visibili in <code>scripts/scenarios.py</code> e <code>config/init.el</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Contesto</th>
+<th>Sequenza osservata o usata</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nuova istanza vterm/Eat/Ghostel/MisTTY</td>
+<td><code>C-u M-x … RET</code></td>
+</tr>
+<tr>
+<td>Più shell comint</td>
+<td><code>C-u M-x shell RET</code>, poi nome del nuovo buffer</td>
+</tr>
+<tr>
+<td>term/ansi-term</td>
+<td><code>C-c C-j</code> verso editing Emacs, <code>C-c C-k</code> verso input caratteri</td>
+</tr>
+<tr>
+<td>Cooked con input remoto raw</td>
+<td><code>C-c M-x</code> per il comando Emacs</td>
+</tr>
+<tr>
+<td>ghostel-mux</td>
+<td><code>C-b c</code> e <code>C-b p</code></td>
+</tr>
+<tr>
+<td>tmux annidato</td>
+<td><code>C-b c</code> e <code>C-b p</code>, interpretati da tmux</td>
+</tr>
+<tr>
+<td>tmux-control</td>
+<td><code>M-x tmux-control-new-window</code>, <code>C-c C-p</code></td>
+</tr>
+<tr>
+<td>Tab-bar</td>
+<td><code>C-x t 2</code>, <code>C-x t O</code></td>
+</tr>
+<tr>
+<td>ElScreen</td>
+<td><code>C-z c</code>, <code>C-z p</code>, dopo aver restituito i tasti a Emacs</td>
+</tr>
+<tr>
+<td>Buffer generico</td>
+<td><code>C-x b</code>, nome, <code>RET</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ogni scheda dimostrata include una sequenza completa con timestamp e una traccia dei byte inviati. Non confondere i binding suggeriti nei README con quelli già attivi. Vertico e Marginalia rimangono abilitati anche se un progetto usa una UI separata Helm; tale UI non viene sostituita surrettiziamente.</p>
+<h2>Esiti negativi e correzioni del laboratorio</h2>
+<p>Le versioni precedenti di risultati, tasti e cast sono in <code>results/attempts/</code>. Lo smoke test nel contenitore pulito è riuscito dopo aver corretto anche la directory del socket tmux, che deve essere la stessa prima e dopo il riavvio del client. Il primo tentativo negativo e quello corretto sono entrambi conservati. Le correzioni hanno riguardato il copione o la preparazione, senza correggere silenziosamente il codice upstream:</p>
+<ul>
+<li>terminfo di Eat/Ghostel/Ebb mancanti sul remoto impedivano un pager corretto: ora vengono compilate con <code>tic</code> e rese disponibili ai due endpoint.</li>
+<li><code>term-run</code> mostra il buffer in un'altra finestra: occorre <code>C-x o</code> prima di digitare.</li>
+<li>il socket del server Emacs, sotto un percorso XDG molto lungo, superava il limite Unix: ora usa una directory privata più corta.</li>
+<li>dipendenze normalmente caricate da autoload, come vterm per alcuni wrapper, sono caricate esplicitamente nel profilo isolato.</li>
+<li>il copione iniziale confondeva <code>C-x t p</code> con il tab precedente; il default corretto usato nella prova è <code>C-x t O</code>.</li>
+</ul>
+<p>Restano scenari negativi espliciti, fra cui riuso del buffer in vtplex, riferimento a <code>ghostel--all-buffers</code> assente nello snapshot di Ghostel per ghostel-switch, routing term+ non gestito correttamente dal copione generico e focus non recuperato nel caso tmux-control-mode. Le schede e i traceback circoscrivono ciò che è successo: un errore di copione non viene presentato come una conclusione generale sull'affidabilità del progetto.</p>
+<h2>Copertura non completata</h2>
+<p>Non è stata prodotta una dimostrazione per ciascuna voce: i progetti GUI EAF, i motori Windows, diversi controller di multiplexer esterni e vari pacchetti storici hanno analisi/probe ma non una prova end-to-end. libgterm ha un tentativo di build documentato, non un modulo funzionante. Alcune voci irrisolte sono solo URL candidati falliti. Il catalogo espone <code>not-run</code> invece di attribuire risultati dei componenti sottostanti al wrapper.</p>
+<p>Sono quindi consegnati strumenti estendibili, prove effettive e un inventario delle lacune, senza dichiarare soddisfatto il requisito letterale “ogni progetto mai creato, tutti eseguiti”. Per l'elenco puntuale filtrare <code>not-run</code> nel catalogo. La ricerca e le esclusioni sono descritte in <a href="SEARCH.html">SEARCH.md</a>; la procedura eseguibile è in <a href="REPRODUCE.html">REPRODUCE.md</a>.</p></main></html>

@@ -1,0 +1,142 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>tmux-control</h1>
+<p>Categoria: <strong>persistenza</strong>. <a href="https://github.com/csheaff/tmux-control">Sorgente upstream</a>. Revisione: <code>ebe07f4caff0c1be21e1c92323de6d00744c2891</code>.</p>
+<h2>Funzionamento</h2>
+<p>csheaff: protocollo tmux control-mode, processo a pipe ed emulazione delle pane con Eat.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x tmux-control-connect, host vuoto per locale, socket dedicato e sessione ops; tmux-control-new-window e C-c C-p. Verificata riconnessione dopo kill-emacs.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/tmux-control.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/tmux-control.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario tmux-control: passed</h3>
+<p><a href="../../results/tmux-control.json">Esito e snapshot</a> · <a href="../../results/tmux-control-keys.json">Traccia dei tasti</a> · <a href="../../recordings/tmux-control.cast">Registrazione asciinema</a> · <a href="../../index.html#tmux-control">Player</a></p>
+<ul>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>survives_emacs_exit</code>: <code>True</code></li>
+<li><code>restart_reconnect</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>tmux-control-connect</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.21</td>
+<td><code>b''</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.21</td>
+<td><code>ems-tmux-control</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.21</td>
+<td><code>ops</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.91</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.11</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.31</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.32</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.52</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.32</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.62</td>
+<td><code>tmux-control-new-window</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.92</td>
+<td><code>db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.12</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.32</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.52</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.52</td>
+<td><code>C-c C-p: previous-window</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.52</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.72</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table>
+<p><a href="../../recordings/tmux-control-resume.cast">Registrazione della riconnessione</a>.</p></main></html>

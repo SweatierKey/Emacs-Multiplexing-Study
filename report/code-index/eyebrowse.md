@@ -1,0 +1,110 @@
+# Indice del codice: eyebrowse
+
+Fonte: https://depp.brause.cc/eyebrowse.git
+
+Revisione: `473381f4f9e847eb50a40ef2306c027432789754`.
+
+
+## eyebrowse.el
+
+- L38: `(require 'dash)`
+- L39: `(require 'format-spec)`
+- L51: `(defcustom eyebrowse-keymap-prefix (kbd "C-c C-w")`
+- L76: `(defcustom eyebrowse-mode-line-separator ", "`
+- L81: `(defcustom eyebrowse-mode-line-left-delimiter "["`
+- L86: `(defcustom eyebrowse-mode-line-right-delimiter "]"`
+- L91: `(defcustom eyebrowse-mode-line-style 'smart`
+- L107: `(defcustom eyebrowse-wrap-around nil`
+- L113: `(defcustom eyebrowse-switch-back-and-forth nil`
+- L121: `(defcustom eyebrowse-new-workspace nil`
+- L139: `(defcustom eyebrowse-pre-window-switch-hook nil`
+- L145: `(defcustom eyebrowse-post-window-switch-hook nil`
+- L150: `(defcustom eyebrowse-pre-window-delete-hook nil`
+- L155: `(defcustom eyebrowse-post-window-delete-hook nil`
+- L160: `(defcustom eyebrowse-default-workspace-slot 1`
+- L165: `(defcustom eyebrowse-slot-format "%s"`
+- L173: `(defcustom eyebrowse-tagged-slot-format "%s:%t"`
+- L183: `(defcustom eyebrowse-close-window-config-prompt nil`
+- L189: `(defvar eyebrowse-mode-prefix-map`
+- L191: `(define-key prefix-map (kbd "<") 'eyebrowse-prev-window-config)`
+- L192: `(define-key prefix-map (kbd ">") 'eyebrowse-next-window-config)`
+- L193: `(define-key prefix-map (kbd "'") 'eyebrowse-last-window-config)`
+- L194: `(define-key prefix-map (kbd "\"") 'eyebrowse-close-window-config)`
+- L195: `(define-key prefix-map (kbd ",") 'eyebrowse-rename-window-config)`
+- L196: `(define-key prefix-map (kbd ".") 'eyebrowse-switch-to-window-config)`
+- L197: `(define-key prefix-map (kbd "0") 'eyebrowse-switch-to-window-config-0)`
+- L198: `(define-key prefix-map (kbd "1") 'eyebrowse-switch-to-window-config-1)`
+- L199: `(define-key prefix-map (kbd "2") 'eyebrowse-switch-to-window-config-2)`
+- L200: `(define-key prefix-map (kbd "3") 'eyebrowse-switch-to-window-config-3)`
+- L201: `(define-key prefix-map (kbd "4") 'eyebrowse-switch-to-window-config-4)`
+- L202: `(define-key prefix-map (kbd "5") 'eyebrowse-switch-to-window-config-5)`
+- L203: `(define-key prefix-map (kbd "6") 'eyebrowse-switch-to-window-config-6)`
+- L204: `(define-key prefix-map (kbd "7") 'eyebrowse-switch-to-window-config-7)`
+- L205: `(define-key prefix-map (kbd "8") 'eyebrowse-switch-to-window-config-8)`
+- L206: `(define-key prefix-map (kbd "9") 'eyebrowse-switch-to-window-config-9)`
+- L207: `(define-key prefix-map (kbd "c") 'eyebrowse-create-window-config)`
+- L208: `(define-key prefix-map (kbd "C-c") 'eyebrowse-create-window-config)`
+- L213: `(defvar eyebrowse-mode-map`
+- L215: `(define-key map eyebrowse-keymap-prefix eyebrowse-mode-prefix-map)`
+- L223: `(defun eyebrowse--get (type &optional frame)`
+- L235: `(defun eyebrowse--set (type value &optional frame)`
+- L248: `(defun eyebrowse-init (&optional frame)`
+- L257: `(defun eyebrowse--update-window-config-element (new-element)`
+- L264: `(defun eyebrowse--insert-in-window-config-list (element &optional frame)`
+- L272: `(defun eyebrowse--window-config-present-p (slot &optional frame)`
+- L276: `(defun eyebrowse--current-window-config (slot tag)`
+- L280: `(defun eyebrowse--dotted-list-p (list)`
+- L284: `(defun eyebrowse--walk-window-config (window-config function)`
+- L294: `(defun eyebrowse--fixup-window-config (window-config)`
+- L308: `(defun eyebrowse--rename-window-config-buffers (window-config old new)`
+- L329: `(defun eyebrowse--load-window-config (slot)`
+- L344: `(defun eyebrowse--string-to-number (x)`
+- L352: `(defun eyebrowse--read-slot ()`
+- L365: `(defun eyebrowse-switch-to-window-config (slot)`
+- L403: `(defun eyebrowse-next-window-config (count)`
+- L422: `(defun eyebrowse-prev-window-config (count)`
+- L444: `(defun eyebrowse-last-window-config ()`
+- L449: `(defun eyebrowse--delete-window-config (slot)`
+- L455: `(defun eyebrowse-close-window-config ()`
+- L472: `(defun eyebrowse-rename-window-config (slot tag)`
+- L490: `(defun eyebrowse-move-window-config (old-slot new-slot &optional overwrite-existing)`
+- L528: `(defun eyebrowse-renumber-window-configs ()`
+- L547: `(defun eyebrowse-switch-to-window-config-0 ()`
+- L552: `(defun eyebrowse-switch-to-window-config-1 ()`
+- L557: `(defun eyebrowse-switch-to-window-config-2 ()`
+- L562: `(defun eyebrowse-switch-to-window-config-3 ()`
+- L567: `(defun eyebrowse-switch-to-window-config-4 ()`
+- L572: `(defun eyebrowse-switch-to-window-config-5 ()`
+- L577: `(defun eyebrowse-switch-to-window-config-6 ()`
+- L582: `(defun eyebrowse-switch-to-window-config-7 ()`
+- L587: `(defun eyebrowse-switch-to-window-config-8 ()`
+- L592: `(defun eyebrowse-switch-to-window-config-9 ()`
+- L597: `(defun eyebrowse-free-slot (slots)`
+- L613: `(defun eyebrowse-create-window-config ()`
+- L621: `(defun eyebrowse-create-named-window-config ()`
+- L631: `(defvar evil-motion-state-map)`
+- L634: `(defun eyebrowse-setup-evil-keys ()`
+- L637: `(define-key evil-motion-state-map (kbd "gt") 'eyebrowse-next-window-config)`
+- L638: `(define-key evil-motion-state-map (kbd "gT") 'eyebrowse-prev-window-config)`
+- L639: `(define-key evil-motion-state-map (kbd "gc") 'eyebrowse-close-window-config)`
+- L640: `(define-key evil-motion-state-map (kbd "zx") 'eyebrowse-last-window-config))`
+- L643: `(defun eyebrowse-setup-opinionated-keys (&optional ignore-evil)`
+- L653: `(define-key map (kbd "C-<") 'eyebrowse-prev-window-config)`
+- L654: `(define-key map (kbd "C->") 'eyebrowse-next-window-config)`
+- L655: `(define-key map (kbd "C-'") 'eyebrowse-last-window-config)`
+- L656: `(define-key map (kbd "C-\"") 'eyebrowse-close-window-config)`
+- L657: `(define-key map (kbd "M-0") 'eyebrowse-switch-to-window-config-0)`
+- L658: `(define-key map (kbd "M-1") 'eyebrowse-switch-to-window-config-1)`
+- L659: `(define-key map (kbd "M-2") 'eyebrowse-switch-to-window-config-2)`
+- L660: `(define-key map (kbd "M-3") 'eyebrowse-switch-to-window-config-3)`
+- L661: `(define-key map (kbd "M-4") 'eyebrowse-switch-to-window-config-4)`
+- L662: `(define-key map (kbd "M-5") 'eyebrowse-switch-to-window-config-5)`
+- L663: `(define-key map (kbd "M-6") 'eyebrowse-switch-to-window-config-6)`
+- L664: `(define-key map (kbd "M-7") 'eyebrowse-switch-to-window-config-7)`
+- L665: `(define-key map (kbd "M-8") 'eyebrowse-switch-to-window-config-8)`
+- L666: `(define-key map (kbd "M-9") 'eyebrowse-switch-to-window-config-9)))`
+- L668: `(defun eyebrowse-format-slot (window-config)`
+- L682: `(defun eyebrowse-mode-line-indicator ()`
+- L710: `(define-key map (kbd "<mode-line><mouse-1>")`
+- L726: `(define-minor-mode eyebrowse-mode`
+- L745: `(provide 'eyebrowse)`

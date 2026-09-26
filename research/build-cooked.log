@@ -1,0 +1,24 @@
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded bitflags v2.13.1
+  Downloaded adler2 v2.0.1
+  Downloaded cfg-if v1.0.4
+  Downloaded cfg_aliases v0.2.2
+  Downloaded miniz_oxide v0.9.1
+  Downloaded memchr v2.8.3
+  Downloaded unicode-segmentation v1.13.3
+  Downloaded unicode-width v0.2.2
+  Downloaded nix v0.31.3
+  Downloaded libc v0.2.189
+   Compiling libc v0.2.189
+   Compiling cfg_aliases v0.2.2
+   Compiling cfg-if v1.0.4
+   Compiling bitflags v2.13.1
+   Compiling nix v0.31.3
+   Compiling adler2 v2.0.1
+   Compiling miniz_oxide v0.9.1
+   Compiling unicode-width v0.2.2
+   Compiling memchr v2.8.3
+   Compiling unicode-segmentation v1.13.3
+   Compiling cooked v1.0.0 (/home/runner/work/Emacs-Multiplexing-Study/Emacs-Multiplexing-Study/out/src/cooked-build)
+    Finished `release` profile [optimized] target(s) in 8.60s

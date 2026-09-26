@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"emacs-tmux-runner","library":"/home/admin/Emacs-Multiplexing-Study/sources/tmux-runner/emacs-tmux-runner.el","commands":["etr:clear-pane","etr:focus-pane","etr:forget-user-command","etr:hsplit","etr:list-panes","etr:list-sessions","etr:list-windows","etr:reset-target-pane","etr:run-user-command","etr:select-pane","etr:select-session","etr:select-window","etr:send-command","etr:send-keys","etr:send-lines","etr:set-pane","etr:set-session","etr:set-window","etr:tmux","etr:vslipt","etr:zoom-pane"]}
+STDERR:

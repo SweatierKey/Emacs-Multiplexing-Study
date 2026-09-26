@@ -1,0 +1,123 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: compat</h1>
+<p>Fonte: https://github.com/emacs-compat/compat.git</p>
+<p>Revisione: <code>90880f81419577e1d3f68424d2a3adf31e6d663e</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>compat-26.el</h2>
+<ul>
+<li>L549: <code>(provide 'compat-26)</code></li>
+</ul>
+<h2>compat-27.el</h2>
+<ul>
+<li>L289: <code>(define-key map [remap self-insert-command] #'read-char-from-minibuffer-insert-char)</code></li>
+<li>L290: <code>(define-key map [remap exit-minibuffer] #'read-char-from-minibuffer-insert-other)</code></li>
+<li>L324: <code>(define-key map (vector help-char)</code></li>
+<li>L330: <code>(define-key map (vector char)</code></li>
+<li>L332: <code>(define-key map [remap self-insert-command]</code></li>
+<li>L884: <code>(provide 'compat-27)</code></li>
+</ul>
+<h2>compat-28.el</h2>
+<ul>
+<li>L864: <code>(provide 'compat-28)</code></li>
+</ul>
+<h2>compat-29.el</h2>
+<ul>
+<li>L927: <code>(define-key keymap (key-parse key) definition))</code></li>
+<li>L953: <code>(keymap-set (current-global-map) key command))</code></li>
+<li>L969: <code>(keymap-set map key command)))</code></li>
+<li>L1000: <code>(define-key KEYMAP [remap OLDDEF] NEWDEF)</code></li>
+<li>L1201: <code>(keymap-set keymap key def)))))</code></li>
+<li>L1293: <code>(define-key keymap key def)</code></li>
+<li>L1296: <code>(define-key keymap key nil)</code></li>
+<li>L1590: <code>(provide 'compat-29)</code></li>
+</ul>
+<h2>compat-30.el</h2>
+<ul>
+<li>L459: <code>(provide 'compat-30)</code></li>
+</ul>
+<h2>compat-31.el</h2>
+<ul>
+<li>L414: <code>(provide 'compat-31)</code></li>
+</ul>
+<h2>compat-macs.el</h2>
+<ul>
+<li>L33: <code>(require 'subr-x)</code></li>
+<li>L34: <code>(require 'cl-lib)</code></li>
+<li>L39: <code>(defun compat-macs--strict (cond &amp;rest error)</code></li>
+<li>L44: <code>(defun compat-macs--assert (cond &amp;rest error)</code></li>
+<li>L48: <code>(defun compat-macs--docstring (type name docstring)</code></li>
+<li>L61: <code>(defun compat-macs--check-attributes (attrs preds)</code></li>
+<li>L71: <code>(defun compat-macs--guard (attrs preds fun)</code></li>
+<li>L96: <code>(defun compat-macs--defun (type name arglist docstring rest)</code></li>
+<li>L142: <code>(defmacro compat-guard (cond &amp;rest rest)</code></li>
+<li>L161: <code>(defmacro compat-defalias (name def &amp;rest attrs)</code></li>
+<li>L183: <code>(defmacro compat-defun (name arglist docstring &amp;rest rest)</code></li>
+<li>L208: <code>(defmacro compat-defmacro (name arglist docstring &amp;rest rest)</code></li>
+<li>L216: <code>(defmacro compat-defvar (name initval docstring &amp;rest attrs)</code></li>
+<li>L260: <code>(defmacro compat-version (version)</code></li>
+<li>L265: <code>(defmacro compat-require (feature version)</code></li>
+<li>L271: <code>(provide 'compat-macs)</code></li>
+</ul>
+<h2>compat-tests.el</h2>
+<ul>
+<li>L52: <code>(require 'compat)</code></li>
+<li>L53: <code>(require 'ert-x)</code></li>
+<li>L54: <code>(require 'subr-x)</code></li>
+<li>L55: <code>(require 'cl-lib)</code></li>
+<li>L56: <code>(require 'time-date)</code></li>
+<li>L57: <code>(require 'image)</code></li>
+<li>L58: <code>(require 'text-property-search nil t)</code></li>
+<li>L59: <code>(require 'color)</code></li>
+<li>L62: <code>(require 'tramp)</code></li>
+<li>L76: <code>(defmacro should-equal (a b)</code></li>
+<li>L511: <code>(defvar compat-tests--map-1</code></li>
+<li>L513: <code>(define-key map (kbd "C-x C-f") #'find-file)</code></li>
+<li>L514: <code>(define-key map (kbd "SPC") #'minibuffer-complete-word)</code></li>
+<li>L515: <code>(define-key map (kbd "RET") #'exit-minibuffer)</code></li>
+<li>L516: <code>(define-key map [remap exit-minibuffer] #'minibuffer-force-complete-and-exit)</code></li>
+<li>L517: <code>(define-key map (kbd "C-c") mode-specific-map)</code></li>
+<li>L518: <code>(define-key map (kbd "s-c") [?\C-c ?\C-c])</code></li>
+<li>L519: <code>(define-key map [t] 'compat-default-command)</code></li>
+<li>L521: <code>(defvar compat-tests--map-2</code></li>
+<li>L523: <code>(keymap-set map "C-x C-f" #'find-file)</code></li>
+<li>L524: <code>(keymap-set map "SPC" #'minibuffer-complete-word)</code></li>
+<li>L525: <code>(keymap-set map "RET" #'exit-minibuffer)</code></li>
+<li>L526: <code>(keymap-set map "&lt;remap&gt; &lt;exit-minibuffer&gt;" #'minibuffer-force-complete-and-exit)</code></li>
+<li>L527: <code>(keymap-set map "C-c" mode-specific-map)</code></li>
+<li>L528: <code>(keymap-set map "s-c" "C-c C-c")</code></li>
+<li>L529: <code>(keymap-set map "&lt;t&gt;" 'compat-default-command)</code></li>
+<li>L531: <code>(defvar-keymap compat-tests--map-3</code></li>
+<li>L539: <code>(defvar compat-tests--map-4</code></li>
+<li>L832: <code>(keymap-global-set "H-c" 'test)</code></li>
+<li>L833: <code>(keymap-global-set "&lt;t&gt;" 'default)</code></li>
+<li>L847: <code>(define-key map "\M-x" #'execute-extended-command)</code></li>
+<li>L848: <code>(define-key map "\C-x\C-f" #'find-file)</code></li>
+<li>L849: <code>(define-key map "\C-y" #'yank)</code></li>
+<li>L855: <code>(define-key map "\M-x" #'execute-extended-command)</code></li>
+<li>L856: <code>(define-key map "\C-x\C-f" #'find-file)</code></li>
+<li>L857: <code>(define-key map "\C-y" #'yank)</code></li>
+<li>L869: <code>(define-key map "\M-x" #'execute-extended-command)</code></li>
+<li>L870: <code>(define-key map "\C-x\C-f" #'find-file)</code></li>
+<li>L871: <code>(define-key map "\C-y" #'yank)</code></li>
+<li>L884: <code>(define-key map "\M-x" #'execute-extended-command)</code></li>
+<li>L885: <code>(define-key map "\C-x\C-f" #'find-file)</code></li>
+<li>L886: <code>(define-key map "\C-y" #'yank)</code></li>
+<li>L895: <code>(define-key map "\M-x" #'execute-extended-command)</code></li>
+<li>L896: <code>(define-key map "\C-x\C-f" #'find-file)</code></li>
+<li>L897: <code>(define-key map "\C-y" #'yank)</code></li>
+<li>L1792: <code>(defmacro compat--should-value&lt; (x y)</code></li>
+<li>L2124: <code>(defmacro compat-tests--string-to-multibyte (str)</code></li>
+<li>L2629: <code>(defun compat-tests--color-approx-equal (color1 color2)</code></li>
+<li>L2670: <code>(define-key a-map "x" 'foo)</code></li>
+<li>L2671: <code>(define-key b-map "x" 'bar)</code></li>
+<li>L2680: <code>(defmacro compat-tests--filename ()</code></li>
+<li>L2690: <code>(defun compat-tests--with-suppressed-warnings ()</code></li>
+<li>L3030: <code>(defmacro compat-tests--with-gensyms ()</code></li>
+<li>L3045: <code>(defmacro compat-tests--once-only (x)</code></li>
+<li>L3490: <code>(provide 'compat-tests)</code></li>
+</ul>
+<h2>compat.el</h2>
+<ul>
+<li>L60: <code>(defmacro compat-function (fun)</code></li>
+<li>L75: <code>(defmacro compat-call (fun &amp;rest args)</code></li>
+<li>L92: <code>(provide 'compat)</code></li>
+</ul></main></html>

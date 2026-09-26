@@ -1,0 +1,152 @@
+[
+  {
+    "at": 2.611,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.911,
+    "keys": "term-control-switch-to-term",
+    "input_hex": "7465726d2d636f6e74726f6c2d7377697463682d746f2d7465726d"
+  },
+  {
+    "at": 3.411,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.211,
+    "keys": "web",
+    "input_hex": "776562"
+  },
+  {
+    "at": 4.412,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.715,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 5.915,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.915,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 7.115,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.117,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 8.317,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.12,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 9.42,
+    "keys": "term-control-switch-to-term",
+    "input_hex": "7465726d2d636f6e74726f6c2d7377697463682d746f2d7465726d"
+  },
+  {
+    "at": 9.92,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 10.72,
+    "keys": "db",
+    "input_hex": "6462"
+  },
+  {
+    "at": 10.921,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.234,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 12.434,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 13.434,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 13.635,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 14.638,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 15.038,
+    "keys": "web",
+    "input_hex": "776562"
+  },
+  {
+    "at": 15.438,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.841,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 16.041,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 16.743,
+    "keys": "less service.log",
+    "input_hex": "6c65737320736572766963652e6c6f67"
+  },
+  {
+    "at": 16.943,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 17.657,
+    "keys": "q: leave less",
+    "input_hex": "71"
+  },
+  {
+    "at": 18.157,
+    "keys": "printf 'PAGER_%s\\n' RETURNED",
+    "input_hex": "7072696e7466202750414745525f25735c6e272052455455524e4544"
+  },
+  {
+    "at": 18.357,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

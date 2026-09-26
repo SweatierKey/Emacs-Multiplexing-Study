@@ -1,0 +1,18 @@
+web 0 
+SSH LAB: web (loopback fixture, same kernel)
+role=web
+service=active
+version=1.0
+ 
+db 0 
+SSH LAB: db (loopback fixture, same kernel)
+role=db
+service=active
+version=1.0
+ 
+cooked failed Pager content not visible
+alacritty passed 
+kuro passed 
+el-be-back passed 
+mistty passed 
+coterm passed 

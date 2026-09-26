@@ -1,0 +1,26 @@
+{
+  "id": "term-sessions-persistence",
+  "status": "passed",
+  "checks": {
+    "survives_emacs_exit": true,
+    "restart_reconnect": true
+  },
+  "snapshots": [
+    {
+      "name": "*term-session:ops: ~/Emacs-Multiplexing-Study*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "bash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "*term-session:ops: ~/Emacs-Multiplexing-Study*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "//home/admin/Emacs-Multiplexing-Study\nbash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    }
+  ],
+  "zmx_list_after_exit": "  name=ops\tpid=17949\tclients=0\tcreated=1790423451\tcwd=file://DESKTOP-RH2IGIR/home/admin/Emacs-Multiplexing-Study\tcmd=/home/admin/Emacs-Multiplexing-Study/lab/bash\n",
+  "resume_recording": "term-sessions-persistence-resume.cast"
+}

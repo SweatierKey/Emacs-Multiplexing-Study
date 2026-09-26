@@ -1,0 +1,51 @@
+{
+  "id": "term-run",
+  "status": "passed",
+  "scenario": "two-ssh-endpoints",
+  "started": "2026-09-26T11:44:14Z",
+  "snapshots": [
+    {
+      "name": "*Term-Run Shell Command*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\n[/home/admin/Emacs-Multiplexing-Study/] >> /bin/bash --noprofile --norc\n\nbash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "*Term-Run Shell Command</bin/bash>*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\n[/home/admin/Emacs-Multiplexing-Study/] >> /bin/bash --noprofile --norc\n\nbash-5.2$ lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt; tail -n 3 service.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ "
+    },
+    {
+      "name": "*Term-Run Shell Command*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\n[/home/admin/Emacs-Multiplexing-Study/] >> /bin/bash --noprofile --norc\n\nbash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n\n"
+    },
+    {
+      "name": "*Term-Run Shell Command*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\n[/home/admin/Emacs-Multiplexing-Study/] >> /bin/bash --noprofile --norc\n\nbash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ less service.log\n\n\nINFO web boot complete\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nservice.log (END)\n"
+    },
+    {
+      "name": "*Term-Run Shell Command*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\n[/home/admin/Emacs-Multiplexing-Study/] >> /bin/bash --noprofile --norc\n\nbash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\n\n\n\n\n\n\n\n\n\n\n\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printf 'PAGER_%s\\n' RETURNED\nPAGER_RETURNED\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    }
+  ],
+  "checks": {
+    "completion_enabled": true,
+    "ssh_web": true,
+    "ssh_db": true,
+    "distinct_buffers": true,
+    "return_preserves_shell": true,
+    "pager_roundtrip": true
+  }
+}

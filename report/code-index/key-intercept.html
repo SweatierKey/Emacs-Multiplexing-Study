@@ -1,0 +1,42 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: key-intercept</h1>
+<p>Fonte: https://github.com/tarao/key-intercept-el.git</p>
+<p>Revisione: <code>d9a60edb4ce893f2d3d94f242164fdcc62d43cf2</code>.</p>
+<h2>key-intercept.el</h2>
+<ul>
+<li>L32: <code>(defcustom key-intercept-delay 0.5</code></li>
+<li>L37: <code>(defcustom key-intercept-echo-keystrokes 0</code></li>
+<li>L46: <code>(defcustom key-intercept-fake-keystrokes t</code></li>
+<li>L53: <code>(defvar key-intercept-map (make-sparse-keymap))</code></li>
+<li>L55: <code>(defvar key-intercept-prefix-map (make-keymap))</code></li>
+<li>L57: <code>(defvar key-intercept-global-map (make-sparse-keymap))</code></li>
+<li>L59: <code>(defvar key-intercept-pass-map (make-keymap))</code></li>
+<li>L61: <code>(defvar key-intercept-emulation-map-alist</code></li>
+<li>L65: <code>(defvar key-intercept-intercept-map-alist</code></li>
+<li>L70: <code>(defun key-intercept-make-local ()</code></li>
+<li>L109: <code>(defun key-intercept-make-local-maybe ()</code></li>
+<li>L114: <code>(define-minor-mode key-intercept-mode</code></li>
+<li>L129: <code>(defun key-intercept-on ()</code></li>
+<li>L134: <code>(defun key-intercept-make-key-str (key)</code></li>
+<li>L137: <code>(defun key-intercept-make-prefix-event (key)</code></li>
+<li>L140: <code>(defun key-intercept-make-intercept-event (key)</code></li>
+<li>L143: <code>(defun key-intercept-raw-key (key)</code></li>
+<li>L154: <code>(defun key-intercept-raw-keys (keys)</code></li>
+<li>L157: <code>(defun key-intercept-echo-keys (&amp;optional keys)</code></li>
+<li>L164: <code>(defun key-intercept-read-event (delay)</code></li>
+<li>L172: <code>(defun key-intercept-this-command-keys ()</code></li>
+<li>L177: <code>(defun key-intercept-command-end ()</code></li>
+<li>L188: <code>(defun key-intercept-replace-kbd-macro (&amp;optional events)</code></li>
+<li>L207: <code>(defun key-intercept-initial-command (arg)</code></li>
+<li>L215: <code>(defun key-intercept-prefix-command (key delay)</code></li>
+<li>L238: <code>(defun key-intercept-make-prefix-command (key delay)</code></li>
+<li>L243: <code>(defun key-intercept-run-original-command (keys)</code></li>
+<li>L248: <code>(defun key-intercept-pass-through (arg)</code></li>
+<li>L253: <code>(defun define-modal-intercept-key (key mode def &amp;optional delay)</code></li>
+<li>L269: <code>(define-key map key def)</code></li>
+<li>L271: <code>(define-key key-intercept-map (vector initial)</code></li>
+<li>L279: <code>(define-key key-intercept-prefix-map (vector pevent)</code></li>
+<li>L281: <code>(define-key key-intercept-pass-map (vector ievent)</code></li>
+<li>L285: <code>(define-key map (vector ievent) def)))</code></li>
+<li>L288: <code>(defun define-intercept-key (key def &amp;optional delay)</code></li>
+<li>L294: <code>(provide 'key-intercept)</code></li>
+</ul></main></html>

@@ -1,0 +1,10 @@
+{
+  "id": "multi-buffer",
+  "status": "failed",
+  "scenario": "two-ssh-endpoints",
+  "started": "2026-09-26T11:45:46Z",
+  "snapshots": [],
+  "checks": {},
+  "error": "Emacs server not ready; see recording for initialization error",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 40, in run\n    s=Session(name,setup)\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/record.py\", line 37, in __init__\n    self.close();raise RuntimeError('Emacs server not ready; see recording for initialization error')\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Emacs server not ready; see recording for initialization error\n"
+}

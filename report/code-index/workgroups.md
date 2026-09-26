@@ -1,0 +1,249 @@
+# Indice del codice: workgroups
+
+Fonte: https://github.com/tlh/workgroups.el.git
+
+Revisione: `9572b3492ee09054dc329f64ed846c962b395e39`.
+
+
+## workgroups.el
+
+- L55: `(require 'cl)`
+- L74: `(defcustom workgroups-mode-hook nil`
+- L80: `(defcustom wg-prefix-key (kbd "C-z")`
+- L90: `(defcustom wg-switch-hook nil`
+- L95: `(defcustom wg-no-confirm nil`
+- L104: `(defcustom wg-mode-line-on t`
+- L112: `(defcustom wg-kill-ring-size 20`
+- L117: `(defcustom wg-warning-timeout 0.7`
+- L125: `(defcustom wg-switch-on-load t`
+- L130: `(defcustom wg-query-for-save-on-emacs-exit t`
+- L138: `(defcustom wg-query-for-save-on-workgroups-mode-exit t`
+- L148: `(defcustom wg-default-buffer "*scratch*"`
+- L154: `(defcustom wg-restore-position nil`
+- L159: `(defcustom wg-restore-scroll-bars t`
+- L164: `(defcustom wg-restore-fringes t`
+- L169: `(defcustom wg-restore-margins t`
+- L174: `(defcustom wg-restore-mbs-window t`
+- L179: `(defcustom wg-restore-point t`
+- L186: `(defcustom wg-restore-point-max t`
+- L195: `(defcustom wg-restore-dedicated t`
+- L203: `(defcustom wg-morph-on t`
+- L208: `(defcustom wg-morph-hsteps 9`
+- L214: `(defcustom wg-morph-vsteps 3`
+- L220: `(defcustom wg-morph-terminal-hsteps 3`
+- L226: `(defcustom wg-morph-terminal-vsteps 1`
+- L232: `(defcustom wg-morph-sit-for-seconds 0`
+- L240: `(defcustom wg-morph-truncate-partial-width-windows t`
+- L251: `(defcustom wg-use-faces t`
+- L256: `(defcustom wg-mode-line-left-brace "("`
+- L261: `(defcustom wg-mode-line-right-brace ")"`
+- L266: `(defcustom wg-mode-line-divider ":"`
+- L271: `(defcustom wg-display-left-brace "( "`
+- L276: `(defcustom wg-display-right-brace " )"`
+- L281: `(defcustom wg-display-divider " | "`
+- L286: `(defcustom wg-display-current-workgroup-left-decor "-<{ "`
+- L291: `(defcustom wg-display-current-workgroup-right-decor " }>-"`
+- L296: `(defcustom wg-display-previous-workgroup-left-decor "*"`
+- L301: `(defcustom wg-display-previous-workgroup-right-decor "*"`
+- L306: `(defcustom wg-time-format "%H:%M:%S %A, %B %d %Y"`
+- L311: `(defcustom wg-display-battery t`
+- L377: `(defmacro wg-defface (face key spec doc &rest args)`
+- L455: `(defmacro wg-with-gensyms (syms &rest body)`
+- L460: `(defmacro wg-dbind (args expr &rest body)`
+- L465: `(defmacro wg-dohash (spec &rest body)`
+- L471: `(defmacro wg-doconcat (spec &rest body)`
+- L477: `(defmacro wg-docar (spec &rest body)`
+- L482: `(defmacro wg-get-some (spec &rest body)`
+- L489: `(defmacro wg-when-let (binds &rest body)`
+- L499: `(defmacro wg-until (test &rest body)`
+- L504: `(defmacro wg-aif (test then &rest else)`
+- L509: `(defmacro wg-awhen (test &rest body)`
+- L514: `(defmacro wg-aand (&rest args)`
+- L521: `(defun wg-step-to (n m step)`
+- L528: `(defun wg-within (num lo hi &optional hi-inclusive)`
+- L533: `(defun wg-last1 (list)`
+- L537: `(defun wg-leave (list n)`
+- L541: `(defun wg-rnth (n list)`
+- L545: `(defun wg-insert-elt (elt list &optional pos)`
+- L551: `(defun wg-move-elt (elt list pos)`
+- L556: `(defun wg-cyclic-offset-elt (elt list n)`
+- L561: `(defun wg-cyclic-nth-from-elt (elt list n)`
+- L567: `(defun wg-util-swap (elt1 elt2 list)`
+- L574: `(defun wg-aget (alist key)`
+- L578: `(defun wg-acopy (alist)`
+- L582: `(defun wg-aset (alist key val)`
+- L589: `(defun wg-aput (alist &rest key-value-pairs)`
+- L596: `(defun wg-get-alist (key val alist-list)`
+- L603: `(defmacro wg-abind (alist binds &rest body)`
+- L617: `(defmacro wg-fill-keymap (keymap &rest binds)`
+- L623: `'(define-key ,km (kbd ,(car b)) ,(cadr b)))`
+- L626: `(defun wg-write-sexp-to-file (sexp file)`
+- L633: `(defun wg-read-sexp-from-file (file)`
+- L640: `(defun wg-read-object (prompt test warning &rest args)`
+- L653: `(defun wg-type-of (obj)`
+- L657: `(defun wg-type-p (type obj)`
+- L661: `(defun wg-type-check (type obj &optional noerror)`
+- L667: `(defun wg-cyclic-nth-from-frame (&optional n frame)`
+- L673: `(defun wg-add-face (facekey str)`
+- L683: `(defmacro wg-fontify (&rest specs)`
+- L699: `(defun wg-error-on-active-minibuffer ()`
+- L708: `(defun wg-window-p (obj)`
+- L712: `(defun wg-wtree-p (obj)`
+- L716: `(defun wg-wconfig-p (obj)`
+- L720: `(defun wg-workgroup-p (obj)`
+- L728: `(defun wg-dir   (w) (wg-aget w 'dir))`
+- L729: `(defun wg-edges (w) (wg-aget w 'edges))`
+- L730: `(defun wg-wlist (w) (wg-aget w 'wlist))`
+- L731: `(defun wg-wtree (w) (wg-aget w 'wtree))`
+- L733: `(defun wg-min-size (dir)`
+- L737: `(defun wg-actual-min-size (dir)`
+- L741: `(defmacro wg-with-edges (w spec &rest body)`
+- L746: `(defun wg-put-edges (w left top right bottom)`
+- L750: `(defmacro wg-with-bounds (w dir spec &rest body)`
+- L762: `(defun wg-put-bounds (w dir ls hs lb hb)`
+- L766: `(defun wg-step-edges (edges1 edges2 hstep vstep)`
+- L776: `(defun wg-w-edge-operation (w edges op)`
+- L780: `(defun wg-first-win (w)`
+- L784: `(defun wg-last-win (w)`
+- L788: `(defun wg-minify-win (w)`
+- L797: `(defun wg-minify-last-win (w)`
+- L801: `(defun wg-wsize (w &optional height)`
+- L806: `(defun wg-adjust-wsize (w width-fn height-fn &optional new-left new-top)`
+- L814: `(defun wg-scale-wsize (w width-scale height-scale)`
+- L820: `(defun wg-equal-wtrees (w1 w2)`
+- L830: `(defun wg-normalize-wtree (wtree)`
+- L855: `(defun wg-scale-wtree (wtree wscale hscale)`
+- L864: `(defun wg-scale-wconfigs-wtree (wconfig new-width new-height)`
+- L875: `(defun w-set-frame-size-and-scale-wtree (wconfig &optional frame)`
+- L889: `(defun wg-reverse-wlist (w &optional dir)`
+- L905: `(defun wg-reverse-wconfig (&optional dir wconfig)`
+- L910: `(defun wg-wtree-move-window (wtree offset)`
+- L923: `(defun wg-wconfig-move-window (offset &optional wconfig)`
+- L931: `(defun wg-window-point (ewin)`
+- L937: `(defun wg-ewin->window (ewin)`
+- L957: `(defun wg-make-wtree (dir edges wlist)`
+- L964: `(defun wg-ewtree->wtree (&optional ewtree)`
+- L977: `(defun wg-make-wconfig ()`
+- L989: `(defun wg-make-blank-wconfig (&optional buffer)`
+- L1000: `(defun wg-switch-to-window-buffer (win)`
+- L1011: `(defun wg-restore-window (win)`
+- L1039: `(defun wg-restore-wtree (wtree)`
+- L1058: `(defun wg-restore-wconfig (wconfig)`
+- L1073: `(defun wg-restore-blank-wconfig ()`
+- L1080: `(defun wg-morph-step-edges (w1 w2)`
+- L1085: `(defun wg-morph-determine-steps (gui-steps &optional term-steps)`
+- L1088: `(defun wg-morph-match-wlist (wt1 wt2)`
+- L1109: `(defun wg-morph-win->win (w1 w2 &optional swap)`
+- L1114: `(defun wg-morph-win->wtree (win wt)`
+- L1123: `(defun wg-morph-wtree->win (wt win &optional noswap)`
+- L1137: `(defun wg-morph-wtree->wtree (wt1 wt2)`
+- L1150: `(defun wg-morph-dispatch (w1 w2)`
+- L1162: `(defun wg-morph (from to &optional noerror)`
+- L1190: `(defun wg-file (&optional noerror)`
+- L1196: `(defun wg-list (&optional noerror)`
+- L1202: `(defun wg-get-workgroup (key val &optional noerror)`
+- L1211: `(defmacro wg-with-frame-state (frame state &rest body)`
+- L1222: `(defun wg-frame-val (key)`
+- L1227: `(defun wg-set-frame-val (key val)`
+- L1232: `(defun wg-delete-frame-key (key)`
+- L1237: `(defun wg-delete-frame (frame)`
+- L1244: `(defun wg-get-workgroup-prop (prop workgroup)`
+- L1249: `(defun wg-set-workgroup-prop (prop val workgroup &optional nodirty)`
+- L1255: `(defun wg-uid (workgroup)`
+- L1259: `(defun wg-set-uid (workgroup uid)`
+- L1263: `(defun wg-uids (&optional noerror)`
+- L1267: `(defun wg-new-uid ()`
+- L1273: `(defun wg-name (workgroup)`
+- L1277: `(defun wg-set-name (workgroup name)`
+- L1281: `(defun wg-names (&optional noerror)`
+- L1288: `(defun wg-get-frame-workgroup (key &optional noerror)`
+- L1294: `(defun wg-current-workgroup (&optional noerror)`
+- L1298: `(defun wg-set-current-workgroup (workgroup)`
+- L1302: `(defun wg-previous-workgroup (&optional noerror)`
+- L1306: `(defun wg-set-previous-workgroup (workgroup)`
+- L1313: `(defun wg-set-base-config (workgroup config)`
+- L1317: `(defun wg-base-config (workgroup)`
+- L1321: `(defun wg-set-working-config (workgroup config)`
+- L1325: `(defun wg-update-working-config (workgroup)`
+- L1329: `(defun wg-working-config (workgroup)`
+- L1340: `(defun wg-make-workgroup (uid name wconfig)`
+- L1347: `(defun wg-make-default-workgroup (name)`
+- L1351: `(defun wg-make-blank-workgroup (name &optional buffer)`
+- L1355: `(defun wg-restore-workgroup (workgroup &optional base)`
+- L1363: `(defun wg-delete (workgroup)`
+- L1375: `(defun wg-add (new &optional pos)`
+- L1384: `(defun wg-check-and-add (workgroup)`
+- L1394: `(defun wg-cyclic-offset-workgroup (workgroup n)`
+- L1400: `(defun wg-list-swap (w1 w2)`
+- L1410: `(defun wg-wtree-buffer-list (wtree)`
+- L1416: `(defun wg-workgroup-buffer-list (workgroup)`
+- L1420: `(defun wg-buffer-list ()`
+- L1426: `(defun wg-find-buffer (bname)`
+- L1434: `(defun wg-mode-line-string ()`
+- L1448: `(defun wg-mode-line-add-display ()`
+- L1456: `(defun wg-mode-line-remove-display ()`
+- L1465: `(defun wg-completing-read (prompt choices &rest args)`
+- L1471: `(defun wg-read-workgroup (&optional noerror)`
+- L1477: `(defun wg-read-buffer-name ()`
+- L1481: `(defun wg-read-new-workgroup-name (&optional prompt)`
+- L1488: `(defun wg-read-workgroup-index ()`
+- L1500: `(defun wg-msg (format-string &rest args)`
+- L1505: `(defmacro wg-fontified-msg (&rest format)`
+- L1513: `(defun wg-arg (&optional reverse noerror)`
+- L1524: `(defun wg-add-to-kill-ring (config)`
+- L1529: `(defun wg-disp ()`
+- L1555: `(defun wg-cyclic-nth-from-workgroup (&optional workgroup n)`
+- L1563: `(defun wg-switch-to-workgroup (workgroup &optional base)`
+- L1577: `(defun wg-create-workgroup (name)`
+- L1589: `(defun wg-clone-workgroup (workgroup name)`
+- L1600: `(defun wg-kill-workgroup (workgroup)`
+- L1612: `(defun wg-kill-ring-save-base-config (workgroup)`
+- L1620: `(defun wg-kill-ring-save-working-config (workgroup)`
+- L1628: `(defun wg-yank-config ()`
+- L1641: `(defun wg-kill-workgroup-and-buffers (workgroup)`
+- L1653: `(defun wg-delete-other-workgroups (workgroup)`
+- L1665: `(defun wg-update-workgroup (workgroup)`
+- L1672: `(defun wg-update-all-workgroups ()`
+- L1680: `(defun wg-revert-workgroup (workgroup)`
+- L1689: `(defun wg-revert-all-workgroups ()`
+- L1695: `(defun wg-switch-to-index (n)`
+- L1711: `(defun wg-switch-left (&optional workgroup n)`
+- L1718: `(defun wg-switch-right (&optional workgroup n)`
+- L1725: `(defun wg-switch-left-other-frame (&optional n)`
+- L1731: `(defun wg-switch-right-other-frame (&optional n)`
+- L1737: `(defun wg-switch-to-previous-workgroup ()`
+- L1742: `(defun wg-swap-workgroups ()`
+- L1748: `(defun wg-offset-left (workgroup &optional n)`
+- L1754: `(defun wg-offset-right (workgroup &optional n)`
+- L1760: `(defun wg-rename-workgroup (workgroup newname)`
+- L1769: `(defun wg-reset (&optional force)`
+- L1783: `(defun wg-save (file)`
+- L1795: `(defun wg-load (file)`
+- L1819: `(defun wg-find-file (file)`
+- L1825: `(defun wg-find-file-read-only (file)`
+- L1831: `(defun wg-get-by-buffer (buf)`
+- L1837: `(defun wg-dired (dir &optional switches)`
+- L1843: `(defun wg-update-all-workgroups-and-save ()`
+- L1854: `(defun wg-toggle-mode-line ()`
+- L1865: `(defun wg-toggle-morph ()`
+- L1875: `(defun wg-move-window-backward (offset)`
+- L1880: `(defun wg-move-window-forward (offset)`
+- L1885: `(defun wg-reverse-frame-horizontally ()`
+- L1890: `(defun wg-reverse-frame-vertically ()`
+- L1895: `(defun wg-reverse-frame-horizontally-and-vertically ()`
+- L1903: `(defun wg-echo-current-workgroup ()`
+- L1909: `(defun wg-echo-all-workgroups ()`
+- L1914: `(defun wg-echo-time ()`
+- L1924: `(defun wg-echo-version ()`
+- L1930: `(defun wg-echo-last-message ()`
+- L2048: `(defun wg-help ()`
+- L2062: `(defvar wg-map`
+- L2183: `(defun wg-unset-prefix-key ()`
+- L2188: `(global-set-key key def))`
+- L2191: `(defun wg-set-prefix-key ()`
+- L2196: `(global-set-key key wg-map)))`
+- L2198: `(defun wg-query-for-save ()`
+- L2205: `(defun wg-emacs-exit-query ()`
+- L2212: `(defun wg-workgroups-mode-exit-query ()`
+- L2219: `(define-minor-mode workgroups-mode`
+- L2244: `(provide 'workgroups)`

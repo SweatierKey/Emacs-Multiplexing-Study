@@ -1,0 +1,106 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>vtplex</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/mitch-kyle/vtplex">Sorgente upstream</a>. Revisione: <code>f853c0f6f32499b24300a0519d348356645c1a33</code>.</p>
+<h2>Funzionamento</h2>
+<p>Piccolo wrapper di vterm con prefisso C-a e comandi create/next/prev.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>Nel nostro snapshot vtplex-create richiama vterm senza forzare un nuovo buffer: il secondo terminale viene riutilizzato. Il test fallisce la separazione richiesta; non è stato corretto il codice upstream.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/vtplex.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/vtplex.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario vtplex: failed</h3>
+<p><a href="../../results/vtplex.json">Esito e snapshot</a> · <a href="../../results/vtplex-keys.json">Traccia dei tasti</a> · <a href="../../recordings/vtplex.cast">Registrazione asciinema</a> · <a href="../../index.html#vtplex">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+</ul>
+<p>Errore finale: Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web</p>
+<p>SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log
+role=web
+service=active
+version=1.0
+INFO web health=ok
+WARN web disk threshold=75
+INFO web requests=42
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ lab-ssh lab-db
+bash: lab-ssh: command not found
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log
+role=web
+service=active
+version=1.0
+INFO web health=ok
+WARN web disk threshold=75
+INFO web requests=42
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ </p>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.33</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.62</td>
+<td><code>vtplex-create</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.43</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.63</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.63</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.83</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.83</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.03</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.83</td>
+<td><code>native create key</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.33</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.53</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.53</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.73</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

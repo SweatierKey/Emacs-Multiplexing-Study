@@ -1,0 +1,21 @@
+ansi-term passed 
+eat failed Pager content not visible
+vterm passed 
+ghostel failed Pager content not visible
+mistty passed 
+el-be-back failed Pager content not visible
+alacritty passed 
+kuro passed 
+cooked failed Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web
+
+SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/
+coterm passed 
+multi-term passed 
+multi-vterm passed 
+multi-buf failed Launch did not enter a terminal: {'name': '*scratch*', 'mode': 'lisp-interaction-mode', 'vertico': True, 'marginalia': True, 'text': ''}
+vtplex failed Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web
+
+SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/
+ghostel-mux passed 

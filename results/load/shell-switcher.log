@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"shell-switcher","library":"/home/admin/Emacs-Multiplexing-Study/sources/shell-switcher/shell-switcher.el","commands":["shell-switcher-manually-register-shell","shell-switcher-mode","shell-switcher-new-shell","shell-switcher-open-on-bookmark","shell-switcher-open-on-directory","shell-switcher-open-on-project","shell-switcher-switch-buffer","shell-switcher-switch-buffer-other-window"]}
+STDERR:

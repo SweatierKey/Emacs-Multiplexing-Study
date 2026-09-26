@@ -1,0 +1,239 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>vterm</h1>
+<p>Categoria: <strong>emulatore</strong>. <a href="https://github.com/akermu/emacs-libvterm">Sorgente upstream</a>. Revisione: <code>6d715a93fa0e5182bc137d4db09f376e06938aa5</code>.</p>
+<h2>Funzionamento</h2>
+<p>Modulo C interfaccia libvterm; il filtro di processo alimenta parser e aggiornamenti del buffer.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x vterm e C-u M-x vterm; C-x b per tornare. La libreria nativa deve corrispondere all'ABI di Emacs. Nel test compilata localmente.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/vterm.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/vterm.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario vterm: passed</h3>
+<p><a href="../../results/vterm.json">Esito e snapshot</a> · <a href="../../results/vterm-keys.json">Traccia dei tasti</a> · <a href="../../recordings/vterm.cast">Registrazione asciinema</a> · <a href="../../index.html#vterm">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.31</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>vterm</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.41</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.61</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.61</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.81</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.82</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.02</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.82</td>
+<td><code>C-u</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.22</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.52</td>
+<td><code>vterm</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.02</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.32</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.52</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.52</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.72</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.72</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.12</td>
+<td><code>*vterm*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.53</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.93</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.13</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.83</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.03</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.73</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.23</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.43</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Scenario tmux-nested: passed</h3>
+<p><a href="../../results/tmux-nested.json">Esito e snapshot</a> · <a href="../../results/tmux-nested-keys.json">Traccia dei tasti</a> · <a href="../../recordings/tmux-nested.cast">Registrazione asciinema</a> · <a href="../../index.html#vterm">Player</a></p>
+<ul>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>survives_emacs_exit</code>: <code>True</code></li>
+<li><code>restart_reconnect</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.32</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.62</td>
+<td><code>vterm</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.92</td>
+<td><code>tmux -L ems-tmux-nested -f /dev/null new-session -s ops</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.12</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.32</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.52</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.53</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.73</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.53</td>
+<td><code>C-b c: tmux new-window</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.53</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.73</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.73</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.93</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.93</td>
+<td><code>C-b p: tmux previous-window</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.93</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.13</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table>
+<p><a href="../../recordings/tmux-nested-resume.cast">Registrazione della riconnessione</a>.</p></main></html>

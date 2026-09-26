@@ -1,0 +1,107 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: emux-attic</h1>
+<p>Fonte: https://github.com/emacsattic/emux.git</p>
+<p>Revisione: <code>d41d6ac2803e8c5c368f012f05bce50d61a21631</code>.</p>
+<h2>emux-base.el</h2>
+<ul>
+<li>L40: <code>(defcustom emux-completing-read-command</code></li>
+<li>L46: <code>(define-minor-mode emux-mode</code></li>
+<li>L55: <code>(defun emux-set (property value)</code></li>
+<li>L59: <code>(defun emux-get (property)</code></li>
+<li>L63: <code>(defun emux-completing-read (prompt collection)</code></li>
+<li>L70: <code>(defun emux-mode-map-bind (alist)</code></li>
+<li>L74: <code>(define-key emux-mode-map (read-kbd-macro (car pair)) (cdr pair)))</code></li>
+<li>L77: <code>(defun emux-flatten (x)</code></li>
+<li>L83: <code>(provide 'emux-base)</code></li>
+</ul>
+<h2>emux-screen.el</h2>
+<ul>
+<li>L36: <code>(require 'cl)</code></li>
+<li>L37: <code>(require 'emux-base)</code></li>
+<li>L38: <code>(require 'emux-term)</code></li>
+<li>L40: <code>(defcustom emux-mode-emux-screen-bind-key-alist</code></li>
+<li>L53: <code>(defun emux-screens ()</code></li>
+<li>L57: <code>(defun emux-screen-get (property &amp;optional screen)</code></li>
+<li>L64: <code>(defun emux-screen-set (property value &amp;optional screen)</code></li>
+<li>L71: <code>(defun emux-screen-create (&amp;optional properties terminal-name terminal-command)</code></li>
+<li>L95: <code>(defun emux-screen-current (&amp;optional screen)</code></li>
+<li>L102: <code>(defun emux-screen-rename (name &amp;optional screen)</code></li>
+<li>L108: <code>(defun emux-screen-switch (&amp;optional screen)</code></li>
+<li>L137: <code>(defun emux-screen-from-name (name)</code></li>
+<li>L145: <code>(defun emux-screen-destroy (&amp;optional screen)</code></li>
+<li>L156: <code>(defun emux-screen-save-current ()</code></li>
+<li>L170: <code>(provide 'emux-screen)</code></li>
+</ul>
+<h2>emux-session.el</h2>
+<ul>
+<li>L36: <code>(require 'emux-screen)</code></li>
+<li>L38: <code>(defcustom emux-default-session</code></li>
+<li>L44: <code>(defcustom emux-mode-emux-session-bind-key-alist</code></li>
+<li>L57: <code>(defun emux-sessions ()</code></li>
+<li>L60: <code>(defun emux-session-create (&amp;optional properties)</code></li>
+<li>L73: <code>(defun emux-filter (condp lst)</code></li>
+<li>L77: <code>(defun emux-session-get (property &amp;optional session)</code></li>
+<li>L83: <code>(defun emux-session-set (property value &amp;optional session)</code></li>
+<li>L87: <code>(defun emux-session-current (&amp;optional session)</code></li>
+<li>L92: <code>(defun emux-session-switch (&amp;optional session)</code></li>
+<li>L105: <code>(defun emux-session-from-name (name)</code></li>
+<li>L113: <code>(defun emux-session-set-default-directory (path)</code></li>
+<li>L117: <code>(defun emux-session-destroy (&amp;optional session)</code></li>
+<li>L128: <code>(defun emux-session-buffer-name (&amp;optional buffer session)</code></li>
+<li>L136: <code>(defun emux-session-name-buffer (&amp;optional form)</code></li>
+<li>L182: <code>(defun emux-session-buffers (&amp;optional session)</code></li>
+<li>L188: <code>(defun emux-session-global-buffers ()</code></li>
+<li>L195: <code>(defun emux-session-jump-to-global-buffer ()</code></li>
+<li>L219: <code>(defun emux-session-jump-to-session-buffer ()</code></li>
+<li>L236: <code>(defmacro emux-session-define-template (name &amp;rest body)</code></li>
+<li>L243: <code>(defun emux-session-load-template ()</code></li>
+<li>L270: <code>(provide 'emux-session)</code></li>
+</ul>
+<h2>emux-term.el</h2>
+<ul>
+<li>L36: <code>(require 'emux-base)</code></li>
+<li>L39: <code>(defcustom emux-term-program</code></li>
+<li>L45: <code>(defcustom emux-term-command-line-unbind-key-list</code></li>
+<li>L51: <code>(defcustom emux-term-command-line-bind-key-alist</code></li>
+<li>L66: <code>(defcustom emux-mode-emux-term-bind-key-alist</code></li>
+<li>L90: <code>(defun emux-term-create (&amp;optional name command)</code></li>
+<li>L106: <code>(defun emux-term-handle-close ()</code></li>
+<li>L114: <code>(defun emux-term-setup-keys ()</code></li>
+<li>L120: <code>(define-key term-raw-map unbind-key nil))</code></li>
+<li>L128: <code>(define-key term-raw-map bind-key bind-command)))</code></li>
+<li>L130: <code>(defun emux-term-rename (name)</code></li>
+<li>L135: <code>(defun emux-term-split-and-create (split-command &amp;optional name command)</code></li>
+<li>L142: <code>(defun emux-term-vsplit (&amp;optional name command)</code></li>
+<li>L148: <code>(defun emux-term-hsplit (&amp;optional name command)</code></li>
+<li>L154: <code>(defun emux-term-send-raw (string &amp;optional buffer)</code></li>
+<li>L163: <code>(defun emux-term-command (command &amp;optional buffer)</code></li>
+<li>L168: <code>(defun emux-term-previous-command ()</code></li>
+<li>L173: <code>(defun emux-term-next-command ()</code></li>
+<li>L178: <code>(defun emux-term-backward-word ()</code></li>
+<li>L183: <code>(defun emux-term-forward-word ()</code></li>
+<li>L188: <code>(defun emux-term-forward-kill-word ()</code></li>
+<li>L193: <code>(defun emux-term-backward-kill-word ()</code></li>
+<li>L198: <code>(defun emux-term-reverse-search-history ()</code></li>
+<li>L203: <code>(defun emux-term-terminal-ring-yank ()</code></li>
+<li>L208: <code>(defun emux-term-terminal-ring-yank-pop ()</code></li>
+<li>L213: <code>(defun emux-term-emacs-ring-yank ()</code></li>
+<li>L221: <code>(defun emux-term-emacs-ring-yank-pop ()</code></li>
+<li>L230: <code>(defun emux-term-clear-previous-scrollback ()</code></li>
+<li>L236: <code>(defun emux-term-focus-prompt ()</code></li>
+<li>L244: <code>(defun emux-term-blur-prompt ()</code></li>
+<li>L249: <code>(defun emux-term-destroy (&amp;optional buffer)</code></li>
+<li>L259: <code>(defun emux-term-cleanup (process state)</code></li>
+<li>L262: <code>(defun emux-term-beginning-of-buffer ()</code></li>
+<li>L267: <code>(defun emux-term-end-of-buffer ()</code></li>
+<li>L271: <code>(defun emux-term-scroll-down-command ()</code></li>
+<li>L276: <code>(defun emux-term-scroll-up-command ()</code></li>
+<li>L282: <code>(defun emux-term-previous-line ()</code></li>
+<li>L287: <code>(defun emux-term-next-line ()</code></li>
+<li>L295: <code>(defun emux-term-keyboard-quit ()</code></li>
+<li>L301: <code>(defun emux-lines-left ()</code></li>
+<li>L309: <code>(provide 'emux-term)</code></li>
+</ul>
+<h2>emux.el</h2>
+<ul>
+<li>L41: <code>(require 'emux-screen)</code></li>
+<li>L43: <code>(provide 'emux)</code></li>
+</ul></main></html>

@@ -1,0 +1,340 @@
+
+### abysl-term
+sources/abysl-term/abysl-term.el
+142:         (command (abysl-term--format-command term term-args sh (list "-li"))
+143:                  ))
+144:     (make-process
+145:      :name "*abysl-term-shell*"
+146:      :buffer "*abysl-term-shell*"
+147:      :command command)
+252:   ;; Print tmp-files for debugging
+253:   ;; Create the process using `make-process`
+254:   (make-process
+255:    :name "*abysl-term-output*"
+256:    :buffer "*abysl-term-output*"
+257:    :command full-command
+331:     hooks))
+332: 
+333: (defun abysl-term--generate-command (shell command-str)
+334:   "Generate temporary files for the command, output, and exit code, and write the command to a temporary script file."
+335:   (let* ((full-shell (abysl-term--find-shell-path shell))  ;; Get full shell path
+336:          (script-file (make-temp-file "command-"))
+352:     (list script-file output-file exit-code-file)))
+353: 
+354: (defun abysl-term--find-shell-path (shell)
+355:   "Find the full path of the SHELL if it's just a shell name, otherwise return the shell."
+356:   (if (eq system-type 'windows-nt)
+357:       (concat "/bin/" shell)
+
+### dropdown-remote
+
+### eaf-pyqterminal
+
+### eaf-terminal
+
+### eaf
+sources/eaf/eaf.el
+602:                      bookmark-alist))
+603:          (names (mapcar #'car bookmarks))
+604:          (cand (completing-read "EAF Bookmarks: " bookmarks)))
+605:     (cond ((member cand names)
+606:            (bookmark-jump cand))
+607:           (t
+631:            (w32-shell-execute "open" path-or-url))
+632:           ((eq system-type 'darwin)
+633:            (shell-command (concat "open " (shell-quote-argument path-or-url))))
+634:           ((eq system-type 'gnu/linux)
+635:            (let ((process-connection-type nil))
+636:              (start-process "" nil "xdg-open" path-or-url))))))
+637: 
+638: (defun eaf-call-async (method &rest args)
+639:   "Call Python EPC function METHOD and ARGS asynchronously."
+1101:       "Manage Emacs's focus change."
+1102:       (let* ((front (cond ((eq system-type 'darwin)
+1103:                            (string-trim (shell-command-to-string "osascript -e 'tell application \"System Events\" to get name of first application process whose frontmost is true'")))
+1104:                           ((eaf--on-sway-p)
+1105:                            (if (executable-find "jq")
+1106:                                (shell-command-to-string "swaymsg -t get_tree | jq -r '..|try select(.focused == true).app_id'")
+1107:                              (message "Please install jq for swaywm support.")))
+1108:                           ((eaf--on-hyprland-p)
+1109:                            (or
+
+### eee
+sources/eee/eee-eat.el
+24:   ;; Enable `eat-char-mode' so that all keyboard events are sent to Eat.
+25:   ;; `eat-char-mode' can only be enabled after the process starts.
+26:   (add-hook 'eat-exec-hook (lambda (_) (eat-char-mode)) nil t)
+27: 
+28:   ;; Delete the popped-up frame after the process exits.  Use a higher
+29:   ;; priority to make sure this function executes before the callback function
+49:       (ee-eat--setup-buffer)
+50:       (add-hook 'eat-exit-hook callback 50 t)
+51:       (eat-exec (current-buffer) name "bash" nil (list "-c" command)))))
+52: 
+53: (provide 'eee-eat)
+54: ;;; eee-eat.el ends here
+sources/eee/eee-transient.el
+605:                               ("with system message" . system)
+606:                               ("with user prompt"    . user)))
+607:                    (destination (completing-read prompt choices nil t)))
+608:               (cdr (assoc destination choices)))))
+609: 
+610: ;; ** Infixes for model parameters
+693: 		       cutoff)))))
+694:              finally return
+695:              (cdr (assoc (completing-read prompt models-alist nil t)
+696:                          models-alist)))))
+697: 
+698: (transient-define-infix ee--infix-temperature ()
+1059:   (if (not (hash-table-empty-p (ee--crowdsourced-prompts)))
+1060:       (let ((choice
+1061:              (completing-read
+1062:               "Pick and edit prompt: "
+1063:               (lambda (str pred action)
+1064:                 (if (eq action 'metadata)
+sources/eee/eee-vterm.el
+16: (defun ee-vterm-start-terminal (name command callback)
+17:   (let* ((dir default-directory)
+18: 	 (vterm-shell (format "sh -c %s" (shell-quote-argument command)))
+19: 	 (vterm-buffer-name (concat "*" name "*"))
+20: 	 (vterm-kill-buffer-on-exit nil))
+21:     (with-current-buffer (get-buffer-create vterm-buffer-name)
+22:       (setq default-directory dir)
+23:       (pop-to-buffer (current-buffer)
+sources/eee/eee.el
+130:     (ee--normalize-path (or (when-let (project (project-current))
+131:                               (project-root project))
+132:                           (shell-command-to-string project-dir-command) ))))
+133: 
+134: 
+135: (defun ee-integer-p(str)
+202:   (string-join
+
+### yantra
+
+### deskel
+
+### multi-run
+sources/multi-run/multi-run-helpers.el
+42: (defun multi-run-get-working-directory ()
+43:   "Return the working directory relative to home.  Useful for multi-copy."
+44:   (let* ((working-directory (eshell/pwd))
+45: 	 (dir-names (split-string working-directory "/" 't)))
+46:     (if (not (string-equal (car dir-names) "home")) (error "Not a child of home directory")
+47:       (seq-reduce (lambda (res dir-name) (concat res dir-name "/")) (cons "." (cdr (cdr dir-names))) ""))))
+58:   (unless (get-buffer (multi-run-get-buffer-name term-num))
+59:     (progn
+60:       (eshell term-num)
+61:       (rename-buffer (multi-run-get-buffer-name term-num)))))
+62: 
+63: (defun multi-run-display-buffers (master-buffer-name num-buffers window-batch symbol-prefix hint-fun)
+81:   (goto-char eshell-last-output-end)
+82:   (insert command)
+83:   (eshell-send-input))
+84: 
+85: (defun multi-run-on-terminals (command term-nums &optional delay)
+86:   "Run the COMMAND on terminals in TERM-NUMS with an optional DELAY between running on successive terminals."
+
+### multi-term-tmux
+sources/multi-term-tmux/multi-term-tmux.el
+98:     (interactive)
+99:     (if user+host
+100: 	(let* ((sessionlist (shell-command-to-string (concat "ssh " user+host " -q -t -t tmux list-sessions"))) (sessionlist (split-string sessionlist "\n" t)) (sesslist nil)) 
+101: 	(dolist (elt sessionlist)
+102: 	    (setq sessname (split-string elt ":" t))
+103: 	    (setq sessname (nth 0 sessname))
+105: 	sesslist)
+106: 
+107: 	(let* ((sessionlist (shell-command-to-string "tmux list-sessions")) (sessionlist (split-string sessionlist "\n" t)) (sesslist nil)) 
+108: 	(dolist (elt sessionlist)
+109: 	    (setq sessname (split-string elt ":" t))
+110: 	    (setq sessname (nth 0 sessname))
+119: 
+120:     (if (member session-name tmuxls)
+121: 	(make-term term-name "tmux" nil "attach" "-t" session-name)
+122:     (make-term term-name "tmux" nil "new" "-s" session-name))
+123:     (setq term-name (concat "*" term-name "*"))
+124: 
+125:     (with-current-buffer term-name
+135: 
+136:     (if (member multi-term-tmux-name tmuxls)
+137: 	(make-term term-name "ssh"  nil user+host "-t" "tmux" "attach" "-t" multi-term-tmux-name)
+138:     (make-term term-name "ssh" nil user+host "-t" "tmux" "new" "-s" multi-term-tmux-name))
+139:     (setq term-name (concat "*" term-name "*"))
+140: 
+
+### tiling
+
+### vtermux
+sources/vtermux/vtermux.el
+119: 			  (lambda (name prog args directory)
+120: 			    (require 'vterm)
+121: 			    (let* ((shell (vtermux--shell-string prog args))
+122: 				   (buffer (generate-new-buffer name)))
+123: 			      (with-current-buffer buffer
+124: 				(setq default-directory directory
+125: 				      vterm-shell shell)
+126: 				(vterm-mode)
+127: 				(current-buffer)))))
+128: 
+129: ;; Register the ghostel backend if available.
+141: 					    nil t))
+142: 				(let ((default-directory directory))
+143: 				  (ghostel-exec buffer (car words) (cdr words)))
+144: 				buffer))))
+145: 
+146: ;; Register the term backend (built-in, always available).
+147: (vtermux-register-backend 'term
+148: 			  (lambda (name prog args directory)
+149: 			    (let* ((shell (vtermux--shell-string prog args))
+150: 				   (default-directory directory))
+151: 			      (ansi-term shell name)
+152: 			      (get-buffer name))))
+279:     (if buffers
+280: 	(switch-to-buffer
+281:          (completing-read (format "%s instance: " prog)
+282: 			  (mapcar #'buffer-name buffers) nil t))
+283:       (message "No %s instances running." prog)
+284:       nil)))
+
+### emacs-tunnel
+sources/emacs-tunnel/tslime.el
+37: 
+38: (defun tslime-prompt-for-screen-session ()
+39:   (let ((sessions (tslime-parse-screen-session-list (shell-command-to-string "screen -ls"))))
+40:     (if sessions (completing-read "Choose session: " sessions) (user-error "No screen session found"))))
+41: 
+42: (defun tslime-prompt-for-screen-conf ()
+43:   (list (cons 'buffer (make-temp-file "tslime-screen"))
+
+### project-shells
+sources/project-shells/project-shells.el
+215:     (let ((default-directory (expand-file-name (or dir "~/"))))
+216:       (cl-ecase type
+217: 	(vterm (vterm)
+218: 	      (rename-buffer name))
+219: 	(term (ansi-term "/bin/sh")
+220: 	      (rename-buffer name))
+221: 	(shell (pop-to-buffer name)
+222: 	       (unless (comint-check-proc (current-buffer))
+223: 		 (setf comint-prompt-read-only t)
+224: 		 (cd dir)
+225: 		 (shell (current-buffer))))
+226: 	(eshell (let ((eshell-buffer-name name))
+227: 		  (eshell))))
+228:       (push (current-buffer) saved-shell-buffer-list))))
+229: 
+230: (cl-defun project-shells-send-shell-command (cmdline)
+
+### shell-command-x
+sources/shell-command-x/shell-command-x.el
+90: 
+91: (defcustom shell-command-x-exit-hook
+92:   '(shell-command-x-bob-smart-exit-hook
+93:     shell-command-x-emulate-special-mode-exit-hook)
+94:   "Hook run when a shell command completes.
+95: 
+194:   (unless (or shell-command-x--abort-bob-smart-exit-hook-p
+195:               (eq (window-buffer (selected-window)) (current-buffer)))
+196:     (shell-command-x-bob-exit-hook)))
+197: 
+198: (defun shell-command-x-emulate-special-mode-exit-hook ()
+199:   "Hook for `shell-command-x-exit-hook' to emulate `special-mode'.
+252:       (if (and (not (string-equal "" command))
+253:                (not output-buffer))
+254:           (let ((shell-command-buffer-name
+255:                  (funcall shell-command-x-buffer-name-function command nil))
+256:                 (shell-command-buffer-name-async
+257:                  (funcall shell-command-x-buffer-name-function command t)))
+258:             (apply orig-fun command output-buffer args))
+259:         (apply orig-fun command output-buffer args)))))
+
+### simple-screen
+sources/simple-screen/simple-screen.el
+148:             (current-window-configuration))
+149:       (simple-screen-save-window-point simple-screen-current-index)
+150:       (set-window-configuration (aref simple-screen-vector index))
+151:       (simple-screen-load-window-point index)
+152:       (simple-screen-update-mode-line index)
+153:       (aset simple-screen-buffer-name-vector
+
+### term-alert
+
+### term-cmd
+
+### vterm-editor
+sources/vterm-editor/vterm-editor.el
+67:       (erase-buffer)
+68:       (text-mode)
+69:       (vterm-editor-mode 1)
+70:       (setq vterm-editor--source-buffer source)
+71:       (setq header-line-format
+72:             (substitute-command-keys
+83:     (quit-window t)
+84:     (with-current-buffer source
+85:       (vterm-send-string content t))))
+86: 
+87: (defun vterm-editor-abort ()
+88:   "Close the editor buffer without sending anything to vterm."
+
+### vterm-hotkey
+sources/vterm-hotkey/vterm-hotkey.el
+55: (defun vterm-hotkey-bound-p (key)
+56:   "Check if KEY is in `vterm-hotkey-buffer-alist'."
+57:   (not (eq nil (vterm-hotkey-buffer-search key))))
+58:   
+59: (defun vterm-hotkey-open (key)
+60:   "Open `vterm-hotkey' buffer bound to KEY."
+61:   (switch-to-buffer
+62:    (vterm-hotkey-buffer-search key)))
+63: 
+64: (defun vterm-hotkey-create (key)
+65:   "Create a new `vterm-hotkey' buffer bound to KEY."
+66:   (unless (vterm-hotkey-bound-p key)
+67:     (add-to-list 'vterm-hotkey-buffer-alist
+68: 		 `(,key . ,(vterm (vterm-hotkey-get-buffer-name key))) t)
+69:     (add-hook 'kill-buffer-hook #'vterm-hotkey-buffer-close-hook nil t)))
+70: 
+71: (defun vterm-hotkey-buffer-close-hook ()
+72:   "Functions run by `vterm-hotkey' when a buffer is killed."
+73:   (let ((vterm-hotkey-buffer (current-buffer)))
+74:     (setq vterm-hotkey-buffer-alist
+75: 	  (rassq-delete-all vterm-hotkey-buffer
+76: 			    vterm-hotkey-buffer-alist))))
+
+### bshell
+sources/bshell/bshell.el
+64:   "Create a new inferior comint shell for THIS entry and return it."
+65:   (ignore this)
+66:   (shell))
+67: 
+68: (cl-defmethod buffer-manage-entry-cd-path ((this bshell-entry) path)
+69:   "Change to the directory \(if a directory\) of the file PATH for THIS entry."
+
+### popper
+
+### eterm-fn
+sources/eterm-fn/eterm-fn.el
+209:     (when (get-buffer tic-buf-name) (kill-buffer tic-buf-name))
+210:     (with-current-buffer (get-buffer-create tic-buf-name)
+211:       (unless (eq 0 (call-process "tic" nil `(,(current-buffer) t) nil
+212: 				  "-o" (expand-file-name "~/.terminfo")
+213:                                   file-name))
+214: 	(error "Error compiling terminfo description: %s (TERMINFO=\"%s\")"
+
+### myterminal-controls
+
+### ob-tmux
+sources/ob-tmux/ob-tmux.el
+195:   (let* ((socket (ob-tmux--socket ob-session))
+196: 	 (args (if socket (cons "-S" (cons socket args)) args)))
+197:   (shell-command-to-string
+198:    (concat org-babel-tmux-location " "
+199: 	   (s-join " " args)))))
+200: 
+203: 
+204:   Argument OB-SESSION: the current ob-tmux session."
+205:   (let ((start-process-mandatory-args `("org-babel: terminal"
+206: 					"*Messages*"
+207: 					,terminal))
+208: 	(tmux-cmd `(,org-babel-tmux-location

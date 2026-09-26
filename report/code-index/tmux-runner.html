@@ -1,0 +1,56 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tmux-runner</h1>
+<p>Fonte: https://github.com/joaofnds/emacs-tmux-runner.git</p>
+<p>Revisione: <code>1dfdefd2569848024c581a933e3ebc09b93b41e3</code>.</p>
+<h2>emacs-tmux-runner-test.el</h2>
+<ul>
+<li>L1: <code>(require 'buttercup)</code></li>
+<li>L2: <code>(require 'emacs-tmux-runner)</code></li>
+</ul>
+<h2>emacs-tmux-runner.el</h2>
+<ul>
+<li>L25: <code>(defun etr:list-sessions ()</code></li>
+<li>L30: <code>(defun etr:select-session ()</code></li>
+<li>L38: <code>(defun etr:set-session ()</code></li>
+<li>L46: <code>(defun etr:list-windows ()</code></li>
+<li>L52: <code>(defun etr:select-window ()</code></li>
+<li>L62: <code>(defun etr:set-window ()</code></li>
+<li>L70: <code>(defun etr:list-panes ()</code></li>
+<li>L75: <code>(defun etr:other-panes ()</code></li>
+<li>L84: <code>(defun etr:select-pane ()</code></li>
+<li>L93: <code>(defun etr:set-pane ()</code></li>
+<li>L98: <code>(defun etr:display-panes ()</code></li>
+<li>L105: <code>(defun etr:set-user-command ()</code></li>
+<li>L108: <code>(defun etr:forget-user-command ()</code></li>
+<li>L113: <code>(defun etr:assert-user-command-presence ()</code></li>
+<li>L116: <code>(defun etr:run-user-command ()</code></li>
+<li>L124: <code>(defun etr:prompt (prompt &amp;rest args)</code></li>
+<li>L128: <code>(cl-defun etr:target-pane ()</code></li>
+<li>L132: <code>(defun etr:reset-target-pane ()</code></li>
+<li>L139: <code>(defun etr:ensure-target-pane ()</code></li>
+<li>L144: <code>(defun etr:tmux (command)</code></li>
+<li>L150: <code>(cl-defun etr:send-keys (input &amp;optional (target (etr:target-pane)))</code></li>
+<li>L154: <code>(cl-defun etr:send-enter (&amp;optional (target (etr:target-pane)))</code></li>
+<li>L157: <code>(cl-defun etr:send-command (input &amp;optional (target (etr:target-pane)))</code></li>
+<li>L162: <code>(defun etr:vslipt ()</code></li>
+<li>L167: <code>(defun etr:hsplit ()</code></li>
+<li>L172: <code>(cl-defun etr:clear-pane (&amp;optional (pane (etr:target-pane)))</code></li>
+<li>L178: <code>(cl-defun etr:focus-pane (&amp;optional (pane (etr:target-pane)))</code></li>
+<li>L184: <code>(cl-defun etr:zoom-pane (&amp;optional (pane (etr:target-pane)))</code></li>
+<li>L191: <code>(cl-defun etr:current-line ()</code></li>
+<li>L196: <code>(cl-defun etr:current-selection ()</code></li>
+<li>L203: <code>(cl-defun etr:sanitize-buffer-string (str)</code></li>
+<li>L209: <code>(cl-defun etr:send-lines ()</code></li>
+<li>L214: <code>(provide 'emacs-tmux-runner)</code></li>
+</ul>
+<h2>test-helper.el</h2>
+<ul>
+<li>L3: <code>(defun stub-shell ()</code></li>
+<li>L6: <code>(defun expect-shell-cmd (cmd)</code></li>
+<li>L9: <code>(defun expect-cmd-to-target (session window pane)</code></li>
+<li>L14: <code>(defun expect-cmd-to-default-target ()</code></li>
+<li>L17: <code>(defun nth-sent-cmd (n)</code></li>
+<li>L20: <code>(defun first-sent-cmd ()</code></li>
+<li>L23: <code>(defun last-sent-cmd ()</code></li>
+<li>L28: <code>(defun cmds-sent-count ()</code></li>
+<li>L31: <code>(defmacro with-default-target (&amp;rest body)</code></li>
+</ul></main></html>

@@ -1,0 +1,81 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: emacs-herdr</h1>
+<p>Fonte: https://github.com/baongoc124/emacs-herdr.git</p>
+<p>Revisione: <code>4c84bfe4d7487df53f03dd073a91d3f43b18643d</code>.</p>
+<h2>herdr.el</h2>
+<ul>
+<li>L46: <code>(require 'ghostel)</code></li>
+<li>L47: <code>(require 'project)</code></li>
+<li>L48: <code>(require 'json)</code></li>
+<li>L49: <code>(require 'transient)</code></li>
+<li>L50: <code>(require 'vc-git)</code></li>
+<li>L59: <code>(defcustom herdr-executable "herdr"</code></li>
+<li>L63: <code>(defcustom herdr-poll-interval 2</code></li>
+<li>L67: <code>(defcustom herdr-default-agent-kind "claude"</code></li>
+<li>L71: <code>(defcustom herdr-sync-workspace-labels 'project</code></li>
+<li>L80: <code>(defcustom herdr-sync-tab-labels t</code></li>
+<li>L84: <code>(defcustom herdr-workspace-label-function #'identity</code></li>
+<li>L89: <code>(defcustom herdr-agent-display 'tui</code></li>
+<li>L97: <code>(defcustom herdr-attach-takeover t</code></li>
+<li>L104: <code>(defun herdr--bind-menu-key (key bind)</code></li>
+<li>L109: <code>(keymap-global-set key #'herdr-menu)</code></li>
+<li>L118: <code>(defcustom herdr-menu-repeat-command #'herdr-toggle</code></li>
+<li>L126: <code>(defcustom herdr-menu-key nil</code></li>
+<li>L164: <code>(defun herdr--call-json-sync (&amp;rest args)</code></li>
+<li>L174: <code>(defun herdr--call-async (callback &amp;rest args)</code></li>
+<li>L202: <code>(defun herdr--extract-agents (json)</code></li>
+<li>L228: <code>(defun herdr--workspace-for-root (root json)</code></li>
+<li>L240: <code>(defun herdr--fetch-agents-sync ()</code></li>
+<li>L247: <code>(defun herdr--sort-agents (agents)</code></li>
+<li>L257: <code>(defun herdr--format-candidate (agent)</code></li>
+<li>L272: <code>(defun herdr--pick-agent (&amp;optional prompt)</code></li>
+<li>L284: <code>(defun herdr--project-name (dir)</code></li>
+<li>L293: <code>(defun herdr--generic-title-p (title kind)</code></li>
+<li>L299: <code>(defun herdr--workspace-label (agent)</code></li>
+<li>L312: <code>(defun herdr--sync-labels (agents)</code></li>
+<li>L319: <code>(defun herdr--sync-tab-labels (agents)</code></li>
+<li>L331: <code>(defun herdr--sync-workspace-labels (agents)</code></li>
+<li>L344: <code>(defun herdr--buffer-live-p ()</code></li>
+<li>L351: <code>(defun herdr--create-buffer ()</code></li>
+<li>L364: <code>(defun herdr ()</code></li>
+<li>L378: <code>(defun herdr--attach-buffer-name (agent)</code></li>
+<li>L386: <code>(defun herdr--find-attach-buffer (pane-id)</code></li>
+<li>L396: <code>(defun herdr--create-attach-buffer (agent)</code></li>
+<li>L412: <code>(defun herdr--attach-agent (agent &amp;optional reattach)</code></li>
+<li>L424: <code>(defun herdr--attach-buffers ()</code></li>
+<li>L432: <code>(defun herdr-last-agent ()</code></li>
+<li>L440: <code>(defun herdr--show-agent (agent)</code></li>
+<li>L450: <code>(defun herdr-hide ()</code></li>
+<li>L458: <code>(defun herdr-toggle ()</code></li>
+<li>L466: <code>(defun herdr-switch-agent ()</code></li>
+<li>L472: <code>(defun herdr-attach-agent (&amp;optional reattach)</code></li>
+<li>L479: <code>(defun herdr-goto-blocked ()</code></li>
+<li>L488: <code>(defun herdr--sanitize-name (str)</code></li>
+<li>L495: <code>(defun herdr--unique-agent-name (base agents)</code></li>
+<li>L506: <code>(defun herdr-new-agent ()</code></li>
+<li>L546: <code>(defun herdr--detect-language ()</code></li>
+<li>L554: <code>(defun herdr--format-region (beg end)</code></li>
+<li>L576: <code>(defun herdr-send-region (beg end &amp;optional submit)</code></li>
+<li>L595: <code>(defun herdr--mode-line-segment ()</code></li>
+<li>L603: <code>(defun herdr--poll ()</code></li>
+<li>L626: <code>(defun herdr--ensure-timer ()</code></li>
+<li>L633: <code>(defun herdr--stop-timer ()</code></li>
+<li>L641: <code>(defvar-keymap herdr-agents-mode-map</code></li>
+<li>L651: <code>(define-derived-mode herdr-agents-mode tabulated-list-mode "Herdr-Agents"</code></li>
+<li>L665: <code>(defun herdr--status-face (status)</code></li>
+<li>L673: <code>(defun herdr--agent-entry (agent)</code></li>
+<li>L688: <code>(defun herdr--agents-set-entries (agents)</code></li>
+<li>L693: <code>(defun herdr--agents-render (agents)</code></li>
+<li>L701: <code>(defun herdr--agents-revert ()</code></li>
+<li>L705: <code>(defun herdr--agent-at-point ()</code></li>
+<li>L715: <code>(defun herdr-agents-sort ()</code></li>
+<li>L734: <code>(defun herdr-agents-show (&amp;optional reattach)</code></li>
+<li>L742: <code>(defun herdr-agents-attach (&amp;optional reattach)</code></li>
+<li>L749: <code>(defun herdr-agents ()</code></li>
+<li>L766: <code>(defun herdr--invoking-key ()</code></li>
+<li>L775: <code>(defun herdr-submit-region (beg end)</code></li>
+<li>L780: <code>(defun herdr--menu-description ()</code></li>
+<li>L787: <code>(defun herdr--repeat-description ()</code></li>
+<li>L794: <code>(defun herdr--menu-children (_)</code></li>
+<li>L836: <code>(define-minor-mode herdr-mode</code></li>
+<li>L850: <code>(provide 'herdr)</code></li>
+</ul></main></html>

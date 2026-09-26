@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-26",
+  "method": "Web search tool and manual link following; not asserted to be Google",
+  "queries": ["emacs terminal emulator multiplexer", "site:reddit.com/r/emacs terminal multiplexer", "emacs terminal GitLab Codeberg", "multi-buffer.el Emacs github", "nssh Eure", "term-toggle.el", "eat-windows-pty"],
+  "leads": [
+    {"url":"https://www.reddit.com/r/emacs/comments/1wc2d3v/announcing_multibuf_a_generalized_buffer/","projects":["multi-buf","multi-buffer","vtermux"]},
+    {"url":"https://www.reddit.com/r/emacs/comments/1anp6a4","projects":["multi-buffer"]},
+    {"url":"https://www.reddit.com/r/emacs/comments/ptqa2g","projects":["term-toggle"]},
+    {"url":"https://codeberg.org/emacs-weirdware/nssh","projects":["nssh"]}
+  ],
+  "unresolved_leads": ["eat-windows-pty"],
+  "caveat": "This is a concise audit of search leads, not a full transcript of every web tool result. Raw forge API responses and Google interstitials are separately preserved."
+}

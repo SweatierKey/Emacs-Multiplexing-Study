@@ -1,0 +1,102 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: shell</h1>
+<p>Fonte: https://git.savannah.gnu.org/cgit/emacs.git</p>
+<p>Revisione: <code>30.1</code>.</p>
+<h2>shell.el</h2>
+<ul>
+<li>L52: <code>;;  '(define-key shell-mode-map "\M-#" 'shells-dynamic-spell))</code></li>
+<li>L98: <code>(require 'comint)</code></li>
+<li>L99: <code>(require 'pcomplete)</code></li>
+<li>L101: <code>(require 'subr-x)</code></li>
+<li>L116: <code>(defcustom shell-dumb-shell-regexp (purecopy "cmd\\(proxy\\)?\\.exe")</code></li>
+<li>L125: <code>(defcustom shell-prompt-pattern "^[^#$%&gt;\n]*[#$%&gt;] *"</code></li>
+<li>L141: <code>(defcustom shell-completion-fignore nil</code></li>
+<li>L149: <code>(defcustom shell-delimiter-argument-list '(?\| ?&amp; ?&lt; ?&gt; ?\( ?\) ?\;)</code></li>
+<li>L157: <code>(defcustom shell-file-name-chars</code></li>
+<li>L167: <code>(defcustom shell-file-name-quote-list</code></li>
+<li>L177: <code>(defcustom shell-dynamic-complete-functions</code></li>
+<li>L191: <code>(defcustom shell-command-regexp "[^;&amp;|\n]+"</code></li>
+<li>L197: <code>(defcustom shell-command-separator-regexp "[;&amp;|\n \t]*"</code></li>
+<li>L203: <code>(defcustom shell-completion-execonly t</code></li>
+<li>L211: <code>(defcustom shell-popd-regexp "popd"</code></li>
+<li>L216: <code>(defcustom shell-pushd-regexp "pushd"</code></li>
+<li>L221: <code>(defcustom shell-pushd-tohome nil</code></li>
+<li>L227: <code>(defcustom shell-pushd-dextract nil</code></li>
+<li>L233: <code>(defcustom shell-pushd-dunique nil</code></li>
+<li>L239: <code>(defcustom shell-cd-regexp "cd"</code></li>
+<li>L244: <code>(defcustom shell-chdrive-regexp</code></li>
+<li>L254: <code>(defcustom shell-dirtrack-verbose t</code></li>
+<li>L262: <code>(defcustom explicit-shell-file-name nil</code></li>
+<li>L272: <code>(defcustom explicit-csh-args</code></li>
+<li>L285: <code>(defcustom explicit-bash-args</code></li>
+<li>L294: <code>(defcustom shell-input-autoexpand 'history</code></li>
+<li>L311: <code>(defcustom shell-fontify-input-enable t</code></li>
+<li>L321: <code>(defcustom shell-indirect-setup-hook nil</code></li>
+<li>L334: <code>(defcustom shell-highlight-undef-enable nil</code></li>
+<li>L359: <code>(defcustom shell-has-auto-cd nil</code></li>
+<li>L368: <code>(defcustom shell-get-old-input-include-continuation-lines nil</code></li>
+<li>L374: <code>(defcustom shell-kill-buffer-on-exit nil</code></li>
+<li>L380: <code>(defvar shell-mode-map</code></li>
+<li>L382: <code>(define-key map "\C-c\C-f" 'shell-forward-command)</code></li>
+<li>L383: <code>(define-key map "\C-c\C-b" 'shell-backward-command)</code></li>
+<li>L384: <code>(define-key map "\t" 'completion-at-point)</code></li>
+<li>L385: <code>(define-key map (kbd "M-RET") 'shell-resync-dirs)</code></li>
+<li>L386: <code>(define-key map "\M-?" 'comint-dynamic-list-filename-completions)</code></li>
+<li>L387: <code>(define-key map (kbd "C-x n d") 'shell-narrow-to-prompt)</code></li>
+<li>L388: <code>(define-key map [menu-bar completion]</code></li>
+<li>L401: <code>(defvar-keymap shell-repeat-map</code></li>
+<li>L407: <code>(defcustom shell-mode-hook '()</code></li>
+<li>L422: <code>(defcustom shell-history-file-name nil</code></li>
+<li>L440: <code>(defun shell--unquote&amp;requote-argument (qstr &amp;optional upos)</code></li>
+<li>L485: <code>(defun shell--unquote-argument (str)</code></li>
+<li>L487: <code>(defun shell--requote-argument (upos qstr)</code></li>
+<li>L492: <code>(defun shell--parse-pcomplete-arguments ()</code></li>
+<li>L530: <code>(defun shell-get-old-input ()</code></li>
+<li>L564: <code>(defun split-string-shell-command (string)</code></li>
+<li>L573: <code>(defun shell-command-completion-function ()</code></li>
+<li>L585: <code>(defun shell-completion-vars ()</code></li>
+<li>L628: <code>(define-derived-mode shell-mode comint-mode "Shell"</code></li>
+<li>L801: <code>(defun shell-indirect-setup-hook ()</code></li>
+<li>L805: <code>(defun shell-apply-ansi-color (beg end face)</code></li>
+<li>L811: <code>(defun shell-reapply-ansi-color ()</code></li>
+<li>L826: <code>(defun shell-filter-ctrl-a-ctrl-b (string)</code></li>
+<li>L841: <code>(defun shell-filter-ring-bell (string)</code></li>
+<li>L848: <code>(defun shell-write-history-on-exit (process event)</code></li>
+<li>L864: <code>(define-derived-mode shell-command-mode comint-mode "Shell"</code></li>
+<li>L872: <code>(defun shell (&amp;optional buffer file-name)</code></li>
+<li>L1041: <code>(define-minor-mode shell-dirtrack-mode</code></li>
+<li>L1056: <code>(defun shell-directory-tracker (str)</code></li>
+<li>L1116: <code>(defun shell-unquote-argument (string)</code></li>
+<li>L1142: <code>(defun shell-process-popd (arg)</code></li>
+<li>L1158: <code>(defun shell-prefixed-directory-name (dir)</code></li>
+<li>L1168: <code>(defun shell-process-cd (arg)</code></li>
+<li>L1178: <code>(defun shell-process-pushd (arg)</code></li>
+<li>L1222: <code>(defun shell-extract-num (str)</code></li>
+<li>L1226: <code>(defun shell-cd (dir)</code></li>
+<li>L1232: <code>(defun shell-resync-dirs ()</code></li>
+<li>L1286: <code>(defun shell-dirstack-message ()</code></li>
+<li>L1309: <code>(defun shell-snarf-envar (var)</code></li>
+<li>L1328: <code>(defun shell-copy-environment-variable (variable)</code></li>
+<li>L1339: <code>(defun shell-forward-command (&amp;optional arg)</code></li>
+<li>L1351: <code>(defun shell-backward-command (&amp;optional arg)</code></li>
+<li>L1367: <code>(defun shell-dynamic-complete-command ()</code></li>
+<li>L1386: <code>(defun shell-command-completion ()</code></li>
+<li>L1395: <code>(defun shell--command-completion-data ()</code></li>
+<li>L1457: <code>(defun shell-dynamic-complete-filename ()</code></li>
+<li>L1465: <code>(defun shell-filename-completion ()</code></li>
+<li>L1476: <code>(defun shell-match-partial-variable ()</code></li>
+<li>L1486: <code>(defun shell-dynamic-complete-environment-variable ()</code></li>
+<li>L1507: <code>(defun shell-environment-variable-completion ()</code></li>
+<li>L1534: <code>(defun shell-c-a-p-replace-by-expanded-directory ()</code></li>
+<li>L1563: <code>(defun shell-replace-by-expanded-directory ()</code></li>
+<li>L1573: <code>(defun shell--prompt-begin-position ()</code></li>
+<li>L1596: <code>(defun shell--prompt-end-position ()</code></li>
+<li>L1602: <code>(defun shell-narrow-to-prompt ()</code></li>
+<li>L1615: <code>(defun shell-eval-command (command)</code></li>
+<li>L1655: <code>(defcustom shell-highlight-undef-aliases nil</code></li>
+<li>L1679: <code>(defcustom shell-highlight-undef-remote-file-name-inhibit-cache nil</code></li>
+<li>L1713: <code>(defun shell--highlight-undef-executable-find (command)</code></li>
+<li>L1755: <code>(defun shell-highlight-undef-matcher (end)</code></li>
+<li>L1796: <code>(define-minor-mode shell-highlight-undef-mode</code></li>
+<li>L1856: <code>(defun shell-highlight-undef-mode-restart ()</code></li>
+<li>L1865: <code>(provide 'shell)</code></li>
+</ul></main></html>

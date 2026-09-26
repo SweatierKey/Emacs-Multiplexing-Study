@@ -1,0 +1,142 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>cooked</h1>
+<p>Categoria: <strong>emulatore</strong>. <a href="https://github.com/vodik/cooked">Sorgente upstream</a>. Revisione: <code>dd8e9fcc3c09d85d9dd598682dbe6390bd138262</code>.</p>
+<h2>Funzionamento</h2>
+<p>Core Rust con PTY e gestione dell'ownership dei tasti in base a stato del terminale e shell integration.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x cooked e C-u per nuova istanza. In input raw remoto M-x da solo viene inviato alla shell: usare il default C-c M-x. Il wrapper bash del laboratorio non abilita tutte le integrazioni di startup della shell.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/cooked.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/cooked.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario cooked: passed</h3>
+<p><a href="../../results/cooked.json">Esito e snapshot</a> · <a href="../../results/cooked-keys.json">Traccia dei tasti</a> · <a href="../../recordings/cooked.cast">Registrazione asciinema</a> · <a href="../../index.html#cooked">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.62</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.92</td>
+<td><code>cooked</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.42</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.72</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.92</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.92</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.12</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.33</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.13</td>
+<td><code>C-u</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.53</td>
+<td><code>C-c M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.83</td>
+<td><code>cooked</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.33</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.63</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.83</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.83</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.03</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.04</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.44</td>
+<td><code>*cooked: /home/admin/Emacs-Multiplexing-Study/*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.84</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.24</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.44</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.14</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.34</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.04</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.54</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.74</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

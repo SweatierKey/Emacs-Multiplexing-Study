@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"emamux","library":"/home/admin/Emacs-Multiplexing-Study/sources/emamux/emamux.el","commands":["emamux:clear-runner-history","emamux:clone-current-frame","emamux:close-panes","emamux:close-runner-pane","emamux:copy-kill-ring","emamux:inspect-runner","emamux:interrupt-runner","emamux:kill-session","emamux:new-window","emamux:run-command","emamux:run-last-command","emamux:run-region","emamux:send-command","emamux:send-region","emamux:split-window","emamux:split-window-horizontally","emamux:yank-from-list-buffers","emamux:zoom-runner"]}
+STDERR:

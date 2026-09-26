@@ -1,0 +1,82 @@
+[
+  {
+    "at": 2.308,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.608,
+    "keys": "vtplex-create",
+    "input_hex": "7674706c65782d637265617465"
+  },
+  {
+    "at": 3.109,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.412,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 4.612,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.612,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 5.813,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.815,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 7.015,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.817,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 8.117,
+    "keys": "vtplex-create",
+    "input_hex": "7674706c65782d637265617465"
+  },
+  {
+    "at": 8.617,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.92,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 10.12,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.121,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 11.321,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

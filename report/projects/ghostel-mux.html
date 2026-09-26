@@ -1,0 +1,122 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>ghostel-mux</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/SweatierKey/ghostel-mux">Sorgente upstream</a>. Revisione: <code>c03055c8c081f5afe9ea35cfa431b844f415f949</code>.</p>
+<h2>Funzionamento</h2>
+<p>Sessioni, finestre e pannelli Emacs contenenti Ghostel; gestione del layout e dell'input sincronizzato.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x ghostel-mux; C-b c nuova finestra e C-b p precedente. Conservazione SSH verificata. Questa gestione in Emacs da sola non è un server persistente.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/ghostel-mux.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/ghostel-mux.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario ghostel-mux: passed</h3>
+<p><a href="../../results/ghostel-mux.json">Esito e snapshot</a> · <a href="../../results/ghostel-mux-keys.json">Traccia dei tasti</a> · <a href="../../recordings/ghostel-mux.cast">Registrazione asciinema</a> · <a href="../../index.html#ghostel-mux">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>ghostel-mux</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.71</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.91</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.91</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.12</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.12</td>
+<td><code>native create key</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.62</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.82</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.82</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.02</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.02</td>
+<td><code>native previous key</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.03</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.23</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.93</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.13</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.83</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.33</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.53</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

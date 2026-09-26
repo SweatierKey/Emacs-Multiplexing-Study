@@ -1,0 +1,27 @@
+[
+  {
+    "at": 2.308,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.608,
+    "keys": "term-run-shell-command",
+    "input_hex": "7465726d2d72756e2d7368656c6c2d636f6d6d616e64"
+  },
+  {
+    "at": 3.108,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 3.908,
+    "keys": "/bin/bash --noprofile --norc",
+    "input_hex": "2f62696e2f62617368202d2d6e6f70726f66696c65202d2d6e6f7263"
+  },
+  {
+    "at": 4.109,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

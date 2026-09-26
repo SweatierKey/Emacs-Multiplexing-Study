@@ -1,0 +1,57 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: multi-term-roman</h1>
+<p>Fonte: https://github.com/roman/multi-term.git</p>
+<p>Revisione: <code>06f6b49ef53a5f2ea779b1608eb5a7b38660e6bb</code>.</p>
+<h2>multi-term.el</h2>
+<ul>
+<li>L236: <code>(require 'term)</code></li>
+<li>L237: <code>(require 'cl)</code></li>
+<li>L238: <code>(require 'advice)</code></li>
+<li>L249: <code>(defcustom multi-term-program nil</code></li>
+<li>L255: <code>(defcustom multi-term-program-switches nil</code></li>
+<li>L263: <code>(defcustom multi-term-try-create t</code></li>
+<li>L271: <code>(defcustom multi-term-default-dir "~/"</code></li>
+<li>L276: <code>(defcustom multi-term-buffer-name "terminal"</code></li>
+<li>L281: <code>(defcustom multi-term-scroll-show-maximum-output nil</code></li>
+<li>L289: <code>(defcustom multi-term-scroll-to-bottom-on-output nil</code></li>
+<li>L301: <code>(defcustom multi-term-switch-after-close 'NEXT</code></li>
+<li>L309: <code>(defcustom term-unbind-key-list</code></li>
+<li>L315: <code>(defcustom term-bind-key-alist</code></li>
+<li>L338: <code>(defcustom multi-term-dedicated-window-height 14</code></li>
+<li>L343: <code>(defcustom multi-term-dedicated-max-window-height 30</code></li>
+<li>L350: <code>(defcustom multi-term-dedicated-skip-other-window-p nil</code></li>
+<li>L365: <code>(defcustom multi-term-dedicated-select-after-open-p nil</code></li>
+<li>L387: <code>(defun multi-term ()</code></li>
+<li>L404: <code>(defun multi-term-persistent (&amp;optional session-name screen-shell)</code></li>
+<li>L422: <code>(defun multi-term-next (&amp;optional offset)</code></li>
+<li>L428: <code>(defun multi-term-prev (&amp;optional offset)</code></li>
+<li>L434: <code>(defun multi-term-dedicated-open ()</code></li>
+<li>L463: <code>(defun multi-term-dedicated-close ()</code></li>
+<li>L484: <code>(defun multi-term-dedicated-remember-window-height ()</code></li>
+<li>L492: <code>(defun multi-term-dedicated-toggle ()</code></li>
+<li>L499: <code>(defun multi-term-dedicated-select ()</code></li>
+<li>L506: <code>(defun term-send-backward-kill-word ()</code></li>
+<li>L511: <code>(defun term-send-forward-kill-word ()</code></li>
+<li>L516: <code>(defun term-send-backward-word ()</code></li>
+<li>L521: <code>(defun term-send-forward-word ()</code></li>
+<li>L526: <code>(defun term-send-reverse-search-history ()</code></li>
+<li>L533: <code>(defun multi-term-internal ()</code></li>
+<li>L549: <code>(defun multi-term-get-buffer (&amp;optional special-shell dedicated-window)</code></li>
+<li>L582: <code>(defun multi-term-handle-close ()</code></li>
+<li>L590: <code>(defun multi-term-kill-buffer-hook ()</code></li>
+<li>L606: <code>(defun multi-term-list ()</code></li>
+<li>L623: <code>(defun multi-term-switch (direction offset)</code></li>
+<li>L635: <code>(defun multi-term-switch-internal (direction offset)</code></li>
+<li>L655: <code>(defun multi-term-keystroke-setup ()</code></li>
+<li>L668: <code>(define-key term-raw-map unbind-key nil))</code></li>
+<li>L679: <code>(define-key term-raw-map bind-key bind-command))))</code></li>
+<li>L681: <code>(defun multi-term-dedicated-handle-other-window-advice (activate)</code></li>
+<li>L691: <code>(defun multi-term-current-window-take-height (&amp;optional window)</code></li>
+<li>L698: <code>(defun multi-term-dedicated-get-window ()</code></li>
+<li>L705: <code>(defun multi-term-dedicated-get-buffer-name ()</code></li>
+<li>L709: <code>(defun multi-term-dedicated-exist-p ()</code></li>
+<li>L714: <code>(defun multi-term-window-exist-p (window)</code></li>
+<li>L719: <code>(defun multi-term-buffer-exist-p (buffer)</code></li>
+<li>L724: <code>(defun multi-term-dedicated-window-p ()</code></li>
+<li>L729: <code>(defun multi-term-window-dedicated-only-one-p ()</code></li>
+<li>L800: <code>(provide 'multi-term)</code></li>
+</ul></main></html>

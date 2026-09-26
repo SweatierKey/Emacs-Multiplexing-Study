@@ -1,0 +1,34 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: abysl-term</h1>
+<p>Fonte: https://github.com/abysl/abysl-term.git</p>
+<p>Revisione: <code>7a5de7fb1bd50a56c0ccf6c808fb817a84c49247</code>.</p>
+<h2>abysl-term.el</h2>
+<ul>
+<li>L81: <code>(defcustom abysl-term-terminal "wezterm"</code></li>
+<li>L86: <code>(defcustom abysl-term-terminal-args '("--always-new-process")</code></li>
+<li>L91: <code>(defcustom abysl-term-shell "bash"</code></li>
+<li>L96: <code>(defcustom abysl-term-hide 'onSuccess</code></li>
+<li>L103: <code>(defcustom abysl-term-args-alist</code></li>
+<li>L125: <code>(defcustom abysl-term-user-exit-hooks nil</code></li>
+<li>L135: <code>(defun abysl-term-open-shell (&amp;optional terminal terminal-args shell)</code></li>
+<li>L151: <code>(defun abysl-term-run (command &amp;optional current-exit-hook terminal terminal-args shell)</code></li>
+<li>L184: <code>(defun abysl-term-run-selected ()</code></li>
+<li>L193: <code>(defun abysl-term-run-previous ()</code></li>
+<li>L202: <code>(defun abysl-term--get-terminal-flags (term action)</code></li>
+<li>L212: <code>(defun abysl-term--use-argument-separator (term)</code></li>
+<li>L223: <code>(defun abysl-term--format-command (term &amp;optional term-args shell shell-args command)</code></li>
+<li>L249: <code>(defun abysl-term--run-terminal (full-command tmp-files exit-hooks)</code></li>
+<li>L262: <code>(defun abysl-term--process-sentinel (proc event tmp-files exit-hooks)</code></li>
+<li>L272: <code>(defun abysl-term--default-exit-hook (tmp-files exit-hooks)</code></li>
+<li>L295: <code>(defun abysl-term--show-buffer (exit-codes output)</code></li>
+<li>L311: <code>(defun abysl-term--handle-output (exit-codes output)</code></li>
+<li>L327: <code>(defun abysl-term--merge-exit-hooks (user-hooks current-exit-hook)</code></li>
+<li>L333: <code>(defun abysl-term--generate-command (shell command-str)</code></li>
+<li>L354: <code>(defun abysl-term--find-shell-path (shell)</code></li>
+<li>L365: <code>(defun abysl-term--get-command-str (command)</code></li>
+<li>L371: <code>(defun abysl-term--message-tmp-files (tmp-files prefix)</code></li>
+<li>L381: <code>(defun abysl-term--strip-carriage-returns (string)</code></li>
+<li>L385: <code>(defun apply-all (str replacements)</code></li>
+<li>L395: <code>(defun abysl-term--convert-to-unix-path (path)</code></li>
+<li>L410: <code>(defun abysl-term--get-project-root-or-default ()</code></li>
+<li>L425: <code>(provide 'abysl-term)</code></li>
+</ul></main></html>

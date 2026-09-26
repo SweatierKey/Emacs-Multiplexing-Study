@@ -1,0 +1,29 @@
+{
+  "id": "cooked",
+  "status": "failed",
+  "scenario": "two-ssh-endpoints",
+  "started": "2026-09-26T11:28:06Z",
+  "snapshots": [
+    {
+      "name": "*cooked: /home/admin/Emacs-Multiplexing-Study/*",
+      "mode": "cooked-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "*cooked: /home/admin/Emacs-Multiplexing-Study/*",
+      "mode": "cooked-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cooked\nbash: cooked: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ lab-ssh lab-db\nbash: lab-ssh: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    }
+  ],
+  "checks": {
+    "completion_enabled": true,
+    "ssh_web": true
+  },
+  "error": "Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cooked\nbash: cooked: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ lab-ssh lab-db\nbash: lab-ssh: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ ",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 40, in run\n    launch(s,sp,True);second=check_role(s,'db');result['snapshots'].append(second);result['checks']['ssh_db']=True\n                             ~~~~~~~~~~^^^^^^^^\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 27, in check_role\n    if not re.search(r'^role='+role+r'\\s*$',snap['text'],re.M):raise AssertionError('Missing actual remote role output: '+snap['text'][-1500:])\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cooked\nbash: cooked: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ lab-ssh lab-db\nbash: lab-ssh: command not found\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n",
+  "messages": "\"For information about GNU Emacs and the GNU system, type C-h C-a.\\ncooked: no shell integration in this session; source shell-integration/cooked.zsh from your shell='s rc\\n\""
+}

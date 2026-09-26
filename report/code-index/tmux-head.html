@@ -1,0 +1,133 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tmux-head</h1>
+<p>Fonte: https://github.com/jeffyql/tmux-head.git</p>
+<p>Revisione: <code>12c6fa6fa1fef1c6af738086dceea53344483ef6</code>.</p>
+<h2>tmux-commands.el</h2>
+<ul>
+<li>L1: <code>(require 'general)</code></li>
+<li>L2: <code>(require 'hydra)</code></li>
+</ul>
+<h2>tmux-head-ipython.el</h2>
+<ul>
+<li>L22: <code>(defun tmux-ipython-send-buffer (&amp;optional arg)</code></li>
+<li>L29: <code>(defun tmux-python-console-p ()</code></li>
+<li>L35: <code>(defun tmux-ipython-send-region (&amp;optional arg)</code></li>
+<li>L59: <code>(defun tmux-ipython-send-defun ()</code></li>
+<li>L80: <code>(defun tmux-ipython-send-from-beginning ()</code></li>
+<li>L88: <code>(defun tmux-ipython-send-to-end ()</code></li>
+<li>L100: <code>(defun tmux-ipython-print (&amp;optional arg)</code></li>
+<li>L104: <code>(defun tmux-ipython-help (&amp;optional arg)</code></li>
+<li>L108: <code>(defun tmux-ipython-send-special (type &amp;optional arg)</code></li>
+<li>L125: <code>(defun tmux-python-run-this-file ()</code></li>
+<li>L133: <code>(defun tmux-ipython-start ()</code></li>
+<li>L137: <code>(defun tmux-ipython-start-existing ()</code></li>
+<li>L148: <code>(provide 'tmux-head-ipython)</code></li>
+</ul>
+<h2>tmux-head.el</h2>
+<ul>
+<li>L22: <code>(require 'comint)</code></li>
+<li>L29: <code>(defun tmux-run-command (cmd &amp;rest args)</code></li>
+<li>L36: <code>(defun tmux-pane-0-run-command (cmd &amp;rest args)</code></li>
+<li>L39: <code>(defun tmux-send-key (&amp;rest args)</code></li>
+<li>L42: <code>(defun tmux-run-key (&amp;rest args)</code></li>
+<li>L45: <code>(defun tmux-copy (str)</code></li>
+<li>L48: <code>(defun tmux-paste ()</code></li>
+<li>L52: <code>(defun tmux-shell-send-string (str &amp;optional arg)</code></li>
+<li>L60: <code>(defun tmux-send-region (&amp;optional arg)</code></li>
+<li>L98: <code>(defun tmux-dired-run-file ()</code></li>
+<li>L104: <code>(defun tmux-send-selection (cmd-str)</code></li>
+<li>L109: <code>(defun tmux-minibuffer-run-shell-cmd ()</code></li>
+<li>L113: <code>(define-key map (kbd "TAB") 'my-complete-file-name)</code></li>
+<li>L114: <code>(define-key map (kbd "M-y") 'insert-current-file-name-at-point)</code></li>
+<li>L118: <code>(defun tmux-edit-and-send (cmd-string)</code></li>
+<li>L122: <code>(defun tmux-edit-and-send-action ()</code></li>
+<li>L128: <code>(defun tmux-edit-and-send-prompt-action ()</code></li>
+<li>L138: <code>(defvar ivy-minibuffer-tmux-shell-command-map</code></li>
+<li>L140: <code>(define-key map (kbd "TAB") #'my-complete-file-name)</code></li>
+<li>L141: <code>(define-key map (kbd "C-c C-c") #'tmux-ctrl-c)</code></li>
+<li>L142: <code>(define-key map (kbd "C-d") #'tmux-ctrl-d)</code></li>
+<li>L143: <code>(define-key map (kbd "M-RET") 'tmux-edit-and-send-prompt-action)</code></li>
+<li>L144: <code>(define-key map (kbd "M-h") 'tmux-swap-pane)</code></li>
+<li>L145: <code>(define-key map (kbd "M-i") #'ivy-immediate-done)   ;; CMD-m : run prompt text</code></li>
+<li>L146: <code>(define-key map (kbd "M-l") 'ivy-insert-current)    ;; CMD-h : insert selected</code></li>
+<li>L147: <code>(define-key map (kbd "M-m") 'tmux-edit-and-send-action)</code></li>
+<li>L148: <code>(define-key map (kbd "M-u") 'tmux-sync-location-with-emacs)</code></li>
+<li>L152: <code>(defun tmux-ivy-run-shell (&amp;optional arg)</code></li>
+<li>L168: <code>(defun tmux-insert-state ()</code></li>
+<li>L206: <code>(defun tmux-set-emacs-frame-name (frame-name)</code></li>
+<li>L213: <code>(defun tmux-display-pane-numbers ()</code></li>
+<li>L222: <code>(defun my/tmux-select-number (num-list prompt)</code></li>
+<li>L236: <code>(defun tmux-get-list-entry (num &amp;rest cmd)</code></li>
+<li>L245: <code>(defun tmux-get-window-name (window-num)</code></li>
+<li>L251: <code>(defun tmux-get-pane-or-window-number-list (&amp;optional panes)</code></li>
+<li>L266: <code>(defun tmux-display-message (message &amp;optional pane-id)</code></li>
+<li>L272: <code>(defun tmux-pane-height (pane-id)</code></li>
+<li>L275: <code>(defun tmux-window-height ()</code></li>
+<li>L278: <code>(defun tmux-window-id ()</code></li>
+<li>L281: <code>(defun tmux-zoomed ()</code></li>
+<li>L285: <code>(defun tmux-zoom-pane-0 ()</code></li>
+<li>L290: <code>(defun tmux-unzoom-pane-0 ()</code></li>
+<li>L295: <code>(defun tmux-toggle-zoom ()</code></li>
+<li>L299: <code>(defun tmux-window-exist (window-num)</code></li>
+<li>L304: <code>(defun tmux-capture-pane (&amp;optional arg)</code></li>
+<li>L327: <code>(defun tmux-ctrl-c ()</code></li>
+<li>L332: <code>(defun tmux-ctrl-d ()</code></li>
+<li>L337: <code>(defun tmux-ctrl-m ()</code></li>
+<li>L342: <code>(defun tmux-q ()</code></li>
+<li>L347: <code>(defun tmux-ctrl-z ()</code></li>
+<li>L352: <code>(defun tmux-space ()</code></li>
+<li>L356: <code>(defun tmux-n ()</code></li>
+<li>L360: <code>(defun tmux-y ()</code></li>
+<li>L364: <code>(defun tmux-clear-pane ()</code></li>
+<li>L370: <code>(defun tmux-login-type ()</code></li>
+<li>L373: <code>(defun tmux-cd-default-directory ()</code></li>
+<li>L399: <code>(defun tmux-down ()</code></li>
+<li>L403: <code>(defun tmux-up ()</code></li>
+<li>L407: <code>(defun tmux-command-history-prev ()</code></li>
+<li>L411: <code>(defun tmux-command-history-next ()</code></li>
+<li>L416: <code>(defun  tmux-ls ()</code></li>
+<li>L420: <code>(defun tmux-pwd ()</code></li>
+<li>L425: <code>(defun tmux-home-dir ()</code></li>
+<li>L430: <code>(defun tmux-last-dir ()</code></li>
+<li>L435: <code>(defun tmux-up-dir ()</code></li>
+<li>L439: <code>(defun tmux-begin-cmd-history ()</code></li>
+<li>L443: <code>(defun tmux-run-a-history-cmd ()</code></li>
+<li>L451: <code>(defun tmux-begin-copy-mode ()</code></li>
+<li>L457: <code>(defun tmux-quit-copy-mode ()</code></li>
+<li>L464: <code>(defun tmux-page-up ()</code></li>
+<li>L468: <code>(defun tmux-page-down ()</code></li>
+<li>L472: <code>(defun tmux-halfpage-up ()</code></li>
+<li>L476: <code>(defun tmux-halfpage-down ()</code></li>
+<li>L480: <code>(defun tmux-copy-mode-down ()</code></li>
+<li>L484: <code>(defun tmux-copy-mode-up ()</code></li>
+<li>L488: <code>(defun tmux-kill-pane ()</code></li>
+<li>L494: <code>(defun tmux-resize-pane (directory)</code></li>
+<li>L497: <code>(defun tmux-resize-pane-up ()</code></li>
+<li>L501: <code>(defun tmux-resize-pane-down ()</code></li>
+<li>L505: <code>(defun tmux-resize-pane-left ()</code></li>
+<li>L509: <code>(defun tmux-resize-pane-right ()</code></li>
+<li>L513: <code>(defun tmux-new-window ()</code></li>
+<li>L518: <code>(defun tmux-kill-window ()</code></li>
+<li>L523: <code>(defun tmux-split-window (direction)</code></li>
+<li>L528: <code>(defun tmux-split-window-horizontal ()</code></li>
+<li>L533: <code>(defun tmux-split-window-vertical ()</code></li>
+<li>L538: <code>(defun tmux-last-window (&amp;optional keep-display)</code></li>
+<li>L542: <code>(defun tmux-next-window (&amp;optional keep-display)</code></li>
+<li>L548: <code>(defun tmux-select-window (window-id &amp;optional keep-display)</code></li>
+<li>L553: <code>(defun tmux-select-window-0 (&amp;optional arg)</code></li>
+<li>L558: <code>(defun tmux-select-window-1 (&amp;optional arg)</code></li>
+<li>L563: <code>(defun tmux-select-window-2 (&amp;optional arg)</code></li>
+<li>L568: <code>(defun tmux-select-window-3 (&amp;optional arg)</code></li>
+<li>L573: <code>(defun tmux-select-window-4 (&amp;optional arg)</code></li>
+<li>L578: <code>(defun tmux-select-window-5 (&amp;optional arg)</code></li>
+<li>L583: <code>(defun tmux-select-window-6 (&amp;optional arg)</code></li>
+<li>L588: <code>(defun tmux-select-window-7 (&amp;optional arg)</code></li>
+<li>L593: <code>(defun tmux-select-window-8 (&amp;optional arg)</code></li>
+<li>L598: <code>(defun tmux-select-window-9 (&amp;optional arg)</code></li>
+<li>L603: <code>(defun tmux-rename-window ()</code></li>
+<li>L609: <code>(defun tmux-select-pane-num ()</code></li>
+<li>L614: <code>(defun tmux-select-pane ()</code></li>
+<li>L619: <code>(defun tmux-select-pane-0 ()</code></li>
+<li>L623: <code>(defun tmux-swap-pane ()</code></li>
+<li>L637: <code>(defun tmux-tail-this-file ()</code></li>
+<li>L646: <code>(provide 'tmux-head)</code></li>
+</ul></main></html>

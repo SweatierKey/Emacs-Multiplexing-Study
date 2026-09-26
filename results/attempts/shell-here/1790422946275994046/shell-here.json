@@ -1,0 +1,29 @@
+{
+  "id": "shell-here",
+  "status": "failed",
+  "scenario": "two-ssh-endpoints",
+  "started": "2026-09-26T11:37:13Z",
+  "snapshots": [
+    {
+      "name": "*shell Emacs-Multiplexing-Study*",
+      "mode": "shell-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": " *Minibuf-1*",
+      "mode": "minibuffer-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "Shell buffer (default *shell*): "
+    }
+  ],
+  "checks": {
+    "completion_enabled": true,
+    "ssh_web": true
+  },
+  "error": "Launch did not enter a terminal: {'name': ' *Minibuf-1*', 'mode': 'minibuffer-mode', 'vertico': True, 'marginalia': True, 'text': 'Shell buffer (default *shell*): '}",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 46, in run\n    launch(s,sp,True);second=check_role(s,'db');result['snapshots'].append(second);result['checks']['ssh_db']=True\n    ~~~~~~^^^^^^^^^^^\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 25, in launch\n    if s.snapshot()['mode'] in ['lisp-interaction-mode','minibuffer-mode']:raise AssertionError('Launch did not enter a terminal: '+str(s.snapshot()))\n                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Launch did not enter a terminal: {'name': ' *Minibuf-1*', 'mode': 'minibuffer-mode', 'vertico': True, 'marginalia': True, 'text': 'Shell buffer (default *shell*): '}\n",
+  "messages": "\"For information about GNU Emacs and the GNU system, type C-h C-a.\\nYou can run the command ‘shell-here’ with M-x -her\\n\""
+}

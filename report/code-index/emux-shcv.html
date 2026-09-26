@@ -1,0 +1,54 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: emux-shcv</h1>
+<p>Fonte: https://github.com/shcv/emux.git</p>
+<p>Revisione: <code>156829a9ee823b24a94108c95c34dbca8ca5a4d1</code>.</p>
+<h2>emux.el</h2>
+<ul>
+<li>L27: <code>(require 'vterm nil t)</code></li>
+<li>L28: <code>(require 'tab-bar)</code></li>
+<li>L29: <code>(require 'json)</code></li>
+<li>L36: <code>(defcustom emux-terminal-backend 'vterm</code></li>
+<li>L43: <code>(defcustom emux-buffer-prefix "emux"</code></li>
+<li>L48: <code>(defcustom emux-workspace-name nil</code></li>
+<li>L58: <code>(defcustom emux-use-workspaces 'auto</code></li>
+<li>L87: <code>(defun emux-init-env (tmux-val state-dir log-file emux-dir)</code></li>
+<li>L109: <code>(defun emux--has-workspaces-p ()</code></li>
+<li>L116: <code>(defun emux--workspace-exists-p (name)</code></li>
+<li>L121: <code>(defun emux--workspace-switch (name)</code></li>
+<li>L126: <code>(defun emux--workspace-create (name)</code></li>
+<li>L131: <code>(defun emux--workspace-kill (name)</code></li>
+<li>L136: <code>(defun emux--workspace-current-name ()</code></li>
+<li>L142: <code>(defun emux--ensure-workspace ()</code></li>
+<li>L168: <code>(defun emux--destroy-workspace ()</code></li>
+<li>L179: <code>(defun emux-create-session-workspace (name)</code></li>
+<li>L196: <code>(defun emux-create-terminal (name &amp;optional mode direction)</code></li>
+<li>L209: <code>(defun emux-send-keys (buffer-name keys)</code></li>
+<li>L222: <code>(defun emux--parse-tmux-key (key)</code></li>
+<li>L241: <code>(defun emux--vterm-send-key (key)</code></li>
+<li>L266: <code>(defun emux--eat-send-key (key)</code></li>
+<li>L302: <code>(defun emux-kill-terminal (buffer-name)</code></li>
+<li>L328: <code>(defun emux-set-pane-title (buffer-name title)</code></li>
+<li>L333: <code>(defun emux-all-pane-info (output-file)</code></li>
+<li>L363: <code>(defun emux-capture-pane-to-file (buffer-name output-file)</code></li>
+<li>L373: <code>(defun emux-tab-info (output-file)</code></li>
+<li>L388: <code>(defun emux--make-terminal-buffer (buf-name)</code></li>
+<li>L413: <code>(defun emux--augmented-env ()</code></li>
+<li>L425: <code>(defun emux--display-buffer (buf name mode direction)</code></li>
+<li>L436: <code>(defun emux--split-window (buf direction)</code></li>
+<li>L446: <code>(defun emux--create-tab (buf name)</code></li>
+<li>L464: <code>(defun emux--close-pane (buf)</code></li>
+<li>L483: <code>(defun emux--close-tab-for-buffer (buf frame)</code></li>
+<li>L493: <code>(defun emux--find-tab-for-buffer (buf frame)</code></li>
+<li>L512: <code>(defun emux-hide-pane (buffer-name)</code></li>
+<li>L527: <code>(defun emux-show-pane (buffer-name &amp;optional direction)</code></li>
+<li>L536: <code>(defun emux-select-tab (name)</code></li>
+<li>L550: <code>(defun emux-select-tab-for-buffer (buffer-name)</code></li>
+<li>L558: <code>(defun emux-rename-tab-for-buffer (buffer-name new-name)</code></li>
+<li>L566: <code>(defun emux-balance-windows ()</code></li>
+<li>L576: <code>(defun emux-resize-pane (buffer-name delta horizontal)</code></li>
+<li>L587: <code>(defun emux-resize-pane-absolute (buffer-name width height)</code></li>
+<li>L603: <code>(defun emux-zoom-pane (buffer-name)</code></li>
+<li>L623: <code>(defun emux-list-buffers ()</code></li>
+<li>L638: <code>(defun emux-cleanup ()</code></li>
+<li>L649: <code>(defun emux-kill-all ()</code></li>
+<li>L665: <code>(provide 'emux)</code></li>
+</ul></main></html>

@@ -1,0 +1,363 @@
+[
+  {
+    "id": "avy",
+    "url": "https://github.com/abo-abo/avy.git",
+    "status": "fetched",
+    "commit": "933d1f36cca0f71e4acb5fac707e9ae26c536264",
+    "commit_date": "2024-11-01T13:57:13Z"
+  },
+  {
+    "id": "better-shell",
+    "url": "https://github.com/killdash9/better-shell.git",
+    "status": "fetched",
+    "commit": "70c787b981caeef8c5f8012b170eb7b9f167cd13",
+    "commit_date": "2019-10-25T11:37:32-06:00"
+  },
+  {
+    "id": "dash",
+    "url": "https://github.com/magnars/dash.el.git",
+    "status": "fetched",
+    "commit": "d746dd9edcb67a108818beb0cdc78dc1cb466832",
+    "commit_date": "2026-08-10T20:03:02+02:00"
+  },
+  {
+    "id": "e2wm",
+    "url": "https://github.com/kiwanami/emacs-window-manager.git",
+    "status": "fetched",
+    "commit": "33efca5504db9d8b3fdbd412c3d79663c9eec77a",
+    "commit_date": "2024-11-04T18:14:06+09:00"
+  },
+  {
+    "id": "e2wm-term",
+    "url": "https://github.com/aki2o/e2wm-term.git",
+    "status": "fetched",
+    "commit": "4542e52138484933dd99a497ff1b048ea42f9246",
+    "commit_date": "2024-01-07T17:50:16+09:00"
+  },
+  {
+    "id": "eaf",
+    "url": "https://github.com/emacs-eaf/emacs-application-framework.git",
+    "status": "fetched",
+    "commit": "6edd20450b2f31936847c4c5678b3ba6d2579a87",
+    "commit_date": "2026-08-23T21:41:02+08:00"
+  },
+  {
+    "id": "eee",
+    "url": "https://github.com/eval-exec/eee.el.git",
+    "status": "fetched",
+    "commit": "ba62f385963d67d48abdec56c70fb08a3a14f656",
+    "commit_date": "2026-03-17T21:32:56+08:00"
+  },
+  {
+    "id": "elscreen",
+    "url": "https://github.com/knu/elscreen.git",
+    "status": "fetched",
+    "commit": "cc58337faf5ba1eae7e87f75f6ff3758675688f2",
+    "commit_date": "2018-10-09T13:51:18+09:00"
+  },
+  {
+    "id": "elscreen-buffer-group",
+    "url": "https://github.com/jeffgran/elscreen-buffer-group.git",
+    "status": "fetched",
+    "commit": "b48e71d4782adfeb2958f227d78c04164d26e4bd",
+    "commit_date": "2020-01-09T23:38:19Z"
+  },
+  {
+    "id": "elscreen-multi-term",
+    "url": "https://github.com/wamei/elscreen-multi-term.git",
+    "status": "fetched",
+    "commit": "4ea89bae0444d9d4377515929f76cb3e98140f1f",
+    "commit_date": "2020-04-17T17:21:08+09:00"
+  },
+  {
+    "id": "emacs-tunnel",
+    "url": "https://github.com/mimunzar/emacs-tunnel.git",
+    "status": "fetched",
+    "commit": "ace3afdf5d3c68a4acf43d07bf7054ab5b8108c4",
+    "commit_date": "2021-05-22T21:42:04+02:00"
+  },
+  {
+    "id": "emux-attic",
+    "url": "https://github.com/emacsattic/emux.git",
+    "status": "fetched",
+    "commit": "d41d6ac2803e8c5c368f012f05bce50d61a21631",
+    "commit_date": "2022-11-21T18:10:13+01:00"
+  },
+  {
+    "id": "eshell-up",
+    "url": "https://github.com/peterwvj/eshell-up.git",
+    "status": "fetched",
+    "commit": "1999afaa509204b780db44e99ac9648fe7d92d32",
+    "commit_date": "2024-02-26T18:47:47+01:00"
+  },
+  {
+    "id": "eyebrowse",
+    "url": "https://depp.brause.cc/eyebrowse.git",
+    "status": "fetched",
+    "commit": "473381f4f9e847eb50a40ef2306c027432789754",
+    "commit_date": "2024-04-07T15:42:20+02:00"
+  },
+  {
+    "id": "frame-local",
+    "url": "https://github.com/sebastiencs/frame-local.git",
+    "status": "fetched",
+    "commit": "7ee1106c3bcd4022f48421f8cb1ef4f995da816e",
+    "commit_date": "2018-04-22T17:17:38+02:00"
+  },
+  {
+    "id": "friendly-shell",
+    "url": "https://github.com/p3r7/friendly-shell.git",
+    "status": "fetched",
+    "commit": "5cafa3f6313ce04a47c8996ea1ac6b617d155d46",
+    "commit_date": "2023-09-16T16:26:09+02:00"
+  },
+  {
+    "id": "helm",
+    "url": "https://github.com/emacs-helm/helm.git",
+    "status": "fetched",
+    "commit": "228879977563003631edc67926e6a241f8523d73",
+    "commit_date": "2026-09-18T07:30:28+02:00"
+  },
+  {
+    "id": "helm-switch-shell",
+    "url": "https://github.com/jamesnvc/helm-switch-shell.git",
+    "status": "fetched",
+    "commit": "8d7ba1d99ff12a8f1d6ce3b9684ae8aebf494cf3",
+    "commit_date": "2021-07-13T10:40:53-04:00"
+  },
+  {
+    "id": "ht",
+    "url": "https://github.com/Wilfred/ht.el.git",
+    "status": "fetched",
+    "commit": "1c49aad1c820c86f7ee35bf9fff8429502f60fef",
+    "commit_date": "2023-07-02T22:58:45-07:00"
+  },
+  {
+    "id": "loop",
+    "url": "https://github.com/Wilfred/loop.el.git",
+    "status": "fetched",
+    "commit": "9db6372791bbd0cf3fa907ed0ae3e6b7bcf6cc57",
+    "commit_date": "2022-02-03T22:07:42-08:00"
+  },
+  {
+    "id": "navorski",
+    "url": "https://github.com/roman/navorski.el.git",
+    "status": "fetched",
+    "commit": "698c1c62da70164aebe9a7a5d034778fbc30ea5b",
+    "commit_date": "2014-12-03T10:24:42-08:00"
+  },
+  {
+    "id": "persp-mode",
+    "url": "https://github.com/Bad-ptr/persp-mode.el.git",
+    "status": "fetched",
+    "commit": "703f3b5ad502cfe5b027586611421900bed1fb40",
+    "commit_date": "2026-09-22T11:25:25+03:00"
+  },
+  {
+    "id": "perspective",
+    "url": "https://github.com/nex3/perspective-el.git",
+    "status": "fetched",
+    "commit": "62e6f6de03423d0cede0ea0f821e6fcd3e195c83",
+    "commit_date": "2026-07-17T11:53:52-07:00"
+  },
+  {
+    "id": "posframe",
+    "url": "https://github.com/tumashu/posframe.git",
+    "status": "fetched",
+    "commit": "bdabcec96f127b2daa2f8bf988a71ec146e301d5",
+    "commit_date": "2026-09-20T15:06:38+08:00"
+  },
+  {
+    "id": "project-shells",
+    "url": "https://github.com/hying-caritas/project-shells.git",
+    "status": "fetched",
+    "commit": "15f70d99b6d5f078f490ceb64b6f13c000b37e24",
+    "commit_date": "2023-10-05T14:41:41+08:00"
+  },
+  {
+    "id": "quick-shell-keybind",
+    "url": "https://github.com/eyeinsky/quick-shell-keybind.git",
+    "status": "fetched",
+    "commit": "eae4ef3673794a202f097b1619ba7cfb79424dfc",
+    "commit_date": "2023-09-27T16:21:32+03:00"
+  },
+  {
+    "id": "rswitcher",
+    "url": "https://github.com/DamienCassou/rswitcher.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/rswitcher'...\nfatal: could not read Username for 'https://github.com': No such device or address\n"
+  },
+  {
+    "id": "s",
+    "url": "https://github.com/magnars/s.el.git",
+    "status": "fetched",
+    "commit": "d7c04b84d03481a1ed62ee13dbe595224ccbe57c",
+    "commit_date": "2026-08-02T08:07:54+07:00"
+  },
+  {
+    "id": "session",
+    "url": "https://github.com/emacsorphanage/session.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/session'...\nfatal: could not read Username for 'https://github.com': No such device or address\n"
+  },
+  {
+    "id": "shell-command-x",
+    "url": "https://github.com/elizagamedev/shell-command-x.el.git",
+    "status": "fetched",
+    "commit": "d2fe4d08be306d6570f3c316ea06b0e6931ea5d5",
+    "commit_date": "2023-12-13T16:01:37-08:00"
+  },
+  {
+    "id": "shell-switcher",
+    "url": "https://github.com/DamienCassou/shell-switcher.git",
+    "status": "fetched",
+    "commit": "4c96dc27afb519bdbf7bbe42d49a51497f078192",
+    "commit_date": "2024-12-29T17:57:00+01:00"
+  },
+  {
+    "id": "shell-toggle",
+    "url": "https://github.com/knu/shell-toggle.el.git",
+    "status": "fetched",
+    "commit": "0d01bd9a780fdb7fe6609c552523f4498649a3b9",
+    "commit_date": "2015-02-26T23:11:29+09:00"
+  },
+  {
+    "id": "shell-toggle-plus",
+    "url": "https://github.com/xcodebuild/shell-toggle-plus.git",
+    "status": "fetched",
+    "commit": "78200c1da8a4d9f2e6559a7e032702f4cb37eb09",
+    "commit_date": "2014-08-01T07:09:23+08:00"
+  },
+  {
+    "id": "simple-screen",
+    "url": "https://github.com/wachikun/simple-screen.git",
+    "status": "fetched",
+    "commit": "66eb5ddab259025ef5790084ca33018c266d6940",
+    "commit_date": "2024-12-28T10:13:56+09:00"
+  },
+  {
+    "id": "sticky-shell",
+    "url": "https://github.com/andrewdea/sticky-shell.git",
+    "status": "fetched",
+    "commit": "2aec19f60539faf21f567e89701a8e28492eccd1",
+    "commit_date": "2024-09-28T00:27:47-04:00"
+  },
+  {
+    "id": "term+key-intercept",
+    "url": "https://github.com/tarao/term-plus-ki-el.git",
+    "status": "fetched",
+    "commit": "2d98e976877a5ca71500ab57377b6e5a129fa2f3",
+    "commit_date": "2022-05-20T19:13:37+09:00"
+  },
+  {
+    "id": "term-alert",
+    "url": "https://codeberg.org/calliecameron/term-alert.git",
+    "status": "fetched",
+    "commit": "2236864975b9909e8499780a7fc4d92022c17b61",
+    "commit_date": "2026-09-18T19:38:50+02:00"
+  },
+  {
+    "id": "term-cmd",
+    "url": "https://codeberg.org/calliecameron/term-cmd.git",
+    "status": "fetched",
+    "commit": "4799725894028c2e693d34472715130bdefc529b",
+    "commit_date": "2026-09-18T19:39:19+02:00"
+  },
+  {
+    "id": "term-mux",
+    "url": "https://github.com/merrickluo/term-mux.el.git",
+    "status": "fetched",
+    "commit": "0b1770318c892de0d9dce5a5eb6cde38b9c03d78",
+    "commit_date": "2026-07-06T21:10:14+08:00"
+  },
+  {
+    "id": "term-plus-xterm",
+    "url": "https://github.com/tarao/term-plus-el.git",
+    "status": "fetched",
+    "commit": "c3c9239b339c127231860de43abfa08c44c0201a",
+    "commit_date": "2017-05-09T09:17:18+09:00"
+  },
+  {
+    "id": "term-run",
+    "url": "https://github.com/10sr/term-run-el.git",
+    "status": "fetched",
+    "commit": "0fd135d55fcf864598b1fb8dd880833a1a322910",
+    "commit_date": "2020-01-28T16:02:11+09:00"
+  },
+  {
+    "id": "term-sessions",
+    "url": "https://github.com/ArthurHeymans/emacs-term-sessions.git",
+    "status": "fetched",
+    "commit": "29084b6a8a73b612f60a73ef798303384bd44215",
+    "commit_date": "2026-09-08T17:06:33+02:00"
+  },
+  {
+    "id": "termint",
+    "url": "https://github.com/milanglacier/termint.el.git",
+    "status": "fetched",
+    "commit": "bf97d0a417902417febc2b6925152dab5610057f",
+    "commit_date": "2026-08-04T01:51:01-04:00"
+  },
+  {
+    "id": "tmux-control-mode",
+    "url": "https://github.com/stephenjayakar/emacs-tmux-control-mode.git",
+    "status": "fetched",
+    "commit": "d2a93a336f7d6a4a770cb9e740d5e6cfb602843b",
+    "commit_date": "2026-06-23T15:17:12-07:00"
+  },
+  {
+    "id": "tmux-runner",
+    "url": "https://github.com/joaofnds/emacs-tmux-runner.git",
+    "status": "fetched",
+    "commit": "1dfdefd2569848024c581a933e3ebc09b93b41e3",
+    "commit_date": "2022-09-17T12:28:18-03:00"
+  },
+  {
+    "id": "toggle-term",
+    "url": "https://github.com/justinlime/toggle-term.el.git",
+    "status": "fetched",
+    "commit": "ebfce6283e53fda7f69ccda73109a02b646623af",
+    "commit_date": "2026-08-20T05:11:49-05:00"
+  },
+  {
+    "id": "tramp-term",
+    "url": "https://github.com/cuspymd/tramp-term.el.git",
+    "status": "fetched",
+    "commit": "276c4d1cb79cc2685df89a02209e2082f74167ea",
+    "commit_date": "2026-07-01T22:51:41+09:00"
+  },
+  {
+    "id": "vterm-editor",
+    "url": "https://git.andros.dev/andros/vterm-editor.el.git",
+    "status": "fetched",
+    "commit": "239782cdf2411aed27a4f053c30e05c90047351b",
+    "commit_date": "2026-03-30T10:45:31+02:00"
+  },
+  {
+    "id": "workgroups",
+    "url": "https://github.com/tlh/workgroups.el.git",
+    "status": "fetched",
+    "commit": "9572b3492ee09054dc329f64ed846c962b395e39",
+    "commit_date": "2011-07-26T09:41:02-07:00"
+  },
+  {
+    "id": "workgroups2",
+    "url": "https://github.com/pashinin/workgroups2.git",
+    "status": "fetched",
+    "commit": "aff9d76b7be5eed33f30be2fabf111818749cbd5",
+    "commit_date": "2023-03-29T00:31:43+11:00"
+  },
+  {
+    "id": "xterm-256color",
+    "url": "https://github.com/tarao/xterm-256color.el.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/xterm-256color'...\nfatal: could not read Username for 'https://github.com': No such device or address\n"
+  },
+  {
+    "id": "xterm-color",
+    "url": "https://github.com/atomontage/xterm-color.git",
+    "status": "fetched",
+    "commit": "ffdad85e584dfc0857f2a1fb970f5ef0f5d31ba3",
+    "commit_date": "2026-06-03T18:16:57-04:00"
+  }
+]

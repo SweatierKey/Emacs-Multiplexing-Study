@@ -1,0 +1,17 @@
+[
+  {
+    "at": 2.617,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.917,
+    "keys": "multi-buf-vterm-dwim",
+    "input_hex": "6d756c74692d6275662d767465726d2d6477696d"
+  },
+  {
+    "at": 3.418,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

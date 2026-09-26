@@ -1,0 +1,4 @@
+INFO db boot complete
+INFO db health=ok
+WARN db disk threshold=75
+INFO db requests=42

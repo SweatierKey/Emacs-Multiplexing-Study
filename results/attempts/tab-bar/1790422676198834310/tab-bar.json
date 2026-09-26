@@ -1,0 +1,34 @@
+{
+  "id": "tab-bar",
+  "scenario": "workspace-two-ssh",
+  "status": "failed",
+  "checks": {
+    "ssh_web": true,
+    "ssh_db": true
+  },
+  "snapshots": [
+    {
+      "name": "*ansi-term*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "*ansi-term*<2>",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt; tail -n 3 service.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ "
+    },
+    {
+      "name": "*ansi-term*<2>",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt; tail -n 3 service.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ "
+    }
+  ],
+  "error": "",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-special.py\", line 77, in workspace\n    assert s.snapshot()['name']==first['name']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

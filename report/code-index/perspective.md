@@ -1,0 +1,180 @@
+# Indice del codice: perspective
+
+Fonte: https://github.com/nex3/perspective-el.git
+
+Revisione: `62e6f6de03423d0cede0ea0f821e6fcd3e195c83`.
+
+
+## perspective.el
+
+- L32: `(require 'cl-lib)`
+- L33: `(require 'ido)`
+- L34: `(require 'rx)`
+- L35: `(require 'subr-x)`
+- L36: `(require 'thingatpt)`
+- L46: `(defcustom persp-initial-frame-name "main"`
+- L51: `(defcustom persp-show-modestring t`
+- L60: `(defcustom persp-modestring-dividers '("[" "]" "|")`
+- L70: `(defcustom persp-modestring-short nil`
+- L77: `(defcustom persp-mode-prefix-key (if (version< emacs-version "28.0") (kbd "C-x x") nil)`
+- L88: `(defcustom persp-interactive-completion-function`
+- L94: `(defcustom persp-switch-wrap t`
+- L99: `(defcustom persp-sort 'name`
+- L111: `(defcustom persp-frame-global-perspective-name "GLOBAL"`
+- L116: `(defcustom persp-frame-global-perspective-include-scratch-buffer nil`
+- L122: `(defcustom persp-state-default-file nil`
+- L131: `(defcustom persp-suppress-no-prefix-key-warning nil`
+- L136: `(defcustom persp-avoid-killing-last-buffer-in-perspective t`
+- L149: `(defcustom persp-switch-to-buffer-behavior 'import`
+- L163: `(defcustom persp-purge-initial-persp-on-save nil`
+- L173: `(defcustom persp-purge-initial-persp-on-save-exceptions nil`
+- L202: `(defmacro persp-let-frame-parameters (bindings &rest body)`
+- L223: `(defmacro with-current-perspective (&rest body)`
+- L229: `(defmacro with-perspective (name &rest body)`
+- L249: `(defun persp--ignore-buffer-p (name)`
+- L262: `(defmacro persp-current-buffers ()`
+- L266: `(defun persp-current-buffers* (&optional include-global)`
+- L297: `(defun persp-current-buffer-names (&optional include-global)`
+- L306: `(defun persp-is-current-buffer (buf &optional include-global)`
+- L311: `(defun persp-buffer-filter (buf &optional include-global)`
+- L317: `(defun persp-buffer-list-filter (bufs &optional include-global)`
+- L324: `(defun persp-valid-name-p (name)`
+- L329: `(defun persp-current-name ()`
+- L333: `(defun persp-scratch-buffer (&optional name)`
+- L341: `(defun persp-get-scratch-buffer (&optional name)`
+- L363: `(defun persp-switch-to-scratch-buffer ()`
+- L437: `(defvar persp-mode-map (make-sparse-keymap)`
+- L440: `(defvar perspective-map nil`
+- L445: `(define-key persp-mode-map persp-mode-prefix-key 'perspective-map))`
+- L447: `(define-key perspective-map (kbd "s") 'persp-switch)`
+- L448: `(define-key perspective-map (kbd "k") 'persp-remove-buffer)`
+- L449: `(define-key perspective-map (kbd "c") 'persp-kill)`
+- L450: `(define-key perspective-map (kbd "r") 'persp-rename)`
+- L451: `(define-key perspective-map (kbd "a") 'persp-add-buffer)`
+- L452: `(define-key perspective-map (kbd "A") 'persp-set-buffer)`
+- L453: `(define-key perspective-map (kbd "b") 'persp-switch-to-buffer)`
+- L454: `(define-key perspective-map (kbd "B") 'persp-switch-to-scratch-buffer)`
+- L455: `(define-key perspective-map (kbd "i") 'persp-import)`
+- L456: `(define-key perspective-map (kbd "n") 'persp-next)`
+- L457: `(define-key perspective-map (kbd "<right>") 'persp-next)`
+- L458: `(define-key perspective-map (kbd "p") 'persp-prev)`
+- L459: `(define-key perspective-map (kbd "<left>") 'persp-prev)`
+- L460: `(define-key perspective-map (kbd "m") 'persp-merge)`
+- L461: `(define-key perspective-map (kbd "u") 'persp-unmerge)`
+- L462: `(define-key perspective-map (kbd "g") 'persp-add-buffer-to-frame-global)`
+- L463: `(define-key perspective-map (kbd "C-s") 'persp-state-save)`
+- L464: `(define-key perspective-map (kbd "C-l") 'persp-state-load)`
+- L465: `(define-key perspective-map (kbd "'") 'persp-switch-by-number)`
+- L467: `(define-key perspective-map (kbd "1") (lambda () (interactive) (persp-switch-by-number 1)))`
+- L468: `(define-key perspective-map (kbd "2") (lambda () (interactive) (persp-switch-by-number 2)))`
+- L469: `(define-key perspective-map (kbd "3") (lambda () (interactive) (persp-switch-by-number 3)))`
+- L470: `(define-key perspective-map (kbd "4") (lambda () (interactive) (persp-switch-by-number 4)))`
+- L471: `(define-key perspective-map (kbd "5") (lambda () (interactive) (persp-switch-by-number 5)))`
+- L472: `(define-key perspective-map (kbd "6") (lambda () (interactive) (persp-switch-by-number 6)))`
+- L473: `(define-key perspective-map (kbd "7") (lambda () (interactive) (persp-switch-by-number 7)))`
+- L474: `(define-key perspective-map (kbd "8") (lambda () (interactive) (persp-switch-by-number 8)))`
+- L475: `(define-key perspective-map (kbd "9") (lambda () (interactive) (persp-switch-by-number 9)))`
+- L476: `(define-key perspective-map (kbd "0") (lambda () (interactive) (persp-switch-by-number 10)))`
+- L493: `(defun perspectives-hash (&optional frame)`
+- L523: `(defun persp-mode-guard ()`
+- L527: `(defun persp-curr (&optional frame)`
+- L536: `(defun persp-last (&optional frame)`
+- L544: `(defun persp-mode-set-prefix-key (newkey)`
+- L548: `(define-key persp-mode-map newkey 'perspective-map)))`
+- L563: `(defmacro persp-protect (&rest body)`
+- L574: `(defun persp-error (&rest args)`
+- L584: `(defun check-persp (persp)`
+- L592: `(defmacro make-persp (&rest args)`
+- L623: `(defun persp-save ()`
+- L637: `(defun persp-names ()`
+- L666: `(defun persp-all-names (&optional not-frame)`
+- L676: `(defun persp-prompt (&optional default require-match)`
+- L689: `(defun persp-reset-windows ()`
+- L717: `(defun persp-new (name)`
+- L726: `(defun persp-reactivate-buffers (buffers)`
+- L737: `(defun persp-set-local-variables (vars)`
+- L742: `(defun persp-intersperse (list interspersed-val)`
+- L755: `(define-key map [mode-line down-mouse-1] 'persp-mode-line-click)`
+- L760: `(define-key map [header-line down-mouse-1] 'persp-mode-line-click)`
+- L763: `(defun persp-mode-line-click (event)`
+- L773: `(defun persp-mode-line ()`
+- L777: `(defun persp-update-modestring ()`
+- L792: `(defun persp-format-name (name)`
+- L806: `(defun persp-get-quick (char &optional prev)`
+- L815: `(defun persp-get-quick-helper (char prev names)`
+- L827: `(defun persp-switch-last ()`
+- L834: `(defun persp-switch (name &optional norecord)`
+- L860: `(defun persp-switch-by-number (num)`
+- L876: `(defun persp-activate (persp)`
+- L892: `(defun persp-switch-quick (char)`
+- L906: `(defun persp-next ()`
+- L917: `(defun persp-prev ()`
+- L928: `(defun persp-find-some ()`
+- L953: `(defun persp-add-buffer (buffer-or-name)`
+- L967: `(defun persp-add-buffer-to-frame-global (buffer-or-name)`
+- L978: `(defun persp-set-buffer (buffer-or-name)`
+- L995: `(defun persp-set-frame-global-perspective (buffer-or-name)`
+- L1006: `(cl-defun persp-buffer-in-other-p (buffer)`
+- L1021: `(cl-defun persp--show-buffer (buffer-or-name &key norecord (behavior 'import))`
+- L1044: `(defun persp-switch-to-buffer (buffer-or-name &optional norecord)`
+- L1052: `(cl-defun persp-maybe-kill-buffer ()`
+- L1122: `(defun persp-forget-buffer (buffer)`
+- L1167: `(defun persp-forget-frame-global-buffer (buffer)`
+- L1179: `(defun persp-remove-buffer (buffer)`
+- L1210: `(defun persp-remove-frame-global-buffer (buffer)`
+- L1221: `(defun persp-kill (name)`
+- L1251: `(defun persp-kill-others ()`
+- L1260: `(defun persp-rename (name)`
+- L1290: `(cl-defun persp-all-get (name not-frame)`
+- L1302: `(defun persp-get-buffers (&optional persp-or-name frame)`
+- L1322: `(defun persp-get-buffer-names (&optional persp-or-name frame)`
+- L1341: `(defun persp-read-buffer (prompt &optional def require-match predicate)`
+- L1370: `(defun persp-complete-buffer ()`
+- L1379: `(cl-defun persp-import (name &optional dont-switch)`
+- L1486: `(define-minor-mode persp-mode`
+- L1550: `(defun persp-init-frame (frame)`
+- L1584: `(defun persp-delete-frame (frame)`
+- L1593: `(defun persp-make-variable-persp-local (variable)`
+- L1605: `(defun persp--winner-setup ()`
+- L1613: `(defun persp--winner-reset-on-created ()`
+- L1621: `(defmacro persp-setup-for (name &rest body)`
+- L1635: `(defun persp-set-ido-buffers ()`
+- L1650: `(defun quick-perspective-keys ()`
+- L1655: `do (define-key persp-mode-map`
+- L1661: `(defun persp-turn-off-modestring ()`
+- L1667: `(defun persp-turn-on-modestring ()`
+- L1673: `(cl-defun persp-other-buffer (&optional skip-buffer _visible-ok frame)`
+- L1694: `(defun persp-switch-to-buffer* (buffer-or-name)`
+- L1725: `(defun persp-kill-buffer* (buffer-or-name)`
+- L1750: `(defun persp-kill-other-buffers ()`
+- L1762: `(defun persp-buffer-menu (arg)`
+- L1772: `(defun persp-list-buffers (arg)`
+- L1782: `(defun persp-bs-show (arg)`
+- L1806: `(defun persp-ibuffer (arg)`
+- L1853: `(defun persp--switch-buffer-ivy-counsel-helper (arg fallback)`
+- L1871: `(defun persp-ivy-switch-buffer (arg)`
+- L1878: `(defun persp-counsel-switch-buffer (arg)`
+- L1890: `(defun persp--helm-buffer-list-filter (bufs)`
+- L1895: `(defun persp--helm-remove-buffers-from-perspective (_arg)`
+- L1901: `(defun persp--helm-add-buffers-to-perspective (_arg)`
+- L1906: `(defun persp--helm-activate (&rest _args)`
+- L1928: `(defun persp--helm-enable ()`
+- L1935: `(defun persp--helm-disable ()`
+- L1994: `(defun persp--state-complete-v2 (state-complete)`
+- L2012: `(defun persp--state-interesting-buffer-p (buffer)`
+- L2018: `(defun persp--state-file-data ()`
+- L2025: `(defun persp--state-window-state-massage (entry persp valid-buffers)`
+- L2078: `(defun persp--state-frame-data ()`
+- L2104: `(defun persp-purge-exception-p (buffer)`
+- L2112: `(cl-defun persp-state-save (&optional file interactive?)`
+- L2181: `(defun persp-state-load (file)`
+- L2247: `(defun persp-get-merge (base-name merged-name &optional frame)`
+- L2256: `(defun persp-merges-with-base (&optional name frame)`
+- L2264: `(defun persp-perspectives-merged-with-base (&optional name frame)`
+- L2270: `(defun persp-merge (base-persp-name to-merge-persp-name)`
+- L2320: `(defun persp-unmerge (base-persp-name to-unmerge-persp-name)`
+- L2362: `(defun persp-ibuffer-default-group-name (persp-name)`
+- L2366: `(defun persp-ibuffer-name (buf)`
+- L2374: `(defun persp-ibuffer-generate-filter-groups ()`
+- L2389: `(defun persp-ibuffer-set-filter-groups ()`
+- L2446: `(provide 'perspective)`

@@ -1,0 +1,150 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: avy</h1>
+<p>Fonte: https://github.com/abo-abo/avy.git</p>
+<p>Revisione: <code>933d1f36cca0f71e4acb5fac707e9ae26c536264</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>avy-test.el</h2>
+<ul>
+<li>L27: <code>(require 'ert)</code></li>
+<li>L28: <code>(require 'avy)</code></li>
+<li>L70: <code>(provide 'avy-test)</code></li>
+</ul>
+<h2>avy.el</h2>
+<ul>
+<li>L57: <code>(require 'cl-lib)</code></li>
+<li>L58: <code>(require 'ring)</code></li>
+<li>L66: <code>(defcustom avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)</code></li>
+<li>L101: <code>(defcustom avy-keys-alist nil</code></li>
+<li>L107: <code>(defcustom avy-orders-alist '((avy-goto-char . avy-order-closest))</code></li>
+<li>L114: <code>(defcustom avy-words</code></li>
+<li>L147: <code>(defcustom avy-style 'at-full</code></li>
+<li>L158: <code>(defcustom avy-styles-alist nil</code></li>
+<li>L188: <code>(defcustom avy-dispatch-alist</code></li>
+<li>L212: <code>(defcustom avy-background nil</code></li>
+<li>L216: <code>(defcustom avy-all-windows t</code></li>
+<li>L224: <code>(defcustom avy-case-fold-search t</code></li>
+<li>L228: <code>(defcustom avy-word-punc-regexp "[!-/:-@[-'{-~]"</code></li>
+<li>L235: <code>(defcustom avy-goto-word-0-regexp "\\b\\sw"</code></li>
+<li>L243: <code>(defcustom avy-ignored-modes '(image-mode doc-view-mode pdf-view-mode)</code></li>
+<li>L248: <code>(defcustom avy-single-candidate-jump t</code></li>
+<li>L252: <code>(defcustom avy-del-last-char-by '(?\b ?\d)</code></li>
+<li>L258: <code>(defcustom avy-escape-chars '(?\e ?\C-g)</code></li>
+<li>L314: <code>(defmacro avy-multipop (lst n)</code></li>
+<li>L324: <code>(defun avy--de-bruijn (keys n)</code></li>
+<li>L345: <code>(defun avy--path-alist-1 (lst seq-len keys)</code></li>
+<li>L390: <code>(defun avy-order-closest (x)</code></li>
+<li>L400: <code>(defun avy-tree (lst keys)</code></li>
+<li>L426: <code>(defun avy-subdiv (n b)</code></li>
+<li>L440: <code>(defun avy-traverse (tree walker &amp;optional recur-key)</code></li>
+<li>L461: <code>(defun avy-handler-default (char)</code></li>
+<li>L480: <code>(defun avy-show-dispatch-help ()</code></li>
+<li>L499: <code>(defun avy-mouse-event-window (char)</code></li>
+<li>L509: <code>(defun avy-read (tree display-fn cleanup-fn)</code></li>
+<li>L543: <code>(defun avy-read-de-bruijn (lst keys)</code></li>
+<li>L578: <code>(defun avy-read-words (lst words)</code></li>
+<li>L629: <code>(defun avy-window-list ()</code></li>
+<li>L643: <code>(defcustom avy-all-windows-alt nil</code></li>
+<li>L650: <code>(defmacro avy-dowindows (flip &amp;rest body)</code></li>
+<li>L662: <code>(defun avy-resume ()</code></li>
+<li>L667: <code>(defmacro avy-with (command &amp;rest body)</code></li>
+<li>L686: <code>(defun avy-action-goto (pt)</code></li>
+<li>L694: <code>(defun avy-forward-item ()</code></li>
+<li>L700: <code>(defun avy-action-mark (pt)</code></li>
+<li>L706: <code>(defun avy-action-copy (pt)</code></li>
+<li>L721: <code>(defun avy-action-yank (pt)</code></li>
+<li>L727: <code>(defun avy-action-yank-line (pt)</code></li>
+<li>L732: <code>(defun avy-action-kill-move (pt)</code></li>
+<li>L740: <code>(defun avy-action-kill-stay (pt)</code></li>
+<li>L753: <code>(defun avy-action-zap-to-char (pt)</code></li>
+<li>L759: <code>(defun avy-action-teleport (pt)</code></li>
+<li>L771: <code>(defcustom avy-flyspell-correct-function #'flyspell-correct-word-before-point</code></li>
+<li>L776: <code>(defun avy-action-ispell (pt)</code></li>
+<li>L798: <code>(defun avy-pre-action-default (res)</code></li>
+<li>L808: <code>(defun avy--process-1 (candidates overlay-fn &amp;optional cleanup-fn)</code></li>
+<li>L834: <code>(defun avy--last-candidates-cycle (advancer)</code></li>
+<li>L849: <code>(defun avy-prev ()</code></li>
+<li>L858: <code>(defun avy-next ()</code></li>
+<li>L868: <code>(defun avy-process (candidates &amp;optional overlay-fn cleanup-fn)</code></li>
+<li>L911: <code>(defun avy--make-backgrounds (wnd-list)</code></li>
+<li>L925: <code>(defun avy--done ()</code></li>
+<li>L931: <code>(defun avy--visible-p (s)</code></li>
+<li>L937: <code>(defun avy--next-visible-point ()</code></li>
+<li>L944: <code>(defun avy--next-invisible-point ()</code></li>
+<li>L951: <code>(defun avy--find-visible-regions (rbeg rend)</code></li>
+<li>L967: <code>(defun avy--regex-candidates (regex &amp;optional beg end pred group)</code></li>
+<li>L1000: <code>(defun avy--remove-leading-chars ()</code></li>
+<li>L1005: <code>(defun avy--old-str (pt wnd)</code></li>
+<li>L1013: <code>(defun avy--overlay (str beg end wnd &amp;optional compose-fn)</code></li>
+<li>L1045: <code>(defcustom avy-highlight-first nil</code></li>
+<li>L1050: <code>(defun avy--key-to-char (c)</code></li>
+<li>L1058: <code>(defun avy-candidate-beg (leaf)</code></li>
+<li>L1067: <code>(defun avy-candidate-end (leaf)</code></li>
+<li>L1076: <code>(defun avy-candidate-wnd (leaf)</code></li>
+<li>L1082: <code>(defun avy--overlay-pre (path leaf)</code></li>
+<li>L1103: <code>(defun avy--overlay-at (path leaf)</code></li>
+<li>L1124: <code>(defun avy--overlay-at-full (path leaf)</code></li>
+<li>L1195: <code>(defun avy--overlay-post (path leaf)</code></li>
+<li>L1213: <code>(defun avy--update-offset-and-str (offset str lep)</code></li>
+<li>L1254: <code>(defun avy--style-fn (style)</code></li>
+<li>L1266: <code>(cl-defun avy-jump (regex &amp;key window-flip beg end action pred group)</code></li>
+<li>L1283: <code>(defun avy--generic-jump (regex window-flip &amp;optional beg end)</code></li>
+<li>L1298: <code>(defun avy-goto-char (char &amp;optional arg)</code></li>
+<li>L1311: <code>(defun avy-goto-char-in-line (char)</code></li>
+<li>L1321: <code>(defun avy-goto-char-2 (char1 char2 &amp;optional arg beg end)</code></li>
+<li>L1354: <code>(defun avy-goto-char-2-above (char1 char2 &amp;optional arg)</code></li>
+<li>L1369: <code>(defun avy-goto-char-2-below (char1 char2 &amp;optional arg)</code></li>
+<li>L1384: <code>(defun avy-isearch ()</code></li>
+<li>L1398: <code>(defun avy-goto-word-0 (arg &amp;optional beg end)</code></li>
+<li>L1411: <code>(defun avy-goto-whitespace-end (arg &amp;optional beg end)</code></li>
+<li>L1424: <code>(defun avy-goto-word-0-above (arg)</code></li>
+<li>L1432: <code>(defun avy-goto-word-0-below (arg)</code></li>
+<li>L1440: <code>(defun avy-goto-whitespace-end-above (arg)</code></li>
+<li>L1448: <code>(defun avy-goto-whitespace-end-below (arg)</code></li>
+<li>L1457: <code>(defun avy-goto-word-1 (char &amp;optional arg beg end symbol)</code></li>
+<li>L1484: <code>(defun avy-goto-word-1-above (char &amp;optional arg)</code></li>
+<li>L1496: <code>(defun avy-goto-word-1-below (char &amp;optional arg)</code></li>
+<li>L1508: <code>(defun avy-goto-symbol-1 (char &amp;optional arg)</code></li>
+<li>L1518: <code>(defun avy-goto-symbol-1-above (char &amp;optional arg)</code></li>
+<li>L1530: <code>(defun avy-goto-symbol-1-below (char &amp;optional arg)</code></li>
+<li>L1544: <code>(defcustom avy-subword-extra-word-chars '(?{ ?= ?} ?* ?: ?&gt; ?&lt;)</code></li>
+<li>L1550: <code>(defun avy-goto-subword-0 (&amp;optional arg predicate beg end)</code></li>
+<li>L1592: <code>(defun avy-goto-subword-1 (char &amp;optional arg)</code></li>
+<li>L1606: <code>(defun avy-goto-word-or-subword-1 ()</code></li>
+<li>L1616: <code>(defcustom avy-indent-line-overlay nil</code></li>
+<li>L1621: <code>(defun avy--line-cands (&amp;optional arg beg end bottom-up)</code></li>
+<li>L1652: <code>(defun avy--linum-strings ()</code></li>
+<li>L1673: <code>(define-minor-mode avy-linum-mode</code></li>
+<li>L1684: <code>(defun avy--linum-update-window (_ win)</code></li>
+<li>L1736: <code>(defun avy--line (&amp;optional arg beg end bottom-up)</code></li>
+<li>L1752: <code>(defun avy-goto-line (&amp;optional arg)</code></li>
+<li>L1789: <code>(defun avy-goto-line-above (&amp;optional offset bottom-up)</code></li>
+<li>L1805: <code>(defun avy-goto-line-below (&amp;optional offset bottom-up)</code></li>
+<li>L1821: <code>(defcustom avy-line-insert-style 'above</code></li>
+<li>L1828: <code>(defun avy-goto-end-of-line (&amp;optional arg)</code></li>
+<li>L1835: <code>(defun avy-copy-line (arg)</code></li>
+<li>L1861: <code>(defun avy-move-line (arg)</code></li>
+<li>L1886: <code>(defun avy-copy-region (arg)</code></li>
+<li>L1916: <code>(defun avy-move-region ()</code></li>
+<li>L1936: <code>(defun avy-kill-region (arg)</code></li>
+<li>L1970: <code>(defun avy-kill-ring-save-region (arg)</code></li>
+<li>L2000: <code>(defun avy-kill-whole-line (arg)</code></li>
+<li>L2025: <code>(defun avy-kill-ring-save-whole-line (arg)</code></li>
+<li>L2050: <code>(defun avy-setup-default ()</code></li>
+<li>L2053: <code>'(define-key isearch-mode-map (kbd "C-'") 'avy-isearch)))</code></li>
+<li>L2055: <code>(defcustom avy-timeout-seconds 0.5</code></li>
+<li>L2059: <code>(defcustom avy-enter-times-out t</code></li>
+<li>L2066: <code>(defun avy--read-candidates (&amp;optional re-builder)</code></li>
+<li>L2153: <code>(defun avy-goto-char-timer (&amp;optional arg)</code></li>
+<li>L2164: <code>(defun avy-push-mark ()</code></li>
+<li>L2172: <code>(defun avy-pop-mark ()</code></li>
+<li>L2191: <code>(defun avy-transpose-lines-in-region ()</code></li>
+<li>L2214: <code>(defun avy-org-refile-as-child ()</code></li>
+<li>L2235: <code>(defun avy-org-goto-heading-timer (&amp;optional arg)</code></li>
+<li>L2249: <code>(provide 'avy)</code></li>
+</ul>
+<h2>targets/avy-init.el</h2>
+<ul>
+<li>L24: <code>(require 'avy)</code></li>
+<li>L25: <code>(global-set-key (kbd "C-c j") 'avy-goto-char)</code></li>
+<li>L26: <code>(global-set-key (kbd "C-'") 'avy-goto-char-2)</code></li>
+</ul>
+<h2>targets/checkdoc.el</h2></main></html>

@@ -1,0 +1,171 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tab-group</h1>
+<p>Fonte: https://github.com/tarao/tab-group-el.git</p>
+<p>Revisione: <code>5a290ec2608e4100fb188fd60ecb77affcc3465b</code>.</p>
+<h2>tab-group.el</h2>
+<ul>
+<li>L37: <code>(defcustom tab-group:show-tabbar 'header-line</code></li>
+<li>L53: <code>(defcustom tab-group:show-group-name t</code></li>
+<li>L58: <code>(defcustom tab-group:show-scroll-button 'on-demand</code></li>
+<li>L69: <code>(defcustom tab-group:scroll t</code></li>
+<li>L74: <code>(defcustom tab-group:truncate nil</code></li>
+<li>L79: <code>(defcustom tab-group:no-truncation-for-current-tab t</code></li>
+<li>L84: <code>(defcustom tab-group:tabbar-width nil</code></li>
+<li>L96: <code>(defcustom tab-group:ellipsis (string #x2026)</code></li>
+<li>L101: <code>(defcustom tab-group:tab-separator " "</code></li>
+<li>L106: <code>(defcustom tab-group:show-tab-index 'on-demand</code></li>
+<li>L116: <code>(defcustom tab-group:tab-index 'relative</code></li>
+<li>L125: <code>(defcustom tab-group:tab-index-format "%d:"</code></li>
+<li>L131: <code>(defcustom tab-group:move-target (string #x2304)</code></li>
+<li>L136: <code>(defcustom tab-group:scroll-left-symbol (string #xab)</code></li>
+<li>L141: <code>(defcustom tab-group:scroll-right-symbol (string #xbb)</code></li>
+<li>L146: <code>(defcustom tab-group:select-single-match nil</code></li>
+<li>L152: <code>(defcustom tab-group:prefix "C-x t"</code></li>
+<li>L219: <code>(defcustom tab-group:group-buffer-mode nil</code></li>
+<li>L228: <code>(defcustom tab-group:group-buffer-prefix nil</code></li>
+<li>L237: <code>(defcustom tab-group:auto-process-modes</code></li>
+<li>L243: <code>(defcustom tab-group:auto-help-modes</code></li>
+<li>L249: <code>(defcustom tab-group:auto-mail-modes</code></li>
+<li>L264: <code>(defcustom tab-group:auto-common-buffers '("*scratch*" "*Messages*")</code></li>
+<li>L269: <code>(defcustom tab-group:auto-exclude-modes</code></li>
+<li>L275: <code>(defcustom tab-group:auto-exclude-buffers '("*Completions*")</code></li>
+<li>L306: <code>(defvar tab-group:tab-list-mode-remap nil)</code></li>
+<li>L374: <code>(defvar tab-group:keymap</code></li>
+<li>L376: <code>(define-key map " " #'tab-group:next)</code></li>
+<li>L377: <code>(define-key map (kbd "n") #'tab-group:next)</code></li>
+<li>L378: <code>(define-key map (kbd "p") #'tab-group:prev)</code></li>
+<li>L379: <code>(define-key map (kbd "s") #'tab-group:select)</code></li>
+<li>L380: <code>(define-key map (kbd "g") #'tab-group:switch)</code></li>
+<li>L381: <code>(define-key map (kbd "N") #'tab-group:new)</code></li>
+<li>L382: <code>(define-key map (kbd "P") #'tab-group:pop)</code></li>
+<li>L383: <code>(define-key map (kbd "r") #'tab-group:rename)</code></li>
+<li>L384: <code>(define-key map (kbd "l") #'tab-group:list)</code></li>
+<li>L385: <code>(define-key map [left] #'tab-group:scroll-left)</code></li>
+<li>L386: <code>(define-key map [right] #'tab-group:scroll-right)</code></li>
+<li>L387: <code>(define-key map [home] #'tab-group:scroll-begin)</code></li>
+<li>L388: <code>(define-key map [end] #'tab-group:scroll-end)</code></li>
+<li>L389: <code>(define-key map (kbd "&lt;") #'tab-group:move-tab-left)</code></li>
+<li>L390: <code>(define-key map (kbd "&gt;") #'tab-group:move-tab-right)</code></li>
+<li>L391: <code>(define-key map (kbd "[") #'tab-group:move-tab-begin)</code></li>
+<li>L392: <code>(define-key map (kbd "]") #'tab-group:move-tab-end)</code></li>
+<li>L394: <code>(defvar tab-group:local-mode-map</code></li>
+<li>L396: <code>(define-key map</code></li>
+<li>L404: <code>(defmacro tab-group:define-button-map (bind &amp;rest body)</code></li>
+<li>L409: <code>(flet ((define-key (map key def)</code></li>
+<li>L413: <code>(defvar tab-group:tab-button-map</code></li>
+<li>L415: <code>(define-key map [mouse-1] #'tab-group:mouse-select)</code></li>
+<li>L416: <code>(define-key map [mouse-2] #'tab-group:mouse-kill)</code></li>
+<li>L417: <code>(define-key map [double-mouse-1] #'tab-group:rename)</code></li>
+<li>L418: <code>(define-key map [double-mouse-3] #'tab-group:pop)</code></li>
+<li>L419: <code>(define-key map [down-mouse-1] #'tab-group:move-start)</code></li>
+<li>L420: <code>(define-key map [drag-mouse-1] #'tab-group:mouse-move))</code></li>
+<li>L422: <code>(defvar tab-group:group-button-map</code></li>
+<li>L424: <code>(define-key map [mouse-1] #'tab-group:next-group)</code></li>
+<li>L425: <code>(define-key map [mouse-3] #'tab-group:prev-group)</code></li>
+<li>L426: <code>(define-key map [double-mouse-1] #'tab-group:list))</code></li>
+<li>L428: <code>(defvar tab-group:scroll-left-map</code></li>
+<li>L430: <code>(define-key map [mouse-1] #'tab-group:scroll-left)</code></li>
+<li>L431: <code>(define-key map [double-mouse-1] #'tab-group:scroll-begin))</code></li>
+<li>L433: <code>(defvar tab-group:scroll-right-map</code></li>
+<li>L435: <code>(define-key map [mouse-1] #'tab-group:scroll-right)</code></li>
+<li>L436: <code>(define-key map [double-mouse-1] #'tab-group:scroll-end))</code></li>
+<li>L464: <code>(defun tab-group:to-name (obj &amp;optional class)</code></li>
+<li>L510: <code>(defun tab-group:split (elt list)</code></li>
+<li>L522: <code>(defun tab-group:inheriting-propertize (str parent props)</code></li>
+<li>L528: <code>(defun tab-group:window-total-width (&amp;optional window)</code></li>
+<li>L543: <code>(define-minor-mode tab-group:local-mode</code></li>
+<li>L576: <code>(defun tab-group:restore-local-mode ()</code></li>
+<li>L589: <code>(defun tab-group:killing-buffer ()</code></li>
+<li>L638: <code>(defun tab-group:truncate (str max-width)</code></li>
+<li>L671: <code>(defun tab-group:set-label (tab label &amp;optional selected)</code></li>
+<li>L683: <code>(defun tab-group:tab-label (tab &amp;optional index width)</code></li>
+<li>L708: <code>(defun tab-group:make-tab-list (tabs &amp;optional num start width)</code></li>
+<li>L727: <code>(defun tab-group:adjust-tab-list (tablist)</code></li>
+<li>L740: <code>(defun tab-group:tab-list (tabs &amp;optional num start width)</code></li>
+<li>L747: <code>(defun tab-group:truncated-tab-list (tabs &amp;optional num start width)</code></li>
+<li>L757: <code>(defun tab-group:scroll-limit (tab tabs formats width)</code></li>
+<li>L775: <code>(defun tab-group:tabbar-scroll-limit (tabs &amp;optional num start width)</code></li>
+<li>L799: <code>(defun tab-group:scroll-button (which enabled)</code></li>
+<li>L816: <code>(defun tab-group:update-scroll-buttons (pos limit)</code></li>
+<li>L823: <code>(defun tab-group:scroll (pos &amp;optional update)</code></li>
+<li>L836: <code>(defun tab-group:force-recalculate-scroll-limit (group)</code></li>
+<li>L843: <code>(defun tab-group:scrolled-tab-list (tabs &amp;optional num start width)</code></li>
+<li>L875: <code>(defun tab-group:update-tabbar (group &amp;optional num start width)</code></li>
+<li>L914: <code>(defun tab-group:show-tabbar-sym (&amp;optional show)</code></li>
+<li>L921: <code>(defun tab-group:show-tabbar ()</code></li>
+<li>L930: <code>(defun tab-group:restore-tabbar ()</code></li>
+<li>L942: <code>(defun tab-group:search-pattern (pattern string)</code></li>
+<li>L957: <code>(defun tab-group:search-tab-list (group &amp;optional num start width)</code></li>
+<li>L971: <code>(defun tab-group:update-search (beg end len)</code></li>
+<li>L983: <code>(defun tab-group:start-search ()</code></li>
+<li>L996: <code>(defun tab-group:end-search ()</code></li>
+<li>L1010: <code>(defun tab-group:search-result ()</code></li>
+<li>L1013: <code>(defun tab-group:search (group prompt)</code></li>
+<li>L1027: <code>(defun tab-group:find (pattern)</code></li>
+<li>L1048: <code>(defun tab-group:move-format (label &amp;optional after)</code></li>
+<li>L1067: <code>(defun tab-group:move-tab-list (group &amp;optional num start width)</code></li>
+<li>L1084: <code>(defun tab-group:move-update-tabbar (window)</code></li>
+<li>L1091: <code>(defun tab-group:move-start (event)</code></li>
+<li>L1105: <code>(defun tab-group:move-end ()</code></li>
+<li>L1118: <code>(defun tab-group:set-current-tab (tab)</code></li>
+<li>L1124: <code>(defun tab-group:default-name (buffer)</code></li>
+<li>L1134: <code>(defun tab-group:buffer-tab-in-group (group)</code></li>
+<li>L1144: <code>(defun tab-group:tab-position (tab)</code></li>
+<li>L1152: <code>(defmacro tab-group:with-splitting-tabs (tab bind &amp;rest body)</code></li>
+<li>L1163: <code>(defun tab-group:pop-tab (&amp;optional tab)</code></li>
+<li>L1184: <code>(defun tab-group:push-tab (tab group &amp;optional position)</code></li>
+<li>L1205: <code>(defun tab-group:move-tab (tab position &amp;optional current-tab group)</code></li>
+<li>L1218: <code>(defun tab-group:prepare-new-tab (&amp;optional name buffer group)</code></li>
+<li>L1233: <code>(defun tab-group:new-tab (&amp;optional name buffer group position)</code></li>
+<li>L1255: <code>(defun tab-group:unselect (tab &amp;optional group)</code></li>
+<li>L1266: <code>(define-derived-mode tab-group:tab-list-mode Buffer-menu-mode</code></li>
+<li>L1284: <code>(defmacro tab-group:with-selecting-this-window (&amp;rest body)</code></li>
+<li>L1295: <code>(defmacro tab-group:define-select-this-window (sym)</code></li>
+<li>L1315: <code>(define-key map (vector 'remap (car elt)) (cdr elt))))</code></li>
+<li>L1330: <code>(defun tab-group:tab-list-buffer-name-and-file (&amp;optional buffer)</code></li>
+<li>L1350: <code>(defun tab-group:tab-list-set-entry-tab-name (entry)</code></li>
+<li>L1357: <code>(defun tab-group:tab-list-refresh (&amp;optional group old-buffer) nil)</code></li>
+<li>L1358: <code>(defun tab-group:tab-list-tab+size (name size &amp;optional nprops sprops) nil)</code></li>
+<li>L1481: <code>(defun tab-group:tab-list-tab (group)</code></li>
+<li>L1508: <code>(defun tab-group:list (group)</code></li>
+<li>L1517: <code>(define-minor-mode tab-group:group-buffer-local-mode</code></li>
+<li>L1578: <code>(defun tab-group:group-buffer-p ()</code></li>
+<li>L1581: <code>(defun tab-group:group-buffer-set-name-and-file (name file)</code></li>
+<li>L1598: <code>(defun tab-group:group-buffer-rename (tab selected)</code></li>
+<li>L1626: <code>(defun tab-group:group-buffer-select ()</code></li>
+<li>L1638: <code>(defun tab-group:group-buffer-unselect (tab group)</code></li>
+<li>L1649: <code>(defun tab-group:group-buffer-prevent-kill-buffer ()</code></li>
+<li>L1652: <code>(defun tab-group:group-buffer-local-mode-on ()</code></li>
+<li>L1655: <code>(defun tab-group:group-buffer-local-mode-off ()</code></li>
+<li>L1658: <code>(defun tab-group:group-buffer-carefully-disable ()</code></li>
+<li>L1671: <code>(defun tab-group:group-buffer-mode (&amp;optional arg)</code></li>
+<li>L1694: <code>(defun tab-group:mode-derived-p (mode parents)</code></li>
+<li>L1703: <code>(defun tab-group:buffer-auto-group ()</code></li>
+<li>L1723: <code>(defun tab-group:buffer-auto-groups ()</code></li>
+<li>L1728: <code>(defun tab-group:buffer-auto-p ()</code></li>
+<li>L1741: <code>(defun tab-group:auto-new-group (name)</code></li>
+<li>L1754: <code>(define-minor-mode tab-group:auto-group-local-mode</code></li>
+<li>L1788: <code>(defun tab-group:new (&amp;optional group)</code></li>
+<li>L1816: <code>(defun tab-group:remove (&amp;optional group)</code></li>
+<li>L1837: <code>(defun tab-group:switch (group)</code></li>
+<li>L1848: <code>(defun tab-group:next-group ()</code></li>
+<li>L1857: <code>(defun tab-group:prev-group ()</code></li>
+<li>L1866: <code>(defun tab-group:select (tab &amp;optional no-switch)</code></li>
+<li>L1891: <code>(defun tab-group:next (&amp;optional tab)</code></li>
+<li>L1899: <code>(defun tab-group:prev (&amp;optional tab)</code></li>
+<li>L1907: <code>(defun tab-group:pop (&amp;optional tab)</code></li>
+<li>L1922: <code>(defun tab-group:rename (tab name)</code></li>
+<li>L1933: <code>(defun tab-group:move-tab-command (tab pos &amp;optional group)</code></li>
+<li>L1942: <code>(defun tab-group:move-tab-left (&amp;optional tab)</code></li>
+<li>L1951: <code>(defun tab-group:move-tab-right (&amp;optional tab)</code></li>
+<li>L1960: <code>(defun tab-group:move-tab-begin (&amp;optional tab)</code></li>
+<li>L1967: <code>(defun tab-group:move-tab-end (&amp;optional tab)</code></li>
+<li>L1976: <code>(defun tab-group:scroll-left ()</code></li>
+<li>L1983: <code>(defun tab-group:scroll-right ()</code></li>
+<li>L1991: <code>(defun tab-group:scroll-begin ()</code></li>
+<li>L1997: <code>(defun tab-group:scroll-end ()</code></li>
+<li>L2008: <code>(defun tab-group:event-tab (event &amp;optional end)</code></li>
+<li>L2014: <code>(defun tab-group:mouse-select (event)</code></li>
+<li>L2022: <code>(defun tab-group:mouse-kill (event)</code></li>
+<li>L2029: <code>(defun tab-group:mouse-move (event)</code></li>
+<li>L2042: <code>(provide 'tab-group)</code></li>
+</ul></main></html>

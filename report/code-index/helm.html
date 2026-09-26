@@ -1,0 +1,2719 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: helm</h1>
+<p>Fonte: https://github.com/emacs-helm/helm.git</p>
+<p>Revisione: <code>228879977563003631edc67926e6a241f8523d73</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>helm-adaptive.el</h2>
+<ul>
+<li>L23: <code>(require 'cl-lib)</code></li>
+<li>L24: <code>(require 'helm)</code></li>
+<li>L32: <code>(defcustom helm-adaptive-history-file</code></li>
+<li>L40: <code>(defcustom helm-adaptive-history-length 50</code></li>
+<li>L44: <code>(defcustom helm-adaptive-sort-by-frequent-recent-usage t</code></li>
+<li>L73: <code>(defun helm-adaptive-done-reset ()</code></li>
+<li>L77: <code>(define-minor-mode helm-adaptive-mode</code></li>
+<li>L98: <code>(defun helm-adapt-use-adaptive-p (&amp;optional source-name)</code></li>
+<li>L108: <code>(defun helm-adaptive-store-selection ()</code></li>
+<li>L165: <code>(defun helm-adaptive-maybe-load-history ()</code></li>
+<li>L172: <code>(defun helm-adaptive-save-history (&amp;optional arg)</code></li>
+<li>L187: <code>(defun helm-adaptive-sort (candidates source)</code></li>
+<li>L264: <code>(defun helm-reset-adaptive-history ()</code></li>
+<li>L275: <code>(defun helm-adaptive-compare (x y)</code></li>
+<li>L284: <code>(provide 'helm-adaptive)</code></li>
+</ul>
+<h2>helm-bookmark.el</h2>
+<ul>
+<li>L19: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(require 'bookmark)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-lib)</code></li>
+<li>L23: <code>(require 'helm-help)</code></li>
+<li>L24: <code>(require 'helm-types)</code></li>
+<li>L25: <code>(require 'helm-utils)</code></li>
+<li>L26: <code>(require 'helm-info)</code></li>
+<li>L27: <code>(require 'helm-adaptive)</code></li>
+<li>L28: <code>(require 'helm-net)</code></li>
+<li>L29: <code>(require 'helm-x-icons)</code></li>
+<li>L43: <code>(defcustom helm-bookmark-show-location nil</code></li>
+<li>L47: <code>(defcustom helm-bookmark-default-filtered-sources</code></li>
+<li>L62: <code>(defcustom helm-bookmark-use-icon nil</code></li>
+<li>L69: <code>(defcustom helm-bookmark-default-sort-method 'adaptive</code></li>
+<li>L91: <code>(defcustom helm-bookmark-annotation-sign "*"</code></li>
+<li>L152: <code>(defvar helm-bookmark-map</code></li>
+<li>L155: <code>(define-key map (kbd "C-c o")   #'helm-bookmark-run-jump-other-window)</code></li>
+<li>L156: <code>(define-key map (kbd "C-c C-o") #'helm-bookmark-run-jump-other-frame)</code></li>
+<li>L157: <code>(define-key map (kbd "C-c C-t") #'helm-bookmark-run-jump-other-tab)</code></li>
+<li>L158: <code>(define-key map (kbd "C-d")     #'helm-bookmark-run-delete)</code></li>
+<li>L159: <code>(define-key map (kbd "C-]")     #'helm-bookmark-toggle-filename)</code></li>
+<li>L160: <code>(define-key map (kbd "M-e")     #'helm-bookmark-run-edit)</code></li>
+<li>L181: <code>(defun helm-bookmark-transformer (candidates _source)</code></li>
+<li>L195: <code>(defun helm-bookmark-toggle-filename-1 (_candidate)</code></li>
+<li>L209: <code>(defun helm-bookmark-jump-1 (bmk &amp;optional display-function)</code></li>
+<li>L224: <code>(defun helm-bookmark-jump (candidate)</code></li>
+<li>L228: <code>(defun helm-bookmark-jump-other-frame (candidate)</code></li>
+<li>L238: <code>(defun helm-bookmark-jump-other-window (candidate)</code></li>
+<li>L242: <code>(defun helm-bookmark-jump-other-tab (candidate)</code></li>
+<li>L270: <code>(defun helm-bookmark-gnus-bookmark-p (bookmark)</code></li>
+<li>L278: <code>(defun helm-bookmark-mu4e-bookmark-p (bookmark)</code></li>
+<li>L284: <code>(defun helm-bookmark-w3m-bookmark-p (bookmark)</code></li>
+<li>L292: <code>(defun helm-bookmark-eww-bookmark-p (bookmark)</code></li>
+<li>L297: <code>(defun helm-bookmark-woman-bookmark-p (bookmark)</code></li>
+<li>L305: <code>(defun helm-bookmark-man-bookmark-p (bookmark)</code></li>
+<li>L313: <code>(defun helm-bookmark-woman-man-bookmark-p (bookmark)</code></li>
+<li>L319: <code>(defun helm-bookmark-info-bookmark-p (bookmark)</code></li>
+<li>L324: <code>(defun helm-bookmark-image-bookmark-p (bookmark)</code></li>
+<li>L330: <code>(defun helm-bookmark-file-p (bookmark)</code></li>
+<li>L341: <code>(defun helm-bookmark-org-file-p (bookmark)</code></li>
+<li>L346: <code>(defun helm-bookmark-helm-find-files-p (bookmark)</code></li>
+<li>L351: <code>(defun helm-bookmark-addressbook-p (bookmark)</code></li>
+<li>L359: <code>(defun helm-bookmark-uncategorized-bookmark-p (bookmark)</code></li>
+<li>L375: <code>(defun helm-bookmark-filter-setup-alist (fn)</code></li>
+<li>L389: <code>(defun helm-bookmark-jump-w3m (bookmark)</code></li>
+<li>L445: <code>(defun helm-bookmarks-quit-an-find-file-fn (source)</code></li>
+<li>L455: <code>(defun helm-bookmark-build-source (name buildfn &amp;optional class &amp;rest args)</code></li>
+<li>L466: <code>(defun helm-bookmark-w3m-setup-alist ()</code></li>
+<li>L470: <code>(defun helm-source-bookmark-w3m-builder ()</code></li>
+<li>L477: <code>(defun helm-bookmark-images-setup-alist ()</code></li>
+<li>L481: <code>(defun helm-source-bookmark-images-builder ()</code></li>
+<li>L488: <code>(defun helm-bookmark-normalize-eww-bmks ()</code></li>
+<li>L499: <code>(defun helm-bookmark-import-eww-bookmarks ()</code></li>
+<li>L506: <code>(defun helm-bookmark-eww-setup-alist ()</code></li>
+<li>L510: <code>(defun helm-source-bookmark-eww-builder ()</code></li>
+<li>L517: <code>(defun helm-bookmark-man-setup-alist ()</code></li>
+<li>L521: <code>(defun helm-source-bookmark-man-builder ()</code></li>
+<li>L528: <code>(defun helm-bookmark-org-setup-alist ()</code></li>
+<li>L532: <code>(defun helm-source-bookmark-org-builder ()</code></li>
+<li>L539: <code>(defun helm-bookmark-gnus-setup-alist ()</code></li>
+<li>L543: <code>(defun helm-source-bookmark-gnus-builder ()</code></li>
+<li>L550: <code>(defun helm-bookmark-mu4e-setup-alist ()</code></li>
+<li>L553: <code>(defun helm-source-bookmark-mu4e-builder ()</code></li>
+<li>L560: <code>(defun helm-bookmark-info-setup-alist ()</code></li>
+<li>L564: <code>(defun helm-source-bookmark-info-builder ()</code></li>
+<li>L571: <code>(defun helm-bookmark-local-files-setup-alist ()</code></li>
+<li>L575: <code>(defun helm-source-bookmark-files&amp;dirs-builder ()</code></li>
+<li>L584: <code>(defun helm-bookmark-helm-find-files-setup-alist ()</code></li>
+<li>L588: <code>(defun helm-bookmark-browse-project (candidate)</code></li>
+<li>L598: <code>(defvar helm-bookmark-find-files-map</code></li>
+<li>L601: <code>(define-key map (kbd "C-x C-d") #'helm-bookmark-run-browse-project)</code></li>
+<li>L620: <code>(defun helm-source-bookmark-helm-find-files-builder ()</code></li>
+<li>L633: <code>(defun helm-bookmark-uncategorized-setup-alist ()</code></li>
+<li>L637: <code>(defun helm-source-bookmark-uncategorized-builder ()</code></li>
+<li>L648: <code>(defun helm-highlight-bookmark (bookmarks _source)</code></li>
+<li>L778: <code>(defun helm-bookmark-edit-bookmark (bookmark-name)</code></li>
+<li>L789: <code>(defun helm-bookmark-edit-bookmark-1 (bookmark-name handler)</code></li>
+<li>L821: <code>(defun helm-bookmark-maybe-save-bookmark ()</code></li>
+<li>L826: <code>(defun helm-bookmark-rename (old &amp;optional new _batch)</code></li>
+<li>L845: <code>(define-key now-map "\C-w" #'bookmark-yank-word)</code></li>
+<li>L846: <code>(define-key now-map (kbd "C-&lt;return&gt;")</code></li>
+<li>L853: <code>(defun helm-bookmark-rename-marked (_candidate)</code></li>
+<li>L885: <code>(defun helm-bookmark-get-bookmark-from-name (bmk)</code></li>
+<li>L891: <code>(defun helm-delete-marked-bookmarks (_ignore)</code></li>
+<li>L897: <code>(defun helm-bookmark-get-defaults ()</code></li>
+<li>L911: <code>(defun helm-bookmark-show-annotation (bookmark-name-or-record)</code></li>
+<li>L932: <code>(defun helm-bookmark-edit-annotation ()</code></li>
+<li>L945: <code>(defun helm-bookmark-quit-annotation ()</code></li>
+<li>L951: <code>(defvar helm-bookmark-annotation-mode-map</code></li>
+<li>L954: <code>(define-key map (kbd "q") #'helm-bookmark-quit-annotation)</code></li>
+<li>L955: <code>(define-key map (kbd "e") #'helm-bookmark-edit-annotation)</code></li>
+<li>L959: <code>(define-derived-mode helm-bookmark-annotation-mode</code></li>
+<li>L969: <code>(defun helm-bookmarks ()</code></li>
+<li>L979: <code>(defun helm-filtered-bookmarks ()</code></li>
+<li>L989: <code>(provide 'helm-bookmark)</code></li>
+</ul>
+<h2>helm-buffers.el</h2>
+<ul>
+<li>L21: <code>(require 'cl-lib)</code></li>
+<li>L22: <code>(require 'helm)</code></li>
+<li>L23: <code>(require 'helm-types)</code></li>
+<li>L24: <code>(require 'helm-utils)</code></li>
+<li>L25: <code>(require 'helm-grep)</code></li>
+<li>L26: <code>(require 'helm-regexp)</code></li>
+<li>L27: <code>(require 'helm-help)</code></li>
+<li>L28: <code>(require 'helm-occur)</code></li>
+<li>L29: <code>(require 'helm-x-icons)</code></li>
+<li>L38: <code>(defvar major-mode-remap-alist)</code></li>
+<li>L46: <code>(defcustom helm-boring-buffer-regexp-list</code></li>
+<li>L54: <code>(defcustom helm-white-buffer-regexp-list nil</code></li>
+<li>L60: <code>(defcustom helm-buffers-favorite-modes '(lisp-interaction-mode</code></li>
+<li>L67: <code>(defcustom helm-buffer-max-length 20</code></li>
+<li>L73: <code>(defcustom helm-buffer-details-flag t</code></li>
+<li>L77: <code>(defcustom helm-buffers-fuzzy-matching nil</code></li>
+<li>L83: <code>(defcustom helm-buffer-skip-remote-checking nil</code></li>
+<li>L87: <code>(defcustom helm-buffers-truncate-lines t</code></li>
+<li>L91: <code>(defcustom helm-buffers-left-margin-width helm-left-margin-width</code></li>
+<li>L95: <code>(defcustom helm-mini-default-sources '(helm-source-buffers-list</code></li>
+<li>L104: <code>(defcustom helm-buffers-end-truncated-string</code></li>
+<li>L111: <code>(defcustom helm-buffers-column-separator "  "</code></li>
+<li>L115: <code>(defcustom helm-buffer--pretty-names '((dired-mode . "Dired")</code></li>
+<li>L126: <code>(defcustom helm-buffers-maybe-switch-to-tab nil</code></li>
+<li>L157: <code>(defcustom helm-buffer-list-reorder-fn #'helm-buffers-reorder-buffer-list</code></li>
+<li>L168: <code>(defcustom helm-buffers-sort-fn helm-fuzzy-sort-fn</code></li>
+<li>L176: <code>(defcustom helm-buffers-show-icons nil</code></li>
+<li>L183: <code>(defcustom helm-buffers-details '(buffer size mode location)</code></li>
+<li>L301: <code>(defvar helm-buffer-map</code></li>
+<li>L307: <code>(define-key map (kbd "M-g s")     #'helm-buffer-run-zgrep)</code></li>
+<li>L308: <code>(define-key map (kbd "C-s")       #'helm-buffers-run-occur)</code></li>
+<li>L309: <code>(define-key map (kbd "C-x C-d")   #'helm-buffers-run-browse-project)</code></li>
+<li>L310: <code>(define-key map (kbd "C-c o")     #'helm-buffer-switch-other-window)</code></li>
+<li>L311: <code>(define-key map (kbd "C-c C-o")   #'helm-buffer-switch-other-frame)</code></li>
+<li>L312: <code>(define-key map (kbd "M-g M-g")   #'helm-buffer-run-goto-line)</code></li>
+<li>L313: <code>(define-key map (kbd "C-c =")     #'helm-buffer-run-ediff)</code></li>
+<li>L314: <code>(define-key map (kbd "M-=")       #'helm-buffer-run-ediff-merge)</code></li>
+<li>L315: <code>(define-key map (kbd "C-=")       #'helm-buffer-diff-persistent)</code></li>
+<li>L316: <code>(define-key map (kbd "M-G")       #'helm-buffer-revert-persistent)</code></li>
+<li>L317: <code>(define-key map (kbd "C-c d")     #'helm-buffer-run-kill-persistent)</code></li>
+<li>L318: <code>(define-key map (kbd "M-D")       #'helm-buffer-run-kill-buffers)</code></li>
+<li>L319: <code>(define-key map (kbd "C-x C-s")   #'helm-buffer-save-persistent)</code></li>
+<li>L320: <code>(define-key map (kbd "C-x s")     #'helm-buffer-run-save-some-buffers)</code></li>
+<li>L321: <code>(define-key map (kbd "C-M-%")     #'helm-buffer-run-query-replace-regexp)</code></li>
+<li>L322: <code>(define-key map (kbd "M-%")       #'helm-buffer-run-query-replace)</code></li>
+<li>L323: <code>(define-key map (kbd "M-R")       #'helm-buffer-run-rename-buffer)</code></li>
+<li>L324: <code>(define-key map (kbd "M-e")       #'helm-buffer-run-switch-to-shell)</code></li>
+<li>L325: <code>(define-key map (kbd "C-]")       #'helm-toggle-buffers-details)</code></li>
+<li>L326: <code>(define-key map (kbd "C-c a")     #'helm-buffers-toggle-show-hidden-buffers)</code></li>
+<li>L327: <code>(define-key map (kbd "C-M-SPC")   #'helm-buffers-mark-similar-buffers)</code></li>
+<li>L329: <code>(define-key map (kbd "C-c C-t") #'helm-buffers-switch-to-buffer-new-tab))</code></li>
+<li>L339: <code>(defun helm-buffers-list--init ()</code></li>
+<li>L385: <code>(cl-defun helm-buffers-create-new-buffer-1 (candidate &amp;optional (display-func 'switch-to-buffer))</code></li>
+<li>L402: <code>(defun helm-buffers-create-new-buffer (candidate)</code></li>
+<li>L405: <code>(defun helm-buffers-create-new-buffer-ow (candidate)</code></li>
+<li>L412: <code>(defun helm-buffers-create-new-buffer-of (candidate)</code></li>
+<li>L419: <code>(defvar helm-buffer-not-found-map</code></li>
+<li>L422: <code>(define-key map (kbd "C-c o")   #'helm-buffers-not-found-run-switch-ow)</code></li>
+<li>L423: <code>(define-key map (kbd "C-c C-o") #'helm-buffers-not-found-run-switch-of)</code></li>
+<li>L441: <code>(defun helm-buffers-get-visible-buffers ()</code></li>
+<li>L450: <code>(defun helm-buffer-list-1 (&amp;optional visibles)</code></li>
+<li>L457: <code>(defun helm-buffers-reorder-buffer-list (visibles others)</code></li>
+<li>L465: <code>(defun helm-buffer-list ()</code></li>
+<li>L472: <code>(defun helm-buffer-size (buffer)</code></li>
+<li>L481: <code>(defun helm-buffer--show-details (buf-name prefix help-echo</code></li>
+<li>L524: <code>(defun helm-buffer--format-mode-name (buf)</code></li>
+<li>L532: <code>(defun helm-buffer--details (buffer &amp;optional details)</code></li>
+<li>L624: <code>(defun helm-highlight-buffers (buffers _source)</code></li>
+<li>L661: <code>(defun helm-buffers--concat-details (buffer size mode location column)</code></li>
+<li>L675: <code>(defun helm-buffer--get-preselection (buffer)</code></li>
+<li>L697: <code>(defun helm-toggle-buffers-details ()</code></li>
+<li>L710: <code>(defun helm-buffers--pattern-sans-filters (&amp;optional separator)</code></li>
+<li>L716: <code>(defun helm-buffers-sort-transformer (candidates source)</code></li>
+<li>L723: <code>(defun helm-buffers-mark-similar-buffers-1 (&amp;optional type)</code></li>
+<li>L740: <code>(defun helm-buffers-mark-similar-buffers ()</code></li>
+<li>L756: <code>(defun helm-buffer--match-mjm (pattern mjm)</code></li>
+<li>L772: <code>(defun helm-buffer--memo-pattern (pattern)</code></li>
+<li>L777: <code>(defun helm-buffer--match-pattern (pattern candidate &amp;optional nofuzzy)</code></li>
+<li>L791: <code>(defun helm-buffers--match-from-mjm (candidate)</code></li>
+<li>L805: <code>(defun helm-buffers--match-from-pat (candidate)</code></li>
+<li>L817: <code>(defun helm-buffers--match-from-inside (candidate)</code></li>
+<li>L840: <code>(defun helm-buffers--match-from-directory (candidate)</code></li>
+<li>L857: <code>(defun helm-buffers-match-function (candidate)</code></li>
+<li>L866: <code>(defun helm-buffer-query-replace-1 (&amp;optional regexp-flag buffers)</code></li>
+<li>L885: <code>(defun helm-buffer-query-replace-regexp (_candidate)</code></li>
+<li>L888: <code>(defun helm-buffer-query-replace (_candidate)</code></li>
+<li>L891: <code>(defun helm-buffer-toggle-diff (candidate)</code></li>
+<li>L911: <code>(defun helm-revert-buffer (candidate)</code></li>
+<li>L917: <code>(defun helm-revert-marked-buffers (_ignore)</code></li>
+<li>L920: <code>(defun helm-buffer-revert-and-update (_candidate)</code></li>
+<li>L933: <code>(defun helm-buffer-save-and-update (_candidate)</code></li>
+<li>L947: <code>(defun helm-buffer-save-some-buffers (_candidate)</code></li>
+<li>L959: <code>(defun helm-buffers-rename-buffer (candidate)</code></li>
+<li>L967: <code>(defun helm-switch-to-buffer-at-linum (candidate)</code></li>
+<li>L984: <code>(defun helm-kill-marked-buffers (_ignore)</code></li>
+<li>L997: <code>(defun helm-buffer-switch-to-shell (candidate)</code></li>
+<li>L1028: <code>(defun helm-buffer-switch-to-buffer-other-frame (_candidate)</code></li>
+<li>L1034: <code>(defun helm-buffers-maybe-raise-buffer-frame (candidate)</code></li>
+<li>L1046: <code>(defun helm-buffers-switch-buffers-in-tab (_candidate)</code></li>
+<li>L1056: <code>(defun helm-buffer-switch-buffers (_candidate)</code></li>
+<li>L1065: <code>(defun helm-buffer-switch-buffers-other-window (_candidate)</code></li>
+<li>L1078: <code>(defun helm-buffers-persistent-kill-1 (buffer-or-name)</code></li>
+<li>L1091: <code>(defun helm-buffers--quote-truncated-buffer (buffer)</code></li>
+<li>L1111: <code>(defun helm-buffers-persistent-kill (_buffer)</code></li>
+<li>L1140: <code>(defun helm-buffers-list-persistent-action (candidate)</code></li>
+<li>L1152: <code>(defun helm-ediff-marked-buffers (_candidate &amp;optional merge)</code></li>
+<li>L1173: <code>(defun helm-ediff-marked-buffers-merge (candidate)</code></li>
+<li>L1178: <code>(defun helm-multi-occur-as-action (_candidate)</code></li>
+<li>L1199: <code>(defun helm-buffers-toggle-show-hidden-buffers ()</code></li>
+<li>L1219: <code>(defun helm-buffers-browse-project (buf)</code></li>
+<li>L1231: <code>(defun helm-buffers-quit-and-find-file-fn (source)</code></li>
+<li>L1248: <code>(defun helm-skip-boring-buffers (buffers _source)</code></li>
+<li>L1255: <code>(defun helm-shadow-boring-buffers (buffers _source)</code></li>
+<li>L1263: <code>(defun helm-buffers-list ()</code></li>
+<li>L1276: <code>(defun helm-mini ()</code></li>
+<li>L1289: <code>(defun helm-quit-and-helm-mini ()</code></li>
+<li>L1295: <code>(provide 'helm-buffers)</code></li>
+</ul>
+<h2>helm-color.el</h2>
+<ul>
+<li>L19: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(require 'helm)</code></li>
+<li>L21: <code>(require 'helm-help)</code></li>
+<li>L22: <code>(require 'helm-elisp)</code></li>
+<li>L29: <code>(defun helm-custom-faces-init ()</code></li>
+<li>L62: <code>(defun helm-colors-init ()</code></li>
+<li>L74: <code>(defun helm-color-insert-name (candidate)</code></li>
+<li>L78: <code>(defun helm-color-kill-name (candidate)</code></li>
+<li>L81: <code>(defun helm-color-insert-rgb (candidate)</code></li>
+<li>L85: <code>(defun helm-color-kill-rgb (candidate)</code></li>
+<li>L104: <code>(defvar helm-color-map</code></li>
+<li>L107: <code>(define-key map (kbd "C-c n") #'helm-color-run-insert-name)</code></li>
+<li>L108: <code>(define-key map (kbd "C-c N") #'helm-color-run-kill-name)</code></li>
+<li>L109: <code>(define-key map (kbd "C-c r") #'helm-color-run-insert-rgb)</code></li>
+<li>L110: <code>(define-key map (kbd "C-c R") #'helm-color-run-kill-rgb)</code></li>
+<li>L127: <code>(defun helm-colors-get-name (candidate)</code></li>
+<li>L138: <code>(defun helm-colors-get-rgb (candidate)</code></li>
+<li>L150: <code>(defun helm-colors ()</code></li>
+<li>L156: <code>(provide 'helm-color)</code></li>
+</ul>
+<h2>helm-command.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L23: <code>(require 'helm-mode)</code></li>
+<li>L24: <code>(require 'helm-elisp)</code></li>
+<li>L28: <code>(defvar helm-M-x-map</code></li>
+<li>L31: <code>(define-key map (kbd "C-u") nil)</code></li>
+<li>L32: <code>(define-key map (kbd "C-u") #'helm-M-x-universal-argument)</code></li>
+<li>L33: <code>(define-key map (kbd "C-]") #'helm-M-x-toggle-short-doc)</code></li>
+<li>L42: <code>(defcustom helm-M-x-always-save-history nil</code></li>
+<li>L46: <code>(defcustom helm-M-x-reverse-history nil</code></li>
+<li>L50: <code>(defcustom helm-M-x-fuzzy-match t</code></li>
+<li>L54: <code>(defcustom helm-M-x-show-short-doc nil</code></li>
+<li>L60: <code>(defcustom helm-M-x-history-transformer-sort t</code></li>
+<li>L64: <code>(defcustom helm-M-x-exclude-unusable-commands-in-mode t</code></li>
+<li>L120: <code>(defun helm-M-x-get-major-mode-command-alist (mode-map)</code></li>
+<li>L128: <code>(defun helm-get-mode-map-from-mode (mode)</code></li>
+<li>L145: <code>(defun helm-M-x-current-mode-map-alist ()</code></li>
+<li>L151: <code>(defun helm-M-x-toggle-short-doc ()</code></li>
+<li>L158: <code>(defun helm-M-x-transformer-1 (candidates &amp;optional sort ignore-props)</code></li>
+<li>L232: <code>(defun helm-M-x-transformer (candidates _source)</code></li>
+<li>L237: <code>(defun helm-M-x-transformer-no-sort (candidates _source)</code></li>
+<li>L241: <code>(defun helm-M-x-transformer-no-sort-no-props (candidates _source)</code></li>
+<li>L245: <code>(defun helm-M-x--notify-prefix-arg ()</code></li>
+<li>L251: <code>(defun helm-cmd--get-current-function-name ()</code></li>
+<li>L257: <code>(defun helm-cmd--get-preconfigured-commands (&amp;optional dir)</code></li>
+<li>L268: <code>(defun helm-M-x-universal-argument ()</code></li>
+<li>L283: <code>(defun helm-M-x-persistent-action (candidate)</code></li>
+<li>L287: <code>(defun helm-M-x--move-selection-after-hook ()</code></li>
+<li>L290: <code>(defun helm-M-x--before-action-hook ()</code></li>
+<li>L305: <code>(defun helm-M-x-resume-fn ()</code></li>
+<li>L315: <code>(defun helm-M-x-read-extended-command (collection &amp;optional predicate history)</code></li>
+<li>L385: <code>(defun helm-M-x--unwind-forms (&amp;optional done)</code></li>
+<li>L403: <code>(defun helm-M-x-execute-command (command)</code></li>
+<li>L426: <code>(defun helm-M-x--vanilla-M-x ()</code></li>
+<li>L437: <code>(defun helm-M-x--mode-predicate (symbol mj-mode lmm-modes)</code></li>
+<li>L452: <code>(defun helm-M-x (_arg)</code></li>
+<li>L480: <code>(provide 'helm-command)</code></li>
+</ul>
+<h2>helm-core.el</h2>
+<ul>
+<li>L31: <code>(require 'cl-lib)</code></li>
+<li>L32: <code>(require 'async)</code></li>
+<li>L33: <code>(require 'helm-lib)</code></li>
+<li>L34: <code>(require 'helm-multi-match)</code></li>
+<li>L35: <code>(require 'helm-source)</code></li>
+<li>L37: <code>(defun helm-acase-extra-fontifications ()</code></li>
+<li>L217: <code>(defun helm-define-multi-key (keymap key functions &amp;optional delay)</code></li>
+<li>L239: <code>(define-key keymap key (helm-make-multi-command functions delay)))</code></li>
+<li>L242: <code>(defmacro helm-multi-key-defun (name docstring funs &amp;optional delay)</code></li>
+<li>L251: <code>(defun helm-make-multi-command (functions &amp;optional delay)</code></li>
+<li>L263: <code>(defun helm-run-multi-key-command (functions iterator delay)</code></li>
+<li>L281: <code>(defun helm-command-with-subkeys (map subkey command</code></li>
+<li>L329: <code>(defun helm-define-key-with-subkeys (map key subkey command</code></li>
+<li>L380: <code>(define-key map key com)))</code></li>
+<li>L382: <code>(defun helm-basic-docstring-from-alist (alist)</code></li>
+<li>L401: <code>(defvar helm-map</code></li>
+<li>L404: <code>(define-key map (kbd "&lt;down&gt;")     #'helm-next-line)</code></li>
+<li>L405: <code>(define-key map (kbd "&lt;up&gt;")       #'helm-previous-line)</code></li>
+<li>L406: <code>(define-key map (kbd "C-n")        #'helm-next-line)</code></li>
+<li>L407: <code>(define-key map (kbd "C-p")        #'helm-previous-line)</code></li>
+<li>L408: <code>(define-key map (kbd "&lt;C-down&gt;")   #'helm-follow-action-forward)</code></li>
+<li>L409: <code>(define-key map (kbd "&lt;C-up&gt;")     #'helm-follow-action-backward)</code></li>
+<li>L410: <code>(define-key map (kbd "&lt;prior&gt;")    #'helm-previous-page)</code></li>
+<li>L411: <code>(define-key map (kbd "&lt;next&gt;")     #'helm-next-page)</code></li>
+<li>L412: <code>(define-key map (kbd "M-v")        #'helm-scroll-up)</code></li>
+<li>L413: <code>(define-key map (kbd "C-v")        #'helm-scroll-down)</code></li>
+<li>L414: <code>(define-key map (kbd "M-&lt;")        #'helm-beginning-of-buffer)</code></li>
+<li>L415: <code>(define-key map (kbd "M-&gt;")        #'helm-end-of-buffer)</code></li>
+<li>L416: <code>(define-key map (kbd "C-g")        #'helm-keyboard-quit)</code></li>
+<li>L417: <code>(define-key map (kbd "&lt;RET&gt;")      #'helm-maybe-exit-minibuffer)</code></li>
+<li>L418: <code>(define-key map (kbd "C-i")        #'helm-select-action)</code></li>
+<li>L419: <code>(define-key map (kbd "C-j")        #'helm-execute-persistent-action)</code></li>
+<li>L420: <code>(define-key map (kbd "C-o")        #'helm-next-source)</code></li>
+<li>L421: <code>(define-key map (kbd "M-o")        #'helm-previous-source)</code></li>
+<li>L422: <code>(define-key map (kbd "&lt;right&gt;")    #'helm-next-source)</code></li>
+<li>L423: <code>(define-key map (kbd "&lt;left&gt;")     #'helm-previous-source)</code></li>
+<li>L424: <code>(define-key map (kbd "C-l")        #'helm-recenter-top-bottom-other-window)</code></li>
+<li>L425: <code>(define-key map (kbd "M-C-l")      #'helm-reposition-window-other-window)</code></li>
+<li>L426: <code>(define-key map (kbd "C-M-v")      #'helm-scroll-other-window)</code></li>
+<li>L427: <code>(define-key map (kbd "M-&lt;next&gt;")   #'helm-scroll-other-window)</code></li>
+<li>L428: <code>(define-key map (kbd "C-M-y")      #'helm-scroll-other-window-down)</code></li>
+<li>L429: <code>(define-key map (kbd "C-M-S-v")    #'helm-scroll-other-window-down)</code></li>
+<li>L430: <code>(define-key map (kbd "M-&lt;prior&gt;")  #'helm-scroll-other-window-down)</code></li>
+<li>L431: <code>(define-key map (kbd "&lt;C-M-down&gt;") #'helm-scroll-other-window)</code></li>
+<li>L432: <code>(define-key map (kbd "&lt;C-M-up&gt;")   #'helm-scroll-other-window-down)</code></li>
+<li>L433: <code>(define-key map (kbd "C-@")        #'helm-toggle-visible-mark)</code></li>
+<li>L434: <code>(define-key map (kbd "C-SPC")      #'helm-toggle-visible-mark-forward)</code></li>
+<li>L435: <code>(define-key map (kbd "M-SPC")      #'helm-toggle-visible-mark-backward)</code></li>
+<li>L436: <code>(define-key map (kbd "M-[")        nil)</code></li>
+<li>L437: <code>(define-key map (kbd "M-(")        #'helm-prev-visible-mark)</code></li>
+<li>L438: <code>(define-key map (kbd "M-)")        #'helm-next-visible-mark)</code></li>
+<li>L439: <code>(define-key map (kbd "C-k")        #'helm-delete-minibuffer-contents)</code></li>
+<li>L440: <code>(define-key map (kbd "DEL")        #'helm-delete-char-backward)</code></li>
+<li>L441: <code>(define-key map (kbd "C-x C-f")    #'helm-quit-and-find-file)</code></li>
+<li>L442: <code>(define-key map (kbd "M-m")        #'helm-toggle-all-marks)</code></li>
+<li>L443: <code>(define-key map (kbd "M-a")        #'helm-mark-all)</code></li>
+<li>L444: <code>(define-key map (kbd "M-U")        #'helm-unmark-all)</code></li>
+<li>L445: <code>(define-key map (kbd "C-M-a")      #'helm-show-all-candidates-in-source)</code></li>
+<li>L446: <code>(define-key map (kbd "C-M-f")      #'helm-limit-to-sources)</code></li>
+<li>L447: <code>(define-key map (kbd "C-M-e")      #'helm-display-all-sources)</code></li>
+<li>L448: <code>(define-key map (kbd "C-s")        #'undefined)</code></li>
+<li>L449: <code>(define-key map (kbd "M-s")        #'undefined)</code></li>
+<li>L450: <code>(define-key map (kbd "C-r")        #'undefined)</code></li>
+<li>L451: <code>(define-key map (kbd "C-M-r")      #'undefined)</code></li>
+<li>L452: <code>(define-key map (kbd "C-M-s")      #'undefined)</code></li>
+<li>L453: <code>(define-key map (kbd "C-M-i")      #'undefined)</code></li>
+<li>L454: <code>(define-key map (kbd "C-;")        #'undefined)</code></li>
+<li>L455: <code>(define-key map (kbd "C-}")        #'helm-narrow-window)</code></li>
+<li>L456: <code>(define-key map (kbd "C-{")        #'helm-enlarge-window)</code></li>
+<li>L457: <code>(define-key map (kbd "C-c -")      #'helm-swap-windows)</code></li>
+<li>L458: <code>(define-key map (kbd "C-c _")      #'helm-toggle-full-frame)</code></li>
+<li>L459: <code>(define-key map (kbd "C-z")        #'helm-toggle-full-frame)</code></li>
+<li>L460: <code>(define-key map (kbd "C-c %")      #'helm-exchange-minibuffer-and-header-line)</code></li>
+<li>L461: <code>(define-key map (kbd "C-c C-y")    #'helm-yank-selection)</code></li>
+<li>L462: <code>(define-key map (kbd "C-c C-k")    #'helm-kill-selection-and-quit)</code></li>
+<li>L463: <code>(define-key map (kbd "C-c C-i")    #'helm-insert-or-copy)</code></li>
+<li>L464: <code>(define-key map (kbd "C-c C-f")    #'helm-follow-mode)</code></li>
+<li>L465: <code>(define-key map (kbd "C-c C-u")    #'helm-refresh)</code></li>
+<li>L466: <code>(define-key map (kbd "C-c &gt;")      #'helm-toggle-truncate-line)</code></li>
+<li>L467: <code>(define-key map (kbd "C-c l")      #'helm-display-line-numbers-mode)</code></li>
+<li>L468: <code>(define-key map (kbd "M-p")        #'previous-history-element)</code></li>
+<li>L469: <code>(define-key map (kbd "M-n")        #'next-history-element)</code></li>
+<li>L471: <code>(define-key map (kbd "M-r")        #'undefined)</code></li>
+<li>L472: <code>(define-key map (kbd "C-!")        #'helm-toggle-suspend-update)</code></li>
+<li>L473: <code>(define-key map (kbd "C-x b")      #'helm-resume-previous-session-after-quit)</code></li>
+<li>L474: <code>(define-key map (kbd "C-x C-b")    #'helm-resume-list-buffers-after-quit)</code></li>
+<li>L477: <code>(define-key map (kbd "&lt;C-tab&gt;")    #'undefined)</code></li>
+<li>L478: <code>(define-key map (kbd "C-t")        #'helm-resplit-window-clockwise)</code></li>
+<li>L479: <code>(define-key map (kbd "C-r")        #'helm-resplit-window-counterclockwise)</code></li>
+<li>L481: <code>(define-key map (kbd "C-h C-d")    #'helm-enable-or-switch-to-debug)</code></li>
+<li>L482: <code>(define-key map (kbd "C-h c")      #'helm-customize-group)</code></li>
+<li>L483: <code>(define-key map (kbd "C-h d")      #'helm-debug-output)</code></li>
+<li>L485: <code>(define-key map [f1] nil)</code></li>
+<li>L486: <code>(define-key map (kbd "C-h C-h")    #'undefined)</code></li>
+<li>L487: <code>(define-key map (kbd "C-h h")      #'undefined)</code></li>
+<li>L493: <code>(define-key map k #'helm-help))</code></li>
+<li>L497: <code>(define-key map (kbd (format "&lt;f%s&gt;" (1+ n)))</code></li>
+<li>L504: <code>(defun helm-customize-group-1 (group)</code></li>
+<li>L516: <code>(defun helm-customize-group ()</code></li>
+<li>L536: <code>(defun helm--action-at-nth-set-fn-1 (value &amp;optional negative unset)</code></li>
+<li>L545: <code>(define-key helm-map (kbd key) nil)</code></li>
+<li>L547: <code>(define-key helm-map (kbd key) fn)))))</code></li>
+<li>L549: <code>(defun helm--action-at-nth-set-fn- (val &amp;optional unset)</code></li>
+<li>L553: <code>(defun helm--action-at-nth-set-fn+ (val &amp;optional unset)</code></li>
+<li>L557: <code>(defcustom helm-action-at-nth-negative-prefix-key "M-%d"</code></li>
+<li>L569: <code>(defcustom helm-action-at-nth-positive-prefix-key "C-%d"</code></li>
+<li>L590: <code>(defun helm-configuration ()</code></li>
+<li>L595: <code>(defcustom helm-completion-window-scroll-margin 5</code></li>
+<li>L603: <code>(defcustom helm-left-margin-width 0</code></li>
+<li>L608: <code>(defcustom helm-display-source-at-screen-top t</code></li>
+<li>L616: <code>(defcustom helm-candidate-number-limit 500</code></li>
+<li>L628: <code>(defcustom helm-input-idle-delay (if (display-graphic-p) 0.01 0.05) ; Issue #2730.</code></li>
+<li>L633: <code>(defcustom helm-exit-idle-delay 0</code></li>
+<li>L642: <code>(defcustom helm-full-frame nil</code></li>
+<li>L648: <code>(defcustom helm-candidate-separator</code></li>
+<li>L656: <code>(defcustom helm-save-configuration-functions</code></li>
+<li>L671: <code>(defcustom helm-display-function 'helm-default-display-buffer</code></li>
+<li>L689: <code>(defcustom helm-case-fold-search 'smart</code></li>
+<li>L707: <code>(defcustom helm-file-name-case-fold-search</code></li>
+<li>L718: <code>(defcustom helm-reuse-last-window-split-state nil</code></li>
+<li>L726: <code>(defcustom helm-split-width-threshold nil</code></li>
+<li>L736: <code>(defcustom helm-split-window-preferred-function 'helm-split-window-default-fn</code></li>
+<li>L741: <code>(defcustom helm-split-window-default-side 'below</code></li>
+<li>L764: <code>(defcustom helm-split-window-other-side-when-one-window 'below</code></li>
+<li>L786: <code>(defcustom helm-display-buffer-default-height nil</code></li>
+<li>L796: <code>(defcustom helm-display-buffer-default-width nil</code></li>
+<li>L808: <code>(defcustom helm-split-window-inside-p nil</code></li>
+<li>L819: <code>(defcustom helm-always-two-windows t</code></li>
+<li>L837: <code>(defcustom helm-display-buffer-width 72</code></li>
+<li>L842: <code>(defcustom helm-display-buffer-height 20</code></li>
+<li>L847: <code>(defcustom helm-default-display-buffer-functions nil</code></li>
+<li>L856: <code>(defcustom helm-default-display-buffer-alist nil</code></li>
+<li>L868: <code>(defcustom helm-sources-using-default-as-input '(helm-source-imenu</code></li>
+<li>L884: <code>(defcustom helm-delete-minibuffer-contents-from-point t</code></li>
+<li>L891: <code>(defcustom helm-follow-mode-persistent nil</code></li>
+<li>L904: <code>(defcustom helm-source-names-using-follow nil</code></li>
+<li>L917: <code>(defcustom helm-prevent-escaping-from-minibuffer t</code></li>
+<li>L922: <code>(defcustom helm-allow-mouse t</code></li>
+<li>L931: <code>(defcustom helm-move-to-line-cycle-in-source t</code></li>
+<li>L937: <code>(defcustom helm-fuzzy-match-fn 'helm-fuzzy-match</code></li>
+<li>L942: <code>(defcustom helm-fuzzy-search-fn 'helm-fuzzy-search</code></li>
+<li>L947: <code>(defcustom helm-fuzzy-sort-fn 'helm-fuzzy-matching-default-sort-fn</code></li>
+<li>L952: <code>(defcustom helm-fuzzy-matching-highlight-fn #'helm-fuzzy-default-highlight-match</code></li>
+<li>L959: <code>(defcustom helm-autoresize-max-height 40</code></li>
+<li>L966: <code>(defcustom helm-autoresize-min-height 10</code></li>
+<li>L974: <code>(defcustom helm-input-method-verbose-flag nil</code></li>
+<li>L989: <code>(defcustom helm-display-header-line t</code></li>
+<li>L996: <code>(defcustom helm-inherit-input-method t</code></li>
+<li>L1003: <code>(defcustom helm-echo-input-in-header-line nil</code></li>
+<li>L1010: <code>(defcustom helm-header-line-space-before-prompt 'left-fringe</code></li>
+<li>L1028: <code>(defcustom helm-tramp-connection-min-time-diff 5</code></li>
+<li>L1044: <code>(defcustom helm-show-action-window-other-window 'left</code></li>
+<li>L1058: <code>(defcustom helm-cycle-resume-delay 1.0</code></li>
+<li>L1063: <code>(defcustom helm-display-buffer-reuse-frame nil</code></li>
+<li>L1074: <code>(defcustom helm-commands-using-frame nil</code></li>
+<li>L1079: <code>(defcustom helm-actions-inherit-frame-settings t</code></li>
+<li>L1084: <code>(defcustom helm-use-undecorated-frame-option t</code></li>
+<li>L1091: <code>(defcustom helm-frame-background-color nil</code></li>
+<li>L1097: <code>(defcustom helm-frame-foreground-color nil</code></li>
+<li>L1103: <code>(defcustom helm-frame-alpha 100</code></li>
+<li>L1109: <code>(defcustom helm-use-frame-when-more-than-two-windows nil</code></li>
+<li>L1117: <code>(defcustom helm-use-frame-when-no-suitable-window nil</code></li>
+<li>L1125: <code>(defcustom helm-default-prompt-display-function</code></li>
+<li>L1131: <code>(defcustom helm-truncate-lines nil</code></li>
+<li>L1138: <code>(defcustom helm-visible-mark-prefix "*"</code></li>
+<li>L1144: <code>(defcustom helm-kill-real-or-display-selection 'display</code></li>
+<li>L1152: <code>(defcustom helm-follow-input-idle-delay 0.5</code></li>
+<li>L2099: <code>(defun helm-log (from format-string &amp;rest args)</code></li>
+<li>L2121: <code>(defun helm-log-run-hook (from hook)</code></li>
+<li>L2129: <code>(defun helm-log-error (from &amp;rest args)</code></li>
+<li>L2140: <code>(defun helm-debug-open-last-log ()</code></li>
+<li>L2150: <code>(defun helm-print-error-messages ()</code></li>
+<li>L2159: <code>(defmacro with-helm-time-after-update (&amp;rest body)</code></li>
+<li>L2176: <code>(defmacro with-helm-default-directory (directory &amp;rest body)</code></li>
+<li>L2183: <code>(defun helm-default-directory ()</code></li>
+<li>L2187: <code>(defmacro with-helm-temp-hook (hook &amp;rest body)</code></li>
+<li>L2197: <code>(defmacro with-helm-after-update-hook (&amp;rest body)</code></li>
+<li>L2202: <code>(defmacro with-helm-alive-p (&amp;rest body)</code></li>
+<li>L2210: <code>(defmacro with-helm-in-frame (&amp;rest body)</code></li>
+<li>L2218: <code>(defmacro helm-make-command-from-action (symbol doc action &amp;rest body)</code></li>
+<li>L2252: <code>(defmacro helm-make-persistent-command-from-action (symbol doc psymbol action)</code></li>
+<li>L2268: <code>(defun helm-get-attr (attribute-name &amp;optional source compute)</code></li>
+<li>L2304: <code>(defun helm-set-attr (attribute-name value &amp;optional src)</code></li>
+<li>L2318: <code>(defun helm-add-action-to-source (name fn source &amp;optional index)</code></li>
+<li>L2337: <code>(defun helm-delete-action-from-source (action-or-name source)</code></li>
+<li>L2347: <code>(defun helm-add-action-to-source-if (name fn source predicate &amp;optional index test-only)</code></li>
+<li>L2398: <code>(defun helm-set-source-filter (sources)</code></li>
+<li>L2410: <code>\(define-key helm-map \"F\" \\='helm-my-show-files-only)</code></li>
+<li>L2419: <code>\(define-key helm-map \"A\" \\='helm-my-show-all)</code></li>
+<li>L2436: <code>(defun helm--normalize-filter-sources (sources)</code></li>
+<li>L2443: <code>(defun helm-set-sources (sources &amp;optional no-init no-update)</code></li>
+<li>L2453: <code>(defun helm--get-candidate-number-limit-value (arg)</code></li>
+<li>L2462: <code>(defun helm-show-all-candidates-in-source (arg)</code></li>
+<li>L2490: <code>(defun helm-display-all-sources ()</code></li>
+<li>L2497: <code>(defun helm-limit-to-sources ()</code></li>
+<li>L2528: <code>(defun helm-get-selection (&amp;optional buffer force-display-part source)</code></li>
+<li>L2583: <code>(defun helm-get-actions-from-current-source (&amp;optional source)</code></li>
+<li>L2603: <code>(defun helm-get-current-source ()</code></li>
+<li>L2623: <code>(defun helm-run-after-exit (function &amp;rest args)</code></li>
+<li>L2639: <code>(defun helm-exit-and-execute-action (action)</code></li>
+<li>L2700: <code>(defun helm-quit-and-find-file ()</code></li>
+<li>L2707: <code>(defun helm--get-frame-parameters (&amp;optional frame)</code></li>
+<li>L2717: <code>(defun helm-interpret-value (value &amp;optional source compute)</code></li>
+<li>L2737: <code>(defun helm-set-local-variable (&amp;rest args)</code></li>
+<li>L2760: <code>(defun helm--set-local-variables-internal ()</code></li>
+<li>L2779: <code>(defun helm-empty-buffer-p (&amp;optional buffer)</code></li>
+<li>L2785: <code>(defun helm-empty-source-p ()</code></li>
+<li>L2804: <code>(defun helm-apply-functions-from-source (source functions &amp;rest args)</code></li>
+<li>L2840: <code>(defun helm-compute-attr-in-sources (attr &amp;optional sources)</code></li>
+<li>L2856: <code>(defun helm-normalize-sources (sources)</code></li>
+<li>L2863: <code>(defun helm-get-candidate-number (&amp;optional in-current-source)</code></li>
+<li>L2905: <code>(defun helm (&amp;rest plist)</code></li>
+<li>L3066: <code>(defun helm--alive-p ()</code></li>
+<li>L3076: <code>(defun helm-parse-keys (keys)</code></li>
+<li>L3099: <code>(defun helm-internal (&amp;optional</code></li>
+<li>L3239: <code>(defun helm--maybe-load-tramp-archive ()</code></li>
+<li>L3251: <code>(defun helm--advice-linum-on ()</code></li>
+<li>L3261: <code>(defun helm-resume (arg)</code></li>
+<li>L3315: <code>(defun helm-resume-previous-session-after-quit ()</code></li>
+<li>L3327: <code>(defun helm-resume-list-buffers-after-quit ()</code></li>
+<li>L3338: <code>(defun helm-resume-p (resume)</code></li>
+<li>L3342: <code>(defun helm-resume-select-buffer ()</code></li>
+<li>L3353: <code>(defun helm-cycle-resume ()</code></li>
+<li>L3368: <code>(defun helm--resume-or-iter (&amp;optional from-helm)</code></li>
+<li>L3381: <code>(defun helm-run-cycle-resume ()</code></li>
+<li>L3404: <code>(defun helm--nest (&amp;rest same-as-helm)</code></li>
+<li>L3480: <code>(defun helm-frame-or-window-configuration (save-or-restore)</code></li>
+<li>L3528: <code>(defun helm-current-window-configuration ()</code></li>
+<li>L3536: <code>(defun helm-split-window-default-fn (window)</code></li>
+<li>L3583: <code>(defun helm-window-in-direction (direction)</code></li>
+<li>L3589: <code>(defun helm-other-window-for-scrolling ()</code></li>
+<li>L3595: <code>(defun helm-resolve-display-function (com)</code></li>
+<li>L3619: <code>(defun helm-display-buffer (buffer &amp;optional resume)</code></li>
+<li>L3649: <code>(cl-defun helm-prevent-switching-other-window (&amp;key (enabled t))</code></li>
+<li>L3658: <code>(defun helm-default-display-buffer (buffer &amp;optional _resume)</code></li>
+<li>L3695: <code>(defun helm-display-buffer-in-own-frame (buffer &amp;optional resume)</code></li>
+<li>L3789: <code>(defun helm-display-buffer-popup-frame (buffer frame-alist)</code></li>
+<li>L3813: <code>(defun helm--frame ()</code></li>
+<li>L3820: <code>(defun helm--delete-frame-function (frame)</code></li>
+<li>L3830: <code>(defun helm-get-sources (sources)</code></li>
+<li>L3839: <code>(defun helm-initialize (resume input default sources)</code></li>
+<li>L3872: <code>(defun helm-current-position (save-or-restore)</code></li>
+<li>L3893: <code>(defun helm-initialize-overlays (buffer)</code></li>
+<li>L3907: <code>(defun helm-initial-setup (input default sources)</code></li>
+<li>L3984: <code>(defun helm--run-init-hooks (hook sources)</code></li>
+<li>L3999: <code>(defun helm-restore-position-on-quit ()</code></li>
+<li>L4003: <code>(defun helm--push-and-remove-dups (elm sym)</code></li>
+<li>L4007: <code>(defun helm--current-buffer ()</code></li>
+<li>L4026: <code>(define-derived-mode helm-major-mode</code></li>
+<li>L4033: <code>(defun helm-create-helm-buffer ()</code></li>
+<li>L4069: <code>(define-minor-mode helm--minor-mode</code></li>
+<li>L4080: <code>(defun helm--reset-default-pattern ()</code></li>
+<li>L4084: <code>(defun helm-read-from-minibuffer (prompt</code></li>
+<li>L4205: <code>(defun helm-toggle-suspend-update ()</code></li>
+<li>L4215: <code>(defun helm-suspend-update (arg &amp;optional verbose)</code></li>
+<li>L4234: <code>(defun helm-delete-backward-no-update (arg)</code></li>
+<li>L4251: <code>(defun helm-delete-char-backward (arg)</code></li>
+<li>L4269: <code>(defun helm--suspend-read-passwd (old--fn &amp;rest args)</code></li>
+<li>L4284: <code>(defun helm--maybe-update-keymap (&amp;optional map)</code></li>
+<li>L4306: <code>(defvar helm--remap-mouse-mode-map</code></li>
+<li>L4313: <code>do (define-key map k 'ignore))</code></li>
+<li>L4316: <code>(define-minor-mode helm--remap-mouse-mode</code></li>
+<li>L4331: <code>(defun helm-cleanup ()</code></li>
+<li>L4405: <code>(defun helm-clean-up-minibuffer ()</code></li>
+<li>L4419: <code>(defun helm-check-minibuffer-input ()</code></li>
+<li>L4425: <code>(defun helm-check-new-input (input)</code></li>
+<li>L4437: <code>(defun helm--reset-update-flag ()</code></li>
+<li>L4448: <code>(defun helm-get-candidates (source)</code></li>
+<li>L4503: <code>(defun helm-get-cached-candidates (source)</code></li>
+<li>L4536: <code>(defun helm-process-candidate-transformer (candidates source)</code></li>
+<li>L4542: <code>(defun helm-process-filtered-candidate-transformer (candidates source)</code></li>
+<li>L4548: <code>(defun helm--maybe-process-filter-one-by-one-candidate (candidate source)</code></li>
+<li>L4563: <code>(defun helm--initialize-one-by-one-candidates (candidates source)</code></li>
+<li>L4572: <code>(defun helm-process-filtered-candidate-transformer-maybe</code></li>
+<li>L4583: <code>(defun helm-process-real-to-display (candidates source)</code></li>
+<li>L4596: <code>(defun helm-transform-candidates (candidates source &amp;optional process-p)</code></li>
+<li>L4617: <code>(defun helm-candidate-number-limit (source)</code></li>
+<li>L4630: <code>(defun helm-candidate-get-display (candidate)</code></li>
+<li>L4642: <code>(defun helm-process-pattern-transformer (pattern source)</code></li>
+<li>L4648: <code>(defun helm-default-match-function (candidate)</code></li>
+<li>L4659: <code>(defun helm--fuzzy-match-maybe-set-pattern ()</code></li>
+<li>L4685: <code>(defun helm-fuzzy-match (candidate)</code></li>
+<li>L4696: <code>(defun helm-fuzzy-search (pattern)</code></li>
+<li>L4731: <code>(defun helm-score-candidate-for-pattern (candidate pattern)</code></li>
+<li>L4746: <code>(defun helm-fuzzy-flex-style-score (candidate pattern)</code></li>
+<li>L4758: <code>(defun helm--fuzzy-flex-pattern-to-regexp (pattern)</code></li>
+<li>L4763: <code>(defun helm-flex-add-score-as-prop (candidates regexp)</code></li>
+<li>L4768: <code>(defun helm-completion--flex-transform-pattern (pattern)</code></li>
+<li>L4776: <code>(defun helm-fuzzy-helm-style-score (candidate pattern)</code></li>
+<li>L4814: <code>(defun helm-fuzzy-matching-default-sort-fn-1 (candidates &amp;optional use-real basename preserve-tie-order)</code></li>
+<li>L4868: <code>(defun helm-fuzzy-matching-default-sort-fn (candidates _source)</code></li>
+<li>L4872: <code>(defun helm-fuzzy-matching-sort-fn-preserve-ties-order (candidates _source)</code></li>
+<li>L4884: <code>(defun helm--maybe-get-migemo-pattern (pattern &amp;optional diacritics)</code></li>
+<li>L4891: <code>(defun helm-fuzzy-default-highlight-match-1 (candidate &amp;optional pattern diacritics file-comp)</code></li>
+<li>L4966: <code>(defun helm-fuzzy-default-highlight-match (candidate &amp;optional pattern diacritics file-comp)</code></li>
+<li>L4979: <code>(defun helm-fuzzy-highlight-matches (candidates source)</code></li>
+<li>L5004: <code>(defun helm-flex--style-score (str regexp &amp;optional score)</code></li>
+<li>L5056: <code>(defun helm-match-functions (source)</code></li>
+<li>L5063: <code>(defun helm-search-functions (source)</code></li>
+<li>L5068: <code>(defun helm-match-from-candidates (cands matchfns match-part-fn limit source)</code></li>
+<li>L5130: <code>(defun helm-compute-matches (source)</code></li>
+<li>L5168: <code>(defun helm--candidates-in-buffer-p (source)</code></li>
+<li>L5171: <code>(defun helm-render-source (source matches)</code></li>
+<li>L5189: <code>(defmacro helm-while-no-input (&amp;rest body)</code></li>
+<li>L5206: <code>(defmacro helm--maybe-use-while-no-input (&amp;rest body)</code></li>
+<li>L5230: <code>(defun helm-active-minibuffer-window ()</code></li>
+<li>L5234: <code>(defun helm--collect-matches (src-list)</code></li>
+<li>L5253: <code>(defun helm-set-case-fold-search (&amp;optional pattern)</code></li>
+<li>L5273: <code>(defun helm-set-case-fold-search-1 (pattern)</code></li>
+<li>L5283: <code>(defun helm-update (&amp;optional preselect source candidates)</code></li>
+<li>L5358: <code>(defun helm-maybe-dim-prompt-on-update (overlay)</code></li>
+<li>L5370: <code>(defun helm-update-source-p (source)</code></li>
+<li>L5390: <code>(defun helm--update-move-first-line ()</code></li>
+<li>L5408: <code>(cl-defun helm-force-update (&amp;optional (preselect nil spreselect) (recenter t))</code></li>
+<li>L5433: <code>(defun helm-refresh ()</code></li>
+<li>L5440: <code>(defun helm-force-update--reinit (source)</code></li>
+<li>L5454: <code>(defun helm-redisplay-buffer ()</code></li>
+<li>L5512: <code>(defun helm-remove-candidate-cache (source)</code></li>
+<li>L5517: <code>(defun helm-insert-match (match insert-function &amp;optional num source)</code></li>
+<li>L5543: <code>(define-key map [drag-mouse-1] 'ignore)</code></li>
+<li>L5544: <code>(define-key map [mouse-1] 'helm-mouse-select-candidate)</code></li>
+<li>L5545: <code>(define-key map [mouse-2] 'ignore)</code></li>
+<li>L5546: <code>(define-key map [mouse-3] 'helm-menu-select-action)</code></li>
+<li>L5562: <code>(defun helm--mouse-reset-selection-help-echo ()</code></li>
+<li>L5574: <code>(defun helm--bind-mouse-for-selection (pos)</code></li>
+<li>L5578: <code>(define-key map [down-mouse-1] helm-drag-mouse-1-fn)</code></li>
+<li>L5579: <code>(define-key map [mouse-2] 'helm-maybe-exit-minibuffer)</code></li>
+<li>L5590: <code>(defun helm-mouse-select-candidate (event)</code></li>
+<li>L5613: <code>(defun helm-insert-header-from-source (source)</code></li>
+<li>L5623: <code>(defun helm-insert-header (name &amp;optional display-string)</code></li>
+<li>L5644: <code>(defun helm-insert-candidate-separator ()</code></li>
+<li>L5651: <code>(defun helm-init-relative-display-line-numbers ()</code></li>
+<li>L5660: <code>(define-minor-mode helm-display-line-numbers-mode</code></li>
+<li>L5686: <code>(defun helm-output-filter (process output)</code></li>
+<li>L5761: <code>(defun helm-output-filter--post-process ()</code></li>
+<li>L5772: <code>(defun helm-kill-async-processes ()</code></li>
+<li>L5778: <code>(defun helm-kill-async-process (process &amp;optional kill-fn)</code></li>
+<li>L5783: <code>(defun helm-process-deferred-sentinel-hook (process event file)</code></li>
+<li>L5815: <code>(defun helm-execute-selection-action ()</code></li>
+<li>L5828: <code>(defun helm-execute-selection-action-1 (&amp;optional</code></li>
+<li>L5855: <code>(defun helm-coerce-selection (selection source)</code></li>
+<li>L5862: <code>(defun helm-get-default-action (action)</code></li>
+<li>L5868: <code>(defun helm--show-action-window-other-window-p ()</code></li>
+<li>L5881: <code>(defun helm-select-action ()</code></li>
+<li>L5942: <code>(defun helm-menu-select-action (_event)</code></li>
+<li>L5967: <code>(defun helm--set-action-prompt (&amp;optional restore)</code></li>
+<li>L5982: <code>(defun helm-show-action-buffer (actions)</code></li>
+<li>L6024: <code>(defun helm-display-source-at-screen-top-maybe (unit)</code></li>
+<li>L6031: <code>(defun helm-skip-noncandidate-line (direction)</code></li>
+<li>L6040: <code>(defun helm-skip-header-and-separator-line (direction)</code></li>
+<li>L6053: <code>(defun helm-display-mode-line (source &amp;optional force)</code></li>
+<li>L6130: <code>(defun helm--set-header-line (&amp;optional update)</code></li>
+<li>L6162: <code>(defun helm-set-default-prompt-display (pos)</code></li>
+<li>L6173: <code>(defun helm-exchange-minibuffer-and-header-line ()</code></li>
+<li>L6192: <code>(defun helm--update-header-line ()</code></li>
+<li>L6202: <code>(defun helm-hide-minibuffer-maybe ()</code></li>
+<li>L6224: <code>(defun helm-show-candidate-number (&amp;optional name)</code></li>
+<li>L6242: <code>(defun helm-move-selection-common (&amp;rest args)</code></li>
+<li>L6262: <code>(defun helm-move-selection-common-1 (where direction follow)</code></li>
+<li>L6301: <code>(defun helm-move--beginning-of-multiline-candidate ()</code></li>
+<li>L6311: <code>(defun helm-move--previous-multi-line-fn ()</code></li>
+<li>L6317: <code>(defun helm-move--previous-line-fn ()</code></li>
+<li>L6332: <code>(defun helm-move--next-multi-line-fn ()</code></li>
+<li>L6341: <code>(defun helm-move--next-line-fn ()</code></li>
+<li>L6354: <code>(defun helm-move--previous-page-fn ()</code></li>
+<li>L6359: <code>(defun helm-move--next-page-fn ()</code></li>
+<li>L6364: <code>(defun helm-move--beginning-of-buffer-fn ()</code></li>
+<li>L6367: <code>(defun helm-move--end-of-buffer-fn ()</code></li>
+<li>L6370: <code>(defun helm-move--end-of-source ()</code></li>
+<li>L6375: <code>(defun helm-move--beginning-of-source ()</code></li>
+<li>L6381: <code>(defun helm-move--previous-source-fn ()</code></li>
+<li>L6389: <code>(defun helm-move--next-source-fn ()</code></li>
+<li>L6398: <code>(defun helm-move--goto-source-fn (source-or-name)</code></li>
+<li>L6410: <code>(defun helm-candidate-number-at-point ()</code></li>
+<li>L6416: <code>(defun helm--next-or-previous-line (direction &amp;optional arg)</code></li>
+<li>L6432: <code>(defun helm-previous-line (&amp;optional arg)</code></li>
+<li>L6441: <code>(defun helm-next-line (&amp;optional arg)</code></li>
+<li>L6451: <code>(defun helm-scroll-up ()</code></li>
+<li>L6458: <code>(defun helm-previous-page ()</code></li>
+<li>L6466: <code>(defun helm-scroll-down ()</code></li>
+<li>L6473: <code>(defun helm-next-page ()</code></li>
+<li>L6481: <code>(defun helm-beginning-of-buffer ()</code></li>
+<li>L6488: <code>(defun helm-end-of-buffer ()</code></li>
+<li>L6495: <code>(defun helm-previous-source ()</code></li>
+<li>L6502: <code>(defun helm-next-source ()</code></li>
+<li>L6509: <code>(defun helm-goto-source (&amp;optional source-or-name)</code></li>
+<li>L6527: <code>(defun helm--follow-action (arg)</code></li>
+<li>L6547: <code>(defun helm-follow-action-forward ()</code></li>
+<li>L6553: <code>(defun helm-follow-action-backward ()</code></li>
+<li>L6559: <code>(defun helm-mark-current-line (&amp;optional resumep nomouse)</code></li>
+<li>L6585: <code>(defun helm-confirm-and-exit-minibuffer ()</code></li>
+<li>L6644: <code>(defun helm-confirm-and-exit-hook ()</code></li>
+<li>L6652: <code>(defun helm--set-minibuffer-completion-confirm (src)</code></li>
+<li>L6669: <code>(defun helm-read-string (prompt &amp;optional initial-input history</code></li>
+<li>L6676: <code>(defun helm--updating-p ()</code></li>
+<li>L6684: <code>(defun helm-maybe-exit-minibuffer ()</code></li>
+<li>L6696: <code>(defun helm-exit-minibuffer ()</code></li>
+<li>L6705: <code>(defun helm-keyboard-quit ()</code></li>
+<li>L6716: <code>(defun helm-get-next-header-pos ()</code></li>
+<li>L6720: <code>(defun helm-get-previous-header-pos ()</code></li>
+<li>L6724: <code>(defun helm-pos-multiline-p ()</code></li>
+<li>L6728: <code>(defun helm-get-next-candidate-separator-pos ()</code></li>
+<li>L6742: <code>(defun helm-get-previous-candidate-separator-pos ()</code></li>
+<li>L6746: <code>(defun helm-pos-header-line-p ()</code></li>
+<li>L6751: <code>(defun helm-pos-candidate-separator-p ()</code></li>
+<li>L6760: <code>(defun helm-debug-output ()</code></li>
+<li>L6767: <code>(defun helm-default-debug-function ()</code></li>
+<li>L6772: <code>(defun helm-debug-output-function ()</code></li>
+<li>L6789: <code>(defun helm-enable-or-switch-to-debug ()</code></li>
+<li>L6805: <code>(defun helm-preselect (candidate-or-regexp &amp;optional source)</code></li>
+<li>L6848: <code>(defun helm-delete-current-selection ()</code></li>
+<li>L6873: <code>(defun helm-end-of-source-1 (n at-point)</code></li>
+<li>L6882: <code>(defun helm-end-of-source-p (&amp;optional at-point)</code></li>
+<li>L6886: <code>(defun helm-beginning-of-source-p (&amp;optional at-point)</code></li>
+<li>L6890: <code>(defun helm--edit-current-selection-internal (func)</code></li>
+<li>L6907: <code>(defmacro helm-edit-current-selection (&amp;rest forms)</code></li>
+<li>L6914: <code>(defun helm--delete-minibuffer-contents-from (from-str &amp;optional presel)</code></li>
+<li>L6928: <code>(defun helm-delete-minibuffer-contents (&amp;optional arg)</code></li>
+<li>L6948: <code>(defun helm-candidates-in-buffer (&amp;optional source)</code></li>
+<li>L7027: <code>(defun helm-candidates-in-buffer-search-default-fn (pattern)</code></li>
+<li>L7034: <code>(defun helm-candidates-in-buffer-1 (buffer pattern get-line-fn</code></li>
+<li>L7054: <code>(defun helm-search-from-candidate-buffer (pattern get-line-fn search-fns</code></li>
+<li>L7134: <code>(defun helm-search-match-part (candidate pattern diacritics)</code></li>
+<li>L7165: <code>(defun helm-initial-candidates-from-candidate-buffer (get-line-fn limit)</code></li>
+<li>L7172: <code>(defun helm--search-from-candidate-buffer-1 (search-fn)</code></li>
+<li>L7191: <code>(defun helm-candidate-buffer (&amp;optional buffer-spec)</code></li>
+<li>L7311: <code>(defun helm-make-separator (cand &amp;optional longest)</code></li>
+<li>L7325: <code>(defun helm-init-candidates-in-buffer (buffer-spec data &amp;optional force-longest)</code></li>
+<li>L7377: <code>(defun helm--get-longest-len-in-buffer ()</code></li>
+<li>L7396: <code>(defun helm-resplit-window-clockwise ()</code></li>
+<li>L7403: <code>(defun helm-resplit-window-counterclockwise ()</code></li>
+<li>L7410: <code>(defun helm-resplit-window-1 (arg)</code></li>
+<li>L7443: <code>(defun helm--resplit-window (arg)</code></li>
+<li>L7462: <code>(defun helm--resplit-window-sides (state arg)</code></li>
+<li>L7472: <code>(defun helm-enlarge-window-1 (n)</code></li>
+<li>L7480: <code>(defun helm-narrow-window ()</code></li>
+<li>L7487: <code>(defun helm-enlarge-window ()</code></li>
+<li>L7494: <code>(defun helm-toggle-full-frame (&amp;optional arg)</code></li>
+<li>L7518: <code>(defun helm-swap-windows (&amp;optional arg)</code></li>
+<li>L7568: <code>(defun helm--get-window-with-predicate (predicate &amp;optional minibuf all-frames default arg)</code></li>
+<li>L7580: <code>(defun helm--get-window-side-state ()</code></li>
+<li>L7594: <code>(defun helm-replace-buffer-in-window (window buffer1 buffer2)</code></li>
+<li>L7602: <code>(defun helm-select-nth-action (n)</code></li>
+<li>L7616: <code>(defun helm-get-nth-action (n action)</code></li>
+<li>L7629: <code>(defun helm-execute-selection-action-at-nth (linum)</code></li>
+<li>L7641: <code>(defun helm-initialize-persistent-action ()</code></li>
+<li>L7644: <code>(defun helm-execute-persistent-action (&amp;optional attr split)</code></li>
+<li>L7729: <code>(cl-defun helm-persistent-action-display-window (&amp;key split)</code></li>
+<li>L7752: <code>(cl-defun helm-select-persistent-action-window (&amp;key split)</code></li>
+<li>L7768: <code>(defun helm-other-window-base (command &amp;optional arg)</code></li>
+<li>L7773: <code>(defun helm-scroll-other-window (&amp;optional arg)</code></li>
+<li>L7781: <code>(defun helm-scroll-other-window-down (&amp;optional arg)</code></li>
+<li>L7789: <code>(defun helm-recenter-top-bottom-other-window (&amp;optional arg)</code></li>
+<li>L7799: <code>(defun helm-reposition-window-other-window (&amp;optional arg)</code></li>
+<li>L7813: <code>(defun helm-clear-visible-mark ()</code></li>
+<li>L7818: <code>(defun helm-this-visible-mark ()</code></li>
+<li>L7823: <code>(defun helm-delete-visible-mark (overlay)</code></li>
+<li>L7833: <code>(defun helm-make-visible-mark (&amp;optional src selection)</code></li>
+<li>L7861: <code>(defun helm-toggle-visible-mark (arg)</code></li>
+<li>L7892: <code>(defun helm-toggle-visible-mark-forward (&amp;optional arg)</code></li>
+<li>L7897: <code>(defun helm-toggle-visible-mark-backward (&amp;optional arg)</code></li>
+<li>L7902: <code>(defun helm-file-completion-source-p (&amp;optional source)</code></li>
+<li>L7910: <code>(defun helm-mark-all (&amp;optional all)</code></li>
+<li>L7939: <code>(defun helm-mark-all-1 (&amp;optional ensure-beg-of-source)</code></li>
+<li>L7993: <code>(defun helm-unmark-all ()</code></li>
+<li>L8006: <code>(defun helm-toggle-all-marks (&amp;optional all)</code></li>
+<li>L8023: <code>(defun helm--compute-marked (real source &amp;optional wildcard)</code></li>
+<li>L8041: <code>(cl-defun helm-marked-candidates (&amp;key with-wildcard all-sources)</code></li>
+<li>L8083: <code>(defun helm--remove-marked-and-update-mode-line (elm)</code></li>
+<li>L8090: <code>(defun helm-current-source-name= (name)</code></li>
+<li>L8095: <code>(defun helm-revive-visible-mark ()</code></li>
+<li>L8138: <code>(defun helm-next-point-in-list (curpos points &amp;optional prev)</code></li>
+<li>L8158: <code>(defun helm-next-visible-mark (&amp;optional prev)</code></li>
+<li>L8172: <code>(defun helm-prev-visible-mark ()</code></li>
+<li>L8181: <code>(defun helm-yank-selection (arg)</code></li>
+<li>L8191: <code>(defun helm-kill-selection-and-quit (arg)</code></li>
+<li>L8211: <code>(defun helm-insert-or-copy (&amp;optional arg)</code></li>
+<li>L8233: <code>(defun helm-follow-mode (&amp;optional arg)</code></li>
+<li>L8309: <code>(defun helm-follow-execute-persistent-action-maybe (&amp;optional delay)</code></li>
+<li>L8337: <code>(defun helm--execute-persistent-action-when-idle (&amp;optional delay src)</code></li>
+<li>L8358: <code>(defun helm-follow-mode-p (&amp;optional source)</code></li>
+<li>L8362: <code>(defun helm-follow-mode-set-source (value &amp;optional source)</code></li>
+<li>L8369: <code>(defun helm--autoresize-hook (&amp;optional max-height min-height)</code></li>
+<li>L8383: <code>(define-minor-mode helm-autoresize-mode</code></li>
+<li>L8398: <code>(defun helm-help ()</code></li>
+<li>L8435: <code>(defun helm-toggle-truncate-line ()</code></li>
+<li>L8448: <code>(defun helm-other-buffer (sources buffer)</code></li>
+<li>L8454: <code>(provide 'helm-core)</code></li>
+</ul>
+<h2>helm-dabbrev.el</h2>
+<ul>
+<li>L20: <code>(require 'helm)</code></li>
+<li>L21: <code>(require 'helm-lib)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L23: <code>(require 'helm-elisp) ; For show-completion.</code></li>
+<li>L30: <code>(defcustom helm-dabbrev-always-search-all t</code></li>
+<li>L37: <code>(defcustom helm-dabbrev-candidates-number-limit 1000</code></li>
+<li>L50: <code>(defcustom helm-dabbrev-ignored-buffers-regexps</code></li>
+<li>L55: <code>(defcustom helm-dabbrev-related-buffer-fn #'helm-dabbrev--same-major-mode-p</code></li>
+<li>L67: <code>(defcustom helm-dabbrev-major-mode-assoc nil</code></li>
+<li>L86: <code>(defcustom helm-dabbrev-lineno-around 30</code></li>
+<li>L90: <code>(defcustom helm-dabbrev-cycle-threshold 5</code></li>
+<li>L95: <code>(defcustom helm-dabbrev-case-fold-search 'smart</code></li>
+<li>L114: <code>(defvar helm-dabbrev-map</code></li>
+<li>L117: <code>(define-key map (kbd "M-/") #'helm-next-line)</code></li>
+<li>L118: <code>(define-key map (kbd "M-:") #'helm-previous-line)</code></li>
+<li>L131: <code>(defun helm-dabbrev--buffer-list ()</code></li>
+<li>L137: <code>(defun helm-dabbrev--same-major-mode-p (start-buffer)</code></li>
+<li>L141: <code>(defun helm-dabbrev--collect (str limit ignore-case all)</code></li>
+<li>L193: <code>(defun helm-dabbrev--search-and-store (pattern direction limit results)</code></li>
+<li>L234: <code>(defun helm-dabbrev--search (pattern beg sep-regexp)</code></li>
+<li>L258: <code>(defun helm-dabbrev--get-candidates (dabbrev &amp;optional limit)</code></li>
+<li>L268: <code>(defun helm-dabbrev-default-action (candidate)</code></li>
+<li>L280: <code>(cl-defun helm-dabbrev ()</code></li>
+<li>L390: <code>(provide 'helm-dabbrev)</code></li>
+</ul>
+<h2>helm-easymenu.el</h2>
+<ul>
+<li>L20: <code>(require 'easymenu)</code></li>
+<li>L83: <code>(provide 'helm-easymenu)</code></li>
+</ul>
+<h2>helm-elisp.el</h2>
+<ul>
+<li>L19: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(require 'helm)</code></li>
+<li>L21: <code>(require 'helm-lib)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L23: <code>(require 'helm-types)</code></li>
+<li>L24: <code>(require 'helm-utils)</code></li>
+<li>L25: <code>(require 'helm-info)</code></li>
+<li>L26: <code>(require 'helm-eval)</code></li>
+<li>L27: <code>(require 'helm-files)</code></li>
+<li>L47: <code>(defcustom helm-turn-on-show-completion t</code></li>
+<li>L52: <code>(defcustom helm-show-completion-min-window-height 7</code></li>
+<li>L58: <code>(defcustom helm-lisp-quoted-function-list</code></li>
+<li>L67: <code>(defcustom helm-lisp-unquoted-function-list</code></li>
+<li>L74: <code>(defcustom helm-apropos-fuzzy-match nil</code></li>
+<li>L79: <code>(defcustom helm-lisp-fuzzy-completion nil</code></li>
+<li>L87: <code>(defcustom helm-apropos-function-list '(helm-def-source--emacs-commands</code></li>
+<li>L97: <code>(defcustom helm-apropos-defaut-info-lookup-sources '(helm-source-info-elisp</code></li>
+<li>L104: <code>(defcustom helm-show-completion-display-function</code></li>
+<li>L141: <code>(defcustom helm-elisp-help-function</code></li>
+<li>L150: <code>(defcustom helm-locate-library-fuzzy-match t</code></li>
+<li>L164: <code>(defun helm-show-completion ()</code></li>
+<li>L170: <code>(defun helm-show-completion-init-overlay (beg end)</code></li>
+<li>L175: <code>(defun helm-show-completion-default-display-function (buffer &amp;rest _args)</code></li>
+<li>L194: <code>(defmacro with-helm-show-completion (beg end &amp;rest body)</code></li>
+<li>L230: <code>(defun helm-lisp-completion--predicate-at-point (beg)</code></li>
+<li>L267: <code>(defun helm-thing-before-point (&amp;optional limits regexp)</code></li>
+<li>L285: <code>(defun helm-bounds-of-thing-before-point (&amp;optional regexp)</code></li>
+<li>L290: <code>(defun helm-insert-completion-at-point (beg end str)</code></li>
+<li>L315: <code>(defun helm-lisp-completion-at-point ()</code></li>
+<li>L367: <code>(defun helm-lisp-completion-persistent-action (candidate &amp;optional name)</code></li>
+<li>L374: <code>(defun helm-lisp-completion-persistent-help ()</code></li>
+<li>L380: <code>(defun helm-elisp--show-help-1 (candidate &amp;optional name)</code></li>
+<li>L397: <code>(defun helm-elisp-show-help (candidate &amp;optional name)</code></li>
+<li>L406: <code>(defun helm-elisp-show-doc-modeline (candidate &amp;optional name)</code></li>
+<li>L416: <code>(defun helm-lisp-completion-transformer (candidates _source)</code></li>
+<li>L446: <code>(defun helm-get-first-line-documentation (sym &amp;optional name end-column)</code></li>
+<li>L499: <code>(defun helm-complete-file-name-at-point (&amp;optional force)</code></li>
+<li>L527: <code>(defun helm-lisp-indent ()</code></li>
+<li>L543: <code>(defcustom helm-apropos-show-short-doc nil</code></li>
+<li>L553: <code>(defvar helm-apropos-map</code></li>
+<li>L556: <code>(define-key map (kbd "C-]") #'helm-apropos-toggle-details)</code></li>
+<li>L559: <code>(defun helm-apropos-init (test default &amp;optional fn)</code></li>
+<li>L574: <code>(defun helm-apropos-short-doc-transformer (candidates _source)</code></li>
+<li>L590: <code>(defun helm-apropos-default-sort-fn (candidates _source)</code></li>
+<li>L595: <code>(defun helm-apropos-clean-history-variable (candidate)</code></li>
+<li>L609: <code>(defun helm-apropos-clean-ring (candidate)</code></li>
+<li>L628: <code>(defun helm-apropos-action-transformer (actions candidate)</code></li>
+<li>L652: <code>(defun helm-def-source--emacs-variables (&amp;optional default)</code></li>
+<li>L677: <code>(defun helm-def-source--emacs-faces (&amp;optional default)</code></li>
+<li>L702: <code>(defun helm-def-source--emacs-commands (&amp;optional default)</code></li>
+<li>L721: <code>(defun helm-def-source--emacs-functions (&amp;optional default)</code></li>
+<li>L745: <code>(defun helm-def-source--eieio-classes (&amp;optional default)</code></li>
+<li>L768: <code>(defun helm-def-source--eieio-generic (&amp;optional default)</code></li>
+<li>L790: <code>(defun helm-info-lookup-fallback-source (candidate)</code></li>
+<li>L817: <code>(defun helm-info-lookup-symbol-1 (c)</code></li>
+<li>L825: <code>(defun helm-info-lookup-symbol (candidate)</code></li>
+<li>L831: <code>(defun helm-elisp-describe-slots (class)</code></li>
+<li>L853: <code>(defun helm-elisp--describe-slot (slot)</code></li>
+<li>L857: <code>(defun helm-apropos-toggle-details ()</code></li>
+<li>L867: <code>(defun helm-apropos-get-default ()</code></li>
+<li>L875: <code>(defun helm-apropos (default)</code></li>
+<li>L899: <code>(defun helm-locate-library-scan-list ()</code></li>
+<li>L906: <code>(defun helm-locate-library (&amp;optional arg)</code></li>
+<li>L973: <code>(defun helm-set-variable (var)</code></li>
+<li>L988: <code>(defvar helm-edit-variable-mode-map</code></li>
+<li>L990: <code>(define-key map (kbd "C-c C-c") 'helm-set-variable-from-pp-buffer)</code></li>
+<li>L991: <code>(define-key map (kbd "C-c C-k") 'helm-edit-variable-quit)</code></li>
+<li>L992: <code>(define-key map (kbd "C-c =")   'helm-edit-variable-toggle-diff)</code></li>
+<li>L995: <code>(define-derived-mode helm-edit-variable-mode</code></li>
+<li>L1006: <code>(defun helm-edit-variable (var)</code></li>
+<li>L1032: <code>(defun helm-edit-variable-toggle-diff ()</code></li>
+<li>L1039: <code>(defun helm-set-variable-from-pp-buffer ()</code></li>
+<li>L1064: <code>(defun helm-edit-variable-quit ()</code></li>
+<li>L1101: <code>(defun helm-elisp--format-timer (timer)</code></li>
+<li>L1117: <code>(defun helm-timers ()</code></li>
+<li>L1132: <code>(defun helm-sexp-eval-1 ()</code></li>
+<li>L1144: <code>(defun helm-complex-command-history--called-interactively-skip (i _frame1 frame2)</code></li>
+<li>L1150: <code>(defun helm-sexp-eval (_candidate)</code></li>
+<li>L1175: <code>(defun helm-complex-command-history ()</code></li>
+<li>L1181: <code>(provide 'helm-elisp)</code></li>
+</ul>
+<h2>helm-epa.el</h2>
+<ul>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L47: <code>(defcustom helm-epa-actions '(("Show key" . epa--show-key)</code></li>
+<li>L64: <code>(defun helm-epa-get-key-list (&amp;optional keys)</code></li>
+<li>L89: <code>(defun helm-epa--select-keys (prompt keys)</code></li>
+<li>L104: <code>(defun helm-epa--format-prompt (prompt)</code></li>
+<li>L112: <code>(defun helm-epa--read-signature-type-help ()</code></li>
+<li>L124: <code>(defun helm-epa--read-signature-type ()</code></li>
+<li>L134: <code>(defun helm-epa-collect-keys-from-candidates (candidates)</code></li>
+<li>L139: <code>(defun helm-epa-collect-id-from-candidates (candidates)</code></li>
+<li>L144: <code>(defun helm-epa-success-message (str keys ids)</code></li>
+<li>L154: <code>(define-minor-mode helm-epa-mode</code></li>
+<li>L166: <code>(defun helm-epa-action-transformer (actions _candidate)</code></li>
+<li>L176: <code>(defun helm-epa-delete-keys (_candidate)</code></li>
+<li>L188: <code>(defun helm-epa-encrypt-file (_candidate)</code></li>
+<li>L198: <code>(defun helm-epa-kill-keys-armor (_candidate)</code></li>
+<li>L210: <code>(defun helm-epa-mail-sign (candidate)</code></li>
+<li>L234: <code>(defun helm-epa-mail-encrypt (_candidate)</code></li>
+<li>L257: <code>(defun helm-epa-list-keys ()</code></li>
+<li>L267: <code>(provide 'helm-epa)</code></li>
+</ul>
+<h2>helm-eshell.el</h2>
+<ul>
+<li>L24: <code>;;               (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)</code></li>
+<li>L25: <code>;;               (define-key eshell-mode-map (kbd "M-s f") 'helm-eshell-prompts-all)))</code></li>
+<li>L26: <code>;;               (define-key eshell-mode-map (kbd "M-r") 'helm-eshell-history)))</code></li>
+<li>L30: <code>(require 'cl-lib)</code></li>
+<li>L31: <code>(require 'helm)</code></li>
+<li>L32: <code>(require 'helm-lib)</code></li>
+<li>L33: <code>(require 'helm-help)</code></li>
+<li>L34: <code>(require 'helm-elisp)</code></li>
+<li>L53: <code>(defcustom helm-eshell-fuzzy-match nil</code></li>
+<li>L59: <code>(defvar helm-eshell-history-map</code></li>
+<li>L62: <code>(define-key map (kbd "M-p") #'helm-next-line)</code></li>
+<li>L66: <code>(defvar helm-esh-completion-map</code></li>
+<li>L69: <code>(define-key map (kbd "TAB") #'helm-next-line)</code></li>
+<li>L79: <code>(defun helm-ec-insert (_candidate)</code></li>
+<li>L112: <code>(defun helm-esh-transformer (candidates _sources)</code></li>
+<li>L139: <code>(defun helm-esh-get-candidates ()</code></li>
+<li>L230: <code>(defun helm-esh-pcomplete-input (target users-comp last)</code></li>
+<li>L250: <code>(defun helm-esh-pcomplete-default-source ()</code></li>
+<li>L259: <code>(defun helm-esh-pcomplete--make-helm (&amp;optional input)</code></li>
+<li>L266: <code>(defun helm-esh-pcomplete ()</code></li>
+<li>L343: <code>(defun helm-eshell--quit-hook-fn ()</code></li>
+<li>L347: <code>(defun helm-eshell-history ()</code></li>
+<li>L384: <code>(defcustom helm-eshell-prompts-promptidx-p t</code></li>
+<li>L388: <code>(defvar helm-eshell-prompts-keymap</code></li>
+<li>L391: <code>(define-key map (kbd "C-c o")   #'helm-eshell-prompts-other-window)</code></li>
+<li>L392: <code>(define-key map (kbd "C-c C-o") #'helm-eshell-prompts-other-frame)</code></li>
+<li>L399: <code>(defun helm-eshell-prompts-list (&amp;optional buffer)</code></li>
+<li>L421: <code>(defun helm-eshell-prompts-list-all ()</code></li>
+<li>L427: <code>(defun helm-eshell-prompts-transformer (candidates &amp;optional all)</code></li>
+<li>L444: <code>(defun helm-eshell-prompts-all-transformer (candidates)</code></li>
+<li>L447: <code>(defun helm-eshell-prompts-goto (candidate &amp;optional action)</code></li>
+<li>L457: <code>(defun helm-eshell-prompts-goto-other-window (candidate)</code></li>
+<li>L460: <code>(defun helm-eshell-prompts-goto-other-frame (candidate)</code></li>
+<li>L472: <code>(defun helm-eshell-prompts ()</code></li>
+<li>L485: <code>(defun helm-eshell-prompts-all ()</code></li>
+<li>L500: <code>(provide 'helm-eshell)</code></li>
+</ul>
+<h2>helm-eval.el</h2>
+<ul>
+<li>L19: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(require 'helm)</code></li>
+<li>L21: <code>(require 'helm-help)</code></li>
+<li>L22: <code>(require 'eldoc)</code></li>
+<li>L23: <code>(require 'edebug)</code></li>
+<li>L34: <code>(defcustom helm-eldoc-in-minibuffer-show-fn</code></li>
+<li>L41: <code>(defcustom helm-show-info-in-mode-line-delay 12</code></li>
+<li>L75: <code>(defvar helm-eval-expression-map</code></li>
+<li>L78: <code>(define-key map (kbd "&lt;C-return&gt;") #'helm-eval-new-line-and-indent)</code></li>
+<li>L79: <code>(define-key map (kbd "&lt;M-tab&gt;")    #'lisp-indent-line)</code></li>
+<li>L80: <code>(define-key map (kbd "&lt;C-tab&gt;")    #'helm-lisp-completion-at-point)</code></li>
+<li>L81: <code>(define-key map (kbd "C-p")        #'previous-line)</code></li>
+<li>L82: <code>(define-key map (kbd "C-n")        #'next-line)</code></li>
+<li>L83: <code>(define-key map (kbd "&lt;up&gt;")       #'previous-line)</code></li>
+<li>L84: <code>(define-key map (kbd "&lt;down&gt;")     #'next-line)</code></li>
+<li>L85: <code>(define-key map (kbd "&lt;right&gt;")    #'forward-char)</code></li>
+<li>L86: <code>(define-key map (kbd "&lt;left&gt;")     #'backward-char)</code></li>
+<li>L94: <code>(defun helm-build-evaluation-result-source ()</code></li>
+<li>L120: <code>(defun helm-eval-new-line-and-indent ()</code></li>
+<li>L124: <code>(defun helm-eldoc-store-minibuffer ()</code></li>
+<li>L132: <code>(defun helm-eldoc-show-in-eval ()</code></li>
+<li>L155: <code>(defun helm-show-info-in-mode-line (str)</code></li>
+<li>L188: <code>(defun helm-eval-expression (arg)</code></li>
+<li>L200: <code>(defun helm-eval-expression-with-eldoc ()</code></li>
+<li>L215: <code>(defun helm-calcul-expression ()</code></li>
+<li>L221: <code>(provide 'helm-eval)</code></li>
+</ul>
+<h2>helm-external.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L23: <code>(require 'helm-net)</code></li>
+<li>L33: <code>(defcustom helm-raise-command nil</code></li>
+<li>L40: <code>(defcustom helm-external-programs-associations nil</code></li>
+<li>L47: <code>(defcustom helm-default-external-file-browser "nautilus"</code></li>
+<li>L71: <code>(defun helm-external-commands-list-1 (&amp;optional sort)</code></li>
+<li>L91: <code>(defun helm-run-or-raise (exe &amp;optional files detached)</code></li>
+<li>L153: <code>(defun helm-get-mailcap-for-file (filename)</code></li>
+<li>L163: <code>(defun helm-get-default-program-for-file (filename)</code></li>
+<li>L174: <code>(defun helm-open-file-externally (_file)</code></li>
+<li>L220: <code>(defun helm-run-external-command-action (candidate &amp;optional detached)</code></li>
+<li>L246: <code>(defun helm-run-external-command ()</code></li>
+<li>L264: <code>(provide 'helm-external)</code></li>
+</ul>
+<h2>helm-fd.el</h2>
+<ul>
+<li>L20: <code>(require 'helm)</code></li>
+<li>L21: <code>(require 'helm-types)</code></li>
+<li>L29: <code>(defcustom helm-fd-switches '("--no-ignore" "--hidden" "--type" "f" "--type" "d" "--color" "always")</code></li>
+<li>L34: <code>(defcustom helm-fd-mode-line-function 'helm-fd-default-mode-line</code></li>
+<li>L45: <code>(defvar helm-fd-map</code></li>
+<li>L48: <code>(define-key map (kbd "C-]")      'undefined)</code></li>
+<li>L49: <code>(define-key map (kbd "DEL")      'helm-delete-backward-no-update)</code></li>
+<li>L50: <code>(define-key map (kbd "M-&lt;down&gt;") 'helm-fd-next-directory)</code></li>
+<li>L51: <code>(define-key map (kbd "M-&lt;up&gt;")   'helm-fd-previous-directory)</code></li>
+<li>L54: <code>(defun helm-fd-next-directory-1 (arg)</code></li>
+<li>L62: <code>(defun helm-fd-next-directory ()</code></li>
+<li>L68: <code>(defun helm-fd-previous-directory ()</code></li>
+<li>L84: <code>(defun helm-fd-process ()</code></li>
+<li>L113: <code>(defun helm-fd-default-mode-line (start-time fd-version)</code></li>
+<li>L126: <code>(defun helm-fd-fct (candidates _source)</code></li>
+<li>L138: <code>(defun helm-fd-1 (directory)</code></li>
+<li>L151: <code>(provide 'helm-fd)</code></li>
+</ul>
+<h2>helm-files.el</h2>
+<ul>
+<li>L21: <code>(require 'cl-lib)</code></li>
+<li>L22: <code>(require 'helm)</code></li>
+<li>L23: <code>(require 'helm-types)</code></li>
+<li>L24: <code>(require 'helm-utils)</code></li>
+<li>L25: <code>(require 'helm-grep)</code></li>
+<li>L26: <code>(require 'helm-help)</code></li>
+<li>L27: <code>(require 'helm-locate)</code></li>
+<li>L28: <code>(require 'helm-tags)</code></li>
+<li>L29: <code>(require 'helm-buffers)</code></li>
+<li>L30: <code>(require 'tramp)</code></li>
+<li>L36: <code>(require 'filenotify)</code></li>
+<li>L37: <code>(require 'image-mode)</code></li>
+<li>L38: <code>(require 'image-dired)</code></li>
+<li>L39: <code>(require 'helm-x-icons)</code></li>
+<li>L135: <code>(defvar helm-find-files-doc-header " (\\&lt;helm-find-files-map&gt;\\[helm-find-files-up-one-level]: Go up one level)"</code></li>
+<li>L188: <code>(defvar helm-find-files-map</code></li>
+<li>L191: <code>(define-key map (kbd "RET")           'helm-ff-RET)</code></li>
+<li>L192: <code>(define-key map (kbd "C-]")           'helm-ff-run-toggle-basename)</code></li>
+<li>L193: <code>(define-key map (kbd "C-x C-f")       'helm-ff-run-locate)</code></li>
+<li>L194: <code>(define-key map (kbd "C-x C-d")       'helm-ff-run-browse-project)</code></li>
+<li>L195: <code>(define-key map (kbd "C-x r m")       'helm-ff-bookmark-set)</code></li>
+<li>L196: <code>(define-key map (kbd "C-x r b")       'helm-find-files-switch-to-bookmark)</code></li>
+<li>L197: <code>(define-key map (kbd "C-x C-q")       'helm-ff-run-edit-marked-files)</code></li>
+<li>L198: <code>(define-key map (kbd "C-s")           'helm-ff-run-grep)</code></li>
+<li>L199: <code>(define-key map (kbd "M-g s")         'helm-ff-run-grep)</code></li>
+<li>L200: <code>(define-key map (kbd "M-g p")         'helm-ff-run-pdfgrep)</code></li>
+<li>L201: <code>(define-key map (kbd "M-g z")         'helm-ff-run-zgrep)</code></li>
+<li>L202: <code>(define-key map (kbd "M-g a")         'helm-ff-run-grep-ag)</code></li>
+<li>L203: <code>(define-key map (kbd "M-g g")         'helm-ff-run-git-grep)</code></li>
+<li>L204: <code>(define-key map (kbd "M-g i")         'helm-ff-run-gid)</code></li>
+<li>L205: <code>(define-key map (kbd "M-.")           'helm-ff-run-etags)</code></li>
+<li>L206: <code>(define-key map (kbd "M-R")           'helm-ff-run-rename-file)</code></li>
+<li>L207: <code>(define-key map (kbd "M-C")           'helm-ff-run-copy-file)</code></li>
+<li>L208: <code>(define-key map (kbd "M-k")           'helm-ff-run-kill-default-directory)</code></li>
+<li>L210: <code>(define-key map (kbd "M-V")         'helm-ff-run-rsync-file))</code></li>
+<li>L211: <code>(define-key map (kbd "C-M-SPC")       'helm-ff-mark-similar-files)</code></li>
+<li>L212: <code>(define-key map (kbd "C-M-@")         'helm-ff-mark-similar-files)</code></li>
+<li>L213: <code>(define-key map (kbd "C-c C-SPC")     'helm-ff-mark-similar-files)</code></li>
+<li>L214: <code>(define-key map (kbd "C-M-c")         'helm-ff-run-mcp)</code></li>
+<li>L215: <code>(define-key map (kbd "M-B")           'helm-ff-run-byte-compile-file)</code></li>
+<li>L216: <code>(define-key map (kbd "M-L")           'helm-ff-run-load-file)</code></li>
+<li>L217: <code>(define-key map (kbd "M-S")           'helm-ff-run-symlink-file)</code></li>
+<li>L218: <code>(define-key map (kbd "M-Y")           'helm-ff-run-relsymlink-file)</code></li>
+<li>L219: <code>(define-key map (kbd "M-H")           'helm-ff-run-hardlink-file)</code></li>
+<li>L220: <code>(define-key map (kbd "M-D")           'helm-ff-run-delete-file)</code></li>
+<li>L221: <code>(define-key map (kbd "M-K")           'helm-ff-run-kill-buffer-persistent)</code></li>
+<li>L222: <code>(define-key map (kbd "M-T")           'helm-ff-run-touch-files)</code></li>
+<li>L223: <code>(define-key map (kbd "M-M")           'helm-ff-run-chmod)</code></li>
+<li>L225: <code>(define-key map (if (display-graphic-p)</code></li>
+<li>L228: <code>(define-key map (kbd "M-G")           'helm-ff-run-chgrp)</code></li>
+<li>L229: <code>(define-key map (kbd "C-c z")         'helm-ff-persistent-compress)</code></li>
+<li>L230: <code>(define-key map (kbd "M-Z")           'helm-ff-run-compress-marked-files)</code></li>
+<li>L231: <code>(define-key map (kbd "M-c")           'helm-ff-run-compress-to)</code></li>
+<li>L232: <code>(define-key map (kbd "C-c d")         'helm-ff-persistent-delete)</code></li>
+<li>L233: <code>(define-key map (kbd "M-e")           'helm-ff-run-switch-to-shell)</code></li>
+<li>L234: <code>(define-key map (kbd "C-c i")         'helm-ff-run-complete-fn-at-point)</code></li>
+<li>L235: <code>(define-key map (kbd "C-c o")         'helm-ff-run-switch-other-window)</code></li>
+<li>L236: <code>(define-key map (kbd "C-c C-o")       'helm-ff-run-switch-other-frame)</code></li>
+<li>L237: <code>(define-key map (kbd "C-c C-x")       'helm-ff-run-open-file-externally)</code></li>
+<li>L238: <code>(define-key map (kbd "C-c C-v")       'helm-ff-run-preview-file-externally)</code></li>
+<li>L239: <code>(define-key map (kbd "C-c X")         'helm-ff-run-open-file-with-default-tool)</code></li>
+<li>L240: <code>(define-key map (kbd "C-c t")         'helm-ff-toggle-thumbnails)</code></li>
+<li>L241: <code>(define-key map (kbd "M-!")           'helm-ff-run-eshell-command-on-file)</code></li>
+<li>L242: <code>(define-key map (kbd "M-@")           'helm-ff-run-query-replace-fnames-on-marked)</code></li>
+<li>L243: <code>(define-key map (kbd "M-%")           'helm-ff-run-query-replace)</code></li>
+<li>L244: <code>(define-key map (kbd "C-M-%")         'helm-ff-run-query-replace-regexp)</code></li>
+<li>L245: <code>(define-key map (kbd "C-c =")         'helm-ff-run-ediff-file)</code></li>
+<li>L246: <code>(define-key map (kbd "M-=")           'helm-ff-run-ediff-merge-file)</code></li>
+<li>L247: <code>(define-key map (kbd "M-p")           'helm-find-files-history)</code></li>
+<li>L248: <code>(define-key map (kbd "C-c h")         'helm-ff-file-name-history)</code></li>
+<li>L249: <code>(define-key map (kbd "M-i")           'helm-ff-properties-persistent)</code></li>
+<li>L250: <code>(define-key map (kbd "C-}")           'helm-narrow-window)</code></li>
+<li>L251: <code>(define-key map (kbd "C-{")           'helm-enlarge-window)</code></li>
+<li>L252: <code>(define-key map (kbd "C-&lt;backspace&gt;") 'helm-ff-run-toggle-auto-update)</code></li>
+<li>L253: <code>(define-key map (kbd "C-c &lt;DEL&gt;")     'helm-ff-run-toggle-auto-update)</code></li>
+<li>L254: <code>(define-key map (kbd "C-c C-a")       'helm-ff-run-mail-attach-files)</code></li>
+<li>L255: <code>(define-key map (kbd "C-c p")         'helm-ff-run-print-file)</code></li>
+<li>L256: <code>(define-key map (kbd "C-c /")         'helm-ff-run-find-sh-command)</code></li>
+<li>L257: <code>(define-key map (kbd "C-/")           'helm-ff-run-fd)</code></li>
+<li>L259: <code>(define-key map (kbd "M-l")           'helm-ff-rotate-left-persistent)</code></li>
+<li>L260: <code>(define-key map (kbd "M-r")           'helm-ff-rotate-right-persistent)</code></li>
+<li>L261: <code>(define-key map (kbd "M-+")           'helm-ff-increase-image-size-persistent)</code></li>
+<li>L262: <code>(define-key map (kbd "M--")           'helm-ff-decrease-image-size-persistent)</code></li>
+<li>L263: <code>(define-key map (kbd "C-l")           'helm-find-files-up-one-level)</code></li>
+<li>L264: <code>(define-key map (kbd "C-:")           'helm-ff-complete-tramp-methods)</code></li>
+<li>L265: <code>(define-key map (kbd "C-_")           'helm-ff-undo)</code></li>
+<li>L266: <code>(define-key map (kbd "C-;")           'helm-find-files-down-last-level)</code></li>
+<li>L267: <code>(define-key map (kbd "C-c r")         'helm-ff-run-find-file-as-root)</code></li>
+<li>L268: <code>(define-key map (kbd "C-x C-v")       'helm-ff-run-find-alternate-file)</code></li>
+<li>L269: <code>(define-key map (kbd "C-c @")         'helm-ff-run-insert-org-link)</code></li>
+<li>L270: <code>(define-key map (kbd "S-&lt;f1&gt;")        'helm-ff-sort-alpha)</code></li>
+<li>L271: <code>(define-key map (kbd "S-&lt;f2&gt;")        'helm-ff-sort-by-newest)</code></li>
+<li>L272: <code>(define-key map (kbd "S-&lt;f3&gt;")        'helm-ff-sort-by-size)</code></li>
+<li>L273: <code>(define-key map (kbd "S-&lt;f4&gt;")        'helm-ff-toggle-dirs-only)</code></li>
+<li>L274: <code>(define-key map (kbd "S-&lt;f5&gt;")        'helm-ff-toggle-files-only)</code></li>
+<li>L275: <code>(define-key map (kbd "S-&lt;f6&gt;")        'helm-ff-sort-by-ext)</code></li>
+<li>L281: <code>(define-key map (kbd "C-c C-t")       'helm-ff-run-find-file-other-tab))</code></li>
+<li>L285: <code>(defvar helm-read-file-map</code></li>
+<li>L288: <code>(define-key map (kbd "&lt;C-return&gt;")    'helm-cr-empty-string)</code></li>
+<li>L289: <code>(define-key map (kbd "M-RET")         'helm-cr-empty-string)</code></li>
+<li>L290: <code>(define-key map (kbd "C-]")           'helm-ff-run-toggle-basename)</code></li>
+<li>L291: <code>(define-key map (kbd "C-.")           'helm-find-files-up-one-level)</code></li>
+<li>L292: <code>(define-key map (kbd "C-l")           'helm-find-files-up-one-level)</code></li>
+<li>L293: <code>(define-key map (kbd "C-:")           'helm-ff-complete-tramp-methods)</code></li>
+<li>L294: <code>(define-key map (kbd "C-_")           'helm-ff-undo)</code></li>
+<li>L295: <code>(define-key map (kbd "C-;")           'helm-find-files-down-last-level)</code></li>
+<li>L296: <code>(define-key map (kbd "C-c h")         'helm-ff-file-name-history)</code></li>
+<li>L297: <code>(define-key map (kbd "C-x r b")       'helm-ff-bookmark-insert-location)</code></li>
+<li>L298: <code>(define-key map (kbd "C-&lt;backspace&gt;") 'helm-ff-run-toggle-auto-update)</code></li>
+<li>L299: <code>(define-key map (kbd "C-c &lt;DEL&gt;")     'helm-ff-run-toggle-auto-update)</code></li>
+<li>L300: <code>(define-key map (kbd "C-c t")         'helm-ff-toggle-thumbnails)</code></li>
+<li>L301: <code>(define-key map (kbd "S-&lt;f1&gt;")        'helm-ff-sort-alpha)</code></li>
+<li>L302: <code>(define-key map (kbd "S-&lt;f2&gt;")        'helm-ff-sort-by-newest)</code></li>
+<li>L303: <code>(define-key map (kbd "S-&lt;f3&gt;")        'helm-ff-sort-by-size)</code></li>
+<li>L304: <code>(define-key map (kbd "S-&lt;f6&gt;")        'helm-ff-sort-by-ext)</code></li>
+<li>L305: <code>(define-key map (kbd "RET")           'helm-ff-RET)</code></li>
+<li>L321: <code>(defcustom helm-tramp-verbose 0</code></li>
+<li>L327: <code>(defcustom helm-ff-auto-update-initial-value nil</code></li>
+<li>L335: <code>(defcustom helm-ff-history-max-length 100</code></li>
+<li>L339: <code>(defcustom helm-ff-fuzzy-matching t</code></li>
+<li>L344: <code>(defcustom helm-ff-exif-data-program "exiftran"</code></li>
+<li>L348: <code>(defcustom helm-ff-exif-data-program-args "-d"</code></li>
+<li>L352: <code>(defcustom helm-ff-newfile-prompt-p t</code></li>
+<li>L357: <code>(defcustom helm-ff-avfs-directory "~/.avfs"</code></li>
+<li>L364: <code>(defcustom helm-ff-file-compressed-list '("gz" "bz2" "zip" "7z" "xz")</code></li>
+<li>L368: <code>(defcustom helm-ff-printer-list nil</code></li>
+<li>L377: <code>(defcustom helm-ff-transformer-show-only-basename t</code></li>
+<li>L386: <code>(defcustom helm-ff-show-dot-file-path nil</code></li>
+<li>L393: <code>(defcustom helm-ff-signal-error-on-dot-files t</code></li>
+<li>L400: <code>(defcustom helm-ff-search-library-in-sexp nil</code></li>
+<li>L404: <code>(defcustom helm-tooltip-hide-delay 25</code></li>
+<li>L408: <code>(defcustom helm-ff-skip-boring-files nil</code></li>
+<li>L416: <code>(defcustom helm-ff-skip-git-ignored-files nil</code></li>
+<li>L424: <code>(defcustom helm-ff-candidate-number-limit 500</code></li>
+<li>L441: <code>(defcustom helm-ff-dynamic-candidate-number-limit t</code></li>
+<li>L454: <code>(defcustom helm-find-files-before-init-hook nil</code></li>
+<li>L458: <code>(defcustom helm-find-files-after-init-hook nil</code></li>
+<li>L462: <code>(defcustom helm-find-files-bookmark-prefix nil</code></li>
+<li>L466: <code>(defcustom helm-ff-guess-ffap-filenames nil</code></li>
+<li>L472: <code>(defcustom helm-ff-guess-ffap-urls t</code></li>
+<li>L480: <code>(defcustom helm-ff-no-preselect nil</code></li>
+<li>L484: <code>(defcustom helm-ff-allow-non-existing-file-at-point nil</code></li>
+<li>L488: <code>(defcustom helm-find-files-ignore-thing-at-point nil</code></li>
+<li>L495: <code>(defcustom helm-substitute-in-filename-stay-on-remote nil</code></li>
+<li>L499: <code>(defcustom helm-ff-goto-first-real-dired-exceptions '(dired-goto-file)</code></li>
+<li>L503: <code>(defcustom helm-mounted-network-directories nil</code></li>
+<li>L512: <code>(defcustom helm-browse-project-default-find-files-fn</code></li>
+<li>L526: <code>(defcustom helm-ff-kill-or-find-buffer-fname-fn</code></li>
+<li>L548: <code>(defcustom helm-modes-using-escaped-strings</code></li>
+<li>L553: <code>(defcustom helm-ff-allow-recursive-deletes nil</code></li>
+<li>L563: <code>(defcustom helm-ff-delete-files-function #'helm-delete-marked-files</code></li>
+<li>L581: <code>(defcustom helm-trash-remote-files nil</code></li>
+<li>L598: <code>(defcustom helm-ff-initial-sort-method nil</code></li>
+<li>L613: <code>(defcustom helm-ff-rotate-image-program "exiftran"</code></li>
+<li>L624: <code>(defcustom helm-ff-rotate-image-switch '("-i")</code></li>
+<li>L630: <code>(defcustom helm-ff-preferred-shell-mode 'eshell-mode</code></li>
+<li>L639: <code>(defcustom helm-rsync-no-mode-line-update nil</code></li>
+<li>L646: <code>(defcustom helm-rsync-switches '("-a" "-z" "-h" "-s" "--info=all2")</code></li>
+<li>L653: <code>(defcustom helm-rsync-percent-sign "％"</code></li>
+<li>L657: <code>(defcustom helm-ff-rsync-progress-bar-style (if (display-graphic-p) 'bar 'text)</code></li>
+<li>L665: <code>(defcustom helm-ff-rsync-progress-bar-info '(percent)</code></li>
+<li>L678: <code>(defcustom helm-rsync-progress-bar-function #'helm-rsync-default-progress-bar</code></li>
+<li>L699: <code>(defcustom helm-trash-default-directory nil</code></li>
+<li>L709: <code>(defcustom helm-ff-lynx-style-map t</code></li>
+<li>L718: <code>(define-key helm-find-files-map (kbd "&lt;right&gt;")  'helm-execute-persistent-action)</code></li>
+<li>L719: <code>(define-key helm-find-files-map (kbd "&lt;left&gt;")   'helm-find-files-up-one-level)</code></li>
+<li>L720: <code>(define-key helm-read-file-map (kbd "&lt;right&gt;")  'helm-execute-persistent-action)</code></li>
+<li>L721: <code>(define-key helm-read-file-map (kbd "&lt;left&gt;")   'helm-find-files-up-one-level))</code></li>
+<li>L722: <code>(define-key helm-find-files-map (kbd "&lt;right&gt;") nil)</code></li>
+<li>L723: <code>(define-key helm-find-files-map (kbd "&lt;left&gt;")  nil)</code></li>
+<li>L724: <code>(define-key helm-read-file-map (kbd "&lt;right&gt;") nil)</code></li>
+<li>L725: <code>(define-key helm-read-file-map (kbd "&lt;left&gt;")  nil))))</code></li>
+<li>L727: <code>(defcustom helm-ff-DEL-up-one-level-maybe nil</code></li>
+<li>L736: <code>(defcustom helm-ff-display-image-native t</code></li>
+<li>L749: <code>(defcustom helm-ff-reset-filters-on-update t</code></li>
+<li>L755: <code>(defcustom helm-ff-eshell-unwanted-aliases nil</code></li>
+<li>L759: <code>(defcustom helm-eshell-on-file-reverse-history t</code></li>
+<li>L763: <code>(defcustom helm-ff-edit-marked-files-fn #'helm-ff-wfnames</code></li>
+<li>L776: <code>(defcustom helm-find-files-actions</code></li>
+<li>L850: <code>(defcustom helm-dwim-target nil</code></li>
+<li>L869: <code>(defcustom helm-ff-use-notify t</code></li>
+<li>L880: <code>(defcustom helm-ff-inotify-unsupported-methods '("adb")</code></li>
+<li>L884: <code>(defcustom helm-ff-image-cache-max-len 5</code></li>
+<li>L888: <code>(defcustom helm-ff-image-cache-max-len 5</code></li>
+<li>L892: <code>(defcustom helm-ff-slideshow-default-delay 3</code></li>
+<li>L896: <code>(defcustom helm-file-name-history-max-length 72</code></li>
+<li>L900: <code>(defcustom helm-ff-follow-blacklist-file-exts '("gpg" "doc" "docx" "mp3" "ogg")</code></li>
+<li>L906: <code>(defcustom helm-ff-nohighlight-matches nil</code></li>
+<li>L915: <code>(defcustom helm-ff-ignore-following-on-directory nil</code></li>
+<li>L919: <code>(defcustom helm-ff-dim-prompt-on-update t</code></li>
+<li>L923: <code>(defcustom helm-ff-drag-mouse-1-default-action 'copy</code></li>
+<li>L933: <code>(defcustom helm-find-files-ignore-diacritics nil</code></li>
+<li>L946: <code>(defcustom helm-turn-on-recentf t</code></li>
+<li>L1190: <code>(defun helm-ff-make-bookmark-record ()</code></li>
+<li>L1197: <code>(defun helm-ff-bookmark-jump (bookmark)</code></li>
+<li>L1212: <code>(defun helm-ff-bookmark-set ()</code></li>
+<li>L1223: <code>(defun helm-dwim-target-directories ()</code></li>
+<li>L1237: <code>(defun helm-dwim-target-directory ()</code></li>
+<li>L1284: <code>(defun helm-ff--count-and-collect-dups (files)</code></li>
+<li>L1300: <code>(defun helm-find-files-do-action (action &amp;optional target)</code></li>
+<li>L1405: <code>(defun helm-rsync-remote2rsync (file)</code></li>
+<li>L1420: <code>(defun helm-rsync-format-mode-line-str (proc)</code></li>
+<li>L1445: <code>(defun helm-ff--rsync-progress-bar (progbar proc)</code></li>
+<li>L1471: <code>(defun helm-rsync-default-progress-bar (proc percent info)</code></li>
+<li>L1486: <code>(defun helm-rsync-svg-progress-bar (proc percent info)</code></li>
+<li>L1503: <code>(defun helm-rsync-mode-line (proc)</code></li>
+<li>L1512: <code>(defun helm-rsync-restore-mode-line (proc)</code></li>
+<li>L1520: <code>(defun helm-rsync-copy-files (files dest &amp;optional switches)</code></li>
+<li>L1570: <code>(defun helm-rsync-process-filter (proc output)</code></li>
+<li>L1615: <code>(defun helm-ff-kill-rsync-process (process)</code></li>
+<li>L1634: <code>(defun helm-find-files-rsync (_candidate)</code></li>
+<li>L1638: <code>(defun helm-find-files-copy (_candidate)</code></li>
+<li>L1642: <code>(defun helm-find-files-backup (_candidate)</code></li>
+<li>L1649: <code>(defun helm-find-files-rename (_candidate)</code></li>
+<li>L1653: <code>(defun helm-find-files-symlink (_candidate)</code></li>
+<li>L1657: <code>(defun helm-find-files-relsymlink (_candidate)</code></li>
+<li>L1661: <code>(defun helm-find-files-hardlink (_candidate)</code></li>
+<li>L1665: <code>(defun helm-find-files-compress-to (_candidate)</code></li>
+<li>L1669: <code>(defun helm-ff-compress-marked-files (_candidate)</code></li>
+<li>L1708: <code>(defun helm-ff-chmod (_candidate)</code></li>
+<li>L1731: <code>(defun helm-ff--dired-marked-files (&amp;rest _args)</code></li>
+<li>L1736: <code>(defun helm-ff--dired-get-filename (&amp;rest _args)</code></li>
+<li>L1740: <code>(defun helm-ff-dired-do-chxxx (&amp;rest args)</code></li>
+<li>L1754: <code>(defun helm-ff-chown (_candidate)</code></li>
+<li>L1762: <code>(defun helm-ff-chgrp (_candidate)</code></li>
+<li>L1775: <code>(defun helm-find-files-other-window (_candidate)</code></li>
+<li>L1783: <code>(defun helm-find-files-byte-compile (_candidate)</code></li>
+<li>L1796: <code>(defun helm-find-files-load-files (_candidate)</code></li>
+<li>L1802: <code>(defun helm-find-files-ediff-files-1 (candidate &amp;optional merge)</code></li>
+<li>L1824: <code>(defun helm-find-files-ediff-files (candidate)</code></li>
+<li>L1827: <code>(defun helm-find-files-ediff-merge-files (candidate)</code></li>
+<li>L1830: <code>(defun helm-find-files-grep (_candidate)</code></li>
+<li>L1835: <code>(defun helm-ff-git-grep (_candidate)</code></li>
+<li>L1839: <code>(defun helm-find-files-ag (_candidate)</code></li>
+<li>L1843: <code>(defun helm-ff-zgrep (_candidate)</code></li>
+<li>L1847: <code>(defun helm-ff-pdfgrep (_candidate)</code></li>
+<li>L1860: <code>(defun helm-ff-etags-select (candidate)</code></li>
+<li>L1876: <code>(cl-defun helm-find-files-eshell-command-on-file-1 (&amp;optional map)</code></li>
+<li>L2042: <code>(defun helm--advice-eshell-eval-command (command &amp;optional input)</code></li>
+<li>L2089: <code>(defun helm-find-files-eshell-command-on-file (_candidate)</code></li>
+<li>L2094: <code>(defun helm-ff--shell-interactive-buffer-p (buffer &amp;optional mode)</code></li>
+<li>L2106: <code>(defun helm-ff-switch-to-shell (_candidate)</code></li>
+<li>L2172: <code>(defun helm-ff-shell-alive-p (mode)</code></li>
+<li>L2188: <code>(defun helm-ff-touch-files (_candidate)</code></li>
+<li>L2228: <code>(defun helm-ff-encrypt-files (_candidate)</code></li>
+<li>L2253: <code>(defun helm-ff-sort-by-size ()</code></li>
+<li>L2263: <code>(defun helm-ff-sort-by-newest ()</code></li>
+<li>L2273: <code>(defun helm-ff-sort-by-ext ()</code></li>
+<li>L2283: <code>(defun helm-ff-sort-alpha ()</code></li>
+<li>L2293: <code>(defun helm-ff-directories-only (candidates _source)</code></li>
+<li>L2303: <code>(defun helm-ff-files-only (candidates _source)</code></li>
+<li>L2311: <code>(defun helm-ff-toggle-dirs-only ()</code></li>
+<li>L2320: <code>(defun helm-ff-toggle-files-only ()</code></li>
+<li>L2329: <code>(defun helm-ff-after-persistent-show-all ()</code></li>
+<li>L2334: <code>(defun helm-ff-serial-rename-action (method)</code></li>
+<li>L2373: <code>(defun helm-ff-member-directory-p (file directory)</code></li>
+<li>L2379: <code>(cl-defun helm-ff-serial-rename-1</code></li>
+<li>L2427: <code>(defun helm-ff-serial-rename (_candidate)</code></li>
+<li>L2434: <code>(defun helm-ff-serial-rename-by-symlink (_candidate)</code></li>
+<li>L2441: <code>(defun helm-ff-serial-rename-by-copying (_candidate)</code></li>
+<li>L2450: <code>(defun helm-ff-query-replace-on-filenames (candidates)</code></li>
+<li>L2494: <code>(defun helm-ff--query-replace-in-fname-set-new-name (old regexp rep count)</code></li>
+<li>L2572: <code>(defun helm-ff--prepare-str-with-regexp (str &amp;optional rep1 rep2)</code></li>
+<li>L2594: <code>(defun helm-ff-query-replace-fnames-on-marked (_candidate)</code></li>
+<li>L2603: <code>(defun helm-ff-query-replace (_candidate)</code></li>
+<li>L2612: <code>(defun helm-ff-query-replace-regexp (_candidate)</code></li>
+<li>L2621: <code>(defun helm-ff-toggle-auto-update ()</code></li>
+<li>L2632: <code>(defun helm-ff-run-toggle-auto-update ()</code></li>
+<li>L2638: <code>(defun helm-ff-delete-char-backward ()</code></li>
+<li>L2660: <code>(defun helm-ff-delete-char-backward--exit-fn ()</code></li>
+<li>L2665: <code>(defun helm-ff-RET-1 ()</code></li>
+<li>L2693: <code>(defun helm-ff-RET ()</code></li>
+<li>L2705: <code>(defun helm-ff-TAB-1 (&amp;optional force-menu)</code></li>
+<li>L2714: <code>(defun helm-ff-TAB (arg)</code></li>
+<li>L2800: <code>(defun helm-ff-delete-files (candidate)</code></li>
+<li>L2833: <code>(defun helm-ff-locate (candidate)</code></li>
+<li>L2854: <code>(defun helm-files-insert-as-org-link (candidate)</code></li>
+<li>L2879: <code>(defun helm-ff-print (_candidate)</code></li>
+<li>L2931: <code>(defun helm-ff-checksum (file)</code></li>
+<li>L2966: <code>(defun helm-ff-toggle-basename ()</code></li>
+<li>L2977: <code>(defun helm-ff-run-toggle-basename ()</code></li>
+<li>L2984: <code>(defun helm-ff-mark-similar-files-1 ()</code></li>
+<li>L3005: <code>(defun helm-ff-mark-similar-files ()</code></li>
+<li>L3016: <code>(defun helm-reduce-file-name-1 (fname level)</code></li>
+<li>L3025: <code>(defun helm-reduce-file-name-2 (fname level)</code></li>
+<li>L3037: <code>(defun helm-reduce-file-name (fname level)</code></li>
+<li>L3044: <code>(defun helm-iter-reduce-fname (fname)</code></li>
+<li>L3057: <code>(defun helm-find-files-up-one-level (arg)</code></li>
+<li>L3104: <code>(defun helm-find-files-down-last-level ()</code></li>
+<li>L3122: <code>(defun helm-find-files--reset-level-tree ()</code></li>
+<li>L3130: <code>(defun helm-ff-retrieve-last-expanded ()</code></li>
+<li>L3150: <code>(defun helm-ff-undo ()</code></li>
+<li>L3169: <code>(defun helm-ff-update-when-only-one-matched ()</code></li>
+<li>L3263: <code>(defun helm-ff-auto-expand-to-home-or-root ()</code></li>
+<li>L3303: <code>(defun helm-ff--maybe-set-pattern-and-update (&amp;optional str)</code></li>
+<li>L3308: <code>(defun helm-ff--expand-file-name-no-dot (name &amp;optional directory)</code></li>
+<li>L3317: <code>(defun helm-ff--expand-substitued-pattern (pattern)</code></li>
+<li>L3334: <code>(defun helm-substitute-in-filename (fname)</code></li>
+<li>L3363: <code>(defun helm-point-file-in-dired (file)</code></li>
+<li>L3371: <code>(defun helm-marked-files-in-dired (_candidate)</code></li>
+<li>L3388: <code>(defun helm-ff-wfnames (_candidate)</code></li>
+<li>L3395: <code>(defun helm-ff-edit-marked-files (candidate)</code></li>
+<li>L3403: <code>(defun helm-ff--get-tramp-methods ()</code></li>
+<li>L3408: <code>(defun helm-ff--previous-mh-tramp-method (str)</code></li>
+<li>L3421: <code>(defun helm-ff--get-host-from-tramp-invalid-fname (fname)</code></li>
+<li>L3441: <code>(cl-defun helm-ff--tramp-hostnames (&amp;optional (pattern helm-pattern))</code></li>
+<li>L3463: <code>(defun helm-ff-before-action-hook-fn ()</code></li>
+<li>L3474: <code>(cl-defun helm-ff--invalid-tramp-name-p (&amp;optional (pattern helm-pattern))</code></li>
+<li>L3481: <code>(defun helm-ff--tramp-multihops-p (name)</code></li>
+<li>L3485: <code>(defun helm-ff-complete-tramp-methods ()</code></li>
+<li>L3515: <code>(defun helm-ff-set-pattern (pattern)</code></li>
+<li>L3580: <code>(defun helm-find-files-get-candidates ()</code></li>
+<li>L3679: <code>(defun helm-list-directory (directory &amp;optional sel)</code></li>
+<li>L3737: <code>(defun helm-list-dir-lisp (directory &amp;optional sort-method)</code></li>
+<li>L3755: <code>(defun helm-file-name-all-completions-internal (directory)</code></li>
+<li>L3765: <code>(defun helm-list-dir-adb (directory &amp;optional sort-method)</code></li>
+<li>L3791: <code>(defun helm-list-dir-external (dir &amp;optional sort-method)</code></li>
+<li>L3856: <code>(defun helm-ff-directory-files (directory &amp;optional force-update)</code></li>
+<li>L3942: <code>(defun helm-ff--inotify-make-callback (directory)</code></li>
+<li>L3968: <code>(defun helm-ff-tramp-cleanup-hook (vec)</code></li>
+<li>L3984: <code>(defun helm-ff-handle-backslash (fname)</code></li>
+<li>L3992: <code>(defun helm-ff--fuzzy-matching-p ()</code></li>
+<li>L3995: <code>(defun helm-ff--transform-pattern-for-completion (pattern)</code></li>
+<li>L4058: <code>(defun helm-ff-save-history ()</code></li>
+<li>L4069: <code>(defun helm-ff-valid-symlink-p (file &amp;optional link)</code></li>
+<li>L4080: <code>(defun helm-get-default-mode-for-file (filename)</code></li>
+<li>L4086: <code>(defun helm-ff-properties (candidate)</code></li>
+<li>L4155: <code>(defun helm-ff-kill-default-directory (_candidate)</code></li>
+<li>L4165: <code>(defun helm-ff-dot-file-p (file)</code></li>
+<li>L4169: <code>(defun helm-ff-kill-buffer-fname (candidate)</code></li>
+<li>L4178: <code>(defun helm-ff-kill-or-find-buffer-fname (candidate)</code></li>
+<li>L4211: <code>(defun helm-ff-persistent-open-file-externally (file)</code></li>
+<li>L4222: <code>(defun helm-ff-prefix-filename (disp fname &amp;optional new-file)</code></li>
+<li>L4261: <code>(defun helm-ff-score-candidate-for-pattern (real disp pattern)</code></li>
+<li>L4271: <code>(defun helm-ff-sort-candidates-1 (candidates input)</code></li>
+<li>L4303: <code>(defun helm-ff-sort-candidates (candidates _source)</code></li>
+<li>L4308: <code>(defun helm-ff-boring-file-p (file)</code></li>
+<li>L4317: <code>(defun helm-ff-git-ignored-p (file)</code></li>
+<li>L4325: <code>(defun helm-ff-fct (candidates _source)</code></li>
+<li>L4336: <code>(defun helm-ff-filter-candidate-one-by-one (file &amp;optional reverse skip-boring-check)</code></li>
+<li>L4531: <code>(defun helm-ff-get-icon (disp file)</code></li>
+<li>L4556: <code>(defun helm-ff--is-dir-from-disp (disp)</code></li>
+<li>L4562: <code>(defun helm-ff--is-file-from-disp (disp)</code></li>
+<li>L4577: <code>(define-minor-mode helm-ff-icon-mode</code></li>
+<li>L4589: <code>(defun helm-ff--in-backup-directory ()</code></li>
+<li>L4594: <code>(defun helm-ff-restore-backups (_candidate)</code></li>
+<li>L4626: <code>(defun helm-ff--normalize-backup-name (fname)</code></li>
+<li>L4645: <code>(defun helm-ff-update-directory-autoloads (_candidate)</code></li>
+<li>L4659: <code>(defun helm-find-files-action-transformer (actions candidate)</code></li>
+<li>L4733: <code>(defun helm-ff-trash-action (fn names &amp;rest args)</code></li>
+<li>L4789: <code>(defun helm-ff-trash-rm (_candidate)</code></li>
+<li>L4798: <code>(defun helm-ff-trash-rm-1 (file)</code></li>
+<li>L4813: <code>(defun helm-restore-file-from-trash (_candidate)</code></li>
+<li>L4827: <code>(defun helm-restore-file-from-trash-1 (file trashed-files)</code></li>
+<li>L4849: <code>(defun helm-ff-trash-file-p (file)</code></li>
+<li>L4855: <code>(defun helm-ff--get-dest-file-from-trash (trashed-files file)</code></li>
+<li>L4858: <code>(cl-defun helm-ff-trash-list (&amp;optional (trash-dir nil strash-dir))</code></li>
+<li>L4896: <code>(defun helm-ff-goto-linum (candidate)</code></li>
+<li>L4909: <code>(defun helm-ff-mail-attach-files (_candidate)</code></li>
+<li>L4938: <code>(defun helm-ff-rotate-current-image-1 (file angle)</code></li>
+<li>L4980: <code>(defun helm-ff-rotate-image-left (candidate)</code></li>
+<li>L4985: <code>(defun helm-ff-rotate-image-right (candidate)</code></li>
+<li>L4990: <code>(defun helm-ff-rotate-left-persistent ()</code></li>
+<li>L4998: <code>(defun helm-ff-rotate-right-persistent ()</code></li>
+<li>L5006: <code>(defun helm-ff-resize-image-1 (arg)</code></li>
+<li>L5017: <code>(defun helm-ff--image-change-size (factor)</code></li>
+<li>L5024: <code>(defun helm-ff-increase-image-size (_candidate)</code></li>
+<li>L5027: <code>(defun helm-ff-decrease-image-size (_candidate)</code></li>
+<li>L5030: <code>(defun helm-ff-increase-image-size-persistent ()</code></li>
+<li>L5038: <code>(defun helm-ff-decrease-image-size-persistent ()</code></li>
+<li>L5046: <code>(defun helm-ff-exif-data (candidate)</code></li>
+<li>L5061: <code>(defun helm-ff--maybe-follow (candidate)</code></li>
+<li>L5070: <code>(cl-defun helm-find-files-persistent-action-if (candidate)</code></li>
+<li>L5230: <code>(defun helm-ff-display-image-native-p ()</code></li>
+<li>L5239: <code>(defun helm-ff--display-or-kill-image-native (candidate)</code></li>
+<li>L5256: <code>(defun helm-ff-clean-image-cache ()</code></li>
+<li>L5262: <code>(defun helm-ff--display-image-native (candidate)</code></li>
+<li>L5298: <code>(defvar helm-slideshow-mode-map</code></li>
+<li>L5301: <code>(define-key map (kbd "SPC") 'helm-ff-slideshow-pause-or-restart)</code></li>
+<li>L5302: <code>(define-key map (kbd "q")   'helm-ff-slideshow-quit)</code></li>
+<li>L5303: <code>(define-key map (kbd "n")   'helm-ff-slideshow-next)</code></li>
+<li>L5304: <code>(define-key map (kbd "p")   'helm-ff-slideshow-previous)</code></li>
+<li>L5307: <code>(define-derived-mode helm-slideshow-mode</code></li>
+<li>L5316: <code>(defun helm-ff-slideshow-help-string (counter-string state)</code></li>
+<li>L5321: <code>(defun helm-ff-start-slideshow-on-marked (_candidate)</code></li>
+<li>L5337: <code>(defun helm-ff-slideshow-state ()</code></li>
+<li>L5344: <code>(defun helm-ff-slideshow-sequence-from-current (&amp;optional reverse)</code></li>
+<li>L5348: <code>(defun helm-ff-slideshow-loop (iterator &amp;optional restart)</code></li>
+<li>L5363: <code>(defun helm-ff-slideshow-pause-or-restart ()</code></li>
+<li>L5374: <code>(defun helm-ff-slideshow-next ()</code></li>
+<li>L5388: <code>(defun helm-ff-slideshow-previous ()</code></li>
+<li>L5402: <code>(defun helm-ff-slideshow-quit ()</code></li>
+<li>L5413: <code>(defun helm-ff-maybe-show-thumbnails (candidates _source)</code></li>
+<li>L5451: <code>(defun helm-ff--image-dired-get-thumbnail-image (file &amp;optional type scale)</code></li>
+<li>L5470: <code>(defun helm-ff--image-dired-thumb-name (file)</code></li>
+<li>L5476: <code>(defun helm-ff-toggle-thumbnails ()</code></li>
+<li>L5496: <code>(defun helm-ff-clear-image-dired-thumbnails-cache ()</code></li>
+<li>L5505: <code>(defun helm-ff-cleanup-image-dired-dir-and-cache ()</code></li>
+<li>L5521: <code>(defun helm-find-files-recursive-dirs (directory &amp;optional input)</code></li>
+<li>L5563: <code>(defun helm-ff-recursive-dirs (_candidate)</code></li>
+<li>L5570: <code>(defun helm-ff-file-compressed-p (candidate)</code></li>
+<li>L5575: <code>(defun helm-ff--fname-at-point ()</code></li>
+<li>L5586: <code>(defun helm-insert-file-name-completion-at-point (_candidate)</code></li>
+<li>L5637: <code>(defun helm-ff--format-fname-to-insert (candidate</code></li>
+<li>L5657: <code>(cl-defun helm-find-files-history (arg &amp;key (comp-read t))</code></li>
+<li>L5695: <code>(defun helm-ff-mouse-drag (event)</code></li>
+<li>L5746: <code>(defun helm-dnd-handle-local-file (_uri _action)</code></li>
+<li>L5749: <code>(defun helm-dnd-handle-file (_uri _action)</code></li>
+<li>L5754: <code>(defun helm-ff--restore-frame (&amp;rest _args)</code></li>
+<li>L5760: <code>(defun helm-find-files-1 (fname &amp;optional preselect)</code></li>
+<li>L5836: <code>(defun helm-find-files-dummy-action-transformer (actions candidate)</code></li>
+<li>L5855: <code>(defun helm-ff--update-resume-after-hook (sources &amp;optional nohook)</code></li>
+<li>L5875: <code>(defun helm-ff-clean-initial-input ()</code></li>
+<li>L5881: <code>(defun helm-ff-setup-update-hook ()</code></li>
+<li>L5887: <code>(defun helm-find-files-cleanup ()</code></li>
+<li>L5903: <code>(defun helm-ff-bookmark ()</code></li>
+<li>L5907: <code>(defun helm-find-files-switch-to-bookmark ()</code></li>
+<li>L5915: <code>(defun helm-ff-bookmark-insert-location ()</code></li>
+<li>L5935: <code>(defun helm-find-files-initial-input (&amp;optional input)</code></li>
+<li>L5959: <code>(defun helm-ffap-guesser ()</code></li>
+<li>L6003: <code>(defun helm-find-files-input (file-at-pt thing-at-pt)</code></li>
+<li>L6039: <code>(defun helm-ff-find-url-at-point ()</code></li>
+<li>L6053: <code>(defun helm-find-library-at-point ()</code></li>
+<li>L6082: <code>(defun helm-ff--valid-default-directory ()</code></li>
+<li>L6089: <code>(cl-defun helm-dired-action (destination</code></li>
+<li>L6170: <code>(defun helm-get-dest-fnames-from-list (flist dest-cand rename-dir-flag)</code></li>
+<li>L6188: <code>(defun helm-ff-maybe-mark-candidates (seq)</code></li>
+<li>L6211: <code>(define-minor-mode helm-ff--compress-async-modeline-mode</code></li>
+<li>L6222: <code>(defun helm-do-compress-to (ifiles ofile)</code></li>
+<li>L6287: <code>(defun helm-ff--dired-compress-file (file)</code></li>
+<li>L6294: <code>(defun helm-ff-quick-compress (_candidate)</code></li>
+<li>L6330: <code>(defun helm-file-buffers (filename)</code></li>
+<li>L6338: <code>(defun helm-ff--delete-by-moving-to-trash (file)</code></li>
+<li>L6355: <code>(defun helm-trash-directory ()</code></li>
+<li>L6370: <code>(cl-defun helm-ff-file-already-trashed (file &amp;optional (trash-alist nil strash-alist))</code></li>
+<li>L6382: <code>(defun helm-ff-quick-delete (_candidate)</code></li>
+<li>L6416: <code>(defun helm-ff--quick-delete-action (candidate trash)</code></li>
+<li>L6438: <code>(defun helm-delete-file (file &amp;optional error-if-dot-file-p trash)</code></li>
+<li>L6485: <code>(defun helm-delete-marked-files (_ignore)</code></li>
+<li>L6531: <code>(define-minor-mode helm-ff--delete-async-modeline-mode</code></li>
+<li>L6549: <code>(defun helm-delete-async-kill-process ()</code></li>
+<li>L6558: <code>(defun helm-delete-marked-files-async (_ignore)</code></li>
+<li>L6639: <code>(defun helm-find-file-or-marked (candidate)</code></li>
+<li>L6677: <code>(defun helm-ff-find-file-other-tab (_candidate)</code></li>
+<li>L6688: <code>(defun helm-ff--new-dirs-to-update (path)</code></li>
+<li>L6698: <code>(defun helm-ff--mkdir (dir &amp;optional helm-ff)</code></li>
+<li>L6721: <code>(defun helm-transform-file-load-el (actions candidate)</code></li>
+<li>L6728: <code>(defun helm-transform-file-browse-url (actions candidate)</code></li>
+<li>L6738: <code>(defun helm-file-on-mounted-network-p (file)</code></li>
+<li>L6750: <code>(defun helm-ff-cache-add-file (_candidate)</code></li>
+<li>L6755: <code>(defun helm-ff-file-cache-remove-file-1 (file)</code></li>
+<li>L6766: <code>(defun helm-ff-file-cache-remove-file (_file)</code></li>
+<li>L6785: <code>(defun helm-find-files-in-file-build-source (file)</code></li>
+<li>L6791: <code>(defun helm-find-files-in-file (_file)</code></li>
+<li>L6801: <code>(defun helm-ff--mcp-make-alist (files targets)</code></li>
+<li>L6829: <code>(defun helm-ff-mcp (_candidate)</code></li>
+<li>L6898: <code>(defvar helm-file-name-history-map</code></li>
+<li>L6901: <code>(define-key map (kbd "C-x C-f") 'helm-ff-file-name-history-run-ff)</code></li>
+<li>L6904: <code>(defun helm-file-name-history-transformer (candidates)</code></li>
+<li>L6931: <code>(defun helm-ff-file-name-history-ff (candidate)</code></li>
+<li>L6939: <code>(defun helm-ff-file-name-history ()</code></li>
+<li>L6982: <code>(defvar helm-browse-project-map</code></li>
+<li>L6985: <code>(define-key map (kbd "M-g a") 'helm-browse-project-run-ag)</code></li>
+<li>L6988: <code>(defun helm-browse-project-get-buffers (root-directory)</code></li>
+<li>L7000: <code>(defun helm-browse-project-build-buffers-source (directory)</code></li>
+<li>L7008: <code>(defun helm-browse-project-walk-directory (directory)</code></li>
+<li>L7014: <code>(defun helm-browse-project-find-files-1 (directory program)</code></li>
+<li>L7031: <code>(defun helm-browse-project-ag-find-files (directory)</code></li>
+<li>L7036: <code>(defun helm-browse-project-rg-find-files (directory)</code></li>
+<li>L7041: <code>(defun helm-browse-project-fd-find-files (directory)</code></li>
+<li>L7046: <code>(defun helm-browse-project-ag (_candidate)</code></li>
+<li>L7084: <code>(defun helm-browse-project-find-files (directory &amp;optional refresh)</code></li>
+<li>L7107: <code>(defun helm-projects-history (&amp;optional arg)</code></li>
+<li>L7136: <code>(defun helm-browse-project (arg)</code></li>
+<li>L7193: <code>(defun helm-browse-project-get--root-dir (directory)</code></li>
+<li>L7201: <code>(defun helm-ff-browse-project (_candidate)</code></li>
+<li>L7215: <code>(defun helm-ff-gid (_candidate)</code></li>
+<li>L7224: <code>(defun helm-ff-find-sh-command (_candidate)</code></li>
+<li>L7234: <code>(defun helm-ff-fd (_candidate)</code></li>
+<li>L7245: <code>(defun helm-find-files (arg)</code></li>
+<li>L7304: <code>(provide 'helm-files)</code></li>
+</ul>
+<h2>helm-find.el</h2>
+<ul>
+<li>L20: <code>(require 'helm-files)</code></li>
+<li>L21: <code>(require 'helm-external)</code></li>
+<li>L23: <code>(defcustom helm-findutils-skip-boring-files t</code></li>
+<li>L28: <code>(defcustom helm-findutils-search-full-path nil</code></li>
+<li>L35: <code>(defcustom helm-find-noerrors nil</code></li>
+<li>L40: <code>(defcustom helm-find-show-full-path-fn #'identity</code></li>
+<li>L52: <code>(defvar helm-find-map</code></li>
+<li>L55: <code>(define-key map (kbd "DEL") 'helm-delete-backward-no-update)</code></li>
+<li>L72: <code>(defun helm-findutils-transformer (candidates _source)</code></li>
+<li>L91: <code>(defun helm-find--build-cmd-line ()</code></li>
+<li>L121: <code>(defun helm-find-shell-command-fn ()</code></li>
+<li>L143: <code>(defun helm-find-1 (dir)</code></li>
+<li>L156: <code>(defun helm-find (arg)</code></li>
+<li>L181: <code>(provide 'helm-find)</code></li>
+</ul>
+<h2>helm-font.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L34: <code>(defcustom helm-ucs-recent-size 10</code></li>
+<li>L39: <code>(defcustom helm-ucs-actions</code></li>
+<li>L51: <code>(defvar helm-ucs-map</code></li>
+<li>L54: <code>(define-key map (kbd "&lt;C-backspace&gt;") 'helm-ucs-persistent-delete)</code></li>
+<li>L55: <code>(define-key map (kbd "&lt;C-left&gt;")      'helm-ucs-persistent-backward)</code></li>
+<li>L56: <code>(define-key map (kbd "&lt;C-right&gt;")     'helm-ucs-persistent-forward)</code></li>
+<li>L57: <code>(define-key map (kbd "C-c SPC")       'helm-ucs-persistent-insert-space)</code></li>
+<li>L108: <code>(defun helm-calculate-ucs-alist-max-len (names)</code></li>
+<li>L115: <code>(defun helm-calculate-ucs-hash-table-max-len (names)</code></li>
+<li>L123: <code>(defun helm-calculate-ucs-max-len ()</code></li>
+<li>L130: <code>(defun helm-ucs-collect-symbols-alist (names)</code></li>
+<li>L154: <code>(defun helm-ucs-collect-symbols-hash-table (names)</code></li>
+<li>L175: <code>(defun helm-ucs-collect-symbols (ucs-struct)</code></li>
+<li>L184: <code>(defun helm-ucs-init ()</code></li>
+<li>L196: <code>(defun helm-ucs-match (candidate n)</code></li>
+<li>L205: <code>(defun helm-ucs-save-recentest (candidate)</code></li>
+<li>L212: <code>(defun helm-ucs-insert (candidate n)</code></li>
+<li>L218: <code>(defun helm-ucs-insert-char (candidate)</code></li>
+<li>L222: <code>(defun helm-ucs-insert-code (candidate)</code></li>
+<li>L226: <code>(defun helm-ucs-insert-name (candidate)</code></li>
+<li>L231: <code>(defun helm-ucs-kill-char (_candidate)</code></li>
+<li>L240: <code>(defun helm-ucs-kill-code (candidate)</code></li>
+<li>L244: <code>(defun helm-ucs-kill-name (candidate)</code></li>
+<li>L249: <code>(defun helm-ucs-describe-char (candidate)</code></li>
+<li>L257: <code>(defun helm-ucs-forward-char (_candidate)</code></li>
+<li>L261: <code>(defun helm-ucs-backward-char (_candidate)</code></li>
+<li>L265: <code>(defun helm-ucs-delete-backward (_candidate)</code></li>
+<li>L269: <code>(defun helm-ucs-insert-space (_candidate)</code></li>
+<li>L273: <code>(defun helm-ucs-persistent-forward ()</code></li>
+<li>L280: <code>(defun helm-ucs-persistent-backward ()</code></li>
+<li>L287: <code>(defun helm-ucs-persistent-delete ()</code></li>
+<li>L294: <code>(defun helm-ucs-persistent-insert-space ()</code></li>
+<li>L324: <code>(defun helm-select-xfont ()</code></li>
+<li>L331: <code>(defun helm-ucs (arg)</code></li>
+<li>L346: <code>(provide 'helm-font)</code></li>
+</ul>
+<h2>helm-for-files.el</h2>
+<ul>
+<li>L20: <code>(require 'helm-files)</code></li>
+<li>L21: <code>(require 'helm-external)</code></li>
+<li>L22: <code>(require 'helm-bookmark)</code></li>
+<li>L26: <code>(defcustom helm-multi-files-toggle-locate-binding "C-c p"</code></li>
+<li>L31: <code>(defcustom helm-for-files-preferred-list</code></li>
+<li>L45: <code>(defcustom helm-for-files-tramp-not-fancy t</code></li>
+<li>L60: <code>(defun helm-file-cache-get-candidates ()</code></li>
+<li>L68: <code>(defcustom helm-file-cache-fuzzy-match nil</code></li>
+<li>L79: <code>(cl-defun helm-file-cache-add-directory-recursively</code></li>
+<li>L90: <code>(defun helm-transform-file-cache (actions _candidate)</code></li>
+<li>L103: <code>(defun helm-recentf-pattern-transformer (pattern)</code></li>
+<li>L148: <code>(defcustom helm-recentf-fuzzy-match nil</code></li>
+<li>L170: <code>(defun helm-highlight-files (files source)</code></li>
+<li>L286: <code>(defun helm-for-files ()</code></li>
+<li>L299: <code>(defun helm-multi-files-toggle-to-locate ()</code></li>
+<li>L317: <code>(defun helm-multi-files ()</code></li>
+<li>L349: <code>(define-key helm-map (kbd helm-multi-files-toggle-locate-binding)</code></li>
+<li>L355: <code>(define-key helm-map (kbd helm-multi-files-toggle-locate-binding)</code></li>
+<li>L359: <code>(defun helm-recentf ()</code></li>
+<li>L366: <code>(provide 'helm-for-files)</code></li>
+</ul>
+<h2>helm-global-bindings.el</h2>
+<ul>
+<li>L20: <code>(require 'helm-lib) ; For helm-aif (bug #2520).</code></li>
+<li>L31: <code>(defcustom helm-command-prefix-key</code></li>
+<li>L46: <code>(global-set-key (read-kbd-macro key) 'helm-command-prefix))</code></li>
+<li>L49: <code>(defvar helm-command-map</code></li>
+<li>L51: <code>(define-key map (kbd "a")         'helm-apropos)</code></li>
+<li>L52: <code>(define-key map (kbd "e")         'helm-etags-select)</code></li>
+<li>L53: <code>(define-key map (kbd "l")         'helm-locate)</code></li>
+<li>L54: <code>(define-key map (kbd "L")         'helm-locate-library)</code></li>
+<li>L55: <code>(define-key map (kbd "s")         'helm-surfraw)</code></li>
+<li>L56: <code>(define-key map (kbd "r")         'helm-regexp)</code></li>
+<li>L57: <code>(define-key map (kbd "m")         'helm-man-woman)</code></li>
+<li>L58: <code>(define-key map (kbd "t")         'helm-top)</code></li>
+<li>L59: <code>(define-key map (kbd "o")         'helm-outline)</code></li>
+<li>L60: <code>(define-key map (kbd "/")         'helm-find)</code></li>
+<li>L61: <code>(define-key map (kbd "i")         'helm-imenu)</code></li>
+<li>L62: <code>(define-key map (kbd "I")         'helm-imenu-in-all-buffers)</code></li>
+<li>L63: <code>(define-key map (kbd "&lt;tab&gt;")     'helm-lisp-completion-at-point)</code></li>
+<li>L64: <code>(define-key map (kbd "p")         'helm-list-emacs-process)</code></li>
+<li>L65: <code>(define-key map (kbd "C-x r b")   'helm-filtered-bookmarks)</code></li>
+<li>L66: <code>(define-key map (kbd "M-y")       'helm-show-kill-ring)</code></li>
+<li>L67: <code>(define-key map (kbd "C-c &lt;SPC&gt;") 'helm-all-mark-rings)</code></li>
+<li>L68: <code>(define-key map (kbd "C-x C-f")   'helm-find-files)</code></li>
+<li>L69: <code>(define-key map (kbd "f")         'helm-multi-files)</code></li>
+<li>L70: <code>(define-key map (kbd "C-:")       'helm-eval-expression-with-eldoc)</code></li>
+<li>L71: <code>(define-key map (kbd "C-,")       'helm-calcul-expression)</code></li>
+<li>L72: <code>(define-key map (kbd "M-x")       'helm-M-x)</code></li>
+<li>L73: <code>(define-key map (kbd "M-s o")     'helm-occur)</code></li>
+<li>L74: <code>(define-key map (kbd "M-g a")     'helm-do-grep-ag)</code></li>
+<li>L75: <code>(define-key map (kbd "c")         'helm-colors)</code></li>
+<li>L76: <code>(define-key map (kbd "F")         'helm-select-xfont)</code></li>
+<li>L77: <code>(define-key map (kbd "8")         'helm-ucs)</code></li>
+<li>L78: <code>(define-key map (kbd "C-c f")     'helm-recentf)</code></li>
+<li>L79: <code>(define-key map (kbd "C-c g")     'helm-google-suggest)</code></li>
+<li>L80: <code>(define-key map (kbd "h i")       'helm-info-at-point)</code></li>
+<li>L81: <code>(define-key map (kbd "h r")       'helm-info-emacs)</code></li>
+<li>L82: <code>(define-key map (kbd "h g")       'helm-info-gnus)</code></li>
+<li>L83: <code>(define-key map (kbd "h h")       'helm-documentation)</code></li>
+<li>L84: <code>(define-key map (kbd "C-x C-b")   'helm-buffers-list)</code></li>
+<li>L85: <code>(define-key map (kbd "C-x r i")   'helm-register)</code></li>
+<li>L86: <code>(define-key map (kbd "C-c C-x")   'helm-run-external-command)</code></li>
+<li>L87: <code>(define-key map (kbd "b")         'helm-resume)</code></li>
+<li>L88: <code>(define-key map (kbd "M-g i")     'helm-gid)</code></li>
+<li>L89: <code>(define-key map (kbd "@")         'helm-packages)</code></li>
+<li>L90: <code>(define-key map (kbd "h p")       'helm-finder)</code></li>
+<li>L101: <code>(require 'helm-easymenu)</code></li>
+<li>L106: <code>(provide 'helm-global-bindings)</code></li>
+</ul>
+<h2>helm-grep.el</h2>
+<ul>
+<li>L19: <code>(require 'ansi-color)</code></li>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'format-spec)</code></li>
+<li>L22: <code>(require 'helm)</code></li>
+<li>L23: <code>(require 'helm-help)</code></li>
+<li>L24: <code>(require 'helm-regexp)</code></li>
+<li>L25: <code>(require 'project)</code></li>
+<li>L28: <code>(require 'wgrep-helm nil t)</code></li>
+<li>L72: <code>(defvar helm-grep-map</code></li>
+<li>L75: <code>(define-key map (kbd "M-&lt;down&gt;") 'helm-goto-next-file)</code></li>
+<li>L76: <code>(define-key map (kbd "M-&lt;up&gt;")   'helm-goto-precedent-file)</code></li>
+<li>L77: <code>(define-key map (kbd "C-c o")    'helm-grep-run-other-window-action)</code></li>
+<li>L78: <code>(define-key map (kbd "C-c C-o")  'helm-grep-run-other-frame-action)</code></li>
+<li>L79: <code>(define-key map (kbd "C-x C-s")  'helm-grep-run-save-buffer)</code></li>
+<li>L80: <code>(define-key map (kbd "DEL")      'helm-delete-backward-no-update)</code></li>
+<li>L84: <code>(defvar helm-pdfgrep-map</code></li>
+<li>L87: <code>(define-key map (kbd "M-&lt;down&gt;") 'helm-goto-next-file)</code></li>
+<li>L88: <code>(define-key map (kbd "M-&lt;up&gt;")   'helm-goto-precedent-file)</code></li>
+<li>L89: <code>(define-key map (kbd "DEL")      'helm-delete-backward-no-update)</code></li>
+<li>L93: <code>(defvar helm-grep-mode-map</code></li>
+<li>L95: <code>(define-key map (kbd "RET")      'helm-grep-mode-jump)</code></li>
+<li>L96: <code>(define-key map (kbd "C-o")      'helm-grep-mode-jump-other-window)</code></li>
+<li>L97: <code>(define-key map (kbd "&lt;C-down&gt;") 'helm-grep-mode-jump-other-window-forward)</code></li>
+<li>L98: <code>(define-key map (kbd "&lt;C-up&gt;")   'helm-grep-mode-jump-other-window-backward)</code></li>
+<li>L99: <code>(define-key map (kbd "&lt;M-down&gt;") 'helm-gm-next-file)</code></li>
+<li>L100: <code>(define-key map (kbd "&lt;M-up&gt;")   'helm-gm-precedent-file)</code></li>
+<li>L101: <code>(define-key map (kbd "M-n")      'helm-grep-mode-jump-other-window-forward)</code></li>
+<li>L102: <code>(define-key map (kbd "M-p")      'helm-grep-mode-jump-other-window-backward)</code></li>
+<li>L103: <code>(define-key map (kbd "M-N")      'helm-gm-next-file)</code></li>
+<li>L104: <code>(define-key map (kbd "M-P")      'helm-gm-precedent-file)</code></li>
+<li>L113: <code>(defcustom helm-grep-default-command</code></li>
+<li>L180: <code>(defcustom helm-grep-default-recurse-command</code></li>
+<li>L187: <code>(defcustom helm-default-zgrep-command</code></li>
+<li>L196: <code>(defcustom helm-pdfgrep-default-command</code></li>
+<li>L204: <code>(defcustom helm-pdfgrep-default-recurse-command</code></li>
+<li>L212: <code>(defcustom helm-pdfgrep-default-read-command nil</code></li>
+<li>L223: <code>(defcustom helm-grep-max-length-history 100</code></li>
+<li>L227: <code>(defcustom helm-zgrep-file-extension-regexp</code></li>
+<li>L232: <code>(defcustom helm-grep-preferred-ext nil</code></li>
+<li>L236: <code>(defcustom helm-grep-save-buffer-name-no-confirm nil</code></li>
+<li>L240: <code>(defcustom helm-grep-ignored-files</code></li>
+<li>L248: <code>(defcustom helm-grep-ignored-directories</code></li>
+<li>L253: <code>(defcustom helm-grep-truncate-lines t</code></li>
+<li>L257: <code>(defcustom helm-grep-file-path-style 'basename</code></li>
+<li>L267: <code>(defcustom helm-grep-actions</code></li>
+<li>L276: <code>(defcustom helm-grep-pipe-cmd-switches nil</code></li>
+<li>L291: <code>(defcustom helm-grep-ag-pipe-cmd-switches nil</code></li>
+<li>L310: <code>(defcustom helm-grep-input-idle-delay 0.1</code></li>
+<li>L317: <code>(defcustom helm-grep-use-ioccur-style-keys t</code></li>
+<li>L326: <code>(define-key helm-grep-map (kbd "&lt;right&gt;")  'helm-execute-persistent-action)</code></li>
+<li>L327: <code>(define-key helm-grep-map (kbd "&lt;left&gt;")   'helm-grep-run-default-action))</code></li>
+<li>L328: <code>(define-key helm-grep-map (kbd "&lt;right&gt;") nil)</code></li>
+<li>L329: <code>(define-key helm-grep-map (kbd "&lt;left&gt;")  nil))))</code></li>
+<li>L331: <code>(defcustom helm-grep-ag-command</code></li>
+<li>L389: <code>(defcustom helm-grep-git-grep-command</code></li>
+<li>L456: <code>(defun helm-grep-prepare-candidates (candidates in-directory)</code></li>
+<li>L519: <code>(defun helm-grep-command (&amp;optional recursive grep)</code></li>
+<li>L528: <code>(cl-defun helm-grep-use-ack-p (&amp;key where)</code></li>
+<li>L541: <code>(defun helm-grep--pipe-command-for-grep-command (smartcase pipe-switches &amp;optional grep-cmd)</code></li>
+<li>L553: <code>(defun helm-grep--prepare-cmd-line (only-files &amp;optional include zgrep)</code></li>
+<li>L616: <code>(defun helm-grep-init (cmd-line)</code></li>
+<li>L700: <code>(defun helm-grep-collect-candidates ()</code></li>
+<li>L713: <code>(defun helm-grep-action (candidate &amp;optional where)</code></li>
+<li>L769: <code>(defun helm-grep-persistent-action (candidate)</code></li>
+<li>L775: <code>(defun helm-grep-other-window (candidate)</code></li>
+<li>L779: <code>(defun helm-grep-other-frame (candidate)</code></li>
+<li>L783: <code>(defun helm-goto-next-or-prec-file (n)</code></li>
+<li>L827: <code>(defun helm-goto-precedent-file ()</code></li>
+<li>L836: <code>(defun helm-goto-next-file ()</code></li>
+<li>L859: <code>(defun helm-grep-quit-an-find-file-fn (source)</code></li>
+<li>L871: <code>(defun helm-grep-save-results (candidate)</code></li>
+<li>L875: <code>(defun helm-grep-save-results-1 ()</code></li>
+<li>L918: <code>(define-key map [mouse-1] 'mouse-set-point)</code></li>
+<li>L919: <code>(define-key map [mouse-2] 'helm-grep-mode-mouse-jump)</code></li>
+<li>L920: <code>(define-key map [mouse-3] 'ignore)</code></li>
+<li>L927: <code>(defun helm-grep-mode-mouse-jump (event)</code></li>
+<li>L937: <code>(defun helm-grep-next-error (&amp;optional argp reset)</code></li>
+<li>L961: <code>(defun helm-revert-next-error-last-buffer ()</code></li>
+<li>L983: <code>(define-derived-mode helm-grep-mode</code></li>
+<li>L998: <code>(defun helm-grep-mode--revert-buffer-function (&amp;optional _ignore-auto _noconfirm)</code></li>
+<li>L1012: <code>(defun helm-grep-mode--sentinel (process event)</code></li>
+<li>L1041: <code>(defun helm-grep-goto-closest-from-linum (linum bufname)</code></li>
+<li>L1050: <code>(defun helm-gm-next-file ()</code></li>
+<li>L1055: <code>(defun helm-gm-precedent-file ()</code></li>
+<li>L1060: <code>(defun helm-grep-mode-jump ()</code></li>
+<li>L1068: <code>(defun helm-grep-mode-jump-other-window-1 (arg)</code></li>
+<li>L1081: <code>(defun helm-grep-mode-jump-other-window-forward (arg)</code></li>
+<li>L1085: <code>(defun helm-grep-mode-jump-other-window-backward (arg)</code></li>
+<li>L1089: <code>(defun helm-grep-mode-jump-other-window ()</code></li>
+<li>L1104: <code>(defun helm-grep-hack-types ()</code></li>
+<li>L1123: <code>(defun helm-grep-ack-types-transformer (candidates _source)</code></li>
+<li>L1131: <code>(defun helm-grep-read-ack-type ()</code></li>
+<li>L1151: <code>(defun helm-grep-guess-extensions (files)</code></li>
+<li>L1172: <code>(defun helm-grep-get-file-extensions (files)</code></li>
+<li>L1231: <code>(defun helm-do-grep-1 (targets &amp;optional recurse backend exts</code></li>
+<li>L1332: <code>(defun helm-ff-zgrep-1 (flist recursive)</code></li>
+<li>L1355: <code>(defun helm-grep-split-line (line)</code></li>
+<li>L1366: <code>(defun helm-grep--filter-candidate-1 (candidate &amp;optional dir pcre)</code></li>
+<li>L1400: <code>(defun helm-grep-filter-one-by-one (candidate &amp;optional pcre)</code></li>
+<li>L1414: <code>(defun helm-grep-popup-info-fn (_candidate)</code></li>
+<li>L1418: <code>(defun helm-grep-fc-transformer (candidates source)</code></li>
+<li>L1429: <code>(defun helm-grep-highlight-match (str &amp;optional pcre)</code></li>
+<li>L1463: <code>(defun helm-grep-buffers-1 (candidate &amp;optional zgrep)</code></li>
+<li>L1499: <code>(defun helm-grep-buffers (candidate)</code></li>
+<li>L1503: <code>(defun helm-zgrep-buffers (candidate)</code></li>
+<li>L1514: <code>(defun helm-pdfgrep-init (only-files &amp;optional recurse)</code></li>
+<li>L1559: <code>(defun helm-do-pdfgrep-1 (only &amp;optional recurse)</code></li>
+<li>L1591: <code>(defun helm-pdfgrep-action (candidate)</code></li>
+<li>L1594: <code>(defun helm-pdfgrep-action-1 (_split pageno fname)</code></li>
+<li>L1608: <code>(defun helm-grep--ag-command ()</code></li>
+<li>L1614: <code>(defun helm-grep-ag-get-types ()</code></li>
+<li>L1632: <code>(defun helm-grep-ag-prepare-cmd-line (pattern directory &amp;optional type)</code></li>
+<li>L1656: <code>(defun helm-grep-ag-init (directory &amp;optional type)</code></li>
+<li>L1728: <code>(defun helm-grep-ag-search-results (_candidate)</code></li>
+<li>L1758: <code>(defvar helm-grep-ag-map</code></li>
+<li>L1761: <code>(define-key map (kbd "C-s") 'helm-grep-run-ag-grep-parent-directory)</code></li>
+<li>L1762: <code>(define-key map (kbd "C-c s") 'helm-grep-ag-run-search-results)</code></li>
+<li>L1788: <code>(defun helm-grep-ag-1 (directory &amp;optional type input default)</code></li>
+<li>L1815: <code>(defun helm-grep-ag-grep-parent-directory (_candidate)</code></li>
+<li>L1825: <code>(defun helm-grep-ag (directory with-types)</code></li>
+<li>L1845: <code>(defun helm-grep-git-1 (directory &amp;optional all default input)</code></li>
+<li>L1866: <code>(defun helm-do-grep-ag (arg)</code></li>
+<li>L1875: <code>(defun helm-do-grep-ag-project (arg)</code></li>
+<li>L1891: <code>(defun helm-grep-do-git-grep (arg)</code></li>
+<li>L1899: <code>(provide 'helm-grep)</code></li>
+</ul>
+<h2>helm-help.el</h2>
+<ul>
+<li>L19: <code>(require 'helm)</code></li>
+<li>L61: <code>(defun helm-documentation ()</code></li>
+<li>L319: <code>(define-key helm-find-files-map (kbd \"C-i\") 'helm-ff-TAB)</code></li>
+<li>L916: <code>(define-key helm-find-files-map (kbd \"C-c m\") 'helm-ff-dragon)</code></li>
+<li>L1389: <code>(defun helm-read-file-name-help-message ()</code></li>
+<li>L2599: <code>(defun helm-comp-read-help-message ()</code></li>
+<li>L2668: <code>(provide 'helm-help)</code></li>
+</ul>
+<h2>helm-id-utils.el</h2>
+<ul>
+<li>L20: <code>(require 'helm-grep)</code></li>
+<li>L21: <code>(require 'helm-help)</code></li>
+<li>L27: <code>(defcustom helm-gid-program "gid"</code></li>
+<li>L36: <code>(defcustom helm-gid-db-file-name "ID"</code></li>
+<li>L41: <code>(defun helm-gid-candidates-process ()</code></li>
+<li>L75: <code>(defun helm-gid-filtered-candidate-transformer (candidates _source)</code></li>
+<li>L105: <code>(defun helm-gid ()</code></li>
+<li>L125: <code>(provide 'helm-id-utils)</code></li>
+</ul>
+<h2>helm-imenu.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-lib)</code></li>
+<li>L23: <code>(require 'imenu)</code></li>
+<li>L24: <code>(require 'helm-utils)</code></li>
+<li>L25: <code>(require 'helm-help)</code></li>
+<li>L26: <code>(require 'helm-x-icons)</code></li>
+<li>L41: <code>(defcustom helm-imenu-delimiter " / "</code></li>
+<li>L46: <code>(defcustom helm-imenu-execute-action-at-once-if-one</code></li>
+<li>L52: <code>(defcustom helm-imenu-all-buffer-assoc nil</code></li>
+<li>L61: <code>(defcustom helm-imenu-in-all-buffers-separate-sources t</code></li>
+<li>L75: <code>(defcustom helm-imenu-type-faces</code></li>
+<li>L90: <code>(defcustom helm-imenu-extra-modes nil</code></li>
+<li>L95: <code>(defcustom helm-imenu-hide-item-type-name nil</code></li>
+<li>L107: <code>(defcustom helm-imenu-use-icon nil</code></li>
+<li>L116: <code>(defcustom helm-imenu-icon-type-alist</code></li>
+<li>L193: <code>(defcustom helm-imenu-default-type-sexp</code></li>
+<li>L201: <code>(defvar helm-imenu-map</code></li>
+<li>L204: <code>(define-key map (kbd "M-&lt;down&gt;") 'helm-imenu-next-section)</code></li>
+<li>L205: <code>(define-key map (kbd "M-&lt;up&gt;")   'helm-imenu-previous-section)</code></li>
+<li>L206: <code>(define-key map (kbd "C-]") 'helm-imenu-toggle-type-view)</code></li>
+<li>L209: <code>(defun helm-imenu-toggle-type-view ()</code></li>
+<li>L226: <code>(defcustom helm-imenu-lynx-style-map nil</code></li>
+<li>L234: <code>(define-key helm-imenu-map (kbd "&lt;right&gt;")  'helm-execute-persistent-action)</code></li>
+<li>L235: <code>(define-key helm-imenu-map (kbd "&lt;left&gt;")   'helm-maybe-exit-minibuffer))</code></li>
+<li>L236: <code>(define-key helm-imenu-map (kbd "&lt;right&gt;") nil)</code></li>
+<li>L237: <code>(define-key helm-imenu-map (kbd "&lt;left&gt;")  nil))))</code></li>
+<li>L239: <code>(defun helm-imenu-next-or-previous-section (n)</code></li>
+<li>L257: <code>(defun helm-imenu-next-section ()</code></li>
+<li>L261: <code>(defun helm-imenu-previous-section ()</code></li>
+<li>L296: <code>(defcustom helm-imenu-fuzzy-match nil</code></li>
+<li>L307: <code>(defun helm-imenu--maybe-switch-to-buffer (candidate)</code></li>
+<li>L312: <code>(defun helm-imenu--execute-action-at-once-p ()</code></li>
+<li>L329: <code>(defun helm-imenu-quit-and-find-file-fn (source)</code></li>
+<li>L334: <code>(defun helm-imenu-action (candidate)</code></li>
+<li>L347: <code>(defun helm-imenu-persistent-action (candidate)</code></li>
+<li>L353: <code>(defun helm-imenu-candidates (&amp;optional buffer)</code></li>
+<li>L365: <code>(defun helm-imenu-candidates-in-all-buffers (&amp;optional build-sources)</code></li>
+<li>L392: <code>(defun helm-imenu--candidates-1 (alist)</code></li>
+<li>L419: <code>(defun helm-imenu--get-prop (item)</code></li>
+<li>L432: <code>(defun helm-imenu-icon-for-type (type)</code></li>
+<li>L445: <code>(defun helm-imenu-transformer (candidates)</code></li>
+<li>L485: <code>(defun helm-imenu ()</code></li>
+<li>L507: <code>(defun helm-imenu-in-all-buffers ()</code></li>
+<li>L545: <code>(provide 'helm-imenu)</code></li>
+</ul>
+<h2>helm-info.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'info)</code></li>
+<li>L25: <code>(require 'helm)</code></li>
+<li>L26: <code>(require 'helm-lib)</code></li>
+<li>L27: <code>(require 'helm-utils) ; for 'helm-goto-line'.</code></li>
+<li>L51: <code>(defcustom helm-info-default-sources</code></li>
+<li>L64: <code>(defun helm-info-init (&amp;optional file)</code></li>
+<li>L85: <code>(defun helm-info-scan-current-buffer (tobuf)</code></li>
+<li>L109: <code>(defun helm-info-goto (node-line)</code></li>
+<li>L124: <code>(defun helm-info-display-to-real (line)</code></li>
+<li>L168: <code>(defmacro helm-build-info-source (fname &amp;rest args)</code></li>
+<li>L172: <code>(defun helm-build-info-index-command (name doc source buffer)</code></li>
+<li>L184: <code>(defun helm-define-info-index-sources (info-list &amp;optional commands)</code></li>
+<li>L202: <code>(defun helm-info-index-set (var value)</code></li>
+<li>L215: <code>(defun helm-get-info-files ()</code></li>
+<li>L232: <code>(defcustom helm-default-info-index-list</code></li>
+<li>L239: <code>(defun helm-info-search-index (candidate)</code></li>
+<li>L251: <code>(defun helm-info-file-doc (file)</code></li>
+<li>L265: <code>(defun helm-def-source--info-files ()</code></li>
+<li>L314: <code>(defun helm-info (&amp;optional refresh)</code></li>
+<li>L375: <code>(defun helm-info-pages-init ()</code></li>
+<li>L389: <code>(defun helm-info-at-point ()</code></li>
+<li>L413: <code>(provide 'helm-info)</code></li>
+</ul>
+<h2>helm-lib.el</h2>
+<ul>
+<li>L26: <code>(require 'cl-lib)</code></li>
+<li>L82: <code>(defcustom helm-file-globstar t</code></li>
+<li>L90: <code>(defcustom helm-yank-text-at-point-function nil</code></li>
+<li>L99: <code>(defcustom helm-scroll-amount nil</code></li>
+<li>L108: <code>(defcustom helm-help-full-frame t</code></li>
+<li>L118: <code>(defun helm-ff--setup-boring-regex (var val)</code></li>
+<li>L126: <code>(defcustom helm-boring-file-regexp-list</code></li>
+<li>L154: <code>(defcustom helm-describe-function-function 'describe-function</code></li>
+<li>L159: <code>(defcustom helm-describe-variable-function 'describe-variable</code></li>
+<li>L164: <code>(defcustom helm-current-directory-alist</code></li>
+<li>L197: <code>(defun helm-add-face-text-properties (beg end face &amp;optional append object)</code></li>
+<li>L211: <code>(defun helm--advice-push-mark (&amp;optional location nomsg activate)</code></li>
+<li>L238: <code>(defcustom helm-advice-push-mark t</code></li>
+<li>L249: <code>(defun helm-advice--ffap-read-file-or-url (prompt guess)</code></li>
+<li>L265: <code>(defun helm-subr-native-elisp-p (object)</code></li>
+<li>L403: <code>(defun helm-proper-list-p (obj)</code></li>
+<li>L412: <code>(defmacro helm-with-gensyms (symbols &amp;rest body)</code></li>
+<li>L438: <code>(defun helm-this-command ()</code></li>
+<li>L467: <code>(defun helm-iter-list (seq &amp;optional cycle)</code></li>
+<li>L479: <code>(defun helm-iter-circular (seq)</code></li>
+<li>L483: <code>(cl-defun helm-iter-sub-next-circular (seq elm &amp;key (test 'eq))</code></li>
+<li>L491: <code>(defun helm-iter-next (iterator)</code></li>
+<li>L499: <code>(defmacro helm-aif (test-form then-form &amp;rest else-forms)</code></li>
+<li>L508: <code>(defmacro helm-awhile (sexp &amp;rest body)</code></li>
+<li>L523: <code>(defmacro helm-acond (&amp;rest clauses)</code></li>
+<li>L540: <code>(defmacro helm-aand (&amp;rest conditions)</code></li>
+<li>L550: <code>(defmacro helm-acase (expr &amp;rest clauses)</code></li>
+<li>L673: <code>(defcustom helm-help-default-prompt</code></li>
+<li>L679: <code>(defcustom helm-help-hkmap</code></li>
+<li>L730: <code>(defun helm-help-internal (bufname insert-content-fn)</code></li>
+<li>L762: <code>(cl-defun helm-help-scroll-up (&amp;optional (amount helm-scroll-amount))</code></li>
+<li>L769: <code>(cl-defun helm-help-scroll-down (&amp;optional (amount helm-scroll-amount))</code></li>
+<li>L776: <code>(defun helm-help-next-line ()</code></li>
+<li>L783: <code>(defun helm-help-previous-line ()</code></li>
+<li>L790: <code>(defun helm-help-toggle-mark ()</code></li>
+<li>L796: <code>(defun helm-help-org-cycle ()</code></li>
+<li>L803: <code>(defun helm-help-copy-region-as-kill ()</code></li>
+<li>L809: <code>(defun helm-help-quit ()</code></li>
+<li>L816: <code>(defun helm-help-org-open-at-point ()</code></li>
+<li>L821: <code>(defun helm-help-org-mark-ring-goto ()</code></li>
+<li>L833: <code>(defun helm-help-event-loop ()</code></li>
+<li>L854: <code>(defun helm-help-define-key (key function &amp;optional override)</code></li>
+<li>L874: <code>(defun helm-multiline-transformer (candidates _source)</code></li>
+<li>L885: <code>(defun helm--multiline-get-truncated-candidate (candidate offset)</code></li>
+<li>L907: <code>(defun helm-flatten-list (seq)</code></li>
+<li>L926: <code>(defun helm-mklist (obj)</code></li>
+<li>L934: <code>(cl-defun helm-fast-remove-dups (seq &amp;key (test 'eq))</code></li>
+<li>L958: <code>(defun helm--concat-regexps (regexp-list)</code></li>
+<li>L964: <code>(defun helm-skip-entries (seq black-regexp-list &amp;optional white-regexp-list)</code></li>
+<li>L975: <code>(defun helm-boring-directory-p (directory black-list)</code></li>
+<li>L989: <code>(defun helm-shadow-entries (seq regexp-list)</code></li>
+<li>L999: <code>(defun helm-remove-if-not-match (regexp seq)</code></li>
+<li>L1010: <code>(defun helm-remove-if-match (regexp seq)</code></li>
+<li>L1021: <code>(defun helm-transform-mapcar (fn seq)</code></li>
+<li>L1039: <code>(defun helm-append-at-nth (seq elm index)</code></li>
+<li>L1065: <code>(defun helm-add-to-list (var elm index &amp;optional replace)</code></li>
+<li>L1107: <code>(defun helm-source-by-name (name &amp;optional sources)</code></li>
+<li>L1121: <code>(defun helm-make-actions (&amp;rest args)</code></li>
+<li>L1134: <code>(defun helm-closest-number-in-list (num list)</code></li>
+<li>L1143: <code>(defun helm-group-candidates-by (candidates function &amp;optional selection separate)</code></li>
+<li>L1172: <code>(defun helm-reorganize-sequence-from-elm (sequence elm &amp;optional reverse)</code></li>
+<li>L1188: <code>(cl-defun helm-position (elm seq &amp;key (test 'eq) from-end)</code></li>
+<li>L1216: <code>(defun helm-stringify (elm)</code></li>
+<li>L1224: <code>(defun helm-substring (str width)</code></li>
+<li>L1233: <code>(defun helm-substring-by-width (str width &amp;optional endstr)</code></li>
+<li>L1245: <code>(defun helm-string-multibyte-p (str)</code></li>
+<li>L1250: <code>(defun helm-get-pid-from-process-name (process-name)</code></li>
+<li>L1262: <code>(defun helm-ff-find-printers ()</code></li>
+<li>L1273: <code>(defun helm-region-active-p ()</code></li>
+<li>L1276: <code>(defun helm-quote-whitespace (candidate)</code></li>
+<li>L1280: <code>(defun helm-current-line-contents ()</code></li>
+<li>L1284: <code>(defun helm--replace-regexp-in-buffer-string (regexp rep str &amp;optional fixedcase literal subexp start)</code></li>
+<li>L1332: <code>(defun helm-url-unhex-string (str)</code></li>
+<li>L1346: <code>(cl-defun helm-read-answer (prompt answer-list</code></li>
+<li>L1393: <code>(defun helm-read-answer-default-help-fn ()</code></li>
+<li>L1407: <code>(defun helm-read-answer-dolist-with-action (prompt list action</code></li>
+<li>L1473: <code>(defun helm-symbolify (str-or-sym)</code></li>
+<li>L1480: <code>(defun helm-symbol-name (obj)</code></li>
+<li>L1491: <code>(defun helm-describe-class (class)</code></li>
+<li>L1500: <code>(defun helm-elisp-collect-slots-in-class (class)</code></li>
+<li>L1517: <code>(defun helm-describe-function (func)</code></li>
+<li>L1522: <code>(defun helm-describe-variable (var)</code></li>
+<li>L1527: <code>(defun helm-describe-symbol (sym)</code></li>
+<li>L1533: <code>(defun helm-describe-face (face)</code></li>
+<li>L1541: <code>(defun helm-describe-re-char-classes-1 (exp)</code></li>
+<li>L1627: <code>(defun helm-describe-re-char-classes (exp)</code></li>
+<li>L1632: <code>(defun helm-elisp--persistent-help (candidate fun &amp;optional name)</code></li>
+<li>L1671: <code>(defcustom helm-find-function-default-project nil</code></li>
+<li>L1683: <code>(defun helm-find-function-noselect (func &amp;optional root-dir type)</code></li>
+<li>L1717: <code>(defun helm-find-function (func)</code></li>
+<li>L1732: <code>(defun helm-find-variable (var)</code></li>
+<li>L1742: <code>(defun helm-find-face-definition (face)</code></li>
+<li>L1752: <code>(defun helm-kill-new (candidate &amp;optional replace)</code></li>
+<li>L1757: <code>(defun helm-group-p (symbol)</code></li>
+<li>L1767: <code>(defun helm-same-major-mode-p (start-buffer alist)</code></li>
+<li>L1809: <code>(defun helm-map-candidates-in-source (src fn pred)</code></li>
+<li>L1834: <code>(defun helm-file-name-sans-extension (filename)</code></li>
+<li>L1848: <code>(defun helm-basename (fname &amp;optional ext)</code></li>
+<li>L1887: <code>(defun helm-basedir (fname &amp;optional parent)</code></li>
+<li>L1907: <code>(defun helm-current-directory ()</code></li>
+<li>L1920: <code>(defun helm-shadow-boring-files (files)</code></li>
+<li>L1925: <code>(defun helm-skip-boring-files (files)</code></li>
+<li>L1929: <code>(defun helm-skip-current-file (files)</code></li>
+<li>L1933: <code>(defun helm-w32-pathname-transformer (args)</code></li>
+<li>L1945: <code>(defun helm-w32-prepare-filename (file)</code></li>
+<li>L1953: <code>(defun helm-w32-shell-execute-open-file (file)</code></li>
+<li>L1969: <code>(cl-defun helm-walk-directory (directory &amp;key (path 'basename)</code></li>
+<li>L2026: <code>(defun helm-file-expand-wildcards (pattern &amp;optional full)</code></li>
+<li>L2053: <code>(defun helm-wildcard-to-regexp (wc)</code></li>
+<li>L2060: <code>(defun helm-locate-lib-get-summary (file)</code></li>
+<li>L2076: <code>(defun helm-local-directory-files (directory &amp;rest args)</code></li>
+<li>L2090: <code>(defun helm-common-str-1 (files &amp;optional dirp)</code></li>
+<li>L2112: <code>(defun helm-common-dir (files)</code></li>
+<li>L2136: <code>(defun helm-set-pattern (pattern &amp;optional noupdate)</code></li>
+<li>L2149: <code>(defun helm-minibuffer-completion-contents ()</code></li>
+<li>L2154: <code>(defmacro with-helm-buffer (&amp;rest body)</code></li>
+<li>L2161: <code>(defmacro with-helm-current-buffer (&amp;rest body)</code></li>
+<li>L2170: <code>(defun helm-buffer-get ()</code></li>
+<li>L2176: <code>(defun helm-window ()</code></li>
+<li>L2180: <code>(defun helm-action-window ()</code></li>
+<li>L2184: <code>(defmacro with-helm-window (&amp;rest body)</code></li>
+<li>L2191: <code>(defmacro helm-without-follow (&amp;rest body)</code></li>
+<li>L2200: <code>(defun helm-candidate-prefixed-p (candidate)</code></li>
+<li>L2212: <code>(defun helm--setup-completion-styles-alist ()</code></li>
+<li>L2227: <code>(defun helm--prepare-completion-styles (&amp;optional com-or-mode styles)</code></li>
+<li>L2272: <code>(defun helm-guess-filename-at-point ()</code></li>
+<li>L2288: <code>(defun helm-yank-text-at-point (arg)</code></li>
+<li>L2320: <code>(defun helm-undo-yank-text-at-point ()</code></li>
+<li>L2326: <code>(defun helm-reset-yank-point ()</code></li>
+<li>L2389: <code>(provide 'helm-lib)</code></li>
+</ul>
+<h2>helm-locate.el</h2>
+<ul>
+<li>L24: <code>(require 'cl-lib)</code></li>
+<li>L25: <code>(require 'helm)</code></li>
+<li>L26: <code>(require 'helm-types)</code></li>
+<li>L27: <code>(require 'helm-help)</code></li>
+<li>L38: <code>(defcustom helm-locate-db-file-regexp "m?locate\\.db$"</code></li>
+<li>L43: <code>(defcustom helm-ff-locate-db-filename "locate.db"</code></li>
+<li>L52: <code>(defcustom helm-locate-command nil</code></li>
+<li>L87: <code>(defcustom helm-locate-create-db-command</code></li>
+<li>L92: <code>(defcustom helm-locate-case-fold-search helm-case-fold-search</code></li>
+<li>L102: <code>(defcustom helm-locate-fuzzy-match nil</code></li>
+<li>L107: <code>(defcustom helm-locate-fuzzy-sort-fn</code></li>
+<li>L112: <code>(defcustom helm-locate-project-list nil</code></li>
+<li>L118: <code>(defcustom helm-locate-recursive-dirs-command "find %s -type d -regex .*%s.*$"</code></li>
+<li>L157: <code>(defvar helm-locate-map</code></li>
+<li>L160: <code>(define-key map (kbd "DEL") 'helm-delete-backward-no-update)</code></li>
+<li>L172: <code>(defun helm-ff-find-locatedb (&amp;optional from-ff)</code></li>
+<li>L184: <code>(defun helm-locate-create-db-default-function (db-name directory)</code></li>
+<li>L197: <code>(defun helm-locate-1 (&amp;optional localdb init from-ff default)</code></li>
+<li>L240: <code>(defun helm-locate-set-command ()</code></li>
+<li>L251: <code>(defun helm-locate-initial-setup ()</code></li>
+<li>L256: <code>(defun helm-locate-with-db (&amp;optional db initial-input default)</code></li>
+<li>L296: <code>(defun helm-locate-update-mode-line (process-name)</code></li>
+<li>L311: <code>(defun helm-locate--default-process-coding-system ()</code></li>
+<li>L323: <code>(defun helm-locate-init ()</code></li>
+<li>L381: <code>(defun helm-locate-default-fuzzy-sort-fn (candidates)</code></li>
+<li>L412: <code>(defun helm-locate-pattern-transformer (pattern)</code></li>
+<li>L428: <code>(defun helm-locate-find-dbs-in-projects (&amp;optional update)</code></li>
+<li>L460: <code>(defun helm-locate-init-subdirs ()</code></li>
+<li>L496: <code>(defun helm-projects-find-files (update)</code></li>
+<li>L510: <code>(defun helm-locate (arg)</code></li>
+<li>L533: <code>(provide 'helm-locate)</code></li>
+</ul>
+<h2>helm-man.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L41: <code>(defcustom helm-man-or-woman-function 'Man-getpage-in-background</code></li>
+<li>L48: <code>(defcustom helm-man-format-switches (cl-case system-type</code></li>
+<li>L66: <code>(defun helm-man-default-action (candidate)</code></li>
+<li>L87: <code>(defun helm-man--init ()</code></li>
+<li>L103: <code>(defun helm-man-popup-info (candidate)</code></li>
+<li>L112: <code>(defun helm-man-tldr-render (command)</code></li>
+<li>L121: <code>(define-key m (kbd "&lt;return&gt;") #'browse-url-at-point)</code></li>
+<li>L122: <code>(define-key m [mouse-1] #'browse-url-at-point)</code></li>
+<li>L134: <code>(defun helm-man--tldr-cache ()</code></li>
+<li>L141: <code>(defun helm-man-action-transformer (actions _candidate)</code></li>
+<li>L152: <code>(defun helm-man-woman (arg)</code></li>
+<li>L174: <code>(provide 'helm-man)</code></li>
+</ul>
+<h2>helm-misc.el</h2>
+<ul>
+<li>L19: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(require 'helm)</code></li>
+<li>L21: <code>(require 'helm-help)</code></li>
+<li>L22: <code>(require 'helm-types)</code></li>
+<li>L41: <code>(defcustom helm-time-zone-home-location "Paris"</code></li>
+<li>L46: <code>(defcustom helm-timezone-actions</code></li>
+<li>L98: <code>(defun helm-latex-math-candidates ()</code></li>
+<li>L120: <code>(defun helm-jabber-online-contacts ()</code></li>
+<li>L145: <code>(defun helm-time-zone-transformer (candidates _source)</code></li>
+<li>L185: <code>(defvar helm-minibuffer-history-map</code></li>
+<li>L188: <code>(define-key map [remap helm-minibuffer-history] 'undefined)</code></li>
+<li>L191: <code>(defcustom helm-minibuffer-history-must-match t</code></li>
+<li>L199: <code>(defcustom helm-minibuffer-history-key "C-r"</code></li>
+<li>L217: <code>(define-minor-mode helm-minibuffer-history-mode</code></li>
+<li>L237: <code>(define-key vmap</code></li>
+<li>L241: <code>(define-key (symbol-value map)</code></li>
+<li>L257: <code>(define-key vmap</code></li>
+<li>L274: <code>(defun helm-ratpoison-commands-init ()</code></li>
+<li>L289: <code>(defun helm-ratpoison-commands-display-to-real (display)</code></li>
+<li>L293: <code>(defun helm-ratpoison-commands-execute (candidate)</code></li>
+<li>L306: <code>(defun helm-stumpwm-commands-init ()</code></li>
+<li>L316: <code>(defun helm-stumpwm-commands-execute (candidate)</code></li>
+<li>L320: <code>(defun helm-world-time ()</code></li>
+<li>L327: <code>(defun helm-insert-latex-math ()</code></li>
+<li>L333: <code>(defun helm-ratpoison-commands ()</code></li>
+<li>L340: <code>(defun helm-stumpwm-commands()</code></li>
+<li>L347: <code>(defun helm-minibuffer-history ()</code></li>
+<li>L383: <code>(defun helm-outline (&amp;optional arg)</code></li>
+<li>L416: <code>(provide 'helm-misc)</code></li>
+</ul>
+<h2>helm-mode.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-lib)</code></li>
+<li>L23: <code>(require 'helm-files)</code></li>
+<li>L24: <code>(require 'helm-misc)</code></li>
+<li>L72: <code>(defcustom helm-completing-read-handlers-alist</code></li>
+<li>L191: <code>(defcustom helm-comp-read-case-fold-search helm-case-fold-search</code></li>
+<li>L197: <code>(defcustom helm-mode-handle-completion-in-region t</code></li>
+<li>L204: <code>(defcustom helm-mode-no-completion-in-region-in-modes nil</code></li>
+<li>L209: <code>(defcustom helm-mode-reverse-history t</code></li>
+<li>L216: <code>(defcustom helm-completion-in-region-default-sort-fn</code></li>
+<li>L232: <code>(defcustom helm-mode-ignore-diacritics nil</code></li>
+<li>L237: <code>(defcustom helm-completion-mark-suffix t</code></li>
+<li>L242: <code>(defcustom helm-read-file-name-use-default-arg-behavior nil</code></li>
+<li>L270: <code>(defcustom helm-completions-detailed t</code></li>
+<li>L312: <code>(defvar helm-comp-read-map</code></li>
+<li>L315: <code>(define-key map (kbd "&lt;C-return&gt;") 'helm-cr-empty-string)</code></li>
+<li>L316: <code>(define-key map (kbd "M-RET")      'helm-cr-empty-string)</code></li>
+<li>L320: <code>(defvar helm-comp-in-region-map</code></li>
+<li>L326: <code>(defun helm-mode-delete-char-backward-1 ()</code></li>
+<li>L337: <code>(defun helm-mode-delete-char-backward-2 ()</code></li>
+<li>L357: <code>(defcustom helm-completion-style 'helm</code></li>
+<li>L403: <code>(define-key helm-comp-in-region-map (kbd "DEL") 'helm-mode-delete-char-backward-maybe)</code></li>
+<li>L404: <code>(define-key helm-comp-in-region-map (kbd "DEL") 'delete-backward-char))))</code></li>
+<li>L418: <code>(defcustom helm-completion-styles-alist '((gud-mode . helm)</code></li>
+<li>L466: <code>(defun helm-cr-empty-string ()</code></li>
+<li>L475: <code>(defun helm-mode--keyboard-quit ()</code></li>
+<li>L481: <code>(defun helm-comp-read-get-candidates (collection</code></li>
+<li>L591: <code>(defun helm-cr--pattern-in-candidates-p (candidates &amp;optional pattern)</code></li>
+<li>L600: <code>(defun helm-cr-default-transformer (candidates _source)</code></li>
+<li>L617: <code>(defun helm-cr-default (default cands)</code></li>
+<li>L639: <code>(cl-defun helm-comp-read (prompt collection</code></li>
+<li>L1027: <code>(defun helm-completing-read-symbols</code></li>
+<li>L1209: <code>(defun helm-completion-man-popup-info (candidate)</code></li>
+<li>L1223: <code>(defun helm-completing-read-buffer-affixation (completions)</code></li>
+<li>L1274: <code>(defun helm-symbol-completion-table-affixation (_completions)</code></li>
+<li>L1346: <code>(defun helm-completion-get-key (sym)</code></li>
+<li>L1354: <code>(defun helm-mode--package-name-from-full-name (comp)</code></li>
+<li>L1361: <code>(defun helm-completion-package-affixation (_completions)</code></li>
+<li>L1384: <code>(defun helm-completion-bookmark-affixation (_completions)</code></li>
+<li>L1395: <code>(defun helm-completion-theme-affixation (_completions)</code></li>
+<li>L1409: <code>(defun helm--get-theme-doc-1 (sym)</code></li>
+<li>L1429: <code>(defun helm--get-theme-doc-from-header ()</code></li>
+<li>L1441: <code>(defun helm-completion-coding-system-affixation (_comps)</code></li>
+<li>L1455: <code>(defun helm-completion-charset-affixation (_comps)</code></li>
+<li>L1464: <code>(defun helm-completion-color-affixation (_comps)</code></li>
+<li>L1484: <code>(defun helm-completion-library-affixation (_comps)</code></li>
+<li>L1509: <code>(defun helm-completion-eww-affixation (_completions)</code></li>
+<li>L1526: <code>(defun helm-completion-info-file-affixation (_completions)</code></li>
+<li>L1572: <code>(defun helm-completing-read-default-1</code></li>
+<li>L1633: <code>(define-key map (kbd "C-u") 'helm-M-x-universal-argument)</code></li>
+<li>L1710: <code>(defun helm-mode--get-persistent-fn (name)</code></li>
+<li>L1720: <code>(defun helm--advice-command-execute (old--fn &amp;rest args)</code></li>
+<li>L1731: <code>(defun helm--advice-execute-extended-command (old--fn &amp;rest args)</code></li>
+<li>L1735: <code>(defun helm-completing-read-default-2</code></li>
+<li>L1875: <code>(defun helm-mode-all-the-icons-handler (prompt collection test require-match</code></li>
+<li>L1916: <code>(defun helm-completing-read-default-find-tag</code></li>
+<li>L1931: <code>(defun helm-completing-read-sync-default-handler</code></li>
+<li>L1940: <code>(defun helm-completing-read-inbuffer-default-handler</code></li>
+<li>L1949: <code>(defun helm-completing-read-default-handler</code></li>
+<li>L1968: <code>(defun helm-mode--read-buffer-to-switch (prompt)</code></li>
+<li>L1980: <code>(defun helm--generic-read-buffer (prompt &amp;optional default require-match predicate)</code></li>
+<li>L2003: <code>(defun helm-mode--get-default-handler-for (comp-or-file entry)</code></li>
+<li>L2016: <code>(defun helm-mode--apply-helm-handler (handler arg-list)</code></li>
+<li>L2028: <code>(cl-defun helm--completing-read-default</code></li>
+<li>L2150: <code>(cl-defun helm-read-file-name</code></li>
+<li>L2372: <code>(defun helm-mode--default-filename (fname dir initial)</code></li>
+<li>L2386: <code>(defun helm-mode--resolve-fname (fname dir)</code></li>
+<li>L2394: <code>(defun helm-mode-root-dir (dir)</code></li>
+<li>L2402: <code>(cl-defun helm--generic-read-file-name</code></li>
+<li>L2542: <code>(defun helm-read-file-name-handler-1 (prompt dir default-filename</code></li>
+<li>L2571: <code>(defun helm-mode--advice-lisp--local-variables (old--fn &amp;rest args)</code></li>
+<li>L2577: <code>(defun helm-completion-in-region-sort-fn (candidates _source)</code></li>
+<li>L2583: <code>(defun helm-mode--completion-in-region-initial-input (str)</code></li>
+<li>L2589: <code>(defun helm-completion--decorate (comps afun afix category)</code></li>
+<li>L2648: <code>(defun helm-dynamic-completion (collection predicate &amp;optional point metadata nomode styles)</code></li>
+<li>L2731: <code>(defun helm-completion-try-completion (string table pred point)</code></li>
+<li>L2743: <code>(defun helm-completion-all-completions (string table pred point)</code></li>
+<li>L2749: <code>(defun helm-completion--multi-all-completions-1 (string collection &amp;optional predicate)</code></li>
+<li>L2805: <code>(defun helm-completion--multi-all-completions (string table pred point)</code></li>
+<li>L2823: <code>(defun helm-completion--adjust-metadata (metadata)</code></li>
+<li>L2841: <code>(defun helm-flex-completion-try-completion (string table pred point)</code></li>
+<li>L2852: <code>(defun helm-flex-completion-all-completions (string table pred point)</code></li>
+<li>L2865: <code>(defun helm-completion--flex-all-completions</code></li>
+<li>L2887: <code>(defun helm-completion-in-region--selection ()</code></li>
+<li>L2896: <code>(defun helm--completion-in-region (origfun start end collection &amp;optional predicate)</code></li>
+<li>L3127: <code>(defun helm-completion-in-region--insert-result (result start point end base-size)</code></li>
+<li>L3181: <code>(defun helm--crm-insert-fn (_start _end choice)</code></li>
+<li>L3195: <code>(defun helm-mode--disable-ido-maybe (&amp;optional from-hook)</code></li>
+<li>L3204: <code>(defun helm-mode--ido-everywhere-hook ()</code></li>
+<li>L3211: <code>(define-minor-mode helm-mode</code></li>
+<li>L3273: <code>(provide 'helm-mode)</code></li>
+</ul>
+<h2>helm-multi-match.el</h2>
+<ul>
+<li>L26: <code>(require 'cl-lib)</code></li>
+<li>L27: <code>(require 'helm-lib)</code></li>
+<li>L68: <code>(defun helm-mm-split-pattern (pattern &amp;optional grep-space)</code></li>
+<li>L81: <code>(defun helm-mm-1-make-regexp (pattern)</code></li>
+<li>L94: <code>(defun helm-mm-exact-get-pattern (pattern)</code></li>
+<li>L101: <code>(defun helm-mm-exact-match (candidate &amp;optional pattern)</code></li>
+<li>L107: <code>(defun helm-mm-exact-search (pattern &amp;rest _ignore)</code></li>
+<li>L119: <code>(defun helm-mm-1-get-pattern (pattern)</code></li>
+<li>L126: <code>(defun helm-mm-1-match (candidate &amp;optional pattern)</code></li>
+<li>L130: <code>(defun helm-mm-1-search (pattern &amp;rest _ignore)</code></li>
+<li>L142: <code>(defun helm-mm-2-get-pattern (pattern)</code></li>
+<li>L149: <code>(defun helm-mm-2-match (candidate &amp;optional pattern)</code></li>
+<li>L153: <code>(defun helm-mm-2-search (pattern &amp;rest _ignore)</code></li>
+<li>L165: <code>(defun helm-mm-3-get-patterns (pattern)</code></li>
+<li>L176: <code>(defun helm-mm-3-get-patterns-internal (pattern)</code></li>
+<li>L185: <code>(defun helm-mm-regexp-p (string)</code></li>
+<li>L190: <code>(defun helm-mm-3-match (candidate &amp;optional pattern)</code></li>
+<li>L215: <code>(defun helm-mm-3-search-base (pattern searchfn1 searchfn2)</code></li>
+<li>L263: <code>(defun helm-mm-3--search-move-forward (bol eol)</code></li>
+<li>L268: <code>(defun helm-mm-3-search (pattern &amp;rest _ignore)</code></li>
+<li>L272: <code>(defun helm-mm-3-search-on-diacritics (pattern &amp;rest _ignore)</code></li>
+<li>L284: <code>(defun helm-mm-3f-match (candidate &amp;optional pattern)</code></li>
+<li>L312: <code>(defun helm-mm-3f-match-on-diacritics (candidate &amp;optional pattern)</code></li>
+<li>L333: <code>(defun helm-mm-prefix-search (pattern &amp;rest _ignore)</code></li>
+<li>L336: <code>(defun helm-mm-3p-search (pattern &amp;rest _ignore)</code></li>
+<li>L351: <code>(define-minor-mode helm-migemo-mode</code></li>
+<li>L361: <code>(defun helm-mm-migemo-get-pattern (pattern)</code></li>
+<li>L366: <code>(defun helm-mm-migemo-search-pattern-get (pattern)</code></li>
+<li>L371: <code>(defun helm-mm-migemo-string-match (pattern str)</code></li>
+<li>L380: <code>(defun helm-mm-diacritics-string-match (pattern str)</code></li>
+<li>L393: <code>(defun helm-mm-3-migemo-match (candidate &amp;optional pattern)</code></li>
+<li>L399: <code>(defun helm-mm-migemo-forward (word &amp;optional bound noerror count)</code></li>
+<li>L410: <code>(defun helm-mm-3-migemo-search (pattern &amp;rest _ignore)</code></li>
+<li>L420: <code>(defun helm-mm-match (candidate &amp;optional pattern)</code></li>
+<li>L431: <code>(defun helm-mm-3-match-on-diacritics (candidate &amp;optional pattern)</code></li>
+<li>L437: <code>(defun helm-mm-search (pattern &amp;rest _ignore)</code></li>
+<li>L447: <code>(provide 'helm-multi-match)</code></li>
+</ul>
+<h2>helm-net.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L23: <code>(require 'url)</code></li>
+<li>L24: <code>(require 'xml)</code></li>
+<li>L25: <code>(require 'browse-url)</code></li>
+<li>L35: <code>(defcustom helm-google-suggest-default-browser-function nil</code></li>
+<li>L42: <code>(defcustom helm-home-url "https://www.google.com"</code></li>
+<li>L47: <code>(defcustom helm-surfraw-default-browser-function nil</code></li>
+<li>L53: <code>(defcustom helm-google-suggest-url</code></li>
+<li>L60: <code>(defcustom helm-google-suggest-search-url</code></li>
+<li>L70: <code>(defcustom helm-net-prefer-curl nil</code></li>
+<li>L76: <code>(defcustom helm-surfraw-duckduckgo-url</code></li>
+<li>L85: <code>(defcustom helm-search-suggest-action-wikipedia-url</code></li>
+<li>L92: <code>(defcustom helm-search-suggest-action-youtube-url</code></li>
+<li>L99: <code>(defcustom helm-search-suggest-action-imdb-url</code></li>
+<li>L106: <code>(defcustom helm-search-suggest-action-google-maps-url</code></li>
+<li>L113: <code>(defcustom helm-search-suggest-action-google-news-url</code></li>
+<li>L120: <code>(defcustom helm-google-suggest-actions</code></li>
+<li>L147: <code>(defcustom helm-browse-url-firefox-new-window "--new-tab"</code></li>
+<li>L156: <code>(defcustom helm-net-curl-switches '("-s" "-L")</code></li>
+<li>L167: <code>(defun helm-search-suggest-perform-additional-action (url query)</code></li>
+<li>L171: <code>(defun helm-net--url-retrieve-sync (request parser)</code></li>
+<li>L185: <code>(defun helm-google-suggest-parser ()</code></li>
+<li>L194: <code>(defun helm-google-suggest-fetch (input)</code></li>
+<li>L201: <code>(defun helm-google-suggest-set-candidates (&amp;optional request-prefix)</code></li>
+<li>L217: <code>(defun helm-ggs-set-number-result (num)</code></li>
+<li>L232: <code>(defun helm-google-suggest-action (candidate)</code></li>
+<li>L253: <code>(defun helm-google-suggest-emacs-lisp ()</code></li>
+<li>L292: <code>(defun helm-generic-browser (url cmd-name &amp;rest args)</code></li>
+<li>L304: <code>(defun helm-browse-url-detached (cmd url &amp;optional new-tab)</code></li>
+<li>L323: <code>(defun helm-browse-url-firefox (url &amp;optional _ignore)</code></li>
+<li>L338: <code>(defun helm-browse-url-opera (url &amp;optional _ignore)</code></li>
+<li>L350: <code>(defun helm-browse-url-chromium (url &amp;optional _ignore)</code></li>
+<li>L365: <code>(defun helm-browse-url-brave (url &amp;optional _ignore)</code></li>
+<li>L382: <code>(defun helm-browse-url-uzbl (url &amp;optional _ignore)</code></li>
+<li>L388: <code>(defun helm-browse-url-conkeror (url &amp;optional _ignore)</code></li>
+<li>L394: <code>(defun helm-browse-url-nyxt (url &amp;optional _ignore)</code></li>
+<li>L399: <code>(defun helm-browse-url-default-browser (url &amp;rest args)</code></li>
+<li>L411: <code>(defun helm-browse-url (url &amp;rest args)</code></li>
+<li>L429: <code>(defun helm-build-elvi-list ()</code></li>
+<li>L438: <code>(defun helm-surfraw (pattern engine)</code></li>
+<li>L473: <code>(defun helm-google-suggest ()</code></li>
+<li>L478: <code>(provide 'helm-net)</code></li>
+</ul>
+<h2>helm-occur.el</h2>
+<ul>
+<li>L21: <code>(require 'cl-lib)</code></li>
+<li>L22: <code>(require 'helm)</code></li>
+<li>L23: <code>(require 'helm-help)</code></li>
+<li>L24: <code>(require 'helm-utils)</code></li>
+<li>L53: <code>(defvar helm-occur-map</code></li>
+<li>L56: <code>(define-key map (kbd "C-c o")    'helm-occur-run-goto-line-ow)</code></li>
+<li>L57: <code>(define-key map (kbd "C-c C-o")  'helm-occur-run-goto-line-of)</code></li>
+<li>L58: <code>(define-key map (kbd "C-x C-s")  'helm-occur-run-save-buffer)</code></li>
+<li>L59: <code>(define-key map (kbd "C-s")      'helm-run-occur-grep-ag-buffer-directory)</code></li>
+<li>L68: <code>(defcustom helm-occur-actions</code></li>
+<li>L76: <code>(defcustom helm-occur-use-ioccur-style-keys nil</code></li>
+<li>L86: <code>(define-key helm-occur-map (kbd "&lt;right&gt;")  'helm-occur-right)</code></li>
+<li>L87: <code>(define-key helm-occur-map (kbd "&lt;left&gt;")   'helm-occur-run-default-action))</code></li>
+<li>L88: <code>(define-key helm-occur-map (kbd "&lt;right&gt;") nil)</code></li>
+<li>L89: <code>(define-key helm-occur-map (kbd "&lt;left&gt;")  nil))))</code></li>
+<li>L91: <code>(defcustom helm-occur-always-search-in-current nil</code></li>
+<li>L95: <code>(defcustom helm-occur-truncate-lines t</code></li>
+<li>L99: <code>(defcustom helm-occur-auto-update-on-resume nil</code></li>
+<li>L111: <code>(defcustom helm-occur-candidate-number-limit 99999</code></li>
+<li>L115: <code>(defcustom helm-occur-buffer-substring-fn-for-modes</code></li>
+<li>L130: <code>(defcustom helm-occur-buffer-substring-default-mode</code></li>
+<li>L146: <code>(defcustom helm-occur-keep-closest-position t</code></li>
+<li>L152: <code>(defcustom helm-occur-ignore-diacritics nil</code></li>
+<li>L156: <code>(defcustom helm-occur-match-shorthands nil</code></li>
+<li>L173: <code>(defun helm-occur--select-closest-candidate ()</code></li>
+<li>L210: <code>(defun helm-occur ()</code></li>
+<li>L272: <code>(defun helm-occur-visible-buffers ()</code></li>
+<li>L281: <code>(defun helm-occur-transformer (candidates source)</code></li>
+<li>L304: <code>(defun helm-occur-symbol-shorthands-pattern-transformer (pattern buffer gshorthands)</code></li>
+<li>L333: <code>(defun helm-occur-build-sources (buffers &amp;optional source-name)</code></li>
+<li>L410: <code>(defun helm-multi-occur-1 (buffers &amp;optional input default)</code></li>
+<li>L475: <code>(defun helm-occur-action (lineno &amp;optional method)</code></li>
+<li>L503: <code>(defun helm-occur-goto-line (candidate)</code></li>
+<li>L508: <code>(defun helm-occur-goto-line-ow (candidate)</code></li>
+<li>L514: <code>(defun helm-occur-goto-line-of (candidate)</code></li>
+<li>L536: <code>(defun helm-occur-right ()</code></li>
+<li>L547: <code>(defun helm-occur-quit-an-find-file-fn (source)</code></li>
+<li>L555: <code>(defun helm-occur-grep-ag-buffer-directory (_candidate)</code></li>
+<li>L576: <code>(defvar helm-occur-mode-map</code></li>
+<li>L578: <code>(define-key map (kbd "RET")      'helm-occur-mode-goto-line)</code></li>
+<li>L579: <code>(define-key map (kbd "C-o")      'helm-occur-mode-goto-line-ow)</code></li>
+<li>L580: <code>(define-key map (kbd "&lt;C-down&gt;") 'helm-occur-mode-goto-line-ow-forward)</code></li>
+<li>L581: <code>(define-key map (kbd "&lt;C-up&gt;")   'helm-occur-mode-goto-line-ow-backward)</code></li>
+<li>L582: <code>(define-key map (kbd "&lt;M-down&gt;") 'helm-gm-next-file)</code></li>
+<li>L583: <code>(define-key map (kbd "&lt;M-up&gt;")   'helm-gm-precedent-file)</code></li>
+<li>L584: <code>(define-key map (kbd "M-n")      'helm-occur-mode-goto-line-ow-forward)</code></li>
+<li>L585: <code>(define-key map (kbd "M-p")      'helm-occur-mode-goto-line-ow-backward)</code></li>
+<li>L586: <code>(define-key map (kbd "M-N")      'helm-gm-next-file)</code></li>
+<li>L587: <code>(define-key map (kbd "M-P")      'helm-gm-precedent-file)</code></li>
+<li>L588: <code>(define-key map (kbd "C-c b")    'helm-occur-mode-resume-session)</code></li>
+<li>L591: <code>(defun helm-occur-mode-goto-line ()</code></li>
+<li>L598: <code>(defun helm-occur-mode-goto-line-ow ()</code></li>
+<li>L605: <code>(defun helm-occur-mode-goto-line-ow-forward-1 (arg)</code></li>
+<li>L616: <code>(defun helm-occur-mode-goto-line-ow-forward (arg)</code></li>
+<li>L620: <code>(defun helm-occur-mode-goto-line-ow-backward (arg)</code></li>
+<li>L624: <code>(defun helm-occur-save-results (_candidate)</code></li>
+<li>L680: <code>(define-key map [mouse-1] 'mouse-set-point)</code></li>
+<li>L681: <code>(define-key map [mouse-2] 'helm-occur-mode-mouse-goto-line)</code></li>
+<li>L682: <code>(define-key map [mouse-3] 'ignore))))</code></li>
+<li>L690: <code>(defun helm-occur-mode-mouse-goto-line (event)</code></li>
+<li>L700: <code>(defun helm-occur-mode-resume-session ()</code></li>
+<li>L705: <code>(defun helm-occur-buffer-substring-with-linums ()</code></li>
+<li>L721: <code>(defun helm-occur-mode--revert-buffer-function (&amp;optional _ignore-auto _noconfirm)</code></li>
+<li>L779: <code>(defun helm-occur-filter-one-by-one (candidate)</code></li>
+<li>L799: <code>(define-derived-mode helm-occur-mode</code></li>
+<li>L816: <code>(defun helm-occur-next-error (&amp;optional argp reset)</code></li>
+<li>L842: <code>(defun helm-occur-resume-fn ()</code></li>
+<li>L899: <code>(defun helm-occur-from-isearch ()</code></li>
+<li>L915: <code>(defun helm-multi-occur-from-isearch ()</code></li>
+<li>L943: <code>(provide 'helm-occur)</code></li>
+</ul>
+<h2>helm-packages.el</h2>
+<ul>
+<li>L21: <code>(require 'cl-lib)</code></li>
+<li>L22: <code>(require 'helm)</code></li>
+<li>L23: <code>(require 'package)</code></li>
+<li>L24: <code>(require 'finder)</code></li>
+<li>L25: <code>(require 'helm-utils) ; For with-helm-display-marked-candidates.</code></li>
+<li>L26: <code>(require 'async-package)</code></li>
+<li>L63: <code>(defcustom helm-packages-async t</code></li>
+<li>L67: <code>(defcustom helm-package-install-upgrade-built-in</code></li>
+<li>L72: <code>(defcustom helm-packages-isolate-fn (if (fboundp 'package-isolate)</code></li>
+<li>L79: <code>(defcustom helm-packages-default-clone-directory nil</code></li>
+<li>L83: <code>(defcustom helm-packages-clone-after-hook</code></li>
+<li>L89: <code>(defcustom helm-packages-default-urls-for-cloning</code></li>
+<li>L100: <code>(defun helm-packages-upgrade (_candidate)</code></li>
+<li>L114: <code>(defun helm-packages-describe (candidate)</code></li>
+<li>L118: <code>(defun helm-packages-get-homepage-url (candidate)</code></li>
+<li>L124: <code>(defun helm-packages-visit-homepage (candidate)</code></li>
+<li>L131: <code>(defun helm-packages-package-reinstall (_candidate)</code></li>
+<li>L145: <code>(defun helm-packages-delete-1 (packages &amp;optional force)</code></li>
+<li>L152: <code>(defun helm-packages-uninstall (_candidate)</code></li>
+<li>L163: <code>(defun helm-packages-delete (_candidate)</code></li>
+<li>L174: <code>(defun helm-packages-recompile (_candidate)</code></li>
+<li>L183: <code>(defun helm-packages-install--sync (packages)</code></li>
+<li>L188: <code>(defun helm-packages-install (_candidate)</code></li>
+<li>L202: <code>(defun helm-packages--get-deps (pkg)</code></li>
+<li>L211: <code>(defun helm-packages-isolate-1 (packages &amp;optional _ignore)</code></li>
+<li>L232: <code>(defun helm-packages-isolate (_candidate)</code></li>
+<li>L242: <code>(defun helm-packages-quit-an-find-file (source)</code></li>
+<li>L253: <code>(defun helm-packages-fetch-recipe (url)</code></li>
+<li>L272: <code>(defun helm-packages-get-package-url (package provider)</code></li>
+<li>L304: <code>(defun helm-packages-get-provider (package)</code></li>
+<li>L308: <code>(defun helm-packages-get-recipe-for-cloning (package)</code></li>
+<li>L312: <code>(defun helm-packages-clone-package (package)</code></li>
+<li>L364: <code>(defun helm-packages--clone-filter-process (proc string)</code></li>
+<li>L371: <code>(defun helm-packages-find-project-after-clone (package directory)</code></li>
+<li>L380: <code>(defun helm-packages-transformer (candidates _source)</code></li>
+<li>L439: <code>(defun helm-packages-transformer-1 (candidates _source)</code></li>
+<li>L445: <code>(defun helm-packages--refresh-contents ()</code></li>
+<li>L456: <code>(defun helm-finder--list-matches (key)</code></li>
+<li>L469: <code>(defun helm-finder-packages-from-keyword (candidate)</code></li>
+<li>L495: <code>(defun helm-package--upgradeable-packages (&amp;optional include-builtins)</code></li>
+<li>L522: <code>(defun helm-packages (&amp;optional arg)</code></li>
+<li>L599: <code>(defun helm-finder (&amp;optional arg)</code></li>
+<li>L631: <code>(provide 'helm-packages)</code></li>
+</ul>
+<h2>helm-regexp.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L23: <code>(require 'helm-utils)</code></li>
+<li>L39: <code>(defun helm-query-replace-regexp (_candidate)</code></li>
+<li>L47: <code>(defun helm-kill-regexp-as-sexp (_candidate)</code></li>
+<li>L52: <code>(defun helm-kill-regexp (_candidate)</code></li>
+<li>L56: <code>(defun helm-query-replace-args (regexp)</code></li>
+<li>L90: <code>(defun helm-regexp-get-line (s e)</code></li>
+<li>L103: <code>(defun helm-regexp-persistent-action (pt)</code></li>
+<li>L107: <code>(defun helm-regexp-kill-new (input)</code></li>
+<li>L118: <code>(defun helm-regexp ()</code></li>
+<li>L133: <code>(provide 'helm-regexp)</code></li>
+</ul>
+<h2>helm-ring.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-utils)</code></li>
+<li>L23: <code>(require 'helm-help)</code></li>
+<li>L24: <code>(require 'helm-elisp)</code></li>
+<li>L35: <code>(defcustom helm-kill-ring-threshold 3</code></li>
+<li>L40: <code>(defcustom helm-kill-ring-max-offset 400</code></li>
+<li>L51: <code>(defcustom helm-kill-ring-actions</code></li>
+<li>L59: <code>(defcustom helm-kill-ring-separator "\n"</code></li>
+<li>L64: <code>(defcustom helm-register-max-offset 160</code></li>
+<li>L73: <code>(defvar helm-kill-ring-map</code></li>
+<li>L76: <code>(define-key map (kbd "M-y")     'helm-next-line)</code></li>
+<li>L77: <code>(define-key map (kbd "M-u")     'helm-previous-line)</code></li>
+<li>L78: <code>(define-key map (kbd "M-D")     'helm-kill-ring-delete)</code></li>
+<li>L79: <code>(define-key map (kbd "C-s")     'helm-kill-ring-run-search-from-string)</code></li>
+<li>L80: <code>(define-key map (kbd "C-]")     'helm-kill-ring-toggle-truncated)</code></li>
+<li>L81: <code>(define-key map (kbd "C-c C-k") 'helm-kill-ring-kill-selection)</code></li>
+<li>L82: <code>(define-key map (kbd "C-c d")   'helm-kill-ring-run-persistent-delete)</code></li>
+<li>L103: <code>(defun helm-kill-ring-candidates ()</code></li>
+<li>L112: <code>(defun helm-kill-ring-transformer (candidates _source)</code></li>
+<li>L120: <code>(defun helm-kill-ring-toggle-truncated ()</code></li>
+<li>L136: <code>(defun helm-kill-ring-kill-selection ()</code></li>
+<li>L143: <code>(defun helm-kill-ring--preselect-fn (candidate)</code></li>
+<li>L155: <code>(defun helm-kill-ring-action-yank (_str)</code></li>
+<li>L169: <code>(defun helm-kill-ring-action-yank-1 (str)</code></li>
+<li>L223: <code>(defun helm-kill-ring-search-from-string (candidate)</code></li>
+<li>L233: <code>(defun helm-kill-ring-action-delete (_candidate)</code></li>
+<li>L239: <code>(defun helm-kill-ring-persistent-delete (_candidate)</code></li>
+<li>L267: <code>(defun helm-mark-ring-line-string-at-pos (pos)</code></li>
+<li>L278: <code>(defun helm-mark-ring-get-candidates ()</code></li>
+<li>L293: <code>(defun helm-mark-ring-default-action (candidate)</code></li>
+<li>L326: <code>(defun helm-global-mark-ring-format-buffer (marker)</code></li>
+<li>L339: <code>(defun helm-global-mark-ring-get-candidates ()</code></li>
+<li>L370: <code>(defun helm-register-candidates ()</code></li>
+<li>L452: <code>(defun helm-register-action-transformer (actions register-and-functions)</code></li>
+<li>L488: <code>(defun helm-mark-ring ()</code></li>
+<li>L496: <code>(defun helm-global-mark-ring ()</code></li>
+<li>L504: <code>(defun helm-all-mark-rings ()</code></li>
+<li>L515: <code>(defun helm-register ()</code></li>
+<li>L523: <code>(defun helm-show-kill-ring ()</code></li>
+<li>L538: <code>(defun helm-execute-kmacro ()</code></li>
+<li>L583: <code>(defun helm-kbd-macro-make-current (candidate)</code></li>
+<li>L589: <code>(defun helm-kbd-macro-insert-macro (candidate)</code></li>
+<li>L604: <code>(global-set-key key name))</code></li>
+<li>L612: <code>(defun helm-kbd-macro-execute (candidate)</code></li>
+<li>L618: <code>(defun helm-kbd-macro-concat-macros (_candidate)</code></li>
+<li>L632: <code>(defun helm-kbd-macro-delete-macro (_candidate)</code></li>
+<li>L640: <code>(defun helm-kbd-macro-edit-macro (candidate)</code></li>
+<li>L646: <code>(provide 'helm-ring)</code></li>
+</ul>
+<h2>helm-semantic.el</h2>
+<ul>
+<li>L27: <code>(require 'cl-lib)</code></li>
+<li>L28: <code>(require 'semantic)</code></li>
+<li>L29: <code>(require 'helm-help)</code></li>
+<li>L30: <code>(require 'helm-imenu)</code></li>
+<li>L38: <code>(defcustom helm-semantic-display-style</code></li>
+<li>L59: <code>(defvar helm-semantic-map</code></li>
+<li>L64: <code>(defcustom helm-semantic-lynx-style-map nil</code></li>
+<li>L72: <code>(define-key helm-semantic-map (kbd "&lt;right&gt;")  'helm-execute-persistent-action)</code></li>
+<li>L73: <code>(define-key helm-semantic-map (kbd "&lt;left&gt;")   'helm-maybe-exit-minibuffer))</code></li>
+<li>L74: <code>(define-key helm-semantic-map (kbd "&lt;right&gt;") nil)</code></li>
+<li>L75: <code>(define-key helm-semantic-map (kbd "&lt;left&gt;")  nil))))</code></li>
+<li>L80: <code>(defun helm-semantic--fetch-candidates (tags depth &amp;optional class)</code></li>
+<li>L119: <code>(defun helm-semantic-default-action (_candidate &amp;optional persistent)</code></li>
+<li>L133: <code>(defun helm-semantic--maybe-set-needs-update ()</code></li>
+<li>L156: <code>(defcustom helm-semantic-fuzzy-match nil</code></li>
+<li>L167: <code>(defun helm-semantic (arg)</code></li>
+<li>L191: <code>(defun helm-semantic-or-imenu (arg)</code></li>
+<li>L231: <code>(provide 'helm-semantic)</code></li>
+</ul>
+<h2>helm-source.el</h2>
+<ul>
+<li>L31: <code>(require 'cl-lib)</code></li>
+<li>L32: <code>(require 'eieio)</code></li>
+<li>L33: <code>(require 'helm-lib)</code></li>
+<li>L50: <code>(defun helm-source--cl--print-table (&amp;rest args)</code></li>
+<li>L985: <code>(defun helm-default-init-source-in-buffer-function ()</code></li>
+<li>L994: <code>(defun helm--create-source (object)</code></li>
+<li>L1003: <code>(defun helm-make-source (name class &amp;rest args)</code></li>
+<li>L1015: <code>(defun helm-make-type (class &amp;rest args)</code></li>
+<li>L1025: <code>(defun helm-source-mm-get-search-or-match-fns (source method)</code></li>
+<li>L1098: <code>(cl-defun helm-source-add-action-to-source-if (name fn source predicate</code></li>
+<li>L1126: <code>(defun helm-source--persistent-help-string (value source)</code></li>
+<li>L1135: <code>(defun helm-source--header-line (source)</code></li>
+<li>L1186: <code>(define-key map (kbd "RET")</code></li>
+<li>L1328: <code>(defmacro helm-build-sync-source (name &amp;rest args)</code></li>
+<li>L1334: <code>(defmacro helm-build-async-source (name &amp;rest args)</code></li>
+<li>L1340: <code>(defmacro helm-build-in-buffer-source (name &amp;rest args)</code></li>
+<li>L1346: <code>(defmacro helm-build-dummy-source (name &amp;rest args)</code></li>
+<li>L1352: <code>(defmacro helm-build-in-file-source (name file &amp;rest args)</code></li>
+<li>L1362: <code>(provide 'helm-source)</code></li>
+</ul>
+<h2>helm-sys.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L23: <code>(require 'helm-utils)</code></li>
+<li>L41: <code>(defcustom helm-top-command</code></li>
+<li>L67: <code>(defcustom helm-top-sort-columns-alist '((com . 11)</code></li>
+<li>L79: <code>(defcustom helm-top-poll-delay 1.5</code></li>
+<li>L85: <code>(defcustom helm-top-poll-delay-post-command 1.0</code></li>
+<li>L92: <code>(defcustom helm-top-poll-preselection 'linum</code></li>
+<li>L106: <code>(defvar helm-top-map</code></li>
+<li>L109: <code>(define-key map (kbd "M-P")   'helm-top-run-sort-by-cpu)</code></li>
+<li>L110: <code>(define-key map (kbd "M-C")   'helm-top-run-sort-by-com)</code></li>
+<li>L111: <code>(define-key map (kbd "M-M")   'helm-top-run-sort-by-mem)</code></li>
+<li>L112: <code>(define-key map (kbd "M-U")   'helm-top-run-sort-by-user)</code></li>
+<li>L120: <code>(defun helm-top-poll (&amp;optional no-update delay)</code></li>
+<li>L148: <code>(defun helm-top--poll-delay ()</code></li>
+<li>L151: <code>(defun helm-top-poll-no-update ()</code></li>
+<li>L155: <code>(defun helm-top-initialize-poll-hooks ()</code></li>
+<li>L168: <code>(define-minor-mode helm-top-poll-mode</code></li>
+<li>L204: <code>(defun helm-top-transformer (candidates _source)</code></li>
+<li>L216: <code>(defun helm-top--skip-top-line ()</code></li>
+<li>L224: <code>(defun helm-top-action-transformer (actions _candidate)</code></li>
+<li>L251: <code>(defun helm-top--marked-pids ()</code></li>
+<li>L254: <code>(defun helm-top-sh (sig pids)</code></li>
+<li>L261: <code>(defun helm-top-sh-persistent-action (pid)</code></li>
+<li>L265: <code>(defun helm-top-init ()</code></li>
+<li>L274: <code>(defun helm-top-display-to-real (line)</code></li>
+<li>L280: <code>(defun helm-top-set-mode-line (str)</code></li>
+<li>L285: <code>(defun helm-top-sort-transformer (candidates source)</code></li>
+<li>L298: <code>(defun helm-top-sort-by-com (s1 s2)</code></li>
+<li>L306: <code>(defun helm-top-sort-by-mem (s1 s2)</code></li>
+<li>L314: <code>(defun helm-top-sort-by-cpu (s1 s2)</code></li>
+<li>L322: <code>(defun helm-top-sort-by-user (s1 s2)</code></li>
+<li>L330: <code>(defun helm-top--preselect-fn ()</code></li>
+<li>L339: <code>(defun helm-top-run-sort-by-com ()</code></li>
+<li>L345: <code>(defun helm-top-run-sort-by-cpu ()</code></li>
+<li>L353: <code>(defun helm-top-run-sort-by-mem ()</code></li>
+<li>L359: <code>(defun helm-top-run-sort-by-user ()</code></li>
+<li>L372: <code>(defun helm-xrandr-info ()</code></li>
+<li>L386: <code>(defun helm-xrandr-screen ()</code></li>
+<li>L390: <code>(defun helm-xrandr-output ()</code></li>
+<li>L451: <code>(defun helm-top (&amp;optional arg)</code></li>
+<li>L466: <code>(defun helm-list-emacs-process ()</code></li>
+<li>L474: <code>(defun helm-xrandr-set ()</code></li>
+<li>L480: <code>(provide 'helm-sys)</code></li>
+</ul>
+<h2>helm-tags.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L23: <code>(require 'helm-utils)</code></li>
+<li>L24: <code>(require 'helm-grep)</code></li>
+<li>L35: <code>(defcustom helm-etags-tag-file-name "TAGS"</code></li>
+<li>L39: <code>(defcustom helm-etags-tag-file-search-limit 10</code></li>
+<li>L44: <code>(defcustom helm-etags-match-part-only 'tag</code></li>
+<li>L54: <code>(defcustom helm-etags-execute-action-at-once-if-one t</code></li>
+<li>L79: <code>(defun helm-etags-find-file (candidate)</code></li>
+<li>L83: <code>(defun helm-etags-find-file-other-window (candidate)</code></li>
+<li>L87: <code>(defun helm-etags-find-file-other-frame (candidate)</code></li>
+<li>L99: <code>(defvar helm-etags-map</code></li>
+<li>L102: <code>(define-key map (kbd "M-&lt;down&gt;") 'helm-goto-next-file)</code></li>
+<li>L103: <code>(define-key map (kbd "M-&lt;up&gt;")   'helm-goto-precedent-file)</code></li>
+<li>L104: <code>(define-key map (kbd "C-c o")    'helm-etags-run-switch-other-window)</code></li>
+<li>L105: <code>(define-key map (kbd "C-c C-o")  'helm-etags-run-switch-other-frame)</code></li>
+<li>L114: <code>(defun helm-etags-get-tag-file (&amp;optional directory)</code></li>
+<li>L125: <code>(defun helm-etags-all-tag-files ()</code></li>
+<li>L139: <code>(defun helm-etags-find-tag-file-directory (current-dir)</code></li>
+<li>L160: <code>(defun helm-etags-get-header-name (_x)</code></li>
+<li>L166: <code>(defun helm-etags-create-buffer (file)</code></li>
+<li>L194: <code>(defun helm-etags-init ()</code></li>
+<li>L220: <code>(defun helm-etags-build-source ()</code></li>
+<li>L243: <code>(defcustom helm-etags-fuzzy-match nil</code></li>
+<li>L259: <code>(defun helm-etags-action-goto (switcher candidate)</code></li>
+<li>L281: <code>(defun helm-etags-mtime (file)</code></li>
+<li>L285: <code>(defun helm-etags-file-modified-p (file)</code></li>
+<li>L294: <code>(defun helm-etags-select (reinit)</code></li>
+<li>L337: <code>(provide 'helm-tags)</code></li>
+</ul>
+<h2>helm-types.el</h2>
+<ul>
+<li>L24: <code>(require 'cl-lib)</code></li>
+<li>L25: <code>(require 'eieio)</code></li>
+<li>L28: <code>(defvar helm-map)</code></li>
+<li>L30: <code>(defvar helm-bookmark-map)</code></li>
+<li>L47: <code>(defun helm-actions-from-type-file ()</code></li>
+<li>L52: <code>(defvar helm-generic-files-map</code></li>
+<li>L55: <code>(define-key map (kbd "C-]")     'helm-ff-run-toggle-basename)</code></li>
+<li>L56: <code>(define-key map (kbd "C-s")     'helm-ff-run-grep)</code></li>
+<li>L57: <code>(define-key map (kbd "M-g s")   'helm-ff-run-grep)</code></li>
+<li>L58: <code>(define-key map (kbd "M-g z")   'helm-ff-run-zgrep)</code></li>
+<li>L59: <code>(define-key map (kbd "M-g p")   'helm-ff-run-pdfgrep)</code></li>
+<li>L60: <code>(define-key map (kbd "M-R")     'helm-ff-run-rename-file)</code></li>
+<li>L61: <code>(define-key map (kbd "M-C")     'helm-ff-run-copy-file)</code></li>
+<li>L62: <code>(define-key map (kbd "M-B")     'helm-ff-run-byte-compile-file)</code></li>
+<li>L63: <code>(define-key map (kbd "M-L")     'helm-ff-run-load-file)</code></li>
+<li>L64: <code>(define-key map (kbd "M-S")     'helm-ff-run-symlink-file)</code></li>
+<li>L65: <code>(define-key map (kbd "M-H")     'helm-ff-run-hardlink-file)</code></li>
+<li>L66: <code>(define-key map (kbd "M-D")     'helm-ff-run-delete-file)</code></li>
+<li>L67: <code>(define-key map (kbd "C-=")     'helm-ff-run-ediff-file)</code></li>
+<li>L68: <code>(define-key map (kbd "C-c =")   'helm-ff-run-ediff-merge-file)</code></li>
+<li>L69: <code>(define-key map (kbd "C-c o")   'helm-ff-run-switch-other-window)</code></li>
+<li>L70: <code>(define-key map (kbd "C-c r")   'helm-ff-run-find-file-as-root)</code></li>
+<li>L71: <code>(define-key map (kbd "C-c C-o") 'helm-ff-run-switch-other-frame)</code></li>
+<li>L72: <code>(define-key map (kbd "M-i")     'helm-ff-properties-persistent)</code></li>
+<li>L73: <code>(define-key map (kbd "C-c C-x") 'helm-ff-run-open-file-externally)</code></li>
+<li>L74: <code>(define-key map (kbd "C-c X")   'helm-ff-run-open-file-with-default-tool)</code></li>
+<li>L75: <code>(define-key map (kbd "C-c @")   'helm-ff-run-insert-org-link)</code></li>
+<li>L76: <code>(define-key map (kbd "C-x C-q") 'helm-ff-run-edit-marked-files)</code></li>
+<li>L77: <code>(define-key map (kbd "C-c C-a") 'helm-ff-run-mail-attach-files)</code></li>
+<li>L81: <code>(defcustom helm-type-file-actions</code></li>
+<li>L138: <code>(defcustom helm-type-bookmark-actions</code></li>
+<li>L176: <code>(defcustom helm-type-buffer-actions</code></li>
+<li>L240: <code>(defcustom helm-type-function-actions</code></li>
+<li>L259: <code>(defun helm-actions-from-type-function ()</code></li>
+<li>L280: <code>(defun helm-actions-from-type-command ()</code></li>
+<li>L285: <code>(defcustom helm-type-command-actions</code></li>
+<li>L307: <code>(defcustom helm-type-timers-actions</code></li>
+<li>L336: <code>(defun helm-build-type-file ()</code></li>
+<li>L339: <code>(defun helm-build-type-function ()</code></li>
+<li>L342: <code>(defun helm-build-type-command ()</code></li>
+<li>L346: <code>(provide 'helm-types)</code></li>
+</ul>
+<h2>helm-utils.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'helm)</code></li>
+<li>L22: <code>(require 'helm-help)</code></li>
+<li>L56: <code>(defcustom helm-su-or-sudo "sudo"</code></li>
+<li>L61: <code>(defcustom helm-default-kbsize 1024.0</code></li>
+<li>L72: <code>(defcustom helm-highlight-matches-around-point-max-lines '(15 . 15)</code></li>
+<li>L91: <code>(defcustom helm-highlight-only-all-matches nil</code></li>
+<li>L97: <code>(defcustom helm-buffers-to-resize-on-pa nil</code></li>
+<li>L103: <code>(defcustom helm-resize-on-pa-text-height 12</code></li>
+<li>L108: <code>(defcustom helm-html-decode-entities-function #'helm-html-decode-entities-string</code></li>
+<li>L270: <code>(defcustom helm-window-prefer-horizontal-split nil</code></li>
+<li>L289: <code>(defcustom helm-window-show-buffers-function #'helm-window-decide-split-fn</code></li>
+<li>L303: <code>(defun helm-window-show-buffers (buffers &amp;optional other-window)</code></li>
+<li>L324: <code>(defun helm-buffers-maybe-switch-to-buffer-in-tab (buffer fallback-fn)</code></li>
+<li>L343: <code>(defun helm-buffers-switch-to-buffer-or-tab (buffer)</code></li>
+<li>L352: <code>(defun helm-buffers--get-tab-from-name (tab-name tabs)</code></li>
+<li>L358: <code>(defun helm-buffers-switch-buffers-in-tab-1 (buffers)</code></li>
+<li>L379: <code>(defun helm--get-tab-names ()</code></li>
+<li>L385: <code>(defun helm-buffers--buffer-in-tab-p (buffer-name &amp;optional tab-names)</code></li>
+<li>L392: <code>(defun helm-window-decide-split-fn (candidates &amp;optional other-window-fn)</code></li>
+<li>L406: <code>(defun helm-window-default-split-fn (candidates &amp;optional other-window-fn)</code></li>
+<li>L424: <code>(defun helm-window-alternate-split-fn (candidates &amp;optional other-window-fn)</code></li>
+<li>L445: <code>(defun helm-window-mosaic-fn (candidates &amp;optional other-window-fn)</code></li>
+<li>L515: <code>(defun helm-window-other-window (buffer-or-name &amp;optional balance)</code></li>
+<li>L533: <code>(cl-defun helm-current-buffer-narrowed-p (&amp;optional</code></li>
+<li>L543: <code>(defun helm-goto-char (loc)</code></li>
+<li>L566: <code>(defun helm-goto-line (lineno &amp;optional noanim)</code></li>
+<li>L580: <code>(defun helm-save-pos-to-register-before-jump ()</code></li>
+<li>L585: <code>(defun helm-save-current-pos-to-mark-ring ()</code></li>
+<li>L591: <code>(defun helm-displaying-source-names ()</code></li>
+<li>L601: <code>(defun helm-handle-winner-boring-buffers ()</code></li>
+<li>L609: <code>(defun helm-quit-and-find-file-1 ()</code></li>
+<li>L634: <code>(defun helm--quit-and-find-file-default-file (source)</code></li>
+<li>L663: <code>(defun helm-generic-sort-fn (s1 s2)</code></li>
+<li>L707: <code>(defun helm-file-human-size (size &amp;optional kbsize)</code></li>
+<li>L722: <code>(defun helm-directory-size (directory &amp;optional recursive human)</code></li>
+<li>L742: <code>(defun helm-format-time-string (time)</code></li>
+<li>L754: <code>(cl-defun helm-file-attributes</code></li>
+<li>L837: <code>(defun helm-file-attributes-dired-line (all &amp;optional human-size show-octal)</code></li>
+<li>L849: <code>(defun helm-split-mode-file-attributes (modes &amp;optional string show-octal)</code></li>
+<li>L867: <code>(defun helm-ff-numeric-permissions (perms)</code></li>
+<li>L878: <code>(defun helm-format-columns-of-files (files)</code></li>
+<li>L885: <code>(defmacro with-helm-display-marked-candidates (buffer-or-name candidates &amp;rest body)</code></li>
+<li>L916: <code>(defun helm-highlight-current-line (&amp;optional start end buf face)</code></li>
+<li>L1004: <code>(defun helm--translate-pcre-to-elisp (regexp)</code></li>
+<li>L1024: <code>(defun helm-match-line-cleanup ()</code></li>
+<li>L1031: <code>(defun helm-match-line-cleanup-maybe ()</code></li>
+<li>L1035: <code>(defun helm-match-line-update ()</code></li>
+<li>L1042: <code>(defun helm-persistent-autoresize-hook ()</code></li>
+<li>L1048: <code>(defun helm-match-line-cleanup-pulse ()</code></li>
+<li>L1068: <code>(defun helm-cancel-popup-tip-timer ()</code></li>
+<li>L1076: <code>(defun helm-popup-tip-show (text pos)</code></li>
+<li>L1086: <code>(defun helm-maybe-show-popup-tip-info ()</code></li>
+<li>L1117: <code>(define-minor-mode helm-popup-tip-mode</code></li>
+<li>L1133: <code>(defun helm-open-file-with-default-tool (file)</code></li>
+<li>L1146: <code>(defun helm-open-dired (file)</code></li>
+<li>L1155: <code>(defun helm-find-file-as-root (candidate)</code></li>
+<li>L1172: <code>(defun helm-find-many-files (_ignore)</code></li>
+<li>L1180: <code>(defun helm-read-repeat-string (prompt &amp;optional count)</code></li>
+<li>L1196: <code>(defun helm-html-bookmarks-to-alist (file url-regexp bmk-regexp)</code></li>
+<li>L1214: <code>(defun helm-html-entity-to-string (entity)</code></li>
+<li>L1223: <code>(defun helm-html-decode-entities-string (str)</code></li>
+<li>L1234: <code>(provide 'helm-utils)</code></li>
+</ul>
+<h2>helm-x-files.el</h2>
+<ul>
+<li>L22: <code>(require 'helm-for-files)</code></li>
+<li>L31: <code>(defun helm-files-in-all-dired-candidates ()</code></li>
+<li>L67: <code>(defcustom helm-session-fuzzy-match nil</code></li>
+<li>L83: <code>(defun helm-source-tracker-transformer (candidates _source)</code></li>
+<li>L126: <code>(provide 'helm-x-files)</code></li>
+</ul>
+<h2>helm-x-icons.el</h2>
+<ul>
+<li>L20: <code>(require 'helm-lib)</code></li>
+<li>L26: <code>(defcustom helm-x-icons-provider (if (display-graphic-p)</code></li>
+<li>L38: <code>(defun helm-x-icons-match-to-alist (file type)</code></li>
+<li>L47: <code>(defun helm-x-icons-resolve-alist (type)</code></li>
+<li>L60: <code>(defun helm-x-icons-icon-for-file (&amp;rest args)</code></li>
+<li>L145: <code>(defun helm-x-icons-generic (icon-name &amp;rest args)</code></li>
+<li>L166: <code>(provide 'helm-x-icons)</code></li>
+</ul>
+<h2>helm.el</h2>
+<ul>
+<li>L39: <code>(require 'helm-core)</code></li>
+<li>L40: <code>(require 'helm-global-bindings)</code></li>
+<li>L51: <code>(provide 'helm)</code></li>
+</ul></main></html>

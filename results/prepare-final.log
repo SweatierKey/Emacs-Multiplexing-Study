@@ -1,0 +1,7 @@
+-- System libvterm detected
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/admin/Emacs-Multiplexing-Study/.runtime/build-vterm
+[100%] Built target vterm-module
+"/home/admin/Emacs-Multiplexing-Study/sources/ghostel/etc/terminfo/xterm-ghostty.terminfo", line 2, col 31, terminal 'xterm-ghostty': older tic versions may treat the description field as an alias
+Prepared. Run python3 scripts/lab.py start, then the selected tests.

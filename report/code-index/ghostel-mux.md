@@ -1,0 +1,263 @@
+# Indice del codice: ghostel-mux
+
+Fonte: https://github.com/SweatierKey/ghostel-mux.git
+
+Revisione: `c03055c8c081f5afe9ea35cfa431b844f415f949`.
+
+
+## example-init.el
+
+
+## ghostel-mux-context.el
+
+- L8: `(require 'ghostel-mux)`
+- L9: `(require 'tramp)`
+- L10: `(require 'compile)`
+- L11: `(require 'shell)`
+- L13: `(defcustom ghostel-mux-context-timeout 6 "Seconds to wait for a shell response."`
+- L29: `(defun ghostel-mux-context--nonce ()`
+- L32: `(defun ghostel-mux-context--block (&optional reason)`
+- L36: `(defun ghostel-mux-context--file-handler (operation &rest args)`
+- L47: `(defun ghostel-mux-context--route (input)`
+- L56: `(defun ghostel-mux-context--decode (hex)`
+- L66: `(defun ghostel-mux-context--digits-p (s)`
+- L68: `(defun ghostel-mux-context--check (record host user uid pid cwd)`
+- L83: `(defun ghostel-mux-context--receive (&rest fields)`
+- L112: `(defun ghostel-mux-context--input (&rest _)`
+- L115: `(defun ghostel-mux-context--directory-advice (original &rest args)`
+- L117: `(defun ghostel-mux-context--wait (predicate &optional owner)`
+- L124: `(defun ghostel-mux-context--send (text)`
+- L127: `(defun ghostel-mux-context--script (token key)`
+- L138: `(defun ghostel-mux-context-enable (route)`
+- L160: `(defun ghostel-mux-context--verify ()`
+- L179: `(defun ghostel-mux-context-dired ()`
+- L184: `(defun ghostel-mux-context--command-advice (original &rest args)`
+- L193: `(defun ghostel-mux-context--shell-advice (original &optional buffer)`
+- L199: `(defun ghostel-mux-context--label ()`
+- L205: `(defun ghostel-mux-context-describe ()`
+- L219: `(defvar ghostel-mux-context-mode-map`
+- L220: `(let ((map (make-sparse-keymap))) (define-key map (kbd "C-j") #'ghostel-mux-context-dired) map))`
+- L221: `(defvar ghostel-mux-context--maps (list (cons 'ghostel-mux-context-mode ghostel-mux-context-mode-map)))`
+- L223: `(define-minor-mode ghostel-mux-context-mode`
+- L249: `(defun ghostel-mux-context-unload-function ()`
+- L262: `(provide 'ghostel-mux-context)`
+
+## ghostel-mux.el
+
+- L17: `(require 'cl-lib)`
+- L18: `(require 'subr-x)`
+- L19: `(require 'seq)`
+- L20: `(require 'face-remap)`
+- L21: `(require 'windmove)`
+- L22: `(require 'ghostel)`
+- L34: `(defcustom ghostel-mux-prefix-key (kbd "C-b")`
+- L37: `(defcustom ghostel-mux-scrollback-bytes (* 50 1024 1024)`
+- L40: `(defcustom ghostel-mux-log-output t`
+- L44: `(defcustom ghostel-mux-log-directory`
+- L48: `(defcustom ghostel-mux-log-flush-interval 1`
+- L51: `(defcustom ghostel-mux-status-interval 5`
+- L54: `(defcustom ghostel-mux-confirm-kill t`
+- L57: `(defcustom ghostel-mux-directory nil`
+- L62: `(defcustom ghostel-mux-session-preview t`
+- L66: `(defcustom ghostel-mux-window-preview t`
+- L70: `(defcustom ghostel-mux-pane-preview t`
+- L74: `(defcustom ghostel-mux-session-colors t`
+- L142: `(defcustom ghostel-mux-session-color-faces`
+- L200: `(defun ghostel-mux--id () (cl-incf ghostel-mux--serial))`
+- L201: `(defun ghostel-mux--session-color (s)`
+- L215: `(defun ghostel-mux--next-session-number (s)`
+- L221: `(defun ghostel-mux--pane-path (p)`
+- L226: `(defun ghostel-mux--rename-session-buffers (s)`
+- L249: `(defun ghostel-mux--migrate-session-numbers ()`
+- L262: `(defun ghostel-mux--group-name (w)`
+- L268: `(defun ghostel-mux--buffer-number (p)`
+- L271: `(defun ghostel-mux--current-session ()`
+- L273: `(defun ghostel-mux--current-window ()`
+- L276: `(defun ghostel-mux--require-window ()`
+- L278: `(defun ghostel-mux--require-pane ()`
+- L280: `(defun ghostel-mux--pane-live-p (p)`
+- L284: `(defun ghostel-mux--all-panes ()`
+- L288: `(defun ghostel-mux--window-number (w)`
+- L291: `(defun ghostel-mux--pane-number (p)`
+- L294: `(defun ghostel-mux--pane-title (p)`
+- L301: `(defun ghostel-mux--window-title (w)`
+- L306: `(defun ghostel-mux--name (prompt &optional initial)`
+- L311: `(defcustom ghostel-mux-auto-tile t`
+- L321: `(defun ghostel-mux--auto-tile-p (w)`
+- L323: `(defun ghostel-mux--tree-active-p (&optional frame)`
+- L326: `(defun ghostel-mux--known-window-p (w)`
+- L331: `(defun ghostel-mux--build-layout (w panes &optional frame)`
+- L346: `(defun ghostel-mux--apply-pending-layout (w)`
+- L360: `(defun ghostel-mux-toggle-auto-tile (&optional window)`
+- L373: `(defun ghostel-mux--auto-split ()`
+- L397: `(defun ghostel-mux--read-destination (pane)`
+- L409: `(defun ghostel-mux--read-target-session (source)`
+- L415: `(defun ghostel-mux--prepare-move (sessions)`
+- L426: `(defun ghostel-mux--prune-window (w)`
+- L436: `(defun ghostel-mux--finish-move (sessions)`
+- L453: `(defun ghostel-mux-move-pane (destination &optional pane before)`
+- L508: `(defun ghostel-mux--validate-window-transfer (w destination)`
+- L519: `(defun ghostel-mux-move-window (destination &optional window before)`
+- L553: `(defun ghostel-mux--insert-before (node siblings before)`
+- L561: `(defun ghostel-mux--reorder-pane (p before)`
+- L581: `(defun ghostel-mux--reorder-window (w before)`
+- L592: `(defun ghostel-mux--tree-drop (node target &optional after)`
+- L627: `(defcustom ghostel-mux-tree-preview t`
+- L639: `(defvar ghostel-mux-tree-mode-map (make-sparse-keymap))`
+- L646: `(define-key ghostel-mux-tree-mode-map (kbd (car entry)) (cdr entry)))`
+- L647: `(define-key ghostel-mux-tree-mode-map [down-mouse-1] #'ghostel-mux-tree-mouse-select)`
+- L648: `(define-key ghostel-mux-tree-mode-map [mouse-1] #'ghostel-mux-tree-mouse-select)`
+- L649: `(define-key ghostel-mux-tree-mode-map [drag-mouse-1] #'ghostel-mux-tree-drag)`
+- L650: `(define-key ghostel-mux-tree-mode-map [double-mouse-1] #'ghostel-mux-tree-mouse-visit)`
+- L652: `(define-derived-mode ghostel-mux-tree-mode special-mode "Mux Tree"`
+- L663: `(define-derived-mode ghostel-mux-tree-preview-mode special-mode "Mux Preview"`
+- L669: `(defun ghostel-mux--tree-node ()`
+- L672: `(defun ghostel-mux--tree-row (object text &optional face)`
+- L675: `(defun ghostel-mux--tree-goto (node)`
+- L690: `(defun ghostel-mux-tree-refresh ()`
+- L727: `(defun ghostel-mux--tree-preview-window ()`
+- L730: `(defun ghostel-mux--tree-close-preview ()`
+- L736: `(defun ghostel-mux--tree-update-preview ()`
+- L781: `(defun ghostel-mux-tree-toggle-preview ()`
+- L787: `(defun ghostel-mux-tree ()`
+- L802: `(defun ghostel-mux-tree-toggle ()`
+- L810: `(defun ghostel-mux-tree-quit ()`
+- L820: `(defun ghostel-mux-tree-visit ()`
+- L835: `(defun ghostel-mux-tree-move ()`
+- L845: `(defun ghostel-mux-tree-auto-tile ()`
+- L853: `(defun ghostel-mux-tree-rename ()`
+- L871: `(defun ghostel-mux--tree-step (delta)`
+- L883: `(defun ghostel-mux-tree-up () (interactive) (ghostel-mux--tree-step -1))`
+- L884: `(defun ghostel-mux-tree-down () (interactive) (ghostel-mux--tree-step 1))`
+- L886: `(defun ghostel-mux--tree-event-node (position)`
+- L893: `(defun ghostel-mux-tree-mouse-select (event)`
+- L900: `(defun ghostel-mux-tree-mouse-visit (event)`
+- L904: `(defun ghostel-mux-tree-drag (event)`
+- L927: `(defun ghostel-mux--capture ()`
+- L940: `(defun ghostel-mux--restore (w)`
+- L970: `(defun ghostel-mux--sanitize-state (state fallback)`
+- L978: `(defun ghostel-mux--attach (s &optional w)`
+- L998: `(defun ghostel-mux (&optional name)`
+- L1010: `(defun ghostel-mux-new-session (&optional name)`
+- L1036: `(defun ghostel-mux--session-named (name)`
+- L1040: `(defun ghostel-mux--session-annotation (name)`
+- L1053: `(defun ghostel-mux--preview-restore (original)`
+- L1065: `(defun ghostel-mux--session-preview-state (frame original &optional resolve-window)`
+- L1092: `(defun ghostel-mux--pane-preview-state (frame original resolve-pane)`
+- L1104: `(defun ghostel-mux--read-with-preview (names prompt require-match category history`
+- L1140: `(defun ghostel-mux--read-session (prompt require-match)`
+- L1152: `(defun ghostel-mux-select-session ()`
+- L1160: `(defun ghostel-mux-detach ()`
+- L1176: `(defun ghostel-mux-rename-session (name)`
+- L1189: `(defun ghostel-mux-new-window ()`
+- L1202: `(defun ghostel-mux--switch-window (w)`
+- L1209: `(defun ghostel-mux-select-window ()`
+- L1234: `(defun ghostel-mux--cycle-window (delta)`
+- L1239: `(defun ghostel-mux-next-window () (interactive) (ghostel-mux--cycle-window 1))`
+- L1240: `(defun ghostel-mux-previous-window () (interactive) (ghostel-mux--cycle-window -1))`
+- L1241: `(defun ghostel-mux-last-window ()`
+- L1247: `(defun ghostel-mux-window-by-number (n)`
+- L1254: `(defun ghostel-mux-rename-window (name)`
+- L1262: `(defun ghostel-mux--create-terminal (name)`
+- L1274: `(defun ghostel-mux--new-pane (w)`
+- L1296: `(defun ghostel-mux--setup-pane ()`
+- L1309: `(defun ghostel-mux--unzoom (w)`
+- L1316: `(defun ghostel-mux--manual-split (side)`
+- L1336: `(defun ghostel-mux--split (side)`
+- L1341: `(defun ghostel-mux-split-right () (interactive) (ghostel-mux--split 'right))`
+- L1342: `(defun ghostel-mux-split-below () (interactive) (ghostel-mux--split 'below))`
+- L1344: `(defun ghostel-mux-zoom ()`
+- L1358: `(defun ghostel-mux--select-pane (p)`
+- L1373: `(defun ghostel-mux--cycle-pane (delta)`
+- L1378: `(defun ghostel-mux-next-pane ()`
+- L1381: `(defun ghostel-mux-previous-pane ()`
+- L1384: `(defun ghostel-mux-attach-pane-session ()`
+- L1391: `(defun ghostel-mux-last-pane ()`
+- L1396: `(defun ghostel-mux-select-pane ()`
+- L1418: `(defun ghostel-mux-select-buffer ()`
+- L1438: `(defun ghostel-mux--move (direction)`
+- L1444: `(defun ghostel-mux-pane-left () (interactive) (ghostel-mux--move 'left))`
+- L1445: `(defun ghostel-mux-pane-right () (interactive) (ghostel-mux--move 'right))`
+- L1446: `(defun ghostel-mux-pane-up () (interactive) (ghostel-mux--move 'up))`
+- L1447: `(defun ghostel-mux-pane-down () (interactive) (ghostel-mux--move 'down))`
+- L1448: `(defun ghostel-mux-rename-pane (name)`
+- L1455: `(defun ghostel-mux-layout (&optional layout)`
+- L1473: `(defun ghostel-mux-next-layout ()`
+- L1483: `(defun ghostel-mux-layout-tiled ()`
+- L1490: `(defun ghostel-mux-balance ()`
+- L1498: `(defun ghostel-mux-display-panes ()`
+- L1510: `(defun ghostel-mux-clock ()`
+- L1513: `(defun ghostel-mux--tile (win ps layout)`
+- L1533: `(defun ghostel-mux--tile-leaves (win count layout)`
+- L1547: `(defun ghostel-mux--confirm-close (ps description)`
+- L1551: `(defun ghostel-mux-kill-pane ()`
+- L1557: `(defun ghostel-mux-kill-window ()`
+- L1565: `(defun ghostel-mux-kill-session ()`
+- L1576: `(defun ghostel-mux--buffer-killed ()`
+- L1603: `(defun ghostel-mux--reconcile (s)`
+- L1623: `(defun ghostel-mux-copy-mode ()`
+- L1629: `(defun ghostel-mux-copy-selection ()`
+- L1634: `(defun ghostel-mux-copy-selection-and-exit ()`
+- L1640: `(defun ghostel-mux-clear-selection () (interactive) (deactivate-mark))`
+- L1641: `(defun ghostel-mux-copy-mouse-click (event)`
+- L1644: `(defun ghostel-mux-copy-mouse-word (event)`
+- L1650: `(defun ghostel-mux-copy-mouse-line (event)`
+- L1656: `(defun ghostel-mux-copy-exit ()`
+- L1658: `(defun ghostel-mux-export-scrollback (file)`
+- L1668: `(defun ghostel-mux--safe-filename (s)`
+- L1670: `(defun ghostel-mux--open-log (p)`
+- L1687: `(defun ghostel-mux--record-output (process output)`
+- L1694: `(defun ghostel-mux--flush-log (p)`
+- L1707: `(defun ghostel-mux-flush-logs ()`
+- L1709: `(defun ghostel-mux-open-log ()`
+- L1718: `(defun ghostel-mux--visible-panes (w &optional frame)`
+- L1735: `(defun ghostel-mux--sync-label (w)`
+- L1750: `(defun ghostel-mux-toggle-sync ()`
+- L1763: `(defun ghostel-mux--input-command (orig &rest args)`
+- L1769: `(defun ghostel-mux--dispatch (orig &rest args)`
+- L1800: `(defun ghostel-mux--output-filter (orig process output)`
+- L1804: `(defun ghostel-mux--local-only (orig &rest args)`
+- L1807: `(defun ghostel-mux--dispatch-write (orig term bytes)`
+- L1815: `(defun ghostel-mux-send-prefix ()`
+- L1835: `(defun ghostel-mux-paste ()`
+- L1838: `(defun ghostel-mux-yank-pop ()`
+- L1845: `(defun ghostel-mux--pane-selected-p (p)`
+- L1852: `(defun ghostel-mux--render (part)`
+- L1861: `(defun ghostel-mux--set-presentation ()`
+- L1866: `(defun ghostel-mux--sync-target-p (p)`
+- L1879: `(defun ghostel-mux--pane-role (p)`
+- L1890: `(defun ghostel-mux--scope-help (p)`
+- L1899: `(defun ghostel-mux--status (p)`
+- L1951: `(defun ghostel-mux--refresh (&rest _)`
+- L1984: `(defun ghostel-mux--tick ()`
+- L1989: `(defun ghostel-mux--frame-deleted (frame)`
+- L1995: `(defvar ghostel-mux-command-map (make-sparse-keymap))`
+- L2001: `(defun ghostel-mux--prefix-redisplay (&rest _)`
+- L2014: `(defun ghostel-mux-command ()`
+- L2025: `(defun ghostel-mux-help ()`
+- L2079: `(define-key ghostel-mux-command-map (kbd (car entry)) (cdr entry)))`
+- L2080: `(define-key ghostel-mux-command-map ghostel-mux-prefix-key #'ghostel-mux-send-prefix)`
+- L2083: `(define-key ghostel-mux-command-map (kbd "g")`
+- L2089: `(define-key ghostel-mux-command-map (number-to-string n) command)))`
+- L2102: `(define-key ghostel-mux-command-map (kbd (car entry)) command)))`
+- L2104: `(defvar ghostel-mux-pane-mode-map`
+- L2106: `(define-key map ghostel-mux-prefix-key #'ghostel-mux-prefix)`
+- L2107: `(define-key map [remap ghostel-yank-pop] #'ghostel-mux-yank-pop)`
+- L2109: `(defvar ghostel-mux-copy-map`
+- L2111: `(define-key map (kbd "M-w") #'ghostel-mux-copy-selection)`
+- L2112: `(define-key map (kbd "C-w") #'ghostel-mux-copy-selection-and-exit)`
+- L2113: `(define-key map (kbd "C-g") #'ghostel-mux-clear-selection)`
+- L2114: `(define-key map (kbd "q") #'ghostel-mux-copy-exit)`
+- L2115: `(define-key map [mouse-1] #'ghostel-mux-copy-mouse-click)`
+- L2116: `(define-key map [double-mouse-1] #'ghostel-mux-copy-mouse-word)`
+- L2117: `(define-key map [triple-mouse-1] #'ghostel-mux-copy-mouse-line)`
+- L2119: `(defvar ghostel-mux-terminal-map`
+- L2121: `(define-key map (kbd "C-c") #'ghostel-send-C-c)`
+- L2122: `(define-key map (kbd "C-z") #'ghostel-send-C-z)`
+- L2123: `(define-key map (kbd "C-d") #'ghostel-send-C-d)`
+- L2130: `(defun ghostel-mux-refresh ()`
+- L2134: `(define-minor-mode ghostel-mux-pane-mode`
+- L2159: `(defun ghostel-mux-doctor ()`
+- L2175: `(defun ghostel-mux--install ()`
+- L2199: `(defun ghostel-mux-unload-function ()`
+- L2240: `(provide 'ghostel-mux)`

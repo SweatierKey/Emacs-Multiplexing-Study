@@ -1,0 +1,42 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: coterm</h1>
+<p>Fonte: https://github.com/emacsmirror/coterm.git</p>
+<p>Revisione: <code>ce3206fbd7156685e2d2f3fbc39b3eea3334754b</code>.</p>
+<h2>coterm.el</h2>
+<ul>
+<li>L68: <code>;;     (define-key comint-mode-map (kbd "C-;") #'coterm-char-mode-cycle))</code></li>
+<li>L131: <code>(require 'term)</code></li>
+<li>L132: <code>(require 'compat)</code></li>
+<li>L139: <code>(defcustom coterm-term-name term-term-name</code></li>
+<li>L183: <code>(define-minor-mode coterm-mode</code></li>
+<li>L227: <code>(defvar coterm-char-mode-map</code></li>
+<li>L230: <code>(define-key map [remap term-char-mode] #'coterm-char-mode-cycle)</code></li>
+<li>L231: <code>(define-key map [remap term-line-mode] #'coterm-char-mode-cycle)</code></li>
+<li>L234: <code>(define-minor-mode coterm-char-mode</code></li>
+<li>L245: <code>(define-minor-mode coterm-scroll-snap-mode</code></li>
+<li>L268: <code>(defun coterm--scroll-snap ()</code></li>
+<li>L303: <code>(defun coterm-char-mode-cycle ()</code></li>
+<li>L326: <code>(define-minor-mode coterm-auto-char-mode</code></li>
+<li>L347: <code>(define-minor-mode coterm-auto-char-lighter-mode</code></li>
+<li>L365: <code>(defun coterm--auto-char ()</code></li>
+<li>L381: <code>(defun coterm--auto-char-alternative-sub-buffer ()</code></li>
+<li>L388: <code>(defun coterm--auto-char-less-prompt ()</code></li>
+<li>L429: <code>(defun coterm--auto-char-less-prompt-1 ()</code></li>
+<li>L447: <code>(defun coterm--auto-char-mpv-prompt ()</code></li>
+<li>L476: <code>(defun coterm--auto-char-mpv-prompt-1 ()</code></li>
+<li>L495: <code>(defun coterm--auto-char-not-eob ()</code></li>
+<li>L520: <code>(defun coterm--auto-char-leave-both ()</code></li>
+<li>L525: <code>(defun coterm--narrow-to-process-output (pmark)</code></li>
+<li>L643: <code>(defun coterm--t-row ()</code></li>
+<li>L656: <code>(defun coterm--t-col ()</code></li>
+<li>L673: <code>(defun coterm--init ()</code></li>
+<li>L697: <code>(defun coterm--t-reset-size (height width)</code></li>
+<li>L721: <code>(defun coterm--t-goto (row col)</code></li>
+<li>L732: <code>(defun coterm--t-apply-proc-filt (proc-filt process str)</code></li>
+<li>L752: <code>(defun coterm--t-switch-to-alternate-sub-buffer (proc-filt process set)</code></li>
+<li>L799: <code>(defun coterm--t-down-line (proc-filt process)</code></li>
+<li>L845: <code>(defun coterm--t-up-line (proc-filt process)</code></li>
+<li>L894: <code>(defun coterm--t-clear-screen ()</code></li>
+<li>L911: <code>(defun coterm--t-insert (proc-filt process str newlines)</code></li>
+<li>L959: <code>(defun coterm--t-emulate-terminal (proc-filt process string)</code></li>
+<li>L1347: <code>(provide 'coterm)</code></li>
+</ul></main></html>

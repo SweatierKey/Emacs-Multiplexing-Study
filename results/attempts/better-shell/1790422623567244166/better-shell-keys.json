@@ -1,0 +1,82 @@
+[
+  {
+    "at": 2.309,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.609,
+    "keys": "better-shell-shell",
+    "input_hex": "6265747465722d7368656c6c2d7368656c6c"
+  },
+  {
+    "at": 3.109,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.413,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 4.613,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.613,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 5.813,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.815,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 7.015,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.819,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 8.119,
+    "keys": "better-shell-shell",
+    "input_hex": "6265747465722d7368656c6c2d7368656c6c"
+  },
+  {
+    "at": 8.619,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.923,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 10.123,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.123,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 11.323,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

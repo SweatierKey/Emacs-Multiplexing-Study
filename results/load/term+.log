@@ -1,0 +1,4 @@
+{"status":"loaded","feature":"term+","library":"/home/admin/Emacs-Multiplexing-Study/sources/term+/term+.el","commands":["term+beginning-of-line","term+buffer-log-mode","term+control-command-list","term+edit","term+edit-as-expected","term+edit-at-point","term+edit-mode","term+edit-to-eol","term+end-of-line","term+get","term+hardcopy","term+input-mode","term+kill-input","term+kill-line","term+mark-or-copy","term+mouse-stop-record","term+pass-through","term+put","term+put-mode","term+put-mode-abort","term+put-multi","term+record-mode","term+send-esc","term+send-input-and-char-mode","term+shell-history","term+start-buffer-log","term+start-record","term+stop-buffer-log","term+stop-record","term+temporal-view-mode","term+toggle-buffer-log","term+toggle-record","term+yank"]}
+STDERR:
+Package cl is deprecated
+sources/term+/term+.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.

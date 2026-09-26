@@ -1,0 +1,23 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: esh-autosuggest</h1>
+<p>Fonte: https://github.com/dieggsy/esh-autosuggest.git</p>
+<p>Revisione: <code>8f44a045cf7855893965f4430e2a2ccfa23312d5</code>.</p>
+<h2>esh-autosuggest.el</h2>
+<ul>
+<li>L35: <code>(require 'company)</code></li>
+<li>L36: <code>(require 'cl-lib)</code></li>
+<li>L38: <code>(require 'em-prompt)</code></li>
+<li>L44: <code>(defcustom esh-autosuggest-delay 0</code></li>
+<li>L49: <code>(defcustom esh-autosuggest-use-company-map nil</code></li>
+<li>L58: <code>(defcustom esh-autosuggest-executables t</code></li>
+<li>L63: <code>(defvar esh-autosuggest-active-map</code></li>
+<li>L65: <code>(define-key keymap (kbd "&lt;right&gt;") 'company-complete-selection)</code></li>
+<li>L66: <code>(define-key keymap (kbd "C-f") 'company-complete-selection)</code></li>
+<li>L67: <code>(define-key keymap (kbd "M-&lt;right&gt;") 'esh-autosuggest-complete-word)</code></li>
+<li>L68: <code>(define-key keymap (kbd "M-f") 'esh-autosuggest-complete-word)</code></li>
+<li>L73: <code>(defun esh-autosuggest-candidates (prefix)</code></li>
+<li>L97: <code>(defun esh-autosuggest-complete-word ()</code></li>
+<li>L111: <code>(defun esh-autosuggest--prefix ()</code></li>
+<li>L127: <code>(defun esh-autosuggest (command &amp;optional arg &amp;rest _ignored)</code></li>
+<li>L138: <code>(define-minor-mode esh-autosuggest-mode</code></li>
+<li>L177: <code>(provide 'esh-autosuggest)</code></li>
+</ul></main></html>

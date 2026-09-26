@@ -1,0 +1,44 @@
+[
+  {
+    "id": "emux-jcguu95",
+    "url": "https://github.com/jcguu95/emux.git",
+    "status": "fetched",
+    "commit": "54ce53ea351db4d34e70cee6973214f116d8a659"
+  },
+  {
+    "id": "ob-tmux",
+    "url": "https://github.com/ahendriksen/ob-tmux.git",
+    "status": "fetched",
+    "commit": "cb4f151554a653f8f6b22ab8edbe3420d7f5e377"
+  },
+  {
+    "id": "eterm-fn",
+    "url": "https://github.com/oitofelix/eterm-fn.git",
+    "status": "fetched",
+    "commit": "b5d433fedc030046ea0e4a217f4dd3846a113fe4"
+  },
+  {
+    "id": "myterminal-controls",
+    "url": "https://github.com/emacsorphanage/myterminal-controls.git",
+    "status": "fetch-failed",
+    "error": "Cloning into '/home/admin/Emacs-Multiplexing-Study/sources/myterminal-controls'...\nremote: Repository not found.\nfatal: repository 'https://github.com/emacsorphanage/myterminal-controls.git/' not found\n"
+  },
+  {
+    "id": "choice-program-complete",
+    "url": "https://github.com/emacsorphanage/choice-program-complete.git",
+    "status": "fetch-failed",
+    "error": "Cloning into '/home/admin/Emacs-Multiplexing-Study/sources/choice-program-complete'...\nremote: Repository not found.\nfatal: repository 'https://github.com/emacsorphanage/choice-program-complete.git/' not found\n"
+  },
+  {
+    "id": "key-intercept",
+    "url": "https://github.com/tarao/key-intercept-el.git",
+    "status": "fetched",
+    "commit": "d9a60edb4ce893f2d3d94f242164fdcc62d43cf2"
+  },
+  {
+    "id": "alert",
+    "url": "https://github.com/jwiegley/alert.git",
+    "status": "fetched",
+    "commit": "31fc56855289d0846e73d7ca9b84b628aeac16a0"
+  }
+]

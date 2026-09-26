@@ -1,0 +1,122 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: popwin</h1>
+<p>Fonte: https://github.com/emacsorphanage/popwin.git</p>
+<p>Revisione: <code>b67254bef763ffa5ab781460bc47d6adf6f87127</code>.</p>
+<h2>misc/popwin-browse-kill-ring.el</h2>
+<ul>
+<li>L27: <code>(require 'popwin)</code></li>
+<li>L29: <code>(defun popwin-bkr:update-window-reference ()</code></li>
+<li>L34: <code>(provide 'popwin-browse-kill-ring)</code></li>
+</ul>
+<h2>misc/popwin-pp.el</h2>
+<ul>
+<li>L27: <code>(require 'popwin)</code></li>
+<li>L28: <code>(require 'pp)</code></li>
+<li>L41: <code>(provide 'popwin-pp)</code></li>
+</ul>
+<h2>misc/popwin-term.el</h2>
+<ul>
+<li>L27: <code>(require 'popwin)</code></li>
+<li>L29: <code>(defun popwin-term:term ()</code></li>
+<li>L37: <code>(provide 'popwin-term)</code></li>
+</ul>
+<h2>misc/popwin-w3m.el</h2>
+<ul>
+<li>L27: <code>(require 'popwin)</code></li>
+<li>L28: <code>(require 'browse-url)</code></li>
+<li>L29: <code>(require 'w3m)</code></li>
+<li>L31: <code>(defcustom popwin-w3m:w3m-special-display-config nil</code></li>
+<li>L39: <code>(defun popwin-w3m:w3m-browse-url (url &amp;optional new-session)</code></li>
+<li>L51: <code>(provide 'popwin-w3m)</code></li>
+</ul>
+<h2>misc/popwin-yatex.el</h2>
+<ul>
+<li>L31: <code>(require 'popwin)</code></li>
+<li>L32: <code>(require 'yatex)</code></li>
+<li>L39: <code>(provide 'popwin-yatex)</code></li>
+</ul>
+<h2>popwin.el</h2>
+<ul>
+<li>L58: <code>;;     (global-set-key (kbd "C-z") popwin:keymap)</code></li>
+<li>L75: <code>(defun popwin:listify (object)</code></li>
+<li>L79: <code>(defun popwin:subsitute-in-tree (map tree)</code></li>
+<li>L86: <code>(defun popwin:get-buffer (buffer-or-name &amp;optional if-not-found)</code></li>
+<li>L100: <code>(defun popwin:switch-to-buffer (buffer-or-name &amp;optional norecord)</code></li>
+<li>L108: <code>(defun popwin:select-window (window &amp;optional norecord)</code></li>
+<li>L114: <code>(defun popwin:buried-buffer-p (buffer)</code></li>
+<li>L118: <code>(defun popwin:window-point (window)</code></li>
+<li>L126: <code>(defun popwin:window-deletable-p (window)</code></li>
+<li>L133: <code>(defmacro popwin:save-selected-window (&amp;rest body)</code></li>
+<li>L137: <code>(defun popwin:minibuffer-window-selected-p ()</code></li>
+<li>L141: <code>(defun popwin:last-selected-window ()</code></li>
+<li>L157: <code>(defun popwin:dummy-buffer ()</code></li>
+<li>L163: <code>(defun popwin:kill-dummy-buffer ()</code></li>
+<li>L169: <code>(defun popwin:window-trailing-edge-adjustable-p (window)</code></li>
+<li>L176: <code>(cl-defun popwin:adjust-window-edges (window</code></li>
+<li>L194: <code>(defun popwin:window-config-tree-1 (node)</code></li>
+<li>L213: <code>(defun popwin:window-config-tree ()</code></li>
+<li>L220: <code>(defun popwin:replicate-window-config (window node hfactor vfactor)</code></li>
+<li>L246: <code>(defun popwin:restore-window-outline (node outline)</code></li>
+<li>L274: <code>(defun popwin:position-horizontal-p (position)</code></li>
+<li>L278: <code>(defun popwin:position-vertical-p (position)</code></li>
+<li>L282: <code>(defun popwin:create-popup-window-1 (window size position)</code></li>
+<li>L301: <code>(cl-defun popwin:create-popup-window (&amp;optional (size 15) (position 'bottom) (adjust t))</code></li>
+<li>L348: <code>(defcustom popwin:popup-window-position 'bottom</code></li>
+<li>L354: <code>(defcustom popwin:popup-window-width 30</code></li>
+<li>L362: <code>(defcustom popwin:popup-window-height 15</code></li>
+<li>L370: <code>(defcustom popwin:reuse-window 'current</code></li>
+<li>L377: <code>(defcustom popwin:adjust-other-windows t</code></li>
+<li>L413: <code>(defvar popwin:window-map nil</code></li>
+<li>L467: <code>(defun popwin:popup-window-live-p ()</code></li>
+<li>L471: <code>(cl-defun popwin:update-window-reference (symbol</code></li>
+<li>L483: <code>(defun popwin:start-close-popup-window-timer ()</code></li>
+<li>L491: <code>(defun popwin:stop-close-popup-window-timer ()</code></li>
+<li>L497: <code>(defun popwin:close-popup-window-timer ()</code></li>
+<li>L505: <code>(defun popwin:close-popup-window (&amp;optional keep-selected)</code></li>
+<li>L527: <code>(defun popwin:close-popup-window-if-necessary ()</code></li>
+<li>L624: <code>(cl-defun popwin:popup-buffer (buffer</code></li>
+<li>L682: <code>(defun popwin:popup-last-buffer (&amp;optional noselect)</code></li>
+<li>L694: <code>(defun popwin:select-popup-window ()</code></li>
+<li>L701: <code>(defun popwin:stick-popup-window ()</code></li>
+<li>L716: <code>(defmacro popwin:without-special-displaying (&amp;rest body)</code></li>
+<li>L728: <code>(defcustom popwin:special-display-config</code></li>
+<li>L828: <code>(defun popwin:apply-display-buffer (function buffer &amp;optional not-this-window)</code></li>
+<li>L853: <code>(defun popwin:original-display-buffer (buffer &amp;optional not-this-window)</code></li>
+<li>L857: <code>(defun popwin:original-pop-to-buffer (buffer &amp;optional not-this-window)</code></li>
+<li>L861: <code>(defun popwin:original-display-last-buffer ()</code></li>
+<li>L868: <code>(defun popwin:switch-to-last-buffer ()</code></li>
+<li>L877: <code>(defun popwin:original-pop-to-last-buffer ()</code></li>
+<li>L884: <code>(defun popwin:reuse-window-p (buffer-or-name not-this-window)</code></li>
+<li>L894: <code>(cl-defun popwin:match-config (buffer)</code></li>
+<li>L912: <code>(cl-defun popwin:display-buffer-1 (buffer-or-name</code></li>
+<li>L945: <code>(defun popwin:display-buffer (buffer-or-name &amp;optional not-this-window)</code></li>
+<li>L962: <code>(defun popwin:special-display-popup-window (buffer &amp;rest ignore)</code></li>
+<li>L966: <code>(cl-defun popwin:pop-to-buffer-1 (buffer</code></li>
+<li>L978: <code>(defun popwin:pop-to-buffer (buffer &amp;optional other-window norecord)</code></li>
+<li>L993: <code>(defcustom popwin:universal-display-config '(t)</code></li>
+<li>L1000: <code>(defun popwin:universal-display ()</code></li>
+<li>L1015: <code>(defun popwin:one-window ()</code></li>
+<li>L1023: <code>(defun popwin:popup-buffer-tail (&amp;rest same-as-popwin:popup-buffer)</code></li>
+<li>L1031: <code>(defun popwin:find-file (filename &amp;optional wildcards)</code></li>
+<li>L1040: <code>(defun popwin:find-file-tail (file &amp;optional wildcard)</code></li>
+<li>L1049: <code>(defun popwin:messages ()</code></li>
+<li>L1059: <code>(defun popwin:display-buffer-condition (buffer action)</code></li>
+<li>L1063: <code>(defun popwin:display-buffer-action (buffer alist)</code></li>
+<li>L1069: <code>(define-minor-mode popwin-mode</code></li>
+<li>L1089: <code>(defvar popwin:keymap</code></li>
+<li>L1091: <code>(define-key map "b"    'popwin:popup-buffer)</code></li>
+<li>L1092: <code>(define-key map "l"    'popwin:popup-last-buffer)</code></li>
+<li>L1093: <code>(define-key map "o"    'popwin:display-buffer)</code></li>
+<li>L1094: <code>(define-key map "\C-b" 'popwin:switch-to-last-buffer)</code></li>
+<li>L1095: <code>(define-key map "\C-p" 'popwin:original-pop-to-last-buffer)</code></li>
+<li>L1096: <code>(define-key map "\C-o" 'popwin:original-display-last-buffer)</code></li>
+<li>L1097: <code>(define-key map " "    'popwin:select-popup-window)</code></li>
+<li>L1098: <code>(define-key map "s"    'popwin:stick-popup-window)</code></li>
+<li>L1099: <code>(define-key map "0"    'popwin:close-popup-window)</code></li>
+<li>L1100: <code>(define-key map "f"    'popwin:find-file)</code></li>
+<li>L1101: <code>(define-key map "\C-f" 'popwin:find-file)</code></li>
+<li>L1102: <code>(define-key map "e"    'popwin:messages)</code></li>
+<li>L1103: <code>(define-key map "\C-u" 'popwin:universal-display)</code></li>
+<li>L1104: <code>(define-key map "1"    'popwin:one-window)</code></li>
+<li>L1108: <code>\(global-set-key (kbd \"C-z\") popwin:keymap\)</code></li>
+<li>L1128: <code>(provide 'popwin)</code></li>
+</ul></main></html>

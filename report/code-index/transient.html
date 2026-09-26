@@ -1,0 +1,285 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: transient</h1>
+<p>Fonte: https://github.com/magit/transient.git</p>
+<p>Revisione: <code>6f69527a4d39f1244fb86a55657f70679d8577e0</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>lisp/transient.el</h2>
+<ul>
+<li>L50: <code>(require 'cl-lib)</code></li>
+<li>L51: <code>(require 'compat)</code></li>
+<li>L52: <code>(require 'cond-let)</code></li>
+<li>L53: <code>(require 'eieio)</code></li>
+<li>L54: <code>(require 'edmacro)</code></li>
+<li>L55: <code>(require 'format-spec)</code></li>
+<li>L56: <code>(require 'llama)</code></li>
+<li>L57: <code>(require 'pcase)</code></li>
+<li>L58: <code>(require 'pp)</code></li>
+<li>L64: <code>(require 'seq)</code></li>
+<li>L115: <code>(defmacro transient--with-emergency-exit (id &amp;rest body)</code></li>
+<li>L132: <code>(defun transient--exit-and-debug (&amp;rest args)</code></li>
+<li>L142: <code>(defcustom transient-show-menu t</code></li>
+<li>L166: <code>(defcustom transient-enable-menu-navigation 'verbose</code></li>
+<li>L205: <code>(defcustom transient-navigate-to-group-descriptions nil</code></li>
+<li>L219: <code>(defcustom transient-describe-menu nil</code></li>
+<li>L234: <code>(defcustom transient-select-menu-window nil</code></li>
+<li>L245: <code>(defcustom transient-display-buffer-action</code></li>
+<li>L302: <code>(defcustom transient-minimal-frame-width 83</code></li>
+<li>L312: <code>(defcustom transient-mode-line-format 'line</code></li>
+<li>L343: <code>(defcustom transient-show-common-commands nil</code></li>
+<li>L358: <code>(defcustom transient-show-during-minibuffer-read nil</code></li>
+<li>L403: <code>(defcustom transient-show-docstring-format "%s"</code></li>
+<li>L417: <code>(defcustom transient-read-with-initial-input nil</code></li>
+<li>L423: <code>(defcustom transient-prefer-reading-value nil</code></li>
+<li>L445: <code>(defcustom transient-highlight-mismatched-keys nil</code></li>
+<li>L464: <code>(defcustom transient-highlight-higher-levels nil</code></li>
+<li>L478: <code>(defcustom transient-substitute-key-function nil</code></li>
+<li>L503: <code>(defcustom transient-semantic-coloring t</code></li>
+<li>L514: <code>(defcustom transient-detect-key-conflicts nil</code></li>
+<li>L524: <code>(defcustom transient-error-on-insert-failure nil</code></li>
+<li>L534: <code>(defcustom transient-align-variable-pitch nil</code></li>
+<li>L551: <code>(defcustom transient-force-fixed-pitch nil</code></li>
+<li>L564: <code>(defcustom transient-force-single-column nil</code></li>
+<li>L575: <code>(defcustom transient-use-accessible-values nil</code></li>
+<li>L601: <code>(defcustom transient-use-accessible-formats nil</code></li>
+<li>L635: <code>(defcustom transient-default-level transient--default-prefix-level</code></li>
+<li>L668: <code>(defcustom transient-levels-file</code></li>
+<li>L675: <code>(defcustom transient-values-file</code></li>
+<li>L682: <code>(defcustom transient-history-file</code></li>
+<li>L689: <code>(defcustom transient-history-limit 10</code></li>
+<li>L695: <code>(defcustom transient-save-history t</code></li>
+<li>L853: <code>(defun transient--read-file-contents (file)</code></li>
+<li>L860: <code>(defun transient--pp-to-file (value file)</code></li>
+<li>L878: <code>(defun transient-save-values ()</code></li>
+<li>L887: <code>(defun transient-save-levels ()</code></li>
+<li>L897: <code>(defun transient-save-history ()</code></li>
+<li>L907: <code>(defun transient-maybe-save-history ()</code></li>
+<li>L1182: <code>(defmacro transient-define-prefix (name arglist &amp;rest args)</code></li>
+<li>L1249: <code>(defmacro transient-define-group (name &amp;rest groups)</code></li>
+<li>L1262: <code>(defmacro transient-define-suffix (name arglist &amp;rest args)</code></li>
+<li>L1300: <code>(defmacro transient-augment-suffix (name &amp;rest args)</code></li>
+<li>L1314: <code>(defmacro transient-define-infix (name arglist &amp;rest args)</code></li>
+<li>L1371: <code>(defun transient--default-infix-command ()</code></li>
+<li>L1461: <code>(defun transient--parse-child (prefix spec)</code></li>
+<li>L1470: <code>(defun transient--parse-group (prefix spec)</code></li>
+<li>L1501: <code>(defun transient--parse-suffix (prefix spec)</code></li>
+<li>L1607: <code>(defun transient--derive-shortarg (arg)</code></li>
+<li>L1612: <code>(defun transient-command-completion-not-suffix-only-p (symbol _buffer)</code></li>
+<li>L1631: <code>(defun transient--set-layout (prefix layout)</code></li>
+<li>L1634: <code>(defun transient--get-layout (prefix)</code></li>
+<li>L1685: <code>(defun transient--get-children (prefix)</code></li>
+<li>L1688: <code>(defun transient-parse-suffix (prefix suffix)</code></li>
+<li>L1698: <code>(defun transient-parse-suffixes (prefix suffixes)</code></li>
+<li>L1710: <code>(defun transient--insert-suffix (prefix loc suffix action &amp;optional keep-other)</code></li>
+<li>L1755: <code>(defun transient-insert-suffix (prefix loc suffix &amp;optional keep-other)</code></li>
+<li>L1772: <code>(defun transient-append-suffix (prefix loc suffix &amp;optional keep-other)</code></li>
+<li>L1789: <code>(defun transient-replace-suffix (prefix loc suffix)</code></li>
+<li>L1802: <code>(defun transient-inline-group (prefix group)</code></li>
+<li>L1818: <code>(defun transient-remove-suffix (prefix loc)</code></li>
+<li>L1830: <code>(defun transient-suffix-put (prefix loc prop value)</code></li>
+<li>L1846: <code>(defun transient-get-suffix (prefix loc)</code></li>
+<li>L1856: <code>(defun transient--locate-child (group loc)</code></li>
+<li>L1876: <code>(defun transient--match-child (group loc child)</code></li>
+<li>L1895: <code>(defun transient--nth (n list)</code></li>
+<li>L1898: <code>(defun transient--suffix-key (spec)</code></li>
+<li>L1904: <code>(defun transient--command-key (cmd)</code></li>
+<li>L1913: <code>(defun transient-set-default-level (command level)</code></li>
+<li>L2039: <code>(defun transient-active-prefix (&amp;optional prefixes)</code></li>
+<li>L2064: <code>(defun transient-prefix-object ()</code></li>
+<li>L2089: <code>(defun transient-suffix-object (&amp;optional command)</code></li>
+<li>L2170: <code>(defun transient--suffix-prototype (command)</code></li>
+<li>L2177: <code>(defvar-keymap transient-base-map</code></li>
+<li>L2201: <code>(defvar-keymap transient-map</code></li>
+<li>L2218: <code>(defvar-keymap transient-edit-map</code></li>
+<li>L2224: <code>(defvar-keymap transient-sticky-map</code></li>
+<li>L2261: <code>(defun transient--init-common-commands ()</code></li>
+<li>L2277: <code>(defcustom transient-common-command-prefix "C-x"</code></li>
+<li>L2299: <code>(defvar-keymap transient-popup-navigation-map</code></li>
+<li>L2308: <code>(defvar-keymap transient-button-map</code></li>
+<li>L2314: <code>(defvar-keymap transient-resume-mode-map</code></li>
+<li>L2324: <code>(defvar-keymap transient-predicate-map</code></li>
+<li>L2391: <code>(defvar transient--transient-map nil)</code></li>
+<li>L2392: <code>(defvar transient--predicate-map nil)</code></li>
+<li>L2393: <code>(defvar transient--redisplay-map nil)</code></li>
+<li>L2396: <code>(defun transient--push-keymap (var)</code></li>
+<li>L2403: <code>(defun transient--pop-keymap (var)</code></li>
+<li>L2410: <code>(defun transient--make-transient-map ()</code></li>
+<li>L2413: <code>(keymap-set map (concat transient-common-command-prefix " l")</code></li>
+<li>L2430: <code>(define-key map kbd cmd))</code></li>
+<li>L2437: <code>(define-key map kbd cmd))</code></li>
+<li>L2441: <code>((define-key map kbd cmd))))))</code></li>
+<li>L2442: <code>(when$ (keymap-lookup map "-") (keymap-set map "&lt;kp-subtract&gt;" $))</code></li>
+<li>L2443: <code>(when$ (keymap-lookup map "=") (keymap-set map "&lt;kp-equal&gt;" $))</code></li>
+<li>L2444: <code>(when$ (keymap-lookup map "+") (keymap-set map "&lt;kp-add&gt;" $))</code></li>
+<li>L2454: <code>(defun transient--make-predicate-map ()</code></li>
+<li>L2466: <code>(define-key map [handle-switch-frame] #'transient--do-suspend))</code></li>
+<li>L2502: <code>(define-key map (vconcat (oref obj key) id) pre))</code></li>
+<li>L2503: <code>(define-key map id pre)))))</code></li>
+<li>L2506: <code>(defun transient--make-redisplay-map ()</code></li>
+<li>L2522: <code>(define-key topmap (vconcat transient--redisplay-key) submap)</code></li>
+<li>L2529: <code>(define-key topmap (vconcat transient--redisplay-key (list key))</code></li>
+<li>L2541: <code>(defun transient-setup (&amp;optional name layout edit &amp;rest params)</code></li>
+<li>L2596: <code>(defun transient--env-apply (fn &amp;optional prefix)</code></li>
+<li>L2601: <code>(defun transient--init-transient (&amp;optional name layout params)</code></li>
+<li>L2610: <code>(defun transient--init-keymaps ()</code></li>
+<li>L2615: <code>(defun transient--init-objects (&amp;optional name layout params)</code></li>
+<li>L2626: <code>(defun transient--init-prefix (name &amp;optional params)</code></li>
+<li>L2638: <code>(defun transient--init-suffixes (name)</code></li>
+<li>L2646: <code>(defun transient--flatten-suffixes (layout)</code></li>
+<li>L2656: <code>(defun transient--init-child (levels spec parent)</code></li>
+<li>L2664: <code>(defun transient--init-group (levels spec parent)</code></li>
+<li>L2680: <code>(defun transient--init-suffix (levels spec parent)</code></li>
+<li>L2742: <code>(defun transient--use-level-p (level &amp;optional edit)</code></li>
+<li>L2748: <code>(defun transient--use-suffix-p (obj)</code></li>
+<li>L2762: <code>(defun transient--inapt-suffix-p (obj)</code></li>
+<li>L2778: <code>(defun transient--do-suffix-p</code></li>
+<li>L2802: <code>(defun transient--suffix-predicate (spec)</code></li>
+<li>L2816: <code>(defun transient--load-command-if-autoload (cmd)</code></li>
+<li>L2825: <code>(defun transient--setup-transient ()</code></li>
+<li>L2839: <code>(defun transient--refresh-transient ()</code></li>
+<li>L2852: <code>(defun transient--pre-command ()</code></li>
+<li>L2892: <code>(defun transient--pre-exit ()</code></li>
+<li>L2917: <code>(defun transient--export ()</code></li>
+<li>L2924: <code>(defun transient--suspend-override (&amp;optional nohide)</code></li>
+<li>L2948: <code>(defun transient--resume-override (&amp;optional _ignore)</code></li>
+<li>L2957: <code>(defun transient--recursive-edit (fn)</code></li>
+<li>L2980: <code>(defmacro transient--with-suspended-override (&amp;rest body)</code></li>
+<li>L3007: <code>(defun transient--wrap-command ()</code></li>
+<li>L3104: <code>(defun transient--advise-this-command (advice)</code></li>
+<li>L3117: <code>(defun transient--premature-post-command ()</code></li>
+<li>L3131: <code>(defun transient--post-command ()</code></li>
+<li>L3163: <code>(defun transient--post-exit (&amp;optional command)</code></li>
+<li>L3205: <code>(defun transient--stack-push ()</code></li>
+<li>L3215: <code>(defun transient--stack-pop ()</code></li>
+<li>L3220: <code>(defun transient--stack-zap ()</code></li>
+<li>L3224: <code>(defun transient--redisplay ()</code></li>
+<li>L3246: <code>(defun transient--timer-start ()</code></li>
+<li>L3255: <code>(defun transient--timer-cancel ()</code></li>
+<li>L3260: <code>(defun transient--debug (arg &amp;rest args)</code></li>
+<li>L3284: <code>(defun transient--emergency-exit (&amp;optional id)</code></li>
+<li>L3297: <code>(defun transient--quit-kludge (action)</code></li>
+<li>L3325: <code>(defun transient--call-pre-command ()</code></li>
+<li>L3340: <code>(defun transient--get-pre-command (&amp;optional cmd key enforce-type)</code></li>
+<li>L3357: <code>(defun transient--resolve-pre-command (pre &amp;optional resolve-boolean correct)</code></li>
+<li>L3371: <code>(defun transient--do-stay ()</code></li>
+<li>L3376: <code>(defun transient--do-noop ()</code></li>
+<li>L3382: <code>(defun transient--do-warn ()</code></li>
+<li>L3388: <code>(defun transient--do-warn-inapt ()</code></li>
+<li>L3393: <code>(defun transient--do-call ()</code></li>
+<li>L3398: <code>(defun transient--do-return ()</code></li>
+<li>L3406: <code>(defun transient--do-exit ()</code></li>
+<li>L3412: <code>(defun transient--do-leave ()</code></li>
+<li>L3417: <code>(defun transient--do-push-button ()</code></li>
+<li>L3432: <code>(defun transient--do-recurse ()</code></li>
+<li>L3437: <code>(defun transient--do-stack ()</code></li>
+<li>L3445: <code>(defun transient--do-replace ()</code></li>
+<li>L3452: <code>(defun transient--do-suspend ()</code></li>
+<li>L3461: <code>(defun transient--do-quit-one ()</code></li>
+<li>L3474: <code>(defun transient--do-quit-all ()</code></li>
+<li>L3479: <code>(defun transient--do-move ()</code></li>
+<li>L3487: <code>(defun transient--do-scroll ()</code></li>
+<li>L3491: <code>(defun transient--do-mouse ()</code></li>
+<li>L3495: <code>(defun transient--do-minus ()</code></li>
+<li>L3525: <code>(defun transient-noop ()</code></li>
+<li>L3529: <code>(defun transient-undefined ()</code></li>
+<li>L3534: <code>(defun transient-inapt ()</code></li>
+<li>L3539: <code>(defun transient--invalid (msg)</code></li>
+<li>L3564: <code>(defun transient-inhibit-move ()</code></li>
+<li>L3573: <code>(defun transient-quit-all ()</code></li>
+<li>L3577: <code>(defun transient-quit-one ()</code></li>
+<li>L3581: <code>(defun transient-quit-seq ()</code></li>
+<li>L3585: <code>(defun transient-update ()</code></li>
+<li>L3590: <code>(defun transient-show ()</code></li>
+<li>L3595: <code>(defun transient-push-button ()</code></li>
+<li>L3601: <code>(defun transient-suspend ()</code></li>
+<li>L3607: <code>(define-minor-mode transient-resume-mode</code></li>
+<li>L3610: <code>(defun transient-resume ()</code></li>
+<li>L3631: <code>(defun transient-help (&amp;optional interactivep)</code></li>
+<li>L3670: <code>(defun transient-set-level (&amp;optional command level)</code></li>
+<li>L3728: <code>(defun transient-set ()</code></li>
+<li>L3736: <code>(defun transient-save ()</code></li>
+<li>L3744: <code>(defun transient-reset ()</code></li>
+<li>L3749: <code>(defun transient-history-next ()</code></li>
+<li>L3761: <code>(defun transient-history-prev ()</code></li>
+<li>L3808: <code>(defun transient-toggle-debug ()</code></li>
+<li>L3815: <code>(defun transient-copy-menu-text ()</code></li>
+<li>L3909: <code>(defun transient--extract-value (obj)</code></li>
+<li>L4072: <code>(defun transient-read-file (prompt _initial-input _history)</code></li>
+<li>L4076: <code>(defun transient-read-existing-file (prompt _initial-input _history)</code></li>
+<li>L4080: <code>(defun transient-read-directory (prompt _initial-input _history)</code></li>
+<li>L4084: <code>(defun transient-read-existing-directory (prompt _initial-input _history)</code></li>
+<li>L4088: <code>(defun transient-read-number-N0 (prompt initial-input history)</code></li>
+<li>L4092: <code>(defun transient-read-number-N+ (prompt initial-input history)</code></li>
+<li>L4096: <code>(defun transient--read-number-N (prompt initial-input history include-zero)</code></li>
+<li>L4111: <code>(defun transient-read-date (prompt default-time _history)</code></li>
+<li>L4206: <code>(defun transient-prefix-set (value)</code></li>
+<li>L4222: <code>(defun transient--maybe-set-value (event)</code></li>
+<li>L4268: <code>(defun transient-args (prefix)</code></li>
+<li>L4324: <code>(defun transient-suffixes (prefix)</code></li>
+<li>L4335: <code>(defun transient-get-value ()</code></li>
+<li>L4349: <code>(defun transient--get-extended-value ()</code></li>
+<li>L4359: <code>(defun transient--get-savable-value ()</code></li>
+<li>L4371: <code>(defun transient--get-wrapped-value (obj)</code></li>
+<li>L4434: <code>(defun transient-arg-value (arg args)</code></li>
+<li>L4456: <code>(defun transient-init-return (obj)</code></li>
+<li>L4491: <code>(defun transient-scope (&amp;optional prefixes classes)</code></li>
+<li>L4576: <code>(defun transient--show-hint ()</code></li>
+<li>L4580: <code>(defun transient--show ()</code></li>
+<li>L4611: <code>(defun transient--display-action ()</code></li>
+<li>L4630: <code>(defun transient--fit-window-to-buffer (window)</code></li>
+<li>L4650: <code>(defun transient--delete-window ()</code></li>
+<li>L4674: <code>(defun transient--preserve-window-p (&amp;optional nohide)</code></li>
+<li>L4686: <code>(defun transient--format-hint ()</code></li>
+<li>L4714: <code>(defun transient--insert-menu (setup)</code></li>
+<li>L4753: <code>(defun transient--mode-line-format ()</code></li>
+<li>L4758: <code>(defun transient--separator-line ()</code></li>
+<li>L4767: <code>(defun transient--prefix-color ()</code></li>
+<li>L4771: <code>(defmacro transient-with-shadowed-buffer (&amp;rest body)</code></li>
+<li>L4777: <code>(defun transient--insert-groups ()</code></li>
+<li>L4791: <code>(defun transient--active-suffixes (group)</code></li>
+<li>L5126: <code>(defun transient-argument-face (obj)</code></li>
+<li>L5133: <code>(cl-defun transient-value-face (obj &amp;optional (active nil sactive))</code></li>
+<li>L5166: <code>(defun transient--add-face (string face &amp;optional append beg end)</code></li>
+<li>L5171: <code>(defun transient--key-face (cmd key &amp;optional enforce-type)</code></li>
+<li>L5179: <code>(defun transient--key-unreachable-p (obj)</code></li>
+<li>L5187: <code>(defun transient--lookup-key (keymap key)</code></li>
+<li>L5191: <code>(defun transient--maybe-pad-keys (group &amp;optional parent)</code></li>
+<li>L5217: <code>(defun transient--column-stops (columns)</code></li>
+<li>L5234: <code>(defun transient--align-to (stop)</code></li>
+<li>L5241: <code>(defun transient-command-summary-or-name (obj)</code></li>
+<li>L5302: <code>(defmacro transient-with-help-window (&amp;rest body)</code></li>
+<li>L5313: <code>(defun transient--display-help (helper target)</code></li>
+<li>L5328: <code>(defun transient--describe-function (fn)</code></li>
+<li>L5338: <code>(defun transient--show-manual (manual)</code></li>
+<li>L5341: <code>(defun transient--show-manpage (manpage &amp;optional argument)</code></li>
+<li>L5352: <code>(defun transient--goto-argument-description (arg)</code></li>
+<li>L5396: <code>(defun transient--insert-help ()</code></li>
+<li>L5477: <code>(defun transient-scroll-up (&amp;optional arg)</code></li>
+<li>L5485: <code>(defun transient-scroll-down (&amp;optional arg)</code></li>
+<li>L5493: <code>(defun transient-backward-button (n)</code></li>
+<li>L5501: <code>(defun transient-forward-button (n)</code></li>
+<li>L5509: <code>(defun transient--button-move-echo ()</code></li>
+<li>L5515: <code>(defun transient--button-help-echo (win buf pos)</code></li>
+<li>L5525: <code>(defun transient-buttonize (string object)</code></li>
+<li>L5530: <code>(defun transient--goto-button (object)</code></li>
+<li>L5543: <code>(defun transient--match-button (object)</code></li>
+<li>L5562: <code>(defvar-keymap transient--isearch-mode-map</code></li>
+<li>L5569: <code>(defun transient-isearch-backward (&amp;optional regexp-p)</code></li>
+<li>L5578: <code>(defun transient-isearch-forward (&amp;optional regexp-p)</code></li>
+<li>L5587: <code>(defun transient-isearch-exit ()</code></li>
+<li>L5593: <code>(defun transient-isearch-cancel ()</code></li>
+<li>L5599: <code>(defun transient-isearch-abort ()</code></li>
+<li>L5610: <code>(defun transient--isearch-setup ()</code></li>
+<li>L5614: <code>(defun transient--isearch-exit ()</code></li>
+<li>L5620: <code>(defun transient--edebug-command-p ()</code></li>
+<li>L5639: <code>(defun transient--suspend-text-conversion-style ()</code></li>
+<li>L5653: <code>(defun transient--suspend-which-key-mode ()</code></li>
+<li>L5658: <code>(defun transient--resume-which-key-mode ()</code></li>
+<li>L5663: <code>(defun transient-bind-q-to-quit ()</code></li>
+<li>L5681: <code>(keymap-set transient-base-map   "q" #'transient-quit-one)</code></li>
+<li>L5682: <code>(keymap-set transient-sticky-map "q" #'transient-quit-seq)</code></li>
+<li>L5686: <code>(defun transient-rebind-quit-commands (obj)</code></li>
+<li>L5693: <code>(defun transient--force-fixed-pitch ()</code></li>
+<li>L5698: <code>(defun transient--seq-reductions-from (function sequence initial-value)</code></li>
+<li>L5704: <code>(defun transient--mapn (function &amp;rest lists)</code></li>
+<li>L5764: <code>(defun transient-lisp-variable--reader (prompt initial-input _history)</code></li>
+<li>L5810: <code>(provide 'transient)</code></li>
+</ul></main></html>

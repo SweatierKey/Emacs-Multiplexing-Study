@@ -1,0 +1,166 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>eterm-256color</h1>
+<p>Categoria: <strong>estensione</strong>. <a href="https://git.sr.ht/~dieggsy/eterm-256color">Sorgente upstream</a>. Revisione: <code>868eeaa958de1deab690fe8ac8f5477452ccdb6a</code>.</p>
+<h2>Funzionamento</h2>
+<p>Terminfo e hook per colori estesi in term.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>Richiede compilazione/installazione della terminfo; dopo preparazione e TERMINFO_DIRS il test SSH/pager è riuscito. Il tentativo iniziale fermo alla compilazione resta archiviato. Non un altro emulatore.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/eterm-256color.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/eterm-256color.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario eterm-256color: passed</h3>
+<p><a href="../../results/eterm-256color.json">Esito e snapshot</a> · <a href="../../results/eterm-256color-keys.json">Traccia dei tasti</a> · <a href="../../recordings/eterm-256color.cast">Registrazione asciinema</a> · <a href="../../index.html#eterm-256color">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>ansi-term</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.21</td>
+<td><code>b''</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.71</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.91</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.91</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.12</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.12</td>
+<td><code>C-c C-j: term line mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.53</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.83</td>
+<td><code>ansi-term</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.33</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.13</td>
+<td><code>b''</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.33</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.64</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.84</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.84</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.04</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.04</td>
+<td><code>C-c C-j: term line mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.44</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.84</td>
+<td><code>*ansi-term*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.24</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.64</td>
+<td><code>C-c C-k: term char mode</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.04</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.24</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.95</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.14</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.85</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">19.35</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">19.55</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

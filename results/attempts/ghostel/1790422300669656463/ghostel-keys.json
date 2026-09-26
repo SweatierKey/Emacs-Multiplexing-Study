@@ -1,0 +1,122 @@
+[
+  {
+    "at": 2.338,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.638,
+    "keys": "ghostel",
+    "input_hex": "67686f7374656c"
+  },
+  {
+    "at": 3.138,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.441,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 4.641,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.642,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 5.842,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.844,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 7.044,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.845,
+    "keys": "C-u",
+    "input_hex": "15"
+  },
+  {
+    "at": 8.246,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 8.546,
+    "keys": "ghostel",
+    "input_hex": "67686f7374656c"
+  },
+  {
+    "at": 9.046,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 10.349,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 10.549,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.549,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 11.749,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.752,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 13.153,
+    "keys": "*ghostel*",
+    "input_hex": "2a67686f7374656c2a"
+  },
+  {
+    "at": 13.553,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 13.956,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 14.156,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 14.859,
+    "keys": "less service.log",
+    "input_hex": "6c65737320736572766963652e6c6f67"
+  },
+  {
+    "at": 15.059,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

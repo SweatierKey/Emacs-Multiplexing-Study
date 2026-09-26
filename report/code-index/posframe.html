@@ -1,0 +1,75 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: posframe</h1>
+<p>Fonte: https://github.com/tumashu/posframe.git</p>
+<p>Revisione: <code>bdabcec96f127b2daa2f8bf988a71ec146e301d5</code>.</p>
+<h2>posframe-benchmark.el</h2>
+<ul>
+<li>L30: <code>(require 'cl-lib)</code></li>
+<li>L31: <code>(require 'posframe)</code></li>
+<li>L70: <code>(defun posframe-benchmark ()</code></li>
+<li>L81: <code>(provide 'posframe-benchmark)</code></li>
+</ul>
+<h2>posframe.el</h2>
+<ul>
+<li>L41: <code>(require 'cl-lib)</code></li>
+<li>L48: <code>(defcustom posframe-inhibit-double-buffering nil</code></li>
+<li>L53: <code>(defcustom posframe-mouse-banish-function #'posframe-mouse-banish-default</code></li>
+<li>L61: <code>(defcustom posframe-text-scale-factor-function #'posframe-text-scale-factor-default</code></li>
+<li>L132: <code>(defun posframe-workable-p ()</code></li>
+<li>L142: <code>(cl-defun posframe-show (buffer-or-name</code></li>
+<li>L591: <code>(defun posframe--get-font-height (position)</code></li>
+<li>L608: <code>(cl-defun posframe--create-posframe (buffer-or-name</code></li>
+<li>L814: <code>(defun posframe--find-existing-posframe (buffer &amp;optional last-args)</code></li>
+<li>L836: <code>(defun posframe-delete-frame (buffer-or-name)</code></li>
+<li>L856: <code>(defun posframe--insert-string (string no-properties)</code></li>
+<li>L869: <code>(defun posframe--set-frame-size (size-info)</code></li>
+<li>L893: <code>(defun posframe--set-frame-size-and-position (size-info position parent-frame-width parent-frame-height)</code></li>
+<li>L909: <code>(defun posframe--fit-frame-to-buffer (posframe max-height min-height max-width min-width only)</code></li>
+<li>L923: <code>(defun posframe--run-refresh-timer (repeat size-info)</code></li>
+<li>L944: <code>(defun posframe-run-poshandler (info)</code></li>
+<li>L960: <code>(defun posframe--get-valid-poshandler (info)</code></li>
+<li>L972: <code>(defun posframe--calculate-new-position (info position ref-position)</code></li>
+<li>L989: <code>(defun posframe--set-frame-position (posframe position</code></li>
+<li>L1010: <code>(defun posframe--save-new-posframe-position (posframe</code></li>
+<li>L1021: <code>(defun posframe--make-frame-visible (posframe)</code></li>
+<li>L1028: <code>(defun posframe--posframe-need-redraw-p (posframe)</code></li>
+<li>L1036: <code>(defun posframe--run-timeout-timer (posframe secs)</code></li>
+<li>L1045: <code>(defun posframe--make-frame-invisible (frame)</code></li>
+<li>L1051: <code>(defun posframe-mouse-banish-simple (info)</code></li>
+<li>L1069: <code>(defun posframe-mouse-banish-default (info)</code></li>
+<li>L1097: <code>(defun posframe-refresh (buffer-or-name)</code></li>
+<li>L1128: <code>(defun posframe-hide-all ()</code></li>
+<li>L1135: <code>(defun posframe-hide (buffer-or-name)</code></li>
+<li>L1150: <code>(defun posframe-hidehandler-daemon ()</code></li>
+<li>L1157: <code>(defun posframe-hidehandler-daemon-function ()</code></li>
+<li>L1173: <code>(defun posframe-hidehandler-when-buffer-switch (info)</code></li>
+<li>L1184: <code>(defun posframe-delete-all ()</code></li>
+<li>L1196: <code>(defun posframe--kill-buffer (buffer-or-name)</code></li>
+<li>L1202: <code>(defun posframe-delete (buffer-or-name)</code></li>
+<li>L1211: <code>(defun posframe-funcall (buffer-or-name function &amp;rest arguments)</code></li>
+<li>L1221: <code>(defun posframe-poshandler-absolute-x-y (info)</code></li>
+<li>L1235: <code>(defun posframe-poshandler-point-1 (info &amp;optional font-height upward)</code></li>
+<li>L1275: <code>(defun posframe-poshandler-point-bottom-left-corner (info)</code></li>
+<li>L1285: <code>(defun posframe-poshandler-point-window-center (info)</code></li>
+<li>L1298: <code>(defun posframe-poshandler-point-frame-center (info)</code></li>
+<li>L1311: <code>(defun posframe-poshandler-point-bottom-left-corner-upward (info)</code></li>
+<li>L1321: <code>(defun posframe-poshandler-point-top-left-corner (info)</code></li>
+<li>L1332: <code>(defun posframe-poshandler-frame-center (info)</code></li>
+<li>L1347: <code>(defun posframe-poshandler-frame-top-center (info)</code></li>
+<li>L1360: <code>(defun posframe-poshandler-frame-top-left-corner (_info)</code></li>
+<li>L1370: <code>(defun posframe-poshandler-frame-top-right-corner (_info)</code></li>
+<li>L1380: <code>(defun posframe-poshandler-frame-top-left-or-right-other-corner (info)</code></li>
+<li>L1399: <code>(defun posframe-poshandler-frame-bottom-left-corner (info)</code></li>
+<li>L1411: <code>(defun posframe-poshandler-frame-bottom-right-corner (info)</code></li>
+<li>L1423: <code>(defun posframe-poshandler-frame-bottom-center (info)</code></li>
+<li>L1439: <code>(defun posframe-poshandler-window-center (info)</code></li>
+<li>L1456: <code>(defun posframe-poshandler-window-top-left-corner (info)</code></li>
+<li>L1469: <code>(defun posframe-poshandler-window-top-right-corner (info)</code></li>
+<li>L1485: <code>(defun posframe-poshandler-window-top-center (info)</code></li>
+<li>L1500: <code>(defun posframe-poshandler-window-bottom-left-corner (info)</code></li>
+<li>L1517: <code>(defun posframe-poshandler-window-bottom-right-corner (info)</code></li>
+<li>L1537: <code>(defun posframe-poshandler-window-bottom-center (info)</code></li>
+<li>L1556: <code>(defun posframe-refposhandler-xwininfo (&amp;optional frame)</code></li>
+<li>L1583: <code>(defun posframe--redirect-posframe-focus ()</code></li>
+<li>L1593: <code>(defun posframe-text-scale-factor-default (parent-text-scale-mode-amount)</code></li>
+<li>L1598: <code>(provide 'posframe)</code></li>
+</ul></main></html>

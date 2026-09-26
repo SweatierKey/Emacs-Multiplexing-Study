@@ -1,0 +1,66 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: migemo</h1>
+<p>Fonte: https://github.com/emacs-jp/migemo.git</p>
+<p>Revisione: <code>c0d84b4092ddade01110ba875559bfd454862ac2</code>.</p>
+<h2>migemo.el</h2>
+<ul>
+<li>L33: <code>(require 'cl-lib)</code></li>
+<li>L39: <code>(defcustom migemo-command "cmigemo"</code></li>
+<li>L47: <code>(defcustom migemo-options '("-q" "--emacs")</code></li>
+<li>L52: <code>(defcustom migemo-white-space-regexp "[ 　\t\r\n]*"</code></li>
+<li>L64: <code>(defcustom migemo-directory nil</code></li>
+<li>L69: <code>(defcustom migemo-isearch-enable-p t</code></li>
+<li>L74: <code>(defcustom migemo-use-default-isearch-keybinding t</code></li>
+<li>L79: <code>(defcustom migemo-dictionary (expand-file-name "migemo-dict" migemo-directory)</code></li>
+<li>L84: <code>(defcustom migemo-user-dictionary (expand-file-name "user-dict" migemo-directory)</code></li>
+<li>L91: <code>(defcustom migemo-regex-dictionary (expand-file-name "regex-dict" migemo-directory)</code></li>
+<li>L98: <code>(defcustom migemo-pre-conv-function nil</code></li>
+<li>L105: <code>(defcustom migemo-after-conv-function nil</code></li>
+<li>L112: <code>(defcustom migemo-coding-system 'utf-8-unix</code></li>
+<li>L117: <code>(defcustom migemo-use-pattern-alist nil</code></li>
+<li>L122: <code>(defcustom migemo-use-frequent-pattern-alist nil</code></li>
+<li>L127: <code>(defcustom migemo-pattern-alist-length 512</code></li>
+<li>L132: <code>(defcustom migemo-pattern-alist-file</code></li>
+<li>L138: <code>(defcustom migemo-frequent-pattern-alist-file</code></li>
+<li>L144: <code>(defcustom migemo-accept-process-output-timeout-msec 5</code></li>
+<li>L149: <code>(defcustom migemo-isearch-min-length 1</code></li>
+<li>L176: <code>(defun migemo-toggle-isearch-enable ()</code></li>
+<li>L183: <code>(defun migemo-start-process (name buffer program args)</code></li>
+<li>L191: <code>(defun migemo-init ()</code></li>
+<li>L223: <code>(defun migemo-replace-in-string (string from to)</code></li>
+<li>L232: <code>(defun migemo-get-pattern (word)</code></li>
+<li>L279: <code>(defun migemo-pattern-alist-load (file)</code></li>
+<li>L296: <code>(defun migemo-pattern-alist-save (&amp;optional clear)</code></li>
+<li>L317: <code>(defun migemo-kill ()</code></li>
+<li>L326: <code>(defun migemo-pattern-alist-clear ()</code></li>
+<li>L333: <code>(defun migemo-frequent-pattern-make (fcfile)</code></li>
+<li>L370: <code>(defun migemo-expand-pattern () "\</code></li>
+<li>L384: <code>(defun migemo-forward (word &amp;optional bound noerror count)</code></li>
+<li>L391: <code>(defun migemo-backward (word &amp;optional bound noerror count)</code></li>
+<li>L409: <code>;; (define-key global-map "\M-;" 'migemo-dabbrev-expand)</code></li>
+<li>L410: <code>(defcustom migemo-dabbrev-display-message nil</code></li>
+<li>L415: <code>(defcustom migemo-dabbrev-ol-face 'highlight</code></li>
+<li>L425: <code>(defun migemo-dabbrev-expand-done ()</code></li>
+<li>L433: <code>(defun migemo-dabbrev-expand ()</code></li>
+<li>L509: <code>(defun migemo--isearch-search (orig-fun &amp;rest args)</code></li>
+<li>L518: <code>(defun migemo--isearch-search-and-update (orig-fun &amp;rest args)</code></li>
+<li>L527: <code>(defun migemo--search-forward (orig-fun &amp;rest args)</code></li>
+<li>L533: <code>(defun migemo--search-backward (orig-fun &amp;rest args)</code></li>
+<li>L541: <code>(defun migemo--multi-isearch-search-fun (orig-val)</code></li>
+<li>L548: <code>(defun isearch-search-fun-migemo ()</code></li>
+<li>L584: <code>(defun migemo--isearch-mode-before (_forward &amp;optional _regexp _op-fun _recursive-edit _regexp-function)</code></li>
+<li>L602: <code>(defun migemo--isearch-done (&amp;optional _nopush _edit)</code></li>
+<li>L619: <code>(defcustom migemo-message-prefix-face 'highlight</code></li>
+<li>L624: <code>(defun migemo--isearch-message-prefix (orig-val)</code></li>
+<li>L632: <code>(defun migemo--isearch-lazy-highlight-new-loop (orig-fun &amp;rest args)</code></li>
+<li>L642: <code>(defun migemo--replace-highlight (orig-fun &amp;rest args)</code></li>
+<li>L648: <code>(defun migemo-register-isearch-keybinding ()</code></li>
+<li>L649: <code>(define-key isearch-mode-map "\C-d" 'migemo-isearch-yank-char)</code></li>
+<li>L650: <code>(define-key isearch-mode-map "\C-w" 'migemo-isearch-yank-word)</code></li>
+<li>L651: <code>(define-key isearch-mode-map "\C-y" 'migemo-isearch-yank-line)</code></li>
+<li>L652: <code>(define-key isearch-mode-map "\M-m" 'migemo-isearch-toggle-migemo))</code></li>
+<li>L656: <code>(defun migemo-isearch-toggle-migemo ()</code></li>
+<li>L669: <code>(defun migemo-isearch-yank-char ()</code></li>
+<li>L686: <code>(defun migemo-isearch-yank-word ()</code></li>
+<li>L703: <code>(defun migemo-isearch-yank-line ()</code></li>
+<li>L723: <code>(provide 'migemo)</code></li>
+</ul></main></html>

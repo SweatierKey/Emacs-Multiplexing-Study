@@ -1,0 +1,21 @@
+{
+  "id": "ghostel-switch",
+  "status": "failed",
+  "scenario": "two-ssh-endpoints",
+  "started": "2026-09-26T11:38:20Z",
+  "snapshots": [
+    {
+      "name": "*scratch*",
+      "mode": "lisp-interaction-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": ""
+    }
+  ],
+  "checks": {
+    "completion_enabled": true
+  },
+  "error": "Launch did not enter a terminal: {'name': '*scratch*', 'mode': 'lisp-interaction-mode', 'vertico': True, 'marginalia': True, 'text': ''}",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 41, in run\n    launch(s,sp);first=check_role(s,'web');result['snapshots'].append(first);result['checks']['ssh_web']=True\n    ~~~~~~^^^^^^\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 25, in launch\n    if s.snapshot()['mode'] in ['lisp-interaction-mode','minibuffer-mode']:raise AssertionError('Launch did not enter a terminal: '+str(s.snapshot()))\n                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Launch did not enter a terminal: {'name': '*scratch*', 'mode': 'lisp-interaction-mode', 'vertico': True, 'marginalia': True, 'text': ''}\n",
+  "messages": "\"For information about GNU Emacs and the GNU system, type C-h C-a.\\nghostel-switch--select-and-switch: Symbol’s function definition is void: ghostel--all-buffers\\nM-RET is undefined\\n\""
+}

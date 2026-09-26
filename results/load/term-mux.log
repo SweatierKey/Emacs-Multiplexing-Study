@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"term-mux","library":"/home/admin/Emacs-Multiplexing-Study/sources/term-mux/term-mux.el","commands":["term-mux-buffer","term-mux-create","term-mux-create-eshell","term-mux-create-ghostel","term-mux-create-vterm","term-mux-mode","term-mux-next","term-mux-prev","term-mux-switch-to","term-mux-toggle"]}
+STDERR:

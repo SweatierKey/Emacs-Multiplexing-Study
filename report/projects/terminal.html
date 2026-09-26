@@ -1,0 +1,157 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>terminal</h1>
+<p>Categoria: <strong>emulatore-storico</strong>. <a href="https://git.savannah.gnu.org/cgit/emacs">Sorgente upstream</a>. Revisione: <code>30.1</code>.</p>
+<h2>Funzionamento</h2>
+<p>terminal.el di GNU Emacs, codice storico dal 1986, marcato obsoleto da Emacs 24.4; parser, filtro di processo e schermo in Lisp, distinto dal successivo term.el.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x terminal-emulator; prefisso C-^ per i comandi dell'emulatore, C-^ b per cambiare buffer. Tentativo registrato, con esito nella scheda; il supporto remoto dipende anche dalle sue capability terminali generate a runtime.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>builtin</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/terminal.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/terminal.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario terminal: passed</h3>
+<p><a href="../../results/terminal.json">Esito e snapshot</a> · <a href="../../results/terminal-keys.json">Traccia dei tasti</a> · <a href="../../recordings/terminal.cast">Registrazione asciinema</a> · <a href="../../index.html#terminal">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.31</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>terminal-emulator</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.91</td>
+<td><code>b''</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.42</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.62</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.62</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.82</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.84</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.04</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.85</td>
+<td><code>C-^ b: leave historical emulator</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.25</td>
+<td><code>*scratch*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.45</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.26</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.56</td>
+<td><code>terminal-emulator</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.06</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.86</td>
+<td><code>b''</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.06</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.37</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.57</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.57</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.77</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.79</td>
+<td><code>C-^ b: leave historical emulator</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.20</td>
+<td><code>*scratch*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.40</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.20</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.60</td>
+<td><code>*terminal*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.00</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.41</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.61</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

@@ -1,0 +1,12 @@
+shell-here passed 
+sticky-shell passed 
+term passed 
+eshell-toggle passed 
+aweshell passed 
+elscreen-multi-term failed Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web
+
+SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/
+term-sessions passed 
+eat-eshell passed 
+eshell-vterm passed 

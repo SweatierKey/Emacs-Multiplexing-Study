@@ -1,0 +1,40 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: lterm</h1>
+<p>Fonte: https://github.com/TaylanUB/lterm.git</p>
+<p>Revisione: <code>734cb5bd91fff337cefd266c4e43a9ae306e4c51</code>.</p>
+<h2>lterm-mud.el</h2>
+<ul>
+<li>L27: <code>(require 'lterm)</code></li>
+<li>L28: <code>(require 'format-spec)</code></li>
+<li>L30: <code>(define-derived-mode lterm-mud-mode lterm-mode "Linewise-MUD"</code></li>
+<li>L40: <code>(defun lterm-mud (host port)</code></li>
+<li>L53: <code>(provide 'lterm-mud)</code></li>
+</ul>
+<h2>lterm-muds/lterm-mud-godwars2.el</h2>
+<ul>
+<li>L1: <code>(defun godwars2 ()</code></li>
+<li>L5: <code>(defun gw2-exec (cmd)</code></li>
+<li>L8: <code>(defun gw2-combo (list)</code></li>
+</ul>
+<h2>lterm.el</h2>
+<ul>
+<li>L48: <code>(require 'lui)</code></li>
+<li>L50: <code>(require 'xterm-color)</code></li>
+<li>L60: <code>(defcustom lterm-default-program nil</code></li>
+<li>L64: <code>(defcustom lterm-default-prompt "&gt; "</code></li>
+<li>L68: <code>(defcustom lterm-echo-before-filters nil</code></li>
+<li>L72: <code>(defcustom lterm-echo-after-filters nil</code></li>
+<li>L78: <code>(defcustom lterm-convert-crlf t</code></li>
+<li>L82: <code>(defcustom lterm-input-filters nil</code></li>
+<li>L89: <code>(defcustom lterm-output-filters nil</code></li>
+<li>L103: <code>(define-derived-mode lterm-mode lui-mode "Linewise-Term"</code></li>
+<li>L115: <code>(defmacro with-lterm-conversions (&amp;rest body)</code></li>
+<li>L121: <code>(defun lterm-start-process (name program &amp;rest program-args)</code></li>
+<li>L130: <code>(defun lterm-start-network-connection (name host port)</code></li>
+<li>L136: <code>(defun lterm (program)</code></li>
+<li>L148: <code>(defun lnet (host port)</code></li>
+<li>L160: <code>(defmacro lterm--filter (filters string)</code></li>
+<li>L170: <code>(defun lterm-user-input-handler (string)</code></li>
+<li>L210: <code>(defun lterm-process-output-handler (process string)</code></li>
+<li>L235: <code>(defun lterm-process-output-line-handler (line)</code></li>
+<li>L241: <code>(provide 'lterm)</code></li>
+</ul></main></html>

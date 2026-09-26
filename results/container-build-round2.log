@@ -1,0 +1,64 @@
+STEP 1/8: FROM debian@sha256:9cc080028c43b27d2074d63a5f9caf7166d731494965616c1a6d2827a004585c
+STEP 2/8: COPY vendor/lab-debs.tar.gz /tmp/lab-debs.tar.gz
+--> Using cache c1edc8aafe20d2029c5cea299c2666532e3972229a35db84ae1cb2d8f6a06fc7
+--> c1edc8aafe20
+STEP 3/8: RUN mkdir /tmp/debs && tar -xf /tmp/lab-debs.tar.gz -C /tmp/debs --strip-components=1 &&     DEBIAN_FRONTEND=noninteractive apt-get --no-download --no-install-recommends -y install /tmp/debs/*.deb && rm -rf /tmp/debs /tmp/lab-debs.tar.gz &&     useradd -m -s /bin/bash study && mkdir -p /run/sshd /study && chown study:study /study
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  liblocale-gettext-perl perl cron quota binutils-doc gprofng-gui
+  binutils-gold cmake-doc cmake-format elpa-cmake-mode ninja-build cpp-doc
+  gcc-14-locales cpp-14-doc emacs-common-non-dfsg emacs-editing-major-modes
+  ncurses-term gcc-multilib make manpages-dev autoconf automake flex bison gdb
+  gcc-doc gcc-14-multilib gcc-14-doc gdb-x86-64-linux-gnu lrzip alsa-utils
+  libasound2-plugins libc-devtools glibc-doc gnutls-bin gpm krb5-doc krb5-user
+  liblcms2-utils libbpf1 libcryptsetup12 libdw1t64 libelf1t64 libgcrypt20
+  libip4tc2 libpwquality1 libqrencode4 libtss2-rc0t64 libtool-doc automaken
+  gfortran | fortran95-compiler gcj-jdk keychain libpam-ssh monkeysphere
+  ssh-askpass molly-guard ufw python3-doc python3-tk python3-venv
+  python3-setuptools python3.13-venv python3.13-doc binfmt-support
+  readline-doc byobu | screenie | iselect systemd-container systemd-homed
+  systemd-userdbd systemd-boot systemd-resolved systemd-repart
+  libtss2-tcti-device0 polkitd xfonts-cyrillic
+Recommended packages:
+  make mailutils alsa-ucm-conf alsa-topology-conf manpages manpages-dev
+  ca-certificates dbus krb5-locales libldap-common publicsuffix
+  libsasl2-modules libkmod2 libltdl-dev xauth default-logind | logind
+  | libpam-systemd ncurses-term psmisc linux-sysctl-defaults
+  default-dbus-system-bus | dbus-system-bus systemd-timesyncd | time-daemon
+  systemd-cryptsetup luit | x11-utils
+The following NEW packages will be installed:
+  adduser asciinema autotools-dev binutils binutils-common
+  binutils-x86-64-linux-gnu cmake cmake-data cpp cpp-14
+  cpp-14-x86-64-linux-gnu cpp-x86-64-linux-gnu dh-elpa-helper elpa-marginalia
+  elpa-vertico emacs-bin-common emacs-common emacs-el emacs-nox emacsen-common
+  file fontconfig-config fonts-dejavu-core fonts-dejavu-mono gcc gcc-14
+  gcc-14-x86-64-linux-gnu gcc-x86-64-linux-gnu install-info less libapparmor1
+  libarchive13t64 libasan8 libasound2-data libasound2t64 libatomic1
+  libbinutils libbrotli1 libc-dev-bin libc6-dev libcbor0.10 libcc1-0
+  libcom-err2 libcrypt-dev libctf-nobfd0 libctf0 libcurl4t64 libdbus-1-3
+  libedit2 libevent-core-2.1-7t64 libexpat1 libffi8 libfido2-1 libfontconfig1
+  libfreetype6 libgcc-14-dev libgccjit0 libgnutls30t64 libgomp1 libgpm2
+  libgprofng0 libgssapi-krb5-2 libhwasan0 libice6 libidn2-0 libisl23 libitm1
+  libjansson4 libjemalloc2 libjsoncpp26 libk5crypto3 libkeyutils1 libkrb5-3
+  libkrb5support0 liblcms2-2 libldap2 liblsan0 libmagic-mgc libmagic1t64
+  libmpc3 libmpfr6 libncursesw6 libnghttp2-14 libnghttp3-9 libp11-kit0
+  libpng16-16t64 libproc2-0 libpsl5t64 libpython3-stdlib libpython3.13-minimal
+  libpython3.13-stdlib libquadmath0 libreadline8t64 librhash1 librtmp1
+  libsasl2-2 libsasl2-modules-db libsframe1 libsm6 libssh2-1t64
+  libsystemd-shared libtasn1-6 libtext-charwidth-perl libtext-wrapi18n-perl
+  libtool libtool-bin libtree-sitter0.22 libtsan2 libubsan1 libunistring5
+  libutempter0 libuv1t64 libvterm-dev libvterm0 libwrap0 libwtmpdb0 libx11-6
+  libx11-data libxau6 libxaw7 libxcb1 libxdmcp6 libxext6 libxft2 libxinerama1
+  libxml2 libxmu6 libxpm4 libxrender1 libxt6t64 linux-libc-dev media-types
+  netbase openssh-client openssh-server openssh-sftp-server procps python3
+  python3-autocommand python3-inflect python3-jaraco.context
+  python3-jaraco.functools python3-minimal python3-more-itertools
+  python3-pkg-resources python3-typeguard python3-typing-extensions python3.13
+  python3.13-minimal readline-common rpcsvc-proto runit-helper screen
+  sensible-utils systemd tmux ucf x11-common xbitmaps xterm
+0 upgraded, 160 newly installed, 0 to remove and 0 not upgraded.
+After this operation, 569 MB of additional disk space will be used.
+E: Internal Error, Pathname to install is not absolute 'libsystemd-shared_257.13-1~deb13u1_amd64.deb'
+Error: building at STEP "RUN mkdir /tmp/debs && tar -xf /tmp/lab-debs.tar.gz -C /tmp/debs --strip-components=1 &&     DEBIAN_FRONTEND=noninteractive apt-get --no-download --no-install-recommends -y install /tmp/debs/*.deb && rm -rf /tmp/debs /tmp/lab-debs.tar.gz &&     useradd -m -s /bin/bash study && mkdir -p /run/sshd /study && chown study:study /study": while running runtime: exit status 100

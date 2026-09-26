@@ -1,0 +1,94 @@
+# Indice del codice: marginalia
+
+Fonte: https://github.com/minad/marginalia.git
+
+Revisione: `c5d0139012d2a84f8040219b9aee17db4e145e5c`.
+
+
+## marginalia.el
+
+- L38: `(require 'compat)`
+- L55: `(defcustom marginalia-field-width 80`
+- L61: `(defcustom marginalia-separator "  "`
+- L65: `(defcustom marginalia-align 'left`
+- L71: `(defcustom marginalia-align-offset 0`
+- L75: `(defcustom marginalia-max-relative-age (* 60 60 24 14)`
+- L82: `(defcustom marginalia-remote-file-regexps`
+- L91: `(defcustom marginalia-annotators`
+- L127: `(defcustom marginalia-classifiers`
+- L138: `(defcustom marginalia-prompt-categories`
+- L161: `(defcustom marginalia-censor-variables`
+- L169: `(defcustom marginalia-command-categories`
+- L380: `(defun marginalia--ellipsis ()`
+- L388: `(defun marginalia--abbreviate-file-name (file)`
+- L393: `(defun marginalia--truncate (str width)`
+- L429: `(defmacro marginalia--fields (&rest fields)`
+- L442: `(defmacro marginalia--in-minibuffer (&rest body)`
+- L451: `(defun marginalia--documentation (str)`
+- L457: `(defun marginalia-annotate-binding (cand)`
+- L463: `(defun marginalia--annotator (cat)`
+- L470: `(defun marginalia-annotate-multi-category (cand)`
+- L496: `(defun marginalia--advised (fun)`
+- L501: `(defun marginalia--symbol-class (s)`
+- L585: `(defun marginalia--definition-prefix (sym)`
+- L595: `(defun marginalia--function-doc (sym)`
+- L605: `(defun marginalia--function-args (sym)`
+- L623: `(defun marginalia-annotate-symbol (cand)`
+- L641: `(defun marginalia-annotate-command (cand)`
+- L649: `(defun marginalia-annotate-embark-keybinding (cand)`
+- L657: `(defun marginalia-annotate-imenu (cand)`
+- L663: `(defun marginalia-annotate-function (cand)`
+- L674: `(defun marginalia--variable-value (sym)`
+- L746: `(defun marginalia-annotate-variable (cand)`
+- L756: `(defun marginalia-annotate-environment-variable (cand)`
+- L762: `(defun marginalia-annotate-face (cand)`
+- L772: `(defun marginalia-annotate-color (cand)`
+- L800: `(defun marginalia-annotate-char (cand)`
+- L811: `(defun marginalia-annotate-minor-mode (cand)`
+- L829: `(defun marginalia-annotate-package (cand)`
+- L853: `(defun marginalia--bookmark-type (bm)`
+- L873: `(defun marginalia-annotate-bookmark (cand)`
+- L889: `(defun marginalia-annotate-customize-group (cand)`
+- L893: `(defun marginalia-annotate-input-method (cand)`
+- L897: `(defun marginalia-annotate-charset (cand)`
+- L901: `(defun marginalia-annotate-coding-system (cand)`
+- L905: `(defun marginalia--buffer-status (buffer)`
+- L917: `(defun marginalia--buffer-file (buffer)`
+- L935: `(defun marginalia-annotate-buffer (cand)`
+- L948: `(defun marginalia--full-candidate (cand)`
+- L964: `(defun marginalia--remote-file-p (file)`
+- L975: `(defun marginalia--annotate-local-file (cand)`
+- L1003: `(defun marginalia-annotate-file (cand)`
+- L1013: `(defun marginalia--file-owner (attrs)`
+- L1022: `(defun marginalia--file-size (attrs)`
+- L1027: `(defun marginalia--file-modes (attrs)`
+- L1052: `(defun marginalia--time-relative (time)`
+- L1057: `(defun marginalia--time-absolute (time)`
+- L1067: `(defun marginalia--time (time)`
+- L1076: `(defun marginalia--project-root ()`
+- L1091: `(defun marginalia-annotate-project-file (cand)`
+- L1100: `(defun marginalia--library-cache ()`
+- L1116: `(defun marginalia--library-name (file)`
+- L1121: `(defun marginalia--library-doc (file)`
+- L1151: `(defun marginalia-annotate-library (cand)`
+- L1167: `(defun marginalia-annotate-theme (cand)`
+- L1176: `(defun marginalia-annotate-frame (cand)`
+- L1193: `(defun marginalia-annotate-tab (cand)`
+- L1218: `(defun marginalia-classify-by-command-name ()`
+- L1226: `(defun marginalia-classify-original-category ()`
+- L1234: `(defun marginalia-classify-symbol ()`
+- L1242: `(defun marginalia-classify-by-prompt ()`
+- L1254: `(defun marginalia--cache-reset (&rest _)`
+- L1260: `(defun marginalia--cached (cache fun key)`
+- L1278: `(defun marginalia--align (cands)`
+- L1304: `(defun marginalia--affixate (metadata annotator cands)`
+- L1328: `(defun marginalia--completion-metadata-get (metadata prop)`
+- L1344: `(defun marginalia--minibuffer-setup ()`
+- L1355: `(defun marginalia--base-position (completions)`
+- L1370: `(define-minor-mode marginalia-mode`
+- L1387: `(defun marginalia--completion-metadata ()`
+- L1395: `(defun marginalia--builtin-annotator-p (md)`
+- L1401: `(defun marginalia-cycle ()`
+- L1423: `(defun marginalia--context-menu (menu _event)`
+- L1444: `(define-key menu [marginalia]`
+- L1449: `(provide 'marginalia)`

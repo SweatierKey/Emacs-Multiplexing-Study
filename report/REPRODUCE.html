@@ -1,0 +1,53 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="style.css"><main><a href="../index.html">← Catalogo e video</a><h1>Riprodurre lo studio</h1>
+<h2>Materiale</h2>
+<p>Scaricare <code>Emacs-Multiplexing-Study-2026-09-26.tar.gz</code> e il relativo SHA256 dalla <a href="https://github.com/SweatierKey/Emacs-Multiplexing-Study/releases/tag/study-2026-09-26">release</a>. Il repository Git contiene report, strumenti, risultati, player e registrazioni; il bundle della release aggiunge i sorgenti acquisiti, moduli nativi, wheel e pacchetti Debian. Non richiede che gli artifact temporanei di GitHub Actions restino disponibili.</p>
+<pre><code class="language-sh">sha256sum -c Emacs-Multiplexing-Study-2026-09-26.tar.gz.sha256
+tar -xzf Emacs-Multiplexing-Study-2026-09-26.tar.gz
+cd Emacs-Multiplexing-Study
+python3 scripts/verify.py
+python3 -m http.server 8000 --bind 127.0.0.1
+</code></pre>
+<p>Aprire <code>http://127.0.0.1:8000/</code>. Il player è locale; i <code>.cast</code> non richiedono account o upload su asciinema.org. Per rivedere da terminale: <code>asciinema play recordings/vterm.cast</code>. Il server HTTP serve solo i file del bundle; non avvia le SSH del test.</p>
+<h2>Ambiente fissato</h2>
+<p>Laboratorio originale: Debian GNU/Linux 13, x86_64, Emacs 30.1, Bash, OpenSSH, tmux, libvterm. Versioni effettive: <code>results/environment-current.json</code>. Le revisioni di Vertico e Marginalia sono fissate come gli altri sorgenti in <code>research/source-lock.json</code>; non vengono installate da un archivio mobile durante le prove.</p>
+<p>Il Dockerfile usa il digest Debian registrato in <code>research/debian-image-digest.json</code> e i <code>.deb</code> archiviati in <code>vendor/lab-debs.tar.gz</code> e <code>vendor/extra-debs/</code>. Il primo pull della base richiede rete; installazione dei pacchetti e preparazione dei test usano il bundle. I passaggi dpkg ripetuti risolvono pre-dipendenze ordinate nello stesso insieme locale; l'ultimo errore resta bloccante. I tentativi di build e la verifica del contenitore, quando eseguiti, sono in <code>results/container-*.log</code>.</p>
+<pre><code class="language-sh">podman build -t emacs-study:2026-09-26 .
+podman run --rm emacs-study:2026-09-26
+</code></pre>
+<p>Il comando predefinito esegue uno smoke test. Per la suite completa:</p>
+<pre><code class="language-sh">podman run --name emacs-study-run emacs-study:2026-09-26 \
+  python3 scripts/run-suite.py
+podman cp emacs-study-run:/study/results ./results-replayed
+podman cp emacs-study-run:/study/recordings ./recordings-replayed
+podman rm emacs-study-run
+</code></pre>
+<p>Non sono necessarie porte pubblicate né accesso a server esterni: le due SSH stanno nello stesso contenitore. La suite completa comprende scenari negativi documentati e può terminare con codice non zero. Questo è un esito visibile, non un errore ignorato per rendere verde il report.</p>
+<h2>Esecuzione su Debian senza container</h2>
+<p>Occorrono <code>emacs</code>/<code>emacsclient</code> con moduli dinamici, Python 3, OpenSSH client/server, <code>tic</code>, CMake, GCC, make, libvterm-dev, tmux e less. Non installare indiscriminatamente l'intero archivio Debian su una distribuzione diversa: usare il contenitore per mantenere la base fissata.</p>
+<pre><code class="language-sh">python3 scripts/prepare.py
+python3 scripts/run-suite.py --smoke
+# oppure tutta la suite dichiarata in config/suite.json
+python3 scripts/run-suite.py
+</code></pre>
+<p>Per un progetto singolo:</p>
+<pre><code class="language-sh">python3 scripts/lab.py start
+python3 scripts/test-scenarios.py ghostel
+python3 scripts/lab.py stop
+</code></pre>
+<p>I controller hanno <code>test-controllers.py emamux tmux-view</code>; eev ha <code>test-eev.py</code> con F8 su <code>lab/eev-demo.e</code>. I copioni speciali sono <code>test-special.py tmux-nested tmux-control tab-bar elscreen eyebrowse</code> e <code>test-zmx.py</code>. <code>tmux-control-mode</code> ha un copione separato ma un risultato negativo nello snapshot consegnato. Usare un percorso di estrazione corto e senza spazi per restare entro i limiti dei socket Unix e dei file di configurazione SSH.</p>
+<h2>Profilo Emacs e differenze dichiarate</h2>
+<p><code>config/init.el</code> avvia un ambiente <code>-Q</code>, crea la directory privata <code>.runtime</code>, prepara il load-path e abilita <code>(vertico-mode 1)</code> e <code>(marginalia-mode 1)</code>. Non legge l'init dell'utente. Le variabili di shell puntano a <code>lab/bash</code>, che disabilita file di startup personali. Le opzioni specifiche, i <code>require</code> aggiuntivi e gli hook sono in <code>scripts/scenarios.py</code>. Il profilo popterm usa finestre invece di posframe perché la prova è TTY.</p>
+<p>La preparazione compila compat e il modulo vterm e installa le terminfo dentro <code>.runtime/terminfo</code>. Ghostel, Kuro, Cooked e Alacritty usano moduli nativi inclusi per Linux x86_64, con provenienza e hash in <code>research/native-manifest.json</code>. Non sono binari universali per ogni ABI/piattaforma. Le build originali di Cooked/Alacritty sono documentate nei workflow e nei log; le altre release native sono identificate nei JSON di acquisizione. Una replica di esecuzione con binari fissati non è una promessa di build bit-identica di tutto Rust/Zig.</p>
+<h2>Come sono registrati e verificati i tasti</h2>
+<p><code>scripts/record.py</code> crea una PTY 110×32, esegue Emacs reale e registra gli eventi asciicast v2. Input e output vengono salvati con timestamp; <code>emacsclient</code> legge stato/snapshot e termina Emacs, ma non genera comandi shell né testo dimostrativo. I file <code>*-keys.json</code> contengono etichetta e byte esadecimali di ogni input.</p>
+<p>Le asserzioni controllano output effettivo con righe ancorate (<code>role=web</code>, <code>role=db</code>, log WARN e variabile conservata), non la sola presenza del comando digitato. I profili standard richiedono due buffer distinti. Le prove di persistenza richiedono una nuova istanza Emacs e recupero dello stato. Alcuni profili shell non eseguono il pager: la scheda non lo rivendica.</p>
+<p>Le registrazioni contengono tempi d'attesa reali; il player limita le pause di inattività per facilitarne la visione. Restano catture del terminale, non MP4 sintetici. Il motore del player è incluso localmente.</p>
+<h2>Aggiornare e ricostruire il dossier</h2>
+<pre><code class="language-sh">python3 scripts/index-sources.py
+python3 scripts/probe.py
+python3 scripts/build-report.py
+python3 scripts/verify.py
+python3 scripts/package.py
+</code></pre>
+<p><code>probe.py</code> avvia un Emacs batch distinto per voce e distingue <code>loaded</code>, <code>error</code>, <code>wrong-library</code> e timeout. Non sostituisce la demo. <code>source-lock.json</code> fissa le revisioni; gli script di acquisizione iniziali che seguono HEAD sono strumenti di scoperta, non il percorso consigliato per replicare questo snapshot.</p>
+<p><code>.runtime</code> contiene chiavi effimere, socket, cache e processi del laboratorio; è esclusa da Git e dal pacchetto distribuito. Lo script di arresto termina solo i PID memorizzati per le due SSH del laboratorio. Usare un contenitore o una copia separata per più suite simultanee: le porte sono fisse e i nomi delle sessioni non sono pensati per due esecuzioni concorrenti dello stesso scenario.</p></main></html>

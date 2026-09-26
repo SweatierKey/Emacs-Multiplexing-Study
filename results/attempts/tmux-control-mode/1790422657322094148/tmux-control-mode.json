@@ -1,0 +1,18 @@
+{
+  "id": "tmux-control-mode",
+  "scenario": "tmux-two-ssh-and-persistence",
+  "status": "failed",
+  "checks": {},
+  "snapshots": [
+    {
+      "name": " *Minibuf-1*",
+      "mode": "minibuffer-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "Switch to window: cat status.txt; tail -n 3 service.log"
+    }
+  ],
+  "error": "Missing actual remote role output: Switch to window: cat status.txt; tail -n 3 service.log",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-special.py\", line 30, in tmux_demo\n    r['snapshots'].append(common.check_role(s,'web'));r['checks']['ssh_web']=True\n                          ~~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-scenarios.py\", line 29, in check_role\n    if not re.search(r'^role='+role+r'\\s*$',snap['text'],re.M):raise AssertionError('Missing actual remote role output: '+snap['text'][-1500:])\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Missing actual remote role output: Switch to window: cat status.txt; tail -n 3 service.log\n",
+  "messages": "\"For information about GNU Emacs and the GNU system, type C-h C-a.\\nStarted tmux-cc process.\\ntmux window added: %window-add @0\\ntmux session changed: %session-changed $0 ops\\nHandling layout change: cefd,109x29,0,0,0 [2 times]\\nHandling layout change: a8bd,110x30,0,0,0 [2 times]\\nl is undefined\\na is undefined\\nb is undefined\\nl is undefined\\na is undefined\\nb is undefined\\ne is undefined\\nb is undefined\\nNo sessions found or command failed.\\nHandling layout change: cabd,110x29,0,0,0\\ntmux session changed: %session-changed $0 ops\\n\""
+}

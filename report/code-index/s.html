@@ -1,0 +1,243 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: s</h1>
+<p>Fonte: https://github.com/magnars/s.el.git</p>
+<p>Revisione: <code>d7c04b84d03481a1ed62ee13dbe595224ccbe57c</code>.</p>
+<h2>dev/ert.el</h2>
+<ul>
+<li>L59: <code>(require 'button)</code></li>
+<li>L60: <code>(require 'debug)</code></li>
+<li>L61: <code>(require 'easymenu)</code></li>
+<li>L62: <code>(require 'ewoc)</code></li>
+<li>L63: <code>(require 'find-func)</code></li>
+<li>L64: <code>(require 'help)</code></li>
+<li>L91: <code>(defun ert--cl-do-remf (plist tag)</code></li>
+<li>L97: <code>(defun ert--remprop (sym tag)</code></li>
+<li>L104: <code>(defun ert--remove-if-not (ert-pred ert-list)</code></li>
+<li>L112: <code>(defun ert--intersection (a b)</code></li>
+<li>L120: <code>(defun ert--set-difference (a b)</code></li>
+<li>L128: <code>(defun ert--set-difference-eq (a b)</code></li>
+<li>L136: <code>(defun ert--union (a b)</code></li>
+<li>L154: <code>(defun ert--coerce-to-vector (x)</code></li>
+<li>L161: <code>(defun* ert--remove* (x list &amp;key key test)</code></li>
+<li>L169: <code>(defun ert--string-position (c s)</code></li>
+<li>L175: <code>(defun ert--mismatch (a b)</code></li>
+<li>L197: <code>(defun ert--subseq (seq start &amp;optional end)</code></li>
+<li>L211: <code>(defun ert-equal-including-properties (a b)</code></li>
+<li>L236: <code>(defun ert-test-boundp (symbol)</code></li>
+<li>L240: <code>(defun ert-get-test (symbol)</code></li>
+<li>L245: <code>(defun ert-set-test (symbol definition)</code></li>
+<li>L259: <code>(defun ert-make-test-unbound (symbol)</code></li>
+<li>L264: <code>(defun ert--parse-keys-and-body (keys-and-body)</code></li>
+<li>L292: <code>(defmacro* ert-deftest (name () &amp;body docstring-keys-and-body)</code></li>
+<li>L362: <code>(defun ert-pass ()</code></li>
+<li>L366: <code>(defun ert-fail (data)</code></li>
+<li>L376: <code>(defun ert--signal-should-execution (form-description)</code></li>
+<li>L381: <code>(defun ert--special-operator-p (thing)</code></li>
+<li>L388: <code>(defun ert--expand-should-1 (whole form inner-expander)</code></li>
+<li>L439: <code>(defun ert--expand-should (whole form inner-expander)</code></li>
+<li>L468: <code>(defmacro* should (form)</code></li>
+<li>L477: <code>(defmacro* should-not (form)</code></li>
+<li>L486: <code>(defun ert--should-error-handle-error (form-description-fn</code></li>
+<li>L515: <code>(defmacro* should-error (form &amp;rest keys &amp;key type exclude-subtypes)</code></li>
+<li>L561: <code>(defun ert--proper-list-p (x)</code></li>
+<li>L573: <code>(defun ert--explain-format-atom (x)</code></li>
+<li>L579: <code>(defun ert--explain-not-equal (a b)</code></li>
+<li>L632: <code>(defun ert--significant-plist-keys (plist)</code></li>
+<li>L639: <code>(defun ert--plist-difference-explanation (a b)</code></li>
+<li>L672: <code>(defun ert--abbreviate-string (s len suffixp)</code></li>
+<li>L684: <code>(defun ert--explain-not-equal-including-properties (a b)</code></li>
+<li>L728: <code>(defmacro* ert-info ((message-form &amp;key ((:prefix prefix-form) "Info: "))</code></li>
+<li>L763: <code>(defun ert--record-backtrace ()</code></li>
+<li>L782: <code>(defun ert--print-backtrace (backtrace)</code></li>
+<li>L825: <code>(defun ert--run-test-debugger (info debugger-args)</code></li>
+<li>L867: <code>(defun ert--run-test-internal (ert-test-execution-info)</code></li>
+<li>L893: <code>(defun ert--force-message-log-buffer-truncation ()</code></li>
+<li>L923: <code>(defun ert-run-test (ert-test)</code></li>
+<li>L959: <code>(defun ert-running-test ()</code></li>
+<li>L966: <code>(defun ert-test-result-type-p (result result-type)</code></li>
+<li>L1008: <code>(defun ert-test-result-expected-p (test result)</code></li>
+<li>L1012: <code>(defun ert-select-tests (selector universe)</code></li>
+<li>L1134: <code>(defun ert--insert-human-readable-selector (selector)</code></li>
+<li>L1203: <code>(defun ert-stats-completed-expected (stats)</code></li>
+<li>L1208: <code>(defun ert-stats-completed-unexpected (stats)</code></li>
+<li>L1213: <code>(defun ert-stats-completed (stats)</code></li>
+<li>L1218: <code>(defun ert-stats-total (stats)</code></li>
+<li>L1226: <code>(defun ert--stats-test-key (test)</code></li>
+<li>L1232: <code>(defun ert--stats-set-test-and-result (stats pos test result)</code></li>
+<li>L1264: <code>(defun ert--make-stats (tests selector)</code></li>
+<li>L1282: <code>(defun ert-run-or-rerun-test (stats test listener)</code></li>
+<li>L1304: <code>(defun ert-run-tests (selector listener)</code></li>
+<li>L1325: <code>(defun ert--stats-test-pos (stats test)</code></li>
+<li>L1333: <code>(defun ert--format-time-iso8601 (time)</code></li>
+<li>L1337: <code>(defun ert-char-for-test-result (result expectedp)</code></li>
+<li>L1348: <code>(defun ert-string-for-test-result (result expectedp)</code></li>
+<li>L1359: <code>(defun ert--pp-with-indentation-and-newline (object)</code></li>
+<li>L1369: <code>(defun ert--insert-infos (result)</code></li>
+<li>L1398: <code>(defun ert-run-tests-batch (&amp;optional selector)</code></li>
+<li>L1494: <code>(defun ert-run-tests-batch-and-exit (&amp;optional selector)</code></li>
+<li>L1513: <code>(defun ert--activate-font-lock-keywords ()</code></li>
+<li>L1521: <code>(defun* ert--remove-from-list (list-var element &amp;key key test)</code></li>
+<li>L1536: <code>(defun ert-read-test-name (prompt &amp;optional default history</code></li>
+<li>L1568: <code>(defun ert-read-test-name-at-point (prompt)</code></li>
+<li>L1575: <code>(defun ert-find-test-other-window (test-name)</code></li>
+<li>L1580: <code>(defun ert-delete-test (test-name)</code></li>
+<li>L1587: <code>(defun ert-delete-all-tests ()</code></li>
+<li>L1635: <code>(defun ert-insert-test-name-button (test-name)</code></li>
+<li>L1641: <code>(defun ert--results-format-expected-unexpected (expected unexpected)</code></li>
+<li>L1647: <code>(defun ert--results-update-ewoc-hf (ewoc stats)</code></li>
+<li>L1743: <code>(defun ert--results-update-stats-display (ewoc stats)</code></li>
+<li>L1752: <code>(defun ert--results-update-stats-display-maybe (ewoc stats)</code></li>
+<li>L1759: <code>(defun ert--tests-running-mode-line-indicator ()</code></li>
+<li>L1774: <code>(defun ert--make-xrefs-region (begin end)</code></li>
+<li>L1786: <code>(defun ert--string-first-line (s)</code></li>
+<li>L1792: <code>(defun ert-face-for-test-result (expectedp)</code></li>
+<li>L1799: <code>(defun ert-face-for-stats (stats)</code></li>
+<li>L1808: <code>(defun ert--print-test-for-ewoc (entry)</code></li>
+<li>L1860: <code>(defun ert--results-font-lock-function (enabledp)</code></li>
+<li>L1869: <code>(defun ert--setup-results-buffer (stats listener buffer-name)</code></li>
+<li>L1911: <code>(defun ert-run-tests-interactively (selector</code></li>
+<li>L2000: <code>(define-derived-mode ert-simple-view-mode fundamental-mode "ERT-View"</code></li>
+<li>L2007: <code>(define-key ert-simple-view-mode-map key binding))</code></li>
+<li>L2012: <code>(define-derived-mode ert-results-mode fundamental-mode "ERT-Results"</code></li>
+<li>L2037: <code>(define-key ert-results-mode-map key binding))</code></li>
+<li>L2070: <code>(defun ert--results-test-node-or-null-at-point ()</code></li>
+<li>L2088: <code>(defun ert--results-test-node-at-point ()</code></li>
+<li>L2095: <code>(defun ert-results-next-test ()</code></li>
+<li>L2103: <code>(defun ert-results-previous-test ()</code></li>
+<li>L2111: <code>(defun ert--results-move (node ewoc-fn error-message)</code></li>
+<li>L2125: <code>(defun ert--results-expand-collapse-button-action (button)</code></li>
+<li>L2136: <code>(defun ert-results-find-test-at-point-other-window ()</code></li>
+<li>L2146: <code>(defun ert--test-name-button-action (button)</code></li>
+<li>L2151: <code>(defun ert--ewoc-position (ewoc node)</code></li>
+<li>L2160: <code>(defun ert-results-jump-between-summary-and-result ()</code></li>
+<li>L2192: <code>(defun ert-test-at-point ()</code></li>
+<li>L2202: <code>(defun ert--results-test-at-point-no-redefinition ()</code></li>
+<li>L2219: <code>(defun ert--results-test-at-point-allow-redefinition ()</code></li>
+<li>L2256: <code>(defun ert--results-update-after-test-redefinition (pos new-test)</code></li>
+<li>L2272: <code>(defun ert--button-action-position ()</code></li>
+<li>L2280: <code>(defun ert--results-progress-bar-button-action (button)</code></li>
+<li>L2285: <code>(defun ert-results-rerun-all-tests ()</code></li>
+<li>L2294: <code>(defun ert-results-rerun-test-at-point ()</code></li>
+<li>L2329: <code>(defun ert-results-rerun-test-at-point-debugging-errors ()</code></li>
+<li>L2337: <code>(defun ert-results-pop-to-backtrace-for-test-at-point ()</code></li>
+<li>L2367: <code>(defun ert-results-pop-to-messages-for-test-at-point ()</code></li>
+<li>L2389: <code>(defun ert-results-pop-to-should-forms-for-test-at-point ()</code></li>
+<li>L2424: <code>(defun ert-results-toggle-printer-limits-for-test-at-point ()</code></li>
+<li>L2436: <code>(defun ert-results-pop-to-timings ()</code></li>
+<li>L2474: <code>(defun ert-describe-test (test-or-test-name)</code></li>
+<li>L2514: <code>(defun ert-results-describe-test-at-point ()</code></li>
+<li>L2530: <code>(defun ert--unload-function ()</code></li>
+<li>L2542: <code>(provide 'ert)</code></li>
+</ul>
+<h2>dev/examples-to-docs.el</h2>
+<ul>
+<li>L3: <code>(defun example-to-string (example)</code></li>
+<li>L16: <code>(defun examples-to-strings (examples)</code></li>
+<li>L27: <code>(defun docs--signature (cmd)</code></li>
+<li>L37: <code>(defun docs--docstring (cmd)</code></li>
+<li>L47: <code>(defmacro defexamples (cmd &amp;rest examples)</code></li>
+<li>L55: <code>(defmacro def-example-group (group &amp;rest examples)</code></li>
+<li>L60: <code>(defun quote-and-downcase (string)</code></li>
+<li>L63: <code>(defun quote-docstring (docstring)</code></li>
+<li>L69: <code>(defun function-to-md (function)</code></li>
+<li>L82: <code>(defun docs--chop-suffix (suffix s)</code></li>
+<li>L90: <code>(defun github-id (command-name signature)</code></li>
+<li>L95: <code>(defun function-summary (function)</code></li>
+<li>L102: <code>(defun simplify-quotes ()</code></li>
+<li>L116: <code>(defun goto-and-remove (s)</code></li>
+<li>L121: <code>(defun create-docs-file ()</code></li>
+<li>L134: <code>(defun three-first (list)</code></li>
+</ul>
+<h2>dev/examples-to-tests.el</h2>
+<ul>
+<li>L1: <code>(require 'ert)</code></li>
+<li>L3: <code>(defun examples-to-should-1 (examples)</code></li>
+<li>L8: <code>(defun examples-to-should (examples)</code></li>
+<li>L15: <code>(defmacro defexamples (cmd &amp;rest examples)</code></li>
+<li>L20: <code>(defun def-example-group (&amp;rest _)) ; ignore</code></li>
+<li>L22: <code>(provide 'examples-to-tests)</code></li>
+</ul>
+<h2>dev/examples.el</h2>
+<ul>
+<li>L7: <code>(require 's)</code></li>
+</ul>
+<h2>dev/undercover-init.el</h2>
+<h2>s.el</h2>
+<ul>
+<li>L35: <code>(defun s-trim-left (s)</code></li>
+<li>L43: <code>(defun s-trim-right (s)</code></li>
+<li>L51: <code>(defun s-trim (s)</code></li>
+<li>L56: <code>(defun s-collapse-whitespace (s)</code></li>
+<li>L61: <code>(defun s-unindent (s &amp;optional bol)</code></li>
+<li>L69: <code>(defun s-split (separator s &amp;optional omit-nulls)</code></li>
+<li>L78: <code>(defun s-split-up-to (separator s n &amp;optional omit-nulls)</code></li>
+<li>L105: <code>(defun s-lines (s)</code></li>
+<li>L110: <code>(defun s-join (separator strings)</code></li>
+<li>L115: <code>(defun s-concat (&amp;rest strings)</code></li>
+<li>L120: <code>(defun s-prepend (prefix s)</code></li>
+<li>L125: <code>(defun s-append (suffix s)</code></li>
+<li>L130: <code>(defun s-splice (needle n s)</code></li>
+<li>L142: <code>(defun s-repeat (num s)</code></li>
+<li>L151: <code>(defun s-chop-suffix (suffix s)</code></li>
+<li>L160: <code>(defun s-chop-suffixes (suffixes s)</code></li>
+<li>L168: <code>(defun s-chop-prefix (prefix s)</code></li>
+<li>L177: <code>(defun s-chop-prefixes (prefixes s)</code></li>
+<li>L185: <code>(defun s-shared-start (s1 s2)</code></li>
+<li>L191: <code>(defun s-shared-end (s1 s2)</code></li>
+<li>L211: <code>(defun s-chomp (s)</code></li>
+<li>L216: <code>(defun s-truncate (len s &amp;optional ellipsis)</code></li>
+<li>L230: <code>(defun s-word-wrap (len s)</code></li>
+<li>L240: <code>(defun s-center (len s)</code></li>
+<li>L249: <code>(defun s-pad-left (len padding s)</code></li>
+<li>L256: <code>(defun s-pad-right (len padding s)</code></li>
+<li>L263: <code>(defun s-left (len s)</code></li>
+<li>L270: <code>(defun s-right (len s)</code></li>
+<li>L278: <code>(defun s-chop-left (len s)</code></li>
+<li>L285: <code>(defun s-chop-right (len s)</code></li>
+<li>L292: <code>(defun s-ends-with? (suffix s &amp;optional ignore-case)</code></li>
+<li>L305: <code>(defun s-starts-with? (prefix s &amp;optional ignore-case)</code></li>
+<li>L316: <code>(defun s--truthy? (val)</code></li>
+<li>L320: <code>(defun s-contains? (needle s &amp;optional ignore-case)</code></li>
+<li>L329: <code>(defun s-equals? (s1 s2)</code></li>
+<li>L336: <code>(defun s-less? (s1 s2)</code></li>
+<li>L343: <code>(defun s-matches? (regexp s &amp;optional start)</code></li>
+<li>L351: <code>(defun s-blank? (s)</code></li>
+<li>L356: <code>(defun s-blank-str? (s)</code></li>
+<li>L361: <code>(defun s-present? (s)</code></li>
+<li>L366: <code>(defun s-presence (s)</code></li>
+<li>L371: <code>(defun s-lowercase? (s)</code></li>
+<li>L377: <code>(defun s-uppercase? (s)</code></li>
+<li>L383: <code>(defun s-mixedcase? (s)</code></li>
+<li>L390: <code>(defun s-capitalized? (s)</code></li>
+<li>L397: <code>(defun s-numeric? (s)</code></li>
+<li>L403: <code>(defun s-replace (old new s)</code></li>
+<li>L410: <code>(defun s--aget (alist key)</code></li>
+<li>L415: <code>(defun s-replace-all (replacements s)</code></li>
+<li>L423: <code>(defun s-downcase (s)</code></li>
+<li>L430: <code>(defun s-upcase (s)</code></li>
+<li>L437: <code>(defun s-capitalize (s)</code></li>
+<li>L442: <code>(defun s-titleize (s)</code></li>
+<li>L449: <code>(defmacro s-with (s form &amp;rest more)</code></li>
+<li>L463: <code>(defun s-index-of (needle s &amp;optional ignore-case)</code></li>
+<li>L472: <code>(defun s-reverse (s)</code></li>
+<li>L489: <code>(defun s-match-strings-all (regex string)</code></li>
+<li>L511: <code>(defun s-matched-positions-all (regexp string &amp;optional subexp-depth)</code></li>
+<li>L525: <code>(defun s-match (regexp s &amp;optional start)</code></li>
+<li>L550: <code>(defun s-slice-at (regexp s)</code></li>
+<li>L566: <code>(defun s-split-words (s)</code></li>
+<li>L577: <code>(defun s--mapcar-head (fn-head fn-rest list)</code></li>
+<li>L582: <code>(defun s-lower-camel-case (s)</code></li>
+<li>L587: <code>(defun s-upper-camel-case (s)</code></li>
+<li>L592: <code>(defun s-snake-case (s)</code></li>
+<li>L597: <code>(defun s-dashed-words (s)</code></li>
+<li>L602: <code>(defun s-spaced-words (s)</code></li>
+<li>L607: <code>(defun s-capitalized-words (s)</code></li>
+<li>L613: <code>(defun s-titleized-words (s)</code></li>
+<li>L618: <code>(defun s-word-initials (s)</code></li>
+<li>L633: <code>(defun s-format (template replacer &amp;optional extra)</code></li>
+<li>L687: <code>(defun s-lex-fmt|expand (fmt)</code></li>
+<li>L702: <code>(defmacro s-lex-format (format-str)</code></li>
+<li>L717: <code>(defun s-count-matches (regexp s &amp;optional start end)</code></li>
+<li>L735: <code>(defun s-count-matches-all (regexp s &amp;optional start end)</code></li>
+<li>L759: <code>(defun s-wrap (s prefix &amp;optional suffix)</code></li>
+<li>L793: <code>(provide 's)</code></li>
+</ul></main></html>

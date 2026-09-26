@@ -1,0 +1,152 @@
+[
+  {
+    "at": 3.154,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 3.454,
+    "keys": "emamux:send-command",
+    "input_hex": "656d616d75783a73656e642d636f6d6d616e64"
+  },
+  {
+    "at": 3.954,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.755,
+    "keys": "0: web",
+    "input_hex": "303a20776562"
+  },
+  {
+    "at": 4.955,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.755,
+    "keys": "C-a C-k: clear previous command",
+    "input_hex": "010b"
+  },
+  {
+    "at": 6.155,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 6.355,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.361,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 7.661,
+    "keys": "vterm",
+    "input_hex": "767465726d"
+  },
+  {
+    "at": 8.161,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.961,
+    "keys": "tmux attach -t ops:0",
+    "input_hex": "746d757820617474616368202d74206f70733a30"
+  },
+  {
+    "at": 9.161,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 10.163,
+    "keys": "C-b d: detach tmux to return to controller",
+    "input_hex": "0264"
+  },
+  {
+    "at": 10.963,
+    "keys": "C-u",
+    "input_hex": "15"
+  },
+  {
+    "at": 11.365,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 11.665,
+    "keys": "emamux:send-command",
+    "input_hex": "656d616d75783a73656e642d636f6d6d616e64"
+  },
+  {
+    "at": 12.165,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.965,
+    "keys": "1: db",
+    "input_hex": "313a206462"
+  },
+  {
+    "at": 13.166,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 13.966,
+    "keys": "C-a C-k: clear previous command",
+    "input_hex": "010b"
+  },
+  {
+    "at": 14.366,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 14.566,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.569,
+    "keys": "C-u",
+    "input_hex": "15"
+  },
+  {
+    "at": 15.971,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 16.271,
+    "keys": "vterm",
+    "input_hex": "767465726d"
+  },
+  {
+    "at": 16.771,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 17.571,
+    "keys": "tmux attach -t ops:1",
+    "input_hex": "746d757820617474616368202d74206f70733a31"
+  },
+  {
+    "at": 17.771,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 18.773,
+    "keys": "C-b d: detach tmux to return to controller",
+    "input_hex": "0264"
+  }
+]

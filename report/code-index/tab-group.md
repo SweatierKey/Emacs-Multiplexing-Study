@@ -1,0 +1,174 @@
+# Indice del codice: tab-group
+
+Fonte: https://github.com/tarao/tab-group-el.git
+
+Revisione: `5a290ec2608e4100fb188fd60ecb77affcc3465b`.
+
+
+## tab-group.el
+
+- L37: `(defcustom tab-group:show-tabbar 'header-line`
+- L53: `(defcustom tab-group:show-group-name t`
+- L58: `(defcustom tab-group:show-scroll-button 'on-demand`
+- L69: `(defcustom tab-group:scroll t`
+- L74: `(defcustom tab-group:truncate nil`
+- L79: `(defcustom tab-group:no-truncation-for-current-tab t`
+- L84: `(defcustom tab-group:tabbar-width nil`
+- L96: `(defcustom tab-group:ellipsis (string #x2026)`
+- L101: `(defcustom tab-group:tab-separator " "`
+- L106: `(defcustom tab-group:show-tab-index 'on-demand`
+- L116: `(defcustom tab-group:tab-index 'relative`
+- L125: `(defcustom tab-group:tab-index-format "%d:"`
+- L131: `(defcustom tab-group:move-target (string #x2304)`
+- L136: `(defcustom tab-group:scroll-left-symbol (string #xab)`
+- L141: `(defcustom tab-group:scroll-right-symbol (string #xbb)`
+- L146: `(defcustom tab-group:select-single-match nil`
+- L152: `(defcustom tab-group:prefix "C-x t"`
+- L219: `(defcustom tab-group:group-buffer-mode nil`
+- L228: `(defcustom tab-group:group-buffer-prefix nil`
+- L237: `(defcustom tab-group:auto-process-modes`
+- L243: `(defcustom tab-group:auto-help-modes`
+- L249: `(defcustom tab-group:auto-mail-modes`
+- L264: `(defcustom tab-group:auto-common-buffers '("*scratch*" "*Messages*")`
+- L269: `(defcustom tab-group:auto-exclude-modes`
+- L275: `(defcustom tab-group:auto-exclude-buffers '("*Completions*")`
+- L306: `(defvar tab-group:tab-list-mode-remap nil)`
+- L374: `(defvar tab-group:keymap`
+- L376: `(define-key map " " #'tab-group:next)`
+- L377: `(define-key map (kbd "n") #'tab-group:next)`
+- L378: `(define-key map (kbd "p") #'tab-group:prev)`
+- L379: `(define-key map (kbd "s") #'tab-group:select)`
+- L380: `(define-key map (kbd "g") #'tab-group:switch)`
+- L381: `(define-key map (kbd "N") #'tab-group:new)`
+- L382: `(define-key map (kbd "P") #'tab-group:pop)`
+- L383: `(define-key map (kbd "r") #'tab-group:rename)`
+- L384: `(define-key map (kbd "l") #'tab-group:list)`
+- L385: `(define-key map [left] #'tab-group:scroll-left)`
+- L386: `(define-key map [right] #'tab-group:scroll-right)`
+- L387: `(define-key map [home] #'tab-group:scroll-begin)`
+- L388: `(define-key map [end] #'tab-group:scroll-end)`
+- L389: `(define-key map (kbd "<") #'tab-group:move-tab-left)`
+- L390: `(define-key map (kbd ">") #'tab-group:move-tab-right)`
+- L391: `(define-key map (kbd "[") #'tab-group:move-tab-begin)`
+- L392: `(define-key map (kbd "]") #'tab-group:move-tab-end)`
+- L394: `(defvar tab-group:local-mode-map`
+- L396: `(define-key map`
+- L404: `(defmacro tab-group:define-button-map (bind &rest body)`
+- L409: `(flet ((define-key (map key def)`
+- L413: `(defvar tab-group:tab-button-map`
+- L415: `(define-key map [mouse-1] #'tab-group:mouse-select)`
+- L416: `(define-key map [mouse-2] #'tab-group:mouse-kill)`
+- L417: `(define-key map [double-mouse-1] #'tab-group:rename)`
+- L418: `(define-key map [double-mouse-3] #'tab-group:pop)`
+- L419: `(define-key map [down-mouse-1] #'tab-group:move-start)`
+- L420: `(define-key map [drag-mouse-1] #'tab-group:mouse-move))`
+- L422: `(defvar tab-group:group-button-map`
+- L424: `(define-key map [mouse-1] #'tab-group:next-group)`
+- L425: `(define-key map [mouse-3] #'tab-group:prev-group)`
+- L426: `(define-key map [double-mouse-1] #'tab-group:list))`
+- L428: `(defvar tab-group:scroll-left-map`
+- L430: `(define-key map [mouse-1] #'tab-group:scroll-left)`
+- L431: `(define-key map [double-mouse-1] #'tab-group:scroll-begin))`
+- L433: `(defvar tab-group:scroll-right-map`
+- L435: `(define-key map [mouse-1] #'tab-group:scroll-right)`
+- L436: `(define-key map [double-mouse-1] #'tab-group:scroll-end))`
+- L464: `(defun tab-group:to-name (obj &optional class)`
+- L510: `(defun tab-group:split (elt list)`
+- L522: `(defun tab-group:inheriting-propertize (str parent props)`
+- L528: `(defun tab-group:window-total-width (&optional window)`
+- L543: `(define-minor-mode tab-group:local-mode`
+- L576: `(defun tab-group:restore-local-mode ()`
+- L589: `(defun tab-group:killing-buffer ()`
+- L638: `(defun tab-group:truncate (str max-width)`
+- L671: `(defun tab-group:set-label (tab label &optional selected)`
+- L683: `(defun tab-group:tab-label (tab &optional index width)`
+- L708: `(defun tab-group:make-tab-list (tabs &optional num start width)`
+- L727: `(defun tab-group:adjust-tab-list (tablist)`
+- L740: `(defun tab-group:tab-list (tabs &optional num start width)`
+- L747: `(defun tab-group:truncated-tab-list (tabs &optional num start width)`
+- L757: `(defun tab-group:scroll-limit (tab tabs formats width)`
+- L775: `(defun tab-group:tabbar-scroll-limit (tabs &optional num start width)`
+- L799: `(defun tab-group:scroll-button (which enabled)`
+- L816: `(defun tab-group:update-scroll-buttons (pos limit)`
+- L823: `(defun tab-group:scroll (pos &optional update)`
+- L836: `(defun tab-group:force-recalculate-scroll-limit (group)`
+- L843: `(defun tab-group:scrolled-tab-list (tabs &optional num start width)`
+- L875: `(defun tab-group:update-tabbar (group &optional num start width)`
+- L914: `(defun tab-group:show-tabbar-sym (&optional show)`
+- L921: `(defun tab-group:show-tabbar ()`
+- L930: `(defun tab-group:restore-tabbar ()`
+- L942: `(defun tab-group:search-pattern (pattern string)`
+- L957: `(defun tab-group:search-tab-list (group &optional num start width)`
+- L971: `(defun tab-group:update-search (beg end len)`
+- L983: `(defun tab-group:start-search ()`
+- L996: `(defun tab-group:end-search ()`
+- L1010: `(defun tab-group:search-result ()`
+- L1013: `(defun tab-group:search (group prompt)`
+- L1027: `(defun tab-group:find (pattern)`
+- L1048: `(defun tab-group:move-format (label &optional after)`
+- L1067: `(defun tab-group:move-tab-list (group &optional num start width)`
+- L1084: `(defun tab-group:move-update-tabbar (window)`
+- L1091: `(defun tab-group:move-start (event)`
+- L1105: `(defun tab-group:move-end ()`
+- L1118: `(defun tab-group:set-current-tab (tab)`
+- L1124: `(defun tab-group:default-name (buffer)`
+- L1134: `(defun tab-group:buffer-tab-in-group (group)`
+- L1144: `(defun tab-group:tab-position (tab)`
+- L1152: `(defmacro tab-group:with-splitting-tabs (tab bind &rest body)`
+- L1163: `(defun tab-group:pop-tab (&optional tab)`
+- L1184: `(defun tab-group:push-tab (tab group &optional position)`
+- L1205: `(defun tab-group:move-tab (tab position &optional current-tab group)`
+- L1218: `(defun tab-group:prepare-new-tab (&optional name buffer group)`
+- L1233: `(defun tab-group:new-tab (&optional name buffer group position)`
+- L1255: `(defun tab-group:unselect (tab &optional group)`
+- L1266: `(define-derived-mode tab-group:tab-list-mode Buffer-menu-mode`
+- L1284: `(defmacro tab-group:with-selecting-this-window (&rest body)`
+- L1295: `(defmacro tab-group:define-select-this-window (sym)`
+- L1315: `(define-key map (vector 'remap (car elt)) (cdr elt))))`
+- L1330: `(defun tab-group:tab-list-buffer-name-and-file (&optional buffer)`
+- L1350: `(defun tab-group:tab-list-set-entry-tab-name (entry)`
+- L1357: `(defun tab-group:tab-list-refresh (&optional group old-buffer) nil)`
+- L1358: `(defun tab-group:tab-list-tab+size (name size &optional nprops sprops) nil)`
+- L1481: `(defun tab-group:tab-list-tab (group)`
+- L1508: `(defun tab-group:list (group)`
+- L1517: `(define-minor-mode tab-group:group-buffer-local-mode`
+- L1578: `(defun tab-group:group-buffer-p ()`
+- L1581: `(defun tab-group:group-buffer-set-name-and-file (name file)`
+- L1598: `(defun tab-group:group-buffer-rename (tab selected)`
+- L1626: `(defun tab-group:group-buffer-select ()`
+- L1638: `(defun tab-group:group-buffer-unselect (tab group)`
+- L1649: `(defun tab-group:group-buffer-prevent-kill-buffer ()`
+- L1652: `(defun tab-group:group-buffer-local-mode-on ()`
+- L1655: `(defun tab-group:group-buffer-local-mode-off ()`
+- L1658: `(defun tab-group:group-buffer-carefully-disable ()`
+- L1671: `(defun tab-group:group-buffer-mode (&optional arg)`
+- L1694: `(defun tab-group:mode-derived-p (mode parents)`
+- L1703: `(defun tab-group:buffer-auto-group ()`
+- L1723: `(defun tab-group:buffer-auto-groups ()`
+- L1728: `(defun tab-group:buffer-auto-p ()`
+- L1741: `(defun tab-group:auto-new-group (name)`
+- L1754: `(define-minor-mode tab-group:auto-group-local-mode`
+- L1788: `(defun tab-group:new (&optional group)`
+- L1816: `(defun tab-group:remove (&optional group)`
+- L1837: `(defun tab-group:switch (group)`
+- L1848: `(defun tab-group:next-group ()`
+- L1857: `(defun tab-group:prev-group ()`
+- L1866: `(defun tab-group:select (tab &optional no-switch)`
+- L1891: `(defun tab-group:next (&optional tab)`
+- L1899: `(defun tab-group:prev (&optional tab)`
+- L1907: `(defun tab-group:pop (&optional tab)`
+- L1922: `(defun tab-group:rename (tab name)`
+- L1933: `(defun tab-group:move-tab-command (tab pos &optional group)`
+- L1942: `(defun tab-group:move-tab-left (&optional tab)`
+- L1951: `(defun tab-group:move-tab-right (&optional tab)`
+- L1960: `(defun tab-group:move-tab-begin (&optional tab)`
+- L1967: `(defun tab-group:move-tab-end (&optional tab)`
+- L1976: `(defun tab-group:scroll-left ()`
+- L1983: `(defun tab-group:scroll-right ()`
+- L1991: `(defun tab-group:scroll-begin ()`
+- L1997: `(defun tab-group:scroll-end ()`
+- L2008: `(defun tab-group:event-tab (event &optional end)`
+- L2014: `(defun tab-group:mouse-select (event)`
+- L2022: `(defun tab-group:mouse-kill (event)`
+- L2029: `(defun tab-group:mouse-move (event)`
+- L2042: `(provide 'tab-group)`

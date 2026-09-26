@@ -1,0 +1,152 @@
+[
+  {
+    "at": 2.322,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.622,
+    "keys": "tmux-cc-start",
+    "input_hex": "746d75782d63632d7374617274"
+  },
+  {
+    "at": 3.122,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 3.922,
+    "keys": "C-a C-k",
+    "input_hex": "010b"
+  },
+  {
+    "at": 4.322,
+    "keys": "tmux -L ems-tmux-control-mode -f /dev/null -CC new-session -A -s ops",
+    "input_hex": "746d7578202d4c20656d732d746d75782d636f6e74726f6c2d6d6f6465202d66202f6465762f6e756c6c202d4343206e65772d73657373696f6e202d41202d73206f7073"
+  },
+  {
+    "at": 4.523,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.023,
+    "keys": "M-< C-s %0 RET RET: visit first pane",
+    "input_hex": "1b3c1325300d0d"
+  },
+  {
+    "at": 7.026,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 7.226,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.227,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 8.427,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.429,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 9.629,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 10.429,
+    "keys": "C-t c: tmux-cc new-window",
+    "input_hex": "1463"
+  },
+  {
+    "at": 11.429,
+    "keys": "db",
+    "input_hex": "6462"
+  },
+  {
+    "at": 11.629,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.633,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 12.833,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 13.833,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 14.033,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.049,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 15.349,
+    "keys": "tmux-cc-switch-window",
+    "input_hex": "746d75782d63632d7377697463682d77696e646f77"
+  },
+  {
+    "at": 15.849,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 16.649,
+    "keys": "ops:ssh",
+    "input_hex": "6f70733a737368"
+  },
+  {
+    "at": 16.85,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 17.85,
+    "keys": "C-x b: select rendered pane",
+    "input_hex": "1862"
+  },
+  {
+    "at": 18.25,
+    "keys": "tmux-pane %0",
+    "input_hex": "746d75782d70616e65202530"
+  },
+  {
+    "at": 18.45,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 19.45,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 19.651,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

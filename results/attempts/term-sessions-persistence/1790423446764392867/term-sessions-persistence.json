@@ -1,0 +1,8 @@
+{
+  "id": "term-sessions-persistence",
+  "status": "failed",
+  "checks": {},
+  "snapshots": [],
+  "error": "Emacs server not ready; see recording for initialization error",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-zmx.py\", line 12, in <module>\n    s=Session(name,setup);env=dict(s.env,ZMX_DIR=str(zd))\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/record.py\", line 37, in __init__\n    self.close();raise RuntimeError('Emacs server not ready; see recording for initialization error')\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Emacs server not ready; see recording for initialization error\n"
+}

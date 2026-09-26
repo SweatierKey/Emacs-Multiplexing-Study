@@ -1,0 +1,97 @@
+[
+  {
+    "at": 2.606,
+    "keys": "C-x C-f",
+    "input_hex": "1806"
+  },
+  {
+    "at": 3.007,
+    "keys": "/home/admin/Emacs-Multiplexing-Study/lab/eev-demo.e",
+    "input_hex": "2f686f6d652f61646d696e2f456d6163732d4d756c7469706c6578696e672d53747564792f6c61622f6565762d64656d6f2e65"
+  },
+  {
+    "at": 3.207,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.007,
+    "keys": "M-<",
+    "input_hex": "1b3c"
+  },
+  {
+    "at": 4.407,
+    "keys": "F8: eepitch line 1",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 5.607,
+    "keys": "F8: eepitch line 2",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 6.808,
+    "keys": "F8: eepitch line 3",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 8.008,
+    "keys": "F8: eepitch line 4",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 9.208,
+    "keys": "F8: eepitch line 5",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 10.408,
+    "keys": "F8: eepitch line 6",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 11.608,
+    "keys": "F8: eepitch line 7",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 12.808,
+    "keys": "F8: eepitch line 8",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 14.009,
+    "keys": "F8: eepitch line 9",
+    "input_hex": "1b5b31397e"
+  },
+  {
+    "at": 15.209,
+    "keys": "C-x b",
+    "input_hex": "1862"
+  },
+  {
+    "at": 15.609,
+    "keys": "*shell*",
+    "input_hex": "2a7368656c6c2a"
+  },
+  {
+    "at": 15.809,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 16.612,
+    "keys": "C-x b",
+    "input_hex": "1862"
+  },
+  {
+    "at": 17.012,
+    "keys": "*shell 2*",
+    "input_hex": "2a7368656c6c20322a"
+  },
+  {
+    "at": 17.212,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

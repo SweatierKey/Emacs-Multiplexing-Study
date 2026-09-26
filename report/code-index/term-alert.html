@@ -1,0 +1,29 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: term-alert</h1>
+<p>Fonte: https://codeberg.org/calliecameron/term-alert.git</p>
+<p>Revisione: <code>2236864975b9909e8499780a7fc4d92022c17b61</code>.</p>
+<h2>term-alert-pkg.el</h2>
+<h2>term-alert.el</h2>
+<ul>
+<li>L56: <code>;;     (define-key term-raw-map (kbd "C-#") 'term-alert-next-command-toggle)</code></li>
+<li>L57: <code>;;     (define-key term-raw-map (kbd "M-#") 'term-alert-all-toggle)</code></li>
+<li>L58: <code>;;     (define-key term-raw-map (kbd "C-'") 'term-alert-runtime)</code></li>
+<li>L82: <code>(require 'term)</code></li>
+<li>L83: <code>(require 'term-cmd)</code></li>
+<li>L84: <code>(require 'alert)</code></li>
+<li>L85: <code>(require 'f)</code></li>
+<li>L86: <code>(require 'eat nil t)</code></li>
+<li>L105: <code>(define-minor-mode term-alert-mode</code></li>
+<li>L121: <code>(defun term-alert--set-count (number)</code></li>
+<li>L132: <code>(defun term-alert-next-command-toggle (num)</code></li>
+<li>L138: <code>(defun term-alert-all-toggle ()</code></li>
+<li>L143: <code>(defun term-alert--get-runtime ()</code></li>
+<li>L154: <code>(defun term-alert--get-message ()</code></li>
+<li>L164: <code>(defun term-alert-runtime ()</code></li>
+<li>L177: <code>(defun term-alert--started-callback ()</code></li>
+<li>L183: <code>(defun term-alert--done-callback ()</code></li>
+<li>L193: <code>(defun term-alert--default-alert ()</code></li>
+<li>L200: <code>(defun term-alert--ensure-file (name)</code></li>
+<li>L208: <code>(defmacro term-alert--install-command (command callback)</code></li>
+<li>L215: <code>(defun term-alert--init ()</code></li>
+<li>L228: <code>(provide 'term-alert)</code></li>
+</ul></main></html>

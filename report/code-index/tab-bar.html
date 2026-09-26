@@ -1,0 +1,180 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tab-bar</h1>
+<p>Fonte: https://git.savannah.gnu.org/cgit/emacs.git</p>
+<p>Revisione: <code>30.1</code>.</p>
+<h2>tab-bar.el</h2>
+<ul>
+<li>L91: <code>(defcustom tab-bar-select-tab-modifiers '()</code></li>
+<li>L118: <code>(defun tab-bar--define-keys ()</code></li>
+<li>L121: <code>(define-key tab-bar-mode-map</code></li>
+<li>L125: <code>(define-key tab-bar-mode-map</code></li>
+<li>L129: <code>(define-key tab-bar-mode-map</code></li>
+<li>L144: <code>(defun tab-bar--undefine-keys ()</code></li>
+<li>L147: <code>(define-key tab-bar-mode-map</code></li>
+<li>L151: <code>(define-key tab-bar-mode-map</code></li>
+<li>L155: <code>(define-key tab-bar-mode-map</code></li>
+<li>L159: <code>(defun tab-bar--load-buttons ()</code></li>
+<li>L210: <code>(defun tab-bar--tab-bar-lines-for-frame (frame)</code></li>
+<li>L222: <code>(defun tab-bar--update-tab-bar-lines (&amp;optional frames)</code></li>
+<li>L247: <code>(defun tab-bar-mode--tab-key-bind (map key binding)</code></li>
+<li>L249: <code>(define-key map key</code></li>
+<li>L253: <code>(defvar tab-bar-mode-map</code></li>
+<li>L261: <code>(define-minor-mode tab-bar-mode</code></li>
+<li>L288: <code>(defun tab-bar--key-to-number (key)</code></li>
+<li>L303: <code>(defun tab-bar--event-to-item (posn)</code></li>
+<li>L339: <code>(defun tab-bar-mouse-down-1 (event)</code></li>
+<li>L357: <code>(defun tab-bar-mouse-1 (event)</code></li>
+<li>L372: <code>(defun tab-bar-mouse-close-tab (event)</code></li>
+<li>L382: <code>(defun tab-bar-mouse-context-menu (event &amp;optional posn)</code></li>
+<li>L424: <code>(defun tab-bar-mouse-move-tab (event)</code></li>
+<li>L447: <code>(defun tab-bar-handle-timeout ()</code></li>
+<li>L455: <code>(defun tab-bar-touchscreen-begin (event)</code></li>
+<li>L516: <code>(defvar-keymap tab-bar-map</code></li>
+<li>L540: <code>(global-set-key [tab-bar]</code></li>
+<li>L544: <code>(defun tab-bar-make-keymap (&amp;optional _ignore)</code></li>
+<li>L552: <code>(defun toggle-tab-bar-mode-from-frame (&amp;optional arg)</code></li>
+<li>L561: <code>(defun toggle-frame-tab-bar (&amp;optional frame)</code></li>
+<li>L579: <code>(defcustom tab-bar-show t</code></li>
+<li>L614: <code>(defcustom tab-bar-new-tab-choice t</code></li>
+<li>L638: <code>(defcustom tab-bar-new-tab-group t</code></li>
+<li>L652: <code>(defcustom tab-bar-new-button-show t</code></li>
+<li>L667: <code>(defcustom tab-bar-close-button-show t</code></li>
+<li>L696: <code>(defcustom tab-bar-tab-hints nil</code></li>
+<li>L711: <code>(defun tab-bar-separator ()</code></li>
+<li>L717: <code>(defcustom tab-bar-tab-name-function #'tab-bar-tab-name-current</code></li>
+<li>L739: <code>(defun tab-bar-tab-name-current ()</code></li>
+<li>L748: <code>(defun tab-bar-tab-name-current-with-count ()</code></li>
+<li>L757: <code>(defun tab-bar-tab-name-all ()</code></li>
+<li>L765: <code>(defcustom tab-bar-tab-name-truncated-max 20</code></li>
+<li>L775: <code>(defun tab-bar-tab-name-truncated ()</code></li>
+<li>L798: <code>(defun tab-bar-tabs (&amp;optional frame)</code></li>
+<li>L820: <code>(defun tab-bar-tabs-set (tabs &amp;optional frame)</code></li>
+<li>L826: <code>(defun tab-bar-tab-name-format-truncated (name _tab _i)</code></li>
+<li>L836: <code>(defun tab-bar-tab-name-format-hints (name _tab i)</code></li>
+<li>L841: <code>(defun tab-bar-tab-name-format-close-button (name tab _i)</code></li>
+<li>L851: <code>(defcustom tab-bar-tab-face-function #'tab-bar-tab-face-default</code></li>
+<li>L858: <code>(defun tab-bar-tab-face-default (tab)</code></li>
+<li>L861: <code>(defun tab-bar-tab-name-format-face (name tab _i)</code></li>
+<li>L868: <code>(defcustom tab-bar-tab-name-format-functions</code></li>
+<li>L885: <code>(defun tab-bar-tab-name-format-default (tab i)</code></li>
+<li>L893: <code>(defcustom tab-bar-tab-name-format-function #'tab-bar-tab-name-format-default</code></li>
+<li>L905: <code>(defcustom tab-bar-format '(tab-bar-format-history</code></li>
+<li>L942: <code>(defun tab-bar-menu-bar (event)</code></li>
+<li>L959: <code>(defun tab-bar-format-menu-bar ()</code></li>
+<li>L964: <code>(defun tab-bar-format-history ()</code></li>
+<li>L979: <code>(defun tab-bar--format-tab (tab i)</code></li>
+<li>L1002: <code>(defun tab-bar-format-tabs ()</code></li>
+<li>L1011: <code>(defcustom tab-bar-tab-group-function #'tab-bar-tab-group-default</code></li>
+<li>L1022: <code>(defun tab-bar-tab-group-default (tab)</code></li>
+<li>L1025: <code>(defcustom tab-bar-tab-group-format-function #'tab-bar-tab-group-format-default</code></li>
+<li>L1038: <code>(defun tab-bar-tab-group-format-default (tab i &amp;optional current-p)</code></li>
+<li>L1044: <code>(defcustom tab-bar-tab-group-face-function #'tab-bar-tab-group-face-default</code></li>
+<li>L1055: <code>(defun tab-bar-tab-group-face-default (tab)</code></li>
+<li>L1061: <code>(defun tab-bar--format-tab-group (tab i &amp;optional current-p)</code></li>
+<li>L1087: <code>(defun tab-bar-format-tabs-groups ()</code></li>
+<li>L1117: <code>(defun tab-bar-format-add-tab ()</code></li>
+<li>L1123: <code>(defun tab-bar-format-align-right ()</code></li>
+<li>L1140: <code>(defun tab-bar-format-global ()</code></li>
+<li>L1151: <code>(defun tab-bar-format-list (format-list)</code></li>
+<li>L1166: <code>(defun tab-bar-make-keymap-1 ()</code></li>
+<li>L1175: <code>(defcustom tab-bar-auto-width t</code></li>
+<li>L1196: <code>(defcustom tab-bar-auto-width-max '((220) 20)</code></li>
+<li>L1249: <code>(defun tab-bar-auto-width-1 (wvalue)</code></li>
+<li>L1261: <code>(defun tab-bar-auto-width (items)</code></li>
+<li>L1349: <code>(defun frameset-filter-tabs (current _filtered _parameters saving)</code></li>
+<li>L1364: <code>(defun tab-bar--tab (&amp;optional frame)</code></li>
+<li>L1403: <code>(defun tab-bar--current-tab (&amp;optional tab frame)</code></li>
+<li>L1407: <code>(defun tab-bar--current-tab-make (&amp;optional tab)</code></li>
+<li>L1434: <code>(defun tab-bar--current-tab-find (&amp;optional tabs frame)</code></li>
+<li>L1438: <code>(defun tab-bar--current-tab-index (&amp;optional tabs frame)</code></li>
+<li>L1443: <code>(defun tab-bar--tab-index (tab &amp;optional tabs frame)</code></li>
+<li>L1448: <code>(defun tab-bar--tab-index-by-name (name &amp;optional tabs frame)</code></li>
+<li>L1453: <code>(defun tab-bar--tab-index-recent (nth &amp;optional tabs frame)</code></li>
+<li>L1460: <code>(defun tab-bar--tabs-recent (&amp;optional tabs frame)</code></li>
+<li>L1470: <code>(defcustom tab-bar-tab-post-select-functions nil</code></li>
+<li>L1478: <code>(defcustom tab-bar-select-restore-windows #'tab-bar-select-restore-windows</code></li>
+<li>L1502: <code>(defun tab-bar-select-restore-windows (_frame windows _type)</code></li>
+<li>L1534: <code>(defcustom tab-bar-select-restore-context t</code></li>
+<li>L1547: <code>(defun tab-bar-minibuffer-restore-tab ()</code></li>
+<li>L1555: <code>(defun tab-bar-select-tab (&amp;optional tab-number)</code></li>
+<li>L1671: <code>(defun tab-bar-switch-to-next-tab (&amp;optional arg)</code></li>
+<li>L1682: <code>(defun tab-bar-switch-to-prev-tab (&amp;optional arg)</code></li>
+<li>L1690: <code>(defun tab-bar-switch-to-last-tab (&amp;optional arg)</code></li>
+<li>L1699: <code>(defun tab-bar-switch-to-recent-tab (&amp;optional arg)</code></li>
+<li>L1710: <code>(defun tab-bar-switch-to-tab (name)</code></li>
+<li>L1735: <code>(defun tab-bar-move-tab-to (to-number &amp;optional from-number)</code></li>
+<li>L1755: <code>(defun tab-bar-move-tab (&amp;optional arg)</code></li>
+<li>L1767: <code>(defun tab-bar-move-tab-backward (&amp;optional arg)</code></li>
+<li>L1774: <code>(defun tab-bar-move-tab-to-frame (arg &amp;optional from-frame from-number</code></li>
+<li>L1809: <code>(defun tab-bar-detach-tab (&amp;optional from-number)</code></li>
+<li>L1825: <code>(defun tab-bar-move-window-to-tab ()</code></li>
+<li>L1840: <code>(defcustom tab-bar-new-tab-to 'right</code></li>
+<li>L1856: <code>(defcustom tab-bar-tab-post-open-functions nil</code></li>
+<li>L1864: <code>(defun tab-bar-new-tab-to (&amp;optional tab-number)</code></li>
+<li>L1956: <code>(defun tab-bar-new-tab (&amp;optional arg from-number)</code></li>
+<li>L1976: <code>(defun tab-bar-duplicate-tab (&amp;optional arg from-number)</code></li>
+<li>L1989: <code>(defcustom tab-bar-close-tab-select 'recent</code></li>
+<li>L2000: <code>(defcustom tab-bar-close-last-tab-choice nil</code></li>
+<li>L2015: <code>(defcustom tab-bar-tab-prevent-close-functions nil</code></li>
+<li>L2024: <code>(defcustom tab-bar-tab-pre-close-functions nil</code></li>
+<li>L2032: <code>(defun tab-bar-close-tab (&amp;optional tab-number to-number)</code></li>
+<li>L2111: <code>(defun tab-bar-close-tab-by-name (name)</code></li>
+<li>L2121: <code>(defun tab-bar-close-other-tabs (&amp;optional tab-number)</code></li>
+<li>L2161: <code>(defun tab-bar-undo-close-tab ()</code></li>
+<li>L2190: <code>(defun tab-bar-rename-tab (name &amp;optional tab-number)</code></li>
+<li>L2224: <code>(defun tab-bar-rename-tab-by-name (tab-name new-name)</code></li>
+<li>L2243: <code>(defun tab-bar-move-tab-to-group (&amp;optional tab)</code></li>
+<li>L2273: <code>(defcustom tab-bar-tab-post-change-group-functions '(tab-bar-move-tab-to-group)</code></li>
+<li>L2284: <code>(defun tab-bar-change-tab-group (group-name &amp;optional tab-number)</code></li>
+<li>L2326: <code>(defun tab-bar-close-group-tabs (group-name)</code></li>
+<li>L2377: <code>(defun tab-bar--history-pre-change ()</code></li>
+<li>L2386: <code>(defun tab-bar--history-change ()</code></li>
+<li>L2400: <code>(defun tab-bar-history-back ()</code></li>
+<li>L2419: <code>(defun tab-bar-history-forward ()</code></li>
+<li>L2438: <code>(defvar-keymap tab-bar-history-mode-map</code></li>
+<li>L2442: <code>(define-minor-mode tab-bar-history-mode</code></li>
+<li>L2482: <code>(defun tab-switcher ()</code></li>
+<li>L2505: <code>(defun tab-switcher-noselect ()</code></li>
+<li>L2548: <code>(defvar-keymap tab-switcher-mode-map</code></li>
+<li>L2568: <code>(define-derived-mode tab-switcher-mode nil "Window Configurations"</code></li>
+<li>L2583: <code>(defun tab-switcher-current-tab (error-if-non-existent-p)</code></li>
+<li>L2594: <code>(defun tab-switcher-next-line (&amp;optional arg)</code></li>
+<li>L2602: <code>(defun tab-switcher-prev-line (&amp;optional arg)</code></li>
+<li>L2610: <code>(defun tab-switcher-unmark (&amp;optional backup)</code></li>
+<li>L2622: <code>(defun tab-switcher-backup-unmark ()</code></li>
+<li>L2630: <code>(defun tab-switcher-delete (&amp;optional arg)</code></li>
+<li>L2651: <code>(defun tab-switcher-delete-backwards (&amp;optional arg)</code></li>
+<li>L2658: <code>(defun tab-switcher-delete-from-list (tab)</code></li>
+<li>L2666: <code>(defun tab-switcher-execute ()</code></li>
+<li>L2687: <code>(defun tab-switcher-select ()</code></li>
+<li>L2700: <code>(defun tab-switcher-mouse-select (event)</code></li>
+<li>L2709: <code>(defun tab-bar--reusable-frames (all-frames)</code></li>
+<li>L2716: <code>(defun tab-bar-get-buffer-tab (buffer-or-name</code></li>
+<li>L2774: <code>(defun display-buffer-in-tab (buffer alist)</code></li>
+<li>L2833: <code>(defun display-buffer-in-new-tab (buffer alist)</code></li>
+<li>L2868: <code>(defun switch-to-buffer-other-tab (buffer-or-name &amp;optional _norecord)</code></li>
+<li>L2879: <code>(defun find-file-other-tab (filename &amp;optional wildcards)</code></li>
+<li>L2897: <code>(defun find-file-read-only-other-tab (filename &amp;optional wildcards)</code></li>
+<li>L2913: <code>(defun other-tab-prefix ()</code></li>
+<li>L2957: <code>(keymap-set tab-prefix-map "n"   #'tab-duplicate)</code></li>
+<li>L2958: <code>(keymap-set tab-prefix-map "N"   #'tab-new-to)</code></li>
+<li>L2959: <code>(keymap-set tab-prefix-map "2"   #'tab-new)</code></li>
+<li>L2960: <code>(keymap-set tab-prefix-map "1"   #'tab-close-other)</code></li>
+<li>L2961: <code>(keymap-set tab-prefix-map "0"   #'tab-close)</code></li>
+<li>L2962: <code>(keymap-set tab-prefix-map "u"   #'tab-undo)</code></li>
+<li>L2963: <code>(keymap-set tab-prefix-map "o"   #'tab-next)</code></li>
+<li>L2964: <code>(keymap-set tab-prefix-map "O"   #'tab-previous)</code></li>
+<li>L2965: <code>(keymap-set tab-prefix-map "m"   #'tab-move)</code></li>
+<li>L2966: <code>(keymap-set tab-prefix-map "M"   #'tab-move-to)</code></li>
+<li>L2967: <code>(keymap-set tab-prefix-map "G"   #'tab-group)</code></li>
+<li>L2968: <code>(keymap-set tab-prefix-map "r"   #'tab-rename)</code></li>
+<li>L2969: <code>(keymap-set tab-prefix-map "^ f"  #'tab-detach)</code></li>
+<li>L2970: <code>(keymap-set tab-prefix-map "RET" #'tab-switch)</code></li>
+<li>L2971: <code>(keymap-set tab-prefix-map "b"   #'switch-to-buffer-other-tab)</code></li>
+<li>L2972: <code>(keymap-set tab-prefix-map "f"   #'find-file-other-tab)</code></li>
+<li>L2973: <code>(keymap-set tab-prefix-map "C-f" #'find-file-other-tab)</code></li>
+<li>L2974: <code>(keymap-set tab-prefix-map "C-r" #'find-file-read-only-other-tab)</code></li>
+<li>L2975: <code>(keymap-set tab-prefix-map "t"   #'other-tab-prefix)</code></li>
+<li>L2977: <code>(defvar-keymap tab-bar-switch-repeat-map</code></li>
+<li>L2984: <code>(defvar-keymap tab-bar-move-repeat-map</code></li>
+<li>L2993: <code>(provide 'tab-bar)</code></li>
+</ul></main></html>

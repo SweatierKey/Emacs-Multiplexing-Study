@@ -1,0 +1,52 @@
+[
+  {
+    "at": 3.551,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 3.851,
+    "keys": "tmux-view",
+    "input_hex": "746d75782d76696577"
+  },
+  {
+    "at": 4.351,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.151,
+    "keys": "ops/web/0:",
+    "input_hex": "6f70732f7765622f303a"
+  },
+  {
+    "at": 5.351,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.758,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 7.058,
+    "keys": "tmux-view",
+    "input_hex": "746d75782d76696577"
+  },
+  {
+    "at": 7.558,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.358,
+    "keys": "ops/db/0:",
+    "input_hex": "6f70732f64622f303a"
+  },
+  {
+    "at": 8.559,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

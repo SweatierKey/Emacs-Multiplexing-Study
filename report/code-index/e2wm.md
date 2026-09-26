@@ -1,0 +1,380 @@
+# Indice del codice: e2wm
+
+Fonte: https://github.com/kiwanami/emacs-window-manager.git
+
+Revisione: `33efca5504db9d8b3fdbd412c3d79663c9eec77a`.
+
+
+## e2wm-config.el
+
+- L33: `(require 'e2wm)`
+- L436: `(provide 'e2wm-config)`
+
+## e2wm-vcs.el
+
+- L32: `(require 'e2wm)`
+- L33: `(require 'magit nil t)`
+- L34: `(require 'monky nil t)`
+- L35: `(require 'dsvn nil t)`
+- L51: `(defun e2wm:def-plugin-vcs-na-buffer (title)`
+- L61: `(defun e2wm:def-plugin-vcs-with-window (topdir-func body-func na-buffer-func)`
+- L85: `(defun e2wm:vcs-select-if-plugin (buf)`
+- L101: `(defun e2wm:def-plugin-magit-branches (frame wm winfo)`
+- L113: `(defun e2wm:def-plugin-magit-logs (frame wm winfo)`
+- L124: `(defun e2wm:def-plugin-magit-status (frame wm winfo)`
+- L177: `(defun e2wm:dp-magit-leave (wm)`
+- L181: `(defun e2wm:dp-magit-start (wm)`
+- L184: `(defun e2wm:dp-magit-init ()`
+- L192: `(defun e2wm:dp-magit-switch (buf)`
+- L197: `(defun e2wm:dp-magit-popup (buf)`
+- L223: `(defun e2wm:dp-magit ()`
+- L227: `(defvar e2wm:dp-magit-minor-mode-map`
+- L237: `(defun e2wm:monky-get-root-dir (dir)`
+- L240: `(defun e2wm:def-plugin-monky-branches (frame wm winfo)`
+- L251: `(defun e2wm:def-plugin-monky-logs (frame wm winfo)`
+- L261: `(defun e2wm:def-plugin-monky-status (frame wm winfo)`
+- L314: `(defun e2wm:dp-vcs-monky (wm)`
+- L318: `(defun e2wm:dp-monky-start (wm)`
+- L321: `(defun e2wm:dp-monky-init ()`
+- L329: `(defun e2wm:dp-monky-update (wm)`
+- L333: `(defun e2wm:dp-monky-switch (buf)`
+- L337: `(defun e2wm:dp-monky-popup (buf)`
+- L366: `(defun e2wm:dp-monky ()`
+- L370: `(defvar e2wm:dp-monky-minor-mode-map`
+- L382: `(defun e2wm:def-plugin-svn-top-dir (dir)`
+- L396: `(defun e2wm:def-plugin-svn-logs (frame wm winfo)`
+- L420: `(defun e2wm:def-plugin-svn-status (frame wm winfo)`
+- L466: `(defun e2wm:dp-svn-leave (wm)`
+- L469: `(defun e2wm:dp-svn-init ()`
+- L477: `(defun e2wm:dp-svn-switch (buf)`
+- L481: `(defun e2wm:dp-svn-popup (buf)`
+- L495: `(defun e2wm:dp-svn ()`
+- L499: `(defvar e2wm:dp-svn-minor-mode-map`
+- L505: `(provide 'e2wm-vcs)`
+
+## e2wm.el
+
+- L154: `(require 'cl-lib)`
+- L156: `(require 'imenu)`
+- L157: `(require 'easymenu)`
+- L158: `(require 'windmove)`
+- L160: `(require 'window-layout)`
+- L188: `(defmacro e2wm:aif (test-form then-form &rest else-forms)`
+- L195: `(defmacro e2wm:aand (test &rest rest)`
+- L201: `(defmacro e2wm:not-minibuffer (&rest body)`
+- L207: `(defmacro e2wm:safe-call (method object &rest args)`
+- L216: `(defun e2wm:find (name name-func seq)`
+- L223: `(defmacro e2wm:delete! (name name-func seq)`
+- L236: `(defun e2wm:message (&rest args)`
+- L249: `(defun e2wm:message-mark () ; debug`
+- L257: `(defun e2wm:define-keymap (keymap-list &optional prefix)`
+- L264: `(define-key map`
+- L275: `(defun e2wm:add-keymap (keymap keymap-list &optional prefix)`
+- L279: `(define-key keymap`
+- L296: `(defmacro e2wm:with-advice (&rest body)`
+- L306: `(defun e2wm:string-trim (txt)`
+- L319: `(defun e2wm:strtime (time)`
+- L349: `(defun e2wm:rt (text face)`
+- L354: `(defun e2wm:rt-format (text &rest args)`
+- L364: `(defun e2wm:tp (text prop value)`
+- L370: `(defun e2wm:format-byte-unit (size)`
+- L380: `(defun e2wm:num (number)`
+- L404: `(defun e2wm:max-length (rows)`
+- L418: `(defun e2wm:frame-param-get (name &optional frame)`
+- L422: `(defun e2wm:frame-param-set (name val &optional frame)`
+- L426: `(defun e2wm:document-buffer-p (buffer)`
+- L431: `(defun e2wm:get-blank-buffer ()`
+- L453: `(defun e2wm:history-get ()`
+- L458: `(defun e2wm:history-save (buffer-history)`
+- L464: `(defun e2wm:history-get-backup ()`
+- L470: `(defun e2wm:history-save-backup (buffer-history-backup)`
+- L477: `(defun e2wm:history-filter-killed-buffers (history)`
+- L483: `(defun e2wm:buffer-completion-p (buf)`
+- L487: `(defun e2wm:history-recordable-p (buffer)`
+- L493: `(defun e2wm:history-add (buffer)`
+- L530: `(defun e2wm:history-back ()`
+- L539: `(defun e2wm:history-forward ()`
+- L548: `(defun e2wm:history-delete (buffer)`
+- L559: `(defun e2wm:history-get-next (buffer)`
+- L572: `(defun e2wm:history-get-prev (buffer)`
+- L585: `(defun e2wm:history-get-nearest (buffer n)`
+- L610: `(defun e2wm:history-get-main-buffer ()`
+- L616: `(defun e2wm:managed-p (&optional frame)`
+- L620: `(defun e2wm:internal-buffer-p (buf)`
+- L687: `(defun e2wm:pst-class-register (pst-class)`
+- L699: `(defun e2wm:pst-class-remove (pst-class)`
+- L707: `(defun e2wm:pst-class-get (name)`
+- L711: `(defun e2wm:pst-class-abstract-p (pst-class)`
+- L730: `(defun e2wm:$pst-get-prop (name pst)`
+- L735: `(defun e2wm:$pst-class-get-prop-gen (slot-name pst-class)`
+- L741: `(defun e2wm:method-call (method-name class error-on-nil &rest args)`
+- L758: `(defmacro e2wm:pst-method-call (method-name pst-instance &rest args)`
+- L764: `(defun e2wm:$pst-class-super ()`
+- L777: `(defun e2wm:$pst-title (pst)`
+- L779: `(defun e2wm:$pst-main (pst)`
+- L781: `(defun e2wm:$pst-keymap (pst)`
+- L785: `(defun e2wm:$pst-start (pst)`
+- L787: `(defun e2wm:$pst-update (pst)`
+- L789: `(defun e2wm:$pst-switch (pst)`
+- L791: `(defun e2wm:$pst-popup (pst)`
+- L793: `(defun e2wm:$pst-leave (pst)`
+- L795: `(defun e2wm:$pst-save (pst)`
+- L797: `(defun e2wm:$pst-super (pst)`
+- L800: `(defun e2wm:pst-get-instance (&optional frame)`
+- L802: `(defun e2wm:pst-set-instance (pst-instance &optional frame)`
+- L805: `(defun e2wm:pst-get-prev-pst ()`
+- L807: `(defun e2wm:pst-set-prev-pst (pst-name)`
+- L810: `(defun e2wm:pst-copy-instance ()`
+- L822: `(defun e2wm:pst-get-wm ()`
+- L827: `(defun e2wm:pst-update-windows (&optional rebuild-windows)`
+- L849: `(defun e2wm:pst-switch-to-buffer (buf)`
+- L854: `(defun e2wm:pst-pop-to-buffer (buf)`
+- L859: `(defun e2wm:pst-display-buffer (buf)`
+- L864: `(defun e2wm:pst-after-bury-buffer (buried-buffer window)`
+- L869: `(defun e2wm:pst-change (next-pst-name)`
+- L904: `(defun e2wm:pst-change-prev ()`
+- L911: `(defvar e2wm:pst-minor-mode-keymap`
+- L921: `(defun e2wm:pst-change-keymap (new-keymap)`
+- L930: `(defun e2wm:pst-resume (pst-instance)`
+- L939: `(defun e2wm:pst-finish (&optional frame)`
+- L950: `(defun e2wm:pst-window-option-get (wm window-name)`
+- L955: `(defun e2wm:pst-window-plugin-get (wm window-name)`
+- L960: `(defun e2wm:pst-window-plugin-set (wm window-name plugin-name)`
+- L965: `(defun e2wm:pst-buffer-get (window-name)`
+- L971: `(defun e2wm:pst-buffer-set (window-name buffer &optional showp selectp)`
+- L985: `(defun e2wm:pst-window-select (window-name)`
+- L991: `(defun e2wm:pst-window-select-main ()`
+- L999: `(defun e2wm:pst-window-toggle (window-name &optional selectp next-window)`
+- L1012: `(defun e2wm:pst-show-history-main ()`
+- L1022: `(defun e2wm:pst-after-save-hook ()`
+- L1033: `(defun e2wm:pst-change-command ()`
+- L1042: `(defun e2wm:pst-window-select-main-command ()`
+- L1045: `(defun e2wm:pst-update-windows-command ()`
+- L1052: `(defun e2wm:pst-change-prev-pst-command ()`
+- L1056: `(defun e2wm:pst-history-forward-command ()`
+- L1061: `(defun e2wm:pst-history-back-command ()`
+- L1077: `(define-minor-mode e2wm:pst-minor-mode`
+- L1094: `(defun e2wm:pst-minor-mode-setup ()`
+- L1100: `(defun e2wm:pst-minor-mode-abort ()`
+- L1109: `(defvar e2wm:pst-minor-mode-keymap-blank (make-sparse-keymap) "[internal]")`
+- L1111: `(defun e2wm:pst-minor-mode-disable-frame (&optional frame)`
+- L1130: `(defun e2wm:pst-minor-mode-enable-frame (&optional frame)`
+- L1145: `(defun e2wm:pst-minor-mode-switch-frame (frame)`
+- L1160: `(defun e2wm:override-after-make-frame (frame)`
+- L1173: `(defun e2wm:other-managed-frames (frame)`
+- L1178: `(defun e2wm:delete-frame-functions (frame)`
+- L1193: `(defun e2wm:pstset-defaults()`
+- L1202: `(defun e2wm:pstset-define (names)`
+- L1209: `(defun e2wm:pstset-get-current-pstset ()`
+- L1212: `(defun e2wm:pstset-next-pst-command ()`
+- L1222: `(defun e2wm:pstset-prev-pst-command ()`
+- L1291: `(defun e2wm:after-bury-buffer (buried-buffer window)`
+- L1341: `(defun e2wm:override-special-display-function (buf &optional args)`
+- L1371: `(defun e2wm:kill-buffer-hook ()`
+- L1420: `(defun e2wm:move-window-point (&optional buf)`
+- L1431: `(defun e2wm:select-window-point (&optional buf)`
+- L1448: `(defun e2wm:debug-windows (wm)`
+- L1459: `(defun e2wm:override-custom-wcfg-p (cfg)`
+- L1465: `(defun e2wm:override-window-cfg-change ()`
+- L1479: `(defun e2wm:override-setup-completion ()`
+- L1490: `(defun e2wm:override-restore-window-cfg ()`
+- L1577: `(defun e2wm:plugin-register (name title update-function)`
+- L1586: `(defun e2wm:plugin-delete (name)`
+- L1590: `(defun e2wm:plugin-get (name)`
+- L1596: `(defun e2wm:plugin-exec-update (frame wm)`
+- L1607: `(defun e2wm:plugin-exec-update-by-plugin-name (frame wm exec-plugin-name)`
+- L1619: `(defun e2wm:plugin-switch (plugin-name)`
+- L1630: `(defun e2wm:plugin-switch-command ()`
+- L1648: `(defun e2wm:plugin-remove-command ()`
+- L1664: `(defun e2wm:menu-pst-selected-p (name)`
+- L1668: `(defun e2wm:menu-plugin-selected-p (name)`
+- L1675: `(defun e2wm:menu-plugin-working-p ()`
+- L1681: `(defun e2wm:menu-define ()`
+- L1740: `(defun e2wm:def-plugin-history-list (frame wm winfo)`
+- L1782: `(defvar e2wm:def-plugin-history-list-mode-map`
+- L1792: `(define-derived-mode e2wm:def-plugin-history-list-mode fundamental-mode "History")`
+- L1794: `(defun e2wm:def-plugin-history-list-kill-command ()`
+- L1804: `(defun e2wm:def-plugin-history-list-forward-command ()`
+- L1809: `(defun e2wm:def-plugin-history-list-back-command ()`
+- L1814: `(defun e2wm:def-plugin-history-list-select-command ()`
+- L1820: `(defun e2wm:def-plugin-history-list-show-command ()`
+- L1838: `(defun e2wm:def-plugin-history-list2-get-plugin-buffer (wm)`
+- L1846: `(defun e2wm:def-plugin-history-list2 (frame wm winfo)`
+- L1895: `(defvar e2wm:def-plugin-history-list2-mode-map`
+- L1919: `(define-derived-mode e2wm:def-plugin-history-list2-mode fundamental-mode "History")`
+- L1921: `(defun e2wm:def-plugin-history-list2-show-right-command ()`
+- L1933: `(defun e2wm:def-plugin-history-list2-show-left-command ()`
+- L1949: `(defun e2wm:def-plugin-history-list2-select-command ()`
+- L1965: `(defun e2wm:def-plugin-dired (frame wm winfo)`
+- L1985: `(defun e2wm:def-plugin-imenu (frame wm winfo)`
+- L2014: `(defun e2wm:def-plugin-imenu-entries ()`
+- L2032: `(defun e2wm:def-plugin-imenu-create-entries (entries indent result)`
+- L2061: `(defun e2wm:def-plugin-imenu-jump (elm)`
+- L2068: `(defun e2wm:def-plugin-imenu-jump-command ()`
+- L2075: `(defun e2wm:def-plugin-imenu-show-command ()`
+- L2084: `(defvar e2wm:def-plugin-imenu-mode-map`
+- L2099: `(define-derived-mode e2wm:def-plugin-imenu-mode fundamental-mode "Imenu")`
+- L2101: `(defun e2wm:def-plugin-imenu-which-func ()`
+- L2117: `(defun e2wm:def-plugin-imenu-start-timer ()`
+- L2126: `(defun e2wm:def-plugin-imenu-stop-timer ()`
+- L2133: `(defun e2wm:def-plugin-imenu-update-which-func ()`
+- L2169: `(defun e2wm:def-plugin-top (frame wm winfo)`
+- L2184: `(defun e2wm:def-plugin-top-timer ()`
+- L2197: `(defun e2wm:def-plugin-top-update ()`
+- L2239: `(defun e2wm:def-plugin-history-nth (frame wm winfo)`
+- L2255: `(defun e2wm:def-plugin-main-prev (frame wm winfo)`
+- L2281: `(defun e2wm:def-plugin-clock (frame wm winfo)`
+- L2298: `(defun e2wm:def-plugin-clock-timer ()`
+- L2312: `(defun e2wm:def-plugin-clock-update ()`
+- L2326: `(defun e2wm:def-plugin-clock-download ()`
+- L2350: `(defun e2wm:def-plugin-clock-resize ()`
+- L2377: `(defun e2wm:def-plugin-clock-show-image ()`
+- L2382: `(define-key map [mouse-1] 'e2wm:def-plugin-clock-onclick)`
+- L2391: `(defun e2wm:def-plugin-clock-onclick ()`
+- L2395: `(defun e2wm:def-plugin-clock-show-text (&optional text)`
+- L2434: `(defun e2wm:def-plugin-files (frame wm winfo)`
+- L2489: `(defun e2wm:def-plugin-files-update-by-command()`
+- L2498: `(defun e2wm:def-plugin-files-sort (records order)`
+- L2549: `(defun e2wm:def-plugin-files-update-buffer (dir)`
+- L2604: `(defun e2wm:def-plugin-files-insert-by-name (rows-file rows-time rows-size)`
+- L2616: `(defun e2wm:def-plugin-files-insert-by-time (rows-file rows-time rows-size rows)`
+- L2658: `(defun e2wm:def-plugin-files-insert-by-size (rows-file rows-time rows-size)`
+- L2670: `(defun e2wm:def-plugin-files-get-file ()`
+- L2675: `(defun e2wm:def-plugin-files-mkdir-command ()`
+- L2681: `(defun e2wm:def-plugin-files-delete-command ()`
+- L2691: `(defun e2wm:def-plugin-files-updir-command ()`
+- L2697: `(defun e2wm:def-plugin-files-rename-command ()`
+- L2705: `(defun e2wm:def-plugin-files-sort-size-command ()`
+- L2710: `(defun e2wm:def-plugin-files-sort-time-command ()`
+- L2715: `(defun e2wm:def-plugin-files-sort-name-command ()`
+- L2720: `(defun e2wm:def-plugin-files-show-command ()`
+- L2725: `(defun e2wm:def-plugin-files-select-command ()`
+- L2736: `(defun e2wm:def-plugin-files-toggle-hidden-files-command ()`
+- L2742: `(defun e2wm:def-plugin-files-open-dired-command ()`
+- L2746: `(defvar e2wm:def-plugin-files-mode-map`
+- L2768: `(define-derived-mode e2wm:def-plugin-files-mode fundamental-mode "Files")`
+- L2778: `(defun e2wm:def-plugin-open (frame wm winfo)`
+- L2810: `(defun e2wm:dp-base-update (wm)`
+- L2814: `(defun e2wm:dp-base-display (buf)`
+- L2818: `(defun e2wm:dp-base-after-bury (buried-buffer window)`
+- L2875: `(defun e2wm:dp-code-init ()`
+- L2890: `(defun e2wm:dp-code-switch (buf)`
+- L2898: `(defun e2wm:dp-code-popup (buf)`
+- L2937: `(defun e2wm:dp-code-popup-sub (buf)`
+- L2943: `(defun e2wm:dp-code-after-bury (buried-buffer window)`
+- L2955: `(defun e2wm:dp-code ()`
+- L2959: `(defun e2wm:dp-code-imenu-toggle-command ()`
+- L2963: `(defun e2wm:dp-code-sub-toggle-command ()`
+- L2967: `(defun e2wm:dp-code-navi-main-command ()`
+- L2970: `(defun e2wm:dp-code-navi-files-command ()`
+- L2973: `(defun e2wm:dp-code-navi-history-command ()`
+- L2976: `(defun e2wm:dp-code-navi-imenu-command ()`
+- L2979: `(defun e2wm:dp-code-navi-sub-command ()`
+- L2982: `(defun e2wm:dp-code-main-maximize-toggle-command ()`
+- L2986: `(defun e2wm:dp-code-toggle-clock-command ()`
+- L2995: `(defvar e2wm:dp-code-minor-mode-map`
+- L3034: `(defun e2wm:dp-two-init ()`
+- L3054: `(defun e2wm:dp-two-switch (buf)`
+- L3083: `(defun e2wm:dp-two-popup (buf)`
+- L3098: `(defun e2wm:dp-two-popup-sub (buf)`
+- L3104: `(defun e2wm:dp-two-display (buf)`
+- L3133: `(defun e2wm:dp-two-after-bury (buried-buffer window)`
+- L3145: `(defun e2wm:dp-two ()`
+- L3149: `(defun e2wm:dp-two-navi-left-command ()`
+- L3152: `(defun e2wm:dp-two-navi-right-command ()`
+- L3155: `(defun e2wm:dp-two-navi-sub-command ()`
+- L3158: `(defun e2wm:dp-two-navi-history-command ()`
+- L3162: `(defun e2wm:dp-two-history-toggle-command ()`
+- L3166: `(defun e2wm:dp-two-sub-toggle-command ()`
+- L3171: `(defun e2wm:dp-two-update-history-list ()`
+- L3175: `(defun e2wm:dp-two-double-column-command ()`
+- L3180: `(defun e2wm:dp-two-get-right-buffer ()`
+- L3189: `(defun e2wm:dp-two-right-history-forward-command ()`
+- L3195: `(defun e2wm:dp-two-right-history-back-command ()`
+- L3204: `(defun e2wm:dp-two-swap-buffers-command ()`
+- L3212: `(defun e2wm:dp-two-main-maximize-toggle-command ()`
+- L3216: `(defvar e2wm:dp-two-minor-mode-map`
+- L3252: `(defun e2wm:dp-htwo-init ()`
+- L3272: `(defun e2wm:dp-htwo ()`
+- L3304: `(defun e2wm:dp-doc-set-doc-buffer (buf)`
+- L3307: `(defun e2wm:dp-doc-get-doc-buffer ()`
+- L3310: `(defun e2wm:dp-doc-init ()`
+- L3325: `(defun e2wm:dp-doc-start (wm)`
+- L3329: `(defun e2wm:dp-doc-update (wm)`
+- L3340: `(defun e2wm:dp-doc-set-main-buffer (buf)`
+- L3347: `(defun e2wm:dp-doc-switch (buf)`
+- L3359: `(defun e2wm:dp-doc-popup (buf)`
+- L3371: `(defun e2wm:dp-doc-popup-sub (buf)`
+- L3377: `(defun e2wm:dp-doc-leave (wm)`
+- L3390: `(defun e2wm:dp-doc ()`
+- L3394: `(defun e2wm:dp-doc-navi-main-command ()`
+- L3397: `(defun e2wm:dp-doc-navi-sub-command ()`
+- L3400: `(defun e2wm:dp-doc-sub-toggle-command ()`
+- L3404: `(defun e2wm:dp-doc-main-maximize-toggle-command ()`
+- L3408: `(defvar e2wm:dp-doc-minor-mode-map`
+- L3436: `(defun e2wm:dp-dashboard-init ()`
+- L3446: `(defun e2wm:dp-dashboard-arrange-plugins (wm)`
+- L3465: `(defun e2wm:dp-dashboard-start (wm)`
+- L3468: `(defun e2wm:dp-dashboard-leave (wm)`
+- L3473: `(defun e2wm:dp-dashboard-update-summary ()`
+- L3489: `(defun e2wm:dp-dashboard-parse-garbage-collect-1 (gc-info)`
+- L3515: `(defun e2wm:dp-dashboard-parse-garbage-collect-2 (gc-info)`
+- L3546: `(defun e2wm:dp-dashboard-parse-garbage-collect ()`
+- L3555: `(defun e2wm:dp-dashboard-insert-summary-info ()`
+- L3594: `(defun e2wm:dp-dashboard ()`
+- L3623: `(defun e2wm:dp-array-make-recipe (cols rows)`
+- L3665: `(defun e2wm:dp-array-make-winfo (cols rows)`
+- L3682: `(defun e2wm:dp-array-calculate-size (num)`
+- L3700: `(defun e2wm:dp-array-make-wm (buffers)`
+- L3725: `(defun e2wm:dp-array-init ()`
+- L3733: `(defvar e2wm:dp-array-backup-globalmap nil)`
+- L3735: `(defun e2wm:dp-array-start (wm)`
+- L3743: `(defun e2wm:dp-array-leave (wm)`
+- L3751: `(defun e2wm:dp-array-arrange-buffers (wm buffers)`
+- L3762: `(defun e2wm:dp-array-get-recordable-buffers ()`
+- L3775: `(defun e2wm:dp-array-get-more-buffers ()`
+- L3788: `(defun e2wm:dp-array-get-smart-buffers ()`
+- L3794: `(defun e2wm:dp-array-get-same-mode-buffers ()`
+- L3800: `(defun e2wm:dp-array-get-same-mode-buffers-if-not-recordable ()`
+- L3804: `(defun e2wm:dp-array-popup (buf)`
+- L3811: `(defun e2wm:dp-array-decrease-fontsize ()`
+- L3818: `(defun e2wm:dp-array-increase-fontsize ()`
+- L3825: `(defun e2wm:dp-array-update-summary ()`
+- L3846: `(defun e2wm:dp-array-insert-summary-info (selected-buf)`
+- L3879: `(defun e2wm:dp-array-hilite-focus ()`
+- L3888: `(defun e2wm:dp-array ()`
+- L3892: `(defun e2wm:dp-array-move-left-command ()`
+- L3897: `(defun e2wm:dp-array-move-right-command ()`
+- L3902: `(defun e2wm:dp-array-move-up-command ()`
+- L3907: `(defun e2wm:dp-array-move-down-command ()`
+- L3916: `(defun e2wm:dp-array-goto-prev-pst-command ()`
+- L3923: `(defun e2wm:dp-array-toggle-more-buffers-command ()`
+- L3932: `(defun e2wm:dp-array-cancel-command ()`
+- L3939: `(defvar e2wm:dp-array-minor-mode-map`
+- L3984: `(defun e2wm:history-add-loaded-buffers ()`
+- L3995: `(defun e2wm:initialize-for-frame (pstset &optional not-pst-change)`
+- L4005: `(defun e2wm:start-management (&optional pstset force-restart not-pst-change)`
+- L4051: `(defun e2wm:stop-management (&optional force-stop)`
+- L4084: `(provide 'e2wm)`
+
+## features/step-definitions/e2wm-steps.el
+
+- L118: `(defun e2wm:testing-separate-table (rows)`
+- L178: `(defun e2wm:testing-dummy-display-buffer (buffer &optional action)`
+
+## features/support/e2wm-testing.el
+
+- L1: `(require 'e2wm)`
+- L16: `(defun e2wm:dp-stwo-switch (buf)`
+- L26: `(defun e2wm:dp-stwo-popup (buf)`
+
+## features/support/env.el
+
+- L18: `(require 'e2wm)`
+- L19: `(require 'espuds)`
+- L20: `(require 'ert)`
+
+## test-e2wm-pst-class.el
+
+- L9: `(require 'ert)`
+- L10: `(require 'e2wm)`

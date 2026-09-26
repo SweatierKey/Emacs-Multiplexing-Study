@@ -1,0 +1,79 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: term-toggle</h1>
+<p>Fonte: https://github.com/amno1/emacs-term-toggle.git</p>
+<p>Revisione: <code>8d3258bc8d03bbb4c735afc681a3c415bb0bbcc6</code>.</p>
+<h2>helm-term-toggle.el</h2>
+<ul>
+<li>L41: <code>(require 'helm)</code></li>
+<li>L42: <code>(require 'seq)</code></li>
+<li>L43: <code>(require 'term-toggle)</code></li>
+<li>L59: <code>(defun tt--helm-candidates ()</code></li>
+<li>L79: <code>(defun tt--helm-at-current-window (fn buf)</code></li>
+<li>L89: <code>(defun tt--helm-toggle (buf)</code></li>
+<li>L93: <code>(defun tt--helm-replace (buf)</code></li>
+<li>L110: <code>(defun helm-term-toggle ()</code></li>
+<li>L124: <code>(defun helm-term-toggle-replace ()</code></li>
+<li>L133: <code>(global-set-key (kbd "C-z t") #'helm-term-toggle-replace)</code></li>
+<li>L134: <code>(define-key term-toggle-minor-mode-map (kbd "C-z t") #'helm-term-toggle-replace)</code></li>
+<li>L136: <code>(provide 'helm-term-toggle)</code></li>
+</ul>
+<h2>term-toggle-animate.el</h2>
+<ul>
+<li>L40: <code>(require 'term-toggle)</code></li>
+<li>L44: <code>(defcustom term-toggle-side-max-fraction 0.5</code></li>
+<li>L49: <code>(defcustom term-toggle-animation-delay 0.008</code></li>
+<li>L60: <code>(defun tt--animate-window-size (window horizontal)</code></li>
+<li>L66: <code>(defun tt--animate-target (horizontal)</code></li>
+<li>L88: <code>(defun tt--animate-shrink-to-min (window horizontal)</code></li>
+<li>L107: <code>(defun tt--animate-settle (window horizontal target)</code></li>
+<li>L121: <code>(defun tt--animate-stepwise (window horizontal target)</code></li>
+<li>L148: <code>(defun tt--animate-sync-process-size (window)</code></li>
+<li>L168: <code>(defun tt-animate--suppress-adjuster (buffer)</code></li>
+<li>L181: <code>(defun tt-animate--restore-adjuster (buffer saved)</code></li>
+<li>L192: <code>(defun tt-animate--toggle (buffer)</code></li>
+<li>L236: <code>(defun tt-animate--install ()</code></li>
+<li>L240: <code>(defun tt-animate--uninstall ()</code></li>
+<li>L244: <code>(define-minor-mode term-toggle-animate-mode</code></li>
+<li>L263: <code>(provide 'term-toggle-animate)</code></li>
+</ul>
+<h2>term-toggle.el</h2>
+<ul>
+<li>L51: <code>(require 'seq)</code></li>
+<li>L60: <code>(defcustom term-toggle-default-shell 'ansi-term</code></li>
+<li>L74: <code>(defcustom term-toggle-scope 'directory</code></li>
+<li>L98: <code>(defcustom term-toggle-confirm-exit nil</code></li>
+<li>L103: <code>(defcustom term-toggle-kill-buffer-on-process-exit t</code></li>
+<li>L108: <code>(defcustom term-toggle-minimum-split-height 10</code></li>
+<li>L113: <code>(defcustom term-toggle-default-height 15</code></li>
+<li>L119: <code>(defcustom term-toggle-default-width 80</code></li>
+<li>L124: <code>(defcustom term-toggle-split-side 'below</code></li>
+<li>L145: <code>(defun tt--vterm-available-p ()</code></li>
+<li>L150: <code>(defun tt--ghostel-available-p ()</code></li>
+<li>L162: <code>(defun tt--directory ()</code></li>
+<li>L170: <code>(defun tt--project-root ()</code></li>
+<li>L178: <code>(defun tt--key ()</code></li>
+<li>L190: <code>(defun tt--shell-dir (key)</code></li>
+<li>L199: <code>(defun tt--setup-process (buffer)</code></li>
+<li>L211: <code>(defun tt--make-buffer-name (shell dir)</code></li>
+<li>L217: <code>(defun tt--start (shell key)</code></li>
+<li>L261: <code>(defun tt--find-buffer (shell key)</code></li>
+<li>L270: <code>(defun tt--get-buffer (shell key)</code></li>
+<li>L283: <code>(defun tt--toggle (buffer)</code></li>
+<li>L316: <code>(defun tt--replace (buffer)</code></li>
+<li>L335: <code>(defvar term-toggle-minor-mode-map</code></li>
+<li>L337: <code>(define-key map (kbd "&lt;f1&gt;")    #'term-toggle-close)</code></li>
+<li>L338: <code>(define-key map (kbd "&lt;f10&gt;")   #'term-toggle-cycle)</code></li>
+<li>L339: <code>(define-key map (kbd "&lt;S-f10&gt;") #'term-toggle-cycle-backward)</code></li>
+<li>L343: <code>(define-minor-mode term-toggle-minor-mode</code></li>
+<li>L354: <code>(defun term-toggle-close (&amp;optional replace)</code></li>
+<li>L372: <code>(defun term-toggle-cycle (&amp;optional backward)</code></li>
+<li>L407: <code>(defun term-toggle-cycle-backward ()</code></li>
+<li>L412: <code>(defun term-toggle (&amp;optional shell)</code></li>
+<li>L424: <code>(defun term-toggle-ansi ()</code></li>
+<li>L430: <code>(defun term-toggle-term ()</code></li>
+<li>L436: <code>(defun term-toggle-shell ()</code></li>
+<li>L442: <code>(defun term-toggle-eshell ()</code></li>
+<li>L448: <code>(defun term-toggle-ielm ()</code></li>
+<li>L454: <code>(defun term-toggle-vterm ()</code></li>
+<li>L462: <code>(defun term-toggle-ghostel ()</code></li>
+<li>L477: <code>(provide 'term-toggle)</code></li>
+</ul></main></html>

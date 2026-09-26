@@ -1,0 +1,88 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: term-plus-mux</h1>
+<p>Fonte: https://github.com/tarao/term-plus-mux-el.git</p>
+<p>Revisione: <code>cd12a3744d4b7d37a002f4f7fcc4a45ea5be95c3</code>.</p>
+<h2>term+mux.el</h2>
+<ul>
+<li>L28: <code>(require 'term+)</code></li>
+<li>L29: <code>(require 'tab-group)</code></li>
+<li>L30: <code>(require 'tramp)</code></li>
+<li>L52: <code>(defcustom term+mux-char-prefix "C-t"</code></li>
+<li>L58: <code>(defcustom term+mux-line-prefix "C-x t"</code></li>
+<li>L64: <code>(defcustom term+mux-session-buffer t</code></li>
+<li>L70: <code>(defcustom term+mux-mode-line-tabbar t</code></li>
+<li>L77: <code>(defcustom term+mux-local-shell-command nil</code></li>
+<li>L108: <code>(defcustom term+mux-local-command '(command)</code></li>
+<li>L119: <code>(defcustom term+mux-remote-shell-command '(term+mux-ssh-shell-command)</code></li>
+<li>L135: <code>(defcustom term+mux-remote-command '(term+mux-ssh-command)</code></li>
+<li>L151: <code>(defcustom term+mux-su-shell-command '(term+mux-sudo-shell-command)</code></li>
+<li>L168: <code>(defcustom term+mux-su-command '(term+mux-sudo-command)</code></li>
+<li>L185: <code>(defcustom term+mux-user-complete-method 'term+mux-su-shell-command</code></li>
+<li>L198: <code>(defcustom term+mux-host-complete-method 'term+mux-remote-shell-command</code></li>
+<li>L204: <code>(defcustom term+mux-ssh-options '("-t")</code></li>
+<li>L210: <code>(defcustom term+mux-ssh-forward-x 'auto</code></li>
+<li>L217: <code>(defcustom term+mux-ssh-control-master nil</code></li>
+<li>L224: <code>(defcustom term+mux-ssh-control-path "~/.ssh/emacs-term+mux-%r@%h:%p"</code></li>
+<li>L229: <code>(defcustom term+mux-ssh-control-persist 10</code></li>
+<li>L234: <code>(defcustom term+mux-sudo-options '()</code></li>
+<li>L249: <code>(defcustom term+mux-shell-exec</code></li>
+<li>L277: <code>(defcustom term+mux-command-exec '("exec" command)</code></li>
+<li>L288: <code>(defvar term+mux-map</code></li>
+<li>L291: <code>(define-key map (kbd "N") #'term+mux-new)</code></li>
+<li>L292: <code>(define-key map (kbd "c") #'term+mux-new)</code></li>
+<li>L293: <code>(define-key map (kbd "o") #'term+mux-other-window)</code></li>
+<li>L294: <code>(define-key map (kbd "O") #'term+mux-new-other-window)</code></li>
+<li>L295: <code>(define-key map (kbd "C") #'term+mux-new-command)</code></li>
+<li>L296: <code>(define-key map (kbd "S") #'term+mux-new-session)</code></li>
+<li>L297: <code>(define-key map (kbd "R") #'term+mux-remote-session)</code></li>
+<li>L298: <code>(define-key map (kbd "r") #'term+mux-set-title)</code></li>
+<li>L299: <code>(define-key map (kbd "t") #'term+mux-set-title)</code></li>
+<li>L300: <code>(define-key map (kbd "u") #'term+mux-unset-title)</code></li>
+<li>L303: <code>(defmacro term+mux-with-prefix (bind &amp;rest body)</code></li>
+<li>L310: <code>(define-key term+char-map prefix term+mux-map)))</code></li>
+<li>L313: <code>(define-key term+line-map prefix term+mux-map)))</code></li>
+<li>L348: <code>(defmacro term+mux-session-as-group (session &amp;optional method)</code></li>
+<li>L365: <code>(defun term+mux-read-string (what)</code></li>
+<li>L380: <code>(defun term+mux-session-name (user host)</code></li>
+<li>L400: <code>(defun term+mux-resolve-arg (session command arg)</code></li>
+<li>L417: <code>(defun term+mux-resolve-args (session command args)</code></li>
+<li>L425: <code>(defun term+mux-resolve-command (session command)</code></li>
+<li>L449: <code>(defun term+mux-x-available-p ()</code></li>
+<li>L456: <code>(defun term+mux-ssh-control-persist-enabled-p ()</code></li>
+<li>L468: <code>(defun term+mux-ssh-make-command (session command exec)</code></li>
+<li>L495: <code>(defun term+mux-ssh-shell-command (session command)</code></li>
+<li>L519: <code>(defun term+mux-ssh-command (session command)</code></li>
+<li>L534: <code>(defun term+mux-sudo-make-command (session command exec)</code></li>
+<li>L545: <code>(defun term+mux-sudo-shell-command (session command)</code></li>
+<li>L560: <code>(defun term+mux-sudo-command (session command)</code></li>
+<li>L574: <code>(defun term+mux-complete-method (method)</code></li>
+<li>L582: <code>(defun term+mux-tramp-complete (method)</code></li>
+<li>L590: <code>(defun term+mux-complete-user ()</code></li>
+<li>L596: <code>(defun term+mux-complete-host ()</code></li>
+<li>L605: <code>(defun term+mux-make-term-buffer (session name command)</code></li>
+<li>L618: <code>(defun term+mux-remove-session (session)</code></li>
+<li>L625: <code>(defun term+mux-maybe-remove-session (&amp;optional session)</code></li>
+<li>L636: <code>(defun term+mux-mode-line-tabbar-edit ()</code></li>
+<li>L650: <code>(defun term+mux-mode-line-tabbar-indirect-buffer-setup ()</code></li>
+<li>L673: <code>(define-minor-mode term+mux-mode-line-tabbar-mode</code></li>
+<li>L701: <code>(defun term+mux-noselect (&amp;optional session name command)</code></li>
+<li>L734: <code>(defun term+mux-new (&amp;optional session name command)</code></li>
+<li>L751: <code>(defun term+mux-new-other-window (&amp;optional session name command)</code></li>
+<li>L760: <code>(defun term+mux-other-window (&amp;optional session)</code></li>
+<li>L783: <code>(defun term+mux-new-command ()</code></li>
+<li>L790: <code>(defun term+mux-new-session (&amp;optional name user host)</code></li>
+<li>L843: <code>(defun term+mux-remote-session ()</code></li>
+<li>L851: <code>(defun term+mux-set-title (&amp;optional title)</code></li>
+<li>L875: <code>(defun term+mux-unset-title ()</code></li>
+<li>L894: <code>(defun term+mux-cdd-put-overlay ()</code></li>
+<li>L902: <code>(defun term+mux-cdd-delete-overlay ()</code></li>
+<li>L907: <code>(defun term+mux-cdd-update-search (beg end len)</code></li>
+<li>L911: <code>(defun term+mux-cdd-end-search ()</code></li>
+<li>L915: <code>(defun term+mux-cdd-select (tabs)</code></li>
+<li>L919: <code>(defun term+mux-cdd-search (prompt)</code></li>
+<li>L926: <code>(defun term+mux-cdd-find (pattern)</code></li>
+<li>L930: <code>(defun term+mux-cdd (pattern)</code></li>
+<li>L952: <code>(defun term+mux-session-color (session)</code></li>
+<li>L965: <code>(defun term+mux-colored-group-label (group)</code></li>
+<li>L971: <code>(defun term+mux-set-group-color-function (session own-group)</code></li>
+<li>L979: <code>(provide 'term+mux)</code></li>
+</ul></main></html>

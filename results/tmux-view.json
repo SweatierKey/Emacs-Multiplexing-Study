@@ -1,0 +1,27 @@
+{
+  "id": "tmux-view",
+  "scenario": "external-tmux-controller",
+  "status": "passed",
+  "checks": {
+    "completion_enabled": true,
+    "remote_web_capture_visible": true,
+    "remote_db_capture_visible": true
+  },
+  "snapshots": [
+    {
+      "name": "*tmux: ops/web/0*",
+      "mode": "tmux-view-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 s\nervice.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "name": "*tmux: ops/db/0*",
+      "mode": "tmux-view-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt; tail -n 3 ser\nvice.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "fixture": "Two pre-existing tmux windows run actual lab SSH connections. For tmux-view only, status output is seeded before the read-only demonstration."
+}

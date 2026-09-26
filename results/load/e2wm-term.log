@@ -1,0 +1,6 @@
+{"status":"error","error":"Symbol’s function definition is void: defstruct"}
+STDERR:
+sources/auto-complete/auto-complete.el: Warning: ‘defadvice’ is an obsolete macro (as of 30.1); use ‘advice-add’ or ‘define-advice’
+sources/auto-complete/auto-complete.el: Warning: ‘defadvice’ is an obsolete macro (as of 30.1); use ‘advice-add’ or ‘define-advice’
+sources/auto-complete/auto-complete.el: Warning: ‘defadvice’ is an obsolete macro (as of 30.1); use ‘advice-add’ or ‘define-advice’
+sources/auto-complete/auto-complete.el: Warning: ‘defadvice’ is an obsolete macro (as of 30.1); use ‘advice-add’ or ‘define-advice’

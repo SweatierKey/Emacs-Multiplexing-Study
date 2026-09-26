@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"navorski","library":"/home/admin/Emacs-Multiplexing-Study/sources/navorski/navorski.el","commands":["-navorski-insert-path","-navorski-interrupt-process","-navorski-term-backward-kill-word","-navorski-term-dabbrev","-navorski-term-insert-path","-navorski-term-reverse-search","-navorski-term-yank","nav/persistent-term","nav/remote-persistent-term","nav/remote-term","nav/setup-tramp","nav/term","nav/tramp-to-term"]}
+STDERR:

@@ -1,0 +1,165 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>toggle-term</h1>
+<p>Categoria: <strong>popup</strong>. <a href="https://github.com/justinlime/toggle-term.el">Sorgente upstream</a>. Revisione: <code>ebfce6283e53fda7f69ccda73109a02b646623af</code>.</p>
+<h2>Funzionamento</h2>
+<p>Terminali nominati e scelta del backend/posizione attraverso completing-read e annotazioni.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x toggle-term-find, nome web/db, posizione bottom, tipo shell. Nel test il completamento usa Vertico/Marginalia.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/toggle-term.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/toggle-term.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario toggle-term: passed</h3>
+<p><a href="../../results/toggle-term.json">Esito e snapshot</a> · <a href="../../results/toggle-term-keys.json">Traccia dei tasti</a> · <a href="../../recordings/toggle-term.cast">Registrazione asciinema</a> · <a href="../../index.html#toggle-term">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.31</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>toggle-term-find</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.91</td>
+<td><code>web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.91</td>
+<td><code>bottom</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.91</td>
+<td><code>shell</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.41</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.61</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.61</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.81</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.82</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.02</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.82</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.12</td>
+<td><code>toggle-term-find</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.62</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.42</td>
+<td><code>db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.62</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.42</td>
+<td><code>bottom</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.62</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.42</td>
+<td><code>shell</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.62</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.92</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.12</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.33</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.73</td>
+<td><code>*web*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">19.13</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">19.53</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">19.73</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

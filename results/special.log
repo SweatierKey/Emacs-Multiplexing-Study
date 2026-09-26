@@ -1,0 +1,6 @@
+tmux-nested passed 
+tmux-control passed 
+tmux-control-mode failed Missing actual remote role output: Switch to window: cat status.txt; tail -n 3 service.log
+tab-bar failed 
+elscreen passed 
+eyebrowse passed 

@@ -1,0 +1,9 @@
+[
+  "emacs tmux in:name,description",
+  "emacs shell manager in:name,description",
+  "emacs terminal in:name,description -topic:dotfiles -topic:terminal-theme",
+  "emacs eshell toggle in:name,description",
+  "emacs terminal session in:name,description",
+  "emacs term multiplexer in:readme size:<200",
+  "emacs screen terminal in:name,description"
+]

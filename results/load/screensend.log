@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"screensend","library":"/home/admin/Emacs-Multiplexing-Study/sources/screensend/screensend.el","commands":["iterm-select","iterm-send","konsole-select","konsole-send","macosx-terminal-select","macosx-terminal-send","screen-select","screen-send","tmux-select","tmux-send"]}
+STDERR:

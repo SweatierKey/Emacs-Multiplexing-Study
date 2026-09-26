@@ -1,0 +1,36 @@
+{
+  "id": "lterm",
+  "status": "passed",
+  "scenario": "two-ssh-endpoints",
+  "started": "2026-09-26T11:32:48Z",
+  "snapshots": [
+    {
+      "name": "*lterm*",
+      "mode": "lterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$                         [13:32]\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\n> "
+    },
+    {
+      "name": "*lterm*<2>",
+      "mode": "lterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$                         [13:33]\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ \nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\n> "
+    },
+    {
+      "name": "*lterm*",
+      "mode": "lterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$                         [13:32]\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$                    [13:33]\nweb-session-alive\n> "
+    }
+  ],
+  "checks": {
+    "completion_enabled": true,
+    "ssh_web": true,
+    "ssh_db": true,
+    "distinct_buffers": true,
+    "return_preserves_shell": true
+  }
+}

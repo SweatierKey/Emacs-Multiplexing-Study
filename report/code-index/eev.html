@@ -1,0 +1,2032 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: eev</h1>
+<p>Fonte: https://github.com/edrx/eev.git</p>
+<p>Revisione: <code>4850e9c7a465684a0fdb79a6be83055e0ef9537b</code>.</p>
+<h2>eejump.el</h2>
+<ul>
+<li>L76: <code>;; (define-key eev-mode-map "\M-j" 'eejump)</code></li>
+<li>L78: <code>(defun eejump (arg)</code></li>
+<li>L95: <code>(defun eejump-str* (str)</code></li>
+<li>L106: <code>(defun eejump-*   () (find-efunction 'eejump-*))</code></li>
+<li>L107: <code>(defun eejump-1   () (find-fline "~/TODO"))</code></li>
+<li>L108: <code>(defun eejump-21  () (find-2a nil '(eejump 1)))</code></li>
+<li>L109: <code>(defun eejump-31  () (find-2b nil '(eejump 1)))</code></li>
+<li>L110: <code>(defun eejump-2   () (find-emacs-keys-intro))</code></li>
+<li>L111: <code>(defun eejump-3   () (find-windows-beginner-intro))</code></li>
+<li>L112: <code>(defun eejump-5   () (find-eev-quick-intro))</code></li>
+<li>L113: <code>(defun eejump-50  () (find-eev-intro))</code></li>
+<li>L114: <code>(defun eejump-6   () (find-escripts-intro))</code></li>
+<li>L115: <code>(defun eejump-7   () (find-elisp-intro))</code></li>
+<li>L117: <code>(defun eejump-10  () (set-frame-font "5x7"  t))</code></li>
+<li>L118: <code>(defun eejump-11  () (set-frame-font "6x13" t))</code></li>
+<li>L119: <code>(defun eejump-12  () (set-frame-font "10x20" t))</code></li>
+<li>L121: <code>(defun eejump-55  () (find-fline "~/.emacs"))</code></li>
+<li>L122: <code>(defun eejump-555 () (find-eev ""))</code></li>
+<li>L136: <code>(provide 'eejump)</code></li>
+</ul>
+<h2>eepitch.el</h2>
+<ul>
+<li>L230: <code>(require 'eev-multiwindow)     ; for 'find-2a'</code></li>
+<li>L231: <code>(require 'eev-blinks)          ; for 'find-ebuffer'</code></li>
+<li>L232: <code>(require 'eev-elinks)          ; for 'ee-intern'</code></li>
+<li>L238: <code>(defun ee-bol () (point-at-bol))</code></li>
+<li>L239: <code>(defun ee-eol () (point-at-eol))</code></li>
+<li>L241: <code>(defun ee-read (str)  (read (concat "(progn\n" str "\n)")))</code></li>
+<li>L242: <code>(defun ee-eval (sexp) (let ((debug-on-error nil)) (eval sexp)))</code></li>
+<li>L244: <code>(defun ee-eval-string (str)</code></li>
+<li>L250: <code>(defun ee-eval-string-print (str)</code></li>
+<li>L254: <code>(defun ee-next-line (&amp;optional arg try-vscroll)</code></li>
+<li>L299: <code>(defun eepitch-buffer-exists () (get-buffer        eepitch-buffer-name))</code></li>
+<li>L300: <code>(defun eepitch-window-exists () (get-buffer-window eepitch-buffer-name))</code></li>
+<li>L301: <code>(defun eepitch-target-buffer () (get-buffer        eepitch-buffer-name))</code></li>
+<li>L302: <code>(defun eepitch-target-window () (get-buffer-window eepitch-buffer-name))</code></li>
+<li>L303: <code>(defun eepitch-target-here () (eq (current-buffer) (eepitch-target-buffer)))</code></li>
+<li>L305: <code>(defun eepitch-buffer-create ()</code></li>
+<li>L339: <code>(defun eepitch-window-show ()</code></li>
+<li>L351: <code>(defun eepitch-prepare ()</code></li>
+<li>L370: <code>(defun eepitch (code)</code></li>
+<li>L401: <code>(defun eepitch-eval-at-target-window (code)</code></li>
+<li>L408: <code>(defun eepitch-line (line)</code></li>
+<li>L420: <code>(defun eepitch-this-line (&amp;optional debug)</code></li>
+<li>L441: <code>(defun eepitch-preprocess-line (line) line)</code></li>
+<li>L455: <code>(defun ee-kill-buffer (buffer)</code></li>
+<li>L461: <code>(defun eepitch-kill-buffer ()</code></li>
+<li>L472: <code>(defun eepitch-kill ()</code></li>
+<li>L506: <code>(defun eepitch-shell ()</code></li>
+<li>L511: <code>(defun eepitch-shell2  () (interactive) (eepitch '(shell "*shell 2*")))</code></li>
+<li>L512: <code>(defun eepitch-shell3  () (interactive) (eepitch '(shell "*shell 3*")))</code></li>
+<li>L513: <code>(defun eepitch-eshell  () (interactive) (eepitch '(eshell)))</code></li>
+<li>L514: <code>(defun eepitch-eshell2 () (interactive) (eepitch '(eshell 2)))</code></li>
+<li>L515: <code>(defun eepitch-eshell3 () (interactive) (eepitch '(eshell 3)))</code></li>
+<li>L534: <code>(defun ee-expand (fname)</code></li>
+<li>L544: <code>(defun ee-split (str)</code></li>
+<li>L551: <code>(defun ee-split-and-expand (str)</code></li>
+<li>L576: <code>(defun find-comintprocess-ne (name &amp;optional program-and-args)</code></li>
+<li>L583: <code>(defun find-comintprocess (name &amp;optional program-and-args)</code></li>
+<li>L590: <code>(defun eepitch-comint (name &amp;optional program-and-args)</code></li>
+<li>L616: <code>(defun eewrap-eepitch () (interactive)</code></li>
+<li>L624: <code>(defun ee-adjust-red-stars (str)</code></li>
+<li>L631: <code>(defun ee-this-line-extract ()</code></li>
+<li>L635: <code>(defun ee-no-properties (str)</code></li>
+<li>L664: <code>(defun eepitch-set-glyph0 (pos &amp;optional char face)</code></li>
+<li>L669: <code>(defun eepitch-set-glyph (pos &amp;optional char face)</code></li>
+<li>L702: <code>;; (global-set-key [f8]   'eepitch-this-line)</code></li>
+<li>L703: <code>;; (global-set-key "\M-T" 'eewrap-eepitch)</code></li>
+<li>L719: <code>(defun eepitch-make-suffix (arg)</code></li>
+<li>L724: <code>(defun eepitch-do (program-and-args &amp;optional suffix)</code></li>
+<li>L745: <code>(defun eepitch-del-echo (flag)</code></li>
+<li>L760: <code>(defun eepitch-de (code)</code></li>
+<li>L765: <code>(defun eepitch-comint-de (name &amp;optional program-and-args)</code></li>
+<li>L780: <code>(defun ee-at0 (dir code)</code></li>
+<li>L790: <code>(defun eepitch-comint-at (dir name &amp;optional program-and-args)</code></li>
+<li>L794: <code>(defun eepitch-to-buffer (name)</code></li>
+<li>L798: <code>(defun ee-with-pager-cat (code)</code></li>
+<li>L846: <code>(defun find-ansitermprocess (&amp;optional program name0)</code></li>
+<li>L861: <code>(defun find-vtermprocess (&amp;optional program name0)</code></li>
+<li>L879: <code>(defun find-eatprocess0 (program buffername)</code></li>
+<li>L889: <code>(defun find-eatprocess (&amp;optional program name0)</code></li>
+<li>L904: <code>(defun eepitch-line-ansiterm (line)</code></li>
+<li>L910: <code>(defun eepitch-line-vterm (line)</code></li>
+<li>L916: <code>(defun eepitch-line-eat (line)</code></li>
+<li>L931: <code>(defun eepitch-ansiterm (&amp;optional program name0)</code></li>
+<li>L948: <code>(defun eepitch-vterm (&amp;optional program name0)</code></li>
+<li>L965: <code>(defun eepitch-eat (&amp;optional program name0)</code></li>
+<li>L1015: <code>(defun  ee-wait-repl-started ()</code></li>
+<li>L1018: <code>(defun ee-wait (ntimes time)</code></li>
+<li>L1031: <code>(defun find-slyprocess-reuse ()</code></li>
+<li>L1036: <code>(defun find-slyprocess-create00 ()</code></li>
+<li>L1045: <code>(defun find-slyprocess-create0 ()</code></li>
+<li>L1060: <code>(defun find-slyprocess-create ()</code></li>
+<li>L1064: <code>(defun find-slyprocess ()</code></li>
+<li>L1074: <code>(defun eepitch-sly () (interactive)</code></li>
+<li>L1109: <code>(defun eepitch-b-show-source ()</code></li>
+<li>L1113: <code>(defun eepitch-b-set-source (&amp;optional n)</code></li>
+<li>L1121: <code>(defun eepitch-b-show-target ()</code></li>
+<li>L1125: <code>(defun eepitch-b-set-target ()</code></li>
+<li>L1130: <code>(defun eepitch-b-show-source-and-target ()</code></li>
+<li>L1141: <code>(defun eepitch-b (sexp)</code></li>
+<li>L1150: <code>(defun eepitch-b-set-target-and-show ()</code></li>
+<li>L1171: <code>(defun ee-buffers-in-modes (majormodes)</code></li>
+<li>L1177: <code>(defun ee-buffers-in-mode (majormode)</code></li>
+<li>L1180: <code>(defun ee-buffers-with-minor-mode (minormode)</code></li>
+<li>L1186: <code>(defun ee-buffers-with-name-matching (regexp)</code></li>
+<li>L1192: <code>(defun ee-kill-buffers (buffernames &amp;optional show-only)</code></li>
+<li>L1199: <code>(defun ee-kill-buffers-in-modes (majormodes &amp;optional show-only)</code></li>
+<li>L1202: <code>(defun ee-kill-buffers-in-mode (majormode &amp;optional show-only)</code></li>
+<li>L1205: <code>(defun ee-kill-buffers-with-minor-mode (minormode &amp;optional show-only)</code></li>
+<li>L1208: <code>(defun ee-kill-buffers-with-name-matching (regexp &amp;optional show-only)</code></li>
+<li>L1217: <code>(defun find-ebuffer-in-mode (majormode &amp;rest pos-spec-list)</code></li>
+<li>L1240: <code>(defun eepitch-gdb-kill ()</code></li>
+<li>L1243: <code>(defun eepitch-gdb-select ()</code></li>
+<li>L1256: <code>(defun ee-slime-inferior-lisp-buffers ()</code></li>
+<li>L1261: <code>(defun ee-slime-buffers ()</code></li>
+<li>L1265: <code>(defun eepitch-slime-kill (&amp;optional show-only)</code></li>
+<li>L1268: <code>(defun eepitch-slime-select ()</code></li>
+<li>L1278: <code>(defun eepitch-slime-pkgbuffers ()</code></li>
+<li>L1283: <code>(defun eepitch-slime-set-pkgbuffers ()</code></li>
+<li>L1286: <code>(defun eepitch-slime-get-pkgbuffer (pkg)</code></li>
+<li>L1289: <code>(defun eepitch-slime-select-pkgbuffer (pkg)</code></li>
+<li>L1294: <code>(defun find-3ee-maxima-slime ()</code></li>
+<li>L1298: <code>(defun find-4eee-maxima-slime ()</code></li>
+<li>L1308: <code>(defun eepitch-sly-kill (&amp;optional show-only)</code></li>
+<li>L1311: <code>(defun eepitch-sly-select ()</code></li>
+<li>L1316: <code>(defun eepitch-sly-pkgbuffers ()</code></li>
+<li>L1321: <code>(defun eepitch-sly-set-pkgbuffers ()</code></li>
+<li>L1324: <code>(defun eepitch-sly-get-pkgbuffer (pkg)</code></li>
+<li>L1327: <code>(defun eepitch-sly-select-pkgbuffer (pkg)</code></li>
+<li>L1332: <code>(defun find-3ee-maxima-sly ()</code></li>
+<li>L1336: <code>(defun find-4eee-maxima-sly ()</code></li>
+<li>L1364: <code>(defun eepitch-sh   () (interactive) (eepitch-comint "sh" "sh"))</code></li>
+<li>L1365: <code>(defun eepitch-bash () (interactive) (eepitch-comint "bash" "bash"))</code></li>
+<li>L1366: <code>(defun eepitch-dash () (interactive) (eepitch-comint "dash" "dash"))</code></li>
+<li>L1367: <code>(defun eepitch-ksh  () (interactive) (eepitch-comint "ksh" "ksh"))</code></li>
+<li>L1368: <code>(defun eepitch-tcsh () (interactive) (eepitch-comint "tcsh" "tcsh"))</code></li>
+<li>L1369: <code>(defun eepitch-zsh  () (interactive) (eepitch-comint-de "zsh" "zsh"))</code></li>
+<li>L1370: <code>(defun eepitch-scsh () (interactive) (eepitch-comint "scsh" "scsh"))</code></li>
+<li>L1371: <code>(defun eepitch-pwsh  () (interactive) (eepitch-ansiterm "pwsh" "pwsh"))</code></li>
+<li>L1372: <code>(defun eepitch-pwsh2 () (interactive) (eepitch-ansiterm "pwsh" "pwsh 2"))</code></li>
+<li>L1375: <code>(defun eepitch-lua51  () (interactive) (eepitch-comint "lua51"  "lua5.1"))</code></li>
+<li>L1376: <code>(defun eepitch-lua52  () (interactive) (eepitch-comint "lua52"  "lua5.2"))</code></li>
+<li>L1377: <code>(defun eepitch-lua53  () (interactive) (eepitch-comint "lua53"  "lua5.3"))</code></li>
+<li>L1378: <code>(defun eepitch-lua54  () (interactive) (eepitch-comint "lua54"  "lua5.4"))</code></li>
+<li>L1379: <code>(defun eepitch-luajit () (interactive) (eepitch-comint "luajit" "luajit"))</code></li>
+<li>L1380: <code>(defun eepitch-julia  () (interactive) (eepitch-comint "julia"  "julia"))</code></li>
+<li>L1381: <code>(defun eepitch-python2 () (interactive) (eepitch-comint "python2" "python2"))</code></li>
+<li>L1382: <code>(defun eepitch-python3 () (interactive) (eepitch-comint "python3" "python3"))</code></li>
+<li>L1383: <code>(defun eepitch-python  () (interactive) (eepitch-comint "python3" "python3"))</code></li>
+<li>L1384: <code>(defun eepitch-perl () (interactive) (eepitch-comint "perl" "perl -d -e 42"))</code></li>
+<li>L1385: <code>(defun eepitch-raku    () (interactive) (eepitch-comint "raku" "raku"))</code></li>
+<li>L1386: <code>(defun eepitch-php     () (interactive) (eepitch-comint "php -a" "php -a"))</code></li>
+<li>L1387: <code>(defun eepitch-ruby    () (interactive) (eepitch-ansiterm "irb" "irb"))</code></li>
+<li>L1388: <code>(defun eepitch-irb     () (interactive) (eepitch-ansiterm "irb" "irb"))</code></li>
+<li>L1391: <code>(defun eepitch-tcl     () (interactive) (eepitch-comint "tclsh"   "tclsh"))</code></li>
+<li>L1392: <code>(defun eepitch-tclsh   () (interactive) (eepitch-comint "tclsh"   "tclsh"))</code></li>
+<li>L1393: <code>(defun eepitch-wish    () (interactive) (eepitch-comint "wish"    "wish"))</code></li>
+<li>L1394: <code>(defun eepitch-expect  () (interactive) (eepitch-comint "expect"  "expect"))</code></li>
+<li>L1397: <code>(defun eepitch-ielm   () (interactive) (eepitch '(ielm)))</code></li>
+<li>L1399: <code>(defun eepitch-sbcl   () (interactive) (eepitch-comint "sbcl" "sbcl"))</code></li>
+<li>L1400: <code>(defun eepitch-gcl    () (interactive) (eepitch-comint "gcl"  "gcl"))</code></li>
+<li>L1401: <code>(defun eepitch-guile  () (interactive) (eepitch-comint "guile" "guile"))</code></li>
+<li>L1402: <code>(defun eepitch-racket () (interactive) (eepitch-comint "racket" "racket"))</code></li>
+<li>L1403: <code>(defun eepitch-scheme () (interactive) (eepitch-comint "scheme" "scheme"))</code></li>
+<li>L1404: <code>(defun eepitch-mitscheme () (interactive)</code></li>
+<li>L1406: <code>(defun eepitch-tinyscheme () (interactive)</code></li>
+<li>L1410: <code>(defun eepitch-fennel () (interactive) (eepitch-comint "fennel" "fennel"))</code></li>
+<li>L1414: <code>(defun eepitch-ghci   () (interactive) (eepitch-comint "ghci" "ghci"))</code></li>
+<li>L1415: <code>(defun eepitch-hugs   () (interactive) (eepitch-comint "hugs" "hugs"))</code></li>
+<li>L1416: <code>(defun eepitch-hugs98 () (interactive) (eepitch-comint "hugs" "hugs -98"))</code></li>
+<li>L1417: <code>(defun eepitch-ocaml  () (interactive) (eepitch-comint "ocaml" "ocaml"))</code></li>
+<li>L1418: <code>(defun eepitch-polyml () (interactive) (eepitch-comint "polyml" "poly"))</code></li>
+<li>L1419: <code>(defun eepitch-sml    () (interactive) (eepitch-comint "sml" "sml"))</code></li>
+<li>L1420: <code>(defun eepitch-labltk () (interactive) (eepitch-comint "labltk" "labltk"))</code></li>
+<li>L1421: <code>(defun eepitch-erl    () (interactive) (eepitch-comint "erl" "erl"))</code></li>
+<li>L1422: <code>(defun eepitch-iex    () (interactive) (eepitch-comint "iex" "iex"))</code></li>
+<li>L1423: <code>(defun eepitch-coqtop () (interactive) (eepitch-comint "coqtop" "coqtop"))</code></li>
+<li>L1426: <code>(defun eepitch-gforth () (interactive) (eepitch '(run-forth "gforth")))</code></li>
+<li>L1427: <code>(defun eepitch-gforth () (interactive) (eepitch-comint "gforth" "gforth"))</code></li>
+<li>L1428: <code>(defun eepitch-pforth () (interactive) (eepitch-comint "pforth" "pforth"))</code></li>
+<li>L1429: <code>(defun eepitch-yforth () (interactive) (eepitch-comint "yforth" "yforth"))</code></li>
+<li>L1432: <code>(defun eepitch-maxima () (interactive) (eepitch-comint "maxima" "maxima"))</code></li>
+<li>L1433: <code>(defun eepitch-octave () (interactive) (eepitch-comint "octave" "octave"))</code></li>
+<li>L1434: <code>(defun eepitch-R () (interactive)</code></li>
+<li>L1439: <code>(defun eepitch-gs () (interactive) (eepitch-comint "gs" "gs -r45"))</code></li>
+<li>L1440: <code>(defun eepitch-gs () (interactive) (eepitch-comint "gs" "gs -r60"))</code></li>
+<li>L1441: <code>(defun eepitch-gnuplot () (interactive)</code></li>
+<li>L1445: <code>(defun eepitch-bsh () (interactive)</code></li>
+<li>L1447: <code>(defun eepitch-scala () (interactive)</code></li>
+<li>L1449: <code>(defun eepitch-clojure () (interactive)</code></li>
+<li>L1453: <code>(defun eepitch-sqlite3 () (interactive)</code></li>
+<li>L1455: <code>(defun eepitch-mysql () (interactive)</code></li>
+<li>L1459: <code>(defun eepitch-gst () (interactive)</code></li>
+<li>L1465: <code>(defun eepitch-nodejs () (interactive) (eepitch-comint "nodejs" "nodejs"))</code></li>
+<li>L1466: <code>(defun eepitch-smjs () (interactive) (eepitch-comint "smjs" "smjs"))</code></li>
+<li>L1467: <code>(defun eepitch-mozrepl () (interactive)</code></li>
+<li>L1472: <code>(defun eepitch-luatex () (interactive)</code></li>
+<li>L1474: <code>(defun eepitch-lualatex () (interactive)</code></li>
+<li>L1476: <code>(defun eepitch-latex () (interactive)</code></li>
+<li>L1478: <code>(defun eepitch-tex   () (interactive)</code></li>
+<li>L1480: <code>(defun eepitch-mf    () (interactive)</code></li>
+<li>L1482: <code>(defun eepitch-mpost () (interactive)</code></li>
+<li>L1486: <code>(defun eepitch-pacmd () (interactive) (eepitch-comint "pacmd" "pacmd"))</code></li>
+<li>L1492: <code>(defun eepitch-isympy () (interactive) (eepitch-vterm "isympy3" "isympy3"))</code></li>
+<li>L1534: <code>(defun find-eepitch-debug-links (&amp;rest pos-spec-list)</code></li>
+<li>L1580: <code>(provide 'eepitch)</code></li>
+</ul>
+<h2>eev-aliases.el</h2>
+<ul>
+<li>L130: <code>(provide 'eev-aliases)</code></li>
+</ul>
+<h2>eev-anchors.el</h2>
+<ul>
+<li>L46: <code>(require 'eepitch)             ; (find-eev "eepitch.el")</code></li>
+<li>L47: <code>(require 'eev-codings)         ; (find-eev "eev-codings.el")</code></li>
+<li>L93: <code>(defun ee-format-as-anchor (tag)</code></li>
+<li>L113: <code>(defun ee-goto-anchor (&amp;optional tag &amp;rest rest)</code></li>
+<li>L144: <code>(defun find-anchor (fname &amp;optional tag &amp;rest pos-spec-list)</code></li>
+<li>L162: <code>(defun to (tag &amp;rest pos-spec-list)</code></li>
+<li>L170: <code>(provide 'eev-anchors)</code></li>
+</ul>
+<h2>eev-audiovideo.el</h2>
+<ul>
+<li>L112: <code>(require 'eev-code)</code></li>
+<li>L113: <code>(require 'eev-brxxx)</code></li>
+<li>L121: <code>(defun ee-time-around-point ()</code></li>
+<li>L140: <code>(defun ee-re-search-from (pos regexp &amp;optional limit repeat)</code></li>
+<li>L148: <code>(defun ee-time-from-bol ()</code></li>
+<li>L154: <code>(defun ee-time-from-bol-flash () (interactive)</code></li>
+<li>L189: <code>(defun ee-time-to-seconds (time)</code></li>
+<li>L196: <code>(defun ee-seconds-to-time (seconds)</code></li>
+<li>L217: <code>(defun ee-secs-to-mm:ss (n)</code></li>
+<li>L224: <code>(defun ee-mm:ss-to-secs (mm:ss)</code></li>
+<li>L244: <code>(defun ee-time-to-youtube-time (str &amp;optional c)</code></li>
+<li>L266: <code>(defun ee-time-to-arg (time)</code></li>
+<li>L288: <code>(defun ee-time+ (seconds time)</code></li>
+<li>L293: <code>(defun ee-time-from-bol-shift (seconds)</code></li>
+<li>L301: <code>(defun ee-time-from-bol-shift- (seconds)</code></li>
+<li>L320: <code>(defun ee-audiovideo-sexp (time)</code></li>
+<li>L323: <code>(defun ee-time-from-bol-rerun (&amp;optional arg)</code></li>
+<li>L349: <code>(define-key eev-avadj-mode-map "\M--" 'ee-time-from-bol-shift-)</code></li>
+<li>L350: <code>(define-key eev-avadj-mode-map "\M-=" 'ee-time-from-bol-shift)</code></li>
+<li>L351: <code>(define-key eev-avadj-mode-map "\M-+" 'ee-time-from-bol-shift)</code></li>
+<li>L352: <code>(define-key eev-avadj-mode-map "\M-p" 'ee-time-from-bol-rerun)</code></li>
+<li>L354: <code>(define-minor-mode eev-avadj-mode</code></li>
+<li>L384: <code>(defun    find-mplayer (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L389: <code>(defun ee-mplayer-video-options () ee-mplayer-options)</code></li>
+<li>L390: <code>(defun ee-find-mplayer (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L397: <code>(defun      code-mplayer (c fname)</code></li>
+<li>L399: <code>(defun find-code-mplayer (c fname)</code></li>
+<li>L401: <code>(defun   ee-code-mplayer (c fname)</code></li>
+<li>L431: <code>(defun ee-mplayer-audio-options () ee-termplayer-options)</code></li>
+<li>L432: <code>(defun ee-find-termplayer (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L439: <code>(defun    find-termplayer (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L444: <code>(defun      code-termplayer (c fname)</code></li>
+<li>L446: <code>(defun find-code-termplayer (c fname)</code></li>
+<li>L448: <code>(defun   ee-code-termplayer (c fname)</code></li>
+<li>L477: <code>(defun    find-mpv-video (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L482: <code>(defun ee-find-mpv-video (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L489: <code>(defun      code-mpv-video (c fname)</code></li>
+<li>L491: <code>(defun find-code-mpv-video (c fname)</code></li>
+<li>L493: <code>(defun   ee-code-mpv-video (c fname)</code></li>
+<li>L521: <code>(defun ee-find-mpv-audio (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L529: <code>(defun    find-mpv-audio (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L534: <code>(defun      code-mpv-audio (c fname)</code></li>
+<li>L536: <code>(defun find-code-mpv-audio (c fname)</code></li>
+<li>L538: <code>(defun   ee-code-mpv-audio (c fname)</code></li>
+<li>L563: <code>(defun    find-vlc-video (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L567: <code>(defun ee-find-vlc-video (fname &amp;optional pos &amp;rest rest)</code></li>
+<li>L574: <code>(defun      code-vlc-video (c fname)</code></li>
+<li>L576: <code>(defun find-code-vlc-video (c fname)</code></li>
+<li>L578: <code>(defun   ee-code-vlc-video (c fname)</code></li>
+<li>L613: <code>(defun find-youtube-video (youtubeid &amp;optional time &amp;rest rest)</code></li>
+<li>L616: <code>(defun ee-find-youtube-video (youtubeid &amp;optional time &amp;rest rest)</code></li>
+<li>L620: <code>(defun ee-find-youtube-url (youtubeid time)</code></li>
+<li>L668: <code>(provide 'eev-audiovideo)</code></li>
+</ul>
+<h2>eev-beginner.el</h2>
+<ul>
+<li>L169: <code>(require 'eev-load)</code></li>
+<li>L184: <code>(defun eev-beginner ()</code></li>
+<li>L193: <code>(provide 'eev-beginner)</code></li>
+</ul>
+<h2>eev-blinks.el</h2>
+<ul>
+<li>L126: <code>(defun eek (str)</code></li>
+<li>L132: <code>(defun find-eek (str &amp;rest pos-spec-list)</code></li>
+<li>L138: <code>(defun eek2 (str &amp;optional norecord)</code></li>
+<li>L155: <code>(defun ee-eek2 (stringorlist &amp;optional norecord)</code></li>
+<li>L183: <code>(defun ee-goto-position (&amp;optional pos-spec &amp;rest rest)</code></li>
+<li>L218: <code>(defun ee-goto-rest (list)</code></li>
+<li>L279: <code>(defun find-fline (fname &amp;rest pos-spec-list)</code></li>
+<li>L290: <code>(defun find-fline-gz (fname &amp;rest pos-spec-list)</code></li>
+<li>L299: <code>(defun find-node (nodestr &amp;rest pos-spec-list)</code></li>
+<li>L322: <code>(defun find-wottb-call (sexp bufname &amp;rest pos-spec-list)</code></li>
+<li>L338: <code>(defun find-eapropos (regexp &amp;rest pos-spec-list)</code></li>
+<li>L346: <code>(defun find-efunctiondescr (symbol &amp;rest pos-spec-list)</code></li>
+<li>L354: <code>(defun find-evariabledescr (symbol &amp;rest pos-spec-list)</code></li>
+<li>L364: <code>(defun find-ekeydescr (key &amp;rest pos-spec-list)</code></li>
+<li>L373: <code>(defun find-etypedescr (type &amp;rest pos-spec-list)</code></li>
+<li>L382: <code>(defun find-efunctiond (function &amp;rest pos-spec-list)</code></li>
+<li>L394: <code>(defun find-customizegroup (group &amp;rest pos-spec-list)</code></li>
+<li>L405: <code>(defun find-customizeoption (symbol &amp;rest rest)</code></li>
+<li>L410: <code>(defun find-customizevariable (symbol &amp;rest rest)</code></li>
+<li>L415: <code>(defun find-customizeapropos (pattern &amp;optional type &amp;rest rest)</code></li>
+<li>L420: <code>(defun find-customizeface (face &amp;rest rest)</code></li>
+<li>L430: <code>(defun find-epackages0 (&amp;optional no-fetch &amp;rest pos-spec-list)</code></li>
+<li>L443: <code>(defun find-epackage (&amp;optional pkg-desc &amp;rest pos-spec-list)</code></li>
+<li>L455: <code>(defun find-eshortdoc (group &amp;rest rest)</code></li>
+<li>L474: <code>(defun find-dbsw-call (sexp &amp;rest pos-spec-list)</code></li>
+<li>L496: <code>(defun find-epackages (&amp;rest pos-spec-list)</code></li>
+<li>L510: <code>(defun ee-goto-position-package (&amp;optional pkgsymbol &amp;rest rest)</code></li>
+<li>L519: <code>(defun ee-packages-nline-for (pkgsymbol &amp;optional nns)</code></li>
+<li>L523: <code>(defun ee-packages-nlines-for (pkgsymbol &amp;optional nns)</code></li>
+<li>L530: <code>(defun ee-packages-nlines-and-names (&amp;optional tles)</code></li>
+<li>L565: <code>(defun find-echardescr (&amp;optional pos &amp;rest pos-spec-list)</code></li>
+<li>L571: <code>(defun find-ecolors (&amp;rest pos-spec-list)</code></li>
+<li>L580: <code>(defun find-efacedescr (&amp;optional face &amp;rest pos-spec-list)</code></li>
+<li>L588: <code>(defun find-efaces (&amp;rest pos-spec-list)</code></li>
+<li>L594: <code>(defun ee-find-efaces-hack (pos-spec-list)</code></li>
+<li>L602: <code>(defun find-etpat (&amp;optional pos &amp;rest pos-spec-list)</code></li>
+<li>L611: <code>(defun find-etpat0 (&amp;rest pos-spec-list)</code></li>
+<li>L618: <code>(defun find-etpat00 ()</code></li>
+<li>L644: <code>(defun find-eregionpp (b e &amp;optional arg)</code></li>
+<li>L660: <code>(defun ee-string-intervals (str)</code></li>
+<li>L668: <code>(defun ee-symbol&lt; (symbol1 symbol2)</code></li>
+<li>L673: <code>(defun ee-sort-symbols (symbols)</code></li>
+<li>L676: <code>(defun ee-sort-pairs (pairs)</code></li>
+<li>L684: <code>(defun ee-eregionpp-preprocess (intervals0 arg)</code></li>
+<li>L691: <code>(defun find-eregionpp0 (b e &amp;optional use-print-circle)</code></li>
+<li>L707: <code>(defun find-eoverlayspp ()</code></li>
+<li>L712: <code>(defun ee-overlay-pp0 (ovl)</code></li>
+<li>L727: <code>(defun find-ebuffercontents (&amp;optional b &amp;rest pos-spec-list)</code></li>
+<li>L735: <code>(defun ee-buffer-contents (&amp;optional b)</code></li>
+<li>L742: <code>(defun ee-buffer-contents0 (b)</code></li>
+<li>L751: <code>(defun ee-write-buffer-contents (b fname)</code></li>
+<li>L776: <code>(defun find-ebufferandpos (buffer-and-pos &amp;rest pos-spec-list)</code></li>
+<li>L796: <code>(defun find-efunction (symbol &amp;rest pos-spec-list)</code></li>
+<li>L804: <code>(defun find-ealias (symbol &amp;rest pos-spec-list)</code></li>
+<li>L813: <code>(defun find-evariable (symbol &amp;rest pos-spec-list)</code></li>
+<li>L818: <code>(defun find-eface (face &amp;rest pos-spec-list)</code></li>
+<li>L844: <code>(defun find-ebuffer (buffer &amp;rest pos-spec-list)</code></li>
+<li>L850: <code>(defun find-emarker (marker &amp;rest pos-spec-list)</code></li>
+<li>L870: <code>(defun find-eoutput-rerun (buffer-name code &amp;rest pos-spec-list)</code></li>
+<li>L887: <code>(defun find-eoutput-reuse (buffer-name code &amp;rest pos-spec-list)</code></li>
+<li>L905: <code>(defun find-estring (string &amp;rest pos-spec-list)</code></li>
+<li>L914: <code>(defun find-estring-elisp (string &amp;rest pos-spec-list)</code></li>
+<li>L921: <code>(defun find-estring-mode (sexp string &amp;rest pos-spec-list)</code></li>
+<li>L929: <code>(defun find-estring-sh (string &amp;rest pos-spec-list)</code></li>
+<li>L933: <code>(defun find-estring-2a (str &amp;rest pos-spec-list)</code></li>
+<li>L961: <code>;;    (define-key ee-fep-keymap (kbd "C-c C-c") 'next-line)</code></li>
+<li>L965: <code>(defun ee-epropertize (textproperties)</code></li>
+<li>L969: <code>(defun find-epropertize (textproperties)</code></li>
+<li>L974: <code>(defun find-epropertize-2b (textproperties)</code></li>
+<li>L990: <code>(defun ee-raw-text-unix ()</code></li>
+<li>L997: <code>(defun find-estring-lv (string &amp;rest pos-spec-list)</code></li>
+<li>L1027: <code>(defun ee-hashtable-to-string (f hashtable)</code></li>
+<li>L1046: <code>(defun find-ehashtable (hashtable &amp;rest pos-spec-list)</code></li>
+<li>L1108: <code>(defun ee-struct-class (stro)</code></li>
+<li>L1111: <code>(defun ee-struct-slot-names (stro)</code></li>
+<li>L1115: <code>(defun ee-struct-slot-names+ (stro)</code></li>
+<li>L1118: <code>(defun ee-struct-index-table (stro)</code></li>
+<li>L1121: <code>(defun ee-struct-to-string (stro)</code></li>
+<li>L1147: <code>(defun find-estruct (stro &amp;rest pos-spec-list)</code></li>
+<li>L1154: <code>(defun ee-struct-to-triples (stro)</code></li>
+<li>L1163: <code>(defun find-estructt (stro &amp;rest pos-spec-list)</code></li>
+<li>L1221: <code>(defun find-clprin1 (o &amp;rest pos-spec-list)</code></li>
+<li>L1227: <code>(defun find-clprin1s (o &amp;rest pos-spec-list)</code></li>
+<li>L1235: <code>(defun ee-clprin1  (o) (cl-prin1-to-string o))</code></li>
+<li>L1236: <code>(defun ee-clprin1s (o) (mapconcat 'cl-prin1-to-string o "\n"))</code></li>
+<li>L1274: <code>(defun ee-indent-as-elisp (str)</code></li>
+<li>L1281: <code>(defun ee-clprin2 (o)</code></li>
+<li>L1290: <code>(defun ee-clprin2s (o)</code></li>
+<li>L1293: <code>(defun find-clprin2 (o &amp;rest pos-spec-list)</code></li>
+<li>L1301: <code>(defun find-clprin2s (o &amp;rest pos-spec-list)</code></li>
+<li>L1343: <code>(defun find-sh (command &amp;rest pos-spec-list)</code></li>
+<li>L1358: <code>(defun find-sh0 (command)</code></li>
+<li>L1367: <code>(defun find-sh-at-dir (dir command &amp;rest pos-spec-list)</code></li>
+<li>L1374: <code>(defun find-sh-man-fontify (command &amp;rest pos-spec-list)</code></li>
+<li>L1403: <code>(defun find-man (manpage &amp;rest pos-spec-list)</code></li>
+<li>L1423: <code>(defun ee-find-man-goto-pos-spec (&amp;rest rest)</code></li>
+<li>L1495: <code>(defun find-w3m (url &amp;rest pos-spec-list)</code></li>
+<li>L1527: <code>(defun find-eww (url &amp;rest pos-spec-list)</code></li>
+<li>L1542: <code>(defun ee-find-eww-search ()</code></li>
+<li>L1560: <code>(defun ee-find-eww-preprocess-url (url)</code></li>
+<li>L1598: <code>(defun find-Package (fname &amp;optional packagename &amp;rest pos-spec-list)</code></li>
+<li>L1606: <code>(defun find-status (packagename &amp;rest pos-spec-list)</code></li>
+<li>L1612: <code>(defun find-available (packagename &amp;rest pos-spec-list)</code></li>
+<li>L1618: <code>(defun find-grep-status (grepargs &amp;rest pos-spec-list)</code></li>
+<li>L1622: <code>(defun find-grep-available (grepargs &amp;rest pos-spec-list)</code></li>
+<li>L1649: <code>(defun find-epp0 (object)</code></li>
+<li>L1656: <code>(defun find-epp (object &amp;rest pos-spec-list)</code></li>
+<li>L1661: <code>(defun find-eppp (object &amp;rest pos-spec-list)</code></li>
+<li>L1668: <code>(defun find-eppm (code &amp;rest pos-spec-list)</code></li>
+<li>L1672: <code>(defun find-eppma (code &amp;rest pos-spec-list)</code></li>
+<li>L1683: <code>(defun find-efunctionpp (symbol &amp;rest pos-spec-list)</code></li>
+<li>L1696: <code>(defun find-eppp-with-prefix (prefix object &amp;rest pos-spec-list)</code></li>
+<li>L1718: <code>(defun find-eloadhistory0 (fname &amp;rest pos-spec-list)</code></li>
+<li>L1726: <code>(defun find-eloadhistory (library &amp;rest pos-spec-list)</code></li>
+<li>L1738: <code>(defun find-eloadhistory-for (f &amp;rest rest)</code></li>
+<li>L1784: <code>(defun find-lgreps (f &amp;optional stem)</code></li>
+<li>L1829: <code>(defun find-esubstitutecommandkeys (string &amp;rest pos-spec-list)</code></li>
+<li>L1836: <code>(defun find-ekeymapdescr (keymap &amp;rest pos-spec-list)</code></li>
+<li>L1844: <code>(defun find-eminorkeymapdescr (mode-symbol &amp;rest pos-spec-list)</code></li>
+<li>L1852: <code>(defun ee-minor-mode-keymap (mode-symbol)</code></li>
+<li>L1862: <code>(defun find-ebufferlocalvars (&amp;rest pos-spec-list)</code></li>
+<li>L1874: <code>(defun ee-buffer-local-variables ()</code></li>
+<li>L1879: <code>(defun find-eccldump (ccl-code &amp;rest pos-spec-list)</code></li>
+<li>L1888: <code>(defun find-echarsetchars (charset &amp;rest pos-spec-list)</code></li>
+<li>L1913: <code>(defun ee-insert (&amp;rest rest)</code></li>
+<li>L1927: <code>(defun find-einsert (what &amp;rest rest)</code></li>
+<li>L1949: <code>(defun find-eunicode (&amp;rest pos-spec-list)</code></li>
+<li>L1956: <code>(defun find-eunicodeucs (c &amp;rest pos-spec-list)</code></li>
+<li>L1991: <code>(defun ee-closure-to-list (c)</code></li>
+<li>L1996: <code>(defun ee-closure-to-lambda (c)</code></li>
+<li>L2005: <code>(defun ee-symbol-function (sym)</code></li>
+<li>L2014: <code>(defun ee-closure-to-named-plist (c &amp;optional head)</code></li>
+<li>L2044: <code>(defun ee-defun-sexp-for (symbol)</code></li>
+<li>L2047: <code>(defun ee-defun-str-for (symbol)</code></li>
+<li>L2052: <code>(defun ee-eejump-symbols ()</code></li>
+<li>L2055: <code>(defun ee-find-eejumps-header ()</code></li>
+<li>L2070: <code>(defun ee-find-eejumps-body ()</code></li>
+<li>L2073: <code>(defun find-eejumps (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L2098: <code>(defun ee-shortdefp (sym)</code></li>
+<li>L2106: <code>(defun ee-shortdef-symbols ()</code></li>
+<li>L2109: <code>(defun ee-find-eeshortdefs-body ()</code></li>
+<li>L2112: <code>(defun ee-find-eeshortdefs-header ()</code></li>
+<li>L2118: <code>(defun find-eeshortdefs (&amp;rest pos-spec-list)</code></li>
+<li>L2131: <code>(defun ee-shortaliasp (sym)</code></li>
+<li>L2137: <code>(defun ee-shortalias-symbols ()</code></li>
+<li>L2140: <code>(defun ee-defalias-str-for (symbol)</code></li>
+<li>L2143: <code>(defun ee-find-eeshortaliases-body ()</code></li>
+<li>L2147: <code>(defun ee-find-eeshortaliases-header ()</code></li>
+<li>L2153: <code>(defun find-eeshortaliases (&amp;rest pos-spec-list)</code></li>
+<li>L2176: <code>(defun find-eaproposf (regexp &amp;rest rest)</code></li>
+<li>L2194: <code>(defun find-eaproposv (regexp &amp;rest rest)</code></li>
+<li>L2212: <code>(defun find-eapropost (regexp &amp;rest rest)</code></li>
+<li>L2232: <code>(defun find-eaproposl (regexp &amp;rest rest)</code></li>
+<li>L2256: <code>(defun ee-eaproposf0 (regexp predicate fmt)</code></li>
+<li>L2266: <code>(provide 'eev-blinks)</code></li>
+</ul>
+<h2>eev-bounded.el</h2>
+<ul>
+<li>L49: <code>(require 'eev-code)</code></li>
+<li>L68: <code>(defun ee-sdelim-to-s (sdelim)</code></li>
+<li>L74: <code>(defun ee-edelim-to-e (edelim)</code></li>
+<li>L91: <code>(defun       code-bounded (newf f delim &amp;optional adjust face dur)</code></li>
+<li>L94: <code>(defun  find-code-bounded (newf f delim &amp;optional adjust face dur)</code></li>
+<li>L97: <code>(defun    ee-code-bounded (newf f delim &amp;optional adjust face dur)</code></li>
+<li>L140: <code>(defun ee-bounded-function ()</code></li>
+<li>L145: <code>;; (define-key eev-mode-map [f3] 'ee-bounded-function)</code></li>
+<li>L147: <code>(provide 'eev-bounded)</code></li>
+<li>L170: <code>(defun ee-add-quote (obj)</code></li>
+<li>L177: <code>(defun ee-pp0q (obj)</code></li>
+<li>L181: <code>(defun ee-eeb-define-docstring</code></li>
+<li>L199: <code>(defun ee-eeb-define</code></li>
+<li>L227: <code>(defun eeb-define</code></li>
+<li>L243: <code>(defun find-eeb-define (&amp;rest rest)</code></li>
+<li>L248: <code>(defun eeb-define-try</code></li>
+</ul>
+<h2>eev-brxxx.el</h2>
+<ul>
+<li>L134: <code>(require 'eev-code)          ; (find-eev "eev-code.el")</code></li>
+<li>L173: <code>(defun ee-url-to-fname0 (url)</code></li>
+<li>L177: <code>(defun ee-url-to-fname (url)</code></li>
+<li>L182: <code>(defun ee-fname-to-url (fname)</code></li>
+<li>L186: <code>(defun ee-url-to-local-url (url)</code></li>
+<li>L192: <code>(defun ee-dired-to-fname (&amp;optional no-error-if-not-filep)</code></li>
+<li>L200: <code>(defun ee-dired-to-url (&amp;optional no-error-if-not-filep)</code></li>
+<li>L211: <code>(defun ee-tail-call1 (fmt f rest)</code></li>
+<li>L231: <code>(defun      code-brurl (f &amp;rest rest)</code></li>
+<li>L234: <code>(defun find-code-brurl (f &amp;rest rest)</code></li>
+<li>L236: <code>(defun   ee-code-brurl (f &amp;rest rest)</code></li>
+<li>L247: <code>(defun ee-code-brurl-rest (f rest)</code></li>
+<li>L254: <code>(defun ee-code-brurl-:remote (f brxxx &amp;rest rest)</code></li>
+<li>L264: <code>(defun ee-code-brurl-:local (f brxxxl &amp;rest rest)</code></li>
+<li>L275: <code>(defun ee-code-brurl-:dired (f brxxxd &amp;rest rest)</code></li>
+<li>L307: <code>(defun      code-brfile (f &amp;rest rest)</code></li>
+<li>L310: <code>(defun find-code-brfile (f &amp;rest rest)</code></li>
+<li>L312: <code>(defun   ee-code-brfile (f &amp;rest rest)</code></li>
+<li>L325: <code>(defun ee-code-brfile-rest (f rest)</code></li>
+<li>L332: <code>(defun ee-code-brfile-:local (f brxxxl &amp;rest rest)</code></li>
+<li>L343: <code>(defun ee-code-brfile-:dired (f brxxxd &amp;rest rest)</code></li>
+<li>L426: <code>(provide 'eev-brxxx)</code></li>
+</ul>
+<h2>eev-channels.el</h2>
+<ul>
+<li>L54: <code>(require 'eev-prepared)         ; (find-eev "eev-prepared.el")</code></li>
+<li>L56: <code>(defun ee-read-file (fname)</code></li>
+<li>L106: <code>(defun eechannel-strfile (channel)</code></li>
+<li>L110: <code>(defun eechannel-pidfile (channel)</code></li>
+<li>L113: <code>(defun eechannel-pid     (channel)</code></li>
+<li>L119: <code>(defun eechannel-kill (channel sig)</code></li>
+<li>L124: <code>(defun eechannel-send (channel str)</code></li>
+<li>L130: <code>(defun eechannel-this-line () (interactive)</code></li>
+<li>L139: <code>(defun eechannel (channel)</code></li>
+<li>L155: <code>(defun eechannel-pid-running-p (pid)</code></li>
+<li>L164: <code>(defun eechannel-args-ne (channel prog-and-args)</code></li>
+<li>L168: <code>(defun eechannel-create-ne (channel prog-and-args)</code></li>
+<li>L171: <code>(defun eechannel-assert-ne (channel prog-and-args)</code></li>
+<li>L177: <code>(defun eechannel-args   (channel prog-and-args)</code></li>
+<li>L179: <code>(defun eechannel-create (channel prog-and-args)</code></li>
+<li>L181: <code>(defun eechannel-assert (channel prog-and-args)</code></li>
+<li>L220: <code>(defun eexterm-args-ne (channel &amp;optional prog-and-args xterm-args)</code></li>
+<li>L231: <code>(defun eexterm-create-ne (channel &amp;optional prog-and-args xterm-args)</code></li>
+<li>L235: <code>(defun eexterm-ne (channel &amp;optional prog-and-args xterm-args)</code></li>
+<li>L243: <code>(defun eexterm-args (channel &amp;optional prog-and-args xterm-args)</code></li>
+<li>L246: <code>(defun eexterm-create (channel &amp;optional prog-and-args xterm-args)</code></li>
+<li>L250: <code>(defun eexterm (channel &amp;optional prog-and-args xterm-args)</code></li>
+<li>L257: <code>(defun eexterm-kill (&amp;optional channel sig)</code></li>
+<li>L263: <code>(provide 'eev-channels)</code></li>
+</ul>
+<h2>eev-code.el</h2>
+<ul>
+<li>L56: <code>(require 'eepitch)     ; For: 'ee-read'</code></li>
+<li>L57: <code>(require 'eev-template0)   ; See: (find-eev "eev-template0.el")</code></li>
+<li>L58: <code>(require 'eev-wrap)        ; For: 'ee-S'</code></li>
+<li>L84: <code>(defun ee-aref (alist idx)</code></li>
+<li>L93: <code>(defun ee-adel (alist idx)</code></li>
+<li>L102: <code>(defun ee-aset (alist idx newelt)</code></li>
+<li>L113: <code>(defun ee-areplace (alist idx newelt)</code></li>
+<li>L146: <code>(defun ee-code-c-d-add-pair (c d)</code></li>
+<li>L190: <code>(defun      code-c-d (c d &amp;rest rest)</code></li>
+<li>L195: <code>(defun find-code-c-d (c d &amp;rest rest)</code></li>
+<li>L197: <code>(defun   ee-code-c-d (c d &amp;rest rest)</code></li>
+<li>L204: <code>(defun   ee-code-c-d-rest (c d rest)</code></li>
+<li>L210: <code>(defun find-code-c-d-rest (c d &amp;rest rest)</code></li>
+<li>L213: <code>(defun ee-code-c-d-base (c d)</code></li>
+<li>L243: <code>(defun ee-code-c-d-:anchor (c d &amp;rest rest)</code></li>
+<li>L251: <code>(defun ee-code-c-d-:info (c d info &amp;rest rest)</code></li>
+<li>L262: <code>(defun ee-code-c-d-:linfo (c d manual &amp;rest rest)</code></li>
+<li>L270: <code>(defun ee-code-c-d-:gz (c d &amp;rest rest)</code></li>
+<li>L279: <code>(defun ee-code-c-d-:tags (c d &amp;rest rest)</code></li>
+<li>L294: <code>(defun ee-code-c-d-:w3m (c d &amp;rest rest)</code></li>
+<li>L301: <code>(defun ee-code-c-d-:wget (c d url &amp;rest rest)</code></li>
+<li>L310: <code>(defun ee-code-c-d-:grep (c d &amp;rest rest) (ee-code-c-d-rest c d rest))  ; compat</code></li>
+<li>L315: <code>(defun ee-find-node (dir manual page &amp;rest pos-spec-list)</code></li>
+<li>L318: <code>(defun ee-find-grep (dir grep-command-args &amp;rest pos-spec-list)</code></li>
+<li>L324: <code>(defun ee-find-xxxsh (dir command &amp;rest pos-spec-list)</code></li>
+<li>L328: <code>(defun ee-find-xxxsh0 (dir command)</code></li>
+<li>L332: <code>(defun ee-find-xxxsh00 (dir command)</code></li>
+<li>L336: <code>(defun ee-find-tag (tag &amp;rest pos-spec-list)</code></li>
+<li>L359: <code>(defun ee-locate-library (fname &amp;optional truename)</code></li>
+<li>L422: <code>(defun eev-version ()</code></li>
+<li>L432: <code>(provide 'eev-code)</code></li>
+</ul>
+<h2>eev-codings.el</h2>
+<ul>
+<li>L99: <code>(defun ee-to-coding (coding str)</code></li>
+<li>L102: <code>(defun ee-tolatin1 (str)</code></li>
+<li>L123: <code>(defun ee-tolatin1-re (re)</code></li>
+<li>L141: <code>(provide 'eev-codings)</code></li>
+</ul>
+<h2>eev-compose-hash.el</h2>
+<ul>
+<li>L174: <code>;;   (define-key eev-mode-map (kbd "M-,") 'ee-compose-pair)</code></li>
+<li>L188: <code>(defun ee-composes-initialize ()</code></li>
+<li>L213: <code>(defun ee-composes-do (bigstrspec &amp;optional action)</code></li>
+<li>L226: <code>(defun ee-composes-do-default ()</code></li>
+<li>L234: <code>(defun ee-composes-do-remove-face ()</code></li>
+<li>L242: <code>(defun ee-composes-do-test ()</code></li>
+<li>L274: <code>(defun ee-composes-to-string ()</code></li>
+<li>L281: <code>(defun ee-composes-to-catcodes ()</code></li>
+<li>L287: <code>(defun ee-composes-to-declareunicodes ()</code></li>
+<li>L307: <code>(defun ee-compose-pair (&amp;optional arg)</code></li>
+<li>L349: <code>(defun ee-composes-set-face (face fg bg)</code></li>
+<li>L665: <code>;; (define-key eev-mode-map (kbd "M-,") 'ee-compose-pair)</code></li>
+<li>L673: <code>(provide 'eev-compose-hash)</code></li>
+</ul>
+<h2>eev-edit.el</h2>
+<ul>
+<li>L63: <code>;; (define-key eev-mode-map "\M-h\M-2" 'ee-duplicate-this-line)</code></li>
+<li>L67: <code>(defun ee-duplicate-this-line ()</code></li>
+<li>L82: <code>;; (define-key eev-mode-map "\M-h\M-y" 'ee-yank-pos-spec)</code></li>
+<li>L87: <code>(defun ee-yank-pos-spec ()</code></li>
+<li>L129: <code>;; (define-key eev-mode-map "\M-h\M-w" 'ee-copy-this-line-to-kill-ring)</code></li>
+<li>L133: <code>(defun ee-copy-this-line-to-kill-ring (&amp;optional arg)</code></li>
+<li>L152: <code>(defun  ee-tag-re () ee-tag-re-utf-8)</code></li>
+<li>L154: <code>(defun ee-preceding-tag-flash (&amp;optional regexp)</code></li>
+<li>L167: <code>(defun ee-preceding-tag-flash-no-error ()</code></li>
+<li>L172: <code>(defun ee-copy-preceding-tag-to-kill-ring ()</code></li>
+<li>L193: <code>;; (define-key eev-mode-map "\M-h\M--" 'ee-shrink-hyperlink-at-eol)</code></li>
+<li>L196: <code>(defun ee-shrink-sexp (sexp)</code></li>
+<li>L206: <code>(defun ee-shrink-hyperlink-at-eol ()</code></li>
+<li>L226: <code>;; (define-key eev-mode-map "\M-s" 'ee-flip-psne-ness)</code></li>
+<li>L230: <code>(defun ee-flip-psne-ness ()</code></li>
+<li>L248: <code>;; (define-key eev-mode-map "\M-I" 'eewrap-vldi-list-line)</code></li>
+<li>L263: <code>(defun eewrap-vldi-list-line () (interactive)</code></li>
+<li>L276: <code>(defun ee-wrap-vldi-list-line (line)</code></li>
+<li>L295: <code>(provide 'eev-edit)</code></li>
+</ul>
+<h2>eev-elinks.el</h2>
+<ul>
+<li>L130: <code>(defun ee-url-at-point ()</code></li>
+<li>L133: <code>(defun ee-stuff-around-point0 (chars)</code></li>
+<li>L140: <code>(defun ee-stuff-around-point (chars)</code></li>
+<li>L144: <code>(defun ee-debpkgname-around-point ()</code></li>
+<li>L149: <code>(defun ee-debpkgname-ask (&amp;optional prompt)</code></li>
+<li>L154: <code>(defun ee-manpagename-around-point ()</code></li>
+<li>L160: <code>(defun ee-manpagename-ask (&amp;optional prompt)</code></li>
+<li>L166: <code>(defun ee-1stclassvideo-around-point-ask ()</code></li>
+<li>L176: <code>(defun ee-1stclassvideo-ask (default0)</code></li>
+<li>L185: <code>(defun ee-1stclassvideos ()</code></li>
+<li>L188: <code>(defun ee-lisp-symbol-around-point ()</code></li>
+<li>L194: <code>(defun ee-lisp-symbol-around-point-ask (&amp;optional prompt)</code></li>
+<li>L242: <code>(defun ee-remove-nils (list)</code></li>
+<li>L249: <code>(defun ee-links-to-string0 (list)</code></li>
+<li>L255: <code>(defun ee-links-to-string (list)</code></li>
+<li>L260: <code>(defun find-elinks (links &amp;rest pos-spec-list)</code></li>
+<li>L265: <code>(defun find-elinks-elisp (links &amp;rest pos-spec-list)</code></li>
+<li>L272: <code>(defun find-elinks-mode (sexp links &amp;rest pos-spec-list)</code></li>
+<li>L280: <code>(defun find-elinks-mode-prefix (sexp prefix links &amp;rest pos-spec-list)</code></li>
+<li>L286: <code>(defun find-elinks-sh (links &amp;rest pos-spec-list)</code></li>
+<li>L313: <code>(defun find-efunction-links (&amp;optional f &amp;rest pos-spec-list)</code></li>
+<li>L326: <code>(defun ee-find-efunction-links (f)</code></li>
+<li>L371: <code>(defun find-eloadhistory-links (&amp;rest pos-spec-list)</code></li>
+<li>L398: <code>(defun ee-eloadhistory-find-flines ()</code></li>
+<li>L405: <code>(defun ee-eloadhistory-fors ()</code></li>
+<li>L412: <code>(defun ee-shorten-elc (fname)</code></li>
+<li>L423: <code>(defun find-epploadhistory (object &amp;rest pos-spec-list)</code></li>
+<li>L447: <code>(defun find-evariable-links (var &amp;rest pos-spec-list)</code></li>
+<li>L538: <code>;; (define-key eev-mode-map "\M-h\M-k" 'find-ekey-links)</code></li>
+<li>L541: <code>(defun ee-format-kbd-macro (key)</code></li>
+<li>L546: <code>(defun find-ekey-links (key &amp;rest pos-spec-list)</code></li>
+<li>L570: <code>(defun find-elongkey-links (longkey &amp;rest pos-spec-list)</code></li>
+<li>L588: <code>(defun ee-find-eboundkey-links (key f)</code></li>
+<li>L639: <code>(defun find-eapropos-links (&amp;optional regexp &amp;rest pos-spec-list)</code></li>
+<li>L681: <code>(defun find-etype-links (&amp;optional type &amp;rest pos-spec-list)</code></li>
+<li>L744: <code>(defun ee-infop          () (get-buffer "*info*"))</code></li>
+<li>L745: <code>(defun ee-info-node      () (with-current-buffer "*info*" Info-current-node))</code></li>
+<li>L746: <code>(defun ee-info-book+     () (with-current-buffer "*info*" Info-current-file))</code></li>
+<li>L747: <code>(defun ee-info-book-     () (file-name-nondirectory (ee-info-book+)))</code></li>
+<li>L748: <code>(defun ee-info-fullnode  () (format "(%s)%s" (ee-info-book-) (ee-info-node)))</code></li>
+<li>L749: <code>(defun ee-info-fullnode+ () (format "(%s)%s" (ee-info-book+) (ee-info-node)))</code></li>
+<li>L751: <code>(defun ee-info-file-     () (file-name-nondirectory ee-info-file))</code></li>
+<li>L752: <code>(defun ee-info-shortp    () (string= (ee-info-book-) (ee-info-file-)))</code></li>
+<li>L753: <code>(defun ee-info-shortf    () (ee-intern "find-%snode" ee-info-code))</code></li>
+<li>L754: <code>(defun ee-info-shortlink () (list (ee-info-shortf) (ee-info-node)))</code></li>
+<li>L756: <code>(defun ee-find-info-links ()</code></li>
+<li>L762: <code>(defun find-einfo-links (&amp;optional fullnode &amp;rest rest)</code></li>
+<li>L833: <code>(defun ee-intro-stem (&amp;optional bufname)</code></li>
+<li>L843: <code>(defun ee-find-intro-links (&amp;optional stem)</code></li>
+<li>L852: <code>(defun find-eintro-links (&amp;optional stem &amp;rest rest)</code></li>
+<li>L867: <code>;; (define-key eev-mode-map "\M-h\M-i" 'find-eintro-or-einfo-links)</code></li>
+<li>L868: <code>(defun find-eintro-or-einfo-links ()</code></li>
+<li>L886: <code>(defun ee-find-wgetes-links (&amp;optional stem tag)</code></li>
+<li>L892: <code>(defun ee-find-wgetangg-links (&amp;optional stem tag)</code></li>
+<li>L898: <code>(defun ee-find-wget-links (&amp;optional url)</code></li>
+<li>L966: <code>(defun ee-filter (f list)</code></li>
+<li>L971: <code>(defun ee-code-c-d-filter-1 (code)</code></li>
+<li>L982: <code>(defun ee-code-c-d-filter-2 (fname code)</code></li>
+<li>L998: <code>(defun find-code-c-d-filter-1 (code)</code></li>
+<li>L1002: <code>(defun find-code-c-d-filter-2 (fname code)</code></li>
+<li>L1008: <code>(defun ee-prefixp (prefix str)</code></li>
+<li>L1013: <code>(defun ee-remove-prefix (prefix str)</code></li>
+<li>L1019: <code>(defun ee-replace-prefix0 (prefix newprefix fname)</code></li>
+<li>L1023: <code>(defun ee-replace-prefix (prefix newprefix fname)</code></li>
+<li>L1026: <code>(defun ee-intern (fmt &amp;rest args)</code></li>
+<li>L1031: <code>(defun ee-find-xxxfile-sexps (fname)</code></li>
+<li>L1054: <code>;; (define-key eev-mode-map "\M-hf" 'find-file-links)</code></li>
+<li>L1056: <code>(defun ee-if-prefixp (d newd fname code)</code></li>
+<li>L1065: <code>(defun ee-find-file-links (&amp;optional fname)</code></li>
+<li>L1079: <code>(defun ee-find-file-extra-links (fname) ()) ; customize this</code></li>
+<li>L1081: <code>(defun find-file-links (fname &amp;rest pos-spec-list)</code></li>
+<li>L1125: <code>(defun find-grep-links (&amp;rest pos-spec-list)</code></li>
+<li>L1138: <code>(defun ee-find-grep-links ()</code></li>
+<li>L1156: <code>(defun ee-find-grep-links0 (find-xxxgreps grep-commands)</code></li>
+<li>L1164: <code>(defun ee-find-grep-commands ()</code></li>
+<li>L1168: <code>(defun ee-first-n-elements (n list)</code></li>
+<li>L1174: <code>(defun ee-find-grep-functions (dir)</code></li>
+<li>L1181: <code>(defun ee-find-grep-links1 ()</code></li>
+<li>L1215: <code>(defun find-pdflike-page-links (&amp;optional page bufname offset target &amp;rest pos-spec-list)</code></li>
+<li>L1236: <code>(defun ee-pdflike-page-links (&amp;optional page bufname offset)</code></li>
+<li>L1267: <code>(defun ee-count-formfeeds (start end)</code></li>
+<li>L1278: <code>(defun ee-current-page ()</code></li>
+<li>L1281: <code>(defun ee-last-kill ()</code></li>
+<li>L1285: <code>(defun ee-region ()</code></li>
+<li>L1289: <code>(defun ee-region-or-last-kill ()</code></li>
+<li>L1311: <code>(defun ee-hyperlink-prefix ()</code></li>
+<li>L1343: <code>(defun find-eface-links (&amp;optional face-symbol &amp;rest pos-spec-list)</code></li>
+<li>L1384: <code>(defun ee-face-at-point (&amp;optional arg)</code></li>
+<li>L1405: <code>(defun ee-face-of-glyph (char)</code></li>
+<li>L1433: <code>(defun find-ecolor-links (&amp;optional initialcolor &amp;rest pos-spec-list)</code></li>
+<li>L1459: <code>(defun ee-color-values (color)</code></li>
+<li>L1464: <code>(defun ee-color-choose-tk (&amp;optional initialcolor)</code></li>
+<li>L1491: <code>(defun find-epackage-links (&amp;optional pkg c d &amp;rest pos-spec-list)</code></li>
+<li>L1513: <code>(defun ee-find-epackage-links0 (pkg c d)</code></li>
+<li>L1561: <code>(defun ee-find-epackage-pkg-to-c (pkg)</code></li>
+<li>L1572: <code>(defun ee-package-findelpafiles (pkgname)</code></li>
+<li>L1578: <code>(defun ee-file-expand-wildcards-slash (pattern)</code></li>
+<li>L1585: <code>(defun ee-file-name-nondirectory-slash (fname)</code></li>
+<li>L1619: <code>(defun ee-package-desc (pkg)</code></li>
+<li>L1629: <code>(defun ee-package-dir (pkg)</code></li>
+<li>L1638: <code>(defun ee-package-url (pkg)</code></li>
+<li>L1664: <code>(defun find-esetkey-links (&amp;optional key command &amp;rest pos-spec-list)</code></li>
+<li>L1696: <code>(global-set-key   (kbd \"{longkey}\") '{command})</code></li>
+<li>L1702: <code>(define-key global-map (kbd \"{longkey}\") '{command})</code></li>
+<li>L1705: <code>(define-key eev-mode-map (kbd \"{longkey}\") '{command})</code></li>
+<li>L1706: <code>(define-key eev-mode-map (kbd \"{longkey}\") nil)</code></li>
+<li>L1711: <code>(defun ee-read-command ()</code></li>
+<li>L1719: <code>(defun ee-command-at-point ()</code></li>
+<li>L1746: <code>(defun find-ekbmacro-links (&amp;rest pos-spec-list)</code></li>
+<li>L1776: <code>(defun find-emajormode-links (&amp;optional mode &amp;rest pos-spec-list)</code></li>
+<li>L1807: <code>(defun find-eminormodes-links (&amp;rest pos-spec-list)</code></li>
+<li>L1853: <code>(defun find-emodeline-links (&amp;rest pos-spec-list)</code></li>
+<li>L1894: <code>(defun find-emenubar-links (&amp;rest pos-spec-list)</code></li>
+<li>L1952: <code>(defun find-elocus-links (&amp;optional key keymap &amp;rest pos-spec-list)</code></li>
+<li>L1997: <code>(defun ee-read-key-sequence (prompt)</code></li>
+<li>L2000: <code>(defun ee-binding-locus (key)</code></li>
+<li>L2003: <code>(defun ee-keymap-lookup (keymap key)</code></li>
+<li>L2029: <code>(defun ee-shorten-file-name (fname)</code></li>
+<li>L2035: <code>(defun find-code-pdf-links (&amp;optional fname c &amp;rest pos-spec-list)</code></li>
+<li>L2093: <code>(defun find-pdf-links ()</code></li>
+<li>L2105: <code>(defun find-code-audiovideo-links (&amp;optional fname c &amp;rest pos-spec-list)</code></li>
+<li>L2154: <code>(defun eepitch-{c} () (interactive)</code></li>
+<li>L2255: <code>(defun ee-buffer-manpage-name (&amp;optional bufname)</code></li>
+<li>L2266: <code>(defun find-last-manpage-links (manpagename &amp;rest rest)</code></li>
+<li>L2276: <code>(defun find-manpage-links (manpagename &amp;rest rest)</code></li>
+<li>L2324: <code>(provide 'eev-elinks)</code></li>
+</ul>
+<h2>eev-env.el</h2>
+<ul>
+<li>L41: <code>(require 'eepitch)</code></li>
+<li>L55: <code>(defun ee-setenv (envvar value)</code></li>
+<li>L93: <code>(defun ee-with-env (changes code)</code></li>
+<li>L104: <code>(defun ee-with-env0 (changes)</code></li>
+<li>L108: <code>(defun ee-with-env00 (change)</code></li>
+<li>L126: <code>(provide 'eev-env)</code></li>
+</ul>
+<h2>eev-eval.el</h2>
+<ul>
+<li>L56: <code>(require 'eev-flash)        ; (find-eev "eev-flash.el")</code></li>
+<li>L57: <code>(require 'eev-multiwindow)  ; (find-eev "eev-multiwindow.el")</code></li>
+<li>L74: <code>(defun ee-backward-sexp ()</code></li>
+<li>L87: <code>(defun ee-forward-sexp ()</code></li>
+<li>L96: <code>(defun ee-last-sexp ()</code></li>
+<li>L102: <code>(defmacro ee-no-debug (&amp;rest body)</code></li>
+<li>L109: <code>(defun ee-eval (sexp)</code></li>
+<li>L113: <code>(defun ee-eval-lexical (sexp)</code></li>
+<li>L132: <code>(defun ee-eval-last-sexp-default (&amp;optional arg)</code></li>
+<li>L136: <code>(defun ee-eval-last-sexp-0 ()</code></li>
+<li>L142: <code>(defun ee-eval-last-sexp-1 ()</code></li>
+<li>L146: <code>(defun ee-eval-last-sexp-2 ()</code></li>
+<li>L150: <code>(defun ee-eval-last-sexp-3 ()</code></li>
+<li>L154: <code>(defun ee-eval-last-sexp-4 ()</code></li>
+<li>L160: <code>(defun ee-eval-last-sexp-5 ()</code></li>
+<li>L166: <code>(defun ee-eval-last-sexp-7 ()</code></li>
+<li>L170: <code>(defun ee-eval-last-sexp-8 ()</code></li>
+<li>L174: <code>(defun ee-eval-last-sexp-11 ()</code></li>
+<li>L208: <code>(defun ee-eval-sexp-eol (&amp;optional arg)</code></li>
+<li>L235: <code>(defun ee-goto-eol ()</code></li>
+<li>L246: <code>(defun ee-eval-last-sexp (&amp;optional arg)</code></li>
+<li>L334: <code>(provide 'eev-eval)</code></li>
+</ul>
+<h2>eev-explain.el</h2>
+<ul>
+<li>L78: <code>(defun ee-forward-sexp1 ()</code></li>
+<li>L85: <code>(defun ee-forward-sexp3 ()</code></li>
+<li>L96: <code>(defun ee-forward-sexp3s ()</code></li>
+<li>L108: <code>(defun ee-subsexps-before-point ()</code></li>
+<li>L120: <code>(defun ee-bets-set ()</code></li>
+<li>L124: <code>(defun ee-bets-begin (n) (nth 0 (nth n ee-bets)))</code></li>
+<li>L125: <code>(defun ee-bets-end   (n) (nth 1 (nth n ee-bets)))</code></li>
+<li>L126: <code>(defun ee-bets-text  (n) (nth 2 (nth n ee-bets)))</code></li>
+<li>L140: <code>(defun ee-set-string-property (str property-name value)</code></li>
+<li>L144: <code>(defun ee-set-string-face (str &amp;optional face)</code></li>
+<li>L147: <code>(defun ee-set-string-fg (str &amp;optional fg)</code></li>
+<li>L150: <code>(defun ee-bets-flash (n &amp;optional b-adj e-adj spec face)</code></li>
+<li>L175: <code>(defun ee-explain-eejump ()</code></li>
+<li>L187: <code>(defun ee-explain-code-c-d ()</code></li>
+<li>L205: <code>(defun ee-explain-code-c-d ()</code></li>
+<li>L225: <code>(defun eev-explain ()</code></li>
+<li>L247: <code>(provide 'eev-explain)</code></li>
+</ul>
+<h2>eev-flash.el</h2>
+<ul>
+<li>L66: <code>(defun ee-flash (start end &amp;optional face duration)</code></li>
+<li>L72: <code>(defun eeflash (start end &amp;optional face duration)</code></li>
+<li>L78: <code>(defun eeflash+ (s &amp;optional e spec add-to-e)</code></li>
+<li>L91: <code>(provide 'eev-flash)</code></li>
+</ul>
+<h2>eev-helpful.el</h2>
+<ul>
+<li>L75: <code>(defun find-helpful-links (&amp;optional action symbol &amp;rest pos-spec-list)</code></li>
+<li>L90: <code>(defun ee-find-helpful-links (&amp;optional action symbol)</code></li>
+<li>L111: <code>(defun ee-helpful-action (&amp;optional buffername)</code></li>
+<li>L117: <code>(defun ee-helpful-symbol (&amp;optional buffername)</code></li>
+<li>L144: <code>(defun find-hcallable (symbol &amp;rest pos-spec-list)</code></li>
+<li>L150: <code>(defun find-hcommand (symbol &amp;rest pos-spec-list)</code></li>
+<li>L156: <code>(defun find-hfunction (symbol &amp;rest pos-spec-list)</code></li>
+<li>L162: <code>(defun find-hkey (keyseq &amp;rest pos-spec-list)</code></li>
+<li>L168: <code>(defun find-hmacro (symbol &amp;rest pos-spec-list)</code></li>
+<li>L174: <code>(defun find-hsymbol (symbol &amp;rest pos-spec-list)</code></li>
+<li>L180: <code>(defun find-hvariable (symbol &amp;rest pos-spec-list)</code></li>
+<li>L190: <code>(defun find-hkeymap-links (&amp;optional symbol &amp;rest pos-spec-list)</code></li>
+<li>L233: <code>(provide 'eev-helpful)</code></li>
+</ul>
+<h2>eev-hlinks.el</h2>
+<ul>
+<li>L123: <code>(defun find-here-links (&amp;optional arg &amp;rest pos-spec-list)</code></li>
+<li>L140: <code>(defun ee-find-here-links-header ()</code></li>
+<li>L152: <code>(defun ee-find-here-links (&amp;optional arg)</code></li>
+<li>L188: <code>(defun ee-find-here-debug-links ()</code></li>
+<li>L329: <code>(defun ee-hlang-eval (hsexp)</code></li>
+<li>L336: <code>(defun ee-hlang-:lisp (&amp;rest sexps)</code></li>
+<li>L340: <code>(defun ee-hlang-:or (&amp;rest hsexps)</code></li>
+<li>L348: <code>(defun ee-hlang-:if (sexp1 sexp2)</code></li>
+<li>L365: <code>(defun ee-hlang-run (hprogram)</code></li>
+<li>L379: <code>(defun ee-detect-here ()</code></li>
+<li>L431: <code>(defun ee-buffer-re (re)</code></li>
+<li>L434: <code>(defun ee-buffer-eq (str) (string= str (buffer-name)))</code></li>
+<li>L436: <code>(defun ee-buffer-re-wget (subre)</code></li>
+<li>L438: <code>(defun ee-buffer-re-wgetangg (subre)</code></li>
+<li>L441: <code>(defun ee-buffer-help0    () (ee-buffer-eq "*Help*"))</code></li>
+<li>L442: <code>(defun ee-buffer-help-re0 (re n)</code></li>
+<li>L448: <code>(defun ee-buffer-help (re n) (intern (or (ee-buffer-help-re0 re n) "nil")))</code></li>
+<li>L452: <code>(defun ee-custom-lispify-tag-name (str)</code></li>
+<li>L456: <code>(defun ee-underlinewsp-re (&amp;rest components)</code></li>
+<li>L481: <code>(defun ee-grep-bufferp       () (eq major-mode 'grep-mode))</code></li>
+<li>L482: <code>(defun ee-man-bufferp        () (eq major-mode 'Man-mode))</code></li>
+<li>L483: <code>(defun ee-rcirc-bufferp      () (eq major-mode 'rcirc-mode))</code></li>
+<li>L484: <code>(defun ee-info-bufferp       () (eq major-mode 'Info-mode))</code></li>
+<li>L485: <code>(defun ee-dired-bufferp      () (eq major-mode 'dired-mode))</code></li>
+<li>L486: <code>(defun ee-wdired-bufferp     () (eq major-mode 'wdired-mode))</code></li>
+<li>L487: <code>(defun ee-eww-bufferp        () (eq major-mode 'eww-mode))</code></li>
+<li>L488: <code>(defun ee-w3m-bufferp        () (eq major-mode 'w3m-mode))</code></li>
+<li>L490: <code>(defun ee-epackages-bufferp  () (eq major-mode 'package-menu-mode))</code></li>
+<li>L491: <code>(defun ee-osm-bufferp        () (eq major-mode 'osm-mode))</code></li>
+<li>L492: <code>(defun ee-helpful-bufferp    () (eq major-mode 'helpful-mode))</code></li>
+<li>L493: <code>(defun ee-nov-bufferp        () (eq major-mode 'nov-mode))</code></li>
+<li>L494: <code>(defun ee-telegachat-bufferp () (eq major-mode 'telega-chat-mode))</code></li>
+<li>L497: <code>(defun ee-intro-bufferp    () (ee-buffer-re "^\\*(find-\\(.*\\)-intro)\\*$"))</code></li>
+<li>L498: <code>(defun ee-freenode-bufferp () (ee-buffer-re "^\\(.*\\).freenode\\.net"))</code></li>
+<li>L499: <code>(defun ee-ecolors-bufferp  () (ee-buffer-eq "*Colors*"))</code></li>
+<li>L500: <code>(defun ee-efaces-bufferp   () (ee-buffer-eq "*Faces*"))</code></li>
+<li>L501: <code>(defun ee-pdftext-bufferp  () (ee-buffer-re "^pdftotext"))</code></li>
+<li>L502: <code>(defun ee-custom-bufferp   () (ee-buffer-re ee-custom-re))</code></li>
+<li>L503: <code>(defun ee-custom-f-bufferp () (ee-buffer-re ee-custom-f-re))</code></li>
+<li>L504: <code>(defun ee-custom-v-bufferp () (ee-buffer-re ee-custom-v-re))</code></li>
+<li>L505: <code>(defun ee-wgetes-bufferp   () (ee-buffer-re-wgetangg "e/\\(.*\\)\\.e"))</code></li>
+<li>L506: <code>(defun ee-wgetangg-bufferp () (ee-buffer-re-wgetangg   "\\(.*\\)"))</code></li>
+<li>L507: <code>(defun ee-wget-bufferp     () (ee-buffer-re-wget       "\\(.*\\)"))</code></li>
+<li>L518: <code>(defun  ee-efunctiondescr-bufferp () (ee-buffer-help ee-efunctiondescr-re 1))</code></li>
+<li>L519: <code>(defun  ee-find-efunctiondescr-links ()</code></li>
+<li>L528: <code>(defun  ee-evardescr-bufferp () (ee-buffer-help ee-evardescr-re 1))</code></li>
+<li>L529: <code>(defun  ee-find-evardescr-links ()</code></li>
+<li>L538: <code>(defun  ee-efacedescr-bufferp () (ee-buffer-help ee-efacedescr-re 1))</code></li>
+<li>L539: <code>(defun  ee-find-efacedescr-links ()</code></li>
+<li>L548: <code>(defun  ee-epackage-bufferp ()</code></li>
+<li>L551: <code>(defun  ee-find-epackage-links ()</code></li>
+<li>L557: <code>(defun  ee-find-man-links ()</code></li>
+<li>L564: <code>(defun  ee-find-custom-links ()</code></li>
+<li>L572: <code>(defun  ee-find-custom-f-links ()</code></li>
+<li>L581: <code>(defun  ee-find-custom-v-links ()</code></li>
+<li>L592: <code>(defun  ee-eshortdoc-bufferp () (ee-buffer-re ee-eshortdoc-re))</code></li>
+<li>L593: <code>(defun  ee-find-eshortdoc-links ()</code></li>
+<li>L599: <code>(defun ee-file-bufferp     () buffer-file-name)</code></li>
+<li>L601: <code>(defun ee-find-dired-links ()</code></li>
+<li>L606: <code>(defun ee-packages-package-here ()</code></li>
+<li>L609: <code>(defun ee-find-epackages-links ()</code></li>
+<li>L616: <code>(defun ee-find-efaces-links    () '((find-efaces)))</code></li>
+<li>L617: <code>(defun ee-find-ecolors-links   () '((find-ecolors)))</code></li>
+<li>L618: <code>(defun ee-find-pdftext-links   () (ee-pdflike-page-links))</code></li>
+<li>L619: <code>(defun ee-find-eww-links       () '((find-eww ,(plist-get eww-data :url))))</code></li>
+<li>L620: <code>(defun ee-find-w3m-links       () '((find-w3m ,w3m-current-url)))</code></li>
+<li>L625: <code>(defun ee-libera-bufferp ()</code></li>
+<li>L631: <code>(defun ee-find-libera-links ()</code></li>
+<li>L654: <code>(defun find-here-links-beginner (&amp;optional arg)</code></li>
+<li>L665: <code>(defun find-here-links-3 ()</code></li>
+<li>L682: <code>(defun find-here-links-1 ()</code></li>
+<li>L691: <code>(provide 'eev-hlinks)</code></li>
+</ul>
+<h2>eev-htests.el</h2>
+<ul>
+<li>L56: <code>(defun find-tlhs (sexp1 sexp2)</code></li>
+<li>L72: <code>(defun find-tlhi (sexp1 sexp2)</code></li>
+<li>L140: <code>(provide 'eev-htests)</code></li>
+</ul>
+<h2>eev-hydras.el</h2>
+<ul>
+<li>L68: <code>(require 'hydra)</code></li>
+<li>L70: <code>(defun ee-edit-index-replace (from-string to-string)</code></li>
+<li>L89: <code>(defun ee-edit-index ()</code></li>
+<li>L158: <code>(provide 'eev-hydras)</code></li>
+</ul>
+<h2>eev-intro.el</h2>
+<ul>
+<li>L122: <code>(require 'info)</code></li>
+<li>L146: <code>(defun find-intro-dual-define ()</code></li>
+<li>L163: <code>(defun ee-bad-line (str) (string-match "[\\\"]" str))</code></li>
+<li>L164: <code>(defun ee-this-line ()</code></li>
+<li>L169: <code>(defun ee-intro-sourcep ()</code></li>
+<li>L172: <code>(defun find-intro-intro ()</code></li>
+<li>L177: <code>(defun find-intro-source ()</code></li>
+<li>L186: <code>(defun find-c2a (a b)   (find-wset "13_co_co" a b))</code></li>
+<li>L187: <code>(defun find-c2b (a b)   (find-wset "13_co_c"  a b))</code></li>
+<li>L189: <code>(defun find-intro-dual ()</code></li>
+<li>L224: <code>(defun ee-intro-fontify ()</code></li>
+<li>L252: <code>(defun ee-intro-face (c)</code></li>
+<li>L258: <code>(defun ee-intro-fontify-maybe ())</code></li>
+<li>L259: <code>(defun ee-intro-fontify-maybe () (ee-intro-fontify))</code></li>
+<li>L261: <code>(defun find-eintro (bigstr &amp;rest pos-spec-list)</code></li>
+<li>L267: <code>(defun find-eintro-latin1 (bigstr &amp;rest pos-spec-list)</code></li>
+<li>L289: <code>(defun ee-bol-skip-invisible ()</code></li>
+<li>L292: <code>(defun ee-eol-skip-invisible ()</code></li>
+<li>L308: <code>(defun find-eev-quick-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L2003: <code>(defun find-emacs-keys-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L2220: <code>(defun find-eev-install-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L2894: <code>(defun find-eev-levels-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L3053: <code>(require 'eev-load)               ; (find-eev \"eev-load.el\")</code></li>
+<li>L3054: <code>(require 'eev-aliases)            ; (find-eev \"eev-aliases.el\")</code></li>
+<li>L3154: <code>(defun find-eev-intro (&amp;rest rest) (interactive)</code></li>
+<li>L3340: <code>(global-set-key (kbd \"s-e\") 'eev-mode)</code></li>
+<li>L3425: <code>(defun find-here-links-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L3920: <code>(defun find-refining-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L4151: <code>(define-key eev-mode-map \"\\M-h\\M-h\" 'find-here-links)</code></li>
+<li>L4152: <code>(define-key eev-mode-map \"\\M-h\\M-h\" 'find-here-links-beginner)</code></li>
+<li>L4190: <code>(define-key eev-mode-map \"\\M-h\\M-h\" 'find-here-links)</code></li>
+<li>L4379: <code>(defun find-saving-links-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L5299: <code>(defun find-eval-intro (&amp;rest rest) (interactive)</code></li>
+<li>L5755: <code>(defun find-links-conv-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L6215: <code>(defun find-links-intro (&amp;rest rest) (interactive)</code></li>
+<li>L6606: <code>(defun find-eepitch-intro (&amp;rest rest)</code></li>
+<li>L7372: <code>(define-key eev-mode-map (kbd \"&lt;f9&gt;\") 'eepitch-b-set-target-and-show)</code></li>
+<li>L7780: <code>(defun find-wrap-intro (&amp;rest rest) (interactive)</code></li>
+<li>L8054: <code>(defun find-eejump-intro (&amp;rest rest) (interactive)</code></li>
+<li>L8139: <code>\(global-set-key (kbd \"M-j\") 'eejump-simplified)</code></li>
+<li>L8346: <code>(defun find-anchors-intro (&amp;rest rest) (interactive)</code></li>
+<li>L8484: <code>(defun find-code-c-d-intro (&amp;rest rest) (interactive)</code></li>
+<li>L8655: <code>(defun find-pdf-like-intro (&amp;rest rest) (interactive)</code></li>
+<li>L9133: <code>(defun find-brxxx-intro (&amp;rest rest) (interactive)</code></li>
+<li>L9543: <code>(defun find-psne-intro (&amp;rest rest) (interactive)</code></li>
+<li>L9739: <code>(define-key eev-mode-map \"\\M-s\" 'ee-flip-psne-ness)</code></li>
+<li>L9812: <code>(defun find-audiovideo-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L10657: <code>(defun find-multiwindow-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L10946: <code>(define-key eev-mode-map \"\\M-#\" 'eewrap-two-eepitches)</code></li>
+<li>L11009: <code>(defun find-rcirc-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L11137: <code>(global-set-key [f2] 'rcirc-next-active-buffer)</code></li>
+<li>L11210: <code>(defun find-templates-intro (&amp;rest rest) (interactive)</code></li>
+<li>L11811: <code>\(define-key eev-mode-map \"\\M-h\\M-u\" 'find-macports-links)</code></li>
+<li>L11863: <code>(defun find-prepared-intro (&amp;rest rest) (interactive)</code></li>
+<li>L12109: <code>(defun find-bounded-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L12186: <code>(define-key eev-mode-map [f3] 'ee-bounded-function)</code></li>
+<li>L12203: <code>(defun find-channels-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L12720: <code>(defun find-videos-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L12959: <code>(defun find-video-links-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L13459: <code>(defun find-defun-intro (&amp;rest rest) (interactive)</code></li>
+<li>L13684: <code>(defun find-emacs-intro (&amp;rest rest) (interactive)</code></li>
+<li>L13878: <code>(defun find-org-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L14046: <code>(defun find-escripts-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L14983: <code>(defun find-git-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L15354: <code>(defun find-windows-beginner-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L15861: <code>(defun find-eev-exercises-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L16003: <code>(defun find-kla-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L16675: <code>(defun find-kl-here-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L16864: <code>(defun find-edit-index-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L17092: <code>(defun find-rstdoc-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L17471: <code>(defun find-show2-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L17933: <code>(defun find-lua-tutorial-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L18174: <code>(defun find-dot-emacs-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L18283: <code>(require 'eev-load)               ; (find-eev \"eev-load.el\")</code></li>
+<li>L18284: <code>(require 'eev-aliases)            ; (find-eev \"eev-aliases.el\")</code></li>
+<li>L18307: <code>(defun find-debootstrap-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L18365: <code>(defun find-lean4-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L18680: <code>(defun find-try-sly-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L18996: <code>(defun find-three-main-keys-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L19274: <code>(defun find-elisp-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L19910: <code>(defun find-lexical-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L20095: <code>(defun get/set0 ()</code></li>
+<li>L20107: <code>(defun get/set (getter setter)</code></li>
+<li>L20159: <code>(defun getb () b)</code></li>
+<li>L20203: <code>(defun ee-dynlex-url (nnnnn)</code></li>
+<li>L20207: <code>(defun find-dynlexpost (nnnnn &amp;rest ignored)</code></li>
+<li>L20238: <code>(defun find-strange-functions-intro (&amp;rest pos-spec-list) (interactive)</code></li>
+<li>L20745: <code>(provide 'eev-intro)</code></li>
+</ul>
+<h2>eev-kl-here.el</h2>
+<ul>
+<li>L58: <code>(require 'eev-kla)      ; (find-eev "eev-kla.el")</code></li>
+<li>L59: <code>(require 'eev-hlinks)       ; (find-eev "eev-hlinks.el")</code></li>
+<li>L83: <code>(defun ee-find-info-linki ()</code></li>
+<li>L89: <code>(defun ee-find-intro-linki ()</code></li>
+<li>L95: <code>(defun ee-find-man-linki ()</code></li>
+<li>L99: <code>(defun ee-find-file-linki ()</code></li>
+<li>L107: <code>(defun ee-find-epackage-linki ()</code></li>
+<li>L112: <code>(defun ee-find-epackages-linki ()</code></li>
+<li>L117: <code>(defun ee-find-custom-linki ()</code></li>
+<li>L123: <code>(defun ee-find-custom-f-linki ()</code></li>
+<li>L129: <code>(defun  ee-find-custom-v-linki ()</code></li>
+<li>L135: <code>(defun ee-find-ecolors-linki ()</code></li>
+<li>L139: <code>(defun ee-find-efaces-linki ()</code></li>
+<li>L143: <code>(defun  ee-find-eshortdoc-linki ()</code></li>
+<li>L148: <code>(defun ee-find-wgetes-linki ()</code></li>
+<li>L154: <code>(defun ee-find-wgetangg-linki ()</code></li>
+<li>L160: <code>(defun ee-find-wget-linki ()</code></li>
+<li>L165: <code>(defun ee-find-efunctiondescr-linki ()</code></li>
+<li>L172: <code>(defun ee-find-efacedescr-linki ()</code></li>
+<li>L179: <code>(defun ee-find-evardescr-linki ()</code></li>
+<li>L187: <code>(defun ee-find-libera-linki ()</code></li>
+<li>L251: <code>(defun ee-detect-linki ()</code></li>
+<li>L254: <code>(defun ee-get-linki ()</code></li>
+<li>L270: <code>(defun eekl (&amp;optional arg)</code></li>
+<li>L278: <code>(defun eekll (&amp;optional arg)</code></li>
+<li>L286: <code>(defun eekls (&amp;optional arg)</code></li>
+<li>L307: <code>(defun find-kl-debug-links (&amp;optional symbol &amp;rest pos-spec-list)</code></li>
+<li>L353: <code>(provide 'eev-kl-here)</code></li>
+</ul>
+<h2>eev-kla.el</h2>
+<ul>
+<li>L175: <code>(defun ee-kl-transform (fname)</code></li>
+<li>L184: <code>(defun ee-kl-expand (fname)</code></li>
+<li>L202: <code>(defun ee-kl-fname ()</code></li>
+<li>L205: <code>(defun ee-kl-anchor ()</code></li>
+<li>L208: <code>(defun ee-kl-region ()</code></li>
+<li>L214: <code>(defun ee-kl-line ()</code></li>
+<li>L243: <code>(defun ee-kl-prefixp (prefix str)</code></li>
+<li>L250: <code>(defun ee-kl-cds ()</code></li>
+<li>L255: <code>(cl-defun ee-kl-lrcds (&amp;key fname)</code></li>
+<li>L265: <code>(cl-defun ee-kl-lrcd (&amp;key fname)</code></li>
+<li>L287: <code>(cl-defun ee-kl-r (&amp;key fname)</code></li>
+<li>L291: <code>(cl-defun ee-kl-c (&amp;key fname)</code></li>
+<li>L295: <code>(cl-defun ee-kl-d (&amp;key fname)</code></li>
+<li>L304: <code>(cl-defun ee-kl-shortfname (&amp;key fname c r)</code></li>
+<li>L309: <code>(cl-defun ee-kl-shorterfname (&amp;key fname c r)</code></li>
+<li>L334: <code>(cl-defun ee-kl-find-c (&amp;key fname c)</code></li>
+<li>L340: <code>(cl-defun ee-kl-find-cfile (&amp;key fname c)</code></li>
+<li>L346: <code>(cl-defun ee-kl-sexp-kla (&amp;key fname c r anchor)</code></li>
+<li>L356: <code>(cl-defun ee-kl-sexp-kla0 (&amp;key fname c r anchor)</code></li>
+<li>L364: <code>(cl-defun ee-kl-sexp-klas (&amp;key fname c r anchor region)</code></li>
+<li>L376: <code>(cl-defun ee-kl-sexp-klf (&amp;key fname c r)</code></li>
+<li>L384: <code>(cl-defun ee-kl-sexp-klfs (&amp;key fname c r region)</code></li>
+<li>L394: <code>(cl-defun ee-kl-sexp-klt (&amp;key anchor)</code></li>
+<li>L399: <code>(cl-defun ee-kl-sexp-klts (&amp;key anchor region)</code></li>
+<li>L417: <code>(defun ee-kl-kill (link)</code></li>
+<li>L425: <code>(defun ee-kl-link-to-string (link)</code></li>
+<li>L445: <code>(defun eekla ()</code></li>
+<li>L451: <code>(defun eekla0 ()</code></li>
+<li>L457: <code>(defun eeklas ()</code></li>
+<li>L463: <code>(defun eeklf ()</code></li>
+<li>L468: <code>(defun eeklfs ()</code></li>
+<li>L473: <code>(defun eeklt ()</code></li>
+<li>L478: <code>(defun eeklts ()</code></li>
+<li>L497: <code>(defun ee-kl-comment-prefix (&amp;optional mode)</code></li>
+<li>L507: <code>(defun ee-kl-link-to-string-with-comment (link)</code></li>
+<li>L511: <code>(defun ee-kl-insert (&amp;optional link)</code></li>
+<li>L535: <code>(defun ee-kla2-flash (pos1 pos2)</code></li>
+<li>L539: <code>(defun ee-kla2-goto-bol ()</code></li>
+<li>L546: <code>(defun ee-kla2-insert (link)</code></li>
+<li>L553: <code>(defun eekla2 ()</code></li>
+<li>L586: <code>(provide 'eev-kla)</code></li>
+</ul>
+<h2>eev-lean4.el</h2>
+<ul>
+<li>L65: <code>(require 'eev-rstdoc)</code></li>
+<li>L116: <code>(defun l () (interactive) (find-es "lean"))</code></li>
+<li>L117: <code>(defun a () (interactive) (mkdir "/tmp/L/" t) (find-fline "/tmp/L/a.lean"))</code></li>
+<li>L120: <code>(defun cr3 () (interactive)</code></li>
+<li>L138: <code>(defmacro ee-let*-macro-leandoc (pl &amp;rest code)</code></li>
+<li>L179: <code>(defun      code-leandocpdf (pl)</code></li>
+<li>L181: <code>(defun find-code-leandocpdf (pl)</code></li>
+<li>L185: <code>(defun   ee-code-leandocpdf (pl)</code></li>
+<li>L239: <code>(defun {k2}l (&amp;rest rest) (interactive)</code></li>
+<li>L258: <code>(defun find-leandocprep-links (&amp;optional pl &amp;rest pos-spec-list)</code></li>
+<li>L337: <code>(defun find-leanbook-links (&amp;optional bk secname &amp;rest pos-spec-list)</code></li>
+<li>L522: <code>(provide 'eev-lean4)</code></li>
+</ul>
+<h2>eev-load.el</h2>
+<ul>
+<li>L100: <code>(require 'eev-intro)          ; (find-eev "eev-intro.el")</code></li>
+<li>L105: <code>(require 'eev-flash)          ; (find-eev "eev-flash.el")</code></li>
+<li>L106: <code>(require 'eev-multiwindow)     ; (find-eev "eev-multiwindow.el")</code></li>
+<li>L107: <code>(require 'eev-eval)           ; (find-eev "eev-eval.el")</code></li>
+<li>L108: <code>(require 'eev-mode)           ; (find-eev "eev-mode.el")</code></li>
+<li>L109: <code>(require 'eev-anchors)        ; (find-eev "eev-anchors.el")</code></li>
+<li>L110: <code>(require 'eev-template0)       ; (find-eev "eev-template0.el")</code></li>
+<li>L115: <code>(require 'eev-blinks)         ; (find-eev "eev-blinks.el")</code></li>
+<li>L116: <code>(require 'eev-plinks)         ; (find-eev "eev-plinks.el")</code></li>
+<li>L117: <code>(require 'eev-elinks)         ; (find-eev "eev-elinks.el")</code></li>
+<li>L118: <code>(require 'eev-tlinks)         ; (find-eev "eev-tlinks.el")</code></li>
+<li>L119: <code>(require 'eev-hlinks)         ; (find-eev "eev-hlinks.el")</code></li>
+<li>L120: <code>(require 'eev-htests)          ; (find-eev "eev-htests.el")</code></li>
+<li>L124: <code>(require 'eev-brxxx)          ; (find-eev "eev-brxxx.el")</code></li>
+<li>L132: <code>(require 'eepitch)             ; (find-eev "eepitch.el")</code></li>
+<li>L133: <code>(require 'eev-wrap)           ; (find-eev "eev-wrap.el")</code></li>
+<li>L138: <code>(require 'eejump)              ; (find-eev "eejump.el")</code></li>
+<li>L143: <code>(require 'eev-anchors)        ; (find-eev "eev-anchors.el")</code></li>
+<li>L149: <code>(require 'eev-code)              ; (find-eev "eev-code.el")</code></li>
+<li>L150: <code>(require 'eev-pdflike)           ; (find-eev "eev-pdflike.el")</code></li>
+<li>L153: <code>(require 'eev-codings)           ; (find-eev "eev-codings.el")</code></li>
+<li>L154: <code>(require 'eev-env)           ; (find-eev "eev-env.el")</code></li>
+<li>L155: <code>(require 'eev-edit)               ; (find-eev "eev-edit.el")</code></li>
+<li>L156: <code>(require 'eev-testblocks)         ; (find-eev "eev-testblocks.el")</code></li>
+<li>L157: <code>(require 'eev-kla)                ; (find-eev "eev-kla.el")</code></li>
+<li>L158: <code>(require 'eev-kl-here)            ; (find-eev "eev-kl-here.el")</code></li>
+<li>L159: <code>(require 'eev-strange-functions)  ; (find-eev "eev-strange-functions.el")</code></li>
+<li>L160: <code>(require 'eev-helpful)            ; (find-eev "eev-helpful.el")</code></li>
+<li>L161: <code>(require 'eev-rstdoc)             ; (find-eev "eev-rstdoc.el")</code></li>
+<li>L162: <code>(require 'eev-qrl)                ; (find-eev "eev-qrl.el")</code></li>
+<li>L166: <code>(require 'eev-wconfig)         ; (find-eev "eev-wconfig.el")</code></li>
+<li>L172: <code>(require 'eev-audiovideo)      ; (find-eev "eev-audiovideo.el")</code></li>
+<li>L173: <code>(require 'eev-videolinks)      ; (find-eev "eev-videolinks.el")</code></li>
+<li>L174: <code>(require 'eev-rcirc)           ; (find-eev "eev-rcirc.el")</code></li>
+<li>L210: <code>(provide 'eev-load)</code></li>
+</ul>
+<h2>eev-mode.el</h2>
+<ul>
+<li>L48: <code>(defun ee-kill-this-buffer ()</code></li>
+<li>L69: <code>(defvar eev-mode-map nil)</code></li>
+<li>L71: <code>(defun eev-mode-map-set ()</code></li>
+<li>L78: <code>(define-key eev-mode-map "\M-e" 'ee-eval-sexp-eol)  ; extends C-e C-x C-e</code></li>
+<li>L79: <code>(define-key eev-mode-map "\M-E" 'ee-eval-last-sexp) ; extends     C-x C-e</code></li>
+<li>L80: <code>(define-key eev-mode-map "\M-k" 'ee-kill-this-buffer)</code></li>
+<li>L81: <code>(define-key eev-mode-map "\M-K" 'bury-buffer)</code></li>
+<li>L86: <code>(define-key eev-mode-map "\M-j" 'eejump)</code></li>
+<li>L93: <code>(define-key eev-mode-map [f8]   'eepitch-this-line)</code></li>
+<li>L94: <code>(define-key eev-mode-map "\M-T" 'eewrap-eepitch)</code></li>
+<li>L101: <code>(define-key eev-mode-map "\M-A" 'eewrap-anchor)</code></li>
+<li>L102: <code>(define-key eev-mode-map "\M-B" 'eewrap-escript-block)</code></li>
+<li>L103: <code>(define-key eev-mode-map "\M-C" 'eewrap-code-c-d)</code></li>
+<li>L104: <code>(define-key eev-mode-map "\M-D" 'eewrap-debian)</code></li>
+<li>L105: <code>(define-key eev-mode-map "\M-F" 'eewrap-find-fline)</code></li>
+<li>L106: <code>(define-key eev-mode-map "\M-J" 'eewrap-eejump)</code></li>
+<li>L107: <code>(define-key eev-mode-map "\M-M" 'eewrap-man)</code></li>
+<li>L108: <code>(define-key eev-mode-map "\M-P" 'eewrap-pdflike)</code></li>
+<li>L109: <code>(define-key eev-mode-map "\M-R" 'eewrap-rm/mkdir/cd)</code></li>
+<li>L110: <code>(define-key eev-mode-map "\M-S" 'eewrap-sh)</code></li>
+<li>L111: <code>(define-key eev-mode-map "\M-V" 'eewrap-audiovideo)</code></li>
+<li>L112: <code>;; (define-key eev-mode-map "\M-Z" 'eewrap-zsh)</code></li>
+<li>L113: <code>;; (define-key eev-mode-map "\M-#" 'eewrap-two-eepitches)</code></li>
+<li>L120: <code>(define-key eev-mode-map "\M-h\M-a" 'find-code-audiovideo-links)</code></li>
+<li>L121: <code>(define-key eev-mode-map "\M-h\M-d" 'find-debpkg-links)</code></li>
+<li>L122: <code>(define-key eev-mode-map "\M-h\M-e" 'find-extra-file-links)</code></li>
+<li>L123: <code>(define-key eev-mode-map "\M-h\M-f" 'find-efunction-links)</code></li>
+<li>L124: <code>(define-key eev-mode-map "\M-h\M-g" 'find-grep-links)</code></li>
+<li>L125: <code>(define-key eev-mode-map "\M-h\M-h" 'find-here-links)</code></li>
+<li>L126: <code>(define-key eev-mode-map "\M-h\M-i" 'find-eintro-or-einfo-links)</code></li>
+<li>L127: <code>(define-key eev-mode-map "\M-h\M-k" 'find-ekey-links)</code></li>
+<li>L128: <code>(define-key eev-mode-map "\M-h\M-l" 'find-elocus-links)</code></li>
+<li>L129: <code>(define-key eev-mode-map "\M-h\M-n" 'find-eunicodeucs)</code></li>
+<li>L130: <code>(define-key eev-mode-map "\M-h\M-p" 'find-pdf-links)</code></li>
+<li>L131: <code>(define-key eev-mode-map "\M-h\M-s" 'find-strange-function-eol-links)</code></li>
+<li>L132: <code>(define-key eev-mode-map "\M-h\M-S" 'find-strange-function-links)</code></li>
+<li>L133: <code>(define-key eev-mode-map "\M-h\M-v" 'find-evariable-links)</code></li>
+<li>L134: <code>(define-key eev-mode-map "\M-ha"    'find-eapropos-links)</code></li>
+<li>L135: <code>(define-key eev-mode-map "\M-hf"    'find-file-links)</code></li>
+<li>L136: <code>(define-key eev-mode-map "\M-hg"    'find-git-links)</code></li>
+<li>L137: <code>(define-key eev-mode-map "\M-hM"    'find-ekbmacro-links)</code></li>
+<li>L138: <code>;; (define-key eev-mode-map "\M-h\M-m" 'find-manpage-links)</code></li>
+<li>L139: <code>;; (define-key eev-mode-map "\M-hm"    'find-last-manpage-links)</code></li>
+<li>L143: <code>;; (define-key eev-mode-map "\M-h\M-s" 'find-efacedescr)</code></li>
+<li>L144: <code>(define-key eev-mode-map "\M-h\M-c" 'find-echardescr)</code></li>
+<li>L145: <code>(define-key eev-mode-map "\M-h\M-t" 'find-etpat)</code></li>
+<li>L146: <code>(define-key eev-mode-map "\M-hc"    'find-ecolor-links)</code></li>
+<li>L147: <code>(define-key eev-mode-map "\M-hs"    'find-eface-links)</code></li>
+<li>L148: <code>(define-key eev-mode-map "\M-ht"    'find-etpat0)</code></li>
+<li>L154: <code>(define-key eev-mode-map "\M-h\M-1" 'find-here-links-1)</code></li>
+<li>L155: <code>(define-key eev-mode-map "\M-h\M-2" 'ee-duplicate-this-line)</code></li>
+<li>L156: <code>(define-key eev-mode-map "\M-h\M-3" 'find-here-links-3)</code></li>
+<li>L157: <code>(define-key eev-mode-map "\M-h\M-y" 'ee-yank-pos-spec)</code></li>
+<li>L158: <code>(define-key eev-mode-map "\M-h\M-w" 'ee-copy-this-line-to-kill-ring)</code></li>
+<li>L159: <code>(define-key eev-mode-map "\M-h\M--" 'ee-shrink-hyperlink-at-eol)</code></li>
+<li>L165: <code>;; (define-key eev-mode-map "\M-s" 'ee-flip-psne-ness)</code></li>
+<li>L166: <code>(define-key eev-mode-map "\M-I" 'eewrap-vldi-list-line)</code></li>
+<li>L169: <code>;; (define-key eev-mode-map "\M-hg"    'find-git-links-1)</code></li>
+<li>L189: <code>;;   (define-key eev-mode-map "\M-e" 'ee-eval-sexp-eol)</code></li>
+<li>L190: <code>;;   (define-key eev-mode-map "\M-E" 'ee-eval-last-sexp)</code></li>
+<li>L191: <code>;;   (define-key eev-mode-map "\M-k" 'ee-kill-this-buffer)</code></li>
+<li>L192: <code>;;   (define-key eev-mode-map "\M-K" 'bury-buffer)</code></li>
+<li>L193: <code>;;   (define-key eev-mode-map "\M-j" 'eejump)</code></li>
+<li>L194: <code>;;   (define-key eev-mode-map [f8]   'eepitch-this-line)</code></li>
+<li>L195: <code>;;   (define-key eev-mode-map "\M-T" 'eewrap-eepitch)</code></li>
+<li>L223: <code>(defvar eev-mode-help "Toggle eev mode, i.e, activate or deactivate the 'eev-mode-map' keymap.</code></li>
+<li>L282: <code>(defun eev-mode-define ()</code></li>
+<li>L312: <code>;; (define-key eev-mode-map [f3]   'eeb-default)</code></li>
+<li>L314: <code>;; (define-key eev-mode-map [f9]   'eechannel-do-this-line)</code></li>
+<li>L315: <code>;; (define-key eev-mode-map [f12]  'eesteps-do-step)</code></li>
+<li>L316: <code>;; (define-key eev-mode-map "\M-P" 'ee-yank-one-line)</code></li>
+<li>L318: <code>;; (define-key eev-mode-map [?\C-,] 'eev-compose-two-keys) ; only works on X</code></li>
+<li>L319: <code>;; (define-key eev-mode-map [?\M-,] 'eev-compose-two-keys) ; works anywhere</code></li>
+<li>L331: <code>(provide 'eev-mode)</code></li>
+</ul>
+<h2>eev-multiwindow.el</h2>
+<ul>
+<li>L48: <code>(defun find-wset-1 () (delete-other-windows))</code></li>
+<li>L49: <code>(defun find-wset-2 () (split-window-vertically))</code></li>
+<li>L50: <code>(defun find-wset-3 () (split-window-horizontally))</code></li>
+<li>L51: <code>(defun find-wset-s () (split-window-sensibly (selected-window)))</code></li>
+<li>L52: <code>(defun find-wset-o () (other-window 1))</code></li>
+<li>L53: <code>(defun find-wset-O () (other-window -1))</code></li>
+<li>L54: <code>(defun find-wset-+ () (balance-windows))</code></li>
+<li>L55: <code>(defun find-wset-c () (recenter))</code></li>
+<li>L56: <code>(defun find-wset-_ () (eval (car sexps)) (setq sexps (cdr sexps)))</code></li>
+<li>L57: <code>(defun find-wset-\  ())         ; allow whitespace</code></li>
+<li>L59: <code>(defun find-wset (chars &amp;rest sexps)</code></li>
+<li>L85: <code>(defun find-2a (a b)   (find-wset "13_o_o" a b))</code></li>
+<li>L86: <code>(defun find-2b (a b)   (find-wset "13_o_"  a b))</code></li>
+<li>L87: <code>(defun find-3a (a b c) (find-wset "13_o2_o_o"  a b c))</code></li>
+<li>L88: <code>(defun find-3b (a b c) (find-wset "13_o2_o_oo" a b c))</code></li>
+<li>L89: <code>(defun find-3c (a b c) (find-wset "13_o2_o_"   a b c))</code></li>
+<li>L108: <code>(defun ee-here (code)</code></li>
+<li>L122: <code>(defun ee-here-reset (code)</code></li>
+<li>L136: <code>(defun find-wset-e () (ee-here       (car sexps)) (setq sexps (cdr sexps)))</code></li>
+<li>L137: <code>(defun find-wset-E () (ee-here-reset (car sexps)) (setq sexps (cdr sexps)))</code></li>
+<li>L138: <code>(defun find-3ee  (b c)   (find-wset "13o2eoeo"     b c))</code></li>
+<li>L139: <code>(defun find-3EE  (b c)   (find-wset "13o2EoEo"     b c))</code></li>
+<li>L140: <code>(defun find-4eee (b c d) (find-wset "13o2eo2+eoeo" b c d))</code></li>
+<li>L141: <code>(defun find-4EEE (b c d) (find-wset "13o2Eo2+EoEo" b c d))</code></li>
+<li>L145: <code>(defun find-wset-= () (ee-here       (car sexps)) (setq sexps (cdr sexps)))</code></li>
+<li>L146: <code>(defun find-wset-! () (ee-here-reset (car sexps)) (setq sexps (cdr sexps)))</code></li>
+<li>L155: <code>(defun ee-first-frame-with-title (title)</code></li>
+<li>L163: <code>(defun ee-select-frame (title)</code></li>
+<li>L173: <code>(defun find-wset-F () (ee-select-frame (car sexps)) (setq sexps (cdr sexps)))</code></li>
+<li>L178: <code>(provide 'eev-multiwindow)</code></li>
+</ul>
+<h2>eev-on-windows.el</h2>
+<ul>
+<li>L136: <code>(require 'eww)</code></li>
+<li>L137: <code>(require 'eshell)</code></li>
+<li>L138: <code>(require 'em-alias)</code></li>
+<li>L156: <code>(defun ee-download-with-eww (url dir)</code></li>
+<li>L175: <code>(defun ee-use-eshell ()</code></li>
+<li>L186: <code>(defun ee-use-shell ()</code></li>
+<li>L211: <code>(defun ee-use-wget-exe ()</code></li>
+<li>L218: <code>(defun ee-use-wget ()</code></li>
+<li>L232: <code>(defun ee-use-firefox ()</code></li>
+<li>L238: <code>(defun ee-use-googlechrome ()</code></li>
+<li>L262: <code>(defun ee-use-bullets ()</code></li>
+<li>L268: <code>(defun ee-use-red-stars ()</code></li>
+<li>L284: <code>(defun ee-use-find-angg-es-local ()</code></li>
+<li>L293: <code>(defun ee-use-find-angg-es-remote ()</code></li>
+<li>L313: <code>(defun ee-use-lua ()</code></li>
+<li>L320: <code>(defun ee-use-lua-exe ()</code></li>
+<li>L344: <code>(defun ee-use-windows ()</code></li>
+<li>L361: <code>(defun ee-use-gnu-linux ()</code></li>
+<li>L382: <code>(defun ee-use-gnu-linux-but-simulate ()</code></li>
+<li>L521: <code>(provide 'eev-on-windows)</code></li>
+</ul>
+<h2>eev-pdflike.el</h2>
+<ul>
+<li>L203: <code>(require 'eev-plinks)          ; (find-eev "eev-plinks.el")</code></li>
+<li>L204: <code>(require 'eev-brxxx)           ; (find-eev "eev-brxxx.el")</code></li>
+<li>L240: <code>(defun find-sh-page (program-and-args &amp;rest pos-spec-list)</code></li>
+<li>L252: <code>(defun ee-goto-position-page (&amp;optional pos-spec &amp;rest rest)</code></li>
+<li>L267: <code>(defun ee-pdftotext-replace-bad-ffs (bigstr)</code></li>
+<li>L293: <code>(defun      code-pdfbackend (pdfbackend)</code></li>
+<li>L295: <code>(defun find-code-pdfbackend (pdfbackend)</code></li>
+<li>L297: <code>(defun   ee-code-pdfbackend (pdfbackend)</code></li>
+<li>L359: <code>(defun      code-pdftextbackend (pdftextbackend)</code></li>
+<li>L361: <code>(defun find-code-pdftextbackend (pdftextbackend)</code></li>
+<li>L363: <code>(defun   ee-code-pdftextbackend (pdftextbackend)</code></li>
+<li>L421: <code>(defun      code-pdfbackendalias (newbackend oldbackend)</code></li>
+<li>L423: <code>(defun find-code-pdfbackendalias (newbackend oldbackend)</code></li>
+<li>L425: <code>(defun   ee-code-pdfbackendalias (newbackend oldbackend)</code></li>
+<li>L670: <code>(defun  ee-find-xpdf-colon ()</code></li>
+<li>L681: <code>(defun  ee-find-xpdf-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L688: <code>(defun find-xpdf-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L715: <code>(defun ee-find-pdftotext-text (fname &amp;rest rest)</code></li>
+<li>L718: <code>(defun find-pdftotext-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L766: <code>(defun ee-find-pdftotext8-text (fname &amp;rest rest)</code></li>
+<li>L768: <code>(defun ee-find-pdf-text8       (fname &amp;rest rest)</code></li>
+<li>L771: <code>(defun find-pdftotext8-text (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L776: <code>(defun find-pdf-text8       (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L806: <code>(defun  ee-find-texworkspdf-page (fname &amp;optional page)</code></li>
+<li>L849: <code>(defun find-pdftools-page (pdffile &amp;optional page &amp;rest rest)</code></li>
+<li>L886: <code>(defun find-pdftoolsr-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L902: <code>(defun ee-pdftools-revert-all ()</code></li>
+<li>L924: <code>(defun find-emacsreader-page (pdffile &amp;optional page &amp;rest rest)</code></li>
+<li>L931: <code>(defun find-emacsreaderr-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L952: <code>(defun  ee-find-xdvi-page (fname &amp;optional page)</code></li>
+<li>L979: <code>(defun     find-djview-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L983: <code>(defun  ee-find-djview-page (fname &amp;optional page)</code></li>
+<li>L989: <code>(defun ee-find-djview-cleanup (&amp;optional fname)</code></li>
+<li>L1019: <code>(defun     find-evince-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L1022: <code>(defun  ee-find-evince-page (fname &amp;optional page)</code></li>
+<li>L1046: <code>(defun     find-mupdf-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L1049: <code>(defun  ee-find-mupdf-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L1071: <code>(defun     find-okular-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L1074: <code>(defun  ee-find-okular-page (fname &amp;optional page &amp;rest rest)</code></li>
+<li>L1102: <code>(defun  ee-find-gv-page (fname &amp;optional page)</code></li>
+<li>L1127: <code>(defun ee-find-djvutxt-text (fname)</code></li>
+<li>L1161: <code>(defun ee-fname-page-to-url (fname &amp;optional page)</code></li>
+<li>L1171: <code>(defun ee-find-firefox-page (fname &amp;optional page)</code></li>
+<li>L1174: <code>(defun ee-find-googlechrome-page (fname &amp;optional page)</code></li>
+<li>L1265: <code>(provide 'eev-pdflike)</code></li>
+</ul>
+<h2>eev-plinks.el</h2>
+<ul>
+<li>L158: <code>(defun ee-unsplit (list) (if (listp list) (mapconcat 'identity list " ") list))</code></li>
+<li>L159: <code>(defun ee-no-trailing-nl (str) (replace-regexp-in-string "\n$" "" str))</code></li>
+<li>L172: <code>(defun find-bgprocess-ne (program-and-args)</code></li>
+<li>L176: <code>(defun find-bgprocess (program-and-args)</code></li>
+<li>L192: <code>(defun find-callprocess00-ne (program-and-args)</code></li>
+<li>L199: <code>(defun find-callprocess00 (program-and-args)</code></li>
+<li>L202: <code>(defun find-callprocess0-ne (program-and-args)</code></li>
+<li>L205: <code>(defun find-callprocess0 (program-and-args)</code></li>
+<li>L212: <code>(defun find-callprocess-ne (program-and-args &amp;rest pos-spec-list)</code></li>
+<li>L217: <code>(defun find-callprocess (program-and-args &amp;rest pos-spec-list)</code></li>
+<li>L238: <code>(defun find-callprocessregion-ne (program-and-args input)</code></li>
+<li>L247: <code>(defun find-callprocessregion (program-and-args input)</code></li>
+<li>L250: <code>(defun ee-callprocessregion (cmd)</code></li>
+<li>L291: <code>(defun ee-urlretrieve-header1 ()</code></li>
+<li>L295: <code>(defun ee-urlretrieve-ok ()</code></li>
+<li>L299: <code>(defun ee-urlretrieve-assert-ok ()</code></li>
+<li>L305: <code>(defun find-urlretrieve00 (url)</code></li>
+<li>L316: <code>(defun ee-urlretrieve0 (url)</code></li>
+<li>L333: <code>(defun ee-very-primitive-wget0 (url fname)</code></li>
+<li>L344: <code>(defun ee-very-primitive-wget1 (url)</code></li>
+<li>L365: <code>(defun ee-eshell/fakewget (&amp;rest args)</code></li>
+<li>L389: <code>(defun ee-wget-downloading (url)</code></li>
+<li>L393: <code>(defun find-wget00 (url)</code></li>
+<li>L396: <code>(defun find-wget0 (url &amp;rest pos-spec-list)</code></li>
+<li>L422: <code>(defun find-wget (url &amp;rest pos-spec-list)</code></li>
+<li>L435: <code>(defun find-wget-mode (sexp url &amp;rest pos-spec-list)</code></li>
+<li>L443: <code>(defun find-wgeta (url &amp;rest pos-spec-list)</code></li>
+<li>L449: <code>(defun find-wgeta-mode (sexp url &amp;rest pos-spec-list)</code></li>
+<li>L455: <code>(defun find-wget-elisp (url &amp;rest pos-spec-list)</code></li>
+<li>L460: <code>(defun find-wgeta-elisp (url &amp;rest pos-spec-list)</code></li>
+<li>L465: <code>(defun find-wget-org (url &amp;rest pos-spec-list)</code></li>
+<li>L486: <code>(defun find-anggwget (fname &amp;rest pos-spec-list)</code></li>
+<li>L490: <code>(defun find-anggwgeta (fname &amp;rest pos-spec-list)</code></li>
+<li>L494: <code>(defun find-anggwget-elisp (fname &amp;rest pos-spec-list)</code></li>
+<li>L498: <code>(defun find-anggwgeta-elisp (fname &amp;rest pos-spec-list)</code></li>
+<li>L514: <code>(defun find-angg-wget (fname &amp;rest rest)</code></li>
+<li>L516: <code>(defun find-anggfile-wget (fname &amp;rest rest)</code></li>
+<li>L518: <code>(defun find-es-wget (fname &amp;rest rest)</code></li>
+<li>L529: <code>(defun find-gitk (dir)</code></li>
+<li>L534: <code>(defun find-tkdiff (f1 f2)</code></li>
+<li>L543: <code>(defun find-osm (lat lon zoom &amp;rest comments)</code></li>
+<li>L552: <code>(defun find-osm-str (latlonzoomstr &amp;rest comments)</code></li>
+<li>L562: <code>(defun find-telegachat (idn &amp;rest rest)</code></li>
+<li>L578: <code>(defun find-telegachat-msgc (idn &amp;rest rest)</code></li>
+<li>L584: <code>(defun ee-telegachat-msg0 (idn)</code></li>
+<li>L590: <code>(defun ee-telegachat-msgc (idn)</code></li>
+<li>L602: <code>(defun find-firefox      (url) (find-bgprocess '(,ee-firefox-program      ,url)))</code></li>
+<li>L603: <code>(defun find-googlechrome (url) (find-bgprocess '(,ee-googlechrome-program ,url)))</code></li>
+<li>L606: <code>(defun find-lynx (url &amp;rest pos-spec-list)</code></li>
+<li>L627: <code>(defun find-lgrep (f re)</code></li>
+<li>L639: <code>(defun ee-find-lgrep (f re)</code></li>
+<li>L647: <code>(defun ee-file-name-elc-to-el (fname)</code></li>
+<li>L669: <code>(defun find-efunctionlgrep (f &amp;optional stem)</code></li>
+<li>L679: <code>(defun ee-efunctionlgrep-re  (stem)</code></li>
+<li>L683: <code>(defun ee-efunctionlgrep-re0 (stem)</code></li>
+<li>L702: <code>(defun find-clhsdoci (clhsname &amp;rest rest)</code></li>
+<li>L710: <code>(defun ee-clhs-lookup-index (clhsname)</code></li>
+<li>L720: <code>(provide 'eev-plinks)</code></li>
+</ul>
+<h2>eev-prepared.el</h2>
+<ul>
+<li>L48: <code>(require 'eev-env)</code></li>
+<li>L49: <code>(require 'eev-code)</code></li>
+<li>L109: <code>(defun ee-se-to-string (s e)</code></li>
+<li>L118: <code>(defun ee-octal-to-num (str)</code></li>
+<li>L124: <code>(defun ee-write-string (str &amp;optional altfile fmode)</code></li>
+<li>L133: <code>(defun ee-write (s e pre post &amp;optional altfile fmode)</code></li>
+<li>L140: <code>(defun ee-se-to-string-with-nl (s e)</code></li>
+<li>L145: <code>(defun ee-write-with-nl (s e pre post &amp;optional altfile fmode)</code></li>
+<li>L153: <code>(defun eev (s &amp;optional e altfile)</code></li>
+<li>L188: <code>(defun eevs (s &amp;optional e suffix)</code></li>
+<li>L199: <code>(defun eelatex (s &amp;optional e)</code></li>
+<li>L214: <code>(defun eegdb (s &amp;optional e)</code></li>
+<li>L225: <code>(defun eeg (s &amp;optional e)</code></li>
+<li>L230: <code>(defun eeeval (s &amp;optional e)</code></li>
+<li>L238: <code>(defun ee-default-directory ()</code></li>
+<li>L253: <code>(defun eecd (&amp;optional dir command)</code></li>
+<li>L266: <code>(provide 'eev-prepared)</code></li>
+</ul>
+<h2>eev-qrl.el</h2>
+<ul>
+<li>L76: <code>(defun ee-qrl-as     () (cl-loop for (a b) on ee-qrl-plist by 'cddr collect a))</code></li>
+<li>L77: <code>(defun ee-qrl-regexp () (mapconcat 'regexp-quote (ee-qrl-as) "\\|"))</code></li>
+<li>L78: <code>(defun ee-qrl-r0    (s) (plist-get ee-qrl-plist (ee-no-properties s) 'equal))</code></li>
+<li>L79: <code>(defun ee-qrl-r1    (s) (replace-regexp-in-string "\\\\" "\\\\\\\\" s))</code></li>
+<li>L80: <code>(defun ee-qrl-r2    (s) (ee-qrl-r1 (ee-qrl-r0 s)))</code></li>
+<li>L81: <code>(defun ee-qrl-r3  (a b) (ee-qrl-r2 (match-string 0)))</code></li>
+<li>L83: <code>(defun ee-qrl0 (&amp;rest plist)</code></li>
+<li>L89: <code>(defun ee-qrl-narrow (&amp;rest plist)</code></li>
+<li>L97: <code>(defun ee-qrl (&amp;rest plist)</code></li>
+<li>L107: <code>(provide 'eev-qrl)</code></li>
+</ul>
+<h2>eev-rcirc.el</h2>
+<ul>
+<li>L151: <code>(defun ee-rcirc-buffer (server &amp;optional channel)</code></li>
+<li>L155: <code>(defun ee-rcirc-process (server)</code></li>
+<li>L160: <code>(defun ee-rcirc-connected (server)</code></li>
+<li>L166: <code>(defun ee-rcirc-connect (server channels)</code></li>
+<li>L172: <code>(defun ee-rcirc-join-channels (server channels)</code></li>
+<li>L176: <code>(defun ee-rcirc-join-channel (server channel)</code></li>
+<li>L186: <code>(defun ee-rcirc-connect-or-join (server &amp;optional ichannels achannels channel)</code></li>
+<li>L220: <code>(defun find-rcirc-buffer0</code></li>
+<li>L226: <code>(defun find-rcirc-buffer</code></li>
+<li>L256: <code>(defun find-rcirc-buffer-2a</code></li>
+<li>L265: <code>(defun find-rcirc-buffer-3a</code></li>
+<li>L355: <code>(defun find-freenode (&amp;optional channel &amp;rest pos-spec-list)</code></li>
+<li>L364: <code>(defun find-freenode-2a (channel)</code></li>
+<li>L379: <code>(defun find-freenode-3a (channel)</code></li>
+<li>L400: <code>(defun eepitch-freenode (channel)</code></li>
+<li>L426: <code>(defun find-libera (&amp;optional channel &amp;rest pos-spec-list)</code></li>
+<li>L435: <code>(defun find-libera-2a (channel)</code></li>
+<li>L450: <code>(defun find-libera-3a (channel)</code></li>
+<li>L471: <code>(defun eepitch-libera (channel)</code></li>
+<li>L489: <code>(defun find-libera-links (&amp;optional c channels &amp;rest pos-spec-list)</code></li>
+<li>L520: <code>(defun {c}2 () (interactive) (find-libera-2a \"{channel}\"))</code></li>
+<li>L521: <code>(defun {c}3 () (interactive) (find-libera-3a \"{channel}\"))</code></li>
+<li>L531: <code>(provide 'eev-rcirc)</code></li>
+</ul>
+<h2>eev-readme.el</h2>
+<h2>eev-rstdoc.el</h2>
+<ul>
+<li>L424: <code>(defun ee-rstdoc-c   (kw) (replace-regexp-in-string "^:" "" (format "%s" kw)))</code></li>
+<li>L425: <code>(defun ee-rstdoc-kw  (kw) (format ":%s" (ee-rstdoc-c kw)))</code></li>
+<li>L426: <code>(defun ee-rstdoc-var (kw) (ee-intern "ee-rstdoc-:%s" (ee-rstdoc-c kw)))</code></li>
+<li>L427: <code>(defun ee-rstdoc-get (kw) (symbol-value (ee-rstdoc-var kw)))</code></li>
+<li>L429: <code>(defun ee-rstdoc-getfield (kw field)</code></li>
+<li>L434: <code>(defun ee-rstdoc-getfield0 (kw field)</code></li>
+<li>L439: <code>(defun ee-rstdoc-stem (kw str)</code></li>
+<li>L444: <code>(defun ee-rstdoc-hashanchor (str)</code></li>
+<li>L449: <code>(defun ee-rstdoc-short (kw str)</code></li>
+<li>L454: <code>(defun ee-rstdoc-htm (kw)</code></li>
+<li>L457: <code>(defun ee-rstdoc-html (kw &amp;optional str)</code></li>
+<li>L466: <code>(defun ee-rstdoc-web (kw &amp;optional str)</code></li>
+<li>L475: <code>(defun ee-rstdoc-rst (kw &amp;optional str)</code></li>
+<li>L488: <code>(defun ee-rstdoc-around-point ()</code></li>
+<li>L491: <code>(defun ee-rstdoc-short-around-point (kw)</code></li>
+<li>L497: <code>(defun ee-rstdoc-kill (sexp)</code></li>
+<li>L514: <code>(defun      code-rstdoc (kw)</code></li>
+<li>L516: <code>(defun find-code-rstdoc (kw &amp;rest rest)</code></li>
+<li>L520: <code>(defun   ee-code-rstdoc (kw0)</code></li>
+<li>L548: <code>(defun find-{c}doc-expand  (str &amp;rest rest) (ee-rstdoc-html {kw} str))</code></li>
+<li>L549: <code>(defun find-{c}docw-expand (str &amp;rest rest) (ee-rstdoc-web  {kw} str))</code></li>
+<li>L550: <code>(defun find-{c}docr-expand (str &amp;rest rest) (ee-rstdoc-rst  {kw} str))</code></li>
+<li>L552: <code>(defun find-{c}doc (&amp;optional str &amp;rest rest)</code></li>
+<li>L558: <code>(defun find-{c}docw (&amp;optional str &amp;rest rest)</code></li>
+<li>L564: <code>(defun find-{c}docr (&amp;optional str &amp;rest rest)</code></li>
+<li>L572: <code>(defun find-{c}dochelp (&amp;optional str &amp;rest rest)</code></li>
+<li>L577: <code>(defun {kill} ()</code></li>
+<li>L586: <code>(defun {kill}f (&amp;optional fname)</code></li>
+<li>L610: <code>(defun ee-rstdoc-default-defuns ()</code></li>
+<li>L620: <code>(provide 'eev-rstdoc)</code></li>
+</ul>
+<h2>eev-strange-functions.el</h2>
+<ul>
+<li>L79: <code>(defun find-sf-links (sexp)</code></li>
+<li>L89: <code>(defun find-sf-debug-links (sexp)</code></li>
+<li>L127: <code>(defun find-strange-function-links (dbg)</code></li>
+<li>L133: <code>(defun find-strange-function-eol-links (dbg)</code></li>
+<li>L154: <code>(defun ee-sf-get-sexp-flash ()</code></li>
+<li>L193: <code>(defun ee-sf-run-hprog-first-half ()</code></li>
+<li>L196: <code>(defun ee-sf-run-hprog ()</code></li>
+<li>L211: <code>(defun find-sf-elinks-elisp ()</code></li>
+<li>L224: <code>(defun ee-sf-make-find-rx (suffixes)</code></li>
+<li>L227: <code>(defun ee-sf-make-find-re (suffixes)</code></li>
+<li>L230: <code>(defun ee-sf-match-find-re (f suffixes)</code></li>
+<li>L272: <code>(defun ee-sf-1stclassvideo-stem (f)</code></li>
+<li>L275: <code>(defun ee-sf-1stclassvideo-p ()</code></li>
+<li>L294: <code>(defun ee-sf-1stclassvideo-links (c &amp;optional time &amp;rest rest)</code></li>
+<li>L340: <code>(defun ee-sf-codecd-stem (f)</code></li>
+<li>L343: <code>(defun ee-sf-codecd-stem0 (f)</code></li>
+<li>L346: <code>(defun ee-sf-codecd-d (c)</code></li>
+<li>L351: <code>(defun ee-sf-codecd-p ()</code></li>
+<li>L375: <code>(defun ee-sf-codecd-links (c d)</code></li>
+<li>L424: <code>(defun ee-sf-pdf-stem (f)</code></li>
+<li>L427: <code>(defun ee-sf-pdf-file (c)</code></li>
+<li>L433: <code>(defun ee-sf-pdf-p ()</code></li>
+<li>L452: <code>(defun ee-sf-pdf-links (c fname)</code></li>
+<li>L490: <code>(provide 'eev-strange-functions)</code></li>
+</ul>
+<h2>eev-template0.el</h2>
+<ul>
+<li>L113: <code>(defun ee-template0 (str)</code></li>
+<li>L127: <code>(defun ee-template00 (str)</code></li>
+<li>L155: <code>(defun ee-dynlex-test (a b)</code></li>
+<li>L212: <code>(defmacro ee-template0-lex (str)</code></li>
+<li>L221: <code>(defun ee-template00-lex (str)</code></li>
+<li>L227: <code>(defun ee-template000-lex (str)</code></li>
+<li>L251: <code>(provide 'eev-template0)</code></li>
+</ul>
+<h2>eev-testblocks.el</h2>
+<ul>
+<li>L109: <code>(defun ee-insert-test-block ()</code></li>
+<li>L132: <code>(defun ee-insert-test-c-mode ()</code></li>
+<li>L149: <code>(defun ee-insert-test-elixir-mode ()</code></li>
+<li>L163: <code>(defun ee-insert-test-fennel-mode ()</code></li>
+<li>L179: <code>(defun ee-insert-test-f90-mode ()</code></li>
+<li>L196: <code>(defun ee-insert-test-gnuplot-mode ()</code></li>
+<li>L212: <code>(defun ee-insert-test-haskell-mode ()</code></li>
+<li>L226: <code>(defun ee-insert-test-js-mode ()</code></li>
+<li>L240: <code>(defun ee-insert-test-julia-mode ()</code></li>
+<li>L254: <code>(defun ee-insert-test-latex-mode ()</code></li>
+<li>L274: <code>(defun ee-insert-test-lisp-mode ()</code></li>
+<li>L284: <code>(defun ee-insert-test-lisp-mode-nil ()</code></li>
+<li>L300: <code>(defun ee-insert-test-lisp-mode-1 ()</code></li>
+<li>L317: <code>(defun ee-insert-test-lisp-mode-2 ()</code></li>
+<li>L332: <code>(defun ee-insert-test-lisp-mode-3 ()</code></li>
+<li>L352: <code>(defun ee-insert-test-lisp-mode-4 ()</code></li>
+<li>L382: <code>(defun ee-insert-test-lisp-mode-5 ()</code></li>
+<li>L418: <code>(defun ee-insert-test-lua-mode ()</code></li>
+<li>L434: <code>(defun ee-insert-test-makefile-gmake-mode ()</code></li>
+<li>L450: <code>(defun ee-insert-test-makefile-mode ()</code></li>
+<li>L466: <code>(defun ee-insert-test-maxima-mode ()</code></li>
+<li>L480: <code>(defun ee-insert-test-octave-mode ()</code></li>
+<li>L494: <code>(defun ee-insert-test-org-mode ()</code></li>
+<li>L508: <code>(defun ee-insert-test-perl-mode ()</code></li>
+<li>L522: <code>(defun ee-insert-test-php-mode ()</code></li>
+<li>L538: <code>(defun ee-insert-test-python-mode ()</code></li>
+<li>L552: <code>(defun ee-insert-test-racket-mode ()</code></li>
+<li>L566: <code>(defun ee-insert-test-raku-mode ()</code></li>
+<li>L589: <code>(defun ee-insert-test-ruby-mode ()</code></li>
+<li>L604: <code>(defun ee-insert-test-scheme-mode ()</code></li>
+<li>L631: <code>(defun ee-insert-test-sml-mode ()</code></li>
+<li>L646: <code>(defun ee-insert-test-sh-mode ()</code></li>
+<li>L660: <code>(defun ee-insert-test-sql-mode ()</code></li>
+<li>L674: <code>(defun ee-insert-test-subed-vtt-mode ()</code></li>
+<li>L725: <code>(defun ee-insert-test-tcl-mode ()</code></li>
+<li>L739: <code>(defun ee-insert-test-tuareg-mode ()</code></li>
+<li>L755: <code>(provide 'eev-testblocks)</code></li>
+</ul>
+<h2>eev-tla.el</h2>
+<ul>
+<li>L151: <code>(defun ee-tla-canonicalize (o)</code></li>
+<li>L155: <code>(defun ee-tla-set (tla fname)</code></li>
+<li>L160: <code>(defun ee-tla-get    (o) (gethash o ee-tla-table))</code></li>
+<li>L161: <code>(defun ee-tla-remove (o) (remhash o ee-tla-table))</code></li>
+<li>L162: <code>(defun ee-tla-fname  () (ee-tla-canonicalize (buffer-file-name)))</code></li>
+<li>L163: <code>(defun ee-tla-tla    () (ee-tla-get (ee-tla-fname)))</code></li>
+<li>L166: <code>(defun ee-tla-tag ()</code></li>
+<li>L175: <code>(defun ee-tla-table-to-string ()</code></li>
+<li>L212: <code>(defun      code-tla (tla fname)</code></li>
+<li>L214: <code>(defun find-code-tla (tla fname)</code></li>
+<li>L216: <code>(defun   ee-code-tla (tla fname)</code></li>
+<li>L232: <code>(defun {tla} (&amp;rest pos-spec-list)</code></li>
+<li>L235: <code>(defun {tla}a (&amp;rest pos-spec-list)</code></li>
+<li>L243: <code>(defun {tla}p (&amp;optional page &amp;rest rest)</code></li>
+<li>L246: <code>(defun {tla}t (&amp;optional page &amp;rest rest)</code></li>
+<li>L255: <code>(defun ee-tla-tex-to-pdf (fname)</code></li>
+<li>L265: <code>(defun find-tla-def-links (&amp;optional fname tla &amp;rest pos-spec-list)</code></li>
+<li>L296: <code>(defun find-tla-links (&amp;optional tla fname tag &amp;rest pos-spec-list)</code></li>
+<li>L343: <code>(defun find-tla-here-links ()</code></li>
+<li>L355: <code>(defun eejump-3 () (find-tla-here-links))</code></li>
+<li>L362: <code>(defun ee-tla-link (&amp;optional tla n tag)</code></li>
+<li>L372: <code>(defun eejump-33 ()</code></li>
+<li>L434: <code>(defun find-pdf-txt (fnamepdf &amp;rest pos-spec-list)</code></li>
+<li>L447: <code>(defun find-pdf-txt-links (&amp;optional fnamepdf &amp;rest pos-spec-list)</code></li>
+<li>L466: <code>(defun ee-fnamepdf-to-fnametxt (fnamepdf)</code></li>
+<li>L478: <code>(defun find-pdf-text-insert (nlines fnamepdf)</code></li>
+<li>L488: <code>(provide 'eev-tla)</code></li>
+</ul>
+<h2>eev-tlinks.el</h2>
+<ul>
+<li>L211: <code>(require 'eev-env)</code></li>
+<li>L212: <code>(require 'eev-wrap)    ; For: (find-eev "eev-wrap.el" "ee-template0")</code></li>
+<li>L213: <code>(require 'cl-lib)      ; For 'cl-remove-if'</code></li>
+<li>L214: <code>(require 'subr-x)      ; For 'string-join'</code></li>
+<li>L290: <code>(defun ee-count-lines (str)</code></li>
+<li>L294: <code>(defun ee-copy-rest00 (skip gotoend code)</code></li>
+<li>L307: <code>(defun ee-search-forward-before (str)</code></li>
+<li>L314: <code>(defun ee-copy-rest0 (skip code)</code></li>
+<li>L330: <code>(defun ee-copy-rest (skip code)</code></li>
+<li>L416: <code>(defun ee-copy-rest-skip0 (&amp;optional skip)</code></li>
+<li>L422: <code>(defun ee-copy-rest-gotoend0 (&amp;optional end)</code></li>
+<li>L428: <code>(defun ee-copy-rest-showtarget0 (target)</code></li>
+<li>L433: <code>(defun ee-copy-rest-3 (skip gotoend target)</code></li>
+<li>L451: <code>(defun ee-copy-rest-3m (skip gotoend target)</code></li>
+<li>L475: <code>(defun ee-prepend-commas (str)</code></li>
+<li>L478: <code>(defun ee-if-nil-setq (str)</code></li>
+<li>L480: <code>(defun ee-if-nil-setqs (vars sep)</code></li>
+<li>L485: <code>(defun find-find-links-links (&amp;optional k stem args &amp;rest pos-spec-list)</code></li>
+<li>L504: <code>\(define-key eev-mode-map \"\\M-h{k}\" 'find-{stem}-links)</code></li>
+<li>L559: <code>(defun find-find-links-links-new (&amp;optional stem args vars &amp;rest pos-spec-list)</code></li>
+<li>L606: <code>(defun ee-ffll-optional (args)</code></li>
+<li>L611: <code>(defun ee-ffll-setqs (spaces args)</code></li>
+<li>L617: <code>(defun ee-ffll-lets (spaces vars)</code></li>
+<li>L623: <code>(defun ee-ffll-comma-args (args)</code></li>
+<li>L628: <code>(defun ee-ffll-defun-without-lets (stem args)</code></li>
+<li>L634: <code>(defun find-{stem}-links ({optional}&amp;rest pos-spec-list)</code></li>
+<li>L650: <code>(defun ee-ffll-defun-with-lets (stem args vars)</code></li>
+<li>L657: <code>(defun find-{stem}-links ({optional}&amp;rest pos-spec-list)</code></li>
+<li>L674: <code>(defun ee-ffll-defun (stem args &amp;optional vars)</code></li>
+<li>L679: <code>(defun ee-ffll-deftest (stem args &amp;optional vars)</code></li>
+<li>L685: <code>(defun ee-template-test (&amp;rest args)</code></li>
+<li>L689: <code>(defun tt0 () (interactive) (eek \"C-M-x\") (ee-template-test))</code></li>
+<li>L690: <code>(defun tt  () (interactive) (eek \"C-M-x\") (ee-template-test \"A\" \"B\"))</code></li>
+<li>L702: <code>(defun find-let*-macro-links (&amp;optional stem args defs &amp;rest pos-spec-list)</code></li>
+<li>L721: <code>(defmacro ee-let*-macro-{stem} ({args} &amp;rest code)</code></li>
+<li>L745: <code>(defun find-intro-links (&amp;optional stem &amp;rest pos-spec-list)</code></li>
+<li>L804: <code>(defun find-eev-header-links (&amp;optional stem-el date &amp;rest pos-spec-list)</code></li>
+<li>L868: <code>(defun ee-links-for-debpkg (pkgname)</code></li>
+<li>L875: <code>(defun ee-dfs0 (pkg ext)</code></li>
+<li>L881: <code>(defun ee-links-for-debpkg-extra-vldi (pkg)</code></li>
+<li>L891: <code>(defun ee-debian-pooldir (pkg)</code></li>
+<li>L899: <code>(defun find-debpkg-links (&amp;optional pkgname &amp;rest rest)</code></li>
+<li>L966: <code>(defun find-pacman-links (&amp;optional pkg &amp;rest pos-spec-list)</code></li>
+<li>L1003: <code>(defun find-macports-links (&amp;optional pkg &amp;rest pos-spec-list)</code></li>
+<li>L1048: <code>(defun find-homebrew-links (&amp;optional pkg &amp;rest pos-spec-list)</code></li>
+<li>L1085: <code>(defun ee-dsc-url-split (dsc-url)</code></li>
+<li>L1103: <code>(defun ee-links-for-dscbuild (dsc-url)</code></li>
+<li>L1111: <code>(defun ee-links-for-dscbuild0 (date prot dir/ xxx vvv -sv)</code></li>
+<li>L1159: <code>(defun find-eev-reload-links (&amp;rest pos-spec-list)</code></li>
+<li>L1236: <code>(defun find-eev-install-links (&amp;optional dir script comment &amp;rest pos-spec-list)</code></li>
+<li>L1334: <code>(defun find-eev-update-links (&amp;optional dir script &amp;rest pos-spec-list)</code></li>
+<li>L1451: <code>(defun find-youtubedl-links (&amp;optional dir title hash ext- stem &amp;rest pos-spec-list)</code></li>
+<li>L1528: <code>(defun ee-youtubedl-split (fname)</code></li>
+<li>L1540: <code>(defun ee-youtubedl-dir   (fname) (nth 0 (ee-youtubedl-split fname)))</code></li>
+<li>L1541: <code>(defun ee-youtubedl-title (fname) (nth 1 (ee-youtubedl-split fname)))</code></li>
+<li>L1542: <code>(defun ee-youtubedl-hash  (fname) (nth 2 (ee-youtubedl-split fname)))</code></li>
+<li>L1543: <code>(defun ee-youtubedl-ext-  (fname) (nth 3 (ee-youtubedl-split fname)))</code></li>
+<li>L1544: <code>(defun ee-youtubedl-ext   (fname) (nth 4 (ee-youtubedl-split fname)))</code></li>
+<li>L1550: <code>(defun ee-youtubedl-guess* (dir hash)</code></li>
+<li>L1554: <code>(defun ee-youtubedl-subtitle-p (fname)</code></li>
+<li>L1558: <code>(defun ee-youtubedl-not-subtitles (fnames)</code></li>
+<li>L1562: <code>(defun ee-youtubedl-guess (dir hash n)</code></li>
+<li>L1570: <code>(defun ee-youtubedl-guess-title (dir hash) (ee-youtubedl-guess dir hash 1))</code></li>
+<li>L1571: <code>(defun ee-youtubedl-guess-ext-  (dir hash) (ee-youtubedl-guess dir hash 3))</code></li>
+<li>L1573: <code>(defun ee-youtubedl-hash-around-point ()</code></li>
+<li>L1622: <code>(defun ee-youtubedl-dir-links (&amp;optional dirs hash stem)</code></li>
+<li>L1633: <code>(defun ee-youtubedl-guess** (dirs hash)</code></li>
+<li>L1636: <code>(defun ee-youtubedl-hash-to-fname (hash)</code></li>
+<li>L1639: <code>(defun ee-youtubedl-url-to-hash (url)</code></li>
+<li>L1644: <code>(defun ee-youtubedl-url-to-fname (url)</code></li>
+<li>L1683: <code>(defun find-psne-links (&amp;optional url wget-options echo-options &amp;rest pos-spec-list)</code></li>
+<li>L1706: <code>(defun ee-find-psne-core (url &amp;optional wget-options echo-options)</code></li>
+<li>L1728: <code>(defun ee-find-psne-echo-options ()</code></li>
+<li>L1756: <code>(defun find-psne-eevvideo-links (&amp;optional stem exts time &amp;rest pos-spec-list)</code></li>
+<li>L1779: <code>(defun ee-psne-eevvideo-core (stem exts time)</code></li>
+<li>L1823: <code>(defun find-psne-1stclassvideo-links (&amp;optional c time &amp;rest pos-spec-list)</code></li>
+<li>L1846: <code>(defun ee-psne-1stclassvideo-play (c time)</code></li>
+<li>L1866: <code>(defun find-1stclassvideo-video (c &amp;optional time &amp;rest rest)</code></li>
+<li>L1894: <code>(defun ee-git-url-stem (url)</code></li>
+<li>L1897: <code>(defun ee-git-url-at-point ()</code></li>
+<li>L1904: <code>(defun find-git-links (&amp;optional url c &amp;rest pos-spec-list)</code></li>
+<li>L1968: <code>(defun ee-fossil-url-stem (url) (ee-git-url-stem url))</code></li>
+<li>L1970: <code>(defun find-fossil-links (&amp;optional url subdir c &amp;rest pos-spec-list)</code></li>
+<li>L2031: <code>(defun find-apt-get-source-links (&amp;optional pkg &amp;rest pos-spec-list)</code></li>
+<li>L2083: <code>(defun find-netcat-test-links (&amp;optional eesrc eetgt tgtname tgtport &amp;rest pos-spec-list)</code></li>
+<li>L2136: <code>(defun find-eevvideo-links (&amp;optional c stem youtubeid time &amp;rest pos-spec-list)</code></li>
+<li>L2167: <code>(defun find-psnevideo-links (&amp;optional c url youtubeid time &amp;rest pos-spec-list)</code></li>
+<li>L2186: <code>(defun ee-psnevideo-links (c url &amp;optional youtubeid time)</code></li>
+<li>L2220: <code>(defun ee-psnevideo-url-youtube (url &amp;optional youtubeid time)</code></li>
+<li>L2251: <code>(defun ee-psne-if-needed (url)</code></li>
+<li>L2256: <code>(defun ee-psne-downloaded-p (url)</code></li>
+<li>L2259: <code>(defun ee-psne-download (url)</code></li>
+<li>L2265: <code>(defun ee-psne-download0 (url)</code></li>
+<li>L2284: <code>(defun ee-psne-url-comment (url)</code></li>
+<li>L2312: <code>(defun      code-psnevideo (c url &amp;optional youtubeid)</code></li>
+<li>L2314: <code>(defun find-code-psnevideo (&amp;optional c url youtubeid &amp;rest rest)</code></li>
+<li>L2319: <code>(defun   ee-code-psnevideo (c url youtubeid)</code></li>
+<li>L2325: <code>(defun find-{c}video (&amp;optional time &amp;rest rest)</code></li>
+<li>L2419: <code>(defun find-eev-video-links (&amp;optional c anggstem youtubehash &amp;rest pos-spec-list)</code></li>
+<li>L2483: <code>(defun find-eevshortvideo-links (&amp;optional c stem youtubeid &amp;rest pos-spec-list)</code></li>
+<li>L2502: <code>(defun find-{c}video (&amp;optional time &amp;rest rest)</code></li>
+<li>L2529: <code>(defun find-wgeteevsubtitles-links (&amp;optional stem exts &amp;rest pos-spec-list)</code></li>
+<li>L2563: <code>(defun ee-wgeteevsubtitles-cmds (stem exts)</code></li>
+<li>L2595: <code>(defun find-latex-links (&amp;optional stem &amp;rest pos-spec-list)</code></li>
+<li>L2647: <code>(defun find-lua-links (&amp;optional fname &amp;rest pos-spec-list)</code></li>
+<li>L2714: <code>(defun ee-untabify-string (string)</code></li>
+<li>L2726: <code>(defun ee-ss-string-pad (str &amp;optional padchar barchar)</code></li>
+<li>L2733: <code>(defun ee-ss-screenshot0 ()</code></li>
+<li>L2740: <code>(defun ee-ss-screenshot (linefmt)</code></li>
+<li>L2744: <code>(defun find-escreenshot0-links (&amp;rest pos-spec-list)</code></li>
+<li>L2760: <code>(defun find-escreenshot-links (&amp;rest pos-spec-list)</code></li>
+<li>L2778: <code>(defun find-windows-eepitch-lua-links (&amp;optional dir &amp;rest pos-spec-list)</code></li>
+<li>L2838: <code>(defun eepitch-lua52 () (interactive)</code></li>
+<li>L2868: <code>(defun find-extra-file-links (&amp;optional fname c &amp;rest pos-spec-list)</code></li>
+<li>L2923: <code>(defun eepitch-{c} () (interactive)</code></li>
+<li>L2947: <code>(defun find-emacs-tangents-links (&amp;optional yyyy mm dd msg txtstem &amp;rest pos-spec-list)</code></li>
+<li>L2993: <code>(defun find-eeit-links (&amp;optional majormode &amp;rest pos-spec-list)</code></li>
+<li>L3020: <code>(defun {eeitfunstr} ()</code></li>
+<li>L3052: <code>(defun find-texlive-links (&amp;optional date &amp;rest pos-spec-list)</code></li>
+<li>L3129: <code>(defun find-newbrowser-links (&amp;optional browser binary b &amp;rest pos-spec-list)</code></li>
+<li>L3161: <code>(defun find-{browser} (url) (find-bgprocess '(\"{binary}\" ,url)))</code></li>
+<li>L3175: <code>(defun ee-find-{browser}-page (fname &amp;optional page)</code></li>
+<li>L3207: <code>(defun ee-find-{browser}-page (fname &amp;optional page)</code></li>
+<li>L3248: <code>(defun find-altbrowser-links (&amp;optional binary &amp;rest pos-spec-list)</code></li>
+<li>L3272: <code>(defun find-googlechrome (url) (find-bgprocess '(\"{binary}\" ,url)))</code></li>
+<li>L3289: <code>(defun find-googlechrome (url) (find-bgprocess '(\"{binary}\" ,url)))</code></li>
+<li>L3304: <code>(defun find-newpdfviewer-links (&amp;optional short binary &amp;rest pos-spec-list)</code></li>
+<li>L3362: <code>(defun find-pdf-page-links (&amp;rest pos-spec-list)</code></li>
+<li>L3402: <code>(defun ee-0x0-upload (b e &amp;rest ignore)</code></li>
+<li>L3410: <code>(defun ee-0x0-upload-region (b e)</code></li>
+<li>L3439: <code>(defun find-0x0-links (&amp;optional url &amp;rest pos-spec-list)</code></li>
+<li>L3473: <code>(defun find-red-star-links (&amp;rest pos-spec-list)</code></li>
+<li>L3545: <code>(defun ee-use-red-stars ()</code></li>
+<li>L3553: <code>(defun ee-use-red-bullets ()</code></li>
+<li>L3577: <code>(defun find-angg-es-links (&amp;rest pos-spec-list)</code></li>
+<li>L3656: <code>(defun find-angg-not-configured (&amp;rest rest) (interactive)</code></li>
+<li>L3659: <code>(defun find-es-not-configured (&amp;rest rest) (interactive)</code></li>
+<li>L3685: <code>(defun find-1stclassvideo-links (&amp;optional c &amp;rest pos-spec-list)</code></li>
+<li>L3706: <code>(defmacro ee-let*-macro-1stclassvideo-c (c &amp;rest code)</code></li>
+<li>L3735: <code>(defun ee-find-1stclassvideo-links (c)</code></li>
+<li>L3762: <code>(defun ee-1stclassvideo-basicinfo (c &amp;optional pos)</code></li>
+<li>L3784: <code>(defun ee-1stclassvideo-basicsexps (c &amp;optional pos)</code></li>
+<li>L3811: <code>(defun ee-1stclassvideo-dlsubs (c)</code></li>
+<li>L3816: <code>(defun ee-1stclassvideo-dlsubs0 (c haslocal hassubs)</code></li>
+<li>L3849: <code>(defun ee-1stclassvideo-defuns (c)</code></li>
+<li>L3857: <code>(defun find-{c}video (&amp;optional time &amp;rest rest)</code></li>
+<li>L3861: <code>(defun find-{c}lsubs (&amp;optional time &amp;rest rest)</code></li>
+<li>L3865: <code>(defun find-{c}hsubs (&amp;optional time &amp;rest rest)</code></li>
+<li>L3873: <code>(defun find-{c}video (&amp;optional time &amp;rest rest)</code></li>
+<li>L3885: <code>(defun      code-1stclassvideo (c)</code></li>
+<li>L3894: <code>(defun find-code-1stclassvideo (c)</code></li>
+<li>L3896: <code>(defun   ee-code-1stclassvideo (c)</code></li>
+<li>L3907: <code>(defun      code-1stclassvideos (&amp;optional cs)</code></li>
+<li>L3913: <code>(defun find-code-1stclassvideos (&amp;optional cs)</code></li>
+<li>L3915: <code>(defun   ee-code-1stclassvideos (&amp;optional cs)</code></li>
+<li>L3941: <code>(defun find-1stclassvideoindex (c &amp;rest pos-spec-list)</code></li>
+<li>L3945: <code>(defun find-1stclassvideolsubs (c &amp;rest pos-spec-list)</code></li>
+<li>L3951: <code>(defun find-1stclassvideohsubs (c &amp;optional pos &amp;rest pos-spec-list)</code></li>
+<li>L3955: <code>(defun find-1stclassvideodef (c &amp;rest pos-spec-list)</code></li>
+<li>L3969: <code>(defun find-1stclassvideos (&amp;rest rest)</code></li>
+<li>L3998: <code>(defun find-dot-emacs-links (&amp;optional opts &amp;rest pos-spec-list)</code></li>
+<li>L4027: <code>(defun ee-dot-emacs-eval   (opts) (eval    (ee-dot-emacs-read opts)))</code></li>
+<li>L4028: <code>(defun ee-dot-emacs-read   (opts) (ee-read (ee-dot-emacs-concat opts)))</code></li>
+<li>L4029: <code>(defun ee-dot-emacs-concat (opts)</code></li>
+<li>L4037: <code>(defun ee-dot-emacs-eevgit (&amp;rest rest) "\</code></li>
+<li>L4043: <code>(defun ee-dot-emacs-eev (&amp;rest rest) "\</code></li>
+<li>L4045: <code>(require 'eev-load)               ; (find-eev \"eev-load.el\")</code></li>
+<li>L4046: <code>(require 'eev-aliases)            ; (find-eev \"eev-aliases.el\")</code></li>
+<li>L4051: <code>(defun ee-dot-emacs-angges (&amp;rest rest) "\</code></li>
+<li>L4053: <code>(defun find-angg (fname &amp;rest rest)</code></li>
+<li>L4055: <code>(defun find-anggfile (fname &amp;rest rest)</code></li>
+<li>L4057: <code>(defun find-es (fname &amp;rest rest)</code></li>
+<li>L4062: <code>(defun ee-dot-emacs-melpa (&amp;rest rest) "\</code></li>
+<li>L4064: <code>(require 'package)</code></li>
+<li>L4070: <code>(defun ee-dot-emacs-edrxmaxima (&amp;rest rest) "\</code></li>
+<li>L4079: <code>(defun ee-dot-emacs-maxima5470 (&amp;rest rest) "\</code></li>
+<li>L4089: <code>(defun ee-dot-emacs-epl (&amp;rest rest) "\</code></li>
+<li>L4093: <code>(defun eepitch-preprocess-line (line)</code></li>
+<li>L4098: <code>(defun ee-dot-emacs-eepitchb (&amp;rest rest) "\</code></li>
+<li>L4100: <code>(define-key eev-mode-map (kbd \"&lt;f9&gt;\") 'eepitch-b-set-target-and-show)</code></li>
+<li>L4104: <code>(defun ee-dot-emacs-lean4 (&amp;rest rest) "\</code></li>
+<li>L4107: <code>(defun fli () (interactive) (find-lean4-intro))</code></li>
+<li>L4108: <code>(defun el4 () (interactive) (find-eev \"eev-lean4.el\"))</code></li>
+<li>L4109: <code>(require 'eev-lean4)      ; (find-eev \"eev-lean4.el\")</code></li>
+<li>L4113: <code>(defun ee-dot-emacs-mfms (&amp;rest rest) "\</code></li>
+<li>L4117: <code>(defun mf ()</code></li>
+<li>L4122: <code>(defun ms ()</code></li>
+<li>L4132: <code>(defun ee-dot-emacs-sly (&amp;rest rest) "\</code></li>
+<li>L4159: <code>(defun find-advicebefore-links (&amp;optional fun &amp;rest pos-spec-list)</code></li>
+<li>L4180: <code>(defun ee-log (f r) (setq ee-log (cons (cons f r) ee-log)))</code></li>
+<li>L4181: <code>(defun ee-log-{fun} (&amp;rest r) (ee-log '{fun} r))</code></li>
+<li>L4200: <code>(defun find-osm-links (&amp;optional lat lon zoom &amp;rest pos-spec-list)</code></li>
+<li>L4216: <code>(defun ee-find-osm-links (&amp;optional lat lon zoom)</code></li>
+<li>L4232: <code>(defun ee-osm-lat  () (if (eq major-mode 'osm-mode) osm--lat))</code></li>
+<li>L4233: <code>(defun ee-osm-lon  () (if (eq major-mode 'osm-mode) osm--lon))</code></li>
+<li>L4234: <code>(defun ee-osm-zoom () (if (eq major-mode 'osm-mode) osm--zoom))</code></li>
+<li>L4245: <code>(defun find-pip3-links (&amp;optional pkg &amp;rest pos-spec-list)</code></li>
+<li>L4290: <code>(defun find-yttranscript-links (&amp;optional c hash &amp;rest pos-spec-list)</code></li>
+<li>L4347: <code>(defun find-yttranscript0-links (&amp;optional c hash &amp;rest pos-spec-list)</code></li>
+<li>L4398: <code>(defun find-importlib-links (&amp;optional pkg distr &amp;rest pos-spec-list)</code></li>
+<li>L4446: <code>(defun find-pypi-links (&amp;optional pkg &amp;rest pos-spec-list)</code></li>
+<li>L4492: <code>(defun find-nov-links (&amp;optional fname &amp;rest pos-spec-list)</code></li>
+<li>L4506: <code>(defun ee-find-nov-links (&amp;optional fname)</code></li>
+<li>L4518: <code>(defun find-nov (fname &amp;rest rest)</code></li>
+<li>L4536: <code>(defun find-telegachat-links (&amp;optional bufname &amp;rest pos-spec-list)</code></li>
+<li>L4550: <code>(defun ee-find-telegachat-links (&amp;optional bufname msgn)</code></li>
+<li>L4591: <code>(defun ee-telega-msgn (&amp;optional msg)</code></li>
+<li>L4602: <code>(defun find-eejump-links (&amp;optional n sexp &amp;rest pos-spec-list)</code></li>
+<li>L4654: <code>(defun find-kla-links (&amp;optional fname &amp;rest pos-spec-list)</code></li>
+<li>L4698: <code>(defun find-rstdoc-links (&amp;optional kw &amp;rest pos-spec-list)</code></li>
+<li>L4753: <code>(defun find-mpv-links (&amp;rest pos-spec-list)</code></li>
+<li>L4773: <code>(defun mf ()</code></li>
+<li>L4778: <code>(defun ms ()</code></li>
+<li>L4795: <code>(defun find-try-sly-links (&amp;rest pos-spec-list)</code></li>
+<li>L4894: <code>(defun ee-clhs-lookup-index (name)</code></li>
+<li>L4898: <code>(defun find-clhsdoci (name &amp;rest rest)</code></li>
+<li>L4982: <code>(defun find-wgetrecursive-links (&amp;optional url &amp;rest pos-spec-list)</code></li>
+<li>L5044: <code>(defun find-mbe-links (&amp;optional ch page pos-spec &amp;rest pos-spec-list)</code></li>
+<li>L5082: <code>(defun ee-grim ()</code></li>
+<li>L5098: <code>(defun find-melpa-links (&amp;rest pos-spec-list)</code></li>
+<li>L5115: <code>(require 'package)</code></li>
+<li>L5134: <code>(defun find-emacsclient-links (&amp;rest pos-spec-list)</code></li>
+<li>L5185: <code>(defun find-show2-links (&amp;optional texfile &amp;rest pos-spec-list)</code></li>
+<li>L5243: <code>(defun show2 (&amp;optional fname0)</code></li>
+<li>L5259: <code>(defun show2-use (&amp;optional fname0)</code></li>
+<li>L5267: <code>(defun find-show2-use (&amp;optional fname0 &amp;rest pos-spec-list)</code></li>
+<li>L5275: <code>(defmacro ee-let*-macro-show2-use (fname0 &amp;rest code)</code></li>
+<li>L5288: <code>(defun ee-show2-use (&amp;optional fname0)</code></li>
+<li>L5348: <code>(defun tb  () (interactive) (find-ebuffer (eepitch-target-buffer)))</code></li>
+<li>L5349: <code>(defun v   () (interactive) (find-pdftools-page \"{dir}{stem}.pdf\"))</code></li>
+<li>L5350: <code>(defun D   () (interactive) (find-pdf-page \"{dir}{stem}.pdf\"))</code></li>
+<li>L5351: <code>(defun etv () (interactive) (find-wset \"13o2_o_o\" '(tb) '(v)))</code></li>
+<li>L5368: <code>(defun find-luatb0 (&amp;optional fname linedef linenow &amp;rest rest)</code></li>
+<li>L5379: <code>(defun find-luatb (str &amp;rest rest)</code></li>
+<li>L5398: <code>(defun      code-brappend (c url &amp;optional f)</code></li>
+<li>L5400: <code>(defun find-code-brappend (c url &amp;optional f)</code></li>
+<li>L5402: <code>(defun   ee-code-brappend (c url &amp;optional f)</code></li>
+<li>L5408: <code>(defun find-{c} (&amp;optional anchor &amp;rest rest)</code></li>
+<li>L5429: <code>(defun find-maximamsg-links (&amp;optional n yyyymm day &amp;rest pos-spec-list)</code></li>
+<li>L5447: <code>(defun ee-find-maximamsg-links (&amp;optional n yyyymm day &amp;rest pos-spec-list)</code></li>
+<li>L5477: <code>(defun find-maximamsg (&amp;optional str &amp;rest rest)</code></li>
+<li>L5492: <code>(defun find-qdraw-links (&amp;optional fs xr yr &amp;rest pos-spec-list)</code></li>
+<li>L5559: <code>(defun find-quicklisp-links (&amp;optional pkg &amp;rest pos-spec-list)</code></li>
+<li>L5610: <code>(defun find-sbcl-links (&amp;optional name &amp;rest pos-spec-list)</code></li>
+<li>L5665: <code>(defun find-slime-sly-links (&amp;rest pos-spec-list)</code></li>
+<li>L5704: <code>(defun find-linki-links (&amp;optional stem &amp;rest pos-spec-list)</code></li>
+<li>L5731: <code>(defun ee-find-{stem}-linki ()</code></li>
+<li>L5744: <code>(defun find-gitdoc-links (&amp;optional stem &amp;rest pos-spec-list)</code></li>
+<li>L5785: <code>(defun find-luainit-links (&amp;optional dir &amp;rest pos-spec-list)</code></li>
+<li>L5857: <code>(defun find-luaso-links (&amp;optional fname funname &amp;rest pos-spec-list)</code></li>
+<li>L5946: <code>(defun find-subed-mpv-links (&amp;optional emacs-width &amp;rest pos-spec-list)</code></li>
+<li>L6055: <code>(defun find-debootstrap0-links (&amp;optional container n &amp;rest pos-spec-list)</code></li>
+<li>L6086: <code>(defun ee-debootstrap0 (&amp;optional container n)</code></li>
+<li>L6130: <code>(defun ee-debootstrap1 (&amp;optional container user passwd)</code></li>
+<li>L6175: <code>(defun find-debootstrap1-links (&amp;optional container user passwd &amp;rest pos-spec-list)</code></li>
+<li>L6235: <code>(defun find-debootstrap2-links (&amp;optional container user &amp;rest pos-spec-list)</code></li>
+<li>L6289: <code>(defun find-package-vc-install-links (&amp;optional giturl &amp;rest pos-spec-list)</code></li>
+<li>L6354: <code>(defun find-ethemes-links (&amp;rest pos-spec-list)</code></li>
+<li>L6386: <code>(defun ee-load-themes ()</code></li>
+<li>L6392: <code>(defun ee-custom-theme-load-path ()</code></li>
+<li>L6422: <code>(defun find-tryit-links (&amp;optional configs sexps &amp;rest pos-spec-list)</code></li>
+<li>L6448: <code>(defun ee-tryit-read-sexps ()</code></li>
+<li>L6457: <code>(defun ee-tryit-tostring (o)</code></li>
+<li>L6466: <code>(defun ee-tryit-has (c)</code></li>
+<li>L6473: <code>(defun ee-tryit-line (sexp)</code></li>
+<li>L6481: <code>(defun ee-tryit-if (c &amp;rest sexps)</code></li>
+<li>L6490: <code>(defun ee-tryit-body ()</code></li>
+<li>L6535: <code>(defun ee-tryit-progn (config &amp;optional sexps)</code></li>
+<li>L6545: <code>(defun ee-tryit-progns (configs &amp;optional sexps)</code></li>
+<li>L6568: <code>(defun find-githubio-links (&amp;optional username fname &amp;rest pos-spec-list)</code></li>
+<li>L6595: <code>(defun ee-find-githubio-part1 (username)</code></li>
+<li>L6643: <code>(defun ee-find-githubio-part2 (username)</code></li>
+<li>L6659: <code>(defun ee-find-githubio-part3 (username fname)</code></li>
+<li>L6668: <code>(defun ee-find-githubio-part4 (username)</code></li>
+<li>L6679: <code>(defun ee-find-githubio-upload (username fname)</code></li>
+<li>L6704: <code>(defun ee-minipaste-find-wgets (baseurl fname)</code></li>
+<li>L6720: <code>(defun find-minipaste-config-links (&amp;optional username &amp;rest pos-spec-list)</code></li>
+<li>L6760: <code>(defun ee-minipaste-username ()</code></li>
+<li>L6763: <code>(defun ee-minipastedir ()</code></li>
+<li>L6766: <code>(defun ee-minipaste-configured ()</code></li>
+<li>L6770: <code>(defun ee-in-minipastedir (fullfname)</code></li>
+<li>L6775: <code>(defun find-minipaste-dwim (fullfname)</code></li>
+<li>L6800: <code>(defun find-minipaste-links (&amp;optional fname &amp;rest pos-spec-list)</code></li>
+<li>L6822: <code>(provide 'eev-tlinks)</code></li>
+</ul>
+<h2>eev-videolinks.el</h2>
+<ul>
+<li>L150: <code>(defun find-eev-video (mp4stem hash &amp;optional time &amp;rest rest)</code></li>
+<li>L153: <code>(defun find-eevyoutube-video (mp4stem hash &amp;optional time &amp;rest rest)</code></li>
+<li>L156: <code>(defun find-eevlocal-video (mp4stem hash &amp;optional time &amp;rest rest)</code></li>
+<li>L163: <code>(defun find-eevlinks-video (mp4stem hash &amp;optional time &amp;rest rest)</code></li>
+<li>L181: <code>(defun find-eevlocal-links (&amp;optional stem hash time &amp;rest pos-spec-list)</code></li>
+<li>L213: <code>(defun ee-eevlocal-body (stem hash time)</code></li>
+<li>L225: <code>(defun ee-eevlocal-youtube-comment (hash time)</code></li>
+<li>L246: <code>(defun ee-eevlocal-psne (stem time)</code></li>
+<li>L253: <code>(defun ee-eevlocal-findmpvvideo (stem time)</code></li>
+<li>L280: <code>(defun ee-use-youtube-videos ()</code></li>
+<li>L295: <code>(defun ee-use-local-videos ()</code></li>
+<li>L1102: <code>(defun ee-1stclassvideos-field (c &amp;optional field)</code></li>
+<li>L1105: <code>(defun ee-1stclassvideos-mp4stem (c)</code></li>
+<li>L1109: <code>(defun ee-1stclassvideos-pagestem (c)</code></li>
+<li>L1113: <code>(defun ee-1stclassvideos-hsubstem (c)</code></li>
+<li>L1117: <code>(defun ee-1stclassvideos-lsubstem (c)</code></li>
+<li>L1120: <code>(defun ee-1stclassvideos-hash (c)</code></li>
+<li>L1124: <code>(defun ee-1stclassvideos-localmp4 (c)</code></li>
+<li>L1129: <code>(defun ee-1stclassvideos-mp4found (c)</code></li>
+<li>L1133: <code>(defun ee-1stclassvideos-hsubsurl (c &amp;optional pos)</code></li>
+<li>L1175: <code>(defun find-code-eev{mod}video (&amp;optional mod c stem hash &amp;rest rest)</code></li>
+<li>L1177: <code>(defun      code-eev{mod}video (mod c stem &amp;optional hash)</code></li>
+<li>L1179: <code>(defun   ee-code-eev{mod}video (&amp;optional mod c stem hash)</code></li>
+<li>L1192: <code>(defun find-{c}video (&amp;optional time &amp;rest comments)</code></li>
+<li>L1206: <code>(defun find-code-eevvideo (&amp;optional c stem hash &amp;rest rest)</code></li>
+<li>L1208: <code>(defun      code-eevvideo (c stem &amp;optional hash)</code></li>
+<li>L1211: <code>(defun find-code-eevlocalvideo (&amp;optional c stem hash &amp;rest rest)</code></li>
+<li>L1213: <code>(defun      code-eevlocalvideo (c stem &amp;optional hash)</code></li>
+<li>L1216: <code>(defun find-code-eevlinksvideo (&amp;optional c stem hash &amp;rest rest)</code></li>
+<li>L1218: <code>(defun      code-eevlinksvideo (c stem &amp;optional hash)</code></li>
+<li>L1232: <code>(defun      code-youtubevideo (c hash &amp;rest rest)</code></li>
+<li>L1234: <code>(defun find-code-youtubevideo (c hash &amp;rest rest)</code></li>
+<li>L1236: <code>(defun   ee-code-youtubevideo (c hash)</code></li>
+<li>L1245: <code>(defun find-{c}video (&amp;optional time &amp;rest rest)</code></li>
+<li>L1302: <code>(provide 'eev-videolinks)</code></li>
+</ul>
+<h2>eev-wconfig.el</h2>
+<ul>
+<li>L179: <code>(defun find-wconfig-links (&amp;rest pos-spec-list)</code></li>
+<li>L232: <code>(defun find-wconfig-browser-links (&amp;rest pos-spec-list)</code></li>
+<li>L301: <code>(require 'eev-load)</code></li>
+<li>L302: <code>(require 'eev-wconfig)</code></li>
+<li>L351: <code>(defun find-wconfig-wget-links (&amp;rest pos-spec-list)</code></li>
+<li>L379: <code>(require 'eww)</code></li>
+<li>L380: <code>(defun ee-download-with-eww (url dir)</code></li>
+<li>L518: <code>(defun find-wconfig-shell-links (&amp;rest pos-spec-list)</code></li>
+<li>L538: <code>(require 'eshell)</code></li>
+<li>L539: <code>(require 'em-alias)</code></li>
+<li>L574: <code>(defun eepitch-shell  () (interactive) (eepitch-eshell))</code></li>
+<li>L575: <code>(defun eepitch-shell2 () (interactive) (eepitch-eshell2))</code></li>
+<li>L576: <code>(defun eepitch-shell3 () (interactive) (eepitch-eshell3))</code></li>
+<li>L594: <code>(defun ee-find-psne-echo-options () \"-N\")</code></li>
+<li>L617: <code>(defun eepitch-shell  () (interactive) (eepitch-eshell))</code></li>
+<li>L618: <code>(defun eepitch-shell2 () (interactive) (eepitch-eshell2))</code></li>
+<li>L619: <code>(defun eepitch-shell3 () (interactive) (eepitch-eshell3))</code></li>
+<li>L620: <code>(defun ee-find-psne-echo-options () \"-N\")</code></li>
+<li>L640: <code>(defun find-wconfig-lua-links (&amp;rest pos-spec-list)</code></li>
+<li>L676: <code>(defun eepitch-lua51 () (interactive)</code></li>
+<li>L678: <code>(defun eepitch-lua52 () (interactive)</code></li>
+<li>L680: <code>(defun eepitch-lua53 () (interactive)</code></li>
+<li>L682: <code>(defun eepitch-lua54 () (interactive)</code></li>
+<li>L713: <code>(defun eepitch-python () (interactive)</code></li>
+<li>L737: <code>(defun eepitch-lua51 () (interactive)</code></li>
+<li>L739: <code>(defun eepitch-lua52 () (interactive)</code></li>
+<li>L741: <code>(defun eepitch-lua53 () (interactive)</code></li>
+<li>L743: <code>(defun eepitch-lua54 () (interactive)</code></li>
+<li>L745: <code>(defun eepitch-python () (interactive)</code></li>
+<li>L765: <code>(defun find-wconfig-mpv-links (&amp;rest pos-spec-list)</code></li>
+<li>L836: <code>(defun find-wconfig-magic-links (&amp;rest pos-spec-list)</code></li>
+<li>L902: <code>(require 'eev-load)</code></li>
+<li>L903: <code>(require 'eev-wconfig)</code></li>
+<li>L920: <code>(defun ee-wconfig-run-magic ()</code></li>
+<li>L933: <code>(defun eepitch-shell  () (interactive) (eepitch-eshell))</code></li>
+<li>L934: <code>(defun eepitch-shell2 () (interactive) (eepitch-eshell2))</code></li>
+<li>L935: <code>(defun eepitch-shell3 () (interactive) (eepitch-eshell3))</code></li>
+<li>L936: <code>(defun ee-find-psne-echo-options () \"-N\")</code></li>
+<li>L939: <code>(defun eepitch-lua51 () (interactive)</code></li>
+<li>L941: <code>(defun eepitch-lua52 () (interactive)</code></li>
+<li>L943: <code>(defun eepitch-lua53 () (interactive)</code></li>
+<li>L945: <code>(defun eepitch-lua54 () (interactive)</code></li>
+<li>L962: <code>(defun find-wconfig-exercises-links (&amp;rest pos-spec-list)</code></li>
+<li>L1027: <code>(defun find-wconfig-undo-links (&amp;rest pos-spec-list)</code></li>
+<li>L1060: <code>(require 'eshell)</code></li>
+<li>L1061: <code>(require 'em-alias)</code></li>
+<li>L1063: <code>(defun eepitch-shell  () (interactive) (eepitch '(shell)))</code></li>
+<li>L1064: <code>(defun eepitch-shell2 () (interactive) (eepitch '(shell \"*shell 2*\")))</code></li>
+<li>L1065: <code>(defun eepitch-shell2 () (interactive) (eepitch '(shell \"*shell 3*\")))</code></li>
+<li>L1066: <code>(defun ee-find-psne-echo-options () \"\")</code></li>
+<li>L1070: <code>(defun eepitch-lua51  () (interactive) (eepitch-comint \"lua51\" \"lua5.1\"))</code></li>
+<li>L1071: <code>(defun eepitch-lua52  () (interactive) (eepitch-comint \"lua52\" \"lua5.2\"))</code></li>
+<li>L1072: <code>(defun eepitch-lua53  () (interactive) (eepitch-comint \"lua53\" \"lua5.3\"))</code></li>
+<li>L1073: <code>(defun eepitch-lua54  () (interactive) (eepitch-comint \"lua54\" \"lua5.4\"))</code></li>
+<li>L1074: <code>(defun eepitch-python () (interactive) (eepitch-comint \"python3\" \"python3\"))</code></li>
+<li>L1085: <code>(provide 'eev-wconfig)</code></li>
+</ul>
+<h2>eev-wrap.el</h2>
+<ul>
+<li>L63: <code>(require 'eev-template0)      ; (find-eev "eev-template0.el")</code></li>
+<li>L92: <code>(defun ee-S (object)</code></li>
+<li>L103: <code>(defun ee-HS (object) (concat ee-hyperlink-prefix (ee-S object)))</code></li>
+<li>L105: <code>(defun ee-H (str) (format "%s%s" ee-hyperlink-prefix str))</code></li>
+<li>L107: <code>(defun ee-needs-quote (obj)</code></li>
+<li>L111: <code>(defun ee-add-quote (obj)</code></li>
+<li>L117: <code>(defun ee-Q (obj)</code></li>
+<li>L120: <code>(defun ee-Qrest (rest)</code></li>
+<li>L125: <code>(defun ee-ppp00 (list)             (mapconcat 'ee-pp0 list "\n"))</code></li>
+<li>L126: <code>(defun ee-ppp0  (list) (concat "(" (mapconcat 'ee-pp0 list "\n ") ")\n"))</code></li>
+<li>L132: <code>(defun ee-indent-string-in-mode (str code-to-switch-to-mode)</code></li>
+<li>L139: <code>(defun ee-indent-string-as-elisp (str)</code></li>
+<li>L142: <code>(defun ee-pploadhistory00 (list)</code></li>
+<li>L145: <code>(defun ee-pploadhistory0 (list)</code></li>
+<li>L167: <code>(defun ee-splitn (n str)</code></li>
+<li>L176: <code>(defun ee-this-line-extract ()</code></li>
+<li>L179: <code>(defun ee-this-line-extractn (n)</code></li>
+<li>L182: <code>(defun ee-this-line-wrapn (n f)</code></li>
+<li>L217: <code>(defun  eewrap-anchor () (interactive)</code></li>
+<li>L219: <code>(defun ee-wrap-anchor (line)</code></li>
+<li>L224: <code>(defun ee-wrap-anchor0 (prefix anchor)</code></li>
+<li>L245: <code>;; (define-key eev-mode-map "\M-B" 'eewrap-escript-block)</code></li>
+<li>L247: <code>(defun  eewrap-escript-block () (interactive)</code></li>
+<li>L249: <code>(defun ee-wrap-escript-block (anchor title &amp;optional date)</code></li>
+<li>L279: <code>(defun  eewrap-code-c-d () (interactive)</code></li>
+<li>L281: <code>(defun ee-wrap-code-c-d (c d)</code></li>
+<li>L299: <code>(defun  eewrap-debian () (interactive)</code></li>
+<li>L301: <code>(defun ee-wrap-debian (stem)</code></li>
+<li>L319: <code>(defun  eewrap-find-fline () (interactive)</code></li>
+<li>L321: <code>(defun ee-wrap-find-fline (fname)</code></li>
+<li>L341: <code>(defun  eewrap-eejump () (interactive)</code></li>
+<li>L343: <code>(defun ee-wrap-eejump (n sexp)</code></li>
+<li>L364: <code>(defun  eewrap-man () (interactive)</code></li>
+<li>L366: <code>(defun ee-wrap-man (str)</code></li>
+<li>L385: <code>(defun  eewrap-pdflike () (interactive)</code></li>
+<li>L387: <code>(defun ee-wrap-pdflike (stem fname)</code></li>
+<li>L407: <code>;; (define-key eev-mode-map "\M-Q" 'eewrap-pdflike-link)</code></li>
+<li>L410: <code>(defun  eewrap-pdflike-link () (interactive)</code></li>
+<li>L412: <code>(defun ee-wrap-pdflike-link (n text)</code></li>
+<li>L417: <code>(defun ee-wrap-pdflike-link1 (what n text)</code></li>
+<li>L437: <code>(defun  eewrap-rm/mkdir/cd () (interactive)</code></li>
+<li>L439: <code>(defun ee-wrap-rm/mkdir/cd (dir)</code></li>
+<li>L459: <code>(defun  eewrap-sh () (interactive)</code></li>
+<li>L461: <code>(defun ee-wrap-sh (str)</code></li>
+<li>L465: <code>(defun  eewrap-sh0 () (interactive)</code></li>
+<li>L467: <code>(defun ee-wrap-sh0 (str)</code></li>
+<li>L495: <code>(defun  eewrap-audiovideo () (interactive)</code></li>
+<li>L497: <code>(defun ee-wrap-audiovideo (stem fname)</code></li>
+<li>L520: <code>;; (define-key eev-mode-map "\M-Z" 'eewrap-zsh)</code></li>
+<li>L524: <code>(defun  eewrap-zsh () (interactive)</code></li>
+<li>L526: <code>(defun ee-wrap-zsh (str)</code></li>
+<li>L545: <code>(defun  eewrap-two-eepitches () (interactive)</code></li>
+<li>L547: <code>(defun ee-wrap-two-eepitches (b c)</code></li>
+<li>L574: <code>(defun  eewrap-eewrap () (interactive)</code></li>
+<li>L578: <code>(defun ee-wrap-eewrap (C stem args)</code></li>
+<li>L588: <code>;; (define-key eev-mode-map \"\\M-{C}\" 'eewrap-{stem})</code></li>
+<li>L594: <code>(defun  eewrap-{stem} () (interactive)</code></li>
+<li>L596: <code>(defun ee-wrap-{stem} ({args})</code></li>
+<li>L607: <code>(defun find-eewrap-links (&amp;optional C stem args &amp;rest pos-spec-list)</code></li>
+<li>L629: <code>(defun find-eewraptest-links (&amp;optional stem line &amp;rest pos-spec-list)</code></li>
+<li>L661: <code>(provide 'eev-wrap)</code></li>
+</ul>
+<h2>eev.el</h2>
+<ul>
+<li>L42: <code>(provide 'eev)</code></li>
+</ul>
+<h2>eev2-all.el</h2>
+<ul>
+<li>L51: <code>(require 'eepitch)             ; (find-eev "eepitch.el")</code></li>
+<li>L52: <code>(require 'eev-wrap)        ; (find-eev "eev-wrap.el")</code></li>
+<li>L59: <code>(require 'eev-flash)           ; (find-eev "eev-flash.el")</code></li>
+<li>L60: <code>(require 'eev-eval)        ; (find-eev "eev-eval.el")</code></li>
+<li>L61: <code>(require 'eev-multiwindow)     ; (find-eev "eev-multiwindow.el")</code></li>
+<li>L62: <code>(require 'eev-mode)        ; (find-eev "eev-mode.el")</code></li>
+<li>L67: <code>(require 'eev-blinks)          ; (find-eev "eev-blinks.el")</code></li>
+<li>L68: <code>(require 'eev-plinks)          ; (find-eev "eev-plinks.el")</code></li>
+<li>L69: <code>(require 'eev-elinks)          ; (find-eev "eev-elinks.el")</code></li>
+<li>L70: <code>(require 'eev-tlinks)          ; (find-eev "eev-tlinks.el")</code></li>
+<li>L75: <code>(require 'eev-code)        ; (find-eev "eev-code.el")</code></li>
+<li>L76: <code>(require 'eev-env)         ; (find-eev "eev-env.el")</code></li>
+<li>L77: <code>(require 'eev-brxxx)           ; (find-eev "eev-brxxx.el")</code></li>
+<li>L78: <code>(require 'eev-pdflike)         ; (find-eev "eev-pdflike.el")</code></li>
+<li>L79: <code>(require 'eev-audiovideo)      ; (find-eev "eev-audiovideo.el")</code></li>
+<li>L80: <code>(require 'eev-codings)         ; (find-eev "eev-codings.el")</code></li>
+<li>L81: <code>(require 'eev-anchors)         ; (find-eev "eev-anchors.el")</code></li>
+<li>L85: <code>(require 'eev-intro)           ; (find-eev "eev-intro.el")</code></li>
+<li>L86: <code>(require 'eev-edit)            ; (find-eev "eev-edit.el")</code></li>
+<li>L87: <code>(require 'eejump)              ; (find-eev "eejump.el")</code></li>
+<li>L88: <code>(require 'eev-rcirc)           ; (find-eev "eev-rcirc.el")</code></li>
+<li>L96: <code>(require 'eev-prepared)     ; (find-eev "eev-prepared.el")</code></li>
+<li>L97: <code>(require 'eev-bounded)      ; (find-eev "eev-bounded.el")</code></li>
+<li>L98: <code>(require 'eev-channels)     ; (find-eev "eev-channels.el")</code></li>
+<li>L100: <code>(provide 'eev2-all)</code></li>
+</ul></main></html>

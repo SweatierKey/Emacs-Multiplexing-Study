@@ -1,0 +1,16 @@
+-- The C compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- No build type selected, defaulting to RelWithDebInfo
+-- System libvterm detected
+-- Configuring done (1.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/admin/Emacs-Multiplexing-Study/.runtime/build-vterm
+[ 25%] Building C object CMakeFiles/vterm-module.dir/vterm-module.c.o
+[ 50%] Building C object CMakeFiles/vterm-module.dir/utf8.c.o
+[ 75%] Building C object CMakeFiles/vterm-module.dir/elisp.c.o
+[100%] Linking C shared module /home/admin/Emacs-Multiplexing-Study/sources/vterm/vterm-module.so
+[100%] Built target vterm-module

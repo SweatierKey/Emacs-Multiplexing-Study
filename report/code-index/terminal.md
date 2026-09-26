@@ -1,0 +1,109 @@
+# Indice del codice: terminal
+
+Fonte: https://git.savannah.gnu.org/cgit/emacs.git
+
+Revisione: `30.1`.
+
+
+## terminal.el
+
+- L46: `(require 'ehelp)`
+- L47: `(require 'shell)`
+- L54: `(defcustom terminal-escape-char ?\C-^`
+- L63: `(defcustom terminal-scrolling t ;;>> Setting this to t sort-of defeats my whole aim in writing this package...`
+- L70: `(defcustom terminal-more-processing t`
+- L78: `(defcustom terminal-redisplay-interval 5000`
+- L89: `(defvar terminal-meta-map nil)`
+- L93: `(define-key map [t] #'te-pass-through)`
+- L96: `(defvar terminal-map nil)`
+- L102: `(define-key map [menu-bar] (make-sparse-keymap))`
+- L103: `(define-key map [t] #'te-pass-through)`
+- L104: `(define-key map [switch-frame] #'handle-switch-frame)`
+- L105: `(define-key map "\e" terminal-meta-map)`
+- L106: `;;(define-key map "\C-l"`
+- L110: `(defvar terminal-escape-map nil)`
+- L114: `(define-key map [t] #'undefined)`
+- L117: `(define-key map s #'digit-argument)))`
+- L118: `(define-key map "b" #'switch-to-buffer)`
+- L119: `(define-key map "o" #'other-window)`
+- L120: `(define-key map "e" #'te-set-escape-char)`
+- L121: `(define-key map "\C-l" #'redraw-display)`
+- L122: `(define-key map "\C-o" #'te-flush-pending-output)`
+- L123: `(define-key map "m" #'te-toggle-more-processing)`
+- L124: `(define-key map "x" #'te-escape-extended-command)`
+- L126: `(define-key map "w" #'te-edit)`
+- L127: `(define-key map "?" #'te-escape-help)`
+- L128: `(define-key map (char-to-string help-char) #'te-escape-help)`
+- L155: `(defvar terminal-more-break-map nil)`
+- L159: `(define-key map [t] #'te-more-break-unread)`
+- L160: `(define-key map (char-to-string help-char) #'te-more-break-help)`
+- L161: `(define-key map " " #'te-more-break-resume)`
+- L162: `(define-key map "\C-l" #'redraw-display)`
+- L163: `(define-key map "\C-o" #'te-more-break-flush-pending-output)`
+- L165: `;(define-key map "\^?" #'te-more-break-flush-pending-output) ;DEL`
+- L166: `(define-key map "\r" #'te-more-break-advance-one-line)`
+- L182: `(defvar te-more-old-local-map nil)`
+- L199: `(defun te-escape ()`
+- L237: `(defun te-escape-help ()`
+- L274: `(defun te-escape-extended-command ()`
+- L290: `(defun te-escape-extended-command-unread ()`
+- L297: `(defun te-set-escape-char (c)`
+- L309: `(defun te-stuff-string (string)`
+- L317: `(defun te-set-output-log (name)`
+- L338: `(defun te-tofu ()`
+- L344: `(defun te-toggle (sym arg)`
+- L350: `(defun te-toggle-more-processing (arg)`
+- L356: `(defun te-toggle-scrolling (arg)`
+- L361: `(defun te-enable-more-processing ()`
+- L366: `(defun te-disable-more-processing ()`
+- L371: `(defun te-do-scrolling ()`
+- L376: `(defun te-do-wrapping ()`
+- L382: `(defun te-set-redisplay-interval (arg)`
+- L398: `(defun te-more-break-unread ()`
+- L410: `(defun te-more-break-resume ()`
+- L417: `(defun te-more-break-help ()`
+- L436: `(defun te-more-break-advance-one-line ()`
+- L442: `(defun te-more-break-flush-pending-output ()`
+- L449: `(defun te-flush-pending-output ()`
+- L468: `(defun te-pass-through ()`
+- L499: `(defun te-set-window-start ()`
+- L512: `(defun te-pending-output-length ()`
+- L524: `(defvar terminal-edit-map nil)`
+- L528: `(define-key terminal-edit-map "\C-c\C-c" #'terminal-cease-edit))`
+- L533: `(defun terminal-edit-mode ()`
+- L544: `(defun te-edit ()`
+- L556: `(defun terminal-cease-edit ()`
+- L601: `(defun te-more-break ()`
+- L634: `(defun te-more-break-unwind ()`
+- L654: `(defun te-set-more-count (newline)`
+- L678: `(defun te-newline ()`
+- L703: `(defun te-move-to-position ()`
+- L718: `(defun te-clear-rest-of-line ()`
+- L726: `(defun te-clear-rest-of-screen ()`
+- L736: `(defun te-clear-screen ()`
+- L750: `(defun te-insert-lines ()`
+- L767: `(defun te-delete-lines ()`
+- L784: `(defun te-beginning-of-line ()`
+- L788: `(defun te-backward-char ()`
+- L793: `(defun te-forward-char ()`
+- L800: `(defun te-delete ()`
+- L808: `(defun te-beep ()`
+- L813: `(defun te-insert-spaces ()`
+- L825: `(defun te-delete-char ()`
+- L842: `(defun te-losing-unix ()`
+- L846: `(defun te-output-tab ()`
+- L858: `(defun te-down-vertically-or-scroll ()`
+- L883: `(defun te-filter (process string)`
+- L904: `(defun te-process-output (preemptible)`
+- L1004: `(defun te-get-char ()`
+- L1025: `(defun te-redisplay-if-necessary (length)`
+- L1033: `(defun te-update-pending-output-display ()`
+- L1045: `(defun te-sentinel (process message)`
+- L1068: `(defun terminal-emulator (buffer program args &optional width height)`
+- L1168: `(defun te-parse-program-and-args (s)`
+- L1190: `(defun terminal-mode ()`
+- L1235: `(defun te-quote-arg-for-sh (string)`
+- L1266: `(defun te-create-terminfo ()`
+- L1308: `(defun te-create-termcap ()`
+- L1338: `(defun te-tic-sentinel (_proc state-change)`
+- L1344: `(provide 'terminal)`

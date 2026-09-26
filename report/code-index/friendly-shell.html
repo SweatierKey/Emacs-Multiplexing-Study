@@ -1,0 +1,48 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: friendly-shell</h1>
+<p>Fonte: https://github.com/p3r7/friendly-shell.git</p>
+<p>Revisione: <code>5cafa3f6313ce04a47c8996ea1ac6b617d155d46</code>.</p>
+<h2>friendly-remote-shell.el</h2>
+<ul>
+<li>L33: <code>(require 'cl-lib)</code></li>
+<li>L35: <code>(require 'tramp)</code></li>
+<li>L36: <code>(require 'tramp-sh)</code></li>
+<li>L38: <code>(require 'friendly-tramp-path)</code></li>
+<li>L39: <code>(require 'with-shell-interpreter)</code></li>
+<li>L40: <code>(require 'friendly-shell)</code></li>
+<li>L54: <code>(defmacro friendly-remote-shell--make-tramp-file-name (vec)</code></li>
+<li>L83: <code>(cl-defun friendly-remote-shell (&amp;key path</code></li>
+<li>L113: <code>(defun friendly-remote-shell-register-display-same-window ()</code></li>
+<li>L124: <code>(provide 'friendly-remote-shell)</code></li>
+</ul>
+<h2>friendly-shell-command.el</h2>
+<ul>
+<li>L36: <code>(require 'cl-lib)</code></li>
+<li>L37: <code>(require 'dash)</code></li>
+<li>L39: <code>(require 'tramp)</code></li>
+<li>L40: <code>(require 'tramp-sh)</code></li>
+<li>L42: <code>(require 'with-shell-interpreter)</code></li>
+<li>L49: <code>(cl-defun friendly-shell-command-to-string (command &amp;key path interpreter command-switch)</code></li>
+<li>L63: <code>(cl-defun friendly-shell-command-async (command &amp;key output-buffer error-buffer</code></li>
+<li>L116: <code>(cl-defun friendly-shell-command (command &amp;key output-buffer error-buffer</code></li>
+<li>L158: <code>(defun friendly-shell-command--kill-buffer-sentinel (process _output)</code></li>
+<li>L163: <code>(cl-defun friendly-shell-command--build-process-sentinel (process &amp;key sentinel callback kill-buffer)</code></li>
+<li>L187: <code>(provide 'friendly-shell-command)</code></li>
+</ul>
+<h2>friendly-shell.el</h2>
+<ul>
+<li>L32: <code>(require 'cl-lib)</code></li>
+<li>L33: <code>(require 'dash)</code></li>
+<li>L35: <code>(require 'tramp)</code></li>
+<li>L36: <code>(require 'tramp-sh)</code></li>
+<li>L38: <code>(require 'with-shell-interpreter)</code></li>
+<li>L65: <code>(cl-defun friendly-shell (&amp;key path</code></li>
+<li>L151: <code>(defun friendly-shell--generate-buffer-name (is-remote interpreter path)</code></li>
+<li>L158: <code>(defun friendly-shell--generate-buffer-name-local (&amp;optional interpreter _path)</code></li>
+<li>L164: <code>(defun friendly-shell--generate-buffer-name-remote (&amp;optional _interpreter path)</code></li>
+<li>L169: <code>(defun friendly-shell--tramp-hop-paths-from-vec (vec)</code></li>
+<li>L175: <code>(defun friendly-shell--tramp-hop-paths (path)</code></li>
+<li>L179: <code>(defun friendly-shell--generate-buffer-name-remote-from-vec (vec)</code></li>
+<li>L193: <code>(defun friendly-shell--stty-echo-p (explicit-interpreter-args)</code></li>
+<li>L206: <code>(defun friendly-shell--maybe-register-buffer-display-same-win (basename)</code></li>
+<li>L218: <code>(provide 'friendly-shell)</code></li>
+</ul></main></html>

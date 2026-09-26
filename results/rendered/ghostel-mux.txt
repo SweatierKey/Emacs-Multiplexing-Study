@@ -1,0 +1,32 @@
+File Edit Options Buffers Tools Ghostel Help                                                                  
+admin@DESKTOP-RH2IGIR:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web                                   
+                                                                                                              
+SSH LAB: web (loopback fixture, same kernel)                                                                  
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log                    
+role=web                                                                                                      
+service=active                                                                                                
+version=1.0                                                                                                   
+INFO web health=ok                                                                                            
+WARN web disk threshold=75                                                                                    
+INFO web requests=42                                                                                          
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive                      
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printenv STUDY_KEEP                                      
+web-session-alive                                                                                             
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ less service.log                                         
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printf 'PAGER_%s\n' RETURNED                             
+PAGER_RETURNED                                                                                                
+web@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$                                                          
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+ ● session-1:1.1 shell                                                                                        
+                                                                                                              

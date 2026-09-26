@@ -1,0 +1,182 @@
+[
+  {
+    "at": 2.321,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.622,
+    "keys": "term-run-shell-command",
+    "input_hex": "7465726d2d72756e2d7368656c6c2d636f6d6d616e64"
+  },
+  {
+    "at": 3.122,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 3.922,
+    "keys": "/bin/bash --noprofile --norc",
+    "input_hex": "2f62696e2f62617368202d2d6e6f70726f66696c65202d2d6e6f7263"
+  },
+  {
+    "at": 4.122,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.422,
+    "keys": "C-x o: select displayed terminal",
+    "input_hex": "186f"
+  },
+  {
+    "at": 5.825,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 6.026,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.026,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 7.226,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.228,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 8.428,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.23,
+    "keys": "C-c C-j: term line mode",
+    "input_hex": "030a"
+  },
+  {
+    "at": 9.63,
+    "keys": "C-u",
+    "input_hex": "15"
+  },
+  {
+    "at": 10.032,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 10.332,
+    "keys": "term-run-shell-command",
+    "input_hex": "7465726d2d72756e2d7368656c6c2d636f6d6d616e64"
+  },
+  {
+    "at": 10.832,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.632,
+    "keys": "/bin/bash --noprofile --norc",
+    "input_hex": "2f62696e2f62617368202d2d6e6f70726f66696c65202d2d6e6f7263"
+  },
+  {
+    "at": 11.832,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 13.132,
+    "keys": "C-x o: select displayed terminal",
+    "input_hex": "186f"
+  },
+  {
+    "at": 13.535,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 13.735,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 14.736,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 14.936,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.939,
+    "keys": "C-c C-j: term line mode",
+    "input_hex": "030a"
+  },
+  {
+    "at": 16.339,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 16.739,
+    "keys": "*Term-Run Shell Command*",
+    "input_hex": "2a5465726d2d52756e205368656c6c20436f6d6d616e642a"
+  },
+  {
+    "at": 17.139,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 17.553,
+    "keys": "C-c C-k: term char mode",
+    "input_hex": "030b"
+  },
+  {
+    "at": 17.953,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 18.153,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 18.855,
+    "keys": "less service.log",
+    "input_hex": "6c65737320736572766963652e6c6f67"
+  },
+  {
+    "at": 19.055,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 19.757,
+    "keys": "q: leave less",
+    "input_hex": "71"
+  },
+  {
+    "at": 20.257,
+    "keys": "printf 'PAGER_%s\\n' RETURNED",
+    "input_hex": "7072696e7466202750414745525f25735c6e272052455455524e4544"
+  },
+  {
+    "at": 20.457,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

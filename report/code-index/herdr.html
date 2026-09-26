@@ -1,0 +1,311 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: herdr</h1>
+<p>Fonte: https://github.com/eddof13/herdr.el.git</p>
+<p>Revisione: <code>6500aa6e272aaf125111150a62dd12c7644f1825</code>.</p>
+<h2>herdr-agents.el</h2>
+<ul>
+<li>L22: <code>(require 'subr-x)</code></li>
+<li>L23: <code>(require 'herdr-state)</code></li>
+<li>L24: <code>(require 'herdr-cmd)</code></li>
+<li>L26: <code>(defcustom herdr-notify-statuses nil</code></li>
+<li>L32: <code>(defcustom herdr-agents-buffer-name "*herdr-agents*"</code></li>
+<li>L43: <code>(defun herdr-agents--counts (state)</code></li>
+<li>L52: <code>(defun herdr-agents--segment (state)</code></li>
+<li>L74: <code>(defun herdr-agents--refresh-segment (&amp;rest _)</code></li>
+<li>L86: <code>(define-key map [mode-line mouse-1]</code></li>
+<li>L91: <code>(defun herdr-agents--ensure-global-mode-string ()</code></li>
+<li>L111: <code>(define-minor-mode herdr-agents-mode-line-mode</code></li>
+<li>L131: <code>(defun herdr-agents--notify (title body)</code></li>
+<li>L139: <code>(defun herdr-agents--maybe-notify (&amp;rest _)</code></li>
+<li>L155: <code>(defvar herdr-agents-mode-map</code></li>
+<li>L157: <code>(define-key map (kbd "RET") #'herdr-agents-visit)</code></li>
+<li>L158: <code>(define-key map "p" #'herdr-agents-prompt)</code></li>
+<li>L159: <code>(define-key map "r" #'herdr-agents-read)</code></li>
+<li>L160: <code>(define-key map "g" #'herdr-agents-refresh)</code></li>
+<li>L161: <code>(define-key map "q" #'quit-window)</code></li>
+<li>L165: <code>(define-derived-mode herdr-agents-mode special-mode "herdr-agents"</code></li>
+<li>L170: <code>(defun herdr-agents--pane-at-point ()</code></li>
+<li>L175: <code>(defun herdr-agents-visit ()</code></li>
+<li>L184: <code>(defun herdr-agents-prompt ()</code></li>
+<li>L189: <code>(defun herdr-agents-read ()</code></li>
+<li>L194: <code>(defun herdr-agents--insert-tree (state)</code></li>
+<li>L219: <code>(defun herdr-agents-refresh ()</code></li>
+<li>L232: <code>(defun herdr-agents ()</code></li>
+<li>L242: <code>(defun herdr-agents--refresh-hook (&amp;rest _)</code></li>
+<li>L250: <code>(provide 'herdr-agents)</code></li>
+</ul>
+<h2>herdr-call.el</h2>
+<ul>
+<li>L21: <code>(require 'subr-x)</code></li>
+<li>L22: <code>(require 'herdr-rpc)</code></li>
+<li>L23: <code>(require 'herdr-schema)</code></li>
+<li>L24: <code>(require 'herdr-state)</code></li>
+<li>L25: <code>(require 'herdr-select)</code></li>
+<li>L27: <code>(defun herdr-call--annotate (method)</code></li>
+<li>L34: <code>(defun herdr-call--read-method ()</code></li>
+<li>L44: <code>(defun herdr-call--read-value (method name)</code></li>
+<li>L54: <code>(defun herdr-call (&amp;optional method)</code></li>
+<li>L73: <code>(defun herdr-call--display (method result)</code></li>
+<li>L89: <code>(provide 'herdr-call)</code></li>
+</ul>
+<h2>herdr-cmd.el</h2>
+<ul>
+<li>L25: <code>(require 'subr-x)</code></li>
+<li>L26: <code>(require 'ansi-color)</code></li>
+<li>L27: <code>(require 'herdr-rpc)</code></li>
+<li>L28: <code>(require 'herdr-state)</code></li>
+<li>L29: <code>(require 'herdr-select)</code></li>
+<li>L30: <code>(require 'herdr-term)</code></li>
+<li>L71: <code>(defcustom herdr-adopt-created-shells t</code></li>
+<li>L86: <code>(defun herdr-cmd--current-pane-id ()</code></li>
+<li>L91: <code>(defun herdr-cmd--created-pane-id (result)</code></li>
+<li>L98: <code>(defun herdr-cmd--follow-new-pane (pane-id)</code></li>
+<li>L123: <code>(defun herdr-cmd--select-pane-when-ready (pane-id)</code></li>
+<li>L134: <code>(defun herdr-cmd--read-source (&amp;optional prompt)</code></li>
+<li>L145: <code>(defun herdr-pane-split-right (&amp;optional target)</code></li>
+<li>L155: <code>(defun herdr-pane-split-down (&amp;optional target)</code></li>
+<li>L165: <code>(defun herdr-pane-close (&amp;optional pane-id)</code></li>
+<li>L178: <code>(defun herdr-pane-zoom (&amp;optional pane-id)</code></li>
+<li>L185: <code>(defun herdr-pane-resize (direction &amp;optional amount pane-id)</code></li>
+<li>L195: <code>(defun herdr-pane-swap (direction &amp;optional pane-id)</code></li>
+<li>L203: <code>(defun herdr-pane-rename (label &amp;optional pane-id)</code></li>
+<li>L210: <code>(defun herdr-pane-focus (&amp;optional pane-id)</code></li>
+<li>L223: <code>(defun herdr-cmd--follow-focus ()</code></li>
+<li>L234: <code>(defun herdr-cmd--offer-to-adopt (pane-id)</code></li>
+<li>L252: <code>(defun herdr-cmd-read-text (result)</code></li>
+<li>L262: <code>(defun herdr-cmd-read-truncated-p (result)</code></li>
+<li>L271: <code>(defun herdr-cmd--display-read (name result)</code></li>
+<li>L289: <code>(defun herdr-pane-read (&amp;optional pane-id source lines)</code></li>
+<li>L302: <code>(defun herdr-pane-send-text (text &amp;optional pane-id)</code></li>
+<li>L309: <code>(defun herdr-pane-run (command &amp;optional pane-id)</code></li>
+<li>L318: <code>(defun herdr-pane-wait-for-output (pattern &amp;optional pane-id timeout)</code></li>
+<li>L338: <code>(defun herdr-tab-create (&amp;optional label)</code></li>
+<li>L347: <code>(defun herdr-tab-close (&amp;optional tab-id)</code></li>
+<li>L353: <code>(defun herdr-tab-focus (&amp;optional tab-id)</code></li>
+<li>L361: <code>(defun herdr-tab-rename (label &amp;optional tab-id)</code></li>
+<li>L370: <code>(defun herdr-workspace-create (cwd &amp;optional label)</code></li>
+<li>L381: <code>(defun herdr-workspace-close (&amp;optional workspace-id)</code></li>
+<li>L411: <code>(defun herdr-workspace-focus (&amp;optional workspace-id)</code></li>
+<li>L419: <code>(defun herdr-workspace-rename (label &amp;optional workspace-id)</code></li>
+<li>L429: <code>(defun herdr-worktree-list ()</code></li>
+<li>L442: <code>(defun herdr-worktree-create (branch &amp;optional base)</code></li>
+<li>L454: <code>(defun herdr-worktree-open (branch)</code></li>
+<li>L462: <code>(defun herdr-worktree-remove (&amp;optional workspace-id force)</code></li>
+<li>L476: <code>(defcustom herdr-agent-kinds</code></li>
+<li>L488: <code>(defun herdr-agent-prompt (text &amp;optional target)</code></li>
+<li>L495: <code>(defun herdr-agent-read (&amp;optional target source lines)</code></li>
+<li>L508: <code>(defun herdr-agent-wait (&amp;optional target until timeout)</code></li>
+<li>L526: <code>(defun herdr-cmd--split-new-shell ()</code></li>
+<li>L540: <code>(defun herdr-agent-start (name kind &amp;optional pane-id)</code></li>
+<li>L568: <code>(defun herdr-agent-explain (&amp;optional target)</code></li>
+<li>L576: <code>(defun herdr-agent-focus (&amp;optional target)</code></li>
+<li>L591: <code>(defun herdr-adopt-shell (&amp;optional pane-id)</code></li>
+<li>L618: <code>(defun herdr-promote-shell (&amp;optional pane-id)</code></li>
+<li>L638: <code>(defun herdr-release-shell (&amp;optional pane-id)</code></li>
+<li>L658: <code>(defun herdr-notification-show (title &amp;optional body)</code></li>
+<li>L666: <code>(provide 'herdr-cmd)</code></li>
+</ul>
+<h2>herdr-rpc.el</h2>
+<ul>
+<li>L27: <code>(require 'json)</code></li>
+<li>L28: <code>(require 'subr-x)</code></li>
+<li>L29: <code>(require 'cl-lib)</code></li>
+<li>L36: <code>(defcustom herdr-socket-path "~/.config/herdr/herdr.sock"</code></li>
+<li>L41: <code>(defcustom herdr-executable "herdr"</code></li>
+<li>L46: <code>(defcustom herdr-rpc-timeout 10.0</code></li>
+<li>L53: <code>(defun herdr-error-code (err)</code></li>
+<li>L57: <code>(defun herdr-error-message (err)</code></li>
+<li>L61: <code>(defun herdr-rpc--signal (code message)</code></li>
+<li>L68: <code>(defun herdr-rpc--next-id ()</code></li>
+<li>L72: <code>(defun herdr-rpc--params-object (params)</code></li>
+<li>L86: <code>(defun herdr-rpc-array (items)</code></li>
+<li>L95: <code>(defun herdr-rpc-encode (id method params)</code></li>
+<li>L103: <code>(defun herdr-rpc-decode (line)</code></li>
+<li>L109: <code>(defun herdr-rpc-connect (name filter sentinel)</code></li>
+<li>L125: <code>(defun herdr-rpc--result (payload)</code></li>
+<li>L132: <code>(defun herdr-rpc-call (method &amp;optional params)</code></li>
+<li>L161: <code>(defun herdr-rpc-call-async (method params callback)</code></li>
+<li>L195: <code>(provide 'herdr-rpc)</code></li>
+</ul>
+<h2>herdr-schema.el</h2>
+<ul>
+<li>L26: <code>(require 'json)</code></li>
+<li>L27: <code>(require 'subr-x)</code></li>
+<li>L28: <code>(require 'herdr-rpc)</code></li>
+<li>L30: <code>(defcustom herdr-schema-cache-file</code></li>
+<li>L44: <code>(defun herdr-schema-load-file (path)</code></li>
+<li>L52: <code>(defun herdr-schema--fetch ()</code></li>
+<li>L66: <code>(defun herdr-schema--server-version ()</code></li>
+<li>L70: <code>(defun herdr-schema ()</code></li>
+<li>L90: <code>(defun herdr-schema--request ()</code></li>
+<li>L95: <code>(defun herdr-schema--defs ()</code></li>
+<li>L99: <code>(defun herdr-schema-resolve (node)</code></li>
+<li>L116: <code>(defun herdr-schema--entry (method)</code></li>
+<li>L125: <code>(defun herdr-schema-methods ()</code></li>
+<li>L132: <code>(defun herdr-schema--params-def (method)</code></li>
+<li>L138: <code>(defun herdr-schema-params (method)</code></li>
+<li>L144: <code>(defun herdr-schema-required (method)</code></li>
+<li>L148: <code>(defun herdr-schema-param (method name)</code></li>
+<li>L153: <code>(defun herdr-schema-enum (method name)</code></li>
+<li>L157: <code>(defun herdr-schema-param-type (method name)</code></li>
+<li>L172: <code>(defun herdr-schema--type-symbol (type)</code></li>
+<li>L185: <code>(defun herdr-schema-read-param (method name)</code></li>
+<li>L207: <code>(provide 'herdr-schema)</code></li>
+</ul>
+<h2>herdr-select.el</h2>
+<ul>
+<li>L26: <code>(require 'subr-x)</code></li>
+<li>L27: <code>(require 'herdr-state)</code></li>
+<li>L28: <code>(require 'herdr-rpc)</code></li>
+<li>L29: <code>(require 'herdr-term)</code></li>
+<li>L37: <code>(defun herdr-select--status-glyph (status)</code></li>
+<li>L46: <code>(defun herdr-select--annotate-pane (pane-id)</code></li>
+<li>L64: <code>(defun herdr-select--annotate-workspace (workspace-id)</code></li>
+<li>L76: <code>(defun herdr-select--annotate-tab (tab-id)</code></li>
+<li>L87: <code>(defun herdr-select--read (prompt candidates category annotator)</code></li>
+<li>L99: <code>(defun herdr-select-pane (&amp;optional prompt)</code></li>
+<li>L108: <code>(defun herdr-select-agent (&amp;optional prompt)</code></li>
+<li>L116: <code>(defun herdr-select--available-shell-ids (state)</code></li>
+<li>L128: <code>(defun herdr-select-available-shell (&amp;optional prompt)</code></li>
+<li>L145: <code>(defun herdr-select-workspace (&amp;optional prompt)</code></li>
+<li>L153: <code>(defun herdr-select-tab (&amp;optional prompt)</code></li>
+<li>L161: <code>(defun herdr-select-current-target (&amp;optional buffer)</code></li>
+<li>L167: <code>(defun herdr-select-target-pane (&amp;optional prompt)</code></li>
+<li>L201: <code>(defun herdr-select--register-marginalia ()</code></li>
+<li>L214: <code>(defvar herdr-select-pane-embark-map</code></li>
+<li>L216: <code>(define-key map "f" #'herdr-pane-focus)</code></li>
+<li>L217: <code>(define-key map "r" #'herdr-pane-read)</code></li>
+<li>L218: <code>(define-key map "p" #'herdr-agent-prompt)</code></li>
+<li>L219: <code>(define-key map "k" #'herdr-pane-close)</code></li>
+<li>L220: <code>(define-key map "z" #'herdr-pane-zoom)</code></li>
+<li>L229: <code>(defun herdr-select-panes-with-buffers ()</code></li>
+<li>L239: <code>(defun herdr-select--consult-visit (pane-id)</code></li>
+<li>L245: <code>(defun herdr-select--consult-source ()</code></li>
+<li>L270: <code>(provide 'herdr-select)</code></li>
+</ul>
+<h2>herdr-state.el</h2>
+<ul>
+<li>L36: <code>(require 'cl-lib)</code></li>
+<li>L37: <code>(require 'subr-x)</code></li>
+<li>L38: <code>(require 'herdr-rpc)</code></li>
+<li>L40: <code>(defcustom herdr-state-reconnect-min 1.0</code></li>
+<li>L45: <code>(defcustom herdr-state-reconnect-max 30.0</code></li>
+<li>L78: <code>(defun herdr-state-empty ()</code></li>
+<li>L82: <code>(defun herdr-state-from-snapshot (snapshot)</code></li>
+<li>L92: <code>(defun herdr-state-pane (state id)</code></li>
+<li>L97: <code>(defcustom herdr-shell-agent-name "shell"</code></li>
+<li>L108: <code>(defun herdr-state-shell-pane-p (pane)</code></li>
+<li>L112: <code>(defun herdr-state-attachable (state)</code></li>
+<li>L118: <code>(defun herdr-state-agents (state)</code></li>
+<li>L124: <code>(defun herdr-state-pane-directory (pane)</code></li>
+<li>L136: <code>(defun herdr-state--normalize-dir (path)</code></li>
+<li>L141: <code>(defun herdr-state-workspace-for-directory (state directory)</code></li>
+<li>L169: <code>(defun herdr-state-pane-ids (state)</code></li>
+<li>L176: <code>(defun herdr-state--upsert (items key id new)</code></li>
+<li>L187: <code>(defun herdr-state--remove (items key id)</code></li>
+<li>L191: <code>(defun herdr-state--reorder-block (items key ids before)</code></li>
+<li>L214: <code>(defun herdr-state--merge-pane (state pane-id changes)</code></li>
+<li>L230: <code>(defun herdr-state-reduce (state kind data)</code></li>
+<li>L336: <code>(defcustom herdr-state-prime-quiet 0.4</code></li>
+<li>L348: <code>(defcustom herdr-state-ack-timeout 5.0</code></li>
+<li>L374: <code>(defun herdr-state-current ()</code></li>
+<li>L378: <code>(defun herdr-state--dispatch (kind data)</code></li>
+<li>L383: <code>(defun herdr-state--apply-buffered-events ()</code></li>
+<li>L392: <code>(defun herdr-state--handle-line (line)</code></li>
+<li>L411: <code>(defun herdr-state--filter (proc chunk)</code></li>
+<li>L422: <code>(defun herdr-state--close (proc)</code></li>
+<li>L432: <code>(defun herdr-state--sentinel (proc _event)</code></li>
+<li>L439: <code>(defun herdr-state--subscribe (name subscriptions)</code></li>
+<li>L449: <code>(defun herdr-state--pane-subscriptions ()</code></li>
+<li>L456: <code>(defun herdr-state--open-pane-stream ()</code></li>
+<li>L465: <code>(defun herdr-state--resubscribe-panes ()</code></li>
+<li>L474: <code>(defun herdr-state--refresh-statuses ()</code></li>
+<li>L489: <code>(defun herdr-state--note-pane-set-change (kind _data)</code></li>
+<li>L498: <code>(defun herdr-state--schedule-reconnect ()</code></li>
+<li>L509: <code>(defun herdr-state--reconnect ()</code></li>
+<li>L519: <code>(defun herdr-state--open-global-stream ()</code></li>
+<li>L529: <code>(defun herdr-state--wait-for-ack (proc timeout)</code></li>
+<li>L539: <code>(defun herdr-state--bootstrap ()</code></li>
+<li>L560: <code>(defun herdr-state-detected-agent (pane-id)</code></li>
+<li>L572: <code>(defun herdr-state-promote-shell-panes ()</code></li>
+<li>L612: <code>(defun herdr-state--pane-differs-p (known fresh)</code></li>
+<li>L618: <code>(defun herdr-state-reconcile-panes ()</code></li>
+<li>L670: <code>(defun herdr-state-refresh ()</code></li>
+<li>L684: <code>(defun herdr-state-resync ()</code></li>
+<li>L694: <code>(defun herdr-state-start ()</code></li>
+<li>L706: <code>(defun herdr-state-stop ()</code></li>
+<li>L724: <code>(defun herdr-state-running-p ()</code></li>
+<li>L728: <code>(provide 'herdr-state)</code></li>
+</ul>
+<h2>herdr-term.el</h2>
+<ul>
+<li>L41: <code>(require 'cl-lib)</code></li>
+<li>L42: <code>(require 'subr-x)</code></li>
+<li>L43: <code>(require 'herdr-rpc)</code></li>
+<li>L44: <code>(require 'herdr-state)</code></li>
+<li>L49: <code>(defcustom herdr-terminal-backend 'session</code></li>
+<li>L60: <code>(defcustom herdr-display-action</code></li>
+<li>L80: <code>(defun herdr-term--show (buffer)</code></li>
+<li>L84: <code>(defcustom herdr-server-start-timeout 15.0</code></li>
+<li>L94: <code>(defun herdr-term-agent-buffer-name (pane)</code></li>
+<li>L100: <code>(defun herdr-term-attach-args (pane-id takeover)</code></li>
+<li>L105: <code>(defun herdr-term-session-args ()</code></li>
+<li>L109: <code>(defun herdr-term-reconcile (state buffers)</code></li>
+<li>L132: <code>(defun herdr-server-live-p ()</code></li>
+<li>L138: <code>(defun herdr-term--bootstrap-server ()</code></li>
+<li>L166: <code>(defun herdr-term--live-agent-buffers ()</code></li>
+<li>L172: <code>(defun herdr-term-select-pane (pane-id)</code></li>
+<li>L191: <code>(defun herdr-term--attach-if-possible (pane-id)</code></li>
+<li>L198: <code>(defun herdr-term-select-focused ()</code></li>
+<li>L207: <code>(defun herdr-term-buffer-for-pane (pane-id)</code></li>
+<li>L213: <code>(defun herdr-term-pane-for-buffer (&amp;optional buffer)</code></li>
+<li>L226: <code>(defun herdr-term--attach (pane)</code></li>
+<li>L237: <code>(defun herdr-term--attach-1 (pane pane-id)</code></li>
+<li>L264: <code>(defun herdr-term--rename-stale-buffers ()</code></li>
+<li>L278: <code>(defun herdr-term--sync-agent-windows ()</code></li>
+<li>L294: <code>(defcustom herdr-term-track-directory t</code></li>
+<li>L308: <code>(defcustom herdr-term-directory-interval 5.0</code></li>
+<li>L322: <code>(defcustom herdr-term-directory-debounce 0.4</code></li>
+<li>L332: <code>(defun herdr-term--poll-directories ()</code></li>
+<li>L344: <code>(defun herdr-term--schedule-directory-poll ()</code></li>
+<li>L355: <code>(defun herdr-term--start-directory-timer ()</code></li>
+<li>L368: <code>(defun herdr-term--stop-directory-timer ()</code></li>
+<li>L376: <code>(defun herdr-term--set-directory (buffer pane)</code></li>
+<li>L384: <code>(defun herdr-term--sync-directories ()</code></li>
+<li>L400: <code>(defun herdr-term--on-state-change (_kind _data)</code></li>
+<li>L409: <code>(defun herdr-term-ensure ()</code></li>
+<li>L432: <code>(defun herdr-term-display ()</code></li>
+<li>L445: <code>(defun herdr-term-teardown ()</code></li>
+<li>L458: <code>(provide 'herdr-term)</code></li>
+</ul>
+<h2>herdr-transient.el</h2>
+<ul>
+<li>L19: <code>(require 'transient)</code></li>
+<li>L20: <code>(require 'herdr-state)</code></li>
+<li>L21: <code>(require 'herdr-term)</code></li>
+<li>L22: <code>(require 'herdr-cmd)</code></li>
+<li>L23: <code>(require 'herdr-select)</code></li>
+<li>L24: <code>(require 'herdr-call)</code></li>
+<li>L25: <code>(require 'herdr-agents)</code></li>
+<li>L32: <code>(defun herdr-transient-tui-p ()</code></li>
+<li>L54: <code>(defun herdr-transient--origin-buffer ()</code></li>
+<li>L64: <code>(defun herdr-transient--target ()</code></li>
+<li>L78: <code>(defun herdr-transient--heading ()</code></li>
+<li>L174: <code>(defun herdr-transient-status ()</code></li>
+<li>L189: <code>(provide 'herdr-transient)</code></li>
+</ul>
+<h2>herdr.el</h2>
+<ul>
+<li>L29: <code>(require 'herdr-rpc)</code></li>
+<li>L30: <code>(require 'herdr-state)</code></li>
+<li>L31: <code>(require 'herdr-term)</code></li>
+<li>L32: <code>(require 'herdr-cmd)</code></li>
+<li>L33: <code>(require 'herdr-agents)</code></li>
+<li>L38: <code>(defcustom herdr-protocol-version 22</code></li>
+<li>L47: <code>(defun herdr--check-protocol ()</code></li>
+<li>L60: <code>(defun herdr-start ()</code></li>
+<li>L72: <code>(defun herdr-stop ()</code></li>
+<li>L80: <code>(defun herdr-project ()</code></li>
+<li>L100: <code>(defun herdr ()</code></li>
+<li>L112: <code>(require 'herdr-transient)</code></li>
+<li>L114: <code>(provide 'herdr)</code></li>
+</ul></main></html>

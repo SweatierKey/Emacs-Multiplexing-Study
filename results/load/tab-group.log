@@ -1,0 +1,11 @@
+{"status":"loaded","feature":"tab-group","library":"/home/admin/Emacs-Multiplexing-Study/sources/tab-group/tab-group.el","commands":["tab-group:auto-group-local-mode","tab-group:auto-mode","tab-group:group-buffer-local-mode","tab-group:group-buffer-mode","tab-group:list","tab-group:local-mode","tab-group:menu-1-window","tab-group:menu-2-window","tab-group:menu-mouse-select","tab-group:menu-other-window","tab-group:menu-select","tab-group:menu-this-window","tab-group:menu-view","tab-group:menu-view-other-window","tab-group:mouse-kill","tab-group:mouse-move","tab-group:mouse-select","tab-group:move-end","tab-group:move-start","tab-group:move-tab-begin","tab-group:move-tab-end","tab-group:move-tab-left","tab-group:move-tab-right","tab-group:new","tab-group:next","tab-group:next-group","tab-group:pop","tab-group:prev","tab-group:prev-group","tab-group:remove","tab-group:rename","tab-group:scroll-begin","tab-group:scroll-end","tab-group:scroll-left","tab-group:scroll-right","tab-group:select","tab-group:switch","tab-group:tab-list-mode"]}
+STDERR:
+Package cl is deprecated
+sources/tab-group/tab-group.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/tab-group/tab-group.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/tab-group/tab-group.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/tab-group/tab-group.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/tab-group/tab-group.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/tab-group/tab-group.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/tab-group/tab-group.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/tab-group/tab-group.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.

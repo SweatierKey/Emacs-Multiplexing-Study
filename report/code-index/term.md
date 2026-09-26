@@ -1,0 +1,317 @@
+# Indice del codice: term
+
+Fonte: https://git.savannah.gnu.org/cgit/emacs.git
+
+Revisione: `30.1`.
+
+
+## term.el
+
+- L306: `(require 'comint) ; Password regexp.`
+- L307: `(require 'ansi-color)`
+- L308: `(require 'ehelp)`
+- L309: `(require 'ring)`
+- L310: `(require 'shell)`
+- L388: `(defvar term-old-mode-map nil "Saves the old keymap when in char mode.")`
+- L390: `(defvar term-pager-old-local-map nil "Saves old keymap while paging.")`
+- L420: `(defcustom term-input-autoexpand nil`
+- L433: `(defcustom term-input-ignoredups nil`
+- L441: `(defcustom term-input-ring-file-name nil`
+- L449: `(defcustom term-char-mode-buffer-read-only t`
+- L463: `(defcustom term-set-terminal-size nil`
+- L468: `(defcustom term-char-mode-point-at-process-mark t`
+- L489: `(defcustom term-scroll-to-bottom-on-output nil`
+- L507: `(defcustom term-scroll-snap-to-bottom t`
+- L515: `(defcustom term-scroll-show-maximum-output nil`
+- L524: `(defcustom term-suppress-hard-newline nil`
+- L533: `(defcustom term-clear-full-screen-programs t`
+- L583: `(defcustom term-eol-on-send t`
+- L589: `(defcustom term-mode-hook '()`
+- L595: `(defcustom term-exec-hook '()`
+- L604: `(defvar term-mode-map`
+- L606: `(define-key map "\ep" 'term-previous-input)`
+- L607: `(define-key map "\en" 'term-next-input)`
+- L608: `(define-key map "\er" 'term-previous-matching-input)`
+- L609: `(define-key map "\es" 'term-next-matching-input)`
+- L610: `(define-key map [?\A-\M-r]`
+- L612: `(define-key map [?\A-\M-s] 'term-next-matching-input-from-input)`
+- L613: `(define-key map "\e\C-l" 'term-show-output)`
+- L614: `(define-key map "\C-m" 'term-send-input)`
+- L615: `(define-key map "\C-d" 'term-delchar-or-maybe-eof)`
+- L616: `(define-key map "\C-c\C-a" 'term-bol)`
+- L617: `(define-key map "\C-c\C-u" 'term-kill-input)`
+- L618: `(define-key map "\C-c\C-w" 'backward-kill-word)`
+- L619: `(define-key map "\C-c\C-c" 'term-interrupt-subjob)`
+- L620: `(define-key map "\C-c\C-z" 'term-stop-subjob)`
+- L621: `(define-key map "\C-c\C-\\" 'term-quit-subjob)`
+- L622: `(define-key map "\C-c\C-m" 'term-copy-old-input)`
+- L623: `(define-key map "\C-c\C-o" 'term-kill-output)`
+- L624: `(define-key map "\C-c\C-r" 'term-show-output)`
+- L625: `(define-key map "\C-c\C-e" 'term-show-maximum-output)`
+- L626: `(define-key map "\C-c\C-l" 'term-dynamic-list-input-ring)`
+- L627: `(define-key map "\C-c\C-n" 'term-next-prompt)`
+- L628: `(define-key map "\C-c\C-p" 'term-previous-prompt)`
+- L629: `(define-key map "\C-c\C-d" 'term-send-eof)`
+- L630: `(define-key map "\C-c\C-k" 'term-char-mode)`
+- L631: `(define-key map "\C-c\C-j" 'term-line-mode)`
+- L632: `(define-key map "\C-c\C-q" 'term-pager-toggle)`
+- L670: `(defvar term-pager-break-map`
+- L673: `;;   (define-key map (make-string 1 i) 'term-send-raw))`
+- L674: `(define-key map "\e" (lookup-key (current-global-map) "\e"))`
+- L675: `(define-key map "\C-x" (lookup-key (current-global-map) "\C-x"))`
+- L676: `(define-key map "\C-u" (lookup-key (current-global-map) "\C-u"))`
+- L677: `(define-key map " " 'term-pager-page)`
+- L678: `(define-key map "\r" 'term-pager-line)`
+- L679: `(define-key map "?" 'term-pager-help)`
+- L680: `(define-key map "h" 'term-pager-help)`
+- L681: `(define-key map "b" 'term-pager-back-page)`
+- L682: `(define-key map "\177" 'term-pager-back-line)`
+- L683: `(define-key map "q" 'term-pager-discard)`
+- L684: `(define-key map "D" 'term-pager-disable)`
+- L685: `(define-key map "<" 'term-pager-bob)`
+- L686: `(define-key map ">" 'term-pager-eob)`
+- L716: `(defmacro term-in-char-mode () '(eq (current-local-map) term-raw-map))`
+- L717: `(defmacro term-in-line-mode () '(not (term-in-char-mode)))`
+- L719: `(defmacro term-pager-enabled () 'term-pager-count)`
+- L720: `(defmacro term-handling-pager () 'term-pager-old-local-map)`
+- L721: `(defmacro term-using-alternate-sub-buffer () 'term-saved-home-marker)`
+- L903: `(defcustom term-buffer-maximum-size 8192`
+- L912: `(defcustom term-bind-function-keys nil`
+- L923: `(defvar term-raw-map`
+- L928: `(define-key map (make-string 1 i) 'term-send-raw)`
+- L931: `(define-key esc-map (make-string 1 i) 'term-send-raw-meta))`
+- L933: `(define-key map [remap self-insert-command] 'term-send-raw)`
+- L934: `(define-key map "\e" esc-map)`
+- L938: `(define-key map [mouse-2] 'term-mouse-paste)`
+- L939: `(define-key map [up] 'term-send-up)`
+- L940: `(define-key map [down] 'term-send-down)`
+- L941: `(define-key map [right] 'term-send-right)`
+- L942: `(define-key map [left] 'term-send-left)`
+- L943: `(define-key map [C-up] 'term-send-ctrl-up)`
+- L944: `(define-key map [C-down] 'term-send-ctrl-down)`
+- L945: `(define-key map [C-right] 'term-send-ctrl-right)`
+- L946: `(define-key map [C-left] 'term-send-ctrl-left)`
+- L947: `(define-key map [delete] 'term-send-del)`
+- L948: `(define-key map [deletechar] 'term-send-del)`
+- L949: `(define-key map [backspace] 'term-send-backspace)`
+- L950: `(define-key map [home] 'term-send-home)`
+- L951: `(define-key map [end] 'term-send-end)`
+- L952: `(define-key map [insert] 'term-send-insert)`
+- L953: `(define-key map [S-prior] 'scroll-down)`
+- L954: `(define-key map [S-next] 'scroll-up)`
+- L955: `(define-key map [S-insert] 'term-paste)`
+- L956: `(define-key map [prior] 'term-send-prior)`
+- L957: `(define-key map [next] 'term-send-next)`
+- L958: `(define-key map [xterm-paste] #'term--xterm-paste)`
+- L959: `(define-key map [?\C-/] #'term-send-C-_)`
+- L960: `(define-key map [?\C- ] #'term-send-C-@)`
+- L961: `(define-key map [?\C-\M-/] #'term-send-C-M-_)`
+- L962: `(define-key map [?\C-\M- ] #'term-send-C-M-@)`
+- L966: `(keymap-set map (format "<f%d>" key) #'term-send-function-key)))`
+- L983: `(defun term--update-term-menu (&optional force)`
+- L1031: `(defvar term-raw-escape-map`
+- L1035: `(define-key map "\C-v" (lookup-key (current-global-map) "\C-v"))`
+- L1036: `(define-key map "\C-u" (lookup-key (current-global-map) "\C-u"))`
+- L1037: `(define-key map "\C-q" 'term-pager-toggle)`
+- L1039: `(define-key map "\C-k" 'term-char-mode)`
+- L1040: `(define-key map "\C-j" 'term-line-mode)`
+- L1042: `(define-key map [?\M-x] 'execute-extended-command)`
+- L1045: `(defun term-set-escape-char (key)`
+- L1049: `(define-key term-raw-map term-escape-char 'term-send-raw)`
+- L1050: `(define-key term-raw-escape-map term-escape-char nil t))`
+- L1052: `(define-key term-raw-map term-escape-char term-raw-escape-map)`
+- L1053: `(define-key term-raw-escape-map term-escape-char 'term-send-raw))`
+- L1082: `(defun term-ansi-reset ()`
+- L1097: `(define-derived-mode term-mode fundamental-mode "Term"`
+- L1251: `(defun term--remove-fake-newlines ()`
+- L1261: `(defun term--last-line ()`
+- L1264: `(defun term--filter-buffer-substring (content)`
+- L1270: `(defun term--unwrap-visible-long-lines (width)`
+- L1292: `(defun term-reset-size (height width)`
+- L1332: `(defun term-check-kill-echo-list ()`
+- L1352: `(defun term-send-raw-string (chars)`
+- L1364: `(defun term-send-raw ()`
+- L1370: `(defun term-send-raw-meta ()`
+- L1389: `(defun term-mouse-paste (click)`
+- L1403: `(defun term-paste ()`
+- L1408: `(defun term--xterm-paste (event)`
+- L1424: `(defun term-send-up    () (interactive) (term-send-raw-string "\eOA"))`
+- L1425: `(defun term-send-down  () (interactive) (term-send-raw-string "\eOB"))`
+- L1426: `(defun term-send-right () (interactive) (term-send-raw-string "\eOC"))`
+- L1427: `(defun term-send-left  () (interactive) (term-send-raw-string "\eOD"))`
+- L1428: `(defun term-send-ctrl-up    () (interactive) (term-send-raw-string "\e[1;5A"))`
+- L1429: `(defun term-send-ctrl-down  () (interactive) (term-send-raw-string "\e[1;5B"))`
+- L1430: `(defun term-send-ctrl-right () (interactive) (term-send-raw-string "\e[1;5C"))`
+- L1431: `(defun term-send-ctrl-left  () (interactive) (term-send-raw-string "\e[1;5D"))`
+- L1432: `(defun term-send-home  () (interactive) (term-send-raw-string "\e[1~"))`
+- L1433: `(defun term-send-insert() (interactive) (term-send-raw-string "\e[2~"))`
+- L1434: `(defun term-send-end   () (interactive) (term-send-raw-string "\e[4~"))`
+- L1435: `(defun term-send-prior () (interactive) (term-send-raw-string "\e[5~"))`
+- L1436: `(defun term-send-next  () (interactive) (term-send-raw-string "\e[6~"))`
+- L1437: `(defun term-send-del   () (interactive) (term-send-raw-string "\e[3~"))`
+- L1438: `(defun term-send-backspace  () (interactive) (term-send-raw-string "\C-?"))`
+- L1439: `(defun term-send-C-_  () (interactive) (term-send-raw-string "\C-_"))`
+- L1440: `(defun term-send-C-@  () (interactive) (term-send-raw-string "\C-@"))`
+- L1441: `(defun term-send-C-M-_  () (interactive) (term-send-raw-string "\e\C-_"))`
+- L1442: `(defun term-send-C-M-@  () (interactive) (term-send-raw-string "\e\C-@"))`
+- L1444: `(defun term-send-function-key ()`
+- L1465: `(defun term-char-mode ()`
+- L1493: `(defun term-line-mode  ()`
+- L1506: `(defun term-line-mode-buffer-read-only-update ()`
+- L1513: `(defun term-update-mode-line ()`
+- L1567: `(defun term-check-proc (buffer)`
+- L1574: `(defun make-term (name program &optional startfile &rest switches)`
+- L1590: `(defun term (program)`
+- L1605: `(defun term-exec (buffer name command startfile switches)`
+- L1636: `(defun term-sentinel (proc msg)`
+- L1655: `(defun term-handle-exit (process-name msg)`
+- L1707: `(defun term--bash-needs-EMACSp ()`
+- L1721: `(defun term-generate-db-directory ()`
+- L1748: `(defun term-exec-1 (name buffer command switches)`
+- L1818: `(defun term-read-input-ring (&optional silent)`
+- L1861: `(defun term-write-input-ring ()`
+- L1892: `(defun term-dynamic-list-input-ring ()`
+- L1922: `(defun term-regexp-arg (prompt)`
+- L1934: `(defun term-search-arg (arg)`
+- L1948: `(defun term-search-start (arg)`
+- L1959: `(defun term-previous-input-string (arg)`
+- L1967: `(defun term-previous-input (arg)`
+- L1972: `(defun term-next-input (arg)`
+- L1977: `(defun term-previous-matching-input-string (regexp arg)`
+- L1983: `(defun term-previous-matching-input-string-position`
+- L2011: `(defun term-previous-matching-input (regexp n)`
+- L2029: `(defun term-next-matching-input (regexp n)`
+- L2037: `(defun term-previous-matching-input-from-input (n)`
+- L2055: `(defun term-next-matching-input-from-input (n)`
+- L2064: `(defun term-replace-by-expanded-history (&optional silent)`
+- L2093: `(defun term-replace-by-expanded-history-before-point (silent)`
+- L2179: `(defun term-magic-space (arg)`
+- L2187: `(defun term-within-quotes (beg end)`
+- L2194: `(defun term-how-many-region (regexp beg end)`
+- L2204: `(defun term-args (string begin end)`
+- L2225: `(defun term-delim-arg (arg)`
+- L2244: `(defun term-arguments (string nth mth)`
+- L2288: `(defun term-send-input ()`
+- L2378: `(defun term-get-old-input-default ()`
+- L2389: `(defun term-copy-old-input ()`
+- L2400: `(defun term-skip-prompt ()`
+- L2409: `(defun term-after-pmark-p ()`
+- L2419: `(defun term-simple-send (proc string)`
+- L2426: `(defun term-bol (arg)`
+- L2441: `(defun term-read-noecho (prompt &optional stars)`
+- L2490: `(defun term-send-invisible (str &optional proc)`
+- L2506: `(defun term-watch-for-password-prompt (string)`
+- L2526: `(defcustom term-input-chunk-size 512`
+- L2532: `(defun term-send-string (proc str)`
+- L2547: `(defun term-send-region (proc start end)`
+- L2557: `(defun term-kill-output ()`
+- L2566: `(defun term-show-output ()`
+- L2576: `(defun term-interrupt-subjob ()`
+- L2581: `(defun term-kill-subjob ()`
+- L2586: `(defun term-quit-subjob ()`
+- L2591: `(defun term-stop-subjob ()`
+- L2600: `(defun term-continue-subjob ()`
+- L2606: `(defun term-kill-input ()`
+- L2614: `(defun term-delchar-or-maybe-eof (arg)`
+- L2621: `(defun term-send-eof ()`
+- L2626: `(defun term-backward-matching-input (regexp n)`
+- L2642: `(defun term-forward-matching-input (regexp n)`
+- L2651: `(defun term-next-prompt (n)`
+- L2660: `(defun term-previous-prompt (n)`
+- L2729: `(defun term-source-default (previous-dir/file source-modes)`
+- L2746: `(defun term-check-source (fname)`
+- L2778: `(defun term-extract-string ()`
+- L2792: `(defun term-get-source (prompt prev-dir/file source-modes mustmatch-p)`
+- L2835: `(defun term-proc-query (proc str)`
+- L2858: `(defun term-horizontal-column ()`
+- L2862: `(defmacro term-vertical-motion (count)`
+- L2868: `(defun term-buffer-vertical-motion (count)`
+- L2908: `(defun term-start-line-column ()`
+- L2917: `(defun term-current-column ()`
+- L2921: `(defun term-move-to-column (column)`
+- L2932: `(defun term-move-columns (delta)`
+- L2937: `(defun term-insert-char (char count)`
+- L2942: `(defun term-current-row ()`
+- L2950: `(defun term-adjust-current-row-cache (delta)`
+- L2955: `(defun term-terminal-pos ()`
+- L2967: `(defun term-handle-ansi-terminal-messages (message)`
+- L3049: `(defun term-emulate-terminal (proc str)`
+- L3388: `(defun term-set-goto-process-mark ()`
+- L3403: `(defun term-goto-process-mark-maybe ()`
+- L3422: `(defun term-process-mark ()`
+- L3426: `(defun term-handle-deferred-scroll ()`
+- L3435: `(defun term-reset-terminal ()`
+- L3444: `(defun term--color-as-hex (for-foreground)`
+- L3464: `(defun term-handle-colors-array (parameter)`
+- L3468: `(defun term--handle-colors-list (parameters)`
+- L3582: `(defun term-handle-ansi-escape (proc params char)`
+- L3679: `(defun term--reset-scroll-region ()`
+- L3683: `(defun term-set-scroll-region (top bottom)`
+- L3703: `(defun term-switch-to-alternate-sub-buffer (set)`
+- L3735: `(defun term-command-hook (string)`
+- L3761: `(defun term-display-line (true-file line)`
+- L3764: `(defun term-display-buffer-line (buffer line)`
+- L3786: `(defun term-goto-home ()`
+- L3793: `(defun term-goto (row col)`
+- L3807: `(defun term-process-pager ()`
+- L3820: `(defun term-pager-line (lines)`
+- L3830: `(defun term-pager-page (arg)`
+- L3836: `(defun term-pager-bob ()`
+- L3844: `(defun term-pager-eob ()`
+- L3850: `(defun term-pager-back-line (lines)`
+- L3861: `(defun term-pager-back-page (arg)`
+- L3865: `(defun term-pager-discard ()`
+- L3873: `(defun term-pager-disable ()`
+- L3881: `(defun term-pager-enable ()`
+- L3887: `(defun term-pager-toggle ()`
+- L3891: `(defun term-pager-help ()`
+- L3918: `(defun term-pager-continue (new-count)`
+- L3932: `(defun term-handle-scroll (down)`
+- L3977: `(defun term-down (down &optional check-for-scroll)`
+- L4010: `(defun term-unwrap-line ()`
+- L4017: `(defun term-erase-in-line (kind)`
+- L4044: `(defun term-erase-in-display (kind)`
+- L4065: `(defun term-delete-chars (count)`
+- L4077: `(defun term-insert-spaces (count)`
+- L4096: `(defun term-delete-lines (lines)`
+- L4116: `(defun term-insert-lines (lines)`
+- L4147: `(defun term-start-output-log (name)`
+- L4168: `(defun term-stop-output-log ()`
+- L4173: `(defun term-show-maximum-output ()`
+- L4204: `;; (define-key shell-mode-map "\t" 'term-dynamic-complete)`
+- L4205: `;; (define-key shell-mode-map "\M-?"`
+- L4211: `(defcustom term-completion-autolist nil`
+- L4217: `(defcustom term-completion-addsuffix t`
+- L4227: `(defcustom term-completion-recexact nil`
+- L4235: `(defcustom term-completion-fignore nil`
+- L4250: `(defun term-directory (directory)`
+- L4257: `(defun term-word (word-chars)`
+- L4274: `(defun term-match-partial-filename ()`
+- L4281: `(defun term-dynamic-complete ()`
+- L4290: `(defun term-dynamic-complete-filename ()`
+- L4310: `(defun term-dynamic-complete-as-filename ()`
+- L4359: `(defun term-replace-by-expanded-filename ()`
+- L4372: `(defun term-dynamic-list-filename-completions ()`
+- L4386: `(defun term-dynamic-list-completions (completions)`
+- L4414: `(defun term-ansi-make-term (name program &optional startfile &rest switches)`
+- L4434: `(defun ansi-term (program &optional new-buffer-name)`
+- L4486: `(defun serial-port-is-file-p ()`
+- L4508: `(defun serial-nice-speed-history ()`
+- L4525: `(defun serial-supported-or-barf ()`
+- L4530: `(defun serial-read-name ()`
+- L4571: `(defun serial-read-speed ()`
+- L4597: `(defun serial-term (port speed &optional line-mode)`
+- L4638: `(defun serial-speed ()`
+- L4643: `(defun serial-mode-line-speed-menu-1 (event)`
+- L4653: `(defun serial-mode-line-speed-menu (event)`
+- L4656: `(defun serial-update-speed-menu ()`
+- L4658: `(define-key serial-mode-line-speed-menu [serial-mode-line-speed-menu-other]`
+- L4678: `(defun serial-mode-line-config-menu-1 (event)`
+- L4688: `(defun serial-mode-line-config-menu (event)`
+- L4691: `(defun serial-update-config-menu ()`
+- L4705: `(define-key serial-mode-line-config-menu`
+- L4771: `;;     (define-key map "\C-c\C-f" 'shell-forward-command)`
+- L4772: `;;     (define-key map "\C-c\C-b" 'shell-backward-command)`
+- L4773: `;;     (define-key map "\t" 'term-dynamic-complete)`
+- L4774: `;;     (define-key map "\M-?"`
+- L4792: `(provide 'term)`

@@ -1,0 +1,95 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: emamux</h1>
+<p>Fonte: https://github.com/emacsorphanage/emamux.git</p>
+<p>Revisione: <code>93bb7e8b8cfb0ced5b9b38044a031d40342201a1</code>.</p>
+<h2>emamux.el</h2>
+<ul>
+<li>L42: <code>(require 'cl-lib)</code></li>
+<li>L43: <code>(require 'tramp)</code></li>
+<li>L50: <code>(defcustom emamux:default-orientation 'vertical</code></li>
+<li>L55: <code>(defcustom emamux:runner-pane-height 20</code></li>
+<li>L59: <code>(defcustom emamux:use-nearest-pane nil</code></li>
+<li>L66: <code>(defcustom emamux:completing-read-type (if ido-mode</code></li>
+<li>L77: <code>(defcustom emamux:get-buffers-regexp</code></li>
+<li>L86: <code>(defcustom emamux:show-buffers-with-index t</code></li>
+<li>L103: <code>(defun emamux:tmux-run-command (output &amp;rest args)</code></li>
+<li>L110: <code>(defun emamux:set-parameters ()</code></li>
+<li>L115: <code>(defun emamux:unset-parameters ()</code></li>
+<li>L118: <code>(defun emamux:set-parameters-p ()</code></li>
+<li>L121: <code>(defun emamux:select-completing-read-function ()</code></li>
+<li>L126: <code>(defun emamux:mode-function ()</code></li>
+<li>L131: <code>(defun emamux:completing-read (prompt &amp;rest args)</code></li>
+<li>L139: <code>(defun emamux:read-parameter-session ()</code></li>
+<li>L145: <code>(defun emamux:set-parameter-session ()</code></li>
+<li>L148: <code>(defun emamux:read-parameter-window ()</code></li>
+<li>L155: <code>(defun emamux:set-parameter-window ()</code></li>
+<li>L158: <code>(defun emamux:read-parameter-pane ()</code></li>
+<li>L164: <code>(defun emamux:set-parameter-pane ()</code></li>
+<li>L167: <code>(cl-defun emamux:target-session (&amp;optional (session emamux:session)</code></li>
+<li>L172: <code>(defun emamux:get-sessions ()</code></li>
+<li>L181: <code>(defun emamux:get-buffers ()</code></li>
+<li>L193: <code>(defun emamux:show-buffer (index)</code></li>
+<li>L200: <code>(defun emamux:get-window ()</code></li>
+<li>L209: <code>(defun emamux:get-pane ()</code></li>
+<li>L219: <code>(defun emamux:read-command (prompt use-last-cmd)</code></li>
+<li>L224: <code>(defun emamux:check-tmux-running ()</code></li>
+<li>L229: <code>(defun emamux:send-command (&amp;optional command target)</code></li>
+<li>L245: <code>(defun emamux:send-region (beg end)</code></li>
+<li>L261: <code>(defun emamux:copy-kill-ring (arg)</code></li>
+<li>L272: <code>(defun emamux:yank-from-list-buffers ()</code></li>
+<li>L283: <code>(defun emamux:kill-session ()</code></li>
+<li>L293: <code>(cl-defun emamux:send-keys (input &amp;optional (target (emamux:target-session)))</code></li>
+<li>L297: <code>(defun emamux:set-buffer-argument (index data)</code></li>
+<li>L302: <code>(defun emamux:set-buffer (data index)</code></li>
+<li>L306: <code>(defun emamux:in-tmux-p ()</code></li>
+<li>L310: <code>(defvar emamux:runner-pane-id-map nil)</code></li>
+<li>L312: <code>(defun emamux:gc-runner-pane-map ()</code></li>
+<li>L321: <code>(defun emamux:run-command (cmd &amp;optional cmddir)</code></li>
+<li>L337: <code>(defun emamux:run-last-command ()</code></li>
+<li>L343: <code>(defun emamux:reset-prompt (pane)</code></li>
+<li>L346: <code>(defun emamux:chdir-pane (dir)</code></li>
+<li>L350: <code>(defun emamux:get-runner-pane-id ()</code></li>
+<li>L353: <code>(defun emamux:add-to-assoc (key value alist-variable)</code></li>
+<li>L360: <code>(defun emamux:setup-runner-pane ()</code></li>
+<li>L372: <code>(defun emamux:select-pane (target)</code></li>
+<li>L378: <code>(defun emamux:split-runner-pane ()</code></li>
+<li>L386: <code>(defun emamux:list-panes ()</code></li>
+<li>L393: <code>(defun emamux:active-pane-id (panes)</code></li>
+<li>L398: <code>(defun emamux:current-active-pane-id ()</code></li>
+<li>L401: <code>(defun emamux:nearest-inactive-pane-id (panes)</code></li>
+<li>L408: <code>(defun emamux:close-runner-pane ()</code></li>
+<li>L416: <code>(defun emamux:close-panes ()</code></li>
+<li>L422: <code>(defun emamux:kill-all-panes ()</code></li>
+<li>L425: <code>(defun emamux:kill-pane (target)</code></li>
+<li>L431: <code>(defun emamux:runner-alive-p ()</code></li>
+<li>L438: <code>(defun emamux:check-runner-alive ()</code></li>
+<li>L443: <code>(defun emamux:inspect-runner ()</code></li>
+<li>L451: <code>(defun emamux:interrupt-runner ()</code></li>
+<li>L458: <code>(defun emamux:clear-runner-history ()</code></li>
+<li>L465: <code>(defun emamux:zoom-runner ()</code></li>
+<li>L471: <code>(defmacro emamux:ensure-ssh-and-cd (&amp;rest body)</code></li>
+<li>L496: <code>(defun emamux:new-window ()</code></li>
+<li>L504: <code>(defun emamux:list-windows ()</code></li>
+<li>L511: <code>(defun emamux:window-ids ()</code></li>
+<li>L516: <code>(defun emamux:active-window-id (windows)</code></li>
+<li>L521: <code>(defun emamux:current-active-window-id ()</code></li>
+<li>L527: <code>(defun emamux:clone-current-frame ()</code></li>
+<li>L541: <code>(defun emamux:split-window ()</code></li>
+<li>L547: <code>(defun emamux:split-window-horizontally ()</code></li>
+<li>L553: <code>(defun emamux:run-region (beg end)</code></li>
+<li>L560: <code>(defvar emamux:keymap</code></li>
+<li>L562: <code>(define-key map "\C-s" #'emamux:send-command)</code></li>
+<li>L563: <code>(define-key map "\C-y" #'emamux:yank-from-list-buffers)</code></li>
+<li>L565: <code>(define-key map "\M-!" #'emamux:run-command)</code></li>
+<li>L566: <code>(define-key map "\M-r" #'emamux:run-last-command)</code></li>
+<li>L567: <code>(define-key map "\M-s" #'emamux:run-region)</code></li>
+<li>L568: <code>(define-key map "\C-i" #'emamux:inspect-runner)</code></li>
+<li>L569: <code>(define-key map "\C-k" #'emamux:close-panes)</code></li>
+<li>L570: <code>(define-key map "\C-c" #'emamux:interrupt-runner)</code></li>
+<li>L571: <code>(define-key map "\M-k" #'emamux:clear-runner-history)</code></li>
+<li>L572: <code>(define-key map "c"    #'emamux:new-window)</code></li>
+<li>L573: <code>(define-key map "C"    #'emamux:clone-current-frame)</code></li>
+<li>L574: <code>(define-key map "2"    #'emamux:split-window)</code></li>
+<li>L575: <code>(define-key map "3"    #'emamux:split-window-horizontally))</code></li>
+<li>L578: <code>\(global-set-key (kbd \"M-g\") emamux:keymap\)</code></li>
+<li>L599: <code>(provide 'emamux)</code></li>
+</ul></main></html>

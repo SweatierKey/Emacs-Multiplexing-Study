@@ -1,0 +1,209 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: vterm</h1>
+<p>Fonte: https://github.com/akermu/emacs-libvterm.git</p>
+<p>Revisione: <code>6d715a93fa0e5182bc137d4db09f376e06938aa5</code>.</p>
+<h2>vterm.el</h2>
+<ul>
+<li>L59: <code>(require 'term/xterm)</code></li>
+<li>L69: <code>(defcustom vterm-module-cmake-args ""</code></li>
+<li>L84: <code>(defcustom vterm-always-compile-module nil</code></li>
+<li>L95: <code>(defun vterm-module--cmake-is-available ()</code></li>
+<li>L105: <code>(defun vterm-module-compile ()</code></li>
+<li>L158: <code>(require 'subr-x)</code></li>
+<li>L159: <code>(require 'find-func)</code></li>
+<li>L160: <code>(require 'cl-lib)</code></li>
+<li>L161: <code>(require 'term)</code></li>
+<li>L162: <code>(require 'color)</code></li>
+<li>L163: <code>(require 'compile)</code></li>
+<li>L164: <code>(require 'face-remap)</code></li>
+<li>L165: <code>(require 'tramp)</code></li>
+<li>L166: <code>(require 'bookmark)</code></li>
+<li>L170: <code>(defcustom vterm-shell shell-file-name</code></li>
+<li>L175: <code>(defcustom vterm-tramp-shells</code></li>
+<li>L198: <code>(defcustom vterm-buffer-name "*vterm*"</code></li>
+<li>L210: <code>(defcustom vterm-max-scrollback 1000</code></li>
+<li>L219: <code>(defcustom vterm-min-window-width 80</code></li>
+<li>L224: <code>(defcustom vterm-kill-buffer-on-exit t</code></li>
+<li>L240: <code>(defcustom vterm-clear-scrollback-when-clearing nil</code></li>
+<li>L252: <code>(defcustom vterm-keymap-exceptions</code></li>
+<li>L271: <code>(defcustom vterm-exit-functions nil</code></li>
+<li>L290: <code>(defcustom vterm-buffer-name-string nil</code></li>
+<li>L309: <code>(defcustom vterm-term-environment-variable "xterm-256color"</code></li>
+<li>L314: <code>(defcustom vterm-environment nil</code></li>
+<li>L322: <code>(defcustom vterm-enable-manipulate-selection-data-by-osc52 nil</code></li>
+<li>L341: <code>(defcustom vterm-eval-cmds '(("find-file" find-file)</code></li>
+<li>L360: <code>(defcustom vterm-disable-underline nil</code></li>
+<li>L368: <code>(defcustom vterm-disable-inverse-video nil</code></li>
+<li>L379: <code>(defcustom vterm-disable-bold-font nil</code></li>
+<li>L389: <code>(defcustom vterm-set-bold-highbright nil</code></li>
+<li>L394: <code>(defcustom vterm-ignore-blink-cursor t</code></li>
+<li>L403: <code>(defcustom vterm-copy-exclude-prompt t</code></li>
+<li>L408: <code>(defcustom vterm-use-vterm-prompt-detection-method t</code></li>
+<li>L425: <code>(defcustom vterm-bookmark-check-dir t</code></li>
+<li>L430: <code>(defcustom vterm-copy-mode-remove-fake-newlines nil</code></li>
+<li>L634: <code>(defun vterm--exclude-keys (map exceptions)</code></li>
+<li>L639: <code>(define-key map (kbd key) nil))</code></li>
+<li>L642: <code>(define-key map (kbd key) #'vterm--self-insert))</code></li>
+<li>L654: <code>(define-key map key 'vterm--self-insert))</code></li>
+<li>L658: <code>(define-key esc-map key 'vterm--self-insert-meta)))</code></li>
+<li>L660: <code>(define-key map "\e" esc-map)))</code></li>
+<li>L662: <code>(defun vterm-xterm-paste (event)</code></li>
+<li>L670: <code>(defvar vterm-mode-map</code></li>
+<li>L673: <code>(define-key map (kbd "C-]")                 #'vterm--self-insert)</code></li>
+<li>L674: <code>(define-key map (kbd "M-&lt;")                 #'vterm--self-insert)</code></li>
+<li>L675: <code>(define-key map (kbd "M-&gt;")                 #'vterm--self-insert)</code></li>
+<li>L676: <code>(define-key map [tab]                       #'vterm-send-tab)</code></li>
+<li>L677: <code>(define-key map (kbd "TAB")                 #'vterm-send-tab)</code></li>
+<li>L678: <code>(define-key map [backtab]                   #'vterm--self-insert)</code></li>
+<li>L679: <code>(define-key map [backspace]                 #'vterm-send-backspace)</code></li>
+<li>L680: <code>(define-key map (kbd "DEL")                 #'vterm-send-backspace)</code></li>
+<li>L681: <code>(define-key map [delete]                    #'vterm-send-delete)</code></li>
+<li>L682: <code>(define-key map (kbd "&lt;deletechar&gt;")        #'vterm-send-delete) ; OKAY!</code></li>
+<li>L683: <code>(define-key map [C-delete]                  #'vterm-send-ctrl-delete)</code></li>
+<li>L684: <code>(define-key map [M-backspace]               #'vterm-send-meta-backspace)</code></li>
+<li>L685: <code>(define-key map (kbd "M-DEL")               #'vterm-send-meta-backspace)</code></li>
+<li>L686: <code>(define-key map [C-backspace]               #'vterm-send-meta-backspace)</code></li>
+<li>L687: <code>(define-key map [return]                    #'vterm-send-return)</code></li>
+<li>L688: <code>(define-key map (kbd "RET")                 #'vterm-send-return)</code></li>
+<li>L689: <code>(define-key map [C-left]                    #'vterm--self-insert)</code></li>
+<li>L690: <code>(define-key map [M-left]                    #'vterm--self-insert)</code></li>
+<li>L691: <code>(define-key map [C-right]                   #'vterm--self-insert)</code></li>
+<li>L692: <code>(define-key map [M-right]                   #'vterm--self-insert)</code></li>
+<li>L693: <code>(define-key map [C-up]                      #'vterm--self-insert)</code></li>
+<li>L694: <code>(define-key map [C-down]                    #'vterm--self-insert)</code></li>
+<li>L695: <code>(define-key map [M-up]                      #'vterm--self-insert)</code></li>
+<li>L696: <code>(define-key map [M-down]                    #'vterm--self-insert)</code></li>
+<li>L697: <code>(define-key map [left]                      #'vterm--self-insert)</code></li>
+<li>L698: <code>(define-key map [right]                     #'vterm--self-insert)</code></li>
+<li>L699: <code>(define-key map [up]                        #'vterm--self-insert)</code></li>
+<li>L700: <code>(define-key map [down]                      #'vterm--self-insert)</code></li>
+<li>L701: <code>(define-key map [prior]                     #'vterm--self-insert)</code></li>
+<li>L702: <code>(define-key map [S-prior]                   #'scroll-down-command)</code></li>
+<li>L703: <code>(define-key map [next]                      #'vterm--self-insert)</code></li>
+<li>L704: <code>(define-key map [S-next]                    #'scroll-up-command)</code></li>
+<li>L705: <code>(define-key map [home]                      #'vterm--self-insert)</code></li>
+<li>L706: <code>(define-key map [end]                       #'vterm--self-insert)</code></li>
+<li>L707: <code>(define-key map [C-home]                    #'vterm--self-insert)</code></li>
+<li>L708: <code>(define-key map [C-end]                     #'vterm--self-insert)</code></li>
+<li>L709: <code>(define-key map [escape]                    #'vterm--self-insert)</code></li>
+<li>L710: <code>(define-key map [remap yank]                #'vterm-yank)</code></li>
+<li>L711: <code>(define-key map [remap xterm-paste]         #'vterm-xterm-paste)</code></li>
+<li>L712: <code>(define-key map [remap yank-pop]            #'vterm-yank-pop)</code></li>
+<li>L713: <code>(define-key map [remap mouse-yank-primary]  #'vterm-yank-primary)</code></li>
+<li>L714: <code>(define-key map [mouse-1]                   #'vterm-mouse-set-point)</code></li>
+<li>L715: <code>(define-key map (kbd "C-SPC")               #'vterm--self-insert)</code></li>
+<li>L716: <code>(define-key map (kbd "S-SPC")               #'vterm-send-space)</code></li>
+<li>L717: <code>(define-key map (kbd "C-_")                 #'vterm--self-insert)</code></li>
+<li>L718: <code>(define-key map [remap undo]                #'vterm-undo)</code></li>
+<li>L719: <code>(define-key map (kbd "M-.")                 #'vterm--self-insert)</code></li>
+<li>L720: <code>(define-key map (kbd "M-,")                 #'vterm--self-insert)</code></li>
+<li>L721: <code>(define-key map (kbd "C-c C-y")             #'vterm--self-insert)</code></li>
+<li>L722: <code>(define-key map (kbd "C-c C-c")             #'vterm--self-insert)</code></li>
+<li>L723: <code>(define-key map (kbd "C-c C-l")             #'vterm-clear-scrollback)</code></li>
+<li>L724: <code>(define-key map (kbd "C-l")                 #'vterm-clear)</code></li>
+<li>L725: <code>(define-key map (kbd "C-\\")                #'vterm--self-insert)</code></li>
+<li>L726: <code>(define-key map (kbd "C-c C-g")             #'vterm--self-insert)</code></li>
+<li>L727: <code>(define-key map (kbd "C-c C-u")             #'vterm--self-insert)</code></li>
+<li>L728: <code>(define-key map [remap self-insert-command] #'vterm--self-insert)</code></li>
+<li>L729: <code>(define-key map (kbd "C-c C-r")             #'vterm-reset-cursor-point)</code></li>
+<li>L730: <code>(define-key map (kbd "C-c C-n")             #'vterm-next-prompt)</code></li>
+<li>L731: <code>(define-key map (kbd "C-c C-p")             #'vterm-previous-prompt)</code></li>
+<li>L732: <code>(define-key map (kbd "C-c C-t")             #'vterm-copy-mode)</code></li>
+<li>L735: <code>(defvar vterm-copy-mode-map</code></li>
+<li>L737: <code>(define-key map (kbd "C-c C-t")        #'vterm-copy-mode)</code></li>
+<li>L738: <code>(define-key map [return]               #'vterm-copy-mode-done)</code></li>
+<li>L739: <code>(define-key map (kbd "RET")            #'vterm-copy-mode-done)</code></li>
+<li>L740: <code>(define-key map (kbd "C-c C-r")        #'vterm-reset-cursor-point)</code></li>
+<li>L741: <code>(define-key map (kbd "C-a")            #'vterm-beginning-of-line)</code></li>
+<li>L742: <code>(define-key map (kbd "C-e")            #'vterm-end-of-line)</code></li>
+<li>L743: <code>(define-key map (kbd "C-c C-n")        #'vterm-next-prompt)</code></li>
+<li>L744: <code>(define-key map (kbd "C-c C-p")        #'vterm-previous-prompt)</code></li>
+<li>L750: <code>(define-derived-mode vterm-mode fundamental-mode "VTerm"</code></li>
+<li>L853: <code>(defun vterm--tramp-get-shell (method)</code></li>
+<li>L900: <code>(defun vterm--get-shell ()</code></li>
+<li>L910: <code>(defun vterm--bookmark-make-record ()</code></li>
+<li>L922: <code>(defun vterm--bookmark-handler (bmk)</code></li>
+<li>L950: <code>(defun vterm--compilation-setup ()</code></li>
+<li>L962: <code>(defun vterm-next-error-function (n &amp;optional reset)</code></li>
+<li>L980: <code>(defun vterm--enter-copy-mode ()</code></li>
+<li>L989: <code>(defun vterm--exit-copy-mode ()</code></li>
+<li>L998: <code>(define-minor-mode vterm-copy-mode</code></li>
+<li>L1019: <code>(defun vterm-copy-mode-done (arg)</code></li>
+<li>L1045: <code>(defun vterm--self-insert-meta ()</code></li>
+<li>L1052: <code>(defun vterm--self-insert ()</code></li>
+<li>L1060: <code>(defun vterm-send-key (key &amp;optional shift meta ctrl accept-proc-output)</code></li>
+<li>L1071: <code>(defun vterm-send (key)</code></li>
+<li>L1077: <code>(defun vterm-send-next-key ()</code></li>
+<li>L1087: <code>(defun vterm-send-start ()</code></li>
+<li>L1092: <code>(defun vterm-send-stop ()</code></li>
+<li>L1097: <code>(defun vterm-send-return ()</code></li>
+<li>L1106: <code>(defun vterm-send-tab ()</code></li>
+<li>L1111: <code>(defun vterm-send-space ()</code></li>
+<li>L1116: <code>(defun vterm-send-backspace ()</code></li>
+<li>L1121: <code>(defun vterm-send-delete ()</code></li>
+<li>L1126: <code>(defun vterm-send-ctrl-delete ()</code></li>
+<li>L1131: <code>(defun vterm-send-meta-backspace ()</code></li>
+<li>L1136: <code>(defun vterm-send-up ()</code></li>
+<li>L1142: <code>(defun vterm-send-down ()</code></li>
+<li>L1148: <code>(defun vterm-send-left ()</code></li>
+<li>L1154: <code>(defun vterm-send-right ()</code></li>
+<li>L1160: <code>(defun vterm-send-prior ()</code></li>
+<li>L1166: <code>(defun vterm-send-next ()</code></li>
+<li>L1172: <code>(defun vterm-send-meta-dot ()</code></li>
+<li>L1178: <code>(defun vterm-send-meta-comma ()</code></li>
+<li>L1184: <code>(defun vterm-send-ctrl-slash ()</code></li>
+<li>L1190: <code>(defun vterm-send-escape ()</code></li>
+<li>L1195: <code>(defun vterm-clear-scrollback ()</code></li>
+<li>L1200: <code>(defun vterm-clear (&amp;optional arg)</code></li>
+<li>L1215: <code>(defun vterm-undo ()</code></li>
+<li>L1220: <code>(defun vterm-yank (&amp;optional arg)</code></li>
+<li>L1231: <code>(defun vterm-yank-primary ()</code></li>
+<li>L1240: <code>(defun vterm-yank-pop (&amp;optional arg)</code></li>
+<li>L1251: <code>(defun vterm-mouse-set-point (event &amp;optional promote-to-region)</code></li>
+<li>L1260: <code>(defun vterm-send-string (string &amp;optional paste-p)</code></li>
+<li>L1273: <code>(defun vterm-insert (&amp;rest contents)</code></li>
+<li>L1288: <code>(defun vterm-delete-region (start end)</code></li>
+<li>L1303: <code>(defun vterm-goto-char (pos)</code></li>
+<li>L1326: <code>(defun vterm--forward-char ()</code></li>
+<li>L1350: <code>(defun vterm--backward-char ()</code></li>
+<li>L1371: <code>(defun vterm--delete-region(start end)</code></li>
+<li>L1375: <code>(defun vterm--insert(&amp;rest content)</code></li>
+<li>L1379: <code>(defun vterm--delete-char(n &amp;optional killflag)</code></li>
+<li>L1383: <code>(defun vterm--translate-event-to-args (event &amp;optional meta)</code></li>
+<li>L1410: <code>(defun vterm--invalidate ()</code></li>
+<li>L1421: <code>(defun vterm-check-proc (&amp;optional buffer)</code></li>
+<li>L1431: <code>(defun vterm--delayed-redraw (buffer)</code></li>
+<li>L1451: <code>(defun vterm--set-selection (mask data)</code></li>
+<li>L1469: <code>(defun vterm (&amp;optional arg)</code></li>
+<li>L1488: <code>(defun vterm-other-window (&amp;optional arg)</code></li>
+<li>L1506: <code>(defun vterm--internal (pop-to-buf-fun &amp;optional arg)</code></li>
+<li>L1525: <code>(defun vterm--flush-output (output)</code></li>
+<li>L1556: <code>(defun vterm--filter (process input)</code></li>
+<li>L1623: <code>(defun vterm--sentinel (process event)</code></li>
+<li>L1633: <code>(defun vterm--text-scale-mode (&amp;optional _argv)</code></li>
+<li>L1649: <code>(defun vterm--window-adjust-process-window-size (process windows)</code></li>
+<li>L1672: <code>(defun vterm--get-margin-width ()</code></li>
+<li>L1681: <code>(defun vterm--delete-lines (line-num count &amp;optional delete-whole-line)</code></li>
+<li>L1693: <code>(defun vterm--goto-line (n)</code></li>
+<li>L1704: <code>(defun vterm--set-title (title)</code></li>
+<li>L1709: <code>(defun vterm--set-directory (path)</code></li>
+<li>L1716: <code>(defun vterm--get-directory (path)</code></li>
+<li>L1738: <code>(defun vterm--get-pwd (&amp;optional linenum)</code></li>
+<li>L1747: <code>(defun vterm--get-color (index &amp;rest args)</code></li>
+<li>L1769: <code>(defun vterm--eval (str)</code></li>
+<li>L1785: <code>(defun vterm--prompt-tracking-enabled-p ()</code></li>
+<li>L1802: <code>(defun vterm-next-prompt (n)</code></li>
+<li>L1815: <code>(defun vterm-previous-prompt (n)</code></li>
+<li>L1831: <code>(defun vterm--get-beginning-of-line (&amp;optional pt)</code></li>
+<li>L1844: <code>(defun vterm--get-end-of-line (&amp;optional pt)</code></li>
+<li>L1858: <code>(defun vterm--get-prompt-point ()</code></li>
+<li>L1876: <code>(defun vterm--at-prompt-p ()</code></li>
+<li>L1880: <code>(defun vterm-cursor-in-command-buffer-p (&amp;optional pt)</code></li>
+<li>L1888: <code>(defun vterm-beginning-of-line ()</code></li>
+<li>L1900: <code>(defun vterm-end-of-line ()</code></li>
+<li>L1905: <code>(defun vterm-reset-cursor-point ()</code></li>
+<li>L1912: <code>(defun vterm--get-cursor-point ()</code></li>
+<li>L1918: <code>(defun vterm--reinsert-fake-newlines ()</code></li>
+<li>L1932: <code>(defun vterm--remove-fake-newlines (&amp;optional remembering-pos-p)</code></li>
+<li>L1965: <code>(defun vterm--filter-buffer-substring (content)</code></li>
+<li>L1973: <code>(provide 'vterm)</code></li>
+</ul></main></html>

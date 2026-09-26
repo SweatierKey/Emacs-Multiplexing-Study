@@ -1,0 +1,65 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: window-layout</h1>
+<p>Fonte: https://github.com/kiwanami/emacs-window-layout.git</p>
+<p>Revisione: <code>277d0a8247adf13707703574cbbc16ddcff7c5fd</code>.</p>
+<h2>window-layout.el</h2>
+<ul>
+<li>L126: <code>(defmacro wlf:aif (test-form then-form &amp;rest else-forms)</code></li>
+<li>L132: <code>(defmacro wlf:acond (&amp;rest clauses)</code></li>
+<li>L142: <code>(defun wlf:current-first-line-point (window)</code></li>
+<li>L179: <code>(defun wlf:window-shown-set (winfo i)</code></li>
+<li>L183: <code>(defun wlf:window-shown-p (winfo)</code></li>
+<li>L187: <code>(defun wlf:window-shown-toggle (winfo)</code></li>
+<li>L194: <code>(defun wlf:window-window-by-edge (winfo)</code></li>
+<li>L210: <code>(defun wlf:window-live-window (winfo)</code></li>
+<li>L216: <code>(defun wlf:window-size (winfo)</code></li>
+<li>L225: <code>(defmacro wlf:window-option-get (winfo option-key)</code></li>
+<li>L232: <code>(defun wlf:clear-windows (winfo-list wholep)</code></li>
+<li>L251: <code>(defun wlf:get-winfo (name winfo-list)</code></li>
+<li>L259: <code>(defun wlf:build-windows-rec (recipe winfo-list)</code></li>
+<li>L307: <code>(defun wlf:apply-split-options (split-options verticalp)</code></li>
+<li>L326: <code>(defun wlf:window-shrink (window verticalp shrink-size)</code></li>
+<li>L334: <code>(defun wlf:window-resize (window verticalp target-size)</code></li>
+<li>L347: <code>(defun wlf:apply-winfo (winfo)</code></li>
+<li>L358: <code>(defun wlf:set-window-points (winfo)</code></li>
+<li>L381: <code>(defun wlf:collect-window-edges (winfo-list)</code></li>
+<li>L390: <code>(defun wlf:calculate-last-window-sizes (winfo-list)</code></li>
+<li>L404: <code>(defun wlf:calculate-init-window-sizes (winfo-list)</code></li>
+<li>L418: <code>(defun wlf:restore-window-sizes (winfo-list)</code></li>
+<li>L440: <code>(defun wlf:make-winfo-list (wparams)</code></li>
+<li>L447: <code>(defun wlf:translate-recipe (recipe)</code></li>
+<li>L484: <code>(defun wlf:max-window-size-p (winfo)</code></li>
+<li>L494: <code>(defun wlf:save-current-window-sizes (recipe winfo-list)</code></li>
+<li>L518: <code>(defun wlf:layout (recipe window-params &amp;optional subwindow-p)</code></li>
+<li>L528: <code>(defun wlf:no-layout (recipe window-params &amp;optional subwindow-p)</code></li>
+<li>L535: <code>(defmacro wlf:with-wset (wset &amp;rest body)</code></li>
+<li>L546: <code>(defun wlf:layout-internal (wset &amp;optional restore-window-size)</code></li>
+<li>L576: <code>(defun wlf:layout-hook-add (wset func)</code></li>
+<li>L584: <code>(defun wlf:layout-hook-remove (wset func)</code></li>
+<li>L591: <code>(defun wlf:refresh (wset)</code></li>
+<li>L596: <code>(defun wlf:reset-window-sizes (wset)</code></li>
+<li>L600: <code>(defun wlf:reset-init (wset)</code></li>
+<li>L606: <code>(defun wlf:show (wset &amp;rest winfo-names)</code></li>
+<li>L617: <code>(defun wlf:hide (wset &amp;rest winfo-names)</code></li>
+<li>L628: <code>(defun wlf:toggle (wset &amp;rest winfo-names)</code></li>
+<li>L638: <code>(defun wlf:select (wset winfo-name)</code></li>
+<li>L648: <code>(defun wlf:get-window (wset winfo-name)</code></li>
+<li>L665: <code>(defun wlf:set-buffer (wset winfo-name buf &amp;optional selectp)</code></li>
+<li>L688: <code>(defun wlf:get-buffer (wset winfo-name)</code></li>
+<li>L697: <code>(defun wlf:window-name-p (wset winfo-name)</code></li>
+<li>L702: <code>(defun wlf:window-displayed-p (wset winfo-name)</code></li>
+<li>L708: <code>(defun wlf:wopts-replace-buffer (wopts buffer-alist)</code></li>
+<li>L724: <code>(defun wlf:copy-windows (wset)</code></li>
+<li>L733: <code>(defun wlf:copy-winfo (winfo)</code></li>
+<li>L744: <code>(defun wlf:maximize-info-get ()</code></li>
+<li>L748: <code>(defun wlf:maximize-info-set (val)</code></li>
+<li>L752: <code>(defun wlf:maximize-info-clear ()</code></li>
+<li>L756: <code>(defun wlf:collect-window-states (wset)</code></li>
+<li>L762: <code>(defun wlf:revert-window-states (wset states)</code></li>
+<li>L771: <code>(defun wlf:maximize-window-states (wset winfo-name)</code></li>
+<li>L780: <code>(defun wlf:toggle-maximize (wset winfo-name)</code></li>
+<li>L802: <code>(defun wlf:get-window-name (wset window)</code></li>
+<li>L814: <code>(defun wlf:wset-live-p (wset)</code></li>
+<li>L837: <code>(defun wlf:wset-clear-window-points (wset)</code></li>
+<li>L846: <code>(defun wlf:wset-fix-windows (wset)</code></li>
+<li>L941: <code>(provide 'window-layout)</code></li>
+</ul></main></html>

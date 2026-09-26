@@ -1,0 +1,258 @@
+[
+  {
+    "id": "ace-window",
+    "url": "https://github.com/abo-abo/ace-window.git",
+    "commit": "77115afc1b0b9f633084cf7479c767988106c196",
+    "commit_date": "2022-09-11T11:58:41+08:00",
+    "status": "fetched"
+  },
+  {
+    "id": "aweshell",
+    "url": "https://github.com/manateelazycat/aweshell.git",
+    "commit": "db495f29eef9013cf6b3796c3797e0ec76352e3f",
+    "commit_date": "2024-08-26T08:11:49+08:00",
+    "status": "fetched"
+  },
+  {
+    "id": "consult",
+    "url": "https://github.com/minad/consult.git",
+    "commit": "3c64214db5cd61a8f8186e4dce89c0e04be1652c",
+    "commit_date": "2026-09-26T11:10:30+02:00",
+    "status": "fetched"
+  },
+  {
+    "id": "coterm",
+    "url": "https://github.com/jdtsmith/coterm.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/coterm'...\nfatal: could not read Username for 'https://github.com': No such device or address\n"
+  },
+  {
+    "id": "dash",
+    "url": "https://github.com/magnars/dash.el.git",
+    "commit": "d746dd9edcb67a108818beb0cdc78dc1cb466832",
+    "commit_date": "2026-08-10T20:03:02+02:00",
+    "status": "fetched"
+  },
+  {
+    "id": "detached",
+    "url": "https://git.sr.ht/niklaseklund/detached.el.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/detached'...\nfatal: repository 'https://git.sr.ht/niklaseklund/detached.el.git/' not found\n"
+  },
+  {
+    "id": "eaf-terminal",
+    "url": "https://github.com/emacs-eaf/eaf-terminal.git",
+    "commit": "46cbe4f1730970e3db34b3ad86d3fa48fbe92c5b",
+    "commit_date": "2026-06-15T23:56:25-04:00",
+    "status": "fetched"
+  },
+  {
+    "id": "eat",
+    "url": "https://codeberg.org/akib/emacs-eat.git",
+    "commit": "c8d54d649872bfe7b2b9f49ae5c2addbf12d3b99",
+    "commit_date": "2025-02-06T06:44:47+06:00",
+    "status": "fetched"
+  },
+  {
+    "id": "emamux",
+    "url": "https://github.com/emacsorphanage/emamux.git",
+    "commit": "93bb7e8b8cfb0ced5b9b38044a031d40342201a1",
+    "commit_date": "2026-06-19T21:57:10+08:00",
+    "status": "fetched"
+  },
+  {
+    "id": "emux",
+    "url": "https://github.com/re5et/emux.git",
+    "commit": "ab000ab78fb6a96b00ac8332575871a31f6f9548",
+    "commit_date": "2019-06-09T23:20:26-07:00",
+    "status": "fetched"
+  },
+  {
+    "id": "equake",
+    "url": "https://github.com/emacsomancer/equake.git",
+    "commit": "4469dd9eb1519f4d699d43d6cdb3a59488021fe8",
+    "commit_date": "2026-01-01T20:25:37-06:00",
+    "status": "fetched"
+  },
+  {
+    "id": "eshell-toggle",
+    "url": "https://github.com/4DA/eshell-toggle.git",
+    "commit": "04e501e02c475bd9067eebcf8807c951f2316194",
+    "commit_date": "2025-05-13T22:42:09+05:00",
+    "status": "fetched"
+  },
+  {
+    "id": "eshell-vterm",
+    "url": "https://github.com/iostapyshyn/eshell-vterm.git",
+    "commit": "20f4b246fa605a1533cdfbe3cb7faf31a24e3d2e",
+    "commit_date": "2024-03-05T12:49:31+01:00",
+    "status": "fetched"
+  },
+  {
+    "id": "eterm-256color",
+    "url": "https://git.sr.ht/dieggsy/eterm-256color.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/eterm-256color'...\nfatal: repository 'https://git.sr.ht/dieggsy/eterm-256color.git/' not found\n"
+  },
+  {
+    "id": "f",
+    "url": "https://github.com/rejeep/f.el.git",
+    "commit": "931b6d0667fe03e7bf1c6c282d6d8d7006143c52",
+    "commit_date": "2024-10-03T13:31:16+02:00",
+    "status": "fetched"
+  },
+  {
+    "id": "ghostel",
+    "url": "https://github.com/dakra/ghostel.git",
+    "commit": "c2c411f2b0051465a5f5e7826ebab4ed216d4c0e",
+    "commit_date": "2026-09-21T18:34:10+02:00",
+    "status": "fetched"
+  },
+  {
+    "id": "ghostel-mux",
+    "url": "https://github.com/SweatierKey/ghostel-mux.git",
+    "commit": "c03055c8c081f5afe9ea35cfa431b844f415f949",
+    "commit_date": "2026-09-15T08:59:48+02:00",
+    "status": "fetched"
+  },
+  {
+    "id": "hydra",
+    "url": "https://github.com/abo-abo/hydra.git",
+    "commit": "59a2a45a35027948476d1d7751b0f0215b1e61aa",
+    "commit_date": "2025-03-16T12:54:52Z",
+    "status": "fetched"
+  },
+  {
+    "id": "marginalia",
+    "url": "https://github.com/minad/marginalia.git",
+    "commit": "c5d0139012d2a84f8040219b9aee17db4e145e5c",
+    "commit_date": "2026-09-07T07:11:17+02:00",
+    "status": "fetched"
+  },
+  {
+    "id": "mistty",
+    "url": "https://github.com/szermatt/mistty.git",
+    "commit": "baba2dcd18cac75fc9953da20e8c0a9886441319",
+    "commit_date": "2026-09-24T13:27:19+03:00",
+    "status": "fetched"
+  },
+  {
+    "id": "multi-term",
+    "url": "https://github.com/manateelazycat/multi-term.git",
+    "commit": "017c77c550115936860e2ea71b88e585371475d5",
+    "commit_date": "2020-05-14T12:28:16+08:00",
+    "status": "fetched"
+  },
+  {
+    "id": "multi-vterm",
+    "url": "https://github.com/suonlight/multi-vterm.git",
+    "commit": "36746d85870dac5aaee6b9af4aa1c3c0ef21a905",
+    "commit_date": "2022-10-31T13:10:30+07:00",
+    "status": "fetched"
+  },
+  {
+    "id": "popper",
+    "url": "https://github.com/karthink/popper.git",
+    "commit": "d83b894ee7a9daf7c8e9b864c23d08f1b23d78f6",
+    "commit_date": "2026-03-01T16:22:08-08:00",
+    "status": "fetched"
+  },
+  {
+    "id": "projectile-rails",
+    "url": "https://github.com/asok/projectile-rails.git",
+    "commit": "701784df7befe17b861f1b53fe9cbc59d0b94b9f",
+    "commit_date": "2022-12-31T17:43:16+01:00",
+    "status": "fetched"
+  },
+  {
+    "id": "s",
+    "url": "https://github.com/magnars/s.el.git",
+    "commit": "d7c04b84d03481a1ed62ee13dbe595224ccbe57c",
+    "commit_date": "2026-08-02T08:07:54+07:00",
+    "status": "fetched"
+  },
+  {
+    "id": "shell-here",
+    "url": "https://codeberg.org/emacs-weirdware/shell-here.git",
+    "commit": "eeb437ff26d62a5009046b1b3b4503b768e3131a",
+    "commit_date": "2022-01-02T09:03:08-08:00",
+    "status": "fetched"
+  },
+  {
+    "id": "shell-pop",
+    "url": "https://github.com/kyagi/shell-pop-el.git",
+    "commit": "446b1691454e65be648dcb7e316639aa7dd73be2",
+    "commit_date": "2026-06-10T18:31:29-04:00",
+    "status": "fetched"
+  },
+  {
+    "id": "term+",
+    "url": "https://github.com/tarao/term-plus-el.git",
+    "commit": "c3c9239b339c127231860de43abfa08c44c0201a",
+    "commit_date": "2017-05-09T09:17:18+09:00",
+    "status": "fetched"
+  },
+  {
+    "id": "term-manager",
+    "url": "https://github.com/colonelpanic8/term-manager.git",
+    "commit": "1581a90ff9b359449e056da55259b9f42e749f0c",
+    "commit_date": "2026-02-20T00:40:26-08:00",
+    "status": "fetched"
+  },
+  {
+    "id": "terminal-here",
+    "url": "https://github.com/davidshepherd7/terminal-here.git",
+    "commit": "d90bc3e1c8c660e11dba002a1ce1d82940b260b1",
+    "commit_date": "2026-03-14T10:48:49Z",
+    "status": "fetched"
+  },
+  {
+    "id": "terminal-toggle",
+    "url": "https://gitlab.com/mtekman/terminal-toggle.el.git",
+    "commit": "f824d634aef3600cb7a8e2ddf9e8444c6607c160",
+    "commit_date": "2019-02-26T16:10:30+01:00",
+    "status": "fetched"
+  },
+  {
+    "id": "transient",
+    "url": "https://github.com/magit/transient.git",
+    "commit": "6f69527a4d39f1244fb86a55657f70679d8577e0",
+    "commit_date": "2026-09-25T20:34:04+02:00",
+    "status": "fetched"
+  },
+  {
+    "id": "vertico",
+    "url": "https://github.com/minad/vertico.git",
+    "commit": "a9998a777f1d92348f84d091bb15b87df933a7a2",
+    "commit_date": "2026-09-13T17:25:32+02:00",
+    "status": "fetched"
+  },
+  {
+    "id": "vterm",
+    "url": "https://github.com/akermu/emacs-libvterm.git",
+    "commit": "6d715a93fa0e5182bc137d4db09f376e06938aa5",
+    "commit_date": "2026-09-14T09:41:29-07:00",
+    "status": "fetched"
+  },
+  {
+    "id": "vterm-hotkey",
+    "url": "https://github.com/rootatpixel/vterm-hotkey.git",
+    "commit": "039033a4c30dabca625d6924d1796bb9e13d85c7",
+    "commit_date": "2024-07-02T15:45:30+01:00",
+    "status": "fetched"
+  },
+  {
+    "id": "vterm-toggle",
+    "url": "https://github.com/jixiuf/vterm-toggle.git",
+    "commit": "a0051a8b8eaa85f8df54ddb032f5710c1f62779d",
+    "commit_date": "2026-06-02T00:32:05+08:00",
+    "status": "fetched"
+  },
+  {
+    "id": "with-editor",
+    "url": "https://github.com/magit/with-editor.git",
+    "commit": "7bec41144ea197961c76c769cfc0acaf689ebac0",
+    "commit_date": "2026-09-25T17:02:45+02:00",
+    "status": "fetched"
+  }
+]

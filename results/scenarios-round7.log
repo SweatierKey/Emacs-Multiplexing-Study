@@ -1,0 +1,11 @@
+vterm-manager passed 
+eterm-256color passed 
+term+ failed Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web
+
+SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/
+term-plus-mux failed Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web
+
+SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/
+emux passed 

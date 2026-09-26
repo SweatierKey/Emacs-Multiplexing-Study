@@ -1,0 +1,328 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: persp-mode</h1>
+<p>Fonte: https://github.com/Bad-ptr/persp-mode.el.git</p>
+<p>Revisione: <code>703f3b5ad502cfe5b027586611421900bed1fb40</code>.</p>
+<h2>persp-mode.el</h2>
+<ul>
+<li>L100: <code>(require 'cl-lib)</code></li>
+<li>L101: <code>(require 'gv)</code></li>
+<li>L102: <code>(require 'easymenu)</code></li>
+<li>L139: <code>(defvar persp-key-map nil)</code></li>
+<li>L275: <code>(defcustom persp-nil-name "none"</code></li>
+<li>L304: <code>(defcustom persp-lighter</code></li>
+<li>L311: <code>(defcustom persp-save-dir (expand-file-name "persp-confs/" user-emacs-directory)</code></li>
+<li>L317: <code>(defcustom persp-auto-save-fname "persp-auto-save"</code></li>
+<li>L323: <code>(defcustom persp-auto-save-persps-to-their-file t</code></li>
+<li>L329: <code>(defcustom persp-auto-save-persps-to-their-file-before-kill nil</code></li>
+<li>L338: <code>(defcustom persp-auto-save-opt 3</code></li>
+<li>L351: <code>(defcustom persp-auto-save-num-of-backups 3</code></li>
+<li>L356: <code>(defcustom persp-auto-resume-time 3.0</code></li>
+<li>L362: <code>(defcustom persp-set-last-persp-for-new-frames t</code></li>
+<li>L368: <code>(defcustom persp-reset-windows-on-nil-window-conf t</code></li>
+<li>L396: <code>(defcustom *persp-restrict-buffers-to* 0</code></li>
+<li>L404: <code>(defcustom persp-restrict-buffers-to-if-foreign-buffer nil</code></li>
+<li>L414: <code>(defcustom persp-set-frame-buffer-predicate 'restricted-buffer-list</code></li>
+<li>L454: <code>(defcustom persp-hook-up-emacs-buffer-completion nil</code></li>
+<li>L470: <code>(defcustom persp-set-read-buffer-function nil</code></li>
+<li>L486: <code>(defcustom persp-set-ido-hooks nil</code></li>
+<li>L495: <code>(defcustom persp-names-sort-before-read-function nil</code></li>
+<li>L513: <code>(defcustom persp-interactive-completion-system 'completing-read</code></li>
+<li>L534: <code>(defun persp-update-completion-system (&amp;optional system remove)</code></li>
+<li>L586: <code>(defcustom persp-init-frame-behaviour t</code></li>
+<li>L591: <code>(defcustom persp-init-new-frame-behaviour-override -1</code></li>
+<li>L598: <code>(defcustom persp-interactive-init-frame-behaviour-override -1</code></li>
+<li>L606: <code>(defcustom persp-emacsclient-init-frame-behaviour-override -1</code></li>
+<li>L614: <code>(defcustom persp-server-switch-behaviour 'only-file-windows-for-client-frame</code></li>
+<li>L635: <code>(defcustom persp-ignore-wconf-of-frames-created-to-edit-file t</code></li>
+<li>L650: <code>(defcustom persp-filter-frame-functions</code></li>
+<li>L665: <code>(defcustom persp-add-buffer-on-find-file t</code></li>
+<li>L680: <code>(defcustom persp-add-buffer-on-after-change-major-mode nil</code></li>
+<li>L703: <code>(defcustom persp-switch-to-added-buffer t</code></li>
+<li>L713: <code>(defcustom persp-when-remove-buffer-switch-to-other-buffer t</code></li>
+<li>L720: <code>(defcustom persp-remove-buffers-from-nil-persp-behaviour 'ask-to-rem-from-all</code></li>
+<li>L747: <code>(defcustom persp-kill-foreign-buffer-behaviour 'dont-ask-weak</code></li>
+<li>L757: <code>(defcustom persp-autokill-buffer-on-remove nil</code></li>
+<li>L767: <code>(defcustom persp-autokill-persp-when-removed-last-buffer 'hide-auto</code></li>
+<li>L779: <code>(defcustom persp-use-kill-buffer-advice t</code></li>
+<li>L792: <code>(defcustom persp-use-make-indirect-buffer-advice nil</code></li>
+<li>L805: <code>(defcustom persp-common-buffer-filter-functions</code></li>
+<li>L813: <code>(defcustom persp-buffer-list-restricted-filter-functions nil</code></li>
+<li>L818: <code>(defcustom persp-add-buffer-on-after-change-major-mode-filter-functions nil</code></li>
+<li>L824: <code>(defcustom persp-filter-save-buffers-functions</code></li>
+<li>L830: <code>(defcustom persp-save-buffer-functions</code></li>
+<li>L845: <code>(defcustom persp-load-buffer-functions</code></li>
+<li>L853: <code>(defcustom persp-load-buffer-handle-missing-file-functions</code></li>
+<li>L882: <code>(defcustom persp-load-name-conflict-behaviour nil</code></li>
+<li>L888: <code>(defcustom persp-load-buffer-name-conflict-behaviour nil</code></li>
+<li>L894: <code>(defcustom persp-mode-hook nil</code></li>
+<li>L899: <code>(defcustom persp-mode-deactivated-hook nil</code></li>
+<li>L904: <code>(defcustom persp-names-cache-changed-functions nil</code></li>
+<li>L911: <code>(defcustom persp-buffer-state-changed-functions nil</code></li>
+<li>L918: <code>(defcustom persp-created-functions nil</code></li>
+<li>L928: <code>(defcustom persp-renamed-functions nil</code></li>
+<li>L935: <code>(defcustom persp-before-kill-functions nil</code></li>
+<li>L941: <code>(defcustom persp-before-switch-functions nil</code></li>
+<li>L949: <code>(defcustom persp-activated-functions nil</code></li>
+<li>L958: <code>(defcustom persp-before-deactivate-functions nil</code></li>
+<li>L968: <code>(defcustom persp-before-save-state-to-file-functions nil</code></li>
+<li>L982: <code>(defcustom persp-after-load-state-functions</code></li>
+<li>L1011: <code>(defcustom persp-use-workgroups (and (version&lt; emacs-version "24.4")</code></li>
+<li>L1030: <code>(defcustom persp-restore-window-conf-method t</code></li>
+<li>L1042: <code>(defcustom persp-save-restore-window-conf-filter-functions</code></li>
+<li>L1065: <code>(defcustom persp-get-window-for-state-get-put-function</code></li>
+<li>L1076: <code>(defcustom persp-toggle-side-windows-around-window-state-get-put</code></li>
+<li>L1090: <code>(defcustom persp-before-window-state-get-functions</code></li>
+<li>L1106: <code>(defcustom persp-after-window-state-get-functions</code></li>
+<li>L1117: <code>(defcustom persp-before-window-state-put-functions</code></li>
+<li>L1136: <code>(defcustom persp-after-window-state-put-functions</code></li>
+<li>L1147: <code>(defcustom persp-window-state-get-function</code></li>
+<li>L1168: <code>(defcustom persp-window-state-put-function</code></li>
+<li>L1202: <code>(defcustom persp-window-to-stay-alive-filter-functions</code></li>
+<li>L1216: <code>(defcustom persp-buffer-list-function (symbol-function 'buffer-list)</code></li>
+<li>L1222: <code>(defcustom persp-dont-count-weaks-in-restricted-buffer-list nil</code></li>
+<li>L1229: <code>(defcustom persp-auto-persp-alist nil</code></li>
+<li>L1237: <code>(defcustom persp-switch-wrap t</code></li>
+<li>L1247: <code>(defvar persp-mode-map (make-sparse-keymap "persp-mode")</code></li>
+<li>L1252: <code>(define-key persp-key-map (kbd "o") '("o-ff persp-mode"    . ,(lambda () (interactive) (persp-mode -1))))</code></li>
+<li>L1253: <code>(define-key persp-key-map (kbd "S") '("S-witch(win)"       . persp-window-switch))</code></li>
+<li>L1254: <code>(define-key persp-key-map (kbd "L") '("L-oad some persps"  . persp-load-from-file-by-names))</code></li>
+<li>L1255: <code>(define-key persp-key-map (kbd "W") '("W-rite some persps" . persp-save-to-file-by-names))</code></li>
+<li>L1256: <code>(define-key persp-key-map (kbd "I") '("I-mport winConf"    . persp-import-win-conf))</code></li>
+<li>L1257: <code>(define-key persp-key-map (kbd "i") '("i-mport bufs"       . persp-import-buffers))</code></li>
+<li>L1258: <code>(define-key persp-key-map (kbd "c") '("c-opy"              . persp-copy))</code></li>
+<li>L1259: <code>(define-key persp-key-map (kbd "z") '("save&amp;kill"          . persp-save-and-kill))</code></li>
+<li>L1260: <code>(define-key persp-key-map (kbd "C") '("kill"               . persp-kill))</code></li>
+<li>L1261: <code>(define-key persp-key-map (kbd "l") '("l-oad persps"       . persp-load-state-from-file))</code></li>
+<li>L1262: <code>(define-key persp-key-map (kbd "w") '("w-rite persps"      . persp-save-state-to-file))</code></li>
+<li>L1263: <code>(define-key persp-key-map (kbd "r") '("r-ename"            . persp-rename))</code></li>
+<li>L1264: <code>(define-key persp-key-map (kbd "p") '("p-revious"          . persp-prev))</code></li>
+<li>L1265: <code>(define-key persp-key-map (kbd "n") '("n-ext"              . persp-next))</code></li>
+<li>L1266: <code>(define-key persp-key-map (kbd "X") '("remove bufs(reg-X)" . persp-remove-buffers-by-regexp))</code></li>
+<li>L1267: <code>(define-key persp-key-map (kbd "x") '("add bufs(reg-x)"    . persp-add-buffers-by-regexp))</code></li>
+<li>L1268: <code>(define-key persp-key-map (kbd "t") '("show buf"           . persp-temporarily-display-buffer))</code></li>
+<li>L1269: <code>(define-key persp-key-map (kbd "k") '("remove buf"         . persp-remove-buffer))</code></li>
+<li>L1270: <code>(define-key persp-key-map (kbd "a") '("a-dd buf"           . persp-add-buffer))</code></li>
+<li>L1271: <code>(define-key persp-key-map (kbd "K") '("K-ill buf"          . persp-kill-buffer))</code></li>
+<li>L1272: <code>(define-key persp-key-map (kbd "b") '("b-uf show&amp;add"      . persp-switch-to-buffer))</code></li>
+<li>L1273: <code>(define-key persp-key-map (kbd "s") '("s-witch(frame)"     . persp-frame-switch))</code></li>
+<li>L1276: <code>(defun persp-set-keymap-prefix (prefix)</code></li>
+<li>L1285: <code>(define-key persp-mode-map prefix 'persp-key-map)</code></li>
+<li>L1293: <code>(defcustom persp-keymap-prefix (kbd "C-c p")</code></li>
+<li>L1301: <code>(defun persp-set-toggle-read-buffer-filter-keys (keys)</code></li>
+<li>L1314: <code>(defcustom persp-read-multiple-keys</code></li>
+<li>L1355: <code>(defun persp-p (obj)</code></li>
+<li>L1358: <code>(defun persp-name (p)</code></li>
+<li>L1360: <code>(defun persp-buffers (p)</code></li>
+<li>L1362: <code>(defun persp-window-conf (p)</code></li>
+<li>L1364: <code>(defun persp-parameters (p)</code></li>
+<li>L1366: <code>(defun persp-weak (p)</code></li>
+<li>L1368: <code>(defun persp-auto (p)</code></li>
+<li>L1370: <code>(defun persp-hidden (p)</code></li>
+<li>L1410: <code>(defun persp-nil-p (obj)</code></li>
+<li>L1413: <code>(cl-defun persp-normalize-persp-arg (obj &amp;optional (phash *persp-hash*)</code></li>
+<li>L1426: <code>(defun persp-buffer-list (&amp;optional frame window)</code></li>
+<li>L1435: <code>(cl-defun persp-buffer-list-restricted</code></li>
+<li>L1546: <code>(defmacro with-persp-ido-hooks (&amp;rest body)</code></li>
+<li>L1561: <code>(cl-defun persp-modify-parameters (alist &amp;optional (persp (persp-get-current)))</code></li>
+<li>L1566: <code>(cl-defun persp-set-parameter</code></li>
+<li>L1576: <code>(cl-defun persp-parameter (param-name &amp;optional (persp (persp-get-current)))</code></li>
+<li>L1579: <code>(cl-defun persp-delete-parameter (param-name &amp;optional (persp (persp-get-current)))</code></li>
+<li>L1586: <code>(defun persp--buffer-prop-get-cons (buf key)</code></li>
+<li>L1591: <code>(defun persp--buffer-prop-set (buf key val)</code></li>
+<li>L1600: <code>(defun persp--buffer-prop-delete (buf key)</code></li>
+<li>L1608: <code>(defun persp--buffer-in-persps (buf)</code></li>
+<li>L1611: <code>(defun persp--buffer-in-persps-set (buf persps)</code></li>
+<li>L1614: <code>(defun persp--buffer-in-persps-add (buf persp)</code></li>
+<li>L1618: <code>(defun persp--buffer-in-persps-remove (buf persp)</code></li>
+<li>L1627: <code>(defun persp-mode-restore-and-remove-from-make-frame-hook (&amp;optional frame)</code></li>
+<li>L1650: <code>(defun persp-asave-on-exit (&amp;optional interactive-query opt)</code></li>
+<li>L1670: <code>(defun persp-kill-emacs-h ()</code></li>
+<li>L1676: <code>(defun persp-kill-emacs-query-function ()</code></li>
+<li>L1685: <code>(defun persp-special-last-buffer-make-current ()</code></li>
+<li>L1694: <code>(defun persp-auto-persp-parameters (name)</code></li>
+<li>L1696: <code>(defun persp--auto-persp-pickup-buffer (a-p-def buffer)</code></li>
+<li>L1700: <code>(defun persp-auto-persp-pickup-bufferlist-for (name bufferlist)</code></li>
+<li>L1705: <code>(defun persp-auto-persps-pickup-bufferlist (bufferlist)</code></li>
+<li>L1709: <code>(defun persp-auto-persp-pickup-buffers-for (name)</code></li>
+<li>L1712: <code>(defun persp-auto-persps-pickup-buffers ()</code></li>
+<li>L1716: <code>(defun persp-buffer-match-auto-persp-p (buffer-or-name)</code></li>
+<li>L1725: <code>(defun persp-auto-persps-for-buffer (buffer-or-name)</code></li>
+<li>L1732: <code>(defun persp-auto-persp-activate-hooks (name)</code></li>
+<li>L1739: <code>(defun persp-auto-persp-deactivate-hooks (name)</code></li>
+<li>L1746: <code>(defun persp-auto-persps-activate-hooks ()</code></li>
+<li>L1749: <code>(defun persp-auto-persps-deactivate-hooks ()</code></li>
+<li>L1780: <code>(cl-defun persp--generate-buffer-predicate</code></li>
+<li>L1844: <code>(defun persp--auto-persp-default-on-match (state)</code></li>
+<li>L1849: <code>(defun persp--auto-persp-default-after-match (state)</code></li>
+<li>L1874: <code>(cl-defun persp-def-auto-persp</code></li>
+<li>L2043: <code>(cl-defun persp-def-buffer-save/load</code></li>
+<li>L2139: <code>(defun persp-mode-setup-hooks ()</code></li>
+<li>L2165: <code>(defun persp-mode-remove-hooks ()</code></li>
+<li>L2190: <code>(defun persp-activate-kill-buffer-advice ()</code></li>
+<li>L2193: <code>(defun persp-deactivate-kill-buffer-advice ()</code></li>
+<li>L2196: <code>(defun persp-activate-make-indirect-buffer-advice ()</code></li>
+<li>L2199: <code>(defun persp-deactivate-make-indirect-buffer-advice ()</code></li>
+<li>L2204: <code>(define-minor-mode persp-mode</code></li>
+<li>L2282: <code>(defun persp--kill-buffer-query-function-foreign-check (persp buf)</code></li>
+<li>L2336: <code>(defun persp-kill-buffer-query-function ()</code></li>
+<li>L2370: <code>(defun persp-kill-buffer-h ()</code></li>
+<li>L2382: <code>(defun persp--remove-dead-buffers (persp &amp;optional bufname)</code></li>
+<li>L2397: <code>(defun persp-kill-buffer-around-adv (kb-f &amp;optional buffer-or-name)</code></li>
+<li>L2411: <code>(defun persp-make-indirect-buffer-around-adv</code></li>
+<li>L2423: <code>(defun persp--restore-buffer-on-find-file ()</code></li>
+<li>L2430: <code>(defun persp-add-or-not-on-find-file ()</code></li>
+<li>L2459: <code>(defun persp-after-change-major-mode-h ()</code></li>
+<li>L2481: <code>(defun persp-server-switch ()</code></li>
+<li>L2500: <code>(cl-defun persp-get-by-name</code></li>
+<li>L2504: <code>(cl-defun persp-with-name-exists-p (name &amp;optional (phash *persp-hash*))</code></li>
+<li>L2507: <code>(cl-defun persp-get-by-name-and-exists (name &amp;optional (phash *persp-hash*))</code></li>
+<li>L2513: <code>(cl-defun persp-gen-random-name (&amp;optional name (phash *persp-hash*))</code></li>
+<li>L2562: <code>(defun persp-is-frame-daemons-frame (f)</code></li>
+<li>L2565: <code>(defun persp-frame-good-p (&amp;optional f)</code></li>
+<li>L2569: <code>(defun persp-frame-list-without-daemon ()</code></li>
+<li>L2573: <code>(defun persp-set-for-frame (persp &amp;optional frame)</code></li>
+<li>L2577: <code>(defun persp-frame-window-persp-param-assq (&amp;optional frame-or-window)</code></li>
+<li>L2584: <code>(defun persp-of-frame (&amp;optional frame)</code></li>
+<li>L2588: <code>(cl-defun persp-names (&amp;optional (phash *persp-hash*) (reverse t))</code></li>
+<li>L2597: <code>(defun persp-set-for-window* (persp-name &amp;optional window)</code></li>
+<li>L2602: <code>(defun persp-of-window* (&amp;optional window)</code></li>
+<li>L2606: <code>(defun persp-set-for-window (persp &amp;optional window)</code></li>
+<li>L2613: <code>(defun persp-set-for-window-p (&amp;optional window)</code></li>
+<li>L2617: <code>(defun persp-of-window (&amp;optional window)</code></li>
+<li>L2625: <code>(defun persp-unset-for-window (&amp;optional window)</code></li>
+<li>L2629: <code>(defun persp-get-current (&amp;optional frame window)</code></li>
+<li>L2636: <code>(defun persp-set-current (persp)</code></li>
+<li>L2642: <code>(defun persp-names-current-frame-fast-ordered ()</code></li>
+<li>L2650: <code>(defun persp-group-by (keyf lst &amp;optional reverse)</code></li>
+<li>L2667: <code>(defun persp-regexp-p (obj)</code></li>
+<li>L2669: <code>(defun persp-string-match-p (regexp string &amp;optional start)</code></li>
+<li>L2677: <code>(cl-defun persp-persps (&amp;optional (phash *persp-hash*) names-regexp reverse)</code></li>
+<li>L2691: <code>(cl-defun persp-other-not-hidden-persps (&amp;optional persp (phash *persp-hash*))</code></li>
+<li>L2694: <code>(cl-defun persp-other-persps-with-buffer-except-nil</code></li>
+<li>L2708: <code>(cl-defun persp-other-persps-with-buffer-except-nil*</code></li>
+<li>L2719: <code>(cl-defun persp-buffer-in-other-p</code></li>
+<li>L2723: <code>(cl-defun persp-buffer-in-other-p*</code></li>
+<li>L2728: <code>(cl-defun persp-frames-with-persp (&amp;optional (persp (persp-of-frame)))</code></li>
+<li>L2732: <code>(cl-defun persp-frames-and-windows-with-persp (&amp;optional (persp (persp-get-current)))</code></li>
+<li>L2744: <code>(cl-defun persp-do-buffer-list-by-regexp (&amp;key blist regexp func (rest-args nil rest-args-p)</code></li>
+<li>L2863: <code>(defun persp-update-names-cache (new-persp-names &amp;optional force)</code></li>
+<li>L2873: <code>(defun persp-next ()</code></li>
+<li>L2887: <code>(defun persp-prev ()</code></li>
+<li>L2902: <code>(cl-defun persp-add (persp &amp;optional (phash *persp-hash*))</code></li>
+<li>L2912: <code>(cl-defun persp-remove-by-name (name &amp;optional (phash *persp-hash*))</code></li>
+<li>L2943: <code>(cl-defun persp-add-new (name &amp;optional (phash *persp-hash*) (ret-existent t))</code></li>
+<li>L2960: <code>(defun persp-find-and-set-persps-for-buffer (&amp;optional buffer-or-name)</code></li>
+<li>L2972: <code>(cl-defun persp-contain-buffer-p</code></li>
+<li>L2980: <code>(cl-defun persp-contain-buffer-p*</code></li>
+<li>L2989: <code>(cl-defun persp-add-buffer</code></li>
+<li>L3029: <code>(cl-defun persp-add-buffers-by-regexp (&amp;optional regexp (persp (persp-get-current)))</code></li>
+<li>L3037: <code>(cl-defun persp-temporarily-display-buffer</code></li>
+<li>L3065: <code>(defun persp--buffer-do-auto-action-if-needed (buffer)</code></li>
+<li>L3073: <code>(defun persp--remove-buffer-1 (buffer &amp;optional persp)</code></li>
+<li>L3085: <code>(defun persp--remove-buffer-2 (&amp;optional persp buffer-or-name)</code></li>
+<li>L3095: <code>(defun persp--remove-buffers-from-nil-p (buffs-or-names)</code></li>
+<li>L3118: <code>(cl-defun persp-remove-buffer</code></li>
+<li>L3152: <code>(defun persp-kill-buffer (&amp;optional buffers-or-names)</code></li>
+<li>L3169: <code>(defun persp-switch-to-buffer (buffer-or-name</code></li>
+<li>L3191: <code>(cl-defun persp-remove-buffers-by-regexp</code></li>
+<li>L3200: <code>(cl-defun persp-import-buffers-from (persp-from</code></li>
+<li>L3208: <code>(cl-defun persp-import-buffers</code></li>
+<li>L3221: <code>(cl-defun persp-import-win-conf</code></li>
+<li>L3238: <code>(cl-defun persp-copy</code></li>
+<li>L3300: <code>(cl-defun persp-get-buffer</code></li>
+<li>L3309: <code>(defun persp-get-buffer-or-null (buff-or-name)</code></li>
+<li>L3318: <code>(defun persp-buffer-filtered-out-p (buff-or-name &amp;rest filters)</code></li>
+<li>L3331: <code>(defun persp-buffer-free-p (&amp;optional buff-or-name del-weak)</code></li>
+<li>L3343: <code>(cl-defun persp-set-another-buffer-for-window</code></li>
+<li>L3365: <code>(cl-defun persp-switch-to-prev-buffer</code></li>
+<li>L3380: <code>(defun persp-hide (names)</code></li>
+<li>L3406: <code>(defun persp-unhide (names)</code></li>
+<li>L3424: <code>(cl-defun persp-kill (names &amp;optional dont-kill-buffers</code></li>
+<li>L3465: <code>(defun persp-kill-without-buffers (names)</code></li>
+<li>L3469: <code>(cl-defun persp-save-and-kill</code></li>
+<li>L3490: <code>(cl-defun persp--rename (new-name</code></li>
+<li>L3522: <code>(cl-defun persp-rename (new-name</code></li>
+<li>L3540: <code>(cl-defun persp-switch</code></li>
+<li>L3555: <code>(cl-defun persp-frame-switch (name &amp;optional (frame (selected-frame)))</code></li>
+<li>L3568: <code>(cl-defun persp-window-switch (name &amp;optional (window (selected-window)))</code></li>
+<li>L3578: <code>(defun persp-before-make-frame ()</code></li>
+<li>L3590: <code>(defun persp--do-auto-action-if-needed (persp)</code></li>
+<li>L3630: <code>(cl-defun persp-activate</code></li>
+<li>L3663: <code>(defun persp-init-new-frame (frame)</code></li>
+<li>L3676: <code>(cl-defun persp-init-frame (frame &amp;optional new-frame-p client)</code></li>
+<li>L3733: <code>(defun persp-delete-frame (frame)</code></li>
+<li>L3748: <code>(cl-defun persp-find-other-frame-with-persp (&amp;optional (persp (persp-of-frame))</code></li>
+<li>L3763: <code>(defun persp-add-minor-mode-menu ()</code></li>
+<li>L3770: <code>(defun persp-remove-from-menu (persp)</code></li>
+<li>L3778: <code>(defun persp-add-to-menu (persp)</code></li>
+<li>L3790: <code>(cl-defun persp-read-persp</code></li>
+<li>L3848: <code>(define-key mb-local-key-map push-keys</code></li>
+<li>L3855: <code>(define-key mb-local-key-map pop-keys</code></li>
+<li>L3895: <code>(define-key mb-local-key-map push-keys push-keys-backup))</code></li>
+<li>L3897: <code>(define-key mb-local-key-map pop-keys pop-keys-backup)))))</code></li>
+<li>L3910: <code>(defmacro persp--get-frame-buffer-predicate-buffer-list-cache (buflist)</code></li>
+<li>L3916: <code>(defun persp-generate-frame-buffer-predicate (opt)</code></li>
+<li>L3961: <code>(defun persp-set-frame-buffer-predicate (frame &amp;optional off)</code></li>
+<li>L4001: <code>(defun persp-update-frames-buffer-predicate (&amp;optional off)</code></li>
+<li>L4009: <code>(defun persp-generate-frame-server-switch-hook (opt)</code></li>
+<li>L4047: <code>(defun persp-set-frame-server-switch-hook (frame)</code></li>
+<li>L4052: <code>(defun persp-update-frame-server-switch-hook ()</code></li>
+<li>L4059: <code>(defun persp-ido-setup ()</code></li>
+<li>L4064: <code>(defun persp-restrict-ido-buffers ()</code></li>
+<li>L4081: <code>(defun persp-ido-toggle-filter ()</code></li>
+<li>L4090: <code>(cl-defun persp-read-buffer</code></li>
+<li>L4133: <code>(define-key mb-local-key-map toggle-filter-keys</code></li>
+<li>L4143: <code>(define-key mb-local-key-map push-keys</code></li>
+<li>L4150: <code>(define-key mb-local-key-map pop-keys</code></li>
+<li>L4228: <code>(define-key mb-local-key-map push-keys push-keys-backup))</code></li>
+<li>L4230: <code>(define-key mb-local-key-map pop-keys pop-keys-backup)))</code></li>
+<li>L4232: <code>(define-key mb-local-key-map toggle-filter-keys</code></li>
+<li>L4237: <code>(defmacro persp-with-nil-persp-hooks (&amp;rest body)</code></li>
+<li>L4248: <code>(defmacro persp-with-nil-emacs-window-hooks (&amp;rest body)</code></li>
+<li>L4256: <code>(defmacro persp-with-nil-emacs-frame-hooks (&amp;rest body)</code></li>
+<li>L4264: <code>(defmacro persp-with-temp-frame (fvar &amp;rest body)</code></li>
+<li>L4312: <code>(defun persp-configure-window-to-restore-window-conf (win)</code></li>
+<li>L4328: <code>(defun persp-get-create-window-to-stay-alive-before-config-put (&amp;optional frame win)</code></li>
+<li>L4367: <code>(defun persp-hide-side-windows (&amp;optional frame)</code></li>
+<li>L4379: <code>(defun persp-restore-side-windows (&amp;optional frame)</code></li>
+<li>L4391: <code>(defun persp-delete-other-windows (&amp;optional frame win)</code></li>
+<li>L4405: <code>(defun persp-window-state-get (&amp;optional frame win writable)</code></li>
+<li>L4425: <code>(defun persp-window-state-put (wc &amp;optional frame win)</code></li>
+<li>L4455: <code>(cl-defun persp-restore-window-conf (&amp;optional (frame (selected-frame))</code></li>
+<li>L4517: <code>(cl-defun persp-frame-save-state</code></li>
+<li>L4527: <code>(cl-defun persp-save-state</code></li>
+<li>L4536: <code>(defun persp-make-buffer-narrowing-parameter-cons (buf)</code></li>
+<li>L4542: <code>(defun persp-buffers-to-savelist (persp)</code></li>
+<li>L4559: <code>(defun persp-elisp-object-readable-p (obj)</code></li>
+<li>L4564: <code>(defun persp-window-conf-to-readable-homemade (wc)</code></li>
+<li>L4609: <code>(defun persp-window-conf-to-savelist (persp &amp;optional wccp-or-frame)</code></li>
+<li>L4634: <code>(defun persp-parameters-to-savelist (persp)</code></li>
+<li>L4644: <code>(defun persp-to-savelist (persp &amp;optional wccp-or-frame)</code></li>
+<li>L4654: <code>(defun persps-to-savelist (&amp;optional phash names-regexp)</code></li>
+<li>L4699: <code>(defun persp-savelist-to-file (savelist fname)</code></li>
+<li>L4739: <code>(cl-defun persp-save-state-to-file</code></li>
+<li>L4766: <code>(cl-defun persp-save-to-file-by-names</code></li>
+<li>L4799: <code>(defun persp-indirect-save-buffer (b)</code></li>
+<li>L4811: <code>(defun persp-dired-save-buffer (b)</code></li>
+<li>L4821: <code>(defun persp-standard-save-buffer (b)</code></li>
+<li>L4830: <code>(defun persp-tramp-save-buffer (b)</code></li>
+<li>L4879: <code>(defun persp-update-frames-window-confs (&amp;optional persp-names)</code></li>
+<li>L4888: <code>(defun persp-convert-window-confs (&amp;optional persp-names from/to)</code></li>
+<li>L4906: <code>(defmacro persp-car-as-fun-cdr-as-args (lst)</code></li>
+<li>L4918: <code>(defun persp-buffer-from-savelist (savelist)</code></li>
+<li>L5103: <code>(defun persp-buffers-from-savelist-0 (savelist)</code></li>
+<li>L5124: <code>(defun persp-window-conf-from-savelist-0 (savelist)</code></li>
+<li>L5129: <code>(defun persp-parameters-from-savelist-0 (savelist)</code></li>
+<li>L5134: <code>(defun persp-from-savelist-0 (savelist phash persp-file)</code></li>
+<li>L5233: <code>(defun persps-from-savelist-0</code></li>
+<li>L5249: <code>(defun persp-name-from-savelist-0 (savelist)</code></li>
+<li>L5252: <code>(defun persp-names-from-savelist-0 (savelist)</code></li>
+<li>L5255: <code>(defun persps-savelist-version-string (savelist)</code></li>
+<li>L5267: <code>(defun persp-dispatch-loadf-version (funsym savelist &amp;optional version-str)</code></li>
+<li>L5281: <code>(defun persps-from-savelist</code></li>
+<li>L5297: <code>(defun persp-savelist-filter-by-names-regexp (savelist names-regexp &amp;optional version-str)</code></li>
+<li>L5309: <code>(defun persp-savelist-from-savefile (fname)</code></li>
+<li>L5323: <code>(defun persp-list-persp-names-in-file (&amp;optional fname savelist version-str)</code></li>
+<li>L5337: <code>(cl-defun persp-load-state-from-file</code></li>
+<li>L5349: <code>(cl-defun persp-load-from-file-by-names (&amp;optional (fname persp-auto-save-fname)</code></li>
+<li>L5368: <code>(provide 'persp-mode)</code></li>
+</ul></main></html>

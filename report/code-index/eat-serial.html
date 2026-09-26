@@ -1,0 +1,123 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: eat-serial</h1>
+<p>Fonte: https://github.com/ArthurHeymans/eat-serial.git</p>
+<p>Revisione: <code>5510c23cd97994e98c068903c93545f3e4077881</code>.</p>
+<h2>eat-serial-codec.el</h2>
+<ul>
+<li>L22: <code>(require 'cl-lib)</code></li>
+<li>L29: <code>(defcustom eat-serial-invalid-byte-policy 'replacement</code></li>
+<li>L46: <code>(defun eat-serial-codec-make-state (&amp;optional invalid-byte-policy)</code></li>
+<li>L55: <code>(defun eat-serial-codec-reset (state)</code></li>
+<li>L59: <code>(defun eat-serial-codec--unibyte (string)</code></li>
+<li>L78: <code>(defun eat-serial-codec--continuation-byte-p (byte)</code></li>
+<li>L82: <code>(defun eat-serial-codec--valid-sequence-byte-p (lead offset byte)</code></li>
+<li>L93: <code>(defun eat-serial-codec--valid-prefix-p (bytes index end)</code></li>
+<li>L105: <code>(defun eat-serial-codec--invalid-byte-string (byte policy)</code></li>
+<li>L112: <code>(defun eat-serial-codec--valid-codepoint-p (codepoint min-codepoint)</code></li>
+<li>L118: <code>(defun eat-serial-codec--decode-codepoint (bytes index length)</code></li>
+<li>L134: <code>(defun eat-serial-codec--sequence-shape (byte)</code></li>
+<li>L143: <code>(defun eat-serial-codec-decode (state chunk)</code></li>
+<li>L205: <code>(defun eat-serial-codec-flush (state)</code></li>
+<li>L218: <code>(provide 'eat-serial-codec)</code></li>
+</ul>
+<h2>eat-serial-tests.el</h2>
+<ul>
+<li>L10: <code>(require 'ert)</code></li>
+<li>L11: <code>(require 'cl-lib)</code></li>
+<li>L12: <code>(require 'eat-serial-codec)</code></li>
+<li>L38: <code>(defun eat-serial-tests--require-eat-serial ()</code></li>
+<li>L43: <code>(defun eat-serial-tests--sleep-process (buffer)</code></li>
+<li>L50: <code>(defun eat-serial-tests--decode-chunks (chunks &amp;optional policy)</code></li>
+<li>L254: <code>(provide 'eat-serial-tests)</code></li>
+</ul>
+<h2>eat-serial.el</h2>
+<ul>
+<li>L23: <code>(require 'cl-lib)</code></li>
+<li>L24: <code>(require 'subr-x)</code></li>
+<li>L25: <code>(require 'format-spec)</code></li>
+<li>L26: <code>(require 'eat)</code></li>
+<li>L27: <code>(require 'eat-serial-codec)</code></li>
+<li>L34: <code>(defcustom eat-serial-default-speed 115200</code></li>
+<li>L39: <code>(defcustom eat-serial-default-coding-system 'utf-8-unix</code></li>
+<li>L44: <code>(defcustom eat-serial-default-input-mode 'semi-char</code></li>
+<li>L52: <code>(defcustom eat-serial-speed-history</code></li>
+<li>L58: <code>(defcustom eat-serial-buffer-name-format "*eat-serial %p*"</code></li>
+<li>L65: <code>(defcustom eat-serial-break-duration 0</code></li>
+<li>L72: <code>(defcustom eat-serial-send-break-function nil</code></li>
+<li>L92: <code>(defvar eat-serial-mode-map</code></li>
+<li>L94: <code>(define-key map (kbd "C-c C-k") #'eat-serial-disconnect)</code></li>
+<li>L95: <code>(define-key map (kbd "C-c C-s r") #'eat-serial-reconnect)</code></li>
+<li>L96: <code>(define-key map (kbd "C-c C-s d") #'eat-serial-disconnect)</code></li>
+<li>L97: <code>(define-key map (kbd "C-c C-s c") #'eat-serial-configure)</code></li>
+<li>L98: <code>(define-key map (kbd "C-c C-s b") #'eat-serial-send-break)</code></li>
+<li>L99: <code>(define-key map (kbd "C-c C-s x") #'eat-serial-send-byte)</code></li>
+<li>L103: <code>(define-minor-mode eat-serial-mode</code></li>
+<li>L108: <code>(defun eat-serial--buffer-name (port)</code></li>
+<li>L112: <code>(defun eat-serial--read-port ()</code></li>
+<li>L116: <code>(defun eat-serial--live-process-p (&amp;optional process)</code></li>
+<li>L123: <code>(defun eat-serial--require-process ()</code></li>
+<li>L129: <code>(defun eat-serial--mode-line-string ()</code></li>
+<li>L155: <code>(defun eat-serial--mode-line-item (text help-echo command)</code></li>
+<li>L163: <code>(defun eat-serial--speed-string ()</code></li>
+<li>L169: <code>(defun eat-serial--configuration-summary ()</code></li>
+<li>L184: <code>(defun eat-serial--popup-mode-line-menu (event keymap)</code></li>
+<li>L196: <code>(defun eat-serial--install-mode-line ()</code></li>
+<li>L204: <code>(defun eat-serial--display-window ()</code></li>
+<li>L215: <code>(defun eat-serial--resize-terminal-to-window (&amp;rest _)</code></li>
+<li>L229: <code>(defun eat-serial--set-terminal-parameter-if-bound (parameter function)</code></li>
+<li>L234: <code>(defun eat-serial--set-terminal-process (process)</code></li>
+<li>L241: <code>(defun eat-serial--buffer-processes (&amp;optional buffer)</code></li>
+<li>L253: <code>(defun eat-serial--delete-foreign-buffer-processes ()</code></li>
+<li>L264: <code>(defun eat-serial--serial-terminal-p ()</code></li>
+<li>L270: <code>(defun eat-serial--reset-foreign-terminal ()</code></li>
+<li>L284: <code>(defun eat-serial--install-terminal-functions (&amp;optional process)</code></li>
+<li>L309: <code>(defun eat-serial--select-default-input-mode ()</code></li>
+<li>L317: <code>(defun eat-serial--ensure-terminal ()</code></li>
+<li>L337: <code>(defun eat-serial--setup-buffer (port speed)</code></li>
+<li>L354: <code>(defun eat-serial--set-configuration (speed bytesize parity stopbits flowcontrol)</code></li>
+<li>L362: <code>(defun eat-serial--configure-process</code></li>
+<li>L373: <code>(defun eat-serial--apply-configuration</code></li>
+<li>L395: <code>(defun eat-serial-set-speed (speed)</code></li>
+<li>L406: <code>(defun eat-serial-set-framing (bytesize parity stopbits)</code></li>
+<li>L432: <code>(defun eat-serial-set-flowcontrol (flowcontrol)</code></li>
+<li>L450: <code>(defun eat-serial--clear-process-state (&amp;optional state)</code></li>
+<li>L457: <code>(defun eat-serial--process-arguments ()</code></li>
+<li>L474: <code>(defun eat-serial--open-process ()</code></li>
+<li>L499: <code>(defun eat-serial--queue-output (process text)</code></li>
+<li>L509: <code>(defun eat-serial--filter (process chunk)</code></li>
+<li>L523: <code>(defun eat-serial--sentinel (process message)</code></li>
+<li>L542: <code>(defun eat-serial--send-raw-string (process bytes)</code></li>
+<li>L558: <code>(defun eat-serial--send-input (_terminal input)</code></li>
+<li>L571: <code>(defun eat-serial (port &amp;optional speed)</code></li>
+<li>L598: <code>(defun eat-serial-reconnect ()</code></li>
+<li>L608: <code>(defun eat-serial-disconnect ()</code></li>
+<li>L618: <code>(defun eat-serial--read-choice (prompt choices current)</code></li>
+<li>L627: <code>(defun eat-serial-configure (speed bytesize parity stopbits flowcontrol)</code></li>
+<li>L669: <code>(defun eat-serial--parse-byte (string)</code></li>
+<li>L682: <code>(defun eat-serial--read-byte ()</code></li>
+<li>L691: <code>(defun eat-serial-send-byte (byte)</code></li>
+<li>L697: <code>(defun eat-serial--python-send-break (process duration)</code></li>
+<li>L712: <code>(defun eat-serial-send-break (&amp;optional duration)</code></li>
+<li>L727: <code>(defun eat-serial-copy-port-name ()</code></li>
+<li>L735: <code>(defun eat-serial--connection-menu ()</code></li>
+<li>L738: <code>(define-key map [copy-port]</code></li>
+<li>L741: <code>(define-key map [send-byte]</code></li>
+<li>L744: <code>(define-key map [send-break]</code></li>
+<li>L747: <code>(define-key map [separator-1] '(menu-item "--"))</code></li>
+<li>L748: <code>(define-key map [configure]</code></li>
+<li>L751: <code>(define-key map [disconnect]</code></li>
+<li>L754: <code>(define-key map [reconnect]</code></li>
+<li>L759: <code>(defun eat-serial--speed-menu ()</code></li>
+<li>L768: <code>(define-key map [other]</code></li>
+<li>L771: <code>(define-key map [separator-1] '(menu-item "--"))</code></li>
+<li>L784: <code>(defun eat-serial--config-menu ()</code></li>
+<li>L787: <code>(define-key map [configure]</code></li>
+<li>L790: <code>(define-key map [separator-1] '(menu-item "--"))</code></li>
+<li>L806: <code>(define-key map [separator-2] '(menu-item "--"))</code></li>
+<li>L819: <code>(define-key map [separator-3] '(menu-item "--"))</code></li>
+<li>L835: <code>(define-key map [separator-4] '(menu-item "--"))</code></li>
+<li>L848: <code>(define-key map [separator-5] '(menu-item "--"))</code></li>
+<li>L864: <code>(defun eat-serial-mode-line-connection-menu (event)</code></li>
+<li>L869: <code>(defun eat-serial-mode-line-speed-menu (event)</code></li>
+<li>L874: <code>(defun eat-serial-mode-line-config-menu (event)</code></li>
+<li>L879: <code>(provide 'eat-serial)</code></li>
+</ul></main></html>

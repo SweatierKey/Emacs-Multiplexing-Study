@@ -1,0 +1,831 @@
+# Indice del codice: ghostel
+
+Fonte: https://github.com/dakra/ghostel.git
+
+Revisione: `c2c411f2b0051465a5f5e7826ebab4ed216d4c0e`.
+
+
+## extensions/consult-ghostel/consult-ghostel.el
+
+- L61: `(require 'cl-lib)`
+- L62: `(require 'consult)`
+- L63: `(require 'ghostel)`
+- L64: `(require 'marginalia nil 'noerror)`
+- L69: `(defun consult-ghostel--pairs (buffers)`
+- L162: `(defun consult-ghostel--display (buffer &optional norecord)`
+- L172: `(defun consult-ghostel--spawn (name &optional identity)`
+- L179: `(defun consult-ghostel--switch (sources prompt)`
+- L191: `(defun consult-ghostel (&optional arg)`
+- L206: `(defun consult-ghostel-project (&optional arg)`
+- L233: `(defun consult-ghostel--input-start (cursor)`
+- L258: `(defun consult-ghostel--input-region ()`
+- L273: `(defun consult-ghostel-history ()`
+- L334: `(defun consult-ghostel-marginalia-annotate (cand)`
+- L343: `(defun consult-ghostel--line-candidates (orig top curr-line)`
+- L397: `(defun consult-ghostel--wrap-corrected-dest (pos offset)`
+- L412: `(defun consult-ghostel--line-point-placement`
+- L439: `(define-minor-mode consult-ghostel-mode`
+- L483: `(provide 'consult-ghostel)`
+
+## extensions/evil-ghostel/evil-ghostel.el
+
+- L46: `(require 'evil)`
+- L47: `(require 'ghostel)`
+- L62: `(defcustom evil-ghostel-initial-state 'insert`
+- L74: `(defcustom evil-ghostel-escape 'auto`
+- L88: `(defcustom evil-ghostel-sync-render-max-iterations 10`
+- L98: `(defcustom evil-ghostel-word-boundaries "!\"#$%&'()*+,-./:;<=>?@[\\]^'{|}~"`
+- L136: `(defun evil-ghostel--prompt-active-p ()`
+- L144: `(defun evil-ghostel--terminal-live-p ()`
+- L152: `(defun evil-ghostel--line-mode-active-p ()`
+- L165: `(defun evil-ghostel--scrollback-lines ()`
+- L169: `(defun evil-ghostel--reset-cursor-point ()`
+- L177: `(defun evil-ghostel--point-viewport-row ()`
+- L183: `(defun evil-ghostel--following-window-p ()`
+- L195: `(defun evil-ghostel--around-redraw (orig-fn term &optional full force-sync)`
+- L252: `(defun evil-ghostel--anchor-inhibit (_window force)`
+- L264: `(defun evil-ghostel--override-cursor-style (orig-fn)`
+- L280: `(defun evil-ghostel--insert-state-entry ()`
+- L292: `(defun evil-ghostel--escape-stay ()`
+- L301: `(defun evil-ghostel--fg-color (pos)`
+- L309: `(defun evil-ghostel--greyed-out-p (color)`
+- L320: `(defun evil-ghostel--suggestion-p (cursor region-end)`
+- L337: `(defun evil-ghostel--input-end ()`
+- L364: `(defun evil-ghostel--input-start ()`
+- L372: `(defun evil-ghostel--clamp (beg end)`
+- L391: `(defun evil-ghostel--sync-render ()`
+- L403: `(defun evil-ghostel-goto-input-position (pos)`
+- L431: `(defun evil-ghostel-delete-input-region (beg end)`
+- L445: `(defun evil-ghostel-replace-input-region (beg end string)`
+- L514: `(defun evil-ghostel-insert ()`
+- L530: `(defun evil-ghostel-insert-line ()`
+- L543: `(defun evil-ghostel-append ()`
+- L566: `(defun evil-ghostel-append-line ()`
+- L722: `(defun evil-ghostel--do-paste (count register advance)`
+- L738: `(defun evil-ghostel-paste-after (&optional count register yank-handler)`
+- L746: `(defun evil-ghostel-paste-before (&optional count register yank-handler)`
+- L758: `(defun evil-ghostel-undo (count)`
+- L766: `(defun evil-ghostel-redo (count)`
+- L777: `(defvar evil-ghostel-mode-map (make-sparse-keymap)`
+- L789: `(defun evil-ghostel--fallback-key (keys)`
+- L799: `(defun evil-ghostel--passthrough-ctrl (key)`
+- L817: `(defun evil-ghostel--passthrough-delete ()`
+- L881: `(defun evil-ghostel--escape ()`
+- L904: `(defun evil-ghostel-toggle-send-escape (&optional arg)`
+- L932: `(define-key evil-ghostel-mode-map (kbd "C-c C-r")`
+- L940: `(define-key evil-ghostel-mode-map (kbd "C-c <escape>")`
+- L947: `(defun evil-ghostel--evil-escape-skip-insert ()`
+- L965: `(defun evil-ghostel--install-word-boundaries ()`
+- L977: `(defun evil-ghostel--restore-word-boundaries ()`
+- L983: `(defun evil-ghostel--any-active-elsewhere-p (except-buffer)`
+- L993: `(define-minor-mode evil-ghostel-mode`
+- L1041: `(provide 'evil-ghostel)`
+
+## lisp/ghostel-bookmark.el
+
+- L23: `(require 'bookmark)`
+- L24: `(require 'ghostel)`
+- L26: `(defcustom ghostel-bookmark-check-dir t`
+- L35: `(defun ghostel-bookmark-make-record ()`
+- L49: `(defun ghostel-bookmark-handler (bmk)`
+- L134: `(defun ghostel-bookmark--shell-idle-p ()`
+- L155: `(provide 'ghostel-bookmark)`
+
+## lisp/ghostel-comint.el
+
+- L44: `(require 'comint)`
+- L45: `(require 'ghostel)`
+- L65: `(defun ghostel-comint--apply-palette (state)`
+- L82: `(defun ghostel-comint--update-dir (uri)`
+- L94: `(defun ghostel-comint--face-to-font-lock-face (string)`
+- L122: `(defun ghostel-comint-filter (string)`
+- L142: `(define-minor-mode ghostel-comint-mode`
+- L182: `(define-minor-mode ghostel-comint-global-mode`
+- L205: `(provide 'ghostel-comint)`
+
+## lisp/ghostel-compile.el
+
+- L68: `(require 'ghostel)`
+- L69: `(require 'compile)`
+- L84: `(defcustom ghostel-compile-buffer-name "*ghostel-compile*"`
+- L88: `(defcustom ghostel-compile-finished-major-mode 'ghostel-compile-view-mode`
+- L103: `(defcustom ghostel-compile-debug nil`
+- L108: `(defcustom ghostel-compile-finish-functions nil`
+- L164: `(defvar ghostel-compile-view-mode-map`
+- L169: `(define-key map "n" #'compilation-next-error)`
+- L170: `(define-key map "p" #'compilation-previous-error)`
+- L171: `(define-key map "g" #'ghostel-recompile)`
+- L183: `(define-derived-mode ghostel-compile-view-mode`
+- L225: `(defun ghostel-compile--anchor-inhibit (_window force)`
+- L230: `(defun ghostel-compile--format-duration (seconds)`
+- L238: `(defun ghostel-compile--status-message (exit)`
+- L245: `(defun ghostel-compile--header-text (command start-time)`
+- L256: `(defun ghostel-compile--footer-text (exit start-time end-time)`
+- L269: `(defun ghostel-compile--set-mode-line-running ()`
+- L281: `(defun ghostel-compile--set-mode-line-exit (exit)`
+- L291: `(defun ghostel-compile--auto-jump (buffer)`
+- L301: `(defun ghostel-compile--teardown-terminal ()`
+- L325: `(defun ghostel-compile--trim-trailing-blanks (start)`
+- L338: `(defun ghostel-compile--unwrap-soft-wraps ()`
+- L357: `(defun ghostel-compile--render-header-live (header)`
+- L374: `(defun ghostel-compile--reenter-or-abort (buffer)`
+- L384: `(defun ghostel-compile--finalize (buffer exit end-time)`
+- L541: `(defun ghostel-compile--commit-pending-frame (buffer)`
+- L562: `(defun ghostel-compile--sentinel (process _event)`
+- L601: `(defun ghostel-compile--spawn (command buffer height width &optional interactive)`
+- L675: `(defun ghostel-compile--prepare-buffer (name dir &optional interactive)`
+- L811: `(defun ghostel-compile--start (command buffer-name dir`
+- L932: `(defun ghostel-compile (command &optional interactive)`
+- L977: `(defun ghostel-recompile (&optional edit-command)`
+- L1025: `(defun ghostel-compile--assert-live-run ()`
+- L1037: `(defun ghostel-compile--set-pty-echo (enable)`
+- L1057: `(defun ghostel-compile--set-compilation-style-input (enable)`
+- L1066: `(defun ghostel-compile--restore-compilation-style ()`
+- L1082: `(defun ghostel-compile-switch-to-interactive ()`
+- L1122: `(defun ghostel-compile-switch-to-compilation-style ()`
+- L1148: `(defvar ghostel-compile-toggle-mode-map`
+- L1150: `(define-key m (kbd "C-c C-j") #'ghostel-compile-switch-to-interactive)`
+- L1151: `(define-key m (kbd "C-c C-e") #'ghostel-compile-switch-to-compilation-style)`
+- L1156: `(define-key m (kbd "C-c C-t") #'ghostel-compile-switch-to-compilation-style)`
+- L1167: `(define-minor-mode ghostel-compile-toggle-mode`
+- L1180: `(defcustom ghostel-compile-global-mode-excluded-modes '(grep-mode)`
+- L1188: `(defun ghostel-compile--compilation-start-advice`
+- L1252: `(define-minor-mode ghostel-compile-global-mode`
+- L1285: `(provide 'ghostel-compile)`
+
+## lisp/ghostel-debug.el
+
+- L32: `(require 'cl-lib)`
+- L33: `(require 'lisp-mnt)`
+- L34: `(require 'ghostel)`
+- L145: `(defun ghostel-debug--log-password-edge (orig &rest args)`
+- L179: `(defun ghostel-debug-password-events-show ()`
+- L215: `(defun ghostel-debug-start ()`
+- L244: `(defun ghostel-debug-stop ()`
+- L264: `(defun ghostel--debug-log-vt (level scope message)`
+- L276: `(defun ghostel-debug--log-filter (_proc output)`
+- L289: `(defun ghostel-debug--log-send (key)`
+- L299: `(defun ghostel-debug--log-encoded (key-name mods &optional utf8)`
+- L308: `(defun ghostel-debug--snapshot (buffer)`
+- L335: `(defun ghostel-debug--fmt-wins (wins)`
+- L343: `(defun ghostel-debug--log-redraw (orig-fn buffer &optional force)`
+- L378: `(defun ghostel-debug--log-resize (orig-fn window &optional force)`
+- L416: `(defun ghostel-debug-typing-latency (&optional count)`
+- L447: `(defun ghostel-debug--latency-on-send (_key)`
+- L452: `(defun ghostel-debug--latency-on-echo (_proc _output)`
+- L462: `(defun ghostel-debug--latency-on-render (_buffer &rest _)`
+- L477: `(defun ghostel-debug--latency-report ()`
+- L557: `(defun ghostel-debug--vref (vector index)`
+- L563: `(defun ghostel-debug--prin1 (value)`
+- L570: `(defun ghostel-debug--insert-field (label value)`
+- L575: `(defun ghostel-debug--char-summary (char)`
+- L585: `(defun ghostel-debug--find-gstring (pos end window)`
+- L622: `(defun ghostel-debug--insert-font-info (font font-info)`
+- L640: `(defun ghostel-debug--insert-renderer-metrics (font-info gstring)`
+- L660: `(defun ghostel-debug--insert-glyph (index glyph)`
+- L682: `(defun ghostel-debug-glyph-at-point ()`
+- L745: `(defun ghostel-debug-info (&optional with-remote-probes)`
+- L1235: `(defun ghostel-debug--count-compilation-messages ()`
+- L1248: `(defun ghostel-debug--insert-compile-run (buf)`
+- L1308: `(defun ghostel-debug--insert-compile-routing ()`
+- L1329: `(defun ghostel-debug--insert-tramp-section (dir)`
+- L1402: `(defun ghostel-debug--insert-command-cells (cmd nil-message)`
+- L1420: `(defun ghostel-debug--insert-spawn-capture (cap)`
+- L1504: `(defun ghostel-debug--insert-spawn-phase-timings (cap)`
+- L1559: `(defun ghostel-debug--insert-spawn-timeline (cap)`
+- L1611: `(defun ghostel-debug--insert-remote-probes (ghostel-buf)`
+- L1725: `(defun ghostel-debug-ghostel (&optional arg)`
+- L1748: `(defun ghostel-debug--capture-start-process (orig &rest args)`
+- L1758: `(defun ghostel-debug--capture-spawn-pty`
+- L1839: `(defun ghostel-debug--capture-filter (proc output)`
+- L1876: `(defun ghostel-debug--capture-send-string (string)`
+- L1904: `(defun ghostel-debug-keypress ()`
+- L1926: `(defun ghostel--debug-kp-add-call (kind value)`
+- L1934: `(defun ghostel--debug-kp-record-write-pty (_term data)`
+- L1940: `(defun ghostel--debug-kp-record-send-string (string)`
+- L1946: `(defun ghostel--debug-kp-record-encode-key (bytes)`
+- L1956: `(defun ghostel--debug-kp-pre-command ()`
+- L1976: `(defun ghostel--debug-kp-post-command ()`
+- L1983: `(defun ghostel--debug-kp-teardown ()`
+- L1992: `(defun ghostel--debug-kp-fmt-bytes (s)`
+- L2001: `(defun ghostel--debug-kp-show (state)`
+- L2078: `(provide 'ghostel-debug)`
+
+## lisp/ghostel-desktop.el
+
+- L22: `(require 'desktop)`
+- L23: `(require 'ghostel)`
+- L26: `(defun ghostel-desktop-save-buffer (_desktop-dirname)`
+- L33: `(defun ghostel-desktop-restore-buffer (_file-name buffer-name misc)`
+- L53: `(defun ghostel-desktop--reuse (identity buffer-name)`
+- L73: `(defun ghostel-desktop--spawn (dir identity buffer-name)`
+- L110: `(defun ghostel-desktop--shield-replay (buf)`
+- L120: `(defun ghostel-desktop--undo-replay (buf mode had-region)`
+- L132: `(provide 'ghostel-desktop)`
+
+## lisp/ghostel-eshell.el
+
+- L31: `(require 'ghostel)`
+- L41: `(defcustom ghostel-eshell-track-title nil`
+- L49: `(defun ghostel-eshell--visual-exit (buffer _event)`
+- L66: `(keymap-set map "q" #'kill-current-buffer)`
+- L71: `(defun ghostel-eshell--exec-visual (&rest args)`
+- L107: `(defun eshell/ghostel (&rest args)`
+- L118: `(define-minor-mode ghostel-eshell-visual-command-mode`
+- L134: `(provide 'ghostel-eshell)`
+
+## lisp/ghostel-faces.el
+
+- L17: `(require 'ansi-color)`
+- L167: `(defun ghostel--face-hex-color (face attr)`
+- L185: `(defun ghostel--hex-color-scheme (hex)`
+- L193: `(provide 'ghostel-faces)`
+
+## lisp/ghostel-ime.el
+
+- L49: `(require 'ghostel)`
+- L67: `(defun ghostel-ime--active-quail-overlay-p (buffer)`
+- L79: `(defun ghostel-ime-lisp-composing-p (&optional buffer)`
+- L88: `(defun ghostel-ime--wrap-input-method (key)`
+- L118: `(defun ghostel-ime--install ()`
+- L135: `(defun ghostel-ime--reassert ()`
+- L144: `(defun ghostel-ime--uninstall ()`
+- L154: `(define-minor-mode ghostel-ime-mode`
+- L184: `(provide 'ghostel-ime)`
+
+## lisp/ghostel-kitty.el
+
+- L12: `(require 'cl-lib)`
+- L20: `(defcustom ghostel-kitty-graphics-storage-limit (* 320 1024 1024)  ; 320 MiB`
+- L34: `(defcustom ghostel-kitty-graphics-mediums '(file temp-file shared-mem)`
+- L69: `(defun ghostel--kitty-mediums-bits ()`
+- L78: `(defun ghostel--kitty-apply-row-slice (row cw ch img`
+- L125: `(defun ghostel--kitty-display-image (data abs-row vp-col grid-cols grid-rows pixel-w pixel-h)`
+- L197: `(defun ghostel--kitty-display-virtual (data row-up nth img-row img-col`
+- L246: `(defun ghostel--kitty-clear ()`
+- L283: `(defun ghostel--kitty-slice-y-at (pos)`
+- L301: `(defun ghostel--kitty-strip-orphan-top ()`
+- L352: `(defun ghostel--kitty-any-remaining-p (start end)`
+- L365: `(provide 'ghostel-kitty)`
+
+## lisp/ghostel-line-mode.el
+
+- L18: `(require 'comint)`
+- L19: `(require 'compat)`
+- L47: `(defvar ghostel-semi-char-mode-map)`
+- L53: `(defcustom ghostel-line-mode-history-size 200`
+- L58: `(defcustom ghostel-line-mode-completion-at-point-functions`
+- L73: `(defcustom ghostel-line-mode-use-bash-completion 'auto`
+- L94: `(defcustom ghostel-line-mode-bash-completion-prespawn nil`
+- L175: `(defvar-keymap ghostel-line-mode-map`
+- L196: `(defun ghostel-line-mode-send-or-open-link ()`
+- L204: `(defun ghostel-line-mode-self-insert (&optional n)`
+- L219: `(defun ghostel-line-mode-newline ()`
+- L238: `(defun ghostel--line-mode-prompt-on-screen-p ()`
+- L248: `(defun ghostel--line-mode-on-live-edge-p (window)`
+- L261: `(defun ghostel--line-mode-apply-readonly (marker-pos)`
+- L276: `(defun ghostel--line-mode-input-end-pos (start)`
+- L286: `(defun ghostel--line-mode-trim-trailing-blank (start)`
+- L298: `(defun ghostel--line-mode-snapshot ()`
+- L330: `(defun ghostel--line-mode-restore (snapshot)`
+- L385: `(defun ghostel--line-mode-enter ()`
+- L477: `(defun ghostel-line-mode (&optional force)`
+- L520: `(defun ghostel--line-mode-input-text ()`
+- L532: `(defun ghostel--line-mode-delete-input ()`
+- L544: `(defun ghostel--line-mode-clear-shell-readline ()`
+- L562: `(defun ghostel--line-mode-teardown (&optional pause)`
+- L616: `(defun ghostel--line-mode-pause ()`
+- L634: `(defun ghostel--line-mode-try-resume ()`
+- L647: `(defun ghostel--line-mode-defer-entry ()`
+- L661: `(defun ghostel--line-mode-pre-redraw ()`
+- L675: `(defun ghostel--line-mode-post-redraw ()`
+- L689: `(defun ghostel--line-mode-startup-prompt-ready-p ()`
+- L705: `(defun ghostel--line-mode-maybe-enter-initial ()`
+- L718: `(defun ghostel-line-mode-send ()`
+- L751: `(defun ghostel-line-mode-interrupt ()`
+- L764: `(defun ghostel-line-mode-delete-char-or-eof ()`
+- L775: `(defun ghostel--line-mode-replace-input (text)`
+- L787: `(defun ghostel-line-mode-history-previous ()`
+- L799: `(defun ghostel-line-mode-history-next ()`
+- L814: `(defun ghostel--line-mode-bash-completion-available-p ()`
+- L824: `(defun ghostel--line-mode-effective-capfs ()`
+- L836: `(defun ghostel--line-mode-maybe-prespawn-bash-completion ()`
+- L847: `(defun ghostel-line-mode-complete-at-point ()`
+- L876: `(provide 'ghostel-line-mode)`
+
+## lisp/ghostel-links.el
+
+- L28: `(require 'cl-lib)`
+- L29: `(require 'compat)`
+- L30: `(require 'seq)`
+- L31: `(require 'text-property-search)`
+- L32: `(require 'thingatpt)`
+- L42: `(defcustom ghostel-enable-url-detection t`
+- L49: `(defcustom ghostel-enable-file-detection t`
+- L59: `(defcustom ghostel-plain-link-detection-delay 0.1`
+- L68: `(defcustom ghostel-file-detection-path-regex`
+- L145: `(defvar-keymap ghostel-link-map`
+- L154: `(defun ghostel--uri-at-pos (pos)`
+- L159: `(defun ghostel--eldoc-link (callback &rest _)`
+- L169: `(defun ghostel--open-link (url)`
+- L194: `(defun ghostel-open-link-at-click (event)`
+- L199: `(defun ghostel-open-link-at-point ()`
+- L204: `(defun ghostel--find-link-1 (direction from)`
+- L236: `(defun ghostel--find-next-link (from)`
+- L242: `(defun ghostel--find-previous-link (from)`
+- L246: `(defun ghostel--goto-hyperlink (direction)`
+- L262: `(defun ghostel-next-hyperlink (&optional n)`
+- L273: `(defun ghostel-previous-hyperlink (&optional n)`
+- L284: `(defvar-keymap ghostel-hyperlink-repeat-map`
+- L302: `(defun ghostel--soft-wrap-line-beginning (pos limit)`
+- L318: `(defun ghostel--soft-wrap-line-end (pos limit)`
+- L332: `(defun ghostel--wrap-joined-region (begin end limit)`
+- L367: `(defun ghostel--wrap-offset-to-pos (offset chunks)`
+- L382: `(defun ghostel--wrap-fragments (beg end)`
+- L398: `(defun ghostel--url-link-p (pos)`
+- L408: `(defun ghostel--range-overlaps-p (beg end ranges)`
+- L415: `(defun ghostel--linkify (fragments uri raw)`
+- L433: `(defun ghostel--detected-link-p (pos)`
+- L437: `(defun ghostel--foreign-link-p (beg end)`
+- L450: `(defun ghostel--skip-match-p (fragments raw active-bounds)`
+- L476: `(defun ghostel--drop-stranded-links (begin end matched urls files)`
+- L500: `(defun ghostel--detect-urls (&optional begin end)`
+- L615: `(defun ghostel--wrap-pos-to-offset (pos chunks)`
+- L626: `(defun ghostel--logical-line-at-point ()`
+- L643: `(defun ghostel--joined-token-at-point (chars)`
+- L661: `(defun ghostel--link-uri-at-point ()`
+- L668: `(defun ghostel--fileref-file-at-point ()`
+- L678: `(defun ghostel--thing-at-point-filename ()`
+- L694: `(defun ghostel--thing-at-point-url ()`
+- L716: `(defun ghostel--link-bounds (pos)`
+- L743: `(defun ghostel--bounds-of-file-link-at-point ()`
+- L749: `(defun ghostel--bounds-of-url-link-at-point ()`
+- L759: `(defun ghostel-find-file-at-point ()`
+- L775: `(defun ghostel--clear-plain-link-detection-bounds ()`
+- L784: `(defun ghostel--run-queued-plain-link-detection (buffer)`
+- L809: `(defun ghostel--flush-plain-link-detection ()`
+- L821: `(defun ghostel--queue-plain-link-detection (begin end)`
+- L843: `(defun ghostel-links-setup ()`
+- L863: `(provide 'ghostel-links)`
+
+## lisp/ghostel-module-install.el
+
+- L18: `(require 'compat)`
+- L19: `(require 'compile)`
+- L20: `(require 'url-parse)`
+- L28: `(defcustom ghostel-module-directory nil`
+- L39: `(defcustom ghostel-module-auto-install 'ask`
+- L54: `(defcustom ghostel-module-compile-command`
+- L62: `(defcustom ghostel-github-release-url`
+- L78: `(defun ghostel--module-platform-tag ()`
+- L101: `(defun ghostel--module-asset-name ()`
+- L107: `(defun ghostel--release-asset-url (asset-name &optional version)`
+- L116: `(defun ghostel--module-download-url (&optional version)`
+- L122: `(defun ghostel--windows-support-assets ()`
+- L139: `(defun ghostel--install-support-assets (dir &optional version)`
+- L155: `(defun ghostel--release-version-from-url (url)`
+- L164: `(defun ghostel--download-module (dir &optional version latest-release)`
+- L206: `(defun ghostel--compile-module (dest-dir)`
+- L245: `(defun ghostel--ensure-module (dir)`
+- L256: `(defun ghostel--read-module-download-version ()`
+- L267: `(defun ghostel--ask-install-action (_dir)`
+- L287: `(defun ghostel--download-file (url dest)`
+- L331: `(defun ghostel--package-directory ()`
+- L337: `(defun ghostel--resource-root ()`
+- L355: `(defun ghostel--module-directory ()`
+- L363: `(defun ghostel--module-sidecar-path (dir)`
+- L371: `(defun ghostel--read-module-sidecar-version (dir)`
+- L381: `(defun ghostel--write-module-sidecar-version (dir version)`
+- L394: `(defun ghostel--make-module-build-dir (dest-dir)`
+- L403: `(defun ghostel--install-module-pair (built-mod final-mod`
+- L415: `(defun ghostel-download-module (&optional prompt-for-version)`
+- L445: `(defun ghostel--install-built-module-after-compilation (buf status)`
+- L475: `(define-derived-mode ghostel-module-compilation-mode compilation-mode "Compilation"`
+- L481: `(defun ghostel--module-compilation-buffer-name (_mode-name)`
+- L485: `(defun ghostel--install-built-module-on-finish (compile-buf build-dir dest-dir)`
+- L491: `(defun ghostel-module-compile ()`
+- L510: `(defun ghostel--check-module-version (dir &optional prompt-user)`
+- L528: `(defun ghostel--load-module (&optional prompt-user)`
+- L621: `(provide 'ghostel-module-install)`
+
+## lisp/ghostel-org.el
+
+- L28: `(require 'compat)`
+- L29: `(require 'ol)`
+- L30: `(require 'ghostel)`
+- L31: `(require 'ghostel-bookmark)`
+- L33: `(defun ghostel-org-store-link (&optional _interactive)`
+- L42: `(defun ghostel-org-open (path _arg)`
+- L70: `(defun ghostel-org-complete-link (&optional _arg)`
+- L80: `(provide 'ghostel-org)`
+
+## lisp/ghostel-shell.el
+
+- L29: `(require 'cl-lib)`
+- L30: `(require 'compat)`
+- L31: `(require 'imenu)`
+- L32: `(require 'seq)`
+- L33: `(require 'subr-x)`
+- L34: `(require 'tramp)`
+- L50: `(defcustom ghostel-shell-integration t`
+- L58: `(defcustom ghostel-tramp-shells`
+- L88: `(defcustom ghostel-tramp-shell-integration nil`
+- L103: `(defcustom ghostel-macos-login-shell (eq system-type 'darwin)`
+- L129: `(defcustom ghostel-shell-history-commands`
+- L154: `(defcustom ghostel-command-finish-functions nil`
+- L173: `(defcustom ghostel-command-start-functions nil`
+- L207: `(defun ghostel--detect-shell (shell)`
+- L216: `(defun ghostel--tramp-shell-spec (method)`
+- L245: `(defun ghostel--shell-program-and-args (spec)`
+- L255: `(defun ghostel--default-remote-shell-args (program &optional integration)`
+- L266: `(defun ghostel--resolve-shell-spec ()`
+- L284: `(defun ghostel--macos-login-wrap (program args)`
+- L314: `(defun ghostel--setup-local-integration (shell-type ghostel-dir)`
+- L361: `(defun ghostel--read-local-file (path)`
+- L367: `(defun ghostel--write-remote-file (tramp-path content)`
+- L379: `(defun ghostel--push-remote-terminfo (remote-prefix)`
+- L421: `(defun ghostel--cleanup-temp-paths (files dirs)`
+- L434: `(defun ghostel--merge-integration-plists (base extra)`
+- L446: `(defun ghostel--setup-remote-integration (shell-type)`
+- L555: `(defun ghostel--osc133-marker (type param)`
+- L586: `(defun ghostel--prompt-input-start ()`
+- L595: `(defun ghostel--navigate-next-prompt (&optional n)`
+- L613: `(defun ghostel--navigate-previous-prompt (&optional n)`
+- L645: `(defun ghostel-next-prompt (&optional n)`
+- L653: `(defun ghostel-previous-prompt (&optional n)`
+- L689: `(defun ghostel--imenu-stamp-cwd (buffer)`
+- L695: `(defun ghostel--imenu--collect-prompt-regions ()`
+- L708: `(defun ghostel--imenu-create-index ()`
+- L749: `(defun ghostel--imenu-goto (_name position &rest _)`
+- L762: `(defun ghostel-imenu-setup ()`
+- L775: `(defun ghostel--shell-history-run (command)`
+- L797: `(defun ghostel-shell-history ()`
+- L817: `(provide 'ghostel-shell)`
+
+## lisp/ghostel.el
+
+- L88: `(require 'ansi-color)`
+- L89: `(require 'cl-lib)`
+- L90: `(require 'comint)`
+- L91: `(require 'compat)`
+- L92: `(require 'dnd)`
+- L93: `(require 'format-spec)`
+- L94: `(require 'project)`
+- L95: `(require 'shell)`
+- L96: `(require 'text-property-search)`
+- L97: `(require 'tramp)`
+- L98: `(require 'url-parse)`
+- L99: `(require 'face-remap)`
+- L100: `(require 'ghostel-faces)`
+- L101: `(require 'ghostel-kitty)`
+- L102: `(require 'ghostel-line-mode)`
+- L103: `(require 'ghostel-links)`
+- L104: `(require 'ghostel-module-install)`
+- L105: `(require 'ghostel-shell)`
+- L116: `(defcustom ghostel-shell`
+- L139: `(defcustom ghostel-term "xterm-ghostty"`
+- L164: `(defcustom ghostel-environment nil`
+- L205: `(defcustom ghostel-use-native-pty t`
+- L212: `(defun ghostel--safe-environment-p (value)`
+- L221: `(defcustom ghostel-ssh-install-terminfo 'auto`
+- L237: `(defcustom ghostel-max-scrollback (* 5 1024 1024)  ; 5MB`
+- L251: `(defcustom ghostel-cell-pixel-scale 'auto`
+- L284: `(defcustom ghostel-glyph-scale-floor 0.0`
+- L292: `(defcustom ghostel-line-spacing 0`
+- L310: `(defcustom ghostel-timer-delay 0.033`
+- L316: `(defcustom ghostel-inhibit-redraw-functions nil`
+- L326: `(defcustom ghostel-inhibit-input-forwarding-functions nil`
+- L334: `(defcustom ghostel-inhibit-anchor-functions nil`
+- L344: `(defcustom ghostel-adaptive-fps t`
+- L351: `(defcustom ghostel-immediate-redraw-interval 0.05`
+- L357: `(defcustom ghostel-buffer-name "*ghostel*"`
+- L361: `(defcustom ghostel-project-buffer-scope 'both`
+- L384: `(defcustom ghostel-buffer-name-function nil`
+- L401: `(defcustom ghostel-buffer-identification-format "%b (%.30t)"`
+- L415: `(defcustom ghostel-annotation-title-width 30`
+- L420: `(defcustom ghostel-kill-buffer-on-exit t`
+- L424: `(defcustom ghostel-query-before-killing 'auto`
+- L436: `(defcustom ghostel-exit-functions nil`
+- L442: `(defcustom ghostel-pre-spawn-hook nil`
+- L454: `(defcustom ghostel-eval-cmds '(("find-file" find-file)`
+- L465: `(defcustom ghostel-enable-osc52 nil`
+- L476: `(defcustom ghostel-password-prompt-regex comint-password-prompt-regexp`
+- L484: `(defcustom ghostel-password-prompt-functions`
+- L521: `(defcustom ghostel-detect-password-prompts t`
+- L528: `(defcustom ghostel-password-prompt-debounce 0.2`
+- L537: `(defcustom ghostel-notification-function #'ghostel-default-notify`
+- L548: `(defcustom ghostel-progress-function`
+- L569: `(defcustom ghostel-spinner-type 'progress-bar`
+- L578: `(defcustom ghostel-tramp-default-method nil`
+- L587: `(defcustom ghostel-keymap-exceptions`
+- L597: `(defcustom ghostel-tty-escape-delay 0.01`
+- L604: `(defcustom ghostel-ignore-cursor-change nil`
+- L614: `(defcustom ghostel-readonly-fast-exit t`
+- L637: `(defcustom ghostel-readonly-fake-cursor t`
+- L650: `(defcustom ghostel-window-padding-balance 'top`
+- L659: `(defcustom ghostel-initial-input-mode 'semi-char`
+- L668: `(defcustom ghostel-readonly-default-mode 'copy`
+- L683: `(defcustom ghostel-mouse-drag-input-mode 'default`
+- L706: `(defcustom ghostel-mark-activation-input-mode 'default`
+- L718: `(defcustom ghostel-point-leave-input-mode 'default`
+- L731: `(defcustom ghostel-prompt-navigation-input-mode 'default`
+- L740: `(defcustom ghostel-word-boundary-string " \t\"''|:;,()[]{}<>$│"`
+- L760: `(defun ghostel--realize-word-boundaries (table boundary-string)`
+- L773: `(defun ghostel--rebuild-mode-syntax-table ()`
+- L783: `(defcustom ghostel-scroll-on-input t`
+- L790: `(defcustom ghostel-prompt-regexp`
+- L897: `(defcustom ghostel-bold-color nil`
+- L1043: `(defun ghostel--ensure-ghostel-buffer ()`
+- L1048: `(defun ghostel--run-hook-safely (hook &rest args)`
+- L1070: `(defun ghostel--event-window (event)`
+- L1077: `(defun ghostel--scroll-intercept-up (event)`
+- L1092: `(defun ghostel--scroll-intercept-down (event)`
+- L1104: `(defun ghostel--redispatch-scroll-event (event)`
+- L1119: `(defun ghostel--reenable-scroll-intercept ()`
+- L1124: `(defvar-keymap ghostel--scroll-intercept-map`
+- L1133: `(defvar-keymap ghostel--dnd-area-map`
+- L1171: `(defun ghostel-alt-screen-p ()`
+- L1181: `(defun ghostel--define-terminal-keys (map &optional no-exceptions)`
+- L1186: `(define-key map [remap self-insert-command] #'ghostel--self-insert)`
+- L1199: `(define-key map (kbd key) #'ghostel--send-event))`
+- L1205: `(define-key map (kbd key-str) #'ghostel--send-event))))))`
+- L1207: `(define-key map (kbd "RET") #'ghostel--send-event)`
+- L1208: `(define-key map (kbd "TAB") #'ghostel--send-event)`
+- L1209: `(define-key map (kbd "DEL") #'ghostel--send-event)`
+- L1211: `(define-key map (kbd "<backtab>") #'ghostel--send-event)`
+- L1223: `(define-key map (kbd key-str) #'ghostel--send-event)))))`
+- L1233: `(define-key map (kbd key-str) #'ghostel--send-event))))))`
+- L1238: `(define-key map (kbd key-str) #'ghostel--send-event)))`
+- L1246: `(define-key map (kbd key-str) #'ghostel--send-event)))`
+- L1255: `(define-key map (kbd key-str) #'ghostel--send-event)))`
+- L1260: `(define-key map (kbd "M-DEL") #'ghostel--send-event)`
+- L1264: `(define-key map (kbd "C-@") #'ghostel--send-event)`
+- L1268: `(define-key map (kbd "C-SPC") #'ghostel--send-event)`
+- L1269: `(define-key map (kbd "C-\\") #'ghostel--send-event)`
+- L1270: `(define-key map (kbd "M-:") #'ghostel--send-event)))`
+- L1272: `(defvar-keymap ghostel-mode-map`
+- L1334: `(defvar-keymap ghostel-prompt-repeat-map`
+- L1344: `(defvar-keymap ghostel-semi-char-mode-map`
+- L1352: `(defun ghostel--rebuild-semi-char-keymap ()`
+- L1370: `(define-key fresh (kbd "C-q") #'ghostel-send-next-key))`
+- L1373: `(define-key ghostel-mode-map (kbd "C-g")`
+- L1380: `(defvar-keymap ghostel-char-mode-map`
+- L1411: `(defvar-keymap ghostel-readonly-mode-map`
+- L1438: `(defvar-keymap ghostel-readonly-fast-exit-mode-map`
+- L1533: `(defun ghostel-send-next-key ()`
+- L1553: `(defun ghostel--send-string (string)`
+- L1562: `(defun ghostel--send-encoded (key-name mods &optional utf8)`
+- L1574: `(defun ghostel--raw-key-sequence (key-name mods)`
+- L1631: `(defun ghostel--modifier-number (mods)`
+- L1639: `(defun ghostel--csi-letter (letter mod-num)`
+- L1645: `(defun ghostel--csi-tilde (param mod-num)`
+- L1651: `(defun ghostel--on-user-input ()`
+- L1660: `(defun ghostel--self-insert ()`
+- L1671: `(defun ghostel--event-key-spec (event &optional meta)`
+- L1728: `(defun ghostel--send-event ()`
+- L1760: `(defun ghostel--forward-inserts-p ()`
+- L1766: `(defun ghostel--forward-inserts-after-change (beg end old-len)`
+- L1787: `(defun ghostel--sync-read-only ()`
+- L1801: `(defun ghostel-send-string (string)`
+- L1810: `(defun ghostel-send-key (key-name &optional mods)`
+- L1822: `(defun ghostel-paste-string (string)`
+- L1838: `(defun ghostel-send-C-c ()`
+- L1846: `(defun ghostel-send-C-z ()`
+- L1854: `(defun ghostel-send-C-backslash ()`
+- L1860: `(defun ghostel-send-C-d ()`
+- L1868: `(defun ghostel-send-C-g ()`
+- L1885: `(defun ghostel--decode-paste-bytes (text)`
+- L1898: `(defun ghostel--paste-text (text)`
+- L1903: `(defun ghostel-paste ()`
+- L1911: `(defun ghostel-yank ()`
+- L1920: `(defun ghostel-yank-pop ()`
+- L1944: `(defun ghostel-xterm-paste (event)`
+- L1967: `(defun ghostel--dnd-send-files (files)`
+- L1972: `(defun ghostel--dnd-handle-file (uri action)`
+- L1989: `(defun ghostel--yank-media-data (mimetype data)`
+- L2006: `(defun ghostel--drop (event)`
+- L2033: `(defun ghostel-clear-scrollback ()`
+- L2044: `(defun ghostel-clear ()`
+- L2074: `(defvar ghostel--mouse-drag-map`
+- L2076: `(define-key map [mouse-movement] #'ghostel--mouse-drag-motion)`
+- L2085: `(define-key map (vector prefix) map))`
+- L2092: `(defun ghostel--posn-cell (posn)`
+- L2107: `(defun ghostel--mouse-button-number (event)`
+- L2115: `(defun ghostel--mouse-mods (event)`
+- L2131: `(defun ghostel--forward-scroll-event (event button)`
+- L2167: `(defun ghostel--mouse-press (event)`
+- L2190: `(defun ghostel--mouse-begin-drag-tracking (event)`
+- L2211: `(defun ghostel--mouse-drag-motion (event)`
+- L2231: `(defun ghostel--mouse-release (event)`
+- L2247: `(defun ghostel--mouse-drag (event)`
+- L2268: `(defun ghostel-mouse-press-or-copy-mode (event)`
+- L2299: `(defun ghostel-mouse-release-or-set-point (event &optional promote-to-region)`
+- L2326: `(defun ghostel-mouse-drag-or-set-region (event)`
+- L2350: `(defun ghostel-mouse-down-2-or-noop (event)`
+- L2357: `(defun ghostel-mouse-paste-primary-or-release (event)`
+- L2397: `(defun ghostel--mode-line-tag-mouse-exit (event)`
+- L2407: `(defvar ghostel--mode-line-tag-mouse-map`
+- L2409: `(define-key map [mode-line mouse-1] #'ghostel--mode-line-tag-mouse-exit)`
+- L2413: `(defun ghostel--mode-line-tag-help-echo-text (mode)`
+- L2429: `(defun ghostel--mode-line-tag-make (mode label)`
+- L2437: `(defun ghostel--mode-line-refresh ()`
+- L2476: `(defun ghostel--enter-readonly-state ()`
+- L2488: `(defun ghostel--leave-readonly-state ()`
+- L2499: `(defun ghostel--freeze-terminal ()`
+- L2509: `(defun ghostel--fake-cursor-style ()`
+- L2524: `(defun ghostel--fake-cursor-clear ()`
+- L2530: `(defun ghostel--fake-cursor-update (&optional _window)`
+- L2573: `(defun ghostel-semi-char-mode ()`
+- L2601: `(defun ghostel-char-mode ()`
+- L2650: `(defun ghostel--readonly-keymap ()`
+- L2656: `(defun ghostel--enter-readonly-input-mode (spec)`
+- L2664: `(defun ghostel-readonly-enter ()`
+- L2670: `(defun ghostel--enter-readonly (mode freeze label entry-message)`
+- L2712: `(defun ghostel-emacs-mode ()`
+- L2730: `(defun ghostel-copy-mode ()`
+- L2749: `(defun ghostel--mark-activated ()`
+- L2765: `(defun ghostel-maybe-leave-input (&rest _)`
+- L2781: `(defun ghostel-readonly-exit ()`
+- L2803: `(defun ghostel-readonly-exit-and-clear ()`
+- L2809: `(defun ghostel-readonly-exit-and-send ()`
+- L2821: `(defun ghostel-readonly-RET-or-exit-and-send ()`
+- L2842: `(defun ghostel-readonly-end-of-buffer ()`
+- L2856: `(defun ghostel-readonly-end-of-line ()`
+- L2866: `(defun ghostel--filter-soft-wraps (text)`
+- L2884: `(defun ghostel--clean-copy-text (text)`
+- L2891: `(defun ghostel--filter-buffer-substring (beg end delete)`
+- L2897: `(defun ghostel-readonly-copy ()`
+- L2908: `(defun ghostel-copy-all ()`
+- L2921: `(defun ghostel--regex-prompt-end (pos)`
+- L2935: `(defun ghostel-input-start-point ()`
+- L2984: `(defun ghostel-beginning-of-input-or-line ()`
+- L3033: `(defun ghostel-cursor-point ()`
+- L3043: `(defun ghostel--pos-on-cursor-p (pos)`
+- L3050: `(defun ghostel--viewport-row-at (pos)`
+- L3061: `(defun ghostel-point-on-cursor-row-p (&optional pos)`
+- L3137: `(defun ghostel--remote-shell-p ()`
+- L3147: `(defun ghostel--cursor-row-text ()`
+- L3165: `(defun ghostel--password-prompt-detected-p ()`
+- L3183: `(defun ghostel--password-regex-matches-cursor-row-p ()`
+- L3191: `(defun ghostel--cancel-password-confirm-timer ()`
+- L3197: `(defun ghostel--cancel-password-prompt ()`
+- L3220: `(defun ghostel--confirm-and-prompt (buf)`
+- L3234: `(defun ghostel--detect-password-prompt ()`
+- L3283: `(defun ghostel--default-password-source (row)`
+- L3292: `(defun ghostel--prompt-password ()`
+- L3351: `(defun ghostel--osc52-eval (str)`
+- L3373: `(defun ghostel--osc52-handle (_selection base64-data)`
+- L3385: `(defun ghostel-default-notify (title body)`
+- L3403: `(defun ghostel-tty-forward-notify (title body)`
+- L3418: `(defun ghostel-default-progress (state progress)`
+- L3443: `(defun ghostel--spinner-stop ()`
+- L3452: `(defun ghostel-spinner-progress (state progress)`
+- L3485: `(defun ghostel--defer (function &rest args)`
+- L3495: `(defun ghostel--handle-notification (title body)`
+- L3523: `(defun ghostel--osc-progress (state-str progress)`
+- L3544: `(defun ghostel-buffer-name-by-title (title)`
+- L3549: `(defun ghostel-buffer-name-by-directory (_title)`
+- L3555: `(defun ghostel--rename-managed (new-name)`
+- L3565: `(defun ghostel--set-title (title)`
+- L3582: `(defun ghostel--buffer-identification (format)`
+- L3613: `(defun ghostel--buffer-identification-update ()`
+- L3625: `(defun ghostel--windows-local-path (path)`
+- L3641: `(defun ghostel--local-host-p (host)`
+- L3658: `(defun ghostel--update-directory (dir)`
+- L3748: `(defun ghostel--cursor-blink-stop ()`
+- L3762: `(defun ghostel--cursor-blink-restore-window (window)`
+- L3774: `(defun ghostel--cursor-blink-tick (buffer)`
+- L3789: `(defun ghostel--cursor-blink-start ()`
+- L3806: `(defun ghostel--apply-cursor-style ()`
+- L3829: `(defun ghostel--apply-palette (term)`
+- L3845: `(defun ghostel--apply-bold-config (term)`
+- L3858: `(defun ghostel-sync-theme ()`
+- L3873: `(defun ghostel--on-theme-change (&rest _args)`
+- L3895: `(defun ghostel--buffer-focused-p (buf)`
+- L3906: `(defun ghostel--frame-focus-flags (&rest _)`
+- L3916: `(defun ghostel--focus-change (&rest _)`
+- L3934: `(defun ghostel--filter (process output)`
+- L3950: `(defun ghostel--events-filter (pipe output)`
+- L3990: `(defun ghostel--sentinel (process event)`
+- L4012: `(defun ghostel--resolve-local-executable (program)`
+- L4043: `(defun ghostel--terminfo-directory ()`
+- L4056: `(defun ghostel--ssh-install-enabled-p ()`
+- L4067: `(defun ghostel-ssh-clear-terminfo-cache ()`
+- L4084: `(defun ghostel--terminal-env ()`
+- L4121: `(defun ghostel--remote-term-preamble ()`
+- L4170: `(defun ghostel--logical-pwd-env (remote-p)`
+- L4181: `(defun ghostel--spawn-pty (program program-args extra-env &optional remote-p)`
+- L4224: `(defun ghostel--spawn-process (program program-args remote-p)`
+- L4243: `(defun ghostel--spawn-via-emacs (program program-args &optional remote-p)`
+- L4287: `(defun ghostel--spawn-via-native (command)`
+- L4314: `(defun ghostel--kill-native-processes-on-exit ()`
+- L4322: `(defun ghostel--kill-native-process-hook ()`
+- L4336: `(defun ghostel--start-process ()`
+- L4404: `(defun ghostel--get-render-window (buffer)`
+- L4414: `(defun ghostel--invalidate ()`
+- L4450: `(defun ghostel--viewport-start ()`
+- L4459: `(defun ghostel--schedule-link-detection ()`
+- L4472: `(defun ghostel--deactivate-repainted-region ()`
+- L4488: `(defun ghostel--daemon-dummy-frame-p (frame)`
+- L4496: `(defun ghostel--windows (&optional buffer all-frames)`
+- L4512: `(defun ghostel--window-on-cursor-p (window)`
+- L4523: `(defun ghostel--window-follows-p (window)`
+- L4535: `(defun ghostel--window-anchored-p (window &optional body-pixel-height)`
+- L4567: `(defun ghostel--anchored-windows (&optional buffer all-frames)`
+- L4573: `(defun ghostel--window-buffer-pairs (windows)`
+- L4577: `(defun ghostel--window-buffer-pair-live-p (entry)`
+- L4590: `(defun ghostel--set-window-vscroll (window vscroll &optional pixels-p preserve-vscroll-p)`
+- L4608: `(defun ghostel--pixel-anchor (window target)`
+- L4619: `(defun ghostel--top-pad-set (pad)`
+- L4638: `(defun ghostel--top-pad-leftover (window target anchor)`
+- L4649: `(defun ghostel--balance-top-pad (window target)`
+- L4672: `(defun ghostel--anchor-window (&optional window force following)`
+- L4738: `(defun ghostel--maybe-defer-redraw (buffer)`
+- L4750: `(defun ghostel--redraw-now (buffer &optional force)`
+- L4814: `(defun ghostel-force-redraw ()`
+- L4826: `(defun ghostel--cell-pixel-scale ()`
+- L4835: `(defun ghostel--detect-cell-pixel-scale ()`
+- L4855: `(defun ghostel--reported-cell-width ()`
+- L4859: `(defun ghostel--cell-height ()`
+- L4871: `(defun ghostel--reported-cell-height ()`
+- L4875: `(defun ghostel--set-size-with-cell-dims (term rows cols)`
+- L4883: `(defun ghostel--adjust-size (window &optional force)`
+- L4920: `(defun ghostel--around-font-scale (fn args &optional buffer)`
+- L4934: `(defun ghostel--around-local-font-scale (fn &rest args)`
+- L4938: `(defun ghostel--around-global-font-scale (fn &rest args)`
+- L4957: `(defun ghostel--sync-tty-composition (window)`
+- L4971: `(defun ghostel--tty-esc (map)`
+- L4993: `(defun ghostel--tty-esc-init (&optional frame)`
+- L5021: `(define-key input-decode-map (vector ?\e)`
+- L5024: `(defun ghostel--tty-esc-window-change (window)`
+- L5031: `(defun ghostel--pre-redisplay (_window)`
+- L5036: `(defun ghostel--window-buffer-change (window)`
+- L5042: `(defun ghostel--minibuffer-exit ()`
+- L5054: `(defun ghostel--minibuffer-exit-maybe-leave ()`
+- L5072: `(defun ghostel--query-before-killing-p ()`
+- L5078: `(defun ghostel--kill-buffer-query ()`
+- L5084: `(defun ghostel--kill-emacs-query ()`
+- L5100: `(defun ghostel--change-major-mode-guard ()`
+- L5113: `(define-derived-mode ghostel-mode fundamental-mode "Ghostel"`
+- L5229: `(defun ghostel--suppress-interfering-modes ()`
+- L5249: `(defun ghostel--identity-normalize (identity)`
+- L5254: `(defun ghostel--identity-equal (a b)`
+- L5258: `(defun ghostel-identity-match-p (pattern identity)`
+- L5265: `(defun ghostel--normalize-root (root)`
+- L5273: `(defun ghostel--next-instance (context)`
+- L5285: `(defun ghostel--find-buffer-by-identity (identity &optional predicate)`
+- L5304: `(defun ghostel--init-buffer (buffer &optional rows cols)`
+- L5399: `(defun ghostel--create (name &optional display-action rows cols)`
+- L5422: `(defun ghostel--apply-initial-input-mode ()`
+- L5430: `(defun ghostel--start (context name &optional arg)`
+- L5457: `(defun ghostel (&optional arg)`
+- L5470: `(defun ghostel-exec (buffer program &optional args identity)`
+- L5511: `(defun ghostel-create (&optional name display identity)`
+- L5552: `(defun ghostel--project-buffer-name (root)`
+- L5565: `(defun ghostel-project (&optional arg)`
+- L5583: `(defun ghostel-other ()`
+- L5598: `(defun ghostel-buffer-list ()`
+- L5607: `(defun ghostel-project-buffer-list ()`
+- L5644: `(defun ghostel--cycle (bufs direction empty-msg single-msg)`
+- L5666: `(defun ghostel-next ()`
+- L5674: `(defun ghostel-previous ()`
+- L5682: `(defun ghostel-project-next ()`
+- L5691: `(defun ghostel-project-previous ()`
+- L5699: `(defun ghostel-annotate-buffer (name)`
+- L5710: `(defun ghostel--read-buffer (prompt bufs)`
+- L5732: `(defun ghostel-list-buffers ()`
+- L5740: `(defun ghostel-project-list-buffers ()`
+- L5749: `(provide 'ghostel)`
+
+## tools/ghostel-dape.el
+
+- L18: `(require 'cl-lib)`
+- L19: `(require 'subr-x)`
+- L34: `(defcustom ghostel-dape-build-command`
+- L41: `(defcustom ghostel-dape-hypothesis-failure-case-file`
+- L50: `(defun ghostel-dape--root ()`
+- L57: `(defun ghostel-dape--relative-file (file)`
+- L61: `(defun ghostel-dape--vector (&rest args)`
+- L65: `(defun ghostel-dape--launch-emacs (&rest args)`
+- L83: `(defun ghostel-dape--current-ert-test ()`
+- L90: `(defun ghostel-dape--ert-eval (test-regexp)`
+- L94: `(defun ghostel-dape--current-file ()`
+- L102: `(defun ghostel-dape--evil-checkout-dir ()`
+- L110: `(defun ghostel-dape--evil-p (file)`
+- L115: `(defun ghostel-dape--ert-load-path-args (file)`
+- L131: `(defun ghostel-dape--read-hypothesis-case-file ()`
+- L146: `(defun ghostel-dape--hypothesis-replay-eval (case-file)`
+- L150: `(defun ghostel-dape--launch-hypothesis-case (case-file)`
+- L161: `(defun ghostel-dape-ert-test-at-point (&optional test-name)`
+- L183: `(defun ghostel-dape-ert-file ()`
+- L200: `(defun ghostel-dape-hypothesis-case-file (case-file)`
+- L211: `(defun ghostel-dape-hypothesis-latest-failure ()`
+- L216: `(provide 'ghostel-dape)`
+
+## tools/ghostel-lint.el
+
+- L14: `(require 'checkdoc)`
+- L16: `(defun ghostel-lint--files ()`
+- L22: `(defun ghostel-lint-checkdoc ()`
+- L39: `(defun ghostel-lint-docquotes ()`
+- L56: `(provide 'ghostel-lint)`

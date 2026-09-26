@@ -1,0 +1,185 @@
+# Indice del codice: alacritty
+
+Fonte: https://github.com/ArthurHeymans/emacs-alacritty.git
+
+Revisione: `a81152af4702bd3b8fd8c737ce8a5abeb7593121`.
+
+
+## alacritty.el
+
+- L37: `(require 'cl-lib)`
+- L38: `(require 'subr-x)`
+- L39: `(require 'tramp)`
+- L40: `(require 'bookmark)`
+- L41: `(require 'term)`
+- L77: `(defcustom alacritty-source-dir nil`
+- L83: `(defcustom alacritty-module-build-dir`
+- L89: `(defcustom alacritty-always-compile-module nil`
+- L94: `(defcustom alacritty-compile-release t`
+- L99: `(defcustom alacritty-cargo-args ""`
+- L109: `(defun alacritty--get-module-dir ()`
+- L128: `(defun alacritty--module-filename ()`
+- L135: `(defun alacritty--find-module ()`
+- L142: `(defun alacritty--load-module ()`
+- L178: `(defun alacritty--cargo-is-available ()`
+- L182: `(defun alacritty-module-compile ()`
+- L219: `(defcustom alacritty-shell (or (getenv "SHELL") "/bin/sh")`
+- L224: `(defcustom alacritty-max-scrollback 10000`
+- L229: `(defcustom alacritty-kill-buffer-on-exit t`
+- L234: `(defcustom alacritty-timer-delay 0.1`
+- L243: `(defcustom alacritty-buffer-name-string "alacritty %s"`
+- L248: `(defcustom alacritty-copy-mode-remove-fake-newlines t`
+- L253: `(defcustom alacritty-ignore-blink-cursor t`
+- L258: `(defcustom alacritty-exit-functions nil`
+- L263: `(defcustom alacritty-eval-cmds`
+- L279: `(defcustom alacritty-use-prompt-detection-method t`
+- L290: `(defcustom alacritty-copy-exclude-prompt t`
+- L295: `(defcustom alacritty-enable-osc52-clipboard nil`
+- L311: `(defcustom alacritty-keymap-exceptions`
+- L329: `(defcustom alacritty-use-cursor-shape t`
+- L338: `(defcustom alacritty-min-window-width 10`
+- L345: `(defcustom alacritty-min-window-height 4`
+- L352: `(defcustom alacritty-color-palette nil`
+- L392: `(defun alacritty--apply-color-palette ()`
+- L525: `(defvar alacritty-mode-map nil`
+- L528: `(defun alacritty--setup-keymap ()`
+- L531: `(define-key map [remap self-insert-command] #'alacritty--self-insert)`
+- L534: `(define-key map (kbd "RET") #'alacritty-send-return)`
+- L535: `(define-key map (kbd "TAB") #'alacritty-send-tab)`
+- L536: `(define-key map (kbd "DEL") #'alacritty-send-backspace)`
+- L537: `(define-key map (kbd "<backspace>") #'alacritty-send-backspace)`
+- L538: `(define-key map (kbd "<delete>") #'alacritty-send-delete)`
+- L539: `(define-key map (kbd "<escape>") #'alacritty-send-escape)`
+- L542: `(define-key map (kbd "<up>") #'alacritty-send-up)`
+- L543: `(define-key map (kbd "<down>") #'alacritty-send-down)`
+- L544: `(define-key map (kbd "<left>") #'alacritty-send-left)`
+- L545: `(define-key map (kbd "<right>") #'alacritty-send-right)`
+- L548: `(define-key map (kbd "<home>") #'alacritty-send-home)`
+- L549: `(define-key map (kbd "<end>") #'alacritty-send-end)`
+- L550: `(define-key map (kbd "<prior>") #'alacritty-send-page-up)`
+- L551: `(define-key map (kbd "<next>") #'alacritty-send-page-down)`
+- L552: `(define-key map (kbd "<insert>") #'alacritty-send-insert)`
+- L555: `(define-key map (kbd "S-<prior>") #'scroll-down-command)`
+- L556: `(define-key map (kbd "S-<next>") #'scroll-up-command)`
+- L559: `(define-key map (kbd "<f1>") (lambda () (interactive) (alacritty--send-key "f1")))`
+- L560: `(define-key map (kbd "<f2>") (lambda () (interactive) (alacritty--send-key "f2")))`
+- L561: `(define-key map (kbd "<f3>") (lambda () (interactive) (alacritty--send-key "f3")))`
+- L562: `(define-key map (kbd "<f4>") (lambda () (interactive) (alacritty--send-key "f4")))`
+- L563: `(define-key map (kbd "<f5>") (lambda () (interactive) (alacritty--send-key "f5")))`
+- L564: `(define-key map (kbd "<f6>") (lambda () (interactive) (alacritty--send-key "f6")))`
+- L565: `(define-key map (kbd "<f7>") (lambda () (interactive) (alacritty--send-key "f7")))`
+- L566: `(define-key map (kbd "<f8>") (lambda () (interactive) (alacritty--send-key "f8")))`
+- L567: `(define-key map (kbd "<f9>") (lambda () (interactive) (alacritty--send-key "f9")))`
+- L568: `(define-key map (kbd "<f10>") (lambda () (interactive) (alacritty--send-key "f10")))`
+- L569: `(define-key map (kbd "<f11>") (lambda () (interactive) (alacritty--send-key "f11")))`
+- L570: `(define-key map (kbd "<f12>") (lambda () (interactive) (alacritty--send-key "f12")))`
+- L573: `(define-key map [mouse-2] #'alacritty-yank-primary)`
+- L574: `(define-key map [remap mouse-yank-primary] #'alacritty-yank-primary)`
+- L577: `(define-key map (kbd "C-c C-c") (lambda () (interactive) (alacritty--send-char ?c "C")))`
+- L578: `(define-key map (kbd "C-c C-t") #'alacritty-copy-mode)`
+- L579: `(define-key map (kbd "C-c C-l") #'alacritty-clear-scrollback)`
+- L580: `(define-key map (kbd "C-c C-r") #'alacritty-redraw)`
+- L581: `(define-key map (kbd "C-c C-q") #'alacritty-send-next-key)`
+- L582: `(define-key map (kbd "C-c C-n") #'alacritty-next-prompt)`
+- L583: `(define-key map (kbd "C-c C-p") #'alacritty-previous-prompt)`
+- L589: `(define-key map (kbd key)`
+- L597: `(define-key map (kbd key)`
+- L602: `(define-key map [remap yank] #'alacritty-yank)`
+- L603: `(define-key map [remap yank-pop] #'alacritty-yank-pop)`
+- L610: `(define-key map (kbd key) nil)))`
+- L617: `(defvar alacritty-copy-mode-map`
+- L619: `(define-key map (kbd "q") #'alacritty-copy-mode)`
+- L620: `(define-key map (kbd "RET") #'alacritty-copy-mode-done)`
+- L621: `(define-key map (kbd "C-c C-t") #'alacritty-copy-mode)`
+- L622: `(define-key map (kbd "<prior>") #'scroll-down-command)`
+- L623: `(define-key map (kbd "<next>") #'scroll-up-command)`
+- L624: `(define-key map (kbd "C-v") #'scroll-up-command)`
+- L625: `(define-key map (kbd "M-v") #'scroll-down-command)`
+- L626: `(define-key map (kbd "<up>") #'previous-line)`
+- L627: `(define-key map (kbd "<down>") #'next-line)`
+- L628: `(define-key map (kbd "<left>") #'backward-char)`
+- L629: `(define-key map (kbd "<right>") #'forward-char)`
+- L630: `(define-key map (kbd "C-p") #'previous-line)`
+- L631: `(define-key map (kbd "C-n") #'next-line)`
+- L632: `(define-key map (kbd "C-b") #'backward-char)`
+- L633: `(define-key map (kbd "C-f") #'forward-char)`
+- L634: `(define-key map (kbd "C-a") #'alacritty-beginning-of-line)`
+- L635: `(define-key map (kbd "C-e") #'alacritty-end-of-line)`
+- L636: `(define-key map (kbd "M-<") #'beginning-of-buffer)`
+- L637: `(define-key map (kbd "M->") #'end-of-buffer)`
+- L638: `(define-key map (kbd "<home>") #'beginning-of-buffer)`
+- L639: `(define-key map (kbd "<end>") #'end-of-buffer)`
+- L640: `(define-key map (kbd "C-s") #'isearch-forward)`
+- L641: `(define-key map (kbd "C-r") #'isearch-backward)`
+- L642: `(define-key map (kbd "C-SPC") #'set-mark-command)`
+- L644: `(define-key map (kbd "C-c C-n") #'alacritty-next-prompt)`
+- L645: `(define-key map (kbd "C-c C-p") #'alacritty-previous-prompt)`
+- L651: `(defun alacritty--send-string (string)`
+- L656: `(defun alacritty--send-key (key &optional modifiers)`
+- L695: `(defun alacritty--send-char (char &optional modifiers)`
+- L708: `(defun alacritty--self-insert ()`
+- L716: `(defun alacritty--get-window-size ()`
+- L720: `(defun alacritty--update-cursor-shape ()`
+- L739: `(defun alacritty--do-render ()`
+- L787: `(defun alacritty--do-render-full ()`
+- L823: `(defun alacritty--invalidate ()`
+- L832: `(defun alacritty--delayed-redraw (buffer)`
+- L840: `(defun alacritty--handle-events (events)`
+- L879: `(defun alacritty--filter (process input)`
+- L894: `(defun alacritty--sentinel (process event)`
+- L913: `(defun alacritty--parse-title-for-directory (title)`
+- L917: `(defun alacritty--parse-directory-info (info)`
+- L932: `(defun alacritty--set-directory (user host path)`
+- L939: `(defun alacritty--get-directory-from-remote (user host path)`
+- L957: `(defun alacritty--update-buffer-name ()`
+- L962: `(defun alacritty--eval (str)`
+- L974: `(defun alacritty--setup-window-hooks ()`
+- L979: `(defun alacritty--window-size-change (frame)`
+- L996: `(defun alacritty--window-config-change ()`
+- L1002: `(defun alacritty--create-terminal-buffer ()`
+- L1014: `(defcustom alacritty-tramp-shells`
+- L1032: `(defun alacritty--tramp-get-shell (method)`
+- L1055: `(defun alacritty--get-shell ()`
+- L1067: `(defun alacritty--start-terminal-process ()`
+- L1103: `(defun alacritty ()`
+- L1114: `(defun alacritty-other-window ()`
+- L1123: `(defun alacritty--cleanup ()`
+- L1132: `(define-derived-mode alacritty-mode fundamental-mode "Alacritty"`
+- L1155: `(defun alacritty-send-return ()`
+- L1160: `(defun alacritty-send-tab ()`
+- L1165: `(defun alacritty-send-backspace ()`
+- L1170: `(defun alacritty-send-delete ()`
+- L1175: `(defun alacritty-send-escape ()`
+- L1180: `(defun alacritty-send-up ()`
+- L1185: `(defun alacritty-send-down ()`
+- L1190: `(defun alacritty-send-left ()`
+- L1195: `(defun alacritty-send-right ()`
+- L1200: `(defun alacritty-send-home ()`
+- L1205: `(defun alacritty-send-end ()`
+- L1210: `(defun alacritty-send-page-up ()`
+- L1215: `(defun alacritty-send-page-down ()`
+- L1220: `(defun alacritty-send-insert ()`
+- L1225: `(defun alacritty--insert-for-yank (text)`
+- L1236: `(defun alacritty-yank (&optional arg)`
+- L1245: `(defun alacritty-yank-pop (&optional arg)`
+- L1254: `(defun alacritty-yank-primary ()`
+- L1261: `(defun alacritty-send-next-key ()`
+- L1307: `(defun alacritty--remove-fake-newlines (text start-line)`
+- L1325: `(defun alacritty--filter-buffer-substring (beg end &optional _delete)`
+- L1331: `(defun alacritty-copy-mode ()`
+- L1352: `(defun alacritty-copy-mode-done (&optional arg)`
+- L1388: `(defun alacritty--prompt-tracking-enabled-p ()`
+- L1396: `(defun alacritty--get-prompt-point ()`
+- L1425: `(defun alacritty-next-prompt (n)`
+- L1455: `(defun alacritty-previous-prompt (n)`
+- L1485: `(defun alacritty--get-beginning-of-line (&optional pt)`
+- L1499: `(defun alacritty--get-end-of-line (&optional pt)`
+- L1512: `(defun alacritty-beginning-of-line ()`
+- L1527: `(defun alacritty-end-of-line ()`
+- L1534: `(defun alacritty-clear-scrollback ()`
+- L1541: `(defun alacritty-reset ()`
+- L1546: `(defun alacritty-send-string (string)`
+- L1551: `(defun alacritty-redraw ()`
+- L1560: `(defun alacritty--bookmark-make-record ()`
+- L1569: `(defun alacritty--bookmark-handler (bmk)`
+- L1588: `(provide 'alacritty)`

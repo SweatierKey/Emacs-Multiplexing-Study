@@ -1,0 +1,332 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: elscreen</h1>
+<p>Fonte: https://github.com/knu/elscreen.git</p>
+<p>Revisione: <code>cc58337faf5ba1eae7e87f75f6ff3758675688f2</code>.</p>
+<h2>elscreen-buffer-list.el</h2>
+<ul>
+<li>L16: <code>(provide 'elscreen-buffer-list)</code></li>
+<li>L17: <code>(require 'elscreen)</code></li>
+<li>L20: <code>(defun buffer-dead-p (buffer)</code></li>
+<li>L28: <code>(defun reorder-buffer-list (new-list)</code></li>
+<li>L47: <code>(defun elscreen-get-buffer-list (screen)</code></li>
+<li>L52: <code>(defun elscreen-set-buffer-list (screen buflist)</code></li>
+<li>L58: <code>(defun elscreen-save-buffer-list (&amp;optional screen)</code></li>
+<li>L64: <code>(defun elscreen-load-buffer-list (&amp;optional screen)</code></li>
+<li>L79: <code>(defcustom elscreen-buffer-list-enabled nil</code></li>
+<li>L84: <code>(defun toggle-elscreen-buffer-list (&amp;optional arg)</code></li>
+</ul>
+<h2>elscreen-color-theme.el</h2>
+<ul>
+<li>L24: <code>(provide 'elscreen-color-theme)</code></li>
+<li>L25: <code>(require 'elscreen)</code></li>
+<li>L27: <code>(defcustom elscreen-color-theme-override-theme nil</code></li>
+<li>L32: <code>(defcustom elscreen-color-theme-tab-background-face-function</code></li>
+<li>L38: <code>(defcustom elscreen-color-theme-tab-control-face-function</code></li>
+<li>L44: <code>(defcustom elscreen-color-theme-tab-current-screen-face-function</code></li>
+<li>L50: <code>(defcustom elscreen-color-theme-tab-other-screen-face-function</code></li>
+<li>L68: <code>(defun elscreen-color-theme-tab-background-face-default-function (theme)</code></li>
+<li>L77: <code>(defun elscreen-color-theme-tab-control-face-default-function (theme)</code></li>
+<li>L89: <code>(defun elscreen-color-theme-tab-other-screen-face-default-function (theme)</code></li>
+</ul>
+<h2>elscreen-dired.el</h2>
+<ul>
+<li>L25: <code>(provide 'elscreen-dired)</code></li>
+<li>L26: <code>(require 'elscreen)</code></li>
+</ul>
+<h2>elscreen-dnd.el</h2>
+<ul>
+<li>L25: <code>(provide 'elscreen-dnd)</code></li>
+<li>L26: <code>(require 'elscreen)</code></li>
+<li>L28: <code>(defcustom elscreen-dnd-open-file-new-screen t</code></li>
+<li>L36: <code>(defmacro elscreen-dnd-drag-n-drop (ad-do-it)</code></li>
+</ul>
+<h2>elscreen-gf.el</h2>
+<ul>
+<li>L27: <code>(provide 'elscreen-gf)</code></li>
+<li>L28: <code>(require 'elscreen)</code></li>
+<li>L29: <code>(require 'ring)</code></li>
+<li>L38: <code>(defcustom elscreen-gf-grep-program-name "grep"</code></li>
+<li>L43: <code>(defcustom elscreen-gf-idutils-gid-program-name "gid"</code></li>
+<li>L48: <code>(defcustom elscreen-gf-idutils-mkid-program-name "mkid"</code></li>
+<li>L53: <code>(defcustom elscreen-gf-cscope-program-name "cscope"</code></li>
+<li>L58: <code>(defcustom elscreen-gf-global-program-name "global"</code></li>
+<li>L63: <code>(defcustom elscreen-gf-global-gtags-program-name "gtags"</code></li>
+<li>L68: <code>(defcustom elscreen-gf-mode-truncate-lines t</code></li>
+<li>L76: <code>(defcustom elscreen-gf-invoke-point-history-length 8</code></li>
+<li>L139: <code>(defvar elscreen-gf-map (make-sparse-keymap)</code></li>
+<li>L141: <code>(define-key elscreen-gf-map "G" 'elscreen-gf-grep)</code></li>
+<li>L142: <code>(define-key elscreen-gf-map "m" 'elscreen-gf-idutils-mkid)</code></li>
+<li>L143: <code>(define-key elscreen-gf-map "g" 'elscreen-gf-idutils-gid)</code></li>
+<li>L144: <code>(define-key elscreen-gf-map "c" 'elscreen-gf-cscope)</code></li>
+<li>L145: <code>(define-key elscreen-gf-map "t" 'elscreen-gf-global-gtags)</code></li>
+<li>L146: <code>(define-key elscreen-gf-map "l" 'elscreen-gf-global)</code></li>
+<li>L147: <code>(define-key elscreen-gf-map "u" 'elscreen-gf-go-back-to-latest-invoke-point)</code></li>
+<li>L148: <code>(define-key elscreen-gf-map "v" 'elscreen-gf-display-version)</code></li>
+<li>L150: <code>(define-key elscreen-map "\C-g" elscreen-gf-map)</code></li>
+<li>L152: <code>(defvar elscreen-gf-mode-map (make-sparse-keymap)</code></li>
+<li>L154: <code>(define-key elscreen-gf-mode-map "n"    'elscreen-gf-mode-next-line)</code></li>
+<li>L155: <code>(define-key elscreen-gf-mode-map "p"    'elscreen-gf-mode-previous-line)</code></li>
+<li>L156: <code>(define-key elscreen-gf-mode-map " "    'elscreen-gf-mode-scroll-up)</code></li>
+<li>L157: <code>(define-key elscreen-gf-mode-map "\177" 'elscreen-gf-mode-scroll-down)</code></li>
+<li>L158: <code>(define-key elscreen-gf-mode-map "&lt;"    'elscreen-gf-mode-beginning-of-buffer)</code></li>
+<li>L159: <code>(define-key elscreen-gf-mode-map "&gt;"    'elscreen-gf-mode-end-of-buffer)</code></li>
+<li>L160: <code>(define-key elscreen-gf-mode-map "N"    'elscreen-gf-mode-next-file)</code></li>
+<li>L161: <code>(define-key elscreen-gf-mode-map "P"    'elscreen-gf-mode-previous-file)</code></li>
+<li>L162: <code>(define-key elscreen-gf-mode-map "t"    'elscreen-gf-mode-truncate-lines-toggle)</code></li>
+<li>L163: <code>(define-key elscreen-gf-mode-map "o"    'elscreen-gf-mode-jump-to-entry)</code></li>
+<li>L164: <code>(define-key elscreen-gf-mode-map "O"    'elscreen-gf-mode-jump-to-entry-read-only)</code></li>
+<li>L165: <code>(define-key elscreen-gf-mode-map "\C-g" 'elscreen-gf-mode-search-quit)</code></li>
+<li>L166: <code>(define-key elscreen-gf-mode-map "q"    'elscreen-gf-mode-exit)</code></li>
+<li>L167: <code>(define-key elscreen-gf-mode-map "v"    'elscreen-gf-display-version)</code></li>
+<li>L191: <code>(defun elscreen-gf-define-major-mode-token (major-mode token-chars)</code></li>
+<li>L244: <code>(defun elscreen-gf-goto-screen-create (target-directory)</code></li>
+<li>L256: <code>(defun elscreen-gf-mode (target-directory)</code></li>
+<li>L275: <code>(defun elscreen-gf-mode-selected-entry-overlay ()</code></li>
+<li>L281: <code>(defun elscreen-gf-mode-next-line ()</code></li>
+<li>L293: <code>(defun elscreen-gf-mode-previous-line ()</code></li>
+<li>L305: <code>(defun elscreen-gf-mode-scroll-up ()</code></li>
+<li>L311: <code>(defun elscreen-gf-mode-scroll-down ()</code></li>
+<li>L317: <code>(defun elscreen-gf-mode-beginning-of-buffer ()</code></li>
+<li>L324: <code>(defun elscreen-gf-mode-end-of-buffer ()</code></li>
+<li>L331: <code>(defun elscreen-gf-mode-next-file ()</code></li>
+<li>L346: <code>(defun elscreen-gf-mode-previous-file ()</code></li>
+<li>L366: <code>(defun elscreen-gf-mode-truncate-lines-toggle ()</code></li>
+<li>L380: <code>(defun elscreen-gf-mode-jump-to-entry ()</code></li>
+<li>L415: <code>(defun elscreen-gf-mode-jump-to-entry-read-only ()</code></li>
+<li>L422: <code>(defun elscreen-gf-mode-search-quit (&amp;optional force)</code></li>
+<li>L432: <code>(defun elscreen-gf-mode-exit ()</code></li>
+<li>L456: <code>(defun elscreen-gf-process-exclusive-p (process &amp;optional noerror)</code></li>
+<li>L478: <code>(defun elscreen-gf-search-regexp-dot-to-token (regexp token)</code></li>
+<li>L492: <code>(defun elscreen-gf-read-selection (title prompt option-defs)</code></li>
+<li>L535: <code>(define-key minibuffer-map "\C-m" 'undefined)</code></li>
+<li>L536: <code>(define-key minibuffer-map "\C-g" 'abort-recursive-edit)</code></li>
+<li>L539: <code>(define-key minibuffer-map (car option-def) 'self-insert-and-exit))</code></li>
+<li>L567: <code>(defun elscreen-gf-search-filter (process string)</code></li>
+<li>L619: <code>(defun elscreen-gf-search-sentinel (process event)</code></li>
+<li>L628: <code>(defun elscreen-gf-grep (&amp;optional pattern file-name-re)</code></li>
+<li>L666: <code>(defun elscreen-gf-grep-line-parser (line)</code></li>
+<li>L680: <code>(defun elscreen-gf-idutils-mkid (&amp;optional directory)</code></li>
+<li>L700: <code>(defun elscreen-gf-idutils-mkid-sentinel (process event)</code></li>
+<li>L706: <code>(defun elscreen-gf-idutils-mkid-after-save ()</code></li>
+<li>L714: <code>(defun elscreen-gf-idutils-mkid-setup-after-save-hook ()</code></li>
+<li>L718: <code>(defun elscreen-gf-idutils-gid (&amp;optional pattern)</code></li>
+<li>L757: <code>(defun elscreen-gf-cscope (&amp;optional pattern directory)</code></li>
+<li>L796: <code>(defun elscreen-gf-cscope-line-parser-common (line)</code></li>
+<li>L809: <code>(defun elscreen-gf-cscope-line-parser-query-type-1 (line)</code></li>
+<li>L826: <code>(defun elscreen-gf-global-gtags (&amp;optional directory)</code></li>
+<li>L846: <code>(defun elscreen-gf-global-gtags-sentinel (process event)</code></li>
+<li>L852: <code>(defun elscreen-gf-global-gtags-after-save ()</code></li>
+<li>L860: <code>(defun elscreen-gf-global-gtags-setup-after-save-hook ()</code></li>
+<li>L876: <code>(defun elscreen-gf-global (&amp;optional pattern directory)</code></li>
+<li>L922: <code>(defun elscreen-gf-global-line-parser (line)</code></li>
+<li>L931: <code>(defun elscreen-gf-go-back-to-latest-invoke-point ()</code></li>
+<li>L1014: <code>(defun elscreen-gf-display-version ()</code></li>
+</ul>
+<h2>elscreen-goby.el</h2>
+<ul>
+<li>L25: <code>(provide 'elscreen-goby)</code></li>
+<li>L26: <code>(require 'elscreen)</code></li>
+</ul>
+<h2>elscreen-howm.el</h2>
+<ul>
+<li>L25: <code>(provide 'elscreen-howm)</code></li>
+<li>L26: <code>(require 'elscreen)</code></li>
+<li>L30: <code>(defcustom elscreen-howm-mode-to-nickname-alist</code></li>
+<li>L41: <code>(defcustom elscreen-howm-buffer-to-nickname-alist</code></li>
+<li>L81: <code>(defun elscreen-howm-mode-buffer-to-nickname ()</code></li>
+<li>L87: <code>(defun elscreen-howm-mode-update-title ()</code></li>
+<li>L93: <code>(defun elscreen-howm-mode-initialize ()</code></li>
+<li>L101: <code>(defun howm-save-and-kill-buffer/screen ()</code></li>
+<li>L118: <code>(define-key howm-mode-map</code></li>
+</ul>
+<h2>elscreen-server.el</h2>
+<ul>
+<li>L28: <code>(require 'elscreen)</code></li>
+<li>L29: <code>(require 'dframe)</code></li>
+<li>L31: <code>(defcustom elscreen-server-dont-use-dedicated-frame t</code></li>
+<li>L36: <code>(defun elscreen-server-visit-files-new-screen (buffer-list)</code></li>
+<li>L58: <code>(provide 'elscreen-server)</code></li>
+</ul>
+<h2>elscreen-speedbar.el</h2>
+<ul>
+<li>L24: <code>(provide 'elscreen-speedbar)</code></li>
+<li>L25: <code>(require 'elscreen)</code></li>
+<li>L27: <code>(defcustom elscreen-speedbar-find-file-in-screen t</code></li>
+</ul>
+<h2>elscreen-w3m.el</h2>
+<ul>
+<li>L25: <code>(provide 'elscreen-w3m)</code></li>
+<li>L26: <code>(require 'elscreen)</code></li>
+<li>L49: <code>(defun elscreen-w3m-mailto-url-popup-function (buffer)</code></li>
+<li>L66: <code>(defun elscreen-w3m-initialize ()</code></li>
+</ul>
+<h2>elscreen-wl.el</h2>
+<ul>
+<li>L25: <code>(provide 'elscreen-wl)</code></li>
+<li>L26: <code>(require 'elscreen)</code></li>
+<li>L27: <code>(require 'wl)</code></li>
+<li>L32: <code>(defcustom elscreen-wl-draft-use-elscreen t</code></li>
+<li>L38: <code>(defcustom elscreen-wl-display-biff-on-tab t</code></li>
+<li>L51: <code>(defcustom elscreen-wl-mode-to-nickname-alist</code></li>
+<li>L78: <code>(defmacro elscreen-wl-draft-create-buffer (ad-do-it)</code></li>
+<li>L116: <code>(defmacro elscreen-wl-compensate-summary-window (ad-do-it)</code></li>
+</ul>
+<h2>elscreen.el</h2>
+<ul>
+<li>L45: <code>(require 'dired)</code></li>
+<li>L56: <code>(defcustom elscreen-prefix-key "\C-z"</code></li>
+<li>L66: <code>(defcustom elscreen-default-buffer-name "*scratch*"</code></li>
+<li>L72: <code>(defcustom elscreen-default-buffer-initial-major-mode initial-major-mode</code></li>
+<li>L78: <code>(defcustom elscreen-default-buffer-initial-message initial-scratch-message</code></li>
+<li>L86: <code>(defcustom elscreen-mode-to-nickname-alist</code></li>
+<li>L109: <code>(defcustom elscreen-buffer-to-nickname-alist</code></li>
+<li>L125: <code>(defcustom elscreen-display-screen-number t</code></li>
+<li>L131: <code>(defcustom elscreen-display-tab t</code></li>
+<li>L151: <code>(defcustom elscreen-tab-display-control t</code></li>
+<li>L161: <code>(defcustom elscreen-tab-display-kill-screen 'left</code></li>
+<li>L208: <code>(defvar elscreen-map (make-sparse-keymap)</code></li>
+<li>L210: <code>(define-key elscreen-map "\C-c" 'elscreen-create)</code></li>
+<li>L211: <code>(define-key elscreen-map "c"    'elscreen-create)</code></li>
+<li>L212: <code>(define-key elscreen-map "C"    'elscreen-clone)</code></li>
+<li>L213: <code>(define-key elscreen-map "\C-k" 'elscreen-kill)</code></li>
+<li>L214: <code>(define-key elscreen-map "k"    'elscreen-kill)</code></li>
+<li>L215: <code>(define-key elscreen-map "\M-k" 'elscreen-kill-screen-and-buffers)</code></li>
+<li>L216: <code>(define-key elscreen-map "K"    'elscreen-kill-others)</code></li>
+<li>L217: <code>(define-key elscreen-map "\C-p" 'elscreen-previous)</code></li>
+<li>L218: <code>(define-key elscreen-map "p"    'elscreen-previous)</code></li>
+<li>L219: <code>(define-key elscreen-map "\C-n" 'elscreen-next)</code></li>
+<li>L220: <code>(define-key elscreen-map "n"    'elscreen-next)</code></li>
+<li>L221: <code>(define-key elscreen-map "\C-a" 'elscreen-toggle)</code></li>
+<li>L222: <code>(define-key elscreen-map "a"    'elscreen-toggle)</code></li>
+<li>L223: <code>(define-key elscreen-map "'"    'elscreen-goto)</code></li>
+<li>L224: <code>(define-key elscreen-map "\""   'elscreen-select-and-goto)</code></li>
+<li>L225: <code>(define-key elscreen-map "0"    'elscreen-jump-0)</code></li>
+<li>L226: <code>(define-key elscreen-map "1"    'elscreen-jump)</code></li>
+<li>L227: <code>(define-key elscreen-map "2"    'elscreen-jump)</code></li>
+<li>L228: <code>(define-key elscreen-map "3"    'elscreen-jump)</code></li>
+<li>L229: <code>(define-key elscreen-map "4"    'elscreen-jump)</code></li>
+<li>L230: <code>(define-key elscreen-map "5"    'elscreen-jump)</code></li>
+<li>L231: <code>(define-key elscreen-map "6"    'elscreen-jump)</code></li>
+<li>L232: <code>(define-key elscreen-map "7"    'elscreen-jump)</code></li>
+<li>L233: <code>(define-key elscreen-map "8"    'elscreen-jump)</code></li>
+<li>L234: <code>(define-key elscreen-map "9"    'elscreen-jump-9)</code></li>
+<li>L235: <code>(define-key elscreen-map "\C-s" 'elscreen-swap)</code></li>
+<li>L236: <code>(define-key elscreen-map "\C-w" 'elscreen-display-screen-name-list)</code></li>
+<li>L237: <code>(define-key elscreen-map "w"    'elscreen-display-screen-name-list)</code></li>
+<li>L238: <code>(define-key elscreen-map "\C-m" 'elscreen-display-last-message)</code></li>
+<li>L239: <code>(define-key elscreen-map "m"    'elscreen-display-last-message)</code></li>
+<li>L240: <code>(define-key elscreen-map "\C-t" 'elscreen-display-time)</code></li>
+<li>L241: <code>(define-key elscreen-map "t"    'elscreen-display-time)</code></li>
+<li>L242: <code>(define-key elscreen-map "A"    'elscreen-screen-nickname)</code></li>
+<li>L243: <code>(define-key elscreen-map "b"    'elscreen-find-and-goto-by-buffer)</code></li>
+<li>L244: <code>(define-key elscreen-map "\C-f" 'elscreen-find-file)</code></li>
+<li>L245: <code>(define-key elscreen-map "\C-r" 'elscreen-find-file-read-only)</code></li>
+<li>L246: <code>(define-key elscreen-map "d"    'elscreen-dired)</code></li>
+<li>L247: <code>(define-key elscreen-map "\M-x" 'elscreen-execute-extended-command)</code></li>
+<li>L248: <code>(define-key elscreen-map "i"    'elscreen-toggle-display-screen-number)</code></li>
+<li>L249: <code>(define-key elscreen-map "T"    'elscreen-toggle-display-tab)</code></li>
+<li>L250: <code>(define-key elscreen-map "?"    'elscreen-help)</code></li>
+<li>L251: <code>(define-key elscreen-map "v"    'elscreen-display-version)</code></li>
+<li>L252: <code>(define-key elscreen-map "j"    'elscreen-link)</code></li>
+<li>L253: <code>(define-key elscreen-map "s"    'elscreen-split)</code></li>
+<li>L255: <code>(defun elscreen-set-prefix-key (prefix-key)</code></li>
+<li>L258: <code>(global-set-key elscreen-prefix-key</code></li>
+<li>L261: <code>(define-key minibuffer-local-map elscreen-prefix-key</code></li>
+<li>L267: <code>(global-set-key prefix-key elscreen-map)</code></li>
+<li>L268: <code>(define-key minibuffer-local-map prefix-key 'undefined)</code></li>
+<li>L302: <code>(defun elscreen--put-alist (key value alist)</code></li>
+<li>L313: <code>(defun elscreen--set-alist (symbol key value)</code></li>
+<li>L319: <code>(defun elscreen--del-alist (key alist)</code></li>
+<li>L327: <code>(defun elscreen-window-history-supported-p ()</code></li>
+<li>L333: <code>(defun elscreen-get-all-window-history-alist ()</code></li>
+<li>L341: <code>(defun elscreen-restore-all-window-history-alist (history-alist)</code></li>
+<li>L353: <code>(defun elscreen--remove-alist (symbol key)</code></li>
+<li>L363: <code>(defun elscreen-current-window-configuration ()</code></li>
+<li>L366: <code>(defun elscreen-default-window-configuration ()</code></li>
+<li>L379: <code>(defun elscreen-apply-window-configuration (elscreen-window-configuration)</code></li>
+<li>L391: <code>(defun elscreen-copy-tree-1 (tree)</code></li>
+<li>L401: <code>(defmacro elscreen-save-screen-excursion (&amp;rest body)</code></li>
+<li>L429: <code>(defun elscreen-make-frame-confs (frame &amp;optional keep-window-configuration)</code></li>
+<li>L453: <code>(defun elscreen-delete-frame-confs (frame)</code></li>
+<li>L466: <code>(defun elscreen-get-screen-property (screen)</code></li>
+<li>L470: <code>(defun elscreen-set-screen-property (screen property)</code></li>
+<li>L475: <code>(defun elscreen-delete-screen-property (screen)</code></li>
+<li>L480: <code>(defun elscreen-get-number-of-screens ()</code></li>
+<li>L484: <code>(defun elscreen-one-screen-p ()</code></li>
+<li>L488: <code>(defun elscreen-get-screen-list ()</code></li>
+<li>L492: <code>(defun elscreen-screen-live-p (screen)</code></li>
+<li>L496: <code>(defun elscreen-get-window-configuration (screen)</code></li>
+<li>L502: <code>(defun elscreen-set-window-configuration (screen winconf)</code></li>
+<li>L508: <code>(defun elscreen-get-screen-nickname (screen)</code></li>
+<li>L513: <code>(defun elscreen-set-screen-nickname (screen nickname)</code></li>
+<li>L519: <code>(defun elscreen-delete-screen-nickname (screen)</code></li>
+<li>L525: <code>(defun elscreen-append-screen-to-history (screen)</code></li>
+<li>L529: <code>(defun elscreen-delete-screen-from-history (screen)</code></li>
+<li>L534: <code>(defun elscreen-set-current-screen (screen)</code></li>
+<li>L539: <code>(defun elscreen-get-current-screen ()</code></li>
+<li>L542: <code>(defun elscreen-get-previous-screen ()</code></li>
+<li>L545: <code>(defun elscreen-status-label (screen &amp;optional default)</code></li>
+<li>L555: <code>(defmacro elscreen-notify-screen-modification-suppress (&amp;rest body)</code></li>
+<li>L560: <code>(defun elscreen-run-screen-update-hook ()</code></li>
+<li>L566: <code>(defun elscreen-screen-modified-p (inquirer)</code></li>
+<li>L573: <code>(defun elscreen-set-screen-modified ()</code></li>
+<li>L578: <code>(defun elscreen-notify-screen-modification (&amp;optional mode)</code></li>
+<li>L594: <code>(defmacro elscreen-screen-modified-hook-setup (&amp;rest hooks-and-functions)</code></li>
+<li>L625: <code>(defun elscreen-get-screen-to-name-alist-cache ()</code></li>
+<li>L628: <code>(defun elscreen-set-screen-to-name-alist-cache (alist)</code></li>
+<li>L633: <code>(defun elscreen-rebuild-mode-to-nickname-alist ()</code></li>
+<li>L639: <code>(defun elscreen-set-mode-to-nickname-alist (mode-to-nickname-alist-symbol)</code></li>
+<li>L647: <code>(defun elscreen-rebuild-buffer-to-nickname-alist ()</code></li>
+<li>L653: <code>(defun elscreen-set-buffer-to-nickname-alist (buffer-to-nickname-alist-symbol)</code></li>
+<li>L681: <code>(defun elscreen-get-screen-to-name-alist (&amp;optional truncate-length padding)</code></li>
+<li>L742: <code>(defun elscreen-truncate-screen-name (screen-name truncate-length &amp;optional padding)</code></li>
+<li>L754: <code>(defun elscreen-goto-internal (screen)</code></li>
+<li>L762: <code>(defun elscreen-create-internal (&amp;optional noerror)</code></li>
+<li>L786: <code>(defun elscreen-kill-internal (screen)</code></li>
+<li>L791: <code>(defun elscreen-find-screens (condition)</code></li>
+<li>L807: <code>(defun elscreen-find-screen (condition)</code></li>
+<li>L813: <code>(defun elscreen-find-screen-by-buffer (buffer &amp;optional create)</code></li>
+<li>L836: <code>(defun elscreen-find-screen-by-major-mode (major-mode-or-re)</code></li>
+<li>L860: <code>(defun elscreen-message (message &amp;optional sec)</code></li>
+<li>L872: <code>(defun elscreen-create ()</code></li>
+<li>L879: <code>(defun elscreen-clone (&amp;optional screen)</code></li>
+<li>L897: <code>(defun elscreen-kill (&amp;optional screen)</code></li>
+<li>L917: <code>(defun elscreen-kill-screen-and-buffers (&amp;optional screen)</code></li>
+<li>L934: <code>(defun elscreen-kill-others (&amp;optional screen)</code></li>
+<li>L964: <code>(defun elscreen-goto (screen)</code></li>
+<li>L982: <code>(defun elscreen-next ()</code></li>
+<li>L997: <code>(defun elscreen-previous ()</code></li>
+<li>L1012: <code>(defun elscreen-toggle ()</code></li>
+<li>L1023: <code>(defun elscreen-jump ()</code></li>
+<li>L1032: <code>(defun elscreen-swap ()</code></li>
+<li>L1049: <code>(defun elscreen-screen-nickname (nickname)</code></li>
+<li>L1059: <code>(defun elscreen-display-screen-name-list ()</code></li>
+<li>L1077: <code>(defun elscreen-set-help (help-symbol)</code></li>
+<li>L1081: <code>(defun elscreen-help ()</code></li>
+<li>L1093: <code>(defun elscreen-display-version ()</code></li>
+<li>L1098: <code>(defun elscreen-toggle-display-screen-number ()</code></li>
+<li>L1104: <code>(defun elscreen-toggle-display-tab ()</code></li>
+<li>L1110: <code>(defun elscreen-display-last-message ()</code></li>
+<li>L1115: <code>(defun elscreen-display-time ()</code></li>
+<li>L1127: <code>(defun elscreen-select-and-goto ()</code></li>
+<li>L1189: <code>(define-key minibuffer-map "\C-g" 'abort-recursive-edit)</code></li>
+<li>L1190: <code>(define-key minibuffer-map "\C-m" 'exit-recursive-edit)</code></li>
+<li>L1191: <code>(define-key minibuffer-map "q" 'exit-recursive-edit)</code></li>
+<li>L1192: <code>(define-key minibuffer-map " " 'exit-recursive-edit)</code></li>
+<li>L1195: <code>(define-key minibuffer-map (car command) 'self-insert-and-exit))</code></li>
+<li>L1199: <code>(define-key minibuffer-map (number-to-string screen)</code></li>
+<li>L1215: <code>(defun elscreen-find-and-goto-by-buffer (&amp;optional buffer create noselect)</code></li>
+<li>L1234: <code>(defun elscreen-find-file (filename)</code></li>
+<li>L1241: <code>(defun elscreen-find-file-read-only (filename)</code></li>
+<li>L1249: <code>(defun elscreen-dired (dirname &amp;optional switches)</code></li>
+<li>L1255: <code>(defun elscreen-execute-extended-command (prefix-arg)</code></li>
+<li>L1293: <code>(defun elscreen-mode-line-update ()</code></li>
+<li>L1372: <code>(defun elscreen-menu-bar-update (&amp;optional force)</code></li>
+<li>L1397: <code>(define-key (current-global-map) [menu-bar elscreen]</code></li>
+<li>L1424: <code>(define-key keymap (vector 'header-line key) function)))</code></li>
+<li>L1439: <code>(defun elscreen-tab-escape-% (string)</code></li>
+<li>L1453: <code>(defun elscreen-tab-update (&amp;optional force)</code></li>
+<li>L1557: <code>(defun elscreen-link ()</code></li>
+<li>L1574: <code>(defun elscreen-split ()</code></li>
+<li>L1588: <code>(defun elscreen-start ()</code></li>
+<li>L1598: <code>(provide 'elscreen)</code></li>
+</ul></main></html>

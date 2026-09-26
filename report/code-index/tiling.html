@@ -1,0 +1,25 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tiling</h1>
+<p>Fonte: https://github.com/lgfang/tiling.git</p>
+<p>Revisione: <code>95c8cf543214eda33202a417a4ef7bb5095991c0</code>.</p>
+<h2>tiling.el</h2>
+<ul>
+<li>L38: <code>;; (define-key global-map (kbd "C-\\") 'tiling-cycle) ; accepts prefix number</code></li>
+<li>L39: <code>;; (define-key global-map (kbd "C-M-&lt;up&gt;") 'tiling-tile-up)</code></li>
+<li>L40: <code>;; (define-key global-map (kbd "C-M-&lt;down&gt;") 'tiling-tile-down)</code></li>
+<li>L41: <code>;; (define-key global-map (kbd "C-M-&lt;right&gt;") 'tiling-tile-right)</code></li>
+<li>L42: <code>;; (define-key global-map (kbd "C-M-&lt;left&gt;") 'tiling-tile-left)</code></li>
+<li>L63: <code>(defun tiling-tile-4 (bufs)</code></li>
+<li>L85: <code>(defun tiling-master(bufs horizontal)</code></li>
+<li>L108: <code>(defun tiling-master-left(bufs)</code></li>
+<li>L113: <code>(defun tiling-master-top(bufs)</code></li>
+<li>L119: <code>(defun tiling-even (bufs horizontal)</code></li>
+<li>L137: <code>(defun tiling-even-horizontal (bufs) (tiling-even bufs t))</code></li>
+<li>L139: <code>(defun tiling-even-vertical (bufs) (tiling-even bufs nil))</code></li>
+<li>L142: <code>(defun tiling-cycle (&amp;optional numOfWins)</code></li>
+<li>L182: <code>(defun tiling-tile-move (direction)</code></li>
+<li>L197: <code>(defun tiling-tile-up () (interactive) (tiling-tile-move 'up))</code></li>
+<li>L199: <code>(defun tiling-tile-down () (interactive) (tiling-tile-move 'down))</code></li>
+<li>L201: <code>(defun tiling-tile-left () (interactive) (tiling-tile-move 'left))</code></li>
+<li>L203: <code>(defun tiling-tile-right () (interactive) (tiling-tile-move 'right))</code></li>
+<li>L205: <code>(provide 'tiling)</code></li>
+</ul></main></html>

@@ -1,0 +1,22 @@
+[
+  {
+    "at": 2.61,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.91,
+    "keys": "ghostel-switch-all",
+    "input_hex": "67686f7374656c2d7377697463682d616c6c"
+  },
+  {
+    "at": 3.41,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.21,
+    "keys": "M-RET: accept empty input",
+    "input_hex": "1b0d"
+  }
+]

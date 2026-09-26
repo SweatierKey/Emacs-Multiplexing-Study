@@ -1,0 +1,44 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: project-shells</h1>
+<p>Fonte: https://github.com/hying-caritas/project-shells.git</p>
+<p>Revisione: <code>15f70d99b6d5f078f490ceb64b6f13c000b37e24</code>.</p>
+<h2>project-shells.el</h2>
+<ul>
+<li>L52: <code>(require 'cl-lib)</code></li>
+<li>L53: <code>(require 'shell)</code></li>
+<li>L54: <code>(require 'term)</code></li>
+<li>L55: <code>(require 'eshell)</code></li>
+<li>L56: <code>(require 'seq)</code></li>
+<li>L69: <code>(defcustom project-shells-default-shell-name "sh"</code></li>
+<li>L74: <code>(defcustom project-shells-empty-project "-"</code></li>
+<li>L81: <code>(defcustom project-shells-setup '((,project-shells-empty-project .</code></li>
+<li>L103: <code>(defcustom project-shells-default-init-func 'project-shells-init-sh</code></li>
+<li>L106: <code>(defcustom project-shells-keys '("1" "2" "3" "4" "5" "6" "7" "8" "9" "0" "-" "=")</code></li>
+<li>L114: <code>(defcustom project-shells-vterm-keys nil</code></li>
+<li>L122: <code>(defcustom project-shells-term-keys '("-")</code></li>
+<li>L131: <code>(defcustom project-shells-eshell-keys '("=")</code></li>
+<li>L140: <code>(defcustom project-shells-session-root "~/.sessions"</code></li>
+<li>L145: <code>(defcustom project-shells-project-name-func 'projectile-project-name</code></li>
+<li>L150: <code>(defcustom project-shells-project-root-func 'projectile-project-root</code></li>
+<li>L155: <code>(defcustom project-shells-histfile-env "HISTFILE"</code></li>
+<li>L160: <code>(defcustom project-shells-histfile-name ".shell_history"</code></li>
+<li>L165: <code>(defcustom project-shells-init-file-name ".shellrc"</code></li>
+<li>L170: <code>(defcustom project-shells-term-args nil</code></li>
+<li>L175: <code>(defcustom project-shells-keymap-prefix "C-c s"</code></li>
+<li>L230: <code>(cl-defun project-shells-send-shell-command (cmdline)</code></li>
+<li>L236: <code>(cl-defun project-shells-init-sh (session-dir type)</code></li>
+<li>L245: <code>(cl-defun project-shells--project-name ()</code></li>
+<li>L251: <code>(cl-defun project-shells--project-root (proj-name)</code></li>
+<li>L259: <code>(cl-defun project-shells--histfile-name (session-dir)</code></li>
+<li>L263: <code>(cl-defun project-shells--command-string (args)</code></li>
+<li>L271: <code>(cl-defun project-shells--term-command-string ()</code></li>
+<li>L278: <code>(cl-defun project-shells-activate-for-key (key &amp;optional proj proj-root)</code></li>
+<li>L335: <code>(cl-defun project-shells-activate (p)</code></li>
+<li>L345: <code>(cl-defun project-shells-setup (map &amp;optional setup)</code></li>
+<li>L353: <code>do (define-key map (kbd key) 'project-shells-activate)))</code></li>
+<li>L357: <code>(defvar project-shells-map</code></li>
+<li>L360: <code>(define-key map (kbd "s") 'project-shells-switch-to-last)</code></li>
+<li>L365: <code>(defvar project-shells-mode-map</code></li>
+<li>L369: <code>(define-key map (kbd project-shells-keymap-prefix)</code></li>
+<li>L375: <code>(define-minor-mode project-shells-mode</code></li>
+<li>L384: <code>(provide 'project-shells)</code></li>
+</ul></main></html>

@@ -1,0 +1,12 @@
+{"status":"loaded","feature":"emux","library":"/home/admin/Emacs-Multiplexing-Study/sources/emux-el/emux.el","commands":["emux:term","emux:term-cd","emux:term-command","emux:term-kill","emux:term-kill-input","emux:term-mode","emux:term-new","emux:term-next","emux:term-noselect","emux:term-other-window","emux:term-previous","emux:term-rename","emux:term-send-input","emux:term-sync"]}
+STDERR:
+Package cl is deprecated
+sources/emux-el/emux.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/emux-el/emux.el: Warning: ‘do’ is an obsolete alias (as of 27.1); use ‘cl-do’ instead.
+sources/emux-el/emux.el: Warning: ‘do’ is an obsolete alias (as of 27.1); use ‘cl-do’ instead.
+sources/emux-el/emux.el: Warning: ‘loop’ is an obsolete alias (as of 27.1); use ‘cl-loop’ instead.
+sources/emux-el/emux.el: Warning: ‘loop’ is an obsolete alias (as of 27.1); use ‘cl-loop’ instead.
+sources/emux-el/emux.el: Warning: ‘loop’ is an obsolete alias (as of 27.1); use ‘cl-loop’ instead.
+sources/emux-el/emux.el: Warning: ‘loop’ is an obsolete alias (as of 27.1); use ‘cl-loop’ instead.
+sources/emux-el/emux.el: Warning: ‘loop’ is an obsolete alias (as of 27.1); use ‘cl-loop’ instead.
+sources/emux-el/emux.el: Warning: ‘loop’ is an obsolete alias (as of 27.1); use ‘cl-loop’ instead.

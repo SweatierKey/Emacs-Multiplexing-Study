@@ -1,0 +1,127 @@
+[
+  {
+    "at": 2.61,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.911,
+    "keys": "shell-here",
+    "input_hex": "7368656c6c2d68657265"
+  },
+  {
+    "at": 3.411,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.714,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 4.914,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.914,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 6.114,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.116,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 7.317,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.118,
+    "keys": "C-u",
+    "input_hex": "15"
+  },
+  {
+    "at": 8.52,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 8.82,
+    "keys": "shell",
+    "input_hex": "7368656c6c"
+  },
+  {
+    "at": 9.32,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 10.121,
+    "keys": "C-a C-k",
+    "input_hex": "010b"
+  },
+  {
+    "at": 10.521,
+    "keys": "*shell-db*",
+    "input_hex": "2a7368656c6c2d64622a"
+  },
+  {
+    "at": 10.721,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.024,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 12.224,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 13.224,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 13.424,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 14.427,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 14.827,
+    "keys": "*shell Emacs-Multiplexing-Study*",
+    "input_hex": "2a7368656c6c20456d6163732d4d756c7469706c6578696e672d53747564792a"
+  },
+  {
+    "at": 15.228,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.631,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 15.831,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

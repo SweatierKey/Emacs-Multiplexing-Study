@@ -1,0 +1,4 @@
+INFO web boot complete
+INFO web health=ok
+WARN web disk threshold=75
+INFO web requests=42

@@ -1,0 +1,1222 @@
+# Indice del codice: projectile
+
+Fonte: https://github.com/bbatsov/projectile.git
+
+Revisione: `f902073c1d10bb125875470c9dcbdcd7c9a1eefb`.
+
+
+## .dir-locals.el
+
+
+## dev/buffer-leaks.el
+
+- L44: `(defun projectile-buffer-leaks--check (orig spec &rest args)`
+- L53: `(defun projectile-buffer-leaks--arm (&rest _)`
+- L59: `(provide 'buffer-leaks)`
+
+## dev/function-coverage.el
+
+- L67: `(defun projectile-coverage--instrument (&rest _)`
+- L89: `(defun projectile-coverage--report (&rest _)`
+- L110: `(provide 'function-coverage)`
+
+## projectile-consult.el
+
+- L48: `;;   (define-key projectile-command-map (kbd "f") #'projectile-consult-find-file)`
+- L52: `(require 'projectile)`
+- L61: `(require 'consult nil t)`
+- L70: `(defun projectile-consult--file-command (command)`
+- L81: `(defun projectile-consult--builder (command)`
+- L90: `(defun projectile-consult-find-file ()`
+- L122: `(provide 'projectile-consult)`
+
+## projectile.el
+
+- L38: `(require 'cl-lib)`
+- L39: `(require 'compat)`
+- L40: `(require 'seq)`
+- L41: `(require 'thingatpt)`
+- L42: `(require 'ibuffer)`
+- L43: `(require 'ibuf-ext)`
+- L44: `(require 'compile)`
+- L45: `(require 'grep)`
+- L46: `(require 'fileloop)`
+- L47: `(require 'filenotify)`
+- L48: `(require 'outline)`
+- L131: `(defcustom projectile-indexing-method`
+- L169: `(defcustom projectile-alien-honors-ignores t`
+- L197: `(defcustom projectile-enable-caching (eq projectile-indexing-method 'native)`
+- L213: `(defcustom projectile-async-index-sentinel-timeout 1.0`
+- L228: `(defcustom projectile-async-indexing t`
+- L247: `(defcustom projectile-kill-buffers-filter 'kill-all`
+- L291: `(defcustom projectile-file-exists-local-cache-expire nil`
+- L302: `(defcustom projectile-file-exists-remote-cache-expire (* 5 60)`
+- L313: `(defcustom projectile-files-cache-expire nil`
+- L325: `(defcustom projectile-auto-discover-projects t`
+- L340: `(defcustom projectile-auto-cleanup-known-projects nil`
+- L348: `(defcustom projectile-auto-update-cache t`
+- L354: `(defcustom projectile-auto-update-cache-with-watches nil`
+- L394: `(defcustom projectile-watch-max-directories 512`
+- L410: `(defcustom projectile-require-project-root 'prompt`
+- L422: `(defcustom projectile-completion-system 'default`
+- L437: `(defcustom projectile-keymap-prefix nil`
+- L448: `(define-key projectile-mode-map (kbd \"C-c p\") \\='projectile-command-map)"`
+- L454: `(defcustom projectile-cache-file  ".projectile-cache.eld"`
+- L470: `(defcustom projectile-sort-order 'default`
+- L488: `(defcustom projectile-verbose t`
+- L508: `(defun projectile--message (format-string &rest args)`
+- L520: `(defun projectile--message-always (format-string &rest args)`
+- L530: `(defcustom projectile-buffers-filter-function nil`
+- L542: `(defcustom projectile-project-name nil`
+- L554: `(defcustom projectile-project-name-function 'projectile-default-project-name`
+- L563: `(defcustom projectile-project-root-files`
+- L578: `(defcustom projectile-project-root-files-bottom-up`
+- L604: `(defcustom projectile-project-root-files-top-down-recurring`
+- L618: `(defcustom projectile-project-root-functions`
+- L632: `(defcustom projectile-dirconfig-file`
+- L647: `(defcustom projectile-dirconfig-comment-prefix`
+- L658: `(defcustom projectile-warn-on-prefixless-dirconfig-lines t`
+- L673: `(defcustom projectile-globally-ignored-files`
+- L686: `(defcustom projectile-globally-unignored-files nil`
+- L696: `(defcustom projectile-globally-ignored-file-suffixes`
+- L707: `(defcustom projectile-globally-ignored-directories`
+- L790: `(defcustom projectile-globally-unignored-directories nil`
+- L803: `(defcustom projectile-globally-ignored-file-regexps`
+- L821: `(defcustom projectile-globally-ignored-modes`
+- L841: `(defcustom projectile-globally-ignored-buffers`
+- L861: `(defcustom projectile-find-file-hook nil`
+- L867: `(defcustom projectile-find-dir-hook nil`
+- L873: `(defcustom projectile-switch-project-action 'projectile-find-file`
+- L881: `(defcustom projectile-switch-project-other-window-action 'projectile-find-file-other-window`
+- L890: `(defcustom projectile-switch-project-other-frame-action 'projectile-find-file-other-frame`
+- L899: `(defcustom projectile-find-dir-includes-top-level nil`
+- L905: `(defcustom projectile-use-git-grep nil`
+- L914: `(defcustom projectile-search-backend 'auto`
+- L930: `(defcustom projectile-shell-backend 'eshell`
+- L949: `(defcustom projectile-grep-finished-hook nil`
+- L955: `(defcustom projectile-test-prefix-function 'projectile-test-prefix`
+- L961: `(defcustom projectile-test-suffix-function 'projectile-test-suffix`
+- L970: `(defcustom projectile-related-files-function 'projectile-related-files-fn`
+- L976: `(defcustom projectile-dynamic-mode-line t`
+- L996: `(defcustom projectile-mode-line-function 'projectile-default-mode-line`
+- L1004: `(defcustom projectile-default-src-directory "src/"`
+- L1013: `(defcustom projectile-default-test-directory "test/"`
+- L1043: `(defun projectile--register-project-cache-cleanup (name function)`
+- L1049: `(defmacro projectile-define-project-cache (name docstring &rest props)`
+- L1118: `(defun projectile--project-relative-name (path root)`
+- L1132: `(defun projectile--known-project-root (root)`
+- L1139: `(defun projectile--directory-key (path)`
+- L1251: `(defcustom projectile-known-projects-file`
+- L1263: `(defcustom projectile-ignored-projects nil`
+- L1272: `(defcustom projectile-ignored-project-regexps nil`
+- L1287: `(defcustom projectile-ignored-project-function nil`
+- L1310: `(defcustom projectile-auto-track-known-projects t`
+- L1319: `(defcustom projectile-project-search-path nil`
+- L1332: `(defcustom projectile-fd-executable`
+- L1356: `(defun projectile--remote-fd-executable (remote)`
+- L1372: `(defun projectile-fd-executable-for (directory)`
+- L1381: `(defcustom projectile-git-use-fd (when projectile-fd-executable t)`
+- L1391: `(defcustom projectile-git-command "git ls-files -zco --exclude-standard"`
+- L1397: `(defcustom projectile-git-fd-args "-H -0 -E .git -tf --strip-cwd-prefix -c never"`
+- L1412: `(defcustom projectile-git-submodule-command projectile--default-git-submodule-command`
+- L1425: `(defcustom projectile-git-ignored-command "git ls-files -zcoi --exclude-standard"`
+- L1431: `(defcustom projectile-hg-command "hg locate -f -0 -I ."`
+- L1437: `(defcustom projectile-hg-ignored-command "hg status -in0 ."`
+- L1443: `(defcustom projectile-jj-command "jj file list -T 'path ++ \"\\0\"' --no-pager ."`
+- L1449: `(defcustom projectile-sapling-command "sl locate -0 -I ."`
+- L1455: `(defcustom projectile-sapling-ignored-command "sl status -in0 ."`
+- L1463: `(defcustom projectile-fossil-command (concat "fossil ls | "`
+- L1472: `(defcustom projectile-bzr-command "bzr ls -R --versioned -0"`
+- L1478: `(defcustom projectile-bzr-ignored-command "bzr ls -R --ignored -0"`
+- L1485: `(defcustom projectile-darcs-command "darcs show files -0 ."`
+- L1491: `(defcustom projectile-pijul-command "pijul list | tr '\\n' '\\0'"`
+- L1497: `(defcustom projectile-svn-command "svn list -R . | grep -v '/$' | tr '\\n' '\\0'"`
+- L1513: `(defcustom projectile-svn-ignored-command "svn status --no-ignore | grep '^I' | cut -c9- | tr '\\n' '\\0'"`
+- L1519: `(defcustom projectile-generic-command`
+- L1533: `(defcustom projectile-other-file-alist`
+- L1577: `(defcustom projectile-create-missing-test-files nil`
+- L1587: `(defcustom projectile-compilation-buffer-scope nil`
+- L1624: `(defcustom projectile-after-switch-project-hook nil`
+- L1630: `(defcustom projectile-before-switch-project-hook nil`
+- L1636: `(defcustom projectile-project-changed-functions nil`
+- L1650: `(defcustom projectile-current-project-on-switch 'remove`
+- L1664: `(defcustom projectile-max-file-buffer-count nil`
+- L1676: `(defcustom projectile-command-history-ignore-duplicates t`
+- L1688: `(defcustom projectile-command-history-scope 'repository`
+- L1753: `(defun projectile--pkg-version ()`
+- L1760: `(defun projectile-version (&optional show-version)`
+- L1780: `(defun projectile--collect-from-functions (functions root key-function what)`
+- L1807: `(defun projectile-unixy-system-p ()`
+- L1813: `(defun projectile-symbol-or-selection-at-point ()`
+- L1819: `(defun projectile-symbol-at-point ()`
+- L1823: `(defun projectile-generate-process-name (process make-new &optional project)`
+- L1846: `(defun projectile-serialize (data filename)`
+- L1855: `(defun projectile-unserialize (filename)`
+- L1876: `(defun projectile-file-exists-cache-cleanup ()`
+- L1888: `(defun projectile-file-exists-p (filename)`
+- L1934: `(defun projectile--invalidate-project-cache (project-root)`
+- L1946: `(defun projectile-invalidate-cache (prompt)`
+- L1977: `(defun projectile-invalidate-cache-all ()`
+- L2003: `(defun projectile-discard-root-cache ()`
+- L2021: `(defun projectile-time-seconds ()`
+- L2025: `(defun projectile-cache-project (project files)`
+- L2034: `(defun projectile-load-project-cache (project-root)`
+- L2056: `(defun projectile-purge-file-from-cache (file)`
+- L2078: `(defun projectile-purge-dir-from-cache (dir)`
+- L2096: `(defun projectile-file-cached-p (file project)`
+- L2100: `(defun projectile--schedule-cache-flush (project)`
+- L2129: `(defun projectile--maybe-watch-project (project files)`
+- L2141: `(defun projectile--watch-directories (project files)`
+- L2155: `(defun projectile--watch-make-callback (project)`
+- L2159: `(defun projectile--watch-skipped-once (project format-string &rest args)`
+- L2167: `(defun projectile--watch-project (project files)`
+- L2203: `(defun projectile--unwatch-project (project)`
+- L2216: `(defun projectile--teardown-all-watches ()`
+- L2224: `(defun projectile--watch-all-cached-projects ()`
+- L2231: `(defun projectile--handle-watch-event (project event)`
+- L2250: `(defun projectile--vcs-ignored-subset (root relatives)`
+- L2273: `(defun projectile--watch-drop-vcs-ignored (project added)`
+- L2293: `(defun projectile--process-watch-events (project)`
+- L2337: `(defun projectile--watch-apply-event (project event)`
+- L2357: `(defun projectile--watch-transient-file-p (file)`
+- L2369: `(defun projectile--watch-keep-file-p (project file)`
+- L2384: `(defun projectile--watch-handle-created (project file)`
+- L2413: `(defun projectile--watch-adopt-directory (project dir)`
+- L2461: `(defun projectile--watch-handle-deleted (project file)`
+- L2500: `(defun projectile--watch-handle-stopped (project descriptor)`
+- L2526: `(defun projectile-cache-current-file (&optional project-root)`
+- L2564: `(defun projectile-cache-files-find-file-hook (&optional project-root)`
+- L2573: `(defun projectile-track-known-projects-find-file-hook (&optional project-root)`
+- L2583: `(defun projectile--maybe-run-project-changed-functions (&optional project-root)`
+- L2595: `(defun projectile-maybe-invalidate-cache (force)`
+- L2611: `(defcustom projectile-enable-frecency t`
+- L2623: `(defcustom projectile-frecency-file`
+- L2630: `(defcustom projectile-frecency-max-files 200`
+- L2637: `(defcustom projectile-frecency-max-projects 100`
+- L2654: `(defun projectile--frecency-data ()`
+- L2679: `(defun projectile--frecency-score (entry now)`
+- L2686: `(defun projectile--frecency-prune (files)`
+- L2697: `(defun projectile--frecency-record (project-root)`
+- L2726: `(defun projectile--frecency-sort-function (project-root)`
+- L2752: `(defun projectile--frecency-merge-from-disk ()`
+- L2777: `(defun projectile--frecency-cap-projects (data)`
+- L2792: `(defun projectile--frecency-save ()`
+- L2821: `(defun projectile-discover-projects-in-directory (directory &optional depth)`
+- L2865: `(defun projectile-discover-projects-in-search-path ()`
+- L2880: `(defun delete-file-projectile-remove-from-cache (filename &optional _trash)`
+- L2891: `(defun projectile-parent (path)`
+- L2896: `(defun projectile--directory-entry-set (directory)`
+- L2915: `(defun projectile--wildcard-p (name)`
+- L2919: `(defun projectile--read-json-file (file &rest args)`
+- L2929: `(defun projectile--directory-marker (directory markers &optional files-only)`
+- L2957: `(defun projectile--locate-dominating-file (file name first-match-only)`
+- L2983: `(defun projectile-locate-dominating-file (file name)`
+- L2992: `(defun projectile-locate-dominating-file-top-down (file name)`
+- L3005: `(defun projectile-root-local (_dir)`
+- L3009: `(defun projectile-root-top-down (dir &optional list)`
+- L3020: `(defun projectile-root-marked (dir)`
+- L3024: `(defun projectile-root-bottom-up (dir &optional list)`
+- L3044: `(defun projectile-root-top-down-recurring (dir &optional list)`
+- L3072: `(defun projectile-project-root (&optional dir)`
+- L3161: `(defun projectile-ensure-project (dir)`
+- L3177: `(defun projectile-acquire-root (&optional dir)`
+- L3183: `(defun projectile-project-p (&optional dir)`
+- L3189: `(defun projectile-default-project-name (project-root)`
+- L3194: `(defun projectile-project-name (&optional project)`
+- L3205: `(defun projectile-uniquify-dirname-transform (dirname)`
+- L3225: `(defun projectile-get-project-directories (project-dir)`
+- L3235: `(defun projectile--directory-p (directory)`
+- L3239: `(defun projectile-dir-files (directory &optional root)`
+- L3264: `(defun projectile-dir-files-native (directory &optional root)`
+- L3286: `(defun projectile--global-ignore-regexp-p (path)`
+- L3295: `(defun projectile--glob-to-regexp (glob)`
+- L3324: `(defun projectile--ignore-pattern-to-regexp (pattern)`
+- L3346: `(defun projectile--compile-ignore-patterns (patterns)`
+- L3354: `(defun projectile-index-directory (directory patterns progress-reporter)`
+- L3386: `(defun projectile--index-directory-walk (directory progress-reporter rules acc-cell)`
+- L3449: `(defun projectile--ext-command-program (command)`
+- L3458: `(defun projectile--fd-command-p (command)`
+- L3469: `(defun projectile--alien-exclude-style (vcs command)`
+- L3481: `(defun projectile--alien-exclude-glob (glob style)`
+- L3505: `(defun projectile--alien-exclude-args (vcs command globs)`
+- L3533: `(defun projectile--alien-ext-command (vcs directory)`
+- L3551: `(defun projectile--alien-command-excludes-p (vcs command &optional directory)`
+- L3567: `(defun projectile--maybe-remove-ignored (project-root files)`
+- L3577: `(defun projectile--alien-apply-ignores (project-root vcs files)`
+- L3586: `(defun projectile-dir-files-alien (directory &optional vcs subdirs)`
+- L3628: `(defun projectile-vcs-ignored-file-p (file &optional project-root vcs)`
+- L3650: `(defun projectile--restrict-to-subdirs (files subdirs)`
+- L3662: `(defun projectile--restricted-sub-projects-files (project-root vcs subdirs)`
+- L3671: `(defun projectile-git-deleted-files (directory)`
+- L3675: `(defun projectile-get-ext-command (vcs &optional directory)`
+- L3702: `(defun projectile-get-sub-projects-command (vcs)`
+- L3710: `(defun projectile-get-ext-ignored-command (vcs)`
+- L3721: `(defun projectile-get-all-sub-projects (project)`
+- L3735: `(defun projectile-get-immediate-sub-projects (path)`
+- L3764: `(defun projectile--git-submodule-paths (gitmodules-dir)`
+- L3791: `(defun projectile--git-submodules (path)`
+- L3854: `(defun projectile-get-sub-projects-files (project-root vcs)`
+- L3869: `(defun projectile-get-repo-ignored-files (project vcs)`
+- L3875: `(defun projectile-get-repo-ignored-directory (project dir vcs)`
+- L3882: `(defun projectile--command-accepts-pathspecs-p (command)`
+- L3893: `(defun projectile--ext-command-line (command pathspecs)`
+- L3918: `(defun projectile--strip-fd-cwd-prefix-flag (command)`
+- L3927: `(defun projectile--ext-command-output-files ()`
+- L3937: `(defun projectile--surface-ext-command-errors (errors-file)`
+- L3948: `(defun projectile-files-via-ext-command (root command &optional pathspecs)`
+- L4015: `(defun projectile--posix-shell ()`
+- L4030: `(defun projectile-files-via-ext-command-async (root command callback &optional pathspecs)`
+- L4158: `(defun projectile-dir-files-alien-async (directory callback &optional vcs subdirs)`
+- L4199: `(defun projectile-index-project-async (&optional project-root)`
+- L4260: `(defun projectile--dir-files-alien-await (directory &optional vcs subdirs)`
+- L4337: `(defun projectile--dir-files-alien-maybe-async (directory &optional vcs subdirs)`
+- L4350: `(defun projectile-project-files-producer (&optional project-root)`
+- L4382: `(defun projectile-adjust-files (project vcs files)`
+- L4386: `(defun projectile-remove-ignored (files &optional root)`
+- L4415: `(defun projectile-keep-ignored-files (project vcs files)`
+- L4423: `(defun projectile-keep-ignored-directories (project vcs directories)`
+- L4432: `(defun projectile-add-unignored (project vcs files)`
+- L4449: `(defun projectile-buffers-with-file (buffers)`
+- L4453: `(defun projectile-buffers-with-file-or-process (buffers)`
+- L4465: `(defun projectile-project-buffers (&optional project)`
+- L4478: `(defun projectile-process-current-project-buffers (action)`
+- L4484: `(defun projectile-process-current-project-buffers-current (action)`
+- L4492: `(defun projectile-project-buffer-files (&optional project)`
+- L4504: `(defun projectile-project-buffer-p (buffer project-root &optional truename-cache)`
+- L4534: `(defun projectile-ignored-buffer-p (buffer)`
+- L4549: `(defun projectile-recently-active-files ()`
+- L4560: `(defun projectile-project-buffer-names ()`
+- L4564: `(defun projectile-prepend-project-name (string)`
+- L4568: `(defun projectile-read-buffer-to-switch (prompt)`
+- L4602: `(defmacro projectile--define-display-variants (base arglist docstring &rest body)`
+- L4639: `(defun projectile--switch-to-buffer (switch-fn)`
+- L4647: `(defun projectile-switch-to-buffer ()`
+- L4659: `(defun projectile-display-buffer ()`
+- L4670: `(defun projectile-project-buffers-other-buffer ()`
+- L4676: `(defun projectile-project-buffers-non-visible ()`
+- L4684: `(defun projectile-multi-occur (&optional nlines)`
+- L4700: `(defun projectile-normalise-paths (patterns)`
+- L4708: `(defun projectile-expand-paths (paths)`
+- L4721: `(defun projectile-normalise-patterns (patterns)`
+- L4725: `(defun projectile-make-relative-to-root (files)`
+- L4730: `(defun projectile--ignored-path-p (path root directory-p)`
+- L4760: `(defun projectile-ignored-directory-p (directory &optional root)`
+- L4768: `(defun projectile-ignored-file-p (file &optional root)`
+- L4777: `(defun projectile-globally-ignored-directory-names ()`
+- L4783: `(defun projectile--dirconfig-ignore (&optional root)`
+- L4788: `(defun projectile--dirconfig-ensure (&optional root)`
+- L4793: `(defun projectile-unignored-files ()`
+- L4801: `(defun projectile-unignored-directories ()`
+- L4811: `(defun projectile-unignored-directories-rel ()`
+- L4815: `(defun projectile-unignored-files-rel ()`
+- L4819: `(defun projectile-project-unignored-files ()`
+- L4823: `(defun projectile-project-unignored-directories ()`
+- L4827: `(defun projectile-paths-to-ensure ()`
+- L4831: `(defun projectile-files-to-ensure ()`
+- L4836: `(defun projectile-patterns-to-ensure ()`
+- L4840: `(defun projectile--ignore-patterns (&optional root)`
+- L4871: `(defun projectile--ensure-patterns (&optional root)`
+- L4877: `(defun projectile-filtering-patterns (&optional root)`
+- L4882: `(defun projectile-project-unignored ()`
+- L4894: `(defun projectile-dirconfig-file (&optional root)`
+- L4911: `(defun projectile--maybe-warn-glob-keep-entries (project-root cfg)`
+- L4933: `(defun projectile--dirconfig-classify-line (line)`
+- L4954: `(defun projectile--parse-dirconfig-string (text)`
+- L4971: `(defun projectile--parse-dirconfig-file-uncached (&optional root)`
+- L4982: `(defun projectile--maybe-warn-prefixless-entries (project-root cfg)`
+- L5004: `(defun projectile-parse-dirconfig-file (&optional root)`
+- L5051: `(defun projectile-expand-root (name &optional dir)`
+- L5060: `(cl-defun projectile-completing-read (prompt choices &key initial-input action caller sort-function annotation-function (category 'project-file))`
+- L5107: `(defun projectile-project-files (project-root)`
+- L5203: `(defun projectile-current-project-files ()`
+- L5207: `(defun projectile-process-current-project-files (action)`
+- L5214: `(defun projectile-project-dirs (project)`
+- L5221: `(defun projectile--directory-ancestors (path)`
+- L5232: `(defun projectile-current-project-dirs ()`
+- L5236: `(defun projectile-get-other-files (file-name &optional flex-matching)`
+- L5247: `(defun projectile--find-other-file (&optional flex-matching ff-variant)`
+- L5265: `(defun projectile-find-other-file (&optional flex-matching)`
+- L5283: `(defun projectile--file-name-sans-extensions (file-name)`
+- L5290: `(defun projectile--file-name-extensions (file-name)`
+- L5302: `(defun projectile-associated-file-name-extensions (file-name)`
+- L5315: `(defun projectile--other-extension-files (current-file project-file-list &optional flex-matching)`
+- L5360: `(defun projectile-select-files (project-files &optional invalidate-cache)`
+- L5379: `(defun projectile--find-file-dwim (invalidate-cache &optional ff-variant)`
+- L5409: `(defun projectile-find-file-dwim (&optional invalidate-cache)`
+- L5448: `(defun projectile--find-file (invalidate-cache &optional ff-variant)`
+- L5467: `(defun projectile-find-file (&optional invalidate-cache)`
+- L5482: `(defun projectile-find-file-all ()`
+- L5497: `(defun projectile-toggle-project-read-only ()`
+- L5512: `(defun projectile-add-dir-local-variable (mode variable value)`
+- L5524: `(defun projectile-delete-dir-local-variable (mode variable)`
+- L5539: `(defun projectile-sort-files (files)`
+- L5552: `(defun projectile--sort-prioritized-first (prioritized files)`
+- L5562: `(defun projectile-sort-by-recentf-first (files)`
+- L5566: `(defun projectile-sort-by-recently-active-first (files)`
+- L5570: `(defun projectile-sort-by-modification-time (files)`
+- L5582: `(defun projectile-sort-by-access-time (files)`
+- L5597: `(defun projectile--find-dir (invalidate-cache &optional dired-variant)`
+- L5611: `(defun projectile-find-dir (&optional invalidate-cache)`
+- L5626: `(defun projectile-complete-dir (project)`
+- L5636: `(defun projectile-find-test-file (&optional invalidate-cache)`
+- L5647: `(defun projectile-test-files (files)`
+- L5651: `(defun projectile--merge-related-files-fns (related-files-fns)`
+- L5663: `(defun projectile--related-files-plist (project-root file)`
+- L5678: `(defun projectile--related-files-plist-by-kind (file kind)`
+- L5704: `(defun projectile--related-files-from-plist (plist)`
+- L5713: `(defun projectile--related-files-kinds(file)`
+- L5720: `(defun projectile--related-files (file kind)`
+- L5724: `(defun projectile--find-related-file (file &optional kind)`
+- L5749: `(defun projectile-find-related-file()`
+- L5756: `(defun projectile-related-files-fn-groups(kind groups)`
+- L5765: `(defun projectile-related-files-fn-extensions(kind extensions)`
+- L5780: `(defun projectile-related-files-fn-test-with-prefix(extension test-prefix)`
+- L5796: `(defun projectile-related-files-fn-test-with-suffix(extension test-suffix)`
+- L5831: `(defun projectile--singularize (word)`
+- L5850: `(defun projectile--pluralize (word)`
+- L5866: `(defun projectile--rails-resource-key (rel-path prefix suffix)`
+- L5886: `(defun projectile--rails-controller-key (rel-path)`
+- L5890: `(defun projectile--rails-helper-key (rel-path)`
+- L5894: `(defun projectile--rails-view-key (rel-path)`
+- L5907: `(defun projectile--django-app-key (rel-path)`
+- L5915: `(defun projectile--parent-directory-key (rel-path)`
+- L5929: `(defun projectile--basename-key (rel-path suffix)`
+- L5937: `(defun projectile--phoenix-controller-key (rel-path)`
+- L5941: `(defun projectile--phoenix-html-key (rel-path)`
+- L5945: `(defun projectile--phoenix-json-key (rel-path)`
+- L5949: `(defun projectile--phoenix-view-key (rel-path)`
+- L5953: `(defun projectile--phoenix-live-key (rel-path)`
+- L5975: `(defun projectile--laravel-model-key (rel-path)`
+- L5979: `(defun projectile--laravel-controller-key (rel-path)`
+- L5983: `(defun projectile--laravel-factory-key (rel-path)`
+- L5987: `(defun projectile--laravel-seeder-key (rel-path)`
+- L5991: `(defun projectile--laravel-policy-key (rel-path)`
+- L6054: `(defun projectile--file-kind-member-p (rel-path spec)`
+- L6071: `(defun projectile--file-kind-default-key (rel-path spec)`
+- L6098: `(defun projectile--file-kind-key (rel-path spec)`
+- L6111: `(defun projectile--file-kind-match (rel-path spec)`
+- L6122: `(defun projectile--file-kinds-related-files-fn (file-kinds)`
+- L6159: `(defun projectile--file-kinds ()`
+- L6163: `(defun projectile--related-file-candidates (rel-path &optional file-kinds project-files)`
+- L6192: `(defun projectile--related-file-ring (rel-path &optional file-kinds project-files)`
+- L6224: `(defun projectile--file-kind-name (kind)`
+- L6228: `(defun projectile--read-file-kind (prompt)`
+- L6242: `(defun projectile--find-file-of-kind (kind-entry &optional ff-variant)`
+- L6262: `(defun projectile-find-file-of-kind (&optional invalidate-cache)`
+- L6282: `(defun projectile--read-related-file-target (rel-path)`
+- L6293: `(defun projectile-toggle-related-file ()`
+- L6329: `(defun projectile-test-file-p (file)`
+- L6339: `(defun projectile-current-project-test-files ()`
+- L6356: `(defun projectile--combine-plists (&rest plists)`
+- L6370: `(defun projectile--any-marker-p (marker)`
+- L6376: `(defun projectile--marker-clauses (marker-files)`
+- L6394: `(cl-defun projectile--build-project-plist`
+- L6459: `(cl-defun projectile-register-project-type`
+- L6545: `(cl-defun projectile-update-project-type`
+- L6623: `(defun projectile-remove-project-type (project-type)`
+- L6641: `(defun projectile-eldev-project-p (&optional dir)`
+- L6648: `(defun projectile-expand-file-name-wildcard (name-pattern dir)`
+- L6658: `(defun projectile-cabal-project-p (&optional dir)`
+- L6665: `(defun projectile-dotnet-project-p (&optional dir)`
+- L6672: `(defun projectile-dotnet-sln-project-p (&optional dir)`
+- L6679: `(defun projectile-go-project-p (&optional dir)`
+- L6686: `(defun projectile-make-project-p (&optional dir)`
+- L6694: `(defun projectile-mill-project-p (&optional dir)`
+- L6710: `(defun projectile-terraform-project-p (&optional dir)`
+- L6716: `(defun projectile-xcode-project-p (&optional dir)`
+- L6723: `(defun projectile-flutter-project-p (&optional dir)`
+- L6734: `(defun projectile-nimble-project-p (&optional dir)`
+- L6744: `(defun projectile--cmake-version ()`
+- L6751: `(defun projectile--cmake-check-version (version)`
+- L6763: `(defun projectile--cmake-command-presets-supported (command-type)`
+- L6769: `(defun projectile--cmake-read-preset (filename)`
+- L6780: `(defun projectile--cmake-command-preset-array-id (command-type)`
+- L6784: `(defun projectile--cmake-command-presets-shallow (filename command-type)`
+- L6791: `(defun projectile--cmake-command-presets (filename command-type)`
+- L6807: `(defun projectile--cmake-all-command-presets (command-type)`
+- L6813: `(defun projectile--cmake-command-preset-names (command-type)`
+- L6819: `(defcustom projectile-enable-cmake-presets nil`
+- L6829: `(defun projectile--cmake-use-command-presets (command-type)`
+- L6838: `(defun projectile--cmake-select-command (command-type)`
+- L6864: `(defun projectile--cmake-manual-command (command-type)`
+- L6875: `(defun projectile--cmake-preset-command (command-type preset)`
+- L6879: `(defun projectile--cmake-command (command-type)`
+- L6895: `(defun projectile--cmake-configure-command ()`
+- L6899: `(defun projectile--cmake-compile-command ()`
+- L6903: `(defun projectile--cmake-test-command ()`
+- L6907: `(defun projectile--cmake-install-command ()`
+- L6911: `(defun projectile--cmake-package-command ()`
+- L7558: `(defun projectile-detect-project-type (&optional dir project-root)`
+- L7594: `(defun projectile-project-type (&optional dir)`
+- L7606: `(defun projectile-project-info ()`
+- L7614: `(defun projectile-verify-files (files &optional dir entry-set)`
+- L7629: `(defun projectile-verify-file (file &optional dir entry-set)`
+- L7643: `(defun projectile-verify-file-wildcard (file &optional dir)`
+- L7653: `(defcustom projectile-vcs-markers`
+- L7683: `(defun projectile--vcs-from-directory-listing (directory)`
+- L7693: `(defun projectile-project-vcs (&optional project-root)`
+- L7733: `(defun projectile--git (root &rest args)`
+- L7747: `(defun projectile--git-toplevel (root)`
+- L7752: `(defun projectile--git-relativize (paths root toplevel)`
+- L7767: `(defun projectile--git-status-changed-files (root)`
+- L7789: `(defun projectile-git-changed-files (root &optional base)`
+- L7812: `(defun projectile--read-git-ref (root)`
+- L7822: `(defun projectile-find-changed-file (&optional arg)`
+- L7855: `(defun projectile--test-name-for-impl-name (impl-file-path)`
+- L7873: `(defun projectile--impl-name-for-test-name (test-file-path)`
+- L7891: `(defun projectile--test-to-impl-dir (test-dir-path)`
+- L7908: `(defun projectile--impl-to-test-dir-fallback (impl-dir-path)`
+- L7926: `(defun projectile--test-to-impl-dir-fallback (test-dir-path)`
+- L7944: `(defun projectile--impl-to-test-dir (impl-dir-path)`
+- L7965: `(defun projectile-complementary-dir (dir-path string replacement)`
+- L7973: `(defun projectile--create-directories-for (path)`
+- L7981: `(defun projectile-find-implementation-or-test (file-name)`
+- L8009: `(defun projectile--find-implementation-or-test-in (ff-variant)`
+- L8027: `(defun projectile-toggle-between-implementation-and-test ()`
+- L8039: `(defun projectile-project-type-attribute (project-type key &optional default-value)`
+- L8047: `(defun projectile-test-prefix (project-type)`
+- L8052: `(defun projectile-test-suffix (project-type)`
+- L8057: `(defun projectile-test-extension (project-type)`
+- L8064: `(defun projectile-src-extension (project-type)`
+- L8070: `(defun projectile-related-files-fn (project-type)`
+- L8090: `(defun projectile-src-directory (project-type)`
+- L8095: `(defun projectile-test-directory (project-type)`
+- L8100: `(defun projectile-dirname-matching-count (a b)`
+- L8109: `(defun projectile-group-file-candidates (file candidates)`
+- L8123: `(defun projectile--best-or-all-candidates-based-on-parents-dirs (file candidates)`
+- L8130: `(defun projectile--impl-to-test-predicate (impl-file)`
+- L8142: `(defun projectile--complementary-file (file-path dir-fn filename-fn)`
+- L8154: `(defun projectile--impl-file-from-src-dir-str (file-name)`
+- L8165: `(defun projectile--test-file-from-test-dir-str (file-name)`
+- L8176: `(defun projectile--impl-file-from-src-dir-fn (test-file)`
+- L8191: `(defun projectile--test-file-from-test-dir-fn (impl-file)`
+- L8205: `(defmacro projectile--acond (&rest clauses)`
+- L8224: `(defun projectile--find-matching-test (impl-file)`
+- L8248: `(defun projectile--test-to-impl-predicate (test-file)`
+- L8258: `(defun projectile--find-matching-file (test-file)`
+- L8281: `(defun projectile--choose-from-candidates (candidates &key caller)`
+- L8287: `(defun projectile-find-matching-test (impl-file)`
+- L8292: `(defun projectile-find-matching-file (test-file)`
+- L8303: `(defun projectile-grep-default-files ()`
+- L8329: `(defun projectile--globally-ignored-file-suffixes-glob ()`
+- L8345: `(defun projectile--search-tool-tag (tool)`
+- L8354: `(defun projectile--read-search-string-with-default (prompt-label)`
+- L8380: `(defun projectile--grep-find-specs (patterns)`
+- L8396: `(defun projectile--grep-rebase-paths (paths project-root root-dir)`
+- L8412: `(defun projectile--grep-find-path-tests (anchored floating)`
+- L8430: `(defun projectile--grep-find-prune-clause ()`
+- L8456: `(defun projectile-rgrep-default-command (regexp files dir)`
+- L8526: `(defun projectile-register-backend (registry-symbol name &rest plist)`
+- L8537: `(defun projectile--backend-available-p (backend)`
+- L8542: `(defun projectile--resolve-backend (backends preference family)`
+- L8572: `(defun projectile--grep (search-regexp &optional files)`
+- L8611: `(defun projectile--ag-ignore-patterns ()`
+- L8627: `(defun projectile--ag (search-term &optional regexp)`
+- L8648: `(defun projectile--ripgrep-ignore-globs (&optional quote)`
+- L8671: `(defun projectile--ripgrep (search-term &optional regexp)`
+- L8700: `(defun projectile-register-search-backend (name &rest plist)`
+- L8733: `(defun projectile-search (&optional search-term regexp)`
+- L8756: `(defun projectile-grep (&optional regexp arg)`
+- L8778: `(defun projectile-ag (search-term &optional arg)`
+- L8794: `(defun projectile-ripgrep (search-term &optional arg)`
+- L8812: `(defun projectile--project-ignore-globs (root)`
+- L8819: `(defun projectile--project-el-ignore-glob (glob)`
+- L8829: `(defun projectile-find-references (&optional symbol)`
+- L8862: `(defmacro projectile-with-default-dir (dir &rest body)`
+- L8869: `(defun projectile-run-command-in-root ()`
+- L8876: `(defun projectile-run-shell-command-in-root (command &optional output-buffer error-buffer)`
+- L8883: `(defun projectile-run-async-shell-command-in-root (command &optional output-buffer error-buffer)`
+- L8890: `(defun projectile-run-gdb ()`
+- L8905: `(defmacro projectile--displaying-in-other-window (other-window &rest body)`
+- L8919: `(defun projectile--run-shell (new-process &optional other-window)`
+- L8928: `(defun projectile--run-eshell (new-process &optional other-window)`
+- L8938: `(defun projectile--run-ielm (new-process &optional other-window)`
+- L8954: `(defun projectile--run-term (new-process &optional other-window)`
+- L8977: `(defun projectile--vterm (&optional new-process other-window)`
+- L8998: `(defun projectile--eat (&optional new-process other-window)`
+- L9015: `(defun projectile--ghostel (&optional new-process other-window)`
+- L9039: `(defun projectile-register-shell-backend (name &rest plist)`
+- L9081: `(defun projectile--run (preference new-process other-window)`
+- L9091: `(defun projectile-run (&optional arg)`
+- L9112: `(defun projectile-run-shell (&optional arg)`
+- L9126: `(defun projectile-run-eshell (&optional arg)`
+- L9140: `(defun projectile-run-ielm (&optional arg)`
+- L9154: `(defun projectile-run-term (&optional arg)`
+- L9168: `(defun projectile-run-vterm (&optional arg)`
+- L9182: `(defun projectile-run-eat (&optional arg)`
+- L9196: `(defun projectile-run-ghostel (&optional arg)`
+- L9209: `(defun projectile-files-from-cmd (cmd directory)`
+- L9278: `(defun projectile--search-glob-to-regexp (file-ext)`
+- L9286: `(defun projectile--search-ext-argument (desc file-ext)`
+- L9303: `(defun projectile--construct-files-with-string-command (tool search-term &optional file-ext)`
+- L9324: `(defun projectile--rg-construct-command (search-term &optional file-ext)`
+- L9328: `(defun projectile--ag-construct-command (search-term &optional file-ext)`
+- L9332: `(defun projectile--ack-construct-command (search-term &optional file-ext)`
+- L9336: `(defun projectile--git-grep-construct-command (search-term &optional file-ext)`
+- L9340: `(defun projectile--grep-construct-command (search-term &optional file-ext)`
+- L9344: `(defun projectile-files-with-string (string directory &optional file-ext)`
+- L9372: `(defun projectile--replace-in-files (from to files)`
+- L9387: `(defun projectile-replace (&optional arg)`
+- L9419: `(defun projectile-replace-regexp (&optional arg)`
+- L9471: `(defcustom projectile-search-max-matches 5000`
+- L9480: `(defcustom projectile-search-whole-word nil`
+- L9493: `(defcustom projectile-search-async t`
+- L9513: `(defcustom projectile-search-use-ripgrep t`
+- L9542: `(defcustom projectile-todo-keywords`
+- L9562: `(defcustom projectile-search-scan-chunk-size 24`
+- L9629: `(defcustom projectile-search-render-interval 0.1`
+- L9720: `(defun projectile-replace--expand (replacement groups literal)`
+- L9749: `(defun projectile-replace--capture-groups ()`
+- L9758: `(defun projectile-replace--binary-p ()`
+- L9766: `(defun projectile-replace--scan-region (file buffer regexp budget)`
+- L9808: `(defun projectile-replace--scan-file (file regexp budget)`
+- L9844: `(defun projectile-replace--gather (candidates regexp)`
+- L9873: `(defun projectile-replace--async-p ()`
+- L9880: `(defun projectile-replace--cancel-scan ()`
+- L9898: `(defun projectile-replace--gather-async (candidates regexp buffer on-done)`
+- L9920: `(defun projectile-replace--scan-step (buffer remaining regexp budget on-done generation)`
+- L9982: `(defun projectile-replace--ensure-not-scanning ()`
+- L9988: `(defun projectile-replace--candidates (term literal case-fold directories)`
+- L10018: `(defun projectile-replace--file-header (file root count)`
+- L10026: `(defun projectile-replace--render-line (m replacement literal)`
+- L10058: `(defun projectile-replace--header-string ()`
+- L10091: `(defun projectile-replace--scanning-note (nmatches)`
+- L10100: `(defun projectile-replace--render ()`
+- L10143: `(defun projectile-replace--render-preserve ()`
+- L10156: `(defun projectile-replace--match-at-point ()`
+- L10160: `(defun projectile-replace--goto-next-match ()`
+- L10172: `(defun projectile-replace--goto-prev-match ()`
+- L10184: `(defun projectile-replace--goto-next-file ()`
+- L10198: `(defun projectile-replace--goto-prev-file ()`
+- L10212: `(defun projectile-replace--visit ()`
+- L10226: `(defun projectile-replace--toggle ()`
+- L10235: `(defun projectile-replace--toggle-file ()`
+- L10251: `(defun projectile-replace--set-replacement ()`
+- L10259: `(defun projectile-replace--regather ()`
+- L10282: `(defun projectile-replace--refresh ()`
+- L10289: `(defun projectile-replace--toggle-case ()`
+- L10299: `(defun projectile-replace--valid-regexp-p (regexp)`
+- L10305: `(defun projectile-replace--toggle-regexp ()`
+- L10328: `(defun projectile-replace--toggle-word ()`
+- L10339: `(defun projectile-replace--filter-by (predicate)`
+- L10350: `(defun projectile-replace--line-matches-p (m regexp)`
+- L10356: `(defun projectile-replace--file-matches-p (m regexp)`
+- L10364: `(defun projectile-replace--keep-matches (regexp)`
+- L10370: `(defun projectile-replace--flush-matches (regexp)`
+- L10376: `(defun projectile-replace--keep-files (regexp)`
+- L10382: `(defun projectile-replace--flush-files (regexp)`
+- L10390: `(defun projectile-replace--do-one (m replacement literal)`
+- L10399: `(defun projectile-replace--positions-valid-p (matches)`
+- L10414: `(defun projectile-replace--skip (name reason)`
+- L10449: `(defun projectile-replace--undo-edits (matches replacement literal)`
+- L10474: `(defun projectile-replace--apply-file (file matches replacement literal)`
+- L10519: `(defun projectile-replace--apply ()`
+- L10580: `(defun projectile-replace--undo-valid-p (edits)`
+- L10594: `(defun projectile-replace--undo-one (e)`
+- L10601: `(defun projectile-replace--undo-file (file edits)`
+- L10644: `(defun projectile-replace-undo ()`
+- L10701: `(defun projectile-replace--grep-line (m root)`
+- L10708: `(defun projectile-replace--export-guidance ()`
+- L10723: `(defun projectile-replace--export ()`
+- L10771: `(defvar projectile-replace-mode-map`
+- L10773: `(define-key map (kbd "RET") #'projectile-replace--visit)`
+- L10774: `(define-key map (kbd "n") #'projectile-replace--goto-next-match)`
+- L10775: `(define-key map (kbd "p") #'projectile-replace--goto-prev-match)`
+- L10776: `(define-key map (kbd "M-n") #'projectile-replace--goto-next-file)`
+- L10777: `(define-key map (kbd "M-p") #'projectile-replace--goto-prev-file)`
+- L10778: `(define-key map (kbd "t") #'projectile-replace--toggle)`
+- L10779: `(define-key map (kbd "SPC") #'projectile-replace--toggle)`
+- L10780: `(define-key map (kbd "f") #'projectile-replace--toggle-file)`
+- L10781: `(define-key map (kbd "r") #'projectile-replace--set-replacement)`
+- L10782: `(define-key map (kbd "c") #'projectile-replace--toggle-case)`
+- L10783: `(define-key map (kbd "x") #'projectile-replace--toggle-regexp)`
+- L10784: `(define-key map (kbd "w") #'projectile-replace--toggle-word)`
+- L10785: `(define-key map (kbd "k") #'projectile-replace--keep-matches)`
+- L10786: `(define-key map (kbd "d") #'projectile-replace--flush-matches)`
+- L10787: `(define-key map (kbd "K") #'projectile-replace--keep-files)`
+- L10788: `(define-key map (kbd "D") #'projectile-replace--flush-files)`
+- L10789: `(define-key map (kbd "e") #'projectile-replace--export)`
+- L10790: `(define-key map (kbd "!") #'projectile-replace--apply)`
+- L10791: `(define-key map (kbd "C-c C-c") #'projectile-replace--apply)`
+- L10792: `(define-key map (kbd "g") #'projectile-replace--refresh)`
+- L10793: `(define-key map (kbd "q") #'projectile-replace--quit)`
+- L10797: `(define-derived-mode projectile-replace-mode special-mode "Projectile-Replace"`
+- L10822: `(defun projectile-replace--seed (buf mode root term regexp replacement`
+- L10866: `(defun projectile-search--rg-executable ()`
+- L10870: `(defun projectile-search--rg-fastpath-p (literal &optional rg-pattern)`
+- L10882: `(defun projectile-search--rg-command (term case-fold word globs &optional pattern)`
+- L10905: `(defun projectile-search--rg-json-get (obj &rest keys)`
+- L10911: `(defun projectile-search--rg-byte->char-column (line byte)`
+- L10923: `(defun projectile-search--rg-parse-line (line root)`
+- L10959: `(defun projectile-search--rg-ingest (buffer lines root)`
+- L10983: `(defun projectile-search--rg-finish (buffer on-done)`
+- L10999: `(defun projectile-search--gather-rg (buffer term on-done)`
+- L11033: `(defun projectile-search--rg-scan-roots (buffer term roots generation on-done)`
+- L11102: `(defun projectile-replace--word-boundary-regexp (regexp)`
+- L11109: `(defun projectile-replace--effective-regexp (regexp)`
+- L11117: `(defun projectile-replace--resolve-candidates (candidates)`
+- L11126: `(defun projectile-replace--render-progress ()`
+- L11138: `(defun projectile-replace--start (buffer candidates regexp on-done)`
+- L11180: `(defun projectile-replace--open-finish (buffer)`
+- L11189: `(defun projectile-replace--open (mode buf-name root term regexp replacement`
+- L11246: `(defun projectile-replace--quit ()`
+- L11252: `(defun projectile-replace--review (literal)`
+- L11275: `(defun projectile-replace-review ()`
+- L11286: `(defun projectile-replace-regexp-review ()`
+- L11314: `(defun projectile-search--header-string ()`
+- L11343: `(defun projectile-search--render-line (m)`
+- L11364: `(defun projectile-search--render ()`
+- L11402: `(defun projectile-search--to-replace ()`
+- L11426: `(defvar projectile-search-mode-map`
+- L11428: `(define-key map (kbd "RET") #'projectile-replace--visit)`
+- L11429: `(define-key map (kbd "n") #'projectile-replace--goto-next-match)`
+- L11430: `(define-key map (kbd "p") #'projectile-replace--goto-prev-match)`
+- L11431: `(define-key map (kbd "M-n") #'projectile-replace--goto-next-file)`
+- L11432: `(define-key map (kbd "M-p") #'projectile-replace--goto-prev-file)`
+- L11433: `(define-key map (kbd "c") #'projectile-replace--toggle-case)`
+- L11434: `(define-key map (kbd "x") #'projectile-replace--toggle-regexp)`
+- L11435: `(define-key map (kbd "w") #'projectile-replace--toggle-word)`
+- L11436: `(define-key map (kbd "k") #'projectile-replace--keep-matches)`
+- L11437: `(define-key map (kbd "d") #'projectile-replace--flush-matches)`
+- L11438: `(define-key map (kbd "K") #'projectile-replace--keep-files)`
+- L11439: `(define-key map (kbd "D") #'projectile-replace--flush-files)`
+- L11440: `(define-key map (kbd "e") #'projectile-replace--export)`
+- L11441: `(define-key map (kbd "r") #'projectile-search--to-replace)`
+- L11442: `(define-key map (kbd "g") #'projectile-replace--refresh)`
+- L11443: `(define-key map (kbd "q") #'projectile-replace--quit)`
+- L11447: `(define-derived-mode projectile-search-mode special-mode "Projectile-Search"`
+- L11472: `(defun projectile-search--review (literal)`
+- L11489: `(defun projectile-search-review ()`
+- L11502: `(defun projectile-search-regexp-review ()`
+- L11535: `(defun projectile-todos--rg-quote (keyword)`
+- L11542: `(defun projectile-todos--regexp (keywords)`
+- L11548: `(defun projectile-todos--rg-pattern (keywords)`
+- L11555: `(defun projectile-todos--read-keywords ()`
+- L11566: `(defun projectile-todos (&optional arg)`
+- L11588: `(defun projectile-todos-in-projects (projects &optional arg)`
+- L11621: `(defun projectile--buffer-matches-conditions (buffer conditions)`
+- L11649: `(defun projectile-buffer-killed-p (buffer)`
+- L11664: `(defun projectile-kill-buffers ()`
+- L11685: `(defun projectile-save-project-buffers ()`
+- L11708: `(defun projectile--dired (dired-fn &optional arg)`
+- L11722: `(defun projectile-dired (&optional arg)`
+- L11736: `(defun projectile-vc (&optional project-root)`
+- L11771: `(defun projectile-recentf ()`
+- L11782: `(defun projectile-recentf-files ()`
+- L11792: `(defun projectile-project-cache-file (&optional project-root)`
+- L11806: `(defvar projectile-configure-cmd-map`
+- L11810: `(defvar projectile-compilation-cmd-map`
+- L11814: `(defvar projectile-install-cmd-map`
+- L11818: `(defvar projectile-package-cmd-map`
+- L11822: `(defvar projectile-test-cmd-map`
+- L11826: `(defvar projectile-run-cmd-map`
+- L11871: `(defun projectile--phase-descriptor (phase)`
+- L11878: `(defun projectile-discard-command-cache ()`
+- L11907: `(defun projectile--cache-project-commands-p ()`
+- L11962: `(defun projectile-tasks-safe-p (value)`
+- L11977: `(defcustom projectile-tasks nil`
+- L12016: `(defcustom projectile-discover-tasks t`
+- L12028: `(defcustom projectile-task-providers`
+- L12056: `(defun projectile--task-file (project-root name)`
+- L12065: `(defun projectile--first-task-file (project-root names)`
+- L12069: `(defun projectile--tasks-named (names prefix command-format)`
+- L12076: `(defun projectile--json-tasks (file key prefix command-format)`
+- L12092: `(defun projectile--npm-runner (project-root)`
+- L12101: `(defun projectile-tasks-from-npm (project-root)`
+- L12109: `(defun projectile-tasks-from-deno (project-root)`
+- L12115: `(defun projectile-tasks-from-composer (project-root)`
+- L12120: `(defun projectile--matches-in-file (file regexp)`
+- L12135: `(defun projectile-tasks-from-just (project-root)`
+- L12147: `(defun projectile--taskfile-task-names (file)`
+- L12170: `(defun projectile-tasks-from-taskfile (project-root)`
+- L12177: `(defun projectile-tasks-from-make (project-root)`
+- L12188: `(defun projectile--rake-task-files (project-root)`
+- L12204: `(defun projectile--rake-task-names (file)`
+- L12246: `(defun projectile-tasks-from-rake (project-root)`
+- L12259: `(defun projectile-discovered-tasks (&optional project-root)`
+- L12277: `(defun projectile--merge-tasks (&rest task-lists)`
+- L12286: `(defun projectile-project-tasks (&optional project-type project-root)`
+- L12300: `(defun projectile-default-generic-command (project-type command-type)`
+- L12315: `(defun projectile-default-configure-command (project-type)`
+- L12319: `(defun projectile-default-compilation-command (project-type)`
+- L12323: `(defun projectile-default-compilation-dir (project-type)`
+- L12327: `(defun projectile-default-test-command (project-type)`
+- L12331: `(defun projectile-default-install-command (project-type)`
+- L12335: `(defun projectile-default-package-command (project-type)`
+- L12339: `(defun projectile-default-run-command (project-type)`
+- L12343: `(defun projectile--expand-configure-command (project-type)`
+- L12350: `(defun projectile--phase-command (phase compile-dir)`
+- L12360: `(defun projectile-configure-command (compile-dir)`
+- L12380: `(defun projectile-compilation-buffer-scope ()`
+- L12395: `(defun projectile-compilation-buffer-name (compilation-mode)`
+- L12416: `(defun projectile-current-project-buffer-p ()`
+- L12424: `(defun projectile-compilation-command (compile-dir)`
+- L12432: `(defun projectile-test-command (compile-dir)`
+- L12440: `(defun projectile-install-command (compile-dir)`
+- L12448: `(defun projectile-package-command (compile-dir)`
+- L12456: `(defun projectile-run-command (compile-dir)`
+- L12464: `(defun projectile-read-command (prompt command &optional command-type)`
+- L12486: `(defcustom projectile-subproject-markers nil`
+- L12502: `(defun projectile--subproject-markers ()`
+- L12519: `(defcustom projectile-subproject-functions`
+- L12538: `(defun projectile--expand-member-globs (root patterns)`
+- L12563: `(defun projectile--workspace-member-patterns (root)`
+- L12580: `(defun projectile--file-contents (file)`
+- L12586: `(defun projectile--pnpm-workspace-patterns (file)`
+- L12606: `(defun projectile--npm-workspace-patterns (file)`
+- L12620: `(defun projectile--toml-string-array (text key)`
+- L12635: `(defun projectile--cargo-workspace-patterns (file)`
+- L12644: `(defun projectile--go-work-patterns (file)`
+- L12660: `(defun projectile-subprojects-from-manifest (root)`
+- L12671: `(defun projectile-subprojects-from-scan (root)`
+- L12698: `(defun projectile-project-subprojects (&optional project-root)`
+- L12711: `(defun projectile-subproject-type (&optional subproject-root)`
+- L12743: `(defun projectile--same-manifest-type-p (a b)`
+- L12753: `(defun projectile-subproject-root (&optional dir)`
+- L12777: `(defun projectile-find-file-in-subproject ()`
+- L12808: `(defun projectile-compilation-dir (&optional base)`
+- L12823: `(defun projectile-maybe-read-command (arg default-cmd prompt &optional command-type)`
+- L12832: `(defun projectile-run-compilation (cmd &optional use-comint-mode)`
+- L12845: `(defun projectile--command-history-key (project-root)`
+- L12872: `(defun projectile--get-command-history (project-root &optional command-type)`
+- L12910: `(defun projectile--command-history-insert (history command)`
+- L12926: `(cl-defun projectile--run-project-cmd`
+- L13017: `(defcustom projectile-use-comint-mode nil`
+- L13071: `(defun projectile-use-comint-mode-p (phase)`
+- L13087: `(defun projectile--phase-command-dynamic-p (phase)`
+- L13101: `(defun projectile--lifecycle-prompt (descriptor base)`
+- L13113: `(defun projectile--run-lifecycle-phase (phase show-prompt &optional base)`
+- L13135: `(defun projectile-configure-project (arg)`
+- L13145: `(defun projectile-compile-project (arg)`
+- L13156: `(defun projectile-test-project (arg)`
+- L13166: `(defun projectile-install-project (arg)`
+- L13176: `(defun projectile-package-project (arg)`
+- L13186: `(defun projectile-run-project (arg)`
+- L13195: `(defun projectile--run-subproject-phase (phase show-prompt)`
+- L13209: `(defmacro projectile--define-subproject-commands (&rest phases)`
+- L13250: `(defun projectile-test-at-point-python-name (node)`
+- L13258: `(defun projectile-test-at-point-python-command (test-name file-name)`
+- L13267: `(defun projectile-test-at-point-go-name (node)`
+- L13277: `(defun projectile-test-at-point-go-command (test-name file-name)`
+- L13293: `(defun projectile-test-at-point-jest-name (node)`
+- L13315: `(defun projectile-test-at-point-jest-command (test-name file-name)`
+- L13324: `(defun projectile-test-at-point-ruby-name (node)`
+- L13345: `(defun projectile-test-at-point-ruby-command (test-name file-name)`
+- L13361: `(defun projectile-test-at-point-rust-name (node)`
+- L13379: `(defun projectile-test-at-point-rust-command (test-name _file-name)`
+- L13387: `(defun projectile-test-at-point-elixir-name (node)`
+- L13400: `(defun projectile-test-at-point-elixir-command (_test-name file-name)`
+- L13409: `(defun projectile-test-at-point-java-name (node)`
+- L13422: `(defun projectile-test-at-point-java-command (test-name file-name)`
+- L13436: `(defun projectile--test-at-point-annotated-p (text names)`
+- L13448: `(defun projectile-test-at-point-erlang-name (node)`
+- L13460: `(defun projectile-test-at-point-erlang-command (test-name file-name)`
+- L13468: `(defun projectile-test-at-point-fsharp-name (node)`
+- L13495: `(defun projectile-test-at-point-fsharp-command (test-name _file-name)`
+- L13503: `(defcustom projectile-test-at-point-rules`
+- L13565: `(defun projectile--test-at-point-rule ()`
+- L13572: `(defun projectile--test-at-point-name (rule)`
+- L13588: `(defun projectile--test-at-point-file-name (file dir)`
+- L13610: `(defun projectile-run-test-at-point (arg)`
+- L13668: `(defun projectile-repeat-last-command (show-prompt)`
+- L13699: `(defvar projectile-last-task-map (make-hash-table :test 'equal)`
+- L13704: `(defun projectile--run-task (task-name command show-prompt &optional confirmed)`
+- L13764: `(defun projectile-run-task (arg)`
+- L13792: `(defun projectile-repeat-last-task (arg)`
+- L13807: `(defun compilation-find-file-projectile-find-compilation-buffer (orig-fun marker filename directory &rest formats)`
+- L13842: `(defun projectile-open-projects ()`
+- L13856: `(defun projectile--remove-current-project (projects)`
+- L13863: `(defun projectile--move-current-project-to-end (projects)`
+- L13871: `(defun projectile-known-projects ()`
+- L13889: `(defun projectile-relevant-known-projects ()`
+- L13907: `(defun projectile-relevant-open-projects ()`
+- L13924: `(defun projectile-switch-project (&optional arg)`
+- L13941: `(defun projectile-switch-open-project (&optional arg)`
+- L13976: `(defun projectile-switch-to-most-recent-project (&optional arg)`
+- L13988: `(defun projectile--transient-command-p (command)`
+- L13999: `(defun projectile--dispatch-in-directory (directory action)`
+- L14023: `(defun projectile-switch-project-by-name (project-to-switch &optional arg)`
+- L14094: `(defun projectile-find-file-in-directory (&optional directory)`
+- L14112: `(defun projectile-all-project-files ()`
+- L14117: `(defun projectile-find-file-in-known-projects ()`
+- L14125: `(defun projectile-keep-project-p (project)`
+- L14144: `(defun projectile--cleanup-known-projects ()`
+- L14155: `(defun projectile-cleanup-known-projects ()`
+- L14171: `(defun projectile-forget-projects-under (directory &optional recursive)`
+- L14208: `(defun projectile-clear-known-projects ()`
+- L14215: `(defun projectile-reset-known-projects ()`
+- L14222: `(defun projectile-remove-known-project (&optional project)`
+- L14243: `(defun projectile-remove-current-project-from-known-projects ()`
+- L14248: `(defun projectile-ignored-projects ()`
+- L14257: `(defun projectile-ignored-project-p (project-root)`
+- L14274: `(defun projectile-add-known-project (project-root)`
+- L14283: `(defun projectile-add-and-switch-project (project-root)`
+- L14291: `(defun projectile-load-known-projects ()`
+- L14308: `(defun projectile-save-known-projects ()`
+- L14328: `(defun projectile--quarantine-known-projects-file ()`
+- L14347: `(defun projectile--read-known-projects-file ()`
+- L14363: `(defun projectile-merge-known-projects ()`
+- L14435: `(defun projectile--normalize-repo-path (path)`
+- L14440: `(defun projectile--normalize-repo-url (url)`
+- L14469: `(defun projectile--repo-url-owner (remote)`
+- L14487: `(defun projectile--git-dir (root)`
+- L14509: `(defun projectile--git-common-dir (git-dir)`
+- L14520: `(defun projectile--git-config-remote-url (config-file)`
+- L14544: `(defun projectile--git-head-branch (git-dir)`
+- L14554: `(defun projectile--git-dir-identity (git-dir)`
+- L14562: `(defun projectile--git-repo-identity (root)`
+- L14567: `(defun projectile--file-contents-trimmed (file)`
+- L14577: `(defun projectile--jj-repo-dir (root)`
+- L14591: `(defun projectile--jj-repo-identity (root)`
+- L14616: `(defun projectile--hg-repo-identity (root)`
+- L14630: `(defun projectile--hg-default-path (root)`
+- L14643: `(defun projectile-repo-identity (&optional project-root)`
+- L14681: `(defun projectile-same-repo-p (a b)`
+- L14709: `(defcustom projectile-worktree-functions`
+- L14731: `(defun projectile--parse-git-worktree-list (output)`
+- L14758: `(defun projectile-worktrees-from-git (root)`
+- L14776: `(defun projectile--jj (root &rest args)`
+- L14791: `(defun projectile-worktrees-from-jj (root)`
+- L14827: `(defun projectile-worktrees-from-known-projects (root)`
+- L14851: `(defun projectile--checkout-branch (root)`
+- L14860: `(defun projectile-project-worktrees (&optional project-root)`
+- L14877: `(defun projectile--worktree-annotation (worktree)`
+- L14887: `(defun projectile-switch-worktree (&optional arg)`
+- L14961: `(defcustom projectile-project-groups nil`
+- L14993: `(defcustom projectile-sibling-max-group-share 0.25`
+- L15012: `(defcustom projectile-sibling-project-functions`
+- L15045: `(defun projectile--sibling-candidate-projects ()`
+- L15057: `(defun projectile--siblings-by-key (root key-function)`
+- L15080: `(defun projectile-siblings-from-groups (root)`
+- L15104: `(defun projectile-siblings-from-owner (root)`
+- L15114: `(defun projectile--project-leading-token (path)`
+- L15122: `(defun projectile-siblings-from-name (root)`
+- L15135: `(defun projectile-sibling-projects (&optional project-root)`
+- L15151: `(defun projectile-switch-sibling-project (&optional arg)`
+- L15194: `(defun projectile--common-parent (directories)`
+- L15209: `(defun projectile--project-group (projects what)`
+- L15215: `(defun projectile-project-group-files (projects)`
+- L15229: `(defun projectile-find-file-in-projects (projects &optional prompt)`
+- L15239: `(defun projectile-search-in-projects (projects &optional literal prompt)`
+- L15273: `(defun projectile-project-group-buffers (projects)`
+- L15280: `(defun projectile-switch-to-buffer-in-projects (projects &optional prompt)`
+- L15292: `(defun projectile--sibling-group ()`
+- L15305: `(defun projectile-find-file-in-sibling-projects ()`
+- L15313: `(defun projectile-search-in-sibling-projects (&optional regexp)`
+- L15328: `(defun projectile-switch-to-buffer-in-sibling-projects ()`
+- L15336: `(defun projectile-multi-occur-in-projects (projects &optional nlines)`
+- L15347: `(defun projectile-multi-occur-in-sibling-projects (&optional nlines)`
+- L15355: `(defun projectile-todos-in-sibling-projects ()`
+- L15375: `(require 'bookmark)`
+- L15377: `(defcustom projectile-bookmark-scope 'both`
+- L15402: `(defun projectile-bookmark--name-prefix (&optional project)`
+- L15407: `(defun projectile-bookmark--under-root-p (filename root)`
+- L15422: `(defun projectile-bookmark--belongs-p (bookmark root)`
+- L15435: `(defun projectile-bookmark-names (&optional root)`
+- L15447: `(defun projectile-bookmark--default-name (root)`
+- L15464: `(defun projectile-bookmark--record (name)`
+- L15473: `(defun projectile-bookmark--read (prompt &optional root)`
+- L15485: `(defun projectile-bookmark-set (name)`
+- L15502: `(defun projectile-bookmark-jump (name)`
+- L15524: `(defun projectile-bookmark-delete (name)`
+- L15545: `(defun projectile-ibuffer-by-project (project-root)`
+- L15552: `(defun projectile-ibuffer (prompt-for-project)`
+- L15569: `(defun projectile--repeat-until-project-buffer (orig-fun &rest args)`
+- L15586: `(defun projectile-next-project-buffer ()`
+- L15593: `(defun projectile-previous-project-buffer ()`
+- L15603: `(defun projectile-read-variable ()`
+- L15630: `(defun projectile-edit-dir-locals ()`
+- L15719: `(defun projectile--report-face (string face)`
+- L15723: `(defun projectile--report-title (title &optional char)`
+- L15733: `(defun projectile--report-section (title)`
+- L15738: `(defun projectile--report-label (label width)`
+- L15743: `(defun projectile--report-status-face (value)`
+- L15750: `(defun projectile--report-hints (bindings)`
+- L15766: `(defun projectile--report-setup-outline ()`
+- L15776: `(defun projectile-report-copy ()`
+- L15807: `(defun projectile-doctor--root-function (dir)`
+- L15820: `(defun projectile-doctor--root-marker (func root)`
+- L15840: `(defun projectile-doctor--type-marker (type)`
+- L15845: `(defun projectile-doctor--executable (name remote)`
+- L15853: `(defun projectile-doctor--index-command (root vcs)`
+- L15861: `(defun projectile-doctor--file-info (root remote)`
+- L15886: `(defun projectile-doctor--excluded-entries (root patterns)`
+- L15902: `(defun projectile-doctor--collect (&optional dir)`
+- L15970: `(defun projectile-doctor--finding (severity message &optional action-label action)`
+- L15981: `(defun projectile-doctor--enable-mode ()`
+- L15986: `(defun projectile-doctor--set-option (option value)`
+- L15994: `(defun projectile-doctor--visit-dirconfig ()`
+- L15999: `(defun projectile-doctor--findings (data)`
+- L16110: `(defun projectile-doctor--field (label value &optional face)`
+- L16120: `(defun projectile-doctor--section (title)`
+- L16124: `(defun projectile-doctor--list-field (label items)`
+- L16132: `(defun projectile-doctor--executable-string (status)`
+- L16139: `(defun projectile-doctor--files-string (data)`
+- L16150: `(defun projectile-doctor--cache-string (data)`
+- L16159: `(defun projectile-doctor--render-no-project (data)`
+- L16177: `(defun projectile-doctor--render (data)`
+- L16315: `(defun projectile-doctor--sort-findings (findings)`
+- L16324: `(defun projectile-doctor--run-action (button)`
+- L16338: `(defvar projectile-doctor-mode-map`
+- L16340: `(define-key map (kbd "q") #'quit-window)`
+- L16341: `(define-key map (kbd "w") #'projectile-report-copy)`
+- L16344: `(define-key map (kbd "TAB") #'forward-button)`
+- L16345: `(define-key map (kbd "<backtab>") #'backward-button)`
+- L16346: `(define-key map (kbd "n") #'forward-button)`
+- L16347: `(define-key map (kbd "p") #'backward-button)`
+- L16348: `(define-key map (kbd "f") #'outline-toggle-children)`
+- L16352: `(define-derived-mode projectile-doctor-mode special-mode "Projectile-Doctor"`
+- L16365: `(defun projectile-doctor--report (dir)`
+- L16379: `(defun projectile-doctor ()`
+- L16431: `(defcustom projectile-dashboard-sections`
+- L16455: `(defcustom projectile-dashboard-max-recent-files 10`
+- L16474: `(defun projectile-dashboard--section-p (section)`
+- L16480: `(defun projectile-dashboard--git-status (root)`
+- L16514: `(defun projectile-dashboard--vcs-info (root vcs remote)`
+- L16525: `(defun projectile-dashboard--recent-files (root)`
+- L16556: `(defun projectile-dashboard--commands (root)`
+- L16576: `(defcustom projectile-dashboard-link-files`
+- L16588: `(defun projectile-dashboard--links (root type)`
+- L16613: `(defun projectile-dashboard--ignore-summary (root)`
+- L16634: `(defun projectile-dashboard--collect-in-project (dir root)`
+- L16666: `(defun projectile-dashboard--collect (&optional dir)`
+- L16694: `(defun projectile-dashboard--visit-file (button)`
+- L16699: `(defun projectile-dashboard--run-task (button)`
+- L16706: `(defun projectile-dashboard--run-command (button)`
+- L16711: `(defun projectile-dashboard--open-vc (button)`
+- L16715: `(defun projectile-dashboard--open-dired (button)`
+- L16719: `(defun projectile-dashboard--index (button)`
+- L16760: `(defun projectile-dashboard--label (label)`
+- L16764: `(defun projectile-dashboard--field (label value &optional face)`
+- L16772: `(defun projectile-dashboard--section (title)`
+- L16776: `(defun projectile-dashboard--button (label type root &rest properties)`
+- L16782: `(defun projectile-dashboard--entry (label type root &rest properties)`
+- L16791: `(defun projectile-dashboard--phase-command (phase)`
+- L16797: `(defun projectile-dashboard--render-project (data)`
+- L16822: `(defun projectile-dashboard--render-vcs (data)`
+- L16856: `(defun projectile-dashboard--render-links (data)`
+- L16868: `(defun projectile-dashboard--render-recent (data)`
+- L16883: `(defun projectile-dashboard--render-tasks (data)`
+- L16897: `(defun projectile-dashboard--render-commands (data)`
+- L16910: `(defun projectile-dashboard--render-no-project (data)`
+- L16924: `(defun projectile-dashboard--render (data)`
+- L16949: `(defvar projectile-dashboard-mode-map`
+- L16951: `(define-key map (kbd "TAB") #'forward-button)`
+- L16952: `(define-key map (kbd "<backtab>") #'backward-button)`
+- L16955: `(define-key map (kbd "n") #'forward-button)`
+- L16956: `(define-key map (kbd "p") #'backward-button)`
+- L16957: `(define-key map (kbd "w") #'projectile-report-copy)`
+- L16961: `(define-derived-mode projectile-dashboard-mode special-mode "Projectile-Dashboard"`
+- L16975: `(defun projectile-dashboard--refresh (dir)`
+- L16993: `(defun projectile-dashboard ()`
+- L17031: `(defcustom projectile-mode-line-prefix`
+- L17054: `(defcustom projectile-show-menu t`
+- L17060: `(defun projectile-default-mode-line ()`
+- L17071: `(defun projectile-update-mode-line ()`
+- L17077: `(defun projectile-update-mode-line-on-window-change ()`
+- L17085: `(defvar projectile-command-map`
+- L17087: `(define-key map (kbd "4 4") #'projectile-other-window-command)`
+- L17088: `(define-key map (kbd "4 a") #'projectile-find-other-file-other-window)`
+- L17089: `(define-key map (kbd "4 b") #'projectile-switch-to-buffer-other-window)`
+- L17090: `(define-key map (kbd "4 C-o") #'projectile-display-buffer)`
+- L17091: `(define-key map (kbd "4 d") #'projectile-find-dir-other-window)`
+- L17092: `(define-key map (kbd "4 D") #'projectile-dired-other-window)`
+- L17093: `(define-key map (kbd "4 f") #'projectile-find-file-other-window)`
+- L17094: `(define-key map (kbd "4 g") #'projectile-find-file-dwim-other-window)`
+- L17095: `(define-key map (kbd "4 j") #'projectile-find-file-of-kind-other-window)`
+- L17096: `(define-key map (kbd "4 p") #'projectile-switch-project-other-window)`
+- L17097: `(define-key map (kbd "4 t") #'projectile-find-implementation-or-test-other-window)`
+- L17098: `(define-key map (kbd "5 5") #'projectile-other-frame-command)`
+- L17099: `(define-key map (kbd "5 a") #'projectile-find-other-file-other-frame)`
+- L17100: `(define-key map (kbd "5 b") #'projectile-switch-to-buffer-other-frame)`
+- L17101: `(define-key map (kbd "5 d") #'projectile-find-dir-other-frame)`
+- L17102: `(define-key map (kbd "5 D") #'projectile-dired-other-frame)`
+- L17103: `(define-key map (kbd "5 f") #'projectile-find-file-other-frame)`
+- L17104: `(define-key map (kbd "5 g") #'projectile-find-file-dwim-other-frame)`
+- L17105: `(define-key map (kbd "5 j") #'projectile-find-file-of-kind-other-frame)`
+- L17106: `(define-key map (kbd "5 p") #'projectile-switch-project-other-frame)`
+- L17107: `(define-key map (kbd "5 t") #'projectile-find-implementation-or-test-other-frame)`
+- L17108: `(define-key map (kbd "!") #'projectile-run-shell-command-in-root)`
+- L17109: `(define-key map (kbd "&") #'projectile-run-async-shell-command-in-root)`
+- L17110: `(define-key map (kbd "?") #'projectile-find-references)`
+- L17111: `(define-key map (kbd "a") #'projectile-find-other-file)`
+- L17112: `(define-key map (kbd "A") #'projectile-add-known-project)`
+- L17113: `(define-key map (kbd "b") #'projectile-switch-to-buffer)`
+- L17115: `(define-key map (kbd "B s") #'projectile-bookmark-set)`
+- L17116: `(define-key map (kbd "B j") #'projectile-bookmark-jump)`
+- L17117: `(define-key map (kbd "B d") #'projectile-bookmark-delete)`
+- L17118: `(define-key map (kbd "C") #'projectile-find-changed-file)`
+- L17119: `(define-key map (kbd "d") #'projectile-find-dir)`
+- L17120: `(define-key map (kbd "D") #'projectile-dired)`
+- L17121: `(define-key map (kbd "e") #'projectile-recentf)`
+- L17122: `(define-key map (kbd "E") #'projectile-edit-dir-locals)`
+- L17123: `(define-key map (kbd "f") #'projectile-find-file)`
+- L17124: `(define-key map (kbd "g") #'projectile-find-file-dwim)`
+- L17125: `(define-key map (kbd "F") #'projectile-find-file-in-known-projects)`
+- L17128: `;; (define-key projectile-command-map (kbd "h") #'helm-projectile)`
+- L17129: `(define-key map (kbd "i") #'projectile-invalidate-cache)`
+- L17130: `(define-key map (kbd "I") #'projectile-ibuffer)`
+- L17131: `(define-key map (kbd "j") #'projectile-find-file-of-kind)`
+- L17132: `(define-key map (kbd "J") #'projectile-toggle-related-file)`
+- L17133: `(define-key map (kbd "k") #'projectile-kill-buffers)`
+- L17134: `(define-key map (kbd "l") #'projectile-find-file-in-directory)`
+- L17135: `(define-key map (kbd "m") #'projectile-dispatch)`
+- L17138: `(define-key map (kbd "n p") #'projectile-switch-sibling-project)`
+- L17139: `(define-key map (kbd "n f") #'projectile-find-file-in-sibling-projects)`
+- L17140: `(define-key map (kbd "n s") #'projectile-search-in-sibling-projects)`
+- L17141: `(define-key map (kbd "n b") #'projectile-switch-to-buffer-in-sibling-projects)`
+- L17142: `(define-key map (kbd "n o") #'projectile-multi-occur-in-sibling-projects)`
+- L17143: `(define-key map (kbd "n t") #'projectile-todos-in-sibling-projects)`
+- L17144: `(define-key map (kbd "o") #'projectile-multi-occur)`
+- L17145: `(define-key map (kbd "p") #'projectile-switch-project)`
+- L17146: `(define-key map (kbd "q") #'projectile-switch-open-project)`
+- L17147: `(define-key map (kbd "r") #'projectile-replace)`
+- L17148: `(define-key map (kbd "R") #'projectile-replace-review)`
+- L17149: `(define-key map (kbd "u") #'projectile-replace-undo)`
+- L17150: `(define-key map (kbd "s s") #'projectile-search)`
+- L17151: `(define-key map (kbd "s g") #'projectile-grep)`
+- L17152: `(define-key map (kbd "s r") #'projectile-ripgrep)`
+- L17153: `(define-key map (kbd "s a") #'projectile-ag)`
+- L17154: `(define-key map (kbd "s x") #'projectile-find-references)`
+- L17155: `(define-key map (kbd "s R") #'projectile-search-review)`
+- L17156: `(define-key map (kbd "s X") #'projectile-search-regexp-review)`
+- L17157: `(define-key map (kbd "s t") #'projectile-todos)`
+- L17158: `(define-key map (kbd "S") #'projectile-save-project-buffers)`
+- L17159: `(define-key map (kbd "t") #'projectile-toggle-between-implementation-and-test)`
+- L17160: `(define-key map (kbd "T") #'projectile-find-test-file)`
+- L17161: `(define-key map (kbd "v") #'projectile-vc)`
+- L17163: `(define-key map (kbd "w s") #'projectile-session-save)`
+- L17164: `(define-key map (kbd "w S") #'projectile-session-save-all)`
+- L17165: `(define-key map (kbd "w r") #'projectile-session-restore)`
+- L17166: `(define-key map (kbd "w R") #'projectile-session-restore-all)`
+- L17167: `(define-key map (kbd "w f") #'projectile-session-forget)`
+- L17168: `(define-key map (kbd "w b") #'projectile-session-switch-to-buffer)`
+- L17170: `(define-key map (kbd "W") #'projectile-switch-worktree)`
+- L17172: `(define-key map (kbd "c o") #'projectile-configure-project)`
+- L17173: `(define-key map (kbd "c c") #'projectile-compile-project)`
+- L17174: `(define-key map (kbd "c p") #'projectile-package-project)`
+- L17175: `(define-key map (kbd "c i") #'projectile-install-project)`
+- L17176: `(define-key map (kbd "c t") #'projectile-test-project)`
+- L17177: `(define-key map (kbd "c .") #'projectile-run-test-at-point)`
+- L17178: `(define-key map (kbd "c r") #'projectile-run-project)`
+- L17181: `(define-key map (kbd "c m f") #'projectile-find-file-in-subproject)`
+- L17182: `(define-key map (kbd "c m o") #'projectile-configure-subproject)`
+- L17183: `(define-key map (kbd "c m c") #'projectile-compile-subproject)`
+- L17184: `(define-key map (kbd "c m t") #'projectile-test-subproject)`
+- L17185: `(define-key map (kbd "c m i") #'projectile-install-subproject)`
+- L17186: `(define-key map (kbd "c m p") #'projectile-package-subproject)`
+- L17187: `(define-key map (kbd "c m r") #'projectile-run-subproject)`
+- L17188: `(define-key map (kbd "c x") #'projectile-run-task)`
+- L17189: `(define-key map (kbd "c X") #'projectile-repeat-last-task)`
+- L17191: `(define-key map (kbd "x r") #'projectile-run)`
+- L17192: `(define-key map (kbd "x 4 r") #'projectile-run-other-window)`
+- L17193: `(define-key map (kbd "x e") #'projectile-run-eshell)`
+- L17194: `(define-key map (kbd "x 4 e") #'projectile-run-eshell-other-window)`
+- L17195: `(define-key map (kbd "x i") #'projectile-run-ielm)`
+- L17196: `(define-key map (kbd "x 4 i") #'projectile-run-ielm-other-window)`
+- L17197: `(define-key map (kbd "x t") #'projectile-run-term)`
+- L17198: `(define-key map (kbd "x 4 t") #'projectile-run-term-other-window)`
+- L17199: `(define-key map (kbd "x s") #'projectile-run-shell)`
+- L17200: `(define-key map (kbd "x 4 s") #'projectile-run-shell-other-window)`
+- L17201: `(define-key map (kbd "x g") #'projectile-run-gdb)`
+- L17202: `(define-key map (kbd "x v") #'projectile-run-vterm)`
+- L17203: `(define-key map (kbd "x 4 v") #'projectile-run-vterm-other-window)`
+- L17204: `(define-key map (kbd "x x") #'projectile-run-eat)`
+- L17205: `(define-key map (kbd "x 4 x") #'projectile-run-eat-other-window)`
+- L17206: `(define-key map (kbd "x G") #'projectile-run-ghostel)`
+- L17207: `(define-key map (kbd "x 4 G") #'projectile-run-ghostel-other-window)`
+- L17209: `(define-key map (kbd "H") #'projectile-doctor)`
+- L17210: `(define-key map (kbd "P") #'projectile-dashboard)`
+- L17211: `(define-key map (kbd "z") #'projectile-cache-current-file)`
+- L17212: `(define-key map (kbd "<left>") #'projectile-previous-project-buffer)`
+- L17213: `(define-key map (kbd "<right>") #'projectile-next-project-buffer)`
+- L17214: `(define-key map (kbd "ESC") #'projectile-project-buffers-other-buffer)`
+- L17230: `(defun projectile--obey-display-actions-for-next-command ()`
+- L17256: `(defun projectile-other-window-command ()`
+- L17273: `(defun projectile-other-frame-command ()`
+- L17304: `(defun projectile-dispatch--args ()`
+- L17311: `(defmacro projectile-dispatch--define (name command &rest props)`
+- L17385: `(defun projectile-dispatch-search-review ()`
+- L17400: `(defun projectile-dispatch-search-siblings ()`
+- L17413: `(defun projectile-dispatch-replace-review ()`
+- L17451: `(defun projectile--dispatch-define ()`
+- L17567: `(defun projectile-dispatch ()`
+- L17590: `(defvar projectile-mode-map`
+- L17593: `(define-key map projectile-keymap-prefix 'projectile-command-map))`
+- L17711: `(defun projectile-find-file-hook-function ()`
+- L17734: `(defun projectile-maybe-limit-project-file-buffers (&optional project-root)`
+- L17758: `(require 'project)`
+- L17802: `(defun project-projectile (dir)`
+- L17809: `(define-minor-mode projectile-mode`
+- L17863: `(defun projectile--register-savehist-variables ()`
+- L17889: `(require 'tab-bar)`
+- L17891: `(defcustom projectile-session-default-action 'projectile-find-file`
+- L17900: `(defcustom projectile-session-tab-name-function 'projectile-session-default-tab-name`
+- L17910: `(defcustom projectile-session-directory`
+- L17919: `(defcustom projectile-session-restore-on-switch t`
+- L17929: `(defcustom projectile-session-restore-on-startup nil`
+- L17944: `(defcustom projectile-session-auto-save t`
+- L17958: `(defcustom projectile-session-buffer-serializers`
+- L18017: `(defun projectile-session--current-tab ()`
+- L18021: `(defun projectile-session--tab-root (tab)`
+- L18025: `(defun projectile-session--set-tab-root (tab root)`
+- L18029: `(defun projectile-session--set-tab-name (tab name)`
+- L18039: `(defun projectile-session--same-root-p (a b)`
+- L18052: `(defun projectile-session--project-tabs ()`
+- L18062: `(defun projectile-session--project-tab (root)`
+- L18069: `(defun projectile-session--project-name (root)`
+- L18076: `(defun projectile-session--parent-components (root)`
+- L18083: `(defun projectile-session--name-with-parents (root name depth)`
+- L18093: `(defun projectile-session-default-tab-name (root)`
+- L18125: `(defun projectile-session--refresh-tab-names ()`
+- L18141: `(defun projectile-session--on-tab-close (tab &optional _last)`
+- L18160: `(defun projectile-session--make-project-tab (root)`
+- L18168: `(defun projectile-session--current-tab-index ()`
+- L18172: `(defun projectile-session--select-tab-by-root (root)`
+- L18189: `(defun projectile-session--select-tab (tab)`
+- L18197: `(defun projectile-session--adopt-current-tab ()`
+- L18207: `(defun projectile-session-switch-project-action ()`
+- L18231: `(defun projectile-session-switch-to-buffer ()`
+- L18256: `(defun projectile-session--buffer-matches-p (key buffer)`
+- L18265: `(defun projectile-session--buffer-kind (key buffer)`
+- L18273: `(defun projectile-session--readable-p (object)`
+- L18284: `(defun projectile-session--serialize-buffer (buffer)`
+- L18303: `(defun projectile-session--deserializer (kind)`
+- L18318: `(defun projectile-session--recreate-buffer (saved)`
+- L18326: `(defun projectile-session--serialize-file (buffer)`
+- L18331: `(defun projectile-session--deserialize-file (record)`
+- L18348: `(defun projectile-session--serialize-dired (buffer)`
+- L18354: `(defun projectile-session--deserialize-dired (record)`
+- L18360: `(defun projectile-session--placeholder-buffer ()`
+- L18364: `(defun projectile-session--sanitize-window-state (state)`
+- L18383: `(defun projectile-session--file (root)`
+- L18402: `(defun projectile-session--saved-p (root)`
+- L18406: `(defun projectile-session--write (root data)`
+- L18419: `(defun projectile-session--read-file (file)`
+- L18440: `(defun projectile-session--read (root)`
+- L18445: `(defun projectile-session--saved-roots ()`
+- L18465: `(defun projectile-session--frame-buffers ()`
+- L18470: `(defun projectile-session-save (&optional project)`
+- L18504: `(defun projectile-session-restore (&optional project)`
+- L18544: `(defun projectile-session-forget (&optional project)`
+- L18557: `(defun projectile-session--maybe-autosave ()`
+- L18564: `(defun projectile-session--save-all-tabs ()`
+- L18588: `(defun projectile-session-save-all ()`
+- L18604: `(defun projectile-session-restore-all ()`
+- L18644: `(defun projectile-session--autosave-on-kill ()`
+- L18651: `(defun projectile-session--maybe-restore-on-startup ()`
+- L18660: `(define-minor-mode projectile-session-mode`
+- L18745: `(defun projectile--embark-project-file-target (target)`
+- L18757: `(defun projectile-embark-switch-project (project)`
+- L18762: `(defun projectile-embark-vc (project)`
+- L18772: `(defun projectile--embark-project-file-transform (type target)`
+- L18782: `(defvar projectile-embark-project-map`
+- L18784: `(define-key map (kbd "s") #'projectile-embark-switch-project)`
+- L18785: `(define-key map (kbd "v") #'projectile-embark-vc)`
+- L18786: `(define-key map (kbd "d") #'dired)`
+- L18787: `(define-key map (kbd "D") #'projectile-remove-known-project)`
+- L18792: `(defvar embark-keymap-alist)`
+- L18793: `(defvar embark-general-map)`
+- L18795: `(defun projectile--embark-setup ()`
+- L18820: `(defun projectile--marginalia-setup ()`
+- L18834: `(provide 'projectile)`

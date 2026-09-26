@@ -1,0 +1,42 @@
+{
+  "id": "tmux-control-mode",
+  "scenario": "tmux-two-ssh-and-persistence",
+  "status": "failed",
+  "checks": {
+    "ssh_web": true,
+    "ssh_db": true
+  },
+  "snapshots": [
+    {
+      "name": "tmux-pane %0",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ local@lab:/home/admin/Emacs-Multiplexing-Study$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlocal@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n"
+    },
+    {
+      "name": "tmux-pane %1",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ local@lab:/home/admin/Emacs-Multiplexing-Study$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt; tail -n 3 service.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ \n"
+    },
+    {
+      "name": "tmux-pane %1",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ local@lab:/home/admin/Emacs-Multiplexing-Study$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt; tail -n 3 service.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printenv STUDY_KEEP\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ \n"
+    },
+    {
+      "name": "tmux-pane %1",
+      "mode": "vterm-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ local@lab:/home/admin/Emacs-Multiplexing-Study$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt; tail -n 3 service.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printenv STUDY_KEEP\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ \n"
+    }
+  ],
+  "error": "",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/admin/Emacs-Multiplexing-Study/scripts/test-special.py\", line 42, in tmux_demo\n    assert re.search(r'^web-session-alive\\s*$',snap['text'],re.M)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "messages": "\"For information about GNU Emacs and the GNU system, type C-h C-a.\\nStarted tmux-cc process.\\ntmux window added: %window-add @0\\ntmux session changed: %session-changed $0 ops\\nHandling layout change: cefd,109x29,0,0,0 [2 times]\\nHandling layout change: a8bd,110x30,0,0,0 [2 times]\\nMark set\\nHandling layout change: a8bd,110x30,0,0,0\\nHandling layout change: cefd,109x29,0,0,0\\ntmux: %window-renamed @0 ssh\\ntmux: %session-window-changed $0 @1\\ntmux window added: %window-add @1\\nHandling layout change: cefe,109x29,0,0,1\\nHandling layout change: ccfd,109x19,0,0,0\\nHandling layout change: ccfe,109x19,0,0,1\\nHandling layout change: cefd,109x29,0,0,0\\nHandling layout change: cefe,109x29,0,0,1\\nYou can run the command \u2018tmux-cc-command\u2019 with C-t !\\ntmux: \\ntmux: %session-window-changed $0 @0\\n\""
+}

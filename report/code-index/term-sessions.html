@@ -1,0 +1,467 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: term-sessions</h1>
+<p>Fonte: https://github.com/ArthurHeymans/emacs-term-sessions.git</p>
+<p>Revisione: <code>29084b6a8a73b612f60a73ef798303384bd44215</code>.</p>
+<h2>term-sessions-actions.el</h2>
+<ul>
+<li>L10: <code>(require 'term-sessions-core)</code></li>
+<li>L11: <code>(require 'term-sessions-zmx)</code></li>
+<li>L12: <code>(require 'term-sessions-tramp)</code></li>
+<li>L13: <code>(require 'term-sessions-frontends)</code></li>
+<li>L14: <code>(require 'term-sessions-org)</code></li>
+<li>L27: <code>(defvar term-sessions-org-link-action-map</code></li>
+<li>L29: <code>(define-key map (kbd "o") #'term-sessions-action-open-org-link)</code></li>
+<li>L30: <code>(define-key map (kbd "w") #'term-sessions-action-copy-org-link-target)</code></li>
+<li>L34: <code>(defvar term-sessions-action-map</code></li>
+<li>L36: <code>(define-key map (kbd "o") #'term-sessions-action-open)</code></li>
+<li>L37: <code>(define-key map (kbd "k") #'term-sessions-action-kill)</code></li>
+<li>L38: <code>(define-key map (kbd "h") #'term-sessions-action-history)</code></li>
+<li>L39: <code>(define-key map (kbd "H") #'term-sessions-action-history-full)</code></li>
+<li>L40: <code>(define-key map (kbd "v") #'term-sessions-action-history-vt)</code></li>
+<li>L41: <code>(define-key map (kbd "x") #'term-sessions-action-history-html)</code></li>
+<li>L42: <code>(define-key map (kbd "Y") #'term-sessions-action-copy-history)</code></li>
+<li>L43: <code>(define-key map (kbd "?") #'term-sessions-action-search-history)</code></li>
+<li>L44: <code>(define-key map (kbd "w") #'term-sessions-action-copy-name)</code></li>
+<li>L45: <code>(define-key map (kbd "a") #'term-sessions-action-copy-attach-command)</code></li>
+<li>L46: <code>(define-key map (kbd "M-d") #'term-sessions-action-copy-cwd)</code></li>
+<li>L47: <code>(define-key map (kbd "M-c") #'term-sessions-action-copy-command)</code></li>
+<li>L48: <code>(define-key map (kbd "M-w") #'term-sessions-action-copy-where)</code></li>
+<li>L49: <code>(define-key map (kbd "M-s") #'term-sessions-action-copy-spec-link)</code></li>
+<li>L50: <code>(define-key map (kbd "y") #'term-sessions-action-store-org-link)</code></li>
+<li>L51: <code>(define-key map (kbd "O") #'term-sessions-action-copy-org-link)</code></li>
+<li>L52: <code>(define-key map (kbd "i") #'term-sessions-action-insert-org-link)</code></li>
+<li>L53: <code>(define-key map (kbd "s") #'term-sessions-action-send-command)</code></li>
+<li>L54: <code>(define-key map (kbd "D") #'term-sessions-action-dired-cwd)</code></li>
+<li>L55: <code>(define-key map (kbd "P") #'term-sessions-action-dired-project)</code></li>
+<li>L56: <code>(define-key map (kbd "M-!") #'term-sessions-action-compile-cwd)</code></li>
+<li>L57: <code>(define-key map (kbd "M-p") #'term-sessions-action-project-compile)</code></li>
+<li>L58: <code>(define-key map (kbd "!") #'term-sessions-action-run-command)</code></li>
+<li>L59: <code>(define-key map (kbd "&amp;") #'term-sessions-action-run-async)</code></li>
+<li>L60: <code>(define-key map (kbd "W") #'term-sessions-action-wait)</code></li>
+<li>L61: <code>(define-key map (kbd "M-W") #'term-sessions-action-wait-async)</code></li>
+<li>L65: <code>(defun term-sessions-action--entry (candidate)</code></li>
+<li>L70: <code>(defun term-sessions-action--call (candidate function)</code></li>
+<li>L76: <code>(defun term-sessions-action--entry-spec-link (entry)</code></li>
+<li>L83: <code>(defun term-sessions-action--entry-org-link (entry)</code></li>
+<li>L90: <code>(defun term-sessions-action--read-target-session-entry (prompt)</code></li>
+<li>L97: <code>(defun term-sessions-action--with-target-session (prompt function)</code></li>
+<li>L103: <code>(defun term-sessions-action--current-buffer-entry ()</code></li>
+<li>L114: <code>(defun term-sessions-action--entry-cwd-directory (entry)</code></li>
+<li>L119: <code>(defun term-sessions-action-open (candidate)</code></li>
+<li>L128: <code>(defun term-sessions-action-kill (candidate)</code></li>
+<li>L137: <code>(defun term-sessions-action-history (candidate)</code></li>
+<li>L146: <code>(defun term-sessions-action-history-full (candidate)</code></li>
+<li>L155: <code>(defun term-sessions-action-history-vt (candidate)</code></li>
+<li>L164: <code>(defun term-sessions-action-history-html (candidate)</code></li>
+<li>L173: <code>(defun term-sessions-action-copy-history (candidate)</code></li>
+<li>L184: <code>(defun term-sessions-action-search-history (candidate)</code></li>
+<li>L196: <code>(defun term-sessions-action-dired-cwd (candidate)</code></li>
+<li>L205: <code>(defun term-sessions-action-dired-project (candidate)</code></li>
+<li>L220: <code>(defun term-sessions-action-compile-cwd (candidate command)</code></li>
+<li>L232: <code>(defun term-sessions-action-project-compile (candidate)</code></li>
+<li>L244: <code>(defun term-sessions-action-run-command (candidate command)</code></li>
+<li>L255: <code>(defun term-sessions-action-run-async (candidate command)</code></li>
+<li>L266: <code>(defun term-sessions-action-wait (candidate)</code></li>
+<li>L275: <code>(defun term-sessions-action-wait-async (candidate)</code></li>
+<li>L284: <code>(defun term-sessions-action-copy-name (candidate)</code></li>
+<li>L292: <code>(defun term-sessions-action-copy-attach-command (candidate)</code></li>
+<li>L306: <code>(defun term-sessions-action-copy-cwd (candidate)</code></li>
+<li>L317: <code>(defun term-sessions-action-copy-command (candidate)</code></li>
+<li>L326: <code>(defun term-sessions-action-copy-where (candidate)</code></li>
+<li>L338: <code>(defun term-sessions-action-copy-spec-link (candidate)</code></li>
+<li>L349: <code>(defun term-sessions-action-store-org-link (candidate)</code></li>
+<li>L358: <code>(defun term-sessions-action-copy-org-link (candidate)</code></li>
+<li>L369: <code>(defun term-sessions-action-insert-org-link (candidate)</code></li>
+<li>L378: <code>(defun term-sessions-action-send-command (candidate command)</code></li>
+<li>L389: <code>(defun term-sessions-action-send-text-to-session (text)</code></li>
+<li>L401: <code>(defun term-sessions-action-send-command-text-to-session (text)</code></li>
+<li>L410: <code>(defun term-sessions-action-send-file-path-to-session (file)</code></li>
+<li>L416: <code>(defun term-sessions-action-run-file-in-session (file)</code></li>
+<li>L427: <code>(defun term-sessions-action-open-org-link (link)</code></li>
+<li>L436: <code>(defun term-sessions-action-copy-org-link-target (link)</code></li>
+<li>L442: <code>(defun term-sessions-action--org-element-link-target ()</code></li>
+<li>L454: <code>(defun term-sessions-action--raw-link-target ()</code></li>
+<li>L468: <code>(defun term-sessions-action-org-link-target ()</code></li>
+<li>L473: <code>(defun term-sessions-action-list-row-target ()</code></li>
+<li>L487: <code>(defun term-sessions-action-current-buffer-target ()</code></li>
+<li>L494: <code>(defvar embark-expression-map)</code></li>
+<li>L495: <code>(defvar embark-file-map)</code></li>
+<li>L496: <code>(defvar embark-identifier-map)</code></li>
+<li>L497: <code>(defvar embark-keymap-alist)</code></li>
+<li>L498: <code>(defvar embark-region-map)</code></li>
+<li>L534: <code>(defun term-sessions-embark-setup ()</code></li>
+<li>L551: <code>(define-key (symbol-value (nth 0 spec))</code></li>
+<li>L565: <code>(defun term-sessions-embark-teardown ()</code></li>
+<li>L571: <code>(define-key (symbol-value (nth 0 saved))</code></li>
+<li>L579: <code>(defun term-sessions-actions-unload-function ()</code></li>
+<li>L588: <code>(provide 'term-sessions-actions)</code></li>
+</ul>
+<h2>term-sessions-consult.el</h2>
+<ul>
+<li>L10: <code>(require 'seq)</code></li>
+<li>L11: <code>(require 'subr-x)</code></li>
+<li>L12: <code>(require 'term-sessions-core)</code></li>
+<li>L13: <code>(require 'term-sessions-zmx)</code></li>
+<li>L14: <code>(require 'term-sessions-tramp)</code></li>
+<li>L15: <code>(require 'term-sessions-frontends)</code></li>
+<li>L16: <code>(require 'term-sessions-list)</code></li>
+<li>L21: <code>(defcustom term-sessions-consult-sources</code></li>
+<li>L53: <code>(defun term-sessions-consult--read (sources &amp;rest args)</code></li>
+<li>L59: <code>(defun term-sessions-consult--column-widths (&amp;optional total-width)</code></li>
+<li>L70: <code>(defun term-sessions-consult--display (entry)</code></li>
+<li>L96: <code>(defun term-sessions-consult--entry (candidate)</code></li>
+<li>L101: <code>(defun term-sessions-consult--entries ()</code></li>
+<li>L112: <code>(defun term-sessions-consult--displayed ()</code></li>
+<li>L125: <code>(defun term-sessions-consult--items (&amp;optional predicate)</code></li>
+<li>L132: <code>(defun term-sessions-consult--annotate (candidate)</code></li>
+<li>L153: <code>(defun term-sessions-consult--open (candidate)</code></li>
+<li>L157: <code>(defun term-sessions-consult--open-new (name)</code></li>
+<li>L164: <code>(defun term-sessions-consult--local-p (entry)</code></li>
+<li>L168: <code>(defun term-sessions-consult--remote-p (entry)</code></li>
+<li>L172: <code>(defun term-sessions-consult--backend-key (&amp;optional directory)</code></li>
+<li>L181: <code>(defun term-sessions-consult--current-host-p (entry)</code></li>
+<li>L186: <code>(defun term-sessions-consult--current-project-p (entry)</code></li>
+<li>L203: <code>(defun term-sessions-consult--attached-p (entry)</code></li>
+<li>L207: <code>(defun term-sessions-consult--make-source (name predicate &amp;rest properties)</code></li>
+<li>L269: <code>(defun term-sessions-consult-session ()</code></li>
+<li>L287: <code>(provide 'term-sessions-consult)</code></li>
+</ul>
+<h2>term-sessions-core.el</h2>
+<ul>
+<li>L10: <code>(require 'cl-lib)</code></li>
+<li>L11: <code>(require 'subr-x)</code></li>
+<li>L20: <code>(defcustom term-sessions-backend 'zmx</code></li>
+<li>L26: <code>(defcustom term-sessions-preferred-frontend 'term</code></li>
+<li>L36: <code>(defcustom term-sessions-history-lines 200</code></li>
+<li>L105: <code>(defun term-sessions--command-string (program args)</code></li>
+<li>L109: <code>(defun term-sessions--buffer-name (name &amp;optional suffix)</code></li>
+<li>L113: <code>(defun term-sessions--term-buffer-base-name (name)</code></li>
+<li>L118: <code>(defun term-sessions--mark-buffer (name &amp;optional spec terminal-p)</code></li>
+<li>L132: <code>(defun term-sessions--string-or-nil (value)</code></li>
+<li>L137: <code>(defun term-sessions--fit-column (value width &amp;optional ellipsis)</code></li>
+<li>L147: <code>(defun term-sessions--distribute-extra-width (columns extra)</code></li>
+<li>L168: <code>(defun term-sessions--scaled-column-widths (columns budget)</code></li>
+<li>L176: <code>(defun term-sessions--column-width (widths key &amp;optional fallback)</code></li>
+<li>L181: <code>(defun term-sessions--directory-key (directory)</code></li>
+<li>L193: <code>(defun term-sessions--buffer-live-process-p (&amp;optional buffer)</code></li>
+<li>L205: <code>(defun term-sessions--session-buffer (name directory &amp;optional backend)</code></li>
+<li>L224: <code>(defun term-sessions--live-session-buffer (name directory &amp;optional backend)</code></li>
+<li>L233: <code>(defun term-sessions--entry-name (entry)</code></li>
+<li>L240: <code>(defun term-sessions--entry-directory (entry)</code></li>
+<li>L245: <code>(defun term-sessions--entry-cwd-directory (entry)</code></li>
+<li>L264: <code>(defun term-sessions--register-completion-entry (candidate entry)</code></li>
+<li>L274: <code>(defun term-sessions--completion-entry (candidate)</code></li>
+<li>L284: <code>(provide 'term-sessions-core)</code></li>
+</ul>
+<h2>term-sessions-frontends.el</h2>
+<ul>
+<li>L10: <code>(require 'term)</code></li>
+<li>L11: <code>(require 'term-sessions-core)</code></li>
+<li>L12: <code>(require 'term-sessions-zmx)</code></li>
+<li>L13: <code>(require 'term-sessions-tramp)</code></li>
+<li>L60: <code>(defcustom term-sessions-ghostel-open-function #'term-sessions--ghostel-open-command</code></li>
+<li>L67: <code>(defcustom term-sessions-default-command nil</code></li>
+<li>L74: <code>(defun term-sessions--ghostel-live-process-p ()</code></li>
+<li>L80: <code>(defun term-sessions--ghostel-open-command (buffer-name command)</code></li>
+<li>L110: <code>(defun term-sessions--short-directory-name (directory)</code></li>
+<li>L118: <code>(defun term-sessions--buffer-name-for-spec (spec)</code></li>
+<li>L129: <code>(defun term-sessions--buffer-name-for-title (name title)</code></li>
+<li>L133: <code>(defun term-sessions--ghostel-buffer-name-for-title (name fallback-name title)</code></li>
+<li>L140: <code>(defun term-sessions--install-ghostel-title-tracking (name fallback-name)</code></li>
+<li>L158: <code>(defun term-sessions--attach-shell (directory)</code></li>
+<li>L165: <code>(defun term-sessions--open-vterm (name command buffer-name &amp;optional spec)</code></li>
+<li>L186: <code>(defun term-sessions--open-eat (name command buffer-name &amp;optional spec)</code></li>
+<li>L202: <code>(defun term-sessions--open-ebb (name command buffer-name &amp;optional spec)</code></li>
+<li>L241: <code>(defun term-sessions--terminal-buffer-base-name (name buffer-name)</code></li>
+<li>L249: <code>(defun term-sessions--open-term (name command buffer-name &amp;optional spec)</code></li>
+<li>L260: <code>(defun term-sessions--open-term-process (name program args buffer-name &amp;optional spec)</code></li>
+<li>L324: <code>(defun term-sessions--open-tramp-process (name command frontend buffer-name &amp;optional spec)</code></li>
+<li>L339: <code>(defun term-sessions--open-shell (name command buffer-name &amp;optional spec)</code></li>
+<li>L349: <code>(defun term-sessions--open-command-frontend (name command frontend buffer-name &amp;optional spec)</code></li>
+<li>L360: <code>(defun term-sessions--open-ghostel (name command buffer-name &amp;optional spec)</code></li>
+<li>L371: <code>(defun term-sessions--read-session-entry (&amp;optional prompt require-existing)</code></li>
+<li>L406: <code>(defun term-sessions--read-existing-session-entry (&amp;optional prompt)</code></li>
+<li>L410: <code>(defun term-sessions--pop-existing-session-buffer (name directory &amp;optional backend)</code></li>
+<li>L418: <code>(defun term-sessions-open-with-frontend (name &amp;optional command frontend allow-create)</code></li>
+<li>L457: <code>(defun term-sessions-open (name &amp;optional command)</code></li>
+<li>L469: <code>(provide 'term-sessions-frontends)</code></li>
+</ul>
+<h2>term-sessions-list.el</h2>
+<ul>
+<li>L10: <code>(require 'cl-lib)</code></li>
+<li>L11: <code>(require 'seq)</code></li>
+<li>L12: <code>(require 'subr-x)</code></li>
+<li>L13: <code>(require 'tabulated-list)</code></li>
+<li>L14: <code>(require 'hl-line)</code></li>
+<li>L15: <code>(require 'imenu)</code></li>
+<li>L16: <code>(require 'tramp)</code></li>
+<li>L17: <code>(require 'term-sessions-core)</code></li>
+<li>L18: <code>(require 'term-sessions-zmx)</code></li>
+<li>L19: <code>(require 'term-sessions-frontends)</code></li>
+<li>L20: <code>(require 'term-sessions-org)</code></li>
+<li>L24: <code>(defcustom term-sessions-list-include-open-remotes t</code></li>
+<li>L32: <code>(defcustom term-sessions-list-failed-remote-retry-delay 300</code></li>
+<li>L41: <code>(defcustom term-sessions-list-remote-query-timeout 10</code></li>
+<li>L73: <code>(defvar term-sessions-list-mode-map</code></li>
+<li>L76: <code>(define-key map (kbd "RET") #'term-sessions-list-open)</code></li>
+<li>L77: <code>(define-key map (kbd "o") #'term-sessions-list-open)</code></li>
+<li>L78: <code>(define-key map (kbd "g") #'revert-buffer)</code></li>
+<li>L79: <code>(define-key map (kbd "R") #'term-sessions-list-clear-failed-remotes)</code></li>
+<li>L80: <code>(define-key map (kbd "k") #'term-sessions-list-kill)</code></li>
+<li>L81: <code>(define-key map (kbd "h") #'term-sessions-list-history)</code></li>
+<li>L82: <code>(define-key map (kbd "s") #'term-sessions-list-send-command)</code></li>
+<li>L83: <code>(define-key map (kbd "y") #'term-sessions-list-store-org-link)</code></li>
+<li>L84: <code>(define-key map (kbd "m") #'term-sessions-list-mark)</code></li>
+<li>L85: <code>(define-key map (kbd "u") #'term-sessions-list-unmark)</code></li>
+<li>L86: <code>(define-key map (kbd "U") #'term-sessions-list-unmark-all)</code></li>
+<li>L87: <code>(define-key map (kbd "t") #'term-sessions-list-toggle-mark)</code></li>
+<li>L88: <code>(define-key map (kbd "T") #'term-sessions-list-toggle-all-marks)</code></li>
+<li>L89: <code>(define-key map (kbd "%") #'term-sessions-list-mark-regexp)</code></li>
+<li>L90: <code>(define-key map (kbd "-") #'term-sessions-list-widen)</code></li>
+<li>L91: <code>(define-key map (kbd "&lt;backspace&gt;") #'term-sessions-list-remove-narrow-criterion)</code></li>
+<li>L92: <code>(define-key map (kbd "q") #'quit-window)</code></li>
+<li>L93: <code>(define-key map (kbd "/") narrow-map)</code></li>
+<li>L94: <code>(define-key narrow-map (kbd "n") #'term-sessions-list-narrow-name)</code></li>
+<li>L95: <code>(define-key narrow-map (kbd "h") #'term-sessions-list-narrow-host)</code></li>
+<li>L96: <code>(define-key narrow-map (kbd "l") #'term-sessions-list-narrow-local)</code></li>
+<li>L97: <code>(define-key narrow-map (kbd "r") #'term-sessions-list-narrow-remote)</code></li>
+<li>L98: <code>(define-key narrow-map (kbd "w") #'term-sessions-list-narrow-cwd-or-project)</code></li>
+<li>L99: <code>(define-key narrow-map (kbd "c") #'term-sessions-list-narrow-command)</code></li>
+<li>L100: <code>(define-key narrow-map (kbd "a") #'term-sessions-list-narrow-attached)</code></li>
+<li>L101: <code>(define-key narrow-map (kbd "d") #'term-sessions-list-narrow-detached)</code></li>
+<li>L102: <code>(define-key narrow-map (kbd "u") #'term-sessions-list-narrow-recently-updated)</code></li>
+<li>L106: <code>(define-derived-mode term-sessions-list-mode tabulated-list-mode "Term-Sessions"</code></li>
+<li>L123: <code>(defun term-sessions-list--column-widths (&amp;optional total-width)</code></li>
+<li>L140: <code>(defun term-sessions-list--format (&amp;optional total-width)</code></li>
+<li>L152: <code>(defun term-sessions-list--update-format ()</code></li>
+<li>L157: <code>(defun term-sessions-list--numeric-string-p (string)</code></li>
+<li>L162: <code>(defun term-sessions-list--time-string (time-or-seconds)</code></li>
+<li>L172: <code>(defun term-sessions-list--location-label (directory)</code></li>
+<li>L179: <code>(defun term-sessions-list--project-label (cwd directory)</code></li>
+<li>L190: <code>(defun term-sessions-list--clients-number (clients)</code></li>
+<li>L197: <code>(defun term-sessions-list--updated-seconds (entry)</code></li>
+<li>L208: <code>(defun term-sessions-list--parse-duration (duration)</code></li>
+<li>L223: <code>(defun term-sessions-list--entry-label (entry)</code></li>
+<li>L229: <code>(defun term-sessions-list--mode-line-indicator ()</code></li>
+<li>L235: <code>(defun term-sessions-list-imenu-index ()</code></li>
+<li>L246: <code>(defun term-sessions-list-eldoc (_callback)</code></li>
+<li>L261: <code>(defun term-sessions-list--directory-for-tramp-vec (vec)</code></li>
+<li>L276: <code>(defun term-sessions-list--remote-key-for-tramp-vec (vec)</code></li>
+<li>L286: <code>(defun term-sessions-list--tramp-vec-score (vec)</code></li>
+<li>L296: <code>(defun term-sessions-list--local-directory ()</code></li>
+<li>L300: <code>(defun term-sessions-list--open-remote-directories ()</code></li>
+<li>L321: <code>(defun term-sessions-list--failed-remote-p (directory)</code></li>
+<li>L338: <code>(defun term-sessions-list--record-remote-failure (directory error)</code></li>
+<li>L343: <code>(defun term-sessions-list--remote-connection-state (directory)</code></li>
+<li>L360: <code>(defun term-sessions-list--remote-known-offline-p (directory)</code></li>
+<li>L364: <code>(defun term-sessions-list--skip-known-offline-remote-p (directory)</code></li>
+<li>L373: <code>(defun term-sessions-list--skip-unavailable-async-remote-p (directory)</code></li>
+<li>L390: <code>(defun term-sessions-list--clear-remote-failure (directory)</code></li>
+<li>L395: <code>(defun term-sessions-list--session-buffer-directories ()</code></li>
+<li>L405: <code>(defun term-sessions-list--directory-key (directory)</code></li>
+<li>L409: <code>(defun term-sessions-list--delete-duplicate-directories (directories)</code></li>
+<li>L421: <code>(defun term-sessions-list-clear-failed-remotes ()</code></li>
+<li>L431: <code>(defun term-sessions-list--query-directory (directory)</code></li>
+<li>L449: <code>(defun term-sessions-list--parse-zmx-list-output (output)</code></li>
+<li>L461: <code>(defun term-sessions-list--rows-for-sessions (sessions directory)</code></li>
+<li>L484: <code>(defun term-sessions-list--rows-without-directory (rows directory)</code></li>
+<li>L493: <code>(defun term-sessions-list--remote-query-done (process)</code></li>
+<li>L503: <code>(defun term-sessions-list--remote-query-install (buffer generation directory rows)</code></li>
+<li>L516: <code>(defun term-sessions-list--remote-query-timeout (process)</code></li>
+<li>L522: <code>(defun term-sessions-list--remote-query-sentinel (process event)</code></li>
+<li>L565: <code>(defun term-sessions-list--start-remote-query (directory buffer generation)</code></li>
+<li>L606: <code>(defun term-sessions-list--cancel-pending-remote-queries ()</code></li>
+<li>L619: <code>(defun term-sessions-list--filtered-entries (entries)</code></li>
+<li>L625: <code>(defun term-sessions-list--entry-key (entry)</code></li>
+<li>L630: <code>(defun term-sessions-list--same-entry-p (a b)</code></li>
+<li>L635: <code>(defun term-sessions-list--mark-entry (entry)</code></li>
+<li>L640: <code>(defun term-sessions-list--unmark-entry (entry)</code></li>
+<li>L647: <code>(defun term-sessions-list--unmark-entries (entries)</code></li>
+<li>L656: <code>(defun term-sessions-list--entry-marked-p (entry)</code></li>
+<li>L662: <code>(defun term-sessions-list--restore-marks ()</code></li>
+<li>L672: <code>(defun term-sessions-list-revert (&amp;rest _ignore)</code></li>
+<li>L680: <code>(defun term-sessions-list--bounded-remote-rows (directory timeout)</code></li>
+<li>L734: <code>(defun term-sessions-list--query-remote-directory (directory)</code></li>
+<li>L751: <code>(defun term-sessions-list--session-rows ()</code></li>
+<li>L770: <code>(defun term-sessions-list-refresh ()</code></li>
+<li>L803: <code>(defun term-sessions-list ()</code></li>
+<li>L820: <code>(defun term-sessions-list--entry-at-point ()</code></li>
+<li>L825: <code>(defun term-sessions-list--selected-entries ()</code></li>
+<li>L830: <code>(defun term-sessions-list--map-selected (function)</code></li>
+<li>L843: <code>(defun term-sessions-list--reprint ()</code></li>
+<li>L851: <code>(defun term-sessions-list-open ()</code></li>
+<li>L856: <code>(defun term-sessions-list-kill ()</code></li>
+<li>L875: <code>(defun term-sessions-list-history ()</code></li>
+<li>L882: <code>(defun term-sessions-list-send-command (command)</code></li>
+<li>L889: <code>(defun term-sessions-list--store-org-link-for-entry (entry)</code></li>
+<li>L907: <code>(defun term-sessions-list-store-org-link ()</code></li>
+<li>L918: <code>(defun term-sessions-list-mark ()</code></li>
+<li>L926: <code>(defun term-sessions-list-unmark ()</code></li>
+<li>L934: <code>(defun term-sessions-list-unmark-all ()</code></li>
+<li>L940: <code>(defun term-sessions-list-toggle-mark ()</code></li>
+<li>L947: <code>(defun term-sessions-list-toggle-all-marks ()</code></li>
+<li>L957: <code>(defun term-sessions-list-mark-regexp (regexp)</code></li>
+<li>L971: <code>(defun term-sessions-list-narrow-sessions (label predicate)</code></li>
+<li>L979: <code>(defun term-sessions-list-remove-narrow-criterion ()</code></li>
+<li>L989: <code>(defun term-sessions-list-widen ()</code></li>
+<li>L995: <code>(defun term-sessions-list-narrow-name (regexp)</code></li>
+<li>L1002: <code>(defun term-sessions-list-narrow-command (regexp)</code></li>
+<li>L1009: <code>(defun term-sessions-list-narrow-cwd-or-project (regexp)</code></li>
+<li>L1018: <code>(defun term-sessions-list-narrow-host (host)</code></li>
+<li>L1030: <code>(defun term-sessions-list-narrow-local ()</code></li>
+<li>L1037: <code>(defun term-sessions-list-narrow-remote ()</code></li>
+<li>L1044: <code>(defun term-sessions-list-narrow-attached ()</code></li>
+<li>L1051: <code>(defun term-sessions-list-narrow-detached ()</code></li>
+<li>L1058: <code>(defun term-sessions-list-narrow-recently-updated (duration)</code></li>
+<li>L1070: <code>(provide 'term-sessions-list)</code></li>
+</ul>
+<h2>term-sessions-org.el</h2>
+<ul>
+<li>L10: <code>(require 'seq)</code></li>
+<li>L11: <code>(require 'subr-x)</code></li>
+<li>L12: <code>(require 'url-util)</code></li>
+<li>L13: <code>(require 'ol)</code></li>
+<li>L14: <code>(require 'term-sessions-core)</code></li>
+<li>L15: <code>(require 'term-sessions-zmx)</code></li>
+<li>L16: <code>(require 'term-sessions-tramp)</code></li>
+<li>L17: <code>(require 'term-sessions-frontends)</code></li>
+<li>L30: <code>(defcustom term-sessions-org-babel-default-session-name "org-babel"</code></li>
+<li>L38: <code>(defcustom term-sessions-org-babel-result-format "[[%s][%s]]"</code></li>
+<li>L44: <code>(defcustom term-sessions-org-babel-send-after-create-delay 1.0</code></li>
+<li>L51: <code>(defcustom term-sessions-org-babel-use-bracketed-paste nil</code></li>
+<li>L60: <code>(defcustom term-sessions-org-babel-use-zmx-send-when-no-buffer nil</code></li>
+<li>L76: <code>(defun term-sessions--org-encode-alist (alist)</code></li>
+<li>L105: <code>(defun term-sessions--org-decode-query (query)</code></li>
+<li>L120: <code>(defun term-sessions--spec-org-link (spec)</code></li>
+<li>L142: <code>(defun term-sessions--org-link-description (name &amp;optional spec)</code></li>
+<li>L156: <code>(defun term-sessions--org-link-for-spec (spec)</code></li>
+<li>L163: <code>(defun term-sessions--org-link-for-entry (entry &amp;optional frontend)</code></li>
+<li>L173: <code>(defun term-sessions-store-org-link (&amp;optional name-or-interactive)</code></li>
+<li>L212: <code>(defun term-sessions--org-path-components (path)</code></li>
+<li>L226: <code>(defun term-sessions--org-default-directory (components)</code></li>
+<li>L232: <code>(defun term-sessions--org-frontend (components fallback)</code></li>
+<li>L244: <code>(defun term-sessions--org-babel-false-value-p (value)</code></li>
+<li>L248: <code>(defun term-sessions--org-babel-default-value-p (value)</code></li>
+<li>L252: <code>(defun term-sessions--org-babel-session-name (params)</code></li>
+<li>L269: <code>(defun term-sessions--org-babel-input (body)</code></li>
+<li>L277: <code>(defun term-sessions--org-babel-link-result (name)</code></li>
+<li>L284: <code>(defun term-sessions--org-babel-login-shell ()</code></li>
+<li>L297: <code>(defun term-sessions--org-babel-ensure-session (name)</code></li>
+<li>L310: <code>(defun term-sessions--ghostel-buffer-process ()</code></li>
+<li>L316: <code>(defun term-sessions--ghostel-copy-mode-p ()</code></li>
+<li>L320: <code>(defun term-sessions--ghostel-send-string (input)</code></li>
+<li>L324: <code>(defun term-sessions--org-babel-buffer-process (buffer)</code></li>
+<li>L332: <code>(defun term-sessions--org-babel-live-buffer (name)</code></li>
+<li>L337: <code>(defun term-sessions--org-babel-process-send-string (process input)</code></li>
+<li>L359: <code>(defun term-sessions--org-babel-send-to-buffer (buffer body)</code></li>
+<li>L368: <code>(defun term-sessions--org-babel-send-via-zmx-or-error (name body)</code></li>
+<li>L378: <code>(defun term-sessions--org-babel-send-now (name body)</code></li>
+<li>L389: <code>(defun term-sessions--org-babel-send-later (name body)</code></li>
+<li>L404: <code>(defun term-sessions--org-babel-open-active-session (name)</code></li>
+<li>L409: <code>(defun term-sessions--org-babel-send (name body)</code></li>
+<li>L425: <code>(defun term-sessions--org-babel-reassemble-result (result params)</code></li>
+<li>L434: <code>(defun term-sessions--org-babel-raw-result-needed-p (params)</code></li>
+<li>L442: <code>(defun term-sessions--org-babel-shell-language-p (language)</code></li>
+<li>L450: <code>(defun term-sessions-org-babel-execute-src-block (org-babel-execute-src-block-fun</code></li>
+<li>L477: <code>(defun term-sessions-org-babel-shell (org-babel-execute-shell-fun body params)</code></li>
+<li>L490: <code>(defun term-sessions-org-babel-sh (org-babel-sh-evaluate-fun &amp;rest args)</code></li>
+<li>L499: <code>(defun term-sessions--open-org-path (path _arg)</code></li>
+<li>L525: <code>(defun term-sessions--org-register-link ()</code></li>
+<li>L530: <code>(defun term-sessions-org-setup ()</code></li>
+<li>L539: <code>(defun term-sessions-org-teardown ()</code></li>
+<li>L551: <code>(defun term-sessions-org-unload-function ()</code></li>
+<li>L555: <code>(provide 'term-sessions-org)</code></li>
+</ul>
+<h2>term-sessions-tests.el</h2>
+<ul>
+<li>L6: <code>(require 'ert)</code></li>
+<li>L7: <code>(require 'cl-lib)</code></li>
+<li>L8: <code>(require 'term-sessions)</code></li>
+<li>L1797: <code>(provide 'term-sessions-tests)</code></li>
+</ul>
+<h2>term-sessions-tramp.el</h2>
+<ul>
+<li>L10: <code>(require 'subr-x)</code></li>
+<li>L11: <code>(require 'tramp)</code></li>
+<li>L12: <code>(require 'term-sessions-core)</code></li>
+<li>L13: <code>(require 'term-sessions-zmx)</code></li>
+<li>L17: <code>(defcustom term-sessions-attach-transport 'auto</code></li>
+<li>L30: <code>(defcustom term-sessions-tramp-process-frontends '(term eat ghostel ebb vterm shell)</code></li>
+<li>L40: <code>(defun term-sessions--split-host-port (host)</code></li>
+<li>L49: <code>(defun term-sessions--location (&amp;optional directory)</code></li>
+<li>L93: <code>(defun term-sessions--location-target (location)</code></li>
+<li>L101: <code>(defun term-sessions--location-remote-label (location)</code></li>
+<li>L110: <code>(defun term-sessions--remote-info (&amp;optional directory)</code></li>
+<li>L126: <code>(defun term-sessions--frontend-supports-tramp-process-p (frontend)</code></li>
+<li>L130: <code>(defun term-sessions--resolve-attach-transport (&amp;optional location frontend transport)</code></li>
+<li>L163: <code>(defun term-sessions--interactive-attach-command (name &amp;optional command)</code></li>
+<li>L169: <code>(defun term-sessions--ensure-interactive-attach-supported (&amp;optional location frontend transport)</code></li>
+<li>L175: <code>(defun term-sessions--project-name (&amp;optional directory)</code></li>
+<li>L186: <code>(defun term-sessions-spec-current (name &amp;optional command frontend tags recreate-policy)</code></li>
+<li>L204: <code>(provide 'term-sessions-tramp)</code></li>
+</ul>
+<h2>term-sessions-zmx.el</h2>
+<ul>
+<li>L10: <code>(require 'seq)</code></li>
+<li>L11: <code>(require 'subr-x)</code></li>
+<li>L12: <code>(require 'term-sessions-core)</code></li>
+<li>L14: <code>(defcustom term-sessions-zmx-program "zmx"</code></li>
+<li>L19: <code>(defcustom term-sessions-zmx-dir nil</code></li>
+<li>L25: <code>(defcustom term-sessions-zmx-session-prefix nil</code></li>
+<li>L31: <code>(defcustom term-sessions-zmx-enrich-process-info t</code></li>
+<li>L42: <code>(defmacro term-sessions-zmx--with-environment (&amp;rest body)</code></li>
+<li>L56: <code>(defun term-sessions--remote-zmx-available-p (program)</code></li>
+<li>L75: <code>(defun term-sessions--ensure-zmx ()</code></li>
+<li>L90: <code>(defun term-sessions--call-process-file (program infile &amp;rest args)</code></li>
+<li>L101: <code>(defun term-sessions--call (program &amp;rest args)</code></li>
+<li>L108: <code>(defun term-sessions--stdin-temp-file-prefix ()</code></li>
+<li>L117: <code>(defun term-sessions--call-with-stdin (program stdin &amp;rest args)</code></li>
+<li>L126: <code>(defun term-sessions--zmx (&amp;rest args)</code></li>
+<li>L132: <code>(defun term-sessions--zmx-with-stdin (stdin &amp;rest args)</code></li>
+<li>L138: <code>(defun term-sessions--start-zmx-process (name buffer &amp;rest args)</code></li>
+<li>L144: <code>(defun term-sessions--zmx-process-sentinel (process event)</code></li>
+<li>L149: <code>(defun term-sessions--zmx-run-sentinel (process event)</code></li>
+<li>L159: <code>(defun term-sessions--zmx-list-names ()</code></li>
+<li>L195: <code>(defun term-sessions--parse-key-value-fields (line)</code></li>
+<li>L206: <code>(defun term-sessions--zmx-version-info ()</code></li>
+<li>L217: <code>(defun term-sessions--remote-file-name (path)</code></li>
+<li>L224: <code>(defun term-sessions--zmx-log-file-name (name log-dir)</code></li>
+<li>L234: <code>(defun term-sessions--zmx-log-dir ()</code></li>
+<li>L241: <code>(defun term-sessions--zmx-log-mtime (name &amp;optional log-dir)</code></li>
+<li>L252: <code>(defun term-sessions--process-output-string (program &amp;rest args)</code></li>
+<li>L260: <code>(defun term-sessions--zmx-process-cwd (pid)</code></li>
+<li>L267: <code>(defun term-sessions--zmx-process-args (pid)</code></li>
+<li>L274: <code>(defun term-sessions--zmx-process-tpgid (pid)</code></li>
+<li>L282: <code>(defun term-sessions--zmx-current-command (pid)</code></li>
+<li>L288: <code>(defun term-sessions--zmx-enrich-session-process-info (session)</code></li>
+<li>L302: <code>(defun term-sessions--zmx-list-sessions ()</code></li>
+<li>L323: <code>(defun term-sessions--active-p (name)</code></li>
+<li>L327: <code>(defun term-sessions--zmx-session-entry (session &amp;optional directory)</code></li>
+<li>L341: <code>(defun term-sessions--completion-entry-for-session (session &amp;optional directory)</code></li>
+<li>L345: <code>(defun term-sessions--completion-annotate (candidate)</code></li>
+<li>L359: <code>(defun term-sessions--session-completion-table (&amp;optional sessions directory)</code></li>
+<li>L381: <code>(defun term-sessions--read-name (&amp;optional prompt require-existing)</code></li>
+<li>L390: <code>(defun term-sessions--attach-args (name command)</code></li>
+<li>L396: <code>(defun term-sessions--login-shell-setup-command ()</code></li>
+<li>L400: <code>(defun term-sessions--attach-command (name &amp;optional command prefer-login-shell)</code></li>
+<li>L417: <code>(defun term-sessions-kill (name &amp;optional force)</code></li>
+<li>L428: <code>(defun term-sessions-send (name text)</code></li>
+<li>L437: <code>(defun term-sessions-send-command (name command)</code></li>
+<li>L445: <code>(defun term-sessions-run (name command &amp;optional detached)</code></li>
+<li>L458: <code>(defun term-sessions-run-async (name command)</code></li>
+<li>L475: <code>(defun term-sessions-wait (name)</code></li>
+<li>L481: <code>(defun term-sessions-wait-async (name)</code></li>
+<li>L492: <code>(defun term-sessions-history (name &amp;optional lines vt html)</code></li>
+<li>L517: <code>(provide 'term-sessions-zmx)</code></li>
+</ul>
+<h2>term-sessions.el</h2>
+<ul>
+<li>L23: <code>(require 'term-sessions-core)</code></li>
+<li>L24: <code>(require 'term-sessions-zmx)</code></li>
+<li>L25: <code>(require 'term-sessions-tramp)</code></li>
+<li>L26: <code>(require 'term-sessions-frontends)</code></li>
+<li>L27: <code>(require 'term-sessions-org)</code></li>
+<li>L28: <code>(require 'term-sessions-list)</code></li>
+<li>L29: <code>(require 'term-sessions-actions)</code></li>
+<li>L30: <code>(require 'term-sessions-consult)</code></li>
+<li>L32: <code>(provide 'term-sessions)</code></li>
+</ul></main></html>

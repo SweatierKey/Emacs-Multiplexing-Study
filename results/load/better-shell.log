@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"better-shell","library":"/home/admin/Emacs-Multiplexing-Study/sources/better-shell/better-shell.el","commands":["better-shell-existing-shell","better-shell-for-current-dir","better-shell-for-dir","better-shell-for-projectile-root","better-shell-remote-open","better-shell-shell","better-shell-sudo-here"]}
+STDERR:

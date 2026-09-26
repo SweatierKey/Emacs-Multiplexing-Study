@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"turnip","library":"/home/admin/Emacs-Multiplexing-Study/sources/turnip/turnip.el","commands":["turnip-attach","turnip-choose-pane","turnip-command","turnip-send-region","turnip-send-region-to-buffer","turnip-yank-from-buffer"]}
+STDERR:

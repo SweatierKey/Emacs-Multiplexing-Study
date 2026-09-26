@@ -1,0 +1,193 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: term-plus-fork</h1>
+<p>Fonte: https://github.com/ZpullZ/term-plus-el.git</p>
+<p>Revisione: <code>699fed40378c9d43ee3a0bf80db33df3ae9f9a0e</code>.</p>
+<h2>term+.el</h2>
+<ul>
+<li>L27: <code>(require 'term)</code></li>
+<li>L28: <code>(require 'term+vars)</code></li>
+<li>L29: <code>(require 'term+edit)</code></li>
+<li>L30: <code>(require 'term+logging)</code></li>
+<li>L31: <code>(require 'term+file-transfer)</code></li>
+<li>L32: <code>(require 'term+shell-history)</code></li>
+<li>L57: <code>(defun term+pass-through (char)</code></li>
+<li>L62: <code>(defun term+send-esc ()</code></li>
+<li>L67: <code>(defun term+yank ()</code></li>
+<li>L77: <code>(defun term+send-input-and-char-mode ()</code></li>
+<li>L83: <code>(defun term+mark-or-copy ()</code></li>
+<li>L109: <code>(defun term+maybe-remote-directory (dir)</code></li>
+<li>L123: <code>(defun term+update-default-directory ()</code></li>
+<li>L126: <code>(defun term+set-hostname (host)</code></li>
+<li>L131: <code>(defun term+set-user (user)</code></li>
+<li>L136: <code>(defun term+set-directory (dir)</code></li>
+<li>L141: <code>(defun term+set-shell (shell)</code></li>
+<li>L203: <code>(defun term+control-command-list-1 ()</code></li>
+<li>L225: <code>(defun term+control-command-list ()</code></li>
+<li>L235: <code>(defmacro term+with-original-documentation (fun bind &amp;rest body)</code></li>
+<li>L244: <code>(defun term+control-command-documentation (&amp;optional fun start end)</code></li>
+<li>L269: <code>(defun term+zero-width-truncation ()</code></li>
+<li>L301: <code>(defun term+setup ()</code></li>
+<li>L325: <code>(provide 'term+)</code></li>
+</ul>
+<h2>term+edit.el</h2>
+<ul>
+<li>L27: <code>(require 'term)</code></li>
+<li>L28: <code>(require 'term+vars)</code></li>
+<li>L29: <code>(require 'term+input)</code></li>
+<li>L31: <code>(defun term+edit-post-command ()</code></li>
+<li>L36: <code>(defun term+edit-initialize-buffer (beg end text)</code></li>
+<li>L43: <code>(define-minor-mode term+edit-mode</code></li>
+<li>L90: <code>(defun term+edit (&amp;optional beg end text)</code></li>
+<li>L101: <code>(defun term+edit-at-point (&amp;optional text)</code></li>
+<li>L107: <code>(defun term+edit-to-eol (&amp;optional text)</code></li>
+<li>L115: <code>(defun term+edit-as-expected (&amp;optional text)</code></li>
+<li>L124: <code>(defun term+edit-insert (text)</code></li>
+<li>L151: <code>(provide 'term+edit)</code></li>
+</ul>
+<h2>term+file-transfer.el</h2>
+<ul>
+<li>L27: <code>(require 'term+vars)</code></li>
+<li>L33: <code>(defun term+find-file (file &amp;optional other-window)</code></li>
+<li>L38: <code>(define-minor-mode term+temporal-view-mode</code></li>
+<li>L43: <code>(defun term+view-file (file &amp;optional other-window)</code></li>
+<li>L50: <code>(defun term+resolve-file-name (file)</code></li>
+<li>L60: <code>(defun term+open (files &amp;optional find-file)</code></li>
+<li>L84: <code>(defun term+view (files)</code></li>
+<li>L90: <code>(defun term+copy-files (files target)</code></li>
+<li>L108: <code>(defun term+read-file-name (files prompt dir default)</code></li>
+<li>L113: <code>(defun term+get (files)</code></li>
+<li>L140: <code>(defun term+put (&amp;optional arg)</code></li>
+<li>L165: <code>(defun term+put-one (files)</code></li>
+<li>L169: <code>(defun term+put-multi ()</code></li>
+<li>L184: <code>(defun term+put-mode-noselect (dir)</code></li>
+<li>L189: <code>(define-derived-mode term+put-mode dired-mode</code></li>
+<li>L194: <code>(define-key term+put-mode-map (kbd "C-c C-c") #'exit-recursive-edit)</code></li>
+<li>L195: <code>(define-key term+put-mode-map (kbd "q") #'exit-recursive-edit)</code></li>
+<li>L196: <code>(define-key term+put-mode-map (kbd "Q") #'term+put-mode-abort)</code></li>
+<li>L197: <code>(define-key term+put-mode-map (kbd "C-c C-g") #'term+put-mode-abort))</code></li>
+<li>L199: <code>(defun term+put-mode-abort ()</code></li>
+<li>L206: <code>(provide 'term+file-transfer)</code></li>
+</ul>
+<h2>term+input.el</h2>
+<ul>
+<li>L27: <code>(require 'term+vars)</code></li>
+<li>L33: <code>(defun term+input-beg ()</code></li>
+<li>L37: <code>(defun term+input-end ()</code></li>
+<li>L41: <code>(defun term+input-reset-range ()</code></li>
+<li>L48: <code>(defun term+input-in-range-p (&amp;optional pos)</code></li>
+<li>L54: <code>(defun term+input-reset (&amp;optional no-delete)</code></li>
+<li>L78: <code>(defun term+input-set-range (beg end &amp;optional no-delete)</code></li>
+<li>L112: <code>(defun term+input-constrain-to-field ()</code></li>
+<li>L117: <code>(define-minor-mode term+input-mode</code></li>
+<li>L128: <code>(defun term+beginning-of-line (&amp;optional arg)</code></li>
+<li>L139: <code>(defun term+end-of-line (&amp;optional arg)</code></li>
+<li>L150: <code>(defun term+kill-line (&amp;optional arg)</code></li>
+<li>L174: <code>(defun term+kill-input (&amp;optional arg)</code></li>
+<li>L232: <code>(provide 'term+input)</code></li>
+</ul>
+<h2>term+logging.el</h2>
+<ul>
+<li>L27: <code>(require 'term)</code></li>
+<li>L28: <code>(require 'term+vars)</code></li>
+<li>L34: <code>(defun term+hardcopy (file &amp;optional append whole-buffer)</code></li>
+<li>L58: <code>(defun term+make-hardcopy-separator-from-list (list &amp;rest args)</code></li>
+<li>L74: <code>(defun term+make-hardcopy-separator ()</code></li>
+<li>L94: <code>(define-minor-mode term+buffer-log-mode</code></li>
+<li>L119: <code>(defun term+start-buffer-log (file)</code></li>
+<li>L135: <code>(defun term+stop-buffer-log ()</code></li>
+<li>L143: <code>(defun term+toggle-buffer-log ()</code></li>
+<li>L152: <code>(defun term+buffer-log-save (&amp;optional buffer)</code></li>
+<li>L192: <code>(defun term+buffer-log-save-truncate (beg hist-pos end)</code></li>
+<li>L203: <code>(defun term+buffer-log-save-buffer (beg hist-pos end)</code></li>
+<li>L238: <code>(define-minor-mode term+record-mode</code></li>
+<li>L263: <code>(defun term+start-record (file)</code></li>
+<li>L270: <code>(defun term+stop-record ()</code></li>
+<li>L276: <code>(defun term+toggle-record ()</code></li>
+<li>L283: <code>(defun term+mouse-stop-record (event)</code></li>
+<li>L297: <code>(defun term+record-show-overlay (&amp;optional window start)</code></li>
+<li>L330: <code>(defun term+record-write (time str)</code></li>
+<li>L352: <code>(provide 'term+logging)</code></li>
+</ul>
+<h2>term+shell-history.el</h2>
+<ul>
+<li>L27: <code>(require 'term+vars)</code></li>
+<li>L29: <code>(defun term+set-shell-history-file (path)</code></li>
+<li>L42: <code>(defun term+shell-history-file ()</code></li>
+<li>L49: <code>(defun term+shell-history-buffer (file)</code></li>
+<li>L56: <code>(defun term+parse-shell-history ()</code></li>
+<li>L76: <code>(defun term+default-shell-history (initial)</code></li>
+<li>L83: <code>(defun term+shell-history (&amp;optional initial)</code></li>
+<li>L105: <code>(provide 'term+shell-history)</code></li>
+</ul>
+<h2>term+vars.el</h2>
+<ul>
+<li>L27: <code>(require 'term)</code></li>
+<li>L28: <code>(require 'dired)</code></li>
+<li>L29: <code>(require 'dired-aux)</code></li>
+<li>L50: <code>(defmacro term+make-composed-keymap (maps &amp;optional parent)</code></li>
+<li>L55: <code>(defvar term+char-map</code></li>
+<li>L58: <code>(define-key map (kbd "C-x") nil)</code></li>
+<li>L59: <code>(define-key map (kbd "M-x") nil)</code></li>
+<li>L60: <code>(define-key map (kbd "M-:") nil)</code></li>
+<li>L62: <code>(define-key map (kbd "C-M-j") #'term+edit-as-expected)</code></li>
+<li>L63: <code>(define-key map (kbd "M-RET") #'term+edit-as-expected)</code></li>
+<li>L64: <code>(define-key map (kbd "C-q") #'term+pass-through)</code></li>
+<li>L65: <code>(define-key map (kbd "C-c C-e") #'term+send-esc)</code></li>
+<li>L66: <code>(define-key map (kbd "C-c C-c") #'term-interrupt-subjob)</code></li>
+<li>L67: <code>(define-key map (kbd "C-c h") #'term+hardcopy)</code></li>
+<li>L68: <code>(define-key map (kbd "C-c l") #'term+toggle-buffer-log)</code></li>
+<li>L69: <code>(define-key map (kbd "C-c r") #'term+toggle-record)</code></li>
+<li>L70: <code>(define-key map (kbd "C-y") #'term+yank)</code></li>
+<li>L89: <code>\(define-key term+char-map KEY nil).")</code></li>
+<li>L90: <code>(defvar term+line-map</code></li>
+<li>L93: <code>(define-key map (kbd "C-M-j") #'term-char-mode)</code></li>
+<li>L94: <code>(define-key map (kbd "M-RET") #'term-char-mode)</code></li>
+<li>L95: <code>(define-key map (kbd "RET") #'term+send-input-and-char-mode)</code></li>
+<li>L96: <code>(define-key map (kbd "C-a") #'term+beginning-of-line)</code></li>
+<li>L97: <code>(define-key map (kbd "C-e") #'term+end-of-line)</code></li>
+<li>L98: <code>(define-key map (kbd "M-p") #'term-previous-input)</code></li>
+<li>L99: <code>(define-key map (kbd "M-n") #'term-next-input)</code></li>
+<li>L100: <code>(define-key map (kbd "C-k") #'term+kill-line)</code></li>
+<li>L101: <code>(define-key map (kbd "C-c C-u") #'term+kill-input)</code></li>
+<li>L102: <code>(define-key map (kbd "C-c C-w") #'backward-kill-word)</code></li>
+<li>L109: <code>(defvar term+input-map-overlay nil)</code></li>
+<li>L111: <code>(defvar term+input-map term+line-map)</code></li>
+<li>L112: <code>(defvar term+input-readonly-map</code></li>
+<li>L114: <code>(define-key map " " #'term+mark-or-copy)</code></li>
+<li>L115: <code>(define-key map (kbd "RET") #'term-char-mode)</code></li>
+<li>L116: <code>(define-key map (kbd "ESC") #'term-char-mode)</code></li>
+<li>L195: <code>(defcustom term+kill-buffer-at-exit t</code></li>
+<li>L199: <code>(defcustom term+edit-kill-to-eol nil</code></li>
+<li>L206: <code>(defcustom term+edit-restore-last-pos t</code></li>
+<li>L211: <code>(defcustom term+edit-quit-commands '(kill-ring-save)</code></li>
+<li>L215: <code>(defcustom term+open-in-other-window nil</code></li>
+<li>L220: <code>(defcustom term+default-user nil</code></li>
+<li>L226: <code>(defcustom term+shell-history-dont-exec nil</code></li>
+<li>L231: <code>(defcustom term+download-directory nil</code></li>
+<li>L235: <code>(defcustom term+upload-directory nil</code></li>
+<li>L239: <code>(defcustom term+hardcopy-visible-contents t</code></li>
+<li>L245: <code>(defcustom term+hardcopy-append nil</code></li>
+<li>L249: <code>(defcustom term+hardcopy-separator '("&gt;" "=" " %s@%s %s " "=" "&lt;")</code></li>
+<li>L266: <code>(defcustom term+hardcopy-separator-args '(user host time)</code></li>
+<li>L278: <code>(defcustom term+buffer-log-interval 5</code></li>
+<li>L284: <code>(defcustom term+record-append nil</code></li>
+<li>L288: <code>(defcustom term+record-message</code></li>
+<li>L298: <code>(define-key map [mouse-1] #'term+mouse-stop-record)</code></li>
+<li>L306: <code>(provide 'term+vars)</code></li>
+</ul>
+<h2>xterm-256color.el</h2>
+<ul>
+<li>L27: <code>(require 'term)</code></li>
+<li>L56: <code>(defun term-ansi-256-setup ()</code></li>
+<li>L90: <code>(defun term-ansi-set-16-color (color &amp;optional background bright)</code></li>
+<li>L96: <code>(defun term-ansi-256-color (parameter)</code></li>
+<li>L116: <code>(defun term-ansi-set-256-color (color &amp;optional background)</code></li>
+<li>L120: <code>(defun term-warn-unknown-color (parameter)</code></li>
+<li>L232: <code>(defun term-need-filling ()</code></li>
+<li>L236: <code>(defun term-fill-char (char count)</code></li>
+<li>L240: <code>(defun term-fill-lines (count)</code></li>
+<li>L246: <code>(defun term-fill-region (start end)</code></li>
+<li>L260: <code>(defun term-erase-to-eol ()</code></li>
+<li>L267: <code>(defun term-erase-in-display (kind)</code></li>
+<li>L332: <code>(defun term-warn-unknown-sequence (char)</code></li>
+<li>L424: <code>(provide 'xterm-256color)</code></li>
+</ul></main></html>

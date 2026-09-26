@@ -1,0 +1,124 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: e2wm-term</h1>
+<p>Fonte: https://github.com/aki2o/e2wm-term.git</p>
+<p>Revisione: <code>4542e52138484933dd99a497ff1b048ea42f9246</code>.</p>
+<h2>e2wm-term.el</h2>
+<ul>
+<li>L40: <code>(require 'cl-lib)</code></li>
+<li>L41: <code>(require 'e2wm)</code></li>
+<li>L42: <code>(require 'yaxception)</code></li>
+<li>L43: <code>(require 'log4e)</code></li>
+<li>L44: <code>(require 'comint)</code></li>
+<li>L45: <code>(require 'term)</code></li>
+<li>L46: <code>(require 'view)</code></li>
+<li>L47: <code>(require 'auto-complete nil t)</code></li>
+<li>L48: <code>(require 'migemo nil t)</code></li>
+<li>L56: <code>(defcustom e2wm-term:default-backend 'shell</code></li>
+<li>L63: <code>(defcustom e2wm-term:use-migemo t</code></li>
+<li>L68: <code>(defcustom e2wm-term:command-helper "man"</code></li>
+<li>L73: <code>(defcustom e2wm-term:command-pager "cat"</code></li>
+<li>L78: <code>(defcustom e2wm-term:command-pager-variables '("PAGER" "GIT_PAGER")</code></li>
+<li>L83: <code>(defcustom e2wm-term:command-cwd-checker "pwd"</code></li>
+<li>L88: <code>(defcustom e2wm-term:command-cwd-updaters '("cd")</code></li>
+<li>L93: <code>(defcustom e2wm-term:command-special-chars '("&gt;" "|" "&amp;")</code></li>
+<li>L98: <code>(defcustom e2wm-term:input-window-height 10</code></li>
+<li>L103: <code>(defcustom e2wm-term:history-max-length 1000</code></li>
+<li>L108: <code>(defcustom e2wm-term:help-window-default-hide nil</code></li>
+<li>L113: <code>(defcustom e2wm-term:help-guess-command 'ask</code></li>
+<li>L125: <code>(defcustom e2wm-term:help-guess-regexp " help\\(\\'\\|[ \n]\\)"</code></li>
+<li>L130: <code>(defcustom e2wm-term:shell-use-history t</code></li>
+<li>L135: <code>(defcustom e2wm-term:shell-password-prompt-regexps</code></li>
+<li>L154: <code>(defmacro e2wm-term::awhen (test &amp;rest body)</code></li>
+<li>L158: <code>(defmacro e2wm-term::aif (test then &amp;rest else)</code></li>
+<li>L162: <code>(defmacro e2wm-term::awhen-buffer-live (buffnm &amp;rest body)</code></li>
+<li>L167: <code>(cl-defun e2wm-term::show-message (msg &amp;rest args)</code></li>
+<li>L190: <code>(defun e2wm-term::get-backend-buffers ()</code></li>
+<li>L196: <code>(defun e2wm-term::get-backend-buffer ()</code></li>
+<li>L200: <code>(defun e2wm-term::ready-backend-buffer-p ()</code></li>
+<li>L215: <code>(defun e2wm-term:regist-backend (backend)</code></li>
+<li>L237: <code>(defun e2wm-term:show-backends ()</code></li>
+<li>L244: <code>(defun e2wm-term:describe-backend (name)</code></li>
+<li>L265: <code>(defun e2wm-term:get-backend (name)</code></li>
+<li>L271: <code>(defun e2wm-term:current-backend ()</code></li>
+<li>L300: <code>(defvar e2wm-term::keymap-regexp-sequence-key-stroke</code></li>
+<li>L307: <code>(defun e2wm-term::keymap-emulate-info (mapsym mode &amp;optional not-proxy)</code></li>
+<li>L342: <code>(cl-defun e2wm-term::keymap-emulate (&amp;key override-map</code></li>
+<li>L354: <code>(define-key map (read-kbd-macro keystr) cmd))</code></li>
+<li>L364: <code>(defun e2wm-term:recipe ()</code></li>
+<li>L373: <code>(defun e2wm-term:winfo ()</code></li>
+<li>L393: <code>(defun e2wm-term::dp-handle-buffer (buf)</code></li>
+<li>L416: <code>(defun e2wm-term::dp-ensure-main-buffer ()</code></li>
+<li>L424: <code>(defun e2wm-term::dp-pager-setup ()</code></li>
+<li>L430: <code>(defun e2wm-term::dp-pager-restore ()</code></li>
+<li>L435: <code>(defun e2wm-term:dp-init ()</code></li>
+<li>L448: <code>(defun e2wm-term:dp-leave (wm)</code></li>
+<li>L453: <code>(defun e2wm-term:dp-switch (buf)</code></li>
+<li>L457: <code>(defun e2wm-term:dp-popup (buf)</code></li>
+<li>L461: <code>(defun e2wm-term:dp-display (buf)</code></li>
+<li>L465: <code>(defun e2wm-term:dp-help-toggle-command ()</code></li>
+<li>L470: <code>(defun e2wm-term:dp-help-maximize-toggle-command ()</code></li>
+<li>L476: <code>(defun e2wm-term:dp-select-main-buffer ()</code></li>
+<li>L481: <code>(defvar e2wm-term:dp-minor-mode-map</code></li>
+<li>L494: <code>(defun e2wm-term:dp ()</code></li>
+<li>L513: <code>(defun e2wm-term:def-plugin-input (frame wm winfo)</code></li>
+<li>L537: <code>(defun e2wm-term::input-buffer-name ()</code></li>
+<li>L540: <code>(defun e2wm-term::input-cwd-filter (proc res)</code></li>
+<li>L547: <code>(defun e2wm-term::input-path-candidates ()</code></li>
+<li>L578: <code>(defun e2wm-term:input-cwd-update ()</code></li>
+<li>L596: <code>(defun e2wm-term:input-header-update (path)</code></li>
+<li>L604: <code>(defun e2wm-term:input-value-update (value &amp;optional clear-undo)</code></li>
+<li>L614: <code>(defun e2wm-term:input-current-value ()</code></li>
+<li>L622: <code>(cl-defun e2wm-term:input-send-value (&amp;key value invoke)</code></li>
+<li>L639: <code>(defun e2wm-term:input-invoke-command ()</code></li>
+<li>L677: <code>(defun e2wm-term:input-insert-with-help (n)</code></li>
+<li>L685: <code>(defun e2wm-term:input-insert-with-ac (n)</code></li>
+<li>L692: <code>(defun e2wm-term:input-completion ()</code></li>
+<li>L698: <code>(defun e2wm-term:input-history-previous ()</code></li>
+<li>L704: <code>(defun e2wm-term:input-history-next ()</code></li>
+<li>L710: <code>(defvar e2wm-term:input-mode-map</code></li>
+<li>L721: <code>(define-derived-mode e2wm-term:input-mode fundamental-mode "Input")</code></li>
+<li>L733: <code>(defun e2wm-term:def-plugin-history (frame wm winfo)</code></li>
+<li>L750: <code>(defun e2wm-term::history-buffer-name ()</code></li>
+<li>L754: <code>(defun e2wm-term::history-active-p ()</code></li>
+<li>L759: <code>(defun e2wm-term::history-index-at-point (&amp;optional pt)</code></li>
+<li>L763: <code>(defun e2wm-term::history-marker-at-point (&amp;optional pt)</code></li>
+<li>L766: <code>(defun e2wm-term::history-nextpt (&amp;optional pt)</code></li>
+<li>L770: <code>(defun e2wm-term::history-prevpt (&amp;optional pt)</code></li>
+<li>L774: <code>(defun e2wm-term::history-currpt (&amp;optional pt)</code></li>
+<li>L785: <code>(defun e2wm-term::history-grep-start ()</code></li>
+<li>L793: <code>(defun e2wm-term::history-grep-stop ()</code></li>
+<li>L800: <code>(defun e2wm-term::history-grep-do ()</code></li>
+<li>L853: <code>(defun e2wm-term:history-highlight (&amp;optional pt)</code></li>
+<li>L871: <code>(defun e2wm-term:history-sync ()</code></li>
+<li>L888: <code>(defun e2wm-term:history-add-on-current (cmdstr marker)</code></li>
+<li>L916: <code>(defun e2wm-term:history-add (cmdstr marker)</code></li>
+<li>L925: <code>(defun e2wm-term:history-move-next (&amp;optional not-highlight not-sync)</code></li>
+<li>L937: <code>(defun e2wm-term:history-move-previous (&amp;optional not-highlight not-sync)</code></li>
+<li>L949: <code>(defun e2wm-term:history-send-pt-point ()</code></li>
+<li>L959: <code>(defun e2wm-term:history-show-all ()</code></li>
+<li>L966: <code>(defun e2wm-term:history-grep-abort ()</code></li>
+<li>L977: <code>(defvar e2wm-term:history-grep-map</code></li>
+<li>L979: <code>(define-key map (kbd "C-g") 'e2wm-term:history-grep-abort)</code></li>
+<li>L982: <code>(defun e2wm-term:history-grep (&amp;optional toggle initial-input)</code></li>
+<li>L1008: <code>(defvar e2wm-term:history-mode-map</code></li>
+<li>L1018: <code>(define-derived-mode e2wm-term:history-mode fundamental-mode "History")</code></li>
+<li>L1031: <code>(defun e2wm-term:def-plugin-help (frame wm winfo)</code></li>
+<li>L1037: <code>(defun e2wm-term::help-ensure-buffer (&amp;optional wm winfo)</code></li>
+<li>L1053: <code>(defun e2wm-term::help-value-update (value)</code></li>
+<li>L1061: <code>(defun e2wm-term::help-ensure-window ()</code></li>
+<li>L1066: <code>(defun e2wm-term::help-maximize ()</code></li>
+<li>L1070: <code>(defun e2wm-term::help-normalize ()</code></li>
+<li>L1075: <code>(cl-defun e2wm-term::help-show (cmd argstr &amp;key showp maximize selectp delay)</code></li>
+<li>L1107: <code>(cl-defun e2wm-term:help-command (cmd &amp;key showp maximize selectp delay)</code></li>
+<li>L1127: <code>(cl-defun e2wm-term:help-something (cmdstr &amp;key showp maximize selectp delay)</code></li>
+<li>L1143: <code>(defun e2wm-term:help-quit ()</code></li>
+<li>L1149: <code>(defvar e2wm-term:help-mode-map</code></li>
+<li>L1153: <code>(define-derived-mode e2wm-term:help-mode view-mode "Help")</code></li>
+<li>L1159: <code>(require 'readline-complete nil t)</code></li>
+<li>L1172: <code>(defun e2wm-term::shell-completion ()</code></li>
+<li>L1188: <code>(defun e2wm-term::shell-input-setup ()</code></li>
+<li>L1195: <code>(defun e2wm-term::shell-rlc-candidates ()</code></li>
+<li>L1213: <code>(defun e2wm-term::shell-rlc-prefix ()</code></li>
+<li>L1217: <code>(defun e2wm-term::shell-history-setup ()</code></li>
+<li>L1243: <code>(defun e2wm-term:shell-watch-for-password-prompt (string)</code></li>
+<li>L1271: <code>(provide 'e2wm-term)</code></li>
+</ul></main></html>

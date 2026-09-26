@@ -1,0 +1,362 @@
+
+### term+
+sources/term+/term+.el
+140:   (term+update-default-directory))
+141: 
+142: (defun term+set-shell (shell)
+143:   "Change the current shell to SHELL."
+144:   (set (make-local-variable 'shell-file-name) shell))
+145: 
+sources/term+/term+logging.el
+192: (defun term+buffer-log-save-truncate (beg hist-pos end)
+193:   (when term+buffer-log-history-length
+194:     (call-process "truncate" nil nil nil
+195:                   "-s" (format "<%d" term+buffer-log-history-length)
+196:                   (expand-file-name term+buffer-log-file)))
+197:   (when (< beg hist-pos)
+sources/term+/term+shell-history.el
+78:     (revert-buffer t t))
+79:   (let* ((hist (term+parse-shell-history))
+80:          (str (completing-read "Command: " hist nil nil initial)))
+81:     (when (> (length str) 0) (concat str "\n"))))
+82: 
+83: (defun term+shell-history (&optional initial)
+
+### el-be-back
+sources/el-be-back/ebb-eshell.el
+249:   "Run interactive Eshell COMMAND with ARGS in a PTY-backed Ebb region.
+250: Fall back to ORIGINAL when unavailable."
+251:   (if (or eshell-current-subjob-p (not (eshell-interactive-output-p)))
+252:       (funcall original command args)
+253:     (let ((expected (cons (file-local-name (expand-file-name command)) args))
+254:           (hook (lambda (process)
+262:       (unwind-protect
+263:           (cl-letf (((symbol-function 'make-process)
+264:                      (let ((make-process (symbol-function 'make-process)))
+265:                        (lambda (&rest plist)
+266:                          (if (equal (plist-get plist :command) expected)
+267:                              (let ((width (window-max-chars-per-line))
+351:   (require 'esh-ext)
+352:   (require 'esh-util)
+353:   (let* ((eshell-interpreter-alist nil)
+354:          (interpreter (eshell-find-interpreter (car args) (cdr args)))
+355:          (program (car interpreter))
+356:          (arguments (flatten-tree
+357:                      (eshell-stringify-list (append (cdr interpreter) (cdr args)))))
+358:          (parent (current-buffer))
+359:          (buffer (ebb (cons program arguments))))
+360:     (with-current-buffer buffer
+sources/el-be-back/ebb-graphics.el
+277:       (insert data)
+278:       (let ((status
+279:              (call-process-region
+280:               (point-min) (point-max) python t t nil "-c"
+281:               (concat
+282:                "import sys,zlib\n"
+336:       (set-buffer-multibyte nil)
+337:       (let ((status
+338:              (call-process
+339:               "python3" nil t nil "-c"
+340:               (concat
+341:                "import os,stat,sys\n"
+sources/el-be-back/ebb-io.el
+341: ;;;; ---- Command Building -----------------------------------------------
+342: 
+343: (defun ebb-io--detect-shell (shell-command)
+344:   "Detect the shell type from SHELL-COMMAND.
+345: Returns one of `bash', `zsh', `fish', or nil."
+346:   (let ((cmd (if (listp shell-command)
+353:      (t nil))))
+354: 
+355: (defun ebb-io--integration-script (shell-type extra-env)
+356:   "Find the integration script for SHELL-TYPE.
+357: Returns the path to the script or nil.
+
+### eat
+sources/eat/eat-tests.el
+110: (defun eat--tests-compare-lines (actual expected)
+111:   "Compare ACTUAL and EXPECTED."
+112:   (let ((a (eat--tests-parse-text-properties actual))
+113:         (b (eat--tests-sanitize-expected-text expected)))
+114:     (cl-flet
+115:         ((visually-equal (a b)
+116:            (if (> emacs-major-version 28)
+149:                     (and (string-blank-p str)
+150:                          (visually-equal
+151:                           str (eat--tests-parse-text-properties
+152:                                (substring-no-properties str)))))))
+153:             ((> (length a) (length b))
+154:              (and (visually-equal
+157:                     (and (string-blank-p str)
+158:                          (visually-equal
+159:                           str (eat--tests-parse-text-properties
+160:                                (substring-no-properties str)))))))))))
+161: 
+162: (defun eat--tests-compare-scrollback (terminal lines)
+166:           (split-string
+167:            (buffer-substring
+168:             (eat-term-beginning terminal)
+169:             (eat-term-display-beginning terminal))
+170:            "\n" nil nil))))
+171:     (and (should
+sources/eat/eat.el
+186: 
+187: If the value is t, always query.  If the value is nil, never query.
+188: If the value is `auto', query if a shell command is running (shell
+189: integration needs to be enabled to use this properly)."
+190:   :type '(choice (const :tag "Yes" t)
+191:                  (const :tag "No" nil)
+332:          (when (and (not eat--being-loaded)
+333:                     (boundp 'eat-semi-char-mode-map))
+334:            (eat-update-semi-char-mode-map)
+335:            (let ((after-load-alist nil)
+336:                  (after-load-functions nil))
+337:              (eat-reload))))
+338:   :group 'eat-ui)
+339: 
+340: (defcustom eat-eshell-semi-char-non-bound-keys
+380:          (when (and (not eat--being-loaded)
+381:                     (boundp 'eat-eshell-semi-char-mode-map))
+382:            (eat-eshell-update-semi-char-mode-map)
+383:            (let ((after-load-alist nil)
+384:                  (after-load-functions nil))
+
+### vterm
+sources/vterm/vterm.el
+106:   "Compile vterm-module."
+107:   (interactive)
+108:   (when (vterm-module--cmake-is-available)
+109:     (let* ((vterm-directory
+110:             (shell-quote-argument
+111:              ;; NOTE: This is a workaround to fix an issue with how the Emacs
+112:              ;; feature/native-comp branch changes the result of
+113:              ;; `(locate-library "vterm")'. See emacs-devel thread
+129:       (compilation-mode)
+130:       (if (zerop (let ((inhibit-read-only t))
+131:                    (call-process "sh" nil buffer t "-c" make-commands)))
+132:           (message "Compilation of `emacs-libvterm' module succeeded")
+133:         (error "Compilation of `emacs-libvterm' module failed!")))))
+134: 
+138:           (y-or-n-p "Vterm needs `vterm-module' to work.  Compile it now? "))
+139:       (progn
+140:         (vterm-module-compile)
+141:         (require 'vterm-module))
+142:     (error "Vterm will not work until `vterm-module' is compiled!")))
+143: 
+
+### alacritty
+sources/alacritty/alacritty.el
+195:          (make-commands
+196:           (format "cp %s %s %s && cp -r %s %s && cd %s && cargo build %s && mkdir -p %s && cp %s %s"
+197:                   (shell-quote-argument (expand-file-name "Cargo.toml" source-dir))
+198:                   (shell-quote-argument (expand-file-name "Cargo.lock" source-dir))
+199:                   (shell-quote-argument temp-dir)
+200:                   (shell-quote-argument (expand-file-name "src" source-dir))
+201:                   (shell-quote-argument temp-dir)
+202:                   (shell-quote-argument temp-dir)
+203:                   cargo-args
+204:                   (shell-quote-argument build-dir)
+
+### cooked
+sources/cooked/lisp/cooked-module.el
+80:          (file-exists-p source)
+81:          (progn (make-directory database t) t)
+82:          (eq 0 (call-process "tic" nil nil nil "-x" "-o" database source))
+83:          database)))
+84: 
+85: (defvar cooked--terminfo-database 'unset
+164:          ;; ~/.terminfo is usually nothing at all.
+165:          (command (format "TERMINFO=%s infocmp -x %s | ssh %s 'mkdir -p ~/.terminfo && tic -x -o ~/.terminfo -'"
+166:                           (shell-quote-argument database)
+167:                           (shell-quote-argument cooked-term-name)
+168:                           (shell-quote-argument host))))
+169:     (if (eq 0 (call-process-shell-command command))
+170:         (message "cooked: installed %s on %s" cooked-term-name host)
+171:       (user-error "cooked: failed to install terminfo on %s" host))))
+172: 
+sources/cooked/lisp/cooked-shell-integration.el
+111:   :group 'cooked)
+112: 
+113: (defun cooked--integration-shell (shell)
+114:   "Which injection scheme SHELL should get, or nil for none.
+115: 
+116: `detect\=' matches on the basename, which is what every terminal that does this
+194: Turning the completion layer on reaches Emacs at once and this shell not at
+195: all; restart it, or source the file yourself."
+196:   (let ((snippet (shell-quote-argument (expand-file-name "cooked.zsh" integration)))
+197:         (capture (shell-quote-argument
+198:                   (expand-file-name "cooked-completion.zsh" integration)))
+199:         (here (shell-quote-argument scratch)))
+200:     (dolist (file '(".zshenv" ".zprofile" ".zlogin"))
+201:       (with-temp-file (expand-file-name file scratch)
+202:         (insert "# Generated by cooked; deleted when the session's buffer is killed.\n"
+218:               "unset COOKED_USER_ZDOTDIR_SET\n"))))
+219: 
+220: (defun cooked--shell-invocation (shell)
+221:   "Return (ARGV EXTRA-ENV SCRATCH) that starts SHELL with integration loaded.
+222: 
+223: Each shell gets the least invasive hook it offers: generated startup files
+
+### mistty
+sources/mistty/mistty-alacritty.el
+332:   "Resize the terminal and pty to WIDTH x HEIGHT."
+333:   (if (or (/= mistty-alacritty-columns width) (/= mistty-alacritty-lines height))
+334:       (when-let* ((vterm mistty-alacritty--vterm)
+335:                   (proc (get-buffer-process (current-buffer))))
+336:         (mistty-log "RESIZE: %s lines %s columns" height width)
+337:         (mistty-alacritty-vt-resize vterm width height)
+383: 
+384: The current buffer must have a virtual terminal associated."
+385:   (when-let* ((vterm mistty-alacritty--vterm)
+386:               (proc (get-buffer-process (current-buffer))))
+387:     (dolist (ev (mistty-alacritty-vt-process-bytes vterm (vconcat str)))
+388:       (pcase ev
+389:         (`(pty-write ,data)
+390:          (mistty-log "REPLY %S" data)
+391:          (process-send-string proc data))
+392:         (`(title ,title)
+393:          (mistty-log "TITLE %S" title)
+394:          (setq ansi-osc-window-title title))))))
+398: 
+399: The current buffer must have a virtual terminal associated."
+400:   (when-let* ((vterm mistty-alacritty--vterm))
+401:     (save-excursion
+402:       (goto-char mistty-alacritty--home)
+403:       (cl-incf mistty--scrolline-home-num (mistty-alacritty-vt-write-scrollback vterm))
+429:   (cond
+430:    (mistty-alacritty-term-name mistty-alacritty-term-name)
+431:    ((shell-command-to-string "infocmp alacritty") "alacritty")
+432:    (t "xterm-256color")))
+433: 
+434: (defun mistty-alacritty--clear-to-eol (pos)
+sources/mistty/mistty-install.el
+113:                                   options))
+114:                   (align (+ 2 (apply #'max (mapcar #'length titles))))
+115:                   (choice (completing-read
+116:                            "Choose a way to install the MisTTY Alacritty module. "
+117:                            (lambda (string pred action)
+118:                              (if (not (eq action 'metadata))
+306:             (cmd (format-spec
+307:                   "curl -L --no-progress-meter --fail-with-body -o %d.part %u && mv %d.part %d"
+308:                   `((?u . ,(shell-quote-argument url))
+309:                     (?d . ,(shell-quote-argument dest))))))
+310:        (mistty--install-message
+311:         'progress "Downloading module version " mistty-alacritty-version "...")
+312:        (unless (and (zerop (mistty--install-execute cmd install-dir))
+326:                (cmd (format
+327:                      "curl -L --no-progress-meter --fail-with-body %s | tar xzf - "
+
+### ghostel
+sources/ghostel/lisp/ghostel-bookmark.el
+59: is non-nil, a `cd' is typed into it, but only while the shell is idle
+60: \(see `ghostel-bookmark--shell-idle-p'); command buffers are left alone."
+61:   (ghostel--load-module t)
+62:   (let* ((dir (bookmark-prop-get bmk 'location))
+63:          (buf-name (bookmark-prop-get bmk 'buf-name))
+64:          ;; Bookmark files are external data; treat a non-alist identity
+77:          (buf (cond
+78:                ((alist-get 'instance identity)
+79:                 (ghostel--find-buffer-by-identity identity live-p))
+80:                (command
+81:                 (let ((match-p
+82:                        (lambda (b)
+83:                          (and (with-current-buffer b
+84:                                 (and (derived-mode-p 'ghostel-mode)
+85:                                      (ghostel-identity-match-p
+86:                                       `((command . ,command))
+87:                                       ghostel-identity)))
+88:                               (funcall live-p b)))))
+106:                 (progn
+107:                   (setq buf (generate-new-buffer buf-name))
+108:                   (ghostel-exec buf (car command) (cdr command) identity))
+109:               ((error quit)
+110:                (when (buffer-live-p buf) (kill-buffer buf))
+111:                (signal (car err) (cdr err))))
+112:           (setq buf (ghostel-create buf-name nil identity)))))
+113:     ;; Reuse branch: `cd' if the live shell has wandered elsewhere.  A
+114:     ;; typed `cd' only makes sense in a shell, not in a command buffer.
+115:     (with-current-buffer buf
+sources/ghostel/lisp/ghostel-comint.el
+71:     (let ((colors
+72:            (mapconcat (lambda (face)
+73:                         (ghostel--face-hex-color face :foreground))
+74:                       ghostel-color-palette
+75:                       "")))
+76:       (ghostel--comint-set-palette state colors))))
+77: 
+78: 
+79: 
+86: resolution logic ghostel-mode uses applies here too."
+87:   (when (and (stringp uri) (not (string-empty-p uri)))
+88:     (ghostel--update-directory uri)))
+89: 
+90: 
+91: 
+127: terminal colours from font-lock's unfontify pass."
+128:   (unless ghostel-comint--state
+
+### kuro
+
+### libgterm
+sources/libgterm/gterm.el
+98:     (unless (executable-find "zig")
+99:       (error "gterm: `zig` not found in PATH. Install Zig 0.15.2+ (https://ziglang.org/download/)"))
+100:     (let ((zig-version (string-trim (shell-command-to-string "zig version"))))
+101:       (unless (string-match "^0\\.\\(1[5-9]\\|[2-9][0-9]\\)\\." zig-version)
+102:         (error "gterm: requires Zig 0.15+, but found %s. On macOS with Homebrew, run: brew unlink zig@0.14 && brew link zig"
+103:                zig-version)))
+109:       (unless (file-directory-p ghostty-dir)
+110:         (message "gterm: cloning ghostty (this may take a minute)...")
+111:         (let ((exit-code (call-process "git" nil buf t
+112:                                        "clone" "--depth" "1"
+113:                                        "https://github.com/ghostty-org/ghostty.git"
+114:                                        ghostty-dir)))
+301:         (gterm-scroll-viewport gterm--term 0))
+302:       (setq gterm--scrollback-p nil))
+303:     (process-send-string gterm--process string)))
+304: 
+305: (defun gterm-send-key ()
+306:   "Send the last input key to the shell."
+766:                 process-environment)))
+767:           (setq gterm--process
+768:                 (make-process
+769:                  :name "gterm"
+770:                  :buffer buf
+771:                  :command (list gterm-shell "-l")
+
+### lterm
+sources/lterm/lterm-mud.el
+47:   (lterm-start-process "lterm-mud" "telnet" host port)
+48:   ;; Switch telnet(1) to character mode:
+49:   (process-send-string lterm-process "
+50: mode character\n")
+51:   (lterm-mud-mode))
+52: 
+sources/lterm/lterm.el
+176:     (when lterm-echo-after-filters
+177:       (lui-insert string))
+178:     (process-send-string lterm-process (concat string "\n"))))
+179: 
+180: (defvar lterm-prompt-regex "^\\$ "
+181:   "Regular expression used to detect a prompt.
+
+### wterm
+sources/wterm/wterm.el
+79:   "Follow the shell's working directory.
+80: The shell has to report it with OSC 7 (file://host/path), OSC 9;9
+81: \(Windows Terminal style) or OSC 51;A (vterm style)."
+82:   :type 'boolean)
+83: 
+84: (defcustom wterm-bell t
+263:     (wterm--set-palette wterm--term (wterm--palette))
+264:     (setq wterm--process
+265:           (make-process
+266:            :name "wterm"
+267:            :buffer (current-buffer)
+268:            :command (list wterm-conpty-program (number-to-string rows)
+305:   "Send BYTES, a unibyte string or nil, to the terminal's process."
+306:   (when (and bytes (> (length bytes) 0) (process-live-p wterm--process))
+307:     (process-send-string wterm--process bytes)))
+308: 
+309: (defun wterm--sanitize (string)
+310:   "Replace raw bytes in STRING with U+FFFD."

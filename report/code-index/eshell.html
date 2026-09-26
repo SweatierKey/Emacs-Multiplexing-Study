@@ -1,0 +1,984 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: eshell</h1>
+<p>Fonte: https://git.savannah.gnu.org/cgit/emacs.git</p>
+<p>Revisione: <code>30.1</code>.</p>
+<h2>em-alias.el</h2>
+<ul>
+<li>L93: <code>(require 'esh-mode)</code></li>
+<li>L103: <code>(defcustom eshell-aliases-file (expand-file-name "alias" eshell-directory-name)</code></li>
+<li>L115: <code>(defcustom eshell-bad-command-tolerance 3</code></li>
+<li>L121: <code>(defcustom eshell-alias-load-hook nil</code></li>
+<li>L146: <code>(defun eshell-alias-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L155: <code>(defun eshell-command-aliased-p (name)</code></li>
+<li>L158: <code>(defun eshell/alias (&amp;optional alias &amp;rest definition)</code></li>
+<li>L183: <code>(defun pcomplete/eshell-mode/alias ()</code></li>
+<li>L187: <code>(defun eshell-read-aliases-list ()</code></li>
+<li>L207: <code>(defun eshell-write-aliases-list ()</code></li>
+<li>L222: <code>(defun eshell-maybe-replace-by-alias--which (command)</code></li>
+<li>L228: <code>(defun eshell-maybe-replace-by-alias (command _args)</code></li>
+<li>L243: <code>(defun eshell-alias-completions (name)</code></li>
+<li>L252: <code>(defun eshell-fix-bad-commands (name)</code></li>
+<li>L281: <code>(provide 'em-alias)</code></li>
+</ul>
+<h2>em-banner.el</h2>
+<ul>
+<li>L44: <code>(require 'esh-util)</code></li>
+<li>L45: <code>(require 'esh-mode)</code></li>
+<li>L59: <code>(defcustom eshell-banner-message "Welcome to the Emacs shell\n\n"</code></li>
+<li>L66: <code>(defcustom eshell-banner-load-hook nil</code></li>
+<li>L72: <code>(defun eshell-banner-initialize ()  ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L84: <code>(provide 'em-banner)</code></li>
+</ul>
+<h2>em-basic.el</h2>
+<ul>
+<li>L56: <code>(require 'esh-cmd)</code></li>
+<li>L57: <code>(require 'esh-io)</code></li>
+<li>L58: <code>(require 'esh-opt)</code></li>
+<li>L59: <code>(require 'esh-util)</code></li>
+<li>L72: <code>(defcustom eshell-plain-echo-behavior nil</code></li>
+<li>L81: <code>(defun eshell-echo (args &amp;optional output-newline)</code></li>
+<li>L113: <code>(defun eshell/echo (&amp;rest args)</code></li>
+<li>L140: <code>(defun eshell/printnl (&amp;rest args)</code></li>
+<li>L146: <code>(defun eshell/listify (&amp;rest args)</code></li>
+<li>L154: <code>(defun eshell/umask (&amp;rest args)</code></li>
+<li>L195: <code>(defun eshell/eshell-debug (&amp;rest args)</code></li>
+<li>L223: <code>(defun pcomplete/eshell-mode/eshell-debug ()</code></li>
+<li>L227: <code>(provide 'em-basic)</code></li>
+</ul>
+<h2>em-cmpl.el</h2>
+<ul>
+<li>L71: <code>(require 'pcomplete)</code></li>
+<li>L73: <code>(require 'esh-mode)</code></li>
+<li>L74: <code>(require 'esh-util)</code></li>
+<li>L75: <code>(require 'em-dirs)</code></li>
+<li>L90: <code>(defcustom eshell-cmpl-load-hook nil</code></li>
+<li>L95: <code>(defcustom eshell-show-lisp-completions nil</code></li>
+<li>L101: <code>(defcustom eshell-show-lisp-alternatives t</code></li>
+<li>L107: <code>(defcustom eshell-no-completion-during-jobs t</code></li>
+<li>L111: <code>(defcustom eshell-command-completions-alist</code></li>
+<li>L136: <code>(defun eshell-cmpl--custom-variable-docstring (pcomplete-var)</code></li>
+<li>L143: <code>(defcustom eshell-cmpl-file-ignore "~\\'"</code></li>
+<li>L147: <code>(defcustom eshell-cmpl-dir-ignore "\\'\\(\\.\\.?\\|CVS\\)/\\'"</code></li>
+<li>L151: <code>(defcustom eshell-cmpl-remote-file-ignore nil</code></li>
+<li>L156: <code>(defcustom eshell-cmpl-ignore-case (eshell-under-windows-p)</code></li>
+<li>L160: <code>(defcustom eshell-cmpl-autolist nil</code></li>
+<li>L164: <code>(defcustom eshell-cmpl-recexact nil</code></li>
+<li>L168: <code>(defcustom eshell-cmpl-man-function #'man</code></li>
+<li>L172: <code>(defcustom eshell-cmpl-compare-entry-function #'file-newer-than-file-p</code></li>
+<li>L176: <code>(defcustom eshell-cmpl-expand-before-complete nil</code></li>
+<li>L180: <code>(defcustom eshell-cmpl-cycle-completions t</code></li>
+<li>L184: <code>(defcustom eshell-cmpl-cycle-cutoff-length 5</code></li>
+<li>L188: <code>(defcustom eshell-cmpl-restore-window-delay 1</code></li>
+<li>L192: <code>(defcustom eshell-command-completion-function</code></li>
+<li>L198: <code>(defcustom eshell-cmpl-command-name-function</code></li>
+<li>L203: <code>(defcustom eshell-default-completion-function</code></li>
+<li>L212: <code>(defcustom eshell-cmpl-use-paring t</code></li>
+<li>L218: <code>(defun eshell-complete-lisp-symbol ()</code></li>
+<li>L224: <code>(defvar-keymap eshell-cmpl-mode-map</code></li>
+<li>L236: <code>(define-minor-mode eshell-cmpl-mode</code></li>
+<li>L242: <code>(defun eshell-cmpl-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L291: <code>(defun eshell-completion-command-name ()</code></li>
+<li>L302: <code>(defun eshell-completion-help ()</code></li>
+<li>L308: <code>(defun eshell--pcomplete-insert-tab ()</code></li>
+<li>L314: <code>(defun eshell-complete--eval-argument-form (arg)</code></li>
+<li>L336: <code>(defun eshell-external-command-p (command)</code></li>
+<li>L344: <code>(defun eshell-complete-parse-arguments ()</code></li>
+<li>L453: <code>(defun eshell--complete-commands-list ()</code></li>
+<li>L521: <code>(provide 'em-cmpl)</code></li>
+</ul>
+<h2>em-dirs.el</h2>
+<ul>
+<li>L45: <code>(require 'esh-mode)                     ;For eshell-directory-name</code></li>
+<li>L46: <code>(require 'esh-var)                      ;For eshell-variable-aliases-list</code></li>
+<li>L47: <code>(require 'ring)</code></li>
+<li>L48: <code>(require 'esh-opt)</code></li>
+<li>L63: <code>(defcustom eshell-dirs-load-hook nil</code></li>
+<li>L68: <code>(defcustom eshell-pwd-convert-function (if (eshell-under-windows-p)</code></li>
+<li>L80: <code>(defcustom eshell-ask-to-save-last-dir 'always</code></li>
+<li>L92: <code>(defcustom eshell-cd-shows-directory nil</code></li>
+<li>L96: <code>(defcustom eshell-cd-on-directory t</code></li>
+<li>L100: <code>(defcustom eshell-directory-change-hook nil</code></li>
+<li>L104: <code>(defcustom eshell-list-files-after-cd nil</code></li>
+<li>L111: <code>(defcustom eshell-pushd-tohome nil</code></li>
+<li>L116: <code>(defcustom eshell-pushd-dextract nil</code></li>
+<li>L121: <code>(defcustom eshell-pushd-dunique nil</code></li>
+<li>L126: <code>(defcustom eshell-dirtrack-verbose t</code></li>
+<li>L131: <code>(defcustom eshell-last-dir-ring-file-name</code></li>
+<li>L138: <code>(defcustom eshell-last-dir-ring-size 32</code></li>
+<li>L158: <code>(defcustom eshell-last-dir-unique t</code></li>
+<li>L173: <code>(defun eshell-dirs-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L228: <code>(defun eshell-save-some-last-dir ()</code></li>
+<li>L243: <code>(defun eshell-lone-directory-p (file)</code></li>
+<li>L249: <code>(defun eshell-dirs-substitute-cd (&amp;rest args)</code></li>
+<li>L256: <code>(defun eshell-expand-user-reference (file)</code></li>
+<li>L262: <code>(defun eshell-parse-user-reference ()</code></li>
+<li>L273: <code>(defun eshell-parse-drive-letter ()</code></li>
+<li>L288: <code>(defun eshell-complete-user-reference ()</code></li>
+<li>L320: <code>(defun eshell/pwd ()</code></li>
+<li>L331: <code>(defun eshell-expand-multiple-dots (filename)</code></li>
+<li>L356: <code>(defun eshell-find-previous-directory (regexp)</code></li>
+<li>L370: <code>(defun eshell/cd (&amp;rest args)           ; all but first ignored</code></li>
+<li>L437: <code>(defun eshell-add-to-dir-ring (path)</code></li>
+<li>L451: <code>(defun eshell/pushd (&amp;rest args)        ; all but first ignored</code></li>
+<li>L502: <code>(defun eshell/popd (&amp;rest args)</code></li>
+<li>L532: <code>(defun eshell/dirs (&amp;optional if-verbose)</code></li>
+<li>L548: <code>(defun eshell-read-last-dir-ring ()</code></li>
+<li>L576: <code>(defun eshell-write-last-dir-ring ()</code></li>
+<li>L600: <code>(provide 'em-dirs)</code></li>
+</ul>
+<h2>em-elecslash.el</h2>
+<ul>
+<li>L28: <code>(require 'tramp)</code></li>
+<li>L29: <code>(require 'thingatpt)</code></li>
+<li>L30: <code>(require 'esh-cmd)</code></li>
+<li>L31: <code>(require 'esh-ext)</code></li>
+<li>L32: <code>(require 'esh-mode)</code></li>
+<li>L57: <code>(defun eshell-elecslash-initialize () ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L62: <code>(defun eshell-electric-forward-slash ()</code></li>
+<li>L103: <code>(define-key map "/" (lambda ()</code></li>
+<li>L110: <code>(provide 'em-elecslash)</code></li>
+</ul>
+<h2>em-extpipe.el</h2>
+<ul>
+<li>L31: <code>(require 'cl-lib)</code></li>
+<li>L32: <code>(require 'esh-arg)</code></li>
+<li>L33: <code>(require 'esh-cmd)</code></li>
+<li>L34: <code>(require 'esh-io)</code></li>
+<li>L35: <code>(require 'esh-util)</code></li>
+<li>L56: <code>(defun eshell-extpipe-initialize () ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L67: <code>(defmacro eshell-extpipe--or-with-catch (&amp;rest disjuncts)</code></li>
+<li>L80: <code>(defun eshell-parse-external-pipeline ()</code></li>
+<li>L203: <code>(defun eshell-rewrite-external-pipeline (terms)</code></li>
+<li>L219: <code>(provide 'em-extpipe)</code></li>
+</ul>
+<h2>em-glob.el</h2>
+<ul>
+<li>L52: <code>(require 'esh-arg)</code></li>
+<li>L53: <code>(require 'esh-module)</code></li>
+<li>L54: <code>(require 'esh-util)</code></li>
+<li>L66: <code>(defcustom eshell-glob-load-hook nil</code></li>
+<li>L72: <code>(defcustom eshell-glob-splice-results nil</code></li>
+<li>L81: <code>(defcustom eshell-glob-include-dot-files nil</code></li>
+<li>L86: <code>(defcustom eshell-glob-include-dot-dot t</code></li>
+<li>L91: <code>(defcustom eshell-glob-case-insensitive (not (not (eshell-under-windows-p)))</code></li>
+<li>L96: <code>(defcustom eshell-glob-show-progress nil</code></li>
+<li>L102: <code>(defcustom eshell-error-if-no-glob nil</code></li>
+<li>L108: <code>(defcustom eshell-glob-chars-list '(?\] ?\[ ?* ?? ?~ ?\( ?\) ?| ?# ?^)</code></li>
+<li>L113: <code>(defcustom eshell-glob-translate-alist</code></li>
+<li>L138: <code>(defun eshell-glob-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L148: <code>(defun eshell-no-command-globbing (terms)</code></li>
+<li>L156: <code>(defun eshell-add-glob-modifier ()</code></li>
+<li>L162: <code>(defun eshell-parse-glob-chars ()</code></li>
+<li>L199: <code>(defun eshell-glob-regexp (pattern)</code></li>
+<li>L245: <code>(defun eshell-glob-p (pattern)</code></li>
+<li>L249: <code>(defun eshell-glob-convert-1 (glob &amp;optional last)</code></li>
+<li>L284: <code>(defun eshell-glob-convert (glob)</code></li>
+<li>L327: <code>(defun eshell-extended-glob (glob)</code></li>
+<li>L364: <code>(defun eshell-glob-entries (path globs only-dirs)</code></li>
+<li>L419: <code>(provide 'em-glob)</code></li>
+</ul>
+<h2>em-hist.el</h2>
+<ul>
+<li>L59: <code>(require 'ring)</code></li>
+<li>L60: <code>(require 'esh-opt)</code></li>
+<li>L61: <code>(require 'esh-mode)</code></li>
+<li>L72: <code>(defcustom eshell-hist-load-hook nil</code></li>
+<li>L77: <code>(defcustom eshell-hist-unload-hook</code></li>
+<li>L85: <code>(defcustom eshell-history-file-name</code></li>
+<li>L93: <code>(defcustom eshell-history-size 128</code></li>
+<li>L98: <code>(defcustom eshell-hist-ignoredups nil</code></li>
+<li>L107: <code>(defcustom eshell-save-history-on-exit t</code></li>
+<li>L119: <code>(defcustom eshell-history-append nil</code></li>
+<li>L125: <code>(defcustom eshell-input-filter 'eshell-input-filter-default</code></li>
+<li>L135: <code>(defun eshell-hist--update-keymap (symbol value)</code></li>
+<li>L150: <code>(keymap-set eshell-hist-mode-map (car keyb) (cdr keyb))))</code></li>
+<li>L153: <code>(defcustom eshell-hist-match-partial t</code></li>
+<li>L161: <code>(defcustom eshell-hist-move-to-end t</code></li>
+<li>L165: <code>(defcustom eshell-hist-event-designator</code></li>
+<li>L170: <code>(defcustom eshell-hist-word-designator</code></li>
+<li>L175: <code>(defcustom eshell-hist-modifier</code></li>
+<li>L180: <code>(defcustom eshell-hist-rebind-keys-alist</code></li>
+<li>L208: <code>(defvar-keymap eshell-isearch-map</code></li>
+<li>L219: <code>(defvar-keymap eshell-hist-mode-map</code></li>
+<li>L238: <code>(defun eshell-input-filter-default (input)</code></li>
+<li>L243: <code>(defun eshell-input-filter-initial-space (input)</code></li>
+<li>L248: <code>(define-minor-mode eshell-hist-mode</code></li>
+<li>L254: <code>(defun eshell-hist-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L310: <code>(defun eshell--save-history ()</code></li>
+<li>L314: <code>(defun eshell-save-some-history ()</code></li>
+<li>L330: <code>(defun eshell/history (&amp;rest args)</code></li>
+<li>L376: <code>(defun eshell-put-history (input &amp;optional ring at-beginning)</code></li>
+<li>L383: <code>(defun eshell-get-history (index &amp;optional ring)</code></li>
+<li>L387: <code>(defun eshell-add-input-to-history (input)</code></li>
+<li>L410: <code>(defun eshell-add-to-history ()</code></li>
+<li>L420: <code>(defun eshell-read-history (&amp;optional filename silent)</code></li>
+<li>L470: <code>(defun eshell-write-history (&amp;optional filename append)</code></li>
+<li>L513: <code>(defun eshell-list-history ()</code></li>
+<li>L552: <code>(defun eshell-hist-word-reference (ref)</code></li>
+<li>L562: <code>(defun eshell-hist-parse-arguments (&amp;optional b e)</code></li>
+<li>L600: <code>(defun eshell-expand-history-references (beg end)</code></li>
+<li>L631: <code>(defun eshell-complete-history-reference ()</code></li>
+<li>L660: <code>(defun eshell-history-substitution (line)</code></li>
+<li>L680: <code>(defun eshell-history-reference (reference)</code></li>
+<li>L712: <code>(defun eshell-hist-parse-event-designator (reference)</code></li>
+<li>L739: <code>(defun eshell-hist-parse-word-designator (hist reference)</code></li>
+<li>L777: <code>(defun eshell-hist-parse-modifier (hist reference)</code></li>
+<li>L793: <code>(defun eshell-get-next-from-history ()</code></li>
+<li>L804: <code>(defun eshell-search-arg (arg)</code></li>
+<li>L821: <code>(defun eshell-search-start (arg)</code></li>
+<li>L833: <code>(defun eshell-previous-input-string (arg)</code></li>
+<li>L841: <code>(defun eshell-previous-input (arg)</code></li>
+<li>L846: <code>(defun eshell-next-input (arg)</code></li>
+<li>L851: <code>(defun eshell-previous-matching-input-string (regexp arg)</code></li>
+<li>L857: <code>(defun eshell-previous-matching-input-string-position</code></li>
+<li>L887: <code>(defun eshell-previous-matching-input (regexp arg)</code></li>
+<li>L907: <code>(defun eshell-next-matching-input (regexp arg)</code></li>
+<li>L915: <code>(defun eshell-previous-matching-input-from-input (arg)</code></li>
+<li>L932: <code>(defun eshell-next-matching-input-from-input (arg)</code></li>
+<li>L940: <code>(defun eshell-test-imatch ()</code></li>
+<li>L956: <code>(defun eshell-return-to-prompt ()</code></li>
+<li>L984: <code>(defun eshell-prepare-for-search ()</code></li>
+<li>L994: <code>(defun eshell-isearch-backward (&amp;optional invert)</code></li>
+<li>L1004: <code>(defun eshell-isearch-repeat-backward (&amp;optional invert)</code></li>
+<li>L1017: <code>(defun eshell-isearch-forward ()</code></li>
+<li>L1022: <code>(defun eshell-isearch-repeat-forward ()</code></li>
+<li>L1027: <code>(defun eshell-isearch-cancel ()</code></li>
+<li>L1033: <code>(defun eshell-isearch-abort ()</code></li>
+<li>L1039: <code>(defun eshell-isearch-delete-char ()</code></li>
+<li>L1044: <code>(defun eshell-isearch-return ()</code></li>
+<li>L1049: <code>(defun em-hist-unload-function ()</code></li>
+<li>L1052: <code>(provide 'em-hist)</code></li>
+</ul>
+<h2>em-ls.el</h2>
+<ul>
+<li>L29: <code>(require 'cl-lib)</code></li>
+<li>L30: <code>(require 'esh-util)</code></li>
+<li>L31: <code>(require 'esh-opt)</code></li>
+<li>L32: <code>(require 'esh-proc)</code></li>
+<li>L33: <code>(require 'esh-cmd)</code></li>
+<li>L48: <code>(defcustom eshell-ls-date-format "%Y-%m-%d"</code></li>
+<li>L55: <code>(defcustom eshell-ls-initial-args nil</code></li>
+<li>L60: <code>(defcustom eshell-ls-dired-initial-args nil</code></li>
+<li>L65: <code>(defun eshell-ls-enable-in-dired ()</code></li>
+<li>L71: <code>(defun eshell-ls-disable-in-dired ()</code></li>
+<li>L76: <code>(defcustom eshell-ls-use-in-dired nil</code></li>
+<li>L87: <code>(defcustom eshell-ls-default-blocksize 1024</code></li>
+<li>L91: <code>(defcustom eshell-ls-exclude-regexp nil</code></li>
+<li>L95: <code>(defcustom eshell-ls-exclude-hidden t</code></li>
+<li>L101: <code>(defcustom eshell-ls-use-colors t</code></li>
+<li>L140: <code>(defcustom eshell-ls-archive-regexp</code></li>
+<li>L154: <code>(defcustom eshell-ls-backup-regexp</code></li>
+<li>L164: <code>(defcustom eshell-ls-product-regexp</code></li>
+<li>L176: <code>(defcustom eshell-ls-clutter-regexp</code></li>
+<li>L193: <code>(defmacro eshell-ls-applicable (attrs index func file)</code></li>
+<li>L217: <code>(defcustom eshell-ls-highlight-alist nil</code></li>
+<li>L250: <code>(defun eshell-ls--insert-directory</code></li>
+<li>L297: <code>(defun eshell-ls--dired (orig-fun dir-or-list &amp;optional switches)</code></li>
+<li>L335: <code>(defun eshell-do-ls (&amp;rest args)</code></li>
+<li>L438: <code>(defun eshell-ls-annotate (fileinfo)</code></li>
+<li>L471: <code>(defun eshell-ls-file (fileinfo &amp;optional size-width copy-fileinfo)</code></li>
+<li>L534: <code>(defun eshell-ls-dir (dirinfo &amp;optional insert-name root-dir size-width)</code></li>
+<li>L620: <code>(defun eshell-ls-sort-entries (entries)</code></li>
+<li>L658: <code>(defun eshell-ls-files (files &amp;optional size-width copy-fileinfo)</code></li>
+<li>L738: <code>(defun eshell-ls-entries (entries &amp;optional separate root-dir)</code></li>
+<li>L784: <code>(defun eshell-ls-find-column-widths (files)</code></li>
+<li>L830: <code>(defun eshell-ls-find-column-lengths (files)</code></li>
+<li>L896: <code>(defun eshell-ls-decorated-name (file)</code></li>
+<li>L951: <code>(defun em-ls-unload-function ()</code></li>
+<li>L954: <code>(provide 'em-ls)</code></li>
+</ul>
+<h2>em-pred.el</h2>
+<ul>
+<li>L49: <code>(require 'esh-mode)</code></li>
+<li>L63: <code>(defcustom eshell-pred-load-hook nil</code></li>
+<li>L68: <code>(defcustom eshell-predicate-alist</code></li>
+<li>L113: <code>(defcustom eshell-modifier-alist</code></li>
+<li>L238: <code>(defvar-keymap eshell-pred-mode-map</code></li>
+<li>L244: <code>(defun eshell-display-predicate-help ()</code></li>
+<li>L250: <code>(defun eshell-display-modifier-help ()</code></li>
+<li>L256: <code>(define-minor-mode eshell-pred-mode</code></li>
+<li>L262: <code>(defun eshell-pred-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L268: <code>(defun eshell-apply-modifiers (lst predicates modifiers string-desc)</code></li>
+<li>L289: <code>(defun eshell-parse-arg-modifier ()</code></li>
+<li>L316: <code>(defun eshell-parse-modifiers ()</code></li>
+<li>L378: <code>(defun eshell-add-pred-func (pred funcs negate follow)</code></li>
+<li>L388: <code>(defun eshell-get-comparison-modifier-argument (&amp;optional functions)</code></li>
+<li>L402: <code>(defun eshell-get-numeric-modifier-argument ()</code></li>
+<li>L410: <code>(defun eshell-get-delimited-modifier-argument (&amp;optional chained-p)</code></li>
+<li>L433: <code>(defun eshell-pred-user-or-group (mod-char mod-type attr-index get-id-func)</code></li>
+<li>L448: <code>(defun eshell-pred-file-time (mod-char mod-type attr-index)</code></li>
+<li>L482: <code>(defun eshell-pred-file-type (type)</code></li>
+<li>L504: <code>(defun eshell-pred-file-links ()</code></li>
+<li>L513: <code>(defun eshell-pred-file-size ()</code></li>
+<li>L534: <code>(defun eshell-pred-substitute (&amp;optional repeat)</code></li>
+<li>L549: <code>(defun eshell-include-members (mod-char &amp;optional invert-p)</code></li>
+<li>L562: <code>(defun eshell-join-members ()</code></li>
+<li>L569: <code>(defun eshell-split-members ()</code></li>
+<li>L578: <code>(provide 'em-pred)</code></li>
+</ul>
+<h2>em-prompt.el</h2>
+<ul>
+<li>L29: <code>(require 'esh-mode)</code></li>
+<li>L30: <code>(require 'text-property-search)</code></li>
+<li>L42: <code>(defcustom eshell-prompt-load-hook nil</code></li>
+<li>L50: <code>(defcustom eshell-prompt-function</code></li>
+<li>L60: <code>(defcustom eshell-prompt-regexp "^[^#$\n]* [#$] "</code></li>
+<li>L66: <code>(defcustom eshell-highlight-prompt t</code></li>
+<li>L80: <code>(defcustom eshell-before-prompt-hook nil</code></li>
+<li>L86: <code>(defcustom eshell-after-prompt-hook nil</code></li>
+<li>L96: <code>(defvar-keymap eshell-prompt-mode-map</code></li>
+<li>L102: <code>(defvar-keymap eshell-prompt-repeat-map</code></li>
+<li>L110: <code>(define-minor-mode eshell-prompt-mode</code></li>
+<li>L116: <code>(defun eshell-prompt-initialize ()  ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L122: <code>(defun eshell-emit-prompt ()</code></li>
+<li>L145: <code>(defun eshell-forward-matching-input (regexp arg)</code></li>
+<li>L161: <code>(defun eshell-backward-matching-input (regexp arg)</code></li>
+<li>L168: <code>(defun eshell-forward-paragraph (&amp;optional n)</code></li>
+<li>L198: <code>(defun eshell-backward-paragraph (&amp;optional n)</code></li>
+<li>L204: <code>(defun eshell-next-prompt (&amp;optional n)</code></li>
+<li>L233: <code>(defun eshell-previous-prompt (&amp;optional n)</code></li>
+<li>L238: <code>(defun eshell-skip-prompt ()</code></li>
+<li>L247: <code>(defun eshell-bol-ignoring-prompt (arg)</code></li>
+<li>L255: <code>(provide 'em-prompt)</code></li>
+</ul>
+<h2>em-rebind.el</h2>
+<ul>
+<li>L26: <code>(require 'esh-mode)</code></li>
+<li>L48: <code>(defcustom eshell-rebind-load-hook nil</code></li>
+<li>L54: <code>(defcustom eshell-rebind-keys-alist</code></li>
+<li>L66: <code>(defcustom eshell-confine-point-to-input t</code></li>
+<li>L81: <code>(defcustom eshell-error-if-move-away t</code></li>
+<li>L87: <code>(defcustom eshell-remap-previous-input t</code></li>
+<li>L92: <code>(defcustom eshell-cannot-leave-input-list</code></li>
+<li>L139: <code>(defvar-keymap eshell-rebind-mode-map</code></li>
+<li>L144: <code>(defvar eshell-input-keymap)</code></li>
+<li>L146: <code>(defvar eshell-lock-keymap)</code></li>
+<li>L150: <code>(define-minor-mode eshell-rebind-mode</code></li>
+<li>L156: <code>(defun eshell-rebind-initialize ()  ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L167: <code>(defun eshell-lock-local-map (&amp;optional arg)</code></li>
+<li>L181: <code>(defun eshell-save-previous-point ()</code></li>
+<li>L199: <code>(defun eshell-rebind-input-map ()</code></li>
+<li>L218: <code>(defun eshell-setup-input-keymap ()</code></li>
+<li>L224: <code>(define-key eshell-input-keymap (caar bindings)</code></li>
+<li>L228: <code>(defun eshell-delete-backward-char (n)</code></li>
+<li>L236: <code>(defun eshell-delchar-or-maybe-eof (arg)</code></li>
+<li>L252: <code>(provide 'em-rebind)</code></li>
+</ul>
+<h2>em-script.el</h2>
+<ul>
+<li>L26: <code>(require 'esh-mode)</code></li>
+<li>L27: <code>(require 'esh-io)</code></li>
+<li>L39: <code>(defcustom eshell-script-load-hook nil</code></li>
+<li>L45: <code>(defcustom eshell-login-script (expand-file-name "login" eshell-directory-name)</code></li>
+<li>L52: <code>(defcustom eshell-rc-script (expand-file-name "profile" eshell-directory-name)</code></li>
+<li>L60: <code>(defun eshell-script-initialize ()  ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L87: <code>(defun eshell--source-file (file &amp;optional args subcommand-p)</code></li>
+<li>L101: <code>(defun eshell-source-file (file &amp;optional args subcommand-p)</code></li>
+<li>L109: <code>(defun eshell-execute-file (file &amp;optional args destination)</code></li>
+<li>L149: <code>(defun eshell-batch-file ()</code></li>
+<li>L176: <code>(defun eshell/source (file &amp;rest args)</code></li>
+<li>L183: <code>(defun eshell/. (file &amp;rest args)</code></li>
+<li>L190: <code>(provide 'em-script)</code></li>
+</ul>
+<h2>em-smart.el</h2>
+<ul>
+<li>L71: <code>(require 'esh-mode)</code></li>
+<li>L88: <code>(defcustom eshell-smart-load-hook nil</code></li>
+<li>L94: <code>(defcustom eshell-smart-unload-hook</code></li>
+<li>L104: <code>(defcustom eshell-review-quick-commands nil</code></li>
+<li>L121: <code>(defcustom eshell-smart-display-navigate-list</code></li>
+<li>L133: <code>(defcustom eshell-smart-space-goes-to-end t</code></li>
+<li>L152: <code>(defcustom eshell-where-to-jump 'begin</code></li>
+<li>L166: <code>(defun eshell-smart-initialize ()   ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L193: <code>(defun eshell-smart-scroll-windows ()</code></li>
+<li>L203: <code>(defun eshell-smart-display-setup ()</code></li>
+<li>L221: <code>(defun eshell-disable-after-change (_b _e _l)</code></li>
+<li>L227: <code>(defun eshell-smart-maybe-jump-to-end ()</code></li>
+<li>L240: <code>(defun eshell-smart-scroll ()</code></li>
+<li>L257: <code>(defun eshell-smart-goto-end ()</code></li>
+<li>L262: <code>(defun eshell-smart-display-move ()</code></li>
+<li>L302: <code>(defun em-smart-unload-hook ()</code></li>
+<li>L305: <code>(provide 'em-smart)</code></li>
+</ul>
+<h2>em-term.el</h2>
+<ul>
+<li>L34: <code>(require 'cl-lib)</code></li>
+<li>L35: <code>(require 'esh-util)</code></li>
+<li>L36: <code>(require 'esh-ext)</code></li>
+<li>L37: <code>(require 'term)</code></li>
+<li>L52: <code>(defcustom eshell-term-load-hook nil</code></li>
+<li>L57: <code>(defcustom eshell-visual-commands</code></li>
+<li>L72: <code>(defcustom eshell-visual-subcommands</code></li>
+<li>L93: <code>(defcustom eshell-visual-options</code></li>
+<li>L116: <code>(defcustom eshell-term-name term-term-name</code></li>
+<li>L123: <code>(defcustom eshell-escape-control-x t</code></li>
+<li>L131: <code>(defcustom eshell-destroy-buffer-when-process-dies nil</code></li>
+<li>L144: <code>(defun eshell-term-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L151: <code>(defun eshell-visual-command-p (command args)</code></li>
+<li>L164: <code>(defun eshell-exec-visual (&amp;rest args)</code></li>
+<li>L196: <code>(defun eshell-term-sentinel (proc msg)</code></li>
+<li>L286: <code>;       (define-key eshell-term-raw-map eshell-term-escape-char 'eshell-term-send-raw))</code></li>
+<li>L288: <code>;   (define-key eshell-term-raw-map c eshell-term-raw-escape-map)</code></li>
+<li>L290: <code>;   (define-key eshell-term-raw-escape-map "\C-x"</code></li>
+<li>L292: <code>;   (define-key eshell-term-raw-escape-map "\C-v"</code></li>
+<li>L294: <code>;   (define-key eshell-term-raw-escape-map "\C-u"</code></li>
+<li>L296: <code>;   (define-key eshell-term-raw-escape-map c 'eshell-term-send-raw))</code></li>
+<li>L308: <code>;    (define-key map (make-string 1 i) 'eshell-term-send-raw)</code></li>
+<li>L309: <code>;    (define-key esc-map (make-string 1 i) 'eshell-term-send-raw-meta)</code></li>
+<li>L311: <code>;  (define-key map "\e" esc-map)</code></li>
+<li>L315: <code>;  (define-key eshell-term-raw-map [mouse-2] 'eshell-term-mouse-paste)</code></li>
+<li>L316: <code>;  (define-key eshell-term-raw-map [up] 'eshell-term-send-up)</code></li>
+<li>L317: <code>;  (define-key eshell-term-raw-map [down] 'eshell-term-send-down)</code></li>
+<li>L318: <code>;  (define-key eshell-term-raw-map [right] 'eshell-term-send-right)</code></li>
+<li>L319: <code>;  (define-key eshell-term-raw-map [left] 'eshell-term-send-left)</code></li>
+<li>L320: <code>;  (define-key eshell-term-raw-map [delete] 'eshell-term-send-del)</code></li>
+<li>L321: <code>;  (define-key eshell-term-raw-map [backspace] 'eshell-term-send-backspace)</code></li>
+<li>L322: <code>;  (define-key eshell-term-raw-map [home] 'eshell-term-send-home)</code></li>
+<li>L323: <code>;  (define-key eshell-term-raw-map [end] 'eshell-term-send-end)</code></li>
+<li>L324: <code>;  (define-key eshell-term-raw-map [prior] 'eshell-term-send-prior)</code></li>
+<li>L325: <code>;  (define-key eshell-term-raw-map [next] 'eshell-term-send-next)</code></li>
+<li>L332: <code>(provide 'em-term)</code></li>
+</ul>
+<h2>em-tramp.el</h2>
+<ul>
+<li>L28: <code>(require 'esh-util)</code></li>
+<li>L29: <code>(require 'esh-cmd)</code></li>
+<li>L34: <code>(require 'tramp)</code></li>
+<li>L50: <code>(defun eshell-tramp-initialize ()   ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L61: <code>(defun eshell/su (&amp;rest args)</code></li>
+<li>L95: <code>(defun eshell--method-wrap-directory (directory method &amp;optional user)</code></li>
+<li>L110: <code>(defun eshell/sudo (&amp;rest args)</code></li>
+<li>L132: <code>(defun eshell/doas (&amp;rest args)</code></li>
+<li>L154: <code>(provide 'em-tramp)</code></li>
+</ul>
+<h2>em-unix.el</h2>
+<ul>
+<li>L38: <code>(require 'esh-mode)</code></li>
+<li>L39: <code>(require 'pcomplete)</code></li>
+<li>L56: <code>(defcustom eshell-unix-load-hook nil</code></li>
+<li>L62: <code>(defcustom eshell-plain-grep-behavior nil</code></li>
+<li>L69: <code>(defcustom eshell-no-grep-available (not (eshell-search-path "grep"))</code></li>
+<li>L74: <code>(defcustom eshell-plain-diff-behavior nil</code></li>
+<li>L81: <code>(defcustom eshell-plain-locate-behavior (featurep 'xemacs)</code></li>
+<li>L88: <code>(defcustom eshell-rm-removes-directories nil</code></li>
+<li>L103: <code>(defcustom eshell-rm-interactive-query 'root</code></li>
+<li>L111: <code>(defcustom eshell-mv-interactive-query 'root</code></li>
+<li>L119: <code>(defcustom eshell-mv-overwrite-files t</code></li>
+<li>L124: <code>(defcustom eshell-cp-interactive-query 'root</code></li>
+<li>L132: <code>(defcustom eshell-cp-overwrite-files t</code></li>
+<li>L137: <code>(defcustom eshell-ln-interactive-query 'root</code></li>
+<li>L145: <code>(defcustom eshell-ln-overwrite-files nil</code></li>
+<li>L150: <code>(defcustom eshell-default-target-is-dot nil</code></li>
+<li>L155: <code>(defcustom eshell-du-prefer-over-ange nil</code></li>
+<li>L163: <code>(defun eshell-unix-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L183: <code>(defun eshell-interactive-query-p (value)</code></li>
+<li>L194: <code>(defun eshell/man (&amp;rest args)</code></li>
+<li>L200: <code>(defun eshell/info (&amp;rest args)</code></li>
+<li>L231: <code>(defun eshell-remove-entries (files &amp;optional toplevel)</code></li>
+<li>L262: <code>(defun eshell/rm (&amp;rest args)</code></li>
+<li>L346: <code>(defun eshell/mkdir (&amp;rest args)</code></li>
+<li>L364: <code>(defun eshell/rmdir (&amp;rest args)</code></li>
+<li>L385: <code>(defun eshell-shuffle-files (command action files target func deep &amp;rest args)</code></li>
+<li>L486: <code>(defun eshell-shorthand-tar-command (command args)</code></li>
+<li>L508: <code>(defmacro eshell-mvcpln-template (command action func query-var</code></li>
+<li>L537: <code>(defun eshell/mv (&amp;rest args)</code></li>
+<li>L566: <code>(defun eshell/cp (&amp;rest args)</code></li>
+<li>L605: <code>(defun eshell/ln (&amp;rest args)</code></li>
+<li>L639: <code>(defun eshell/cat (&amp;rest args)</code></li>
+<li>L691: <code>(defun eshell-compile (command args &amp;optional method mode)</code></li>
+<li>L716: <code>(defun eshell/compile (&amp;rest args)</code></li>
+<li>L734: <code>(defun eshell/make (&amp;rest args)</code></li>
+<li>L744: <code>(defun eshell-occur-mode-goto-occurrence ()</code></li>
+<li>L751: <code>(defun eshell-occur-mode-mouse-goto (event)</code></li>
+<li>L762: <code>(defun eshell-poor-mans-grep (args)</code></li>
+<li>L806: <code>(defun eshell-grep (command args &amp;optional maybe-use-occur)</code></li>
+<li>L818: <code>(defun eshell/grep (&amp;rest args)</code></li>
+<li>L822: <code>(defun eshell/egrep (&amp;rest args)</code></li>
+<li>L826: <code>(defun eshell/fgrep (&amp;rest args)</code></li>
+<li>L830: <code>(defun eshell/agrep (&amp;rest args)</code></li>
+<li>L834: <code>(defun eshell/rgrep (&amp;rest args)</code></li>
+<li>L838: <code>(defun eshell/glimpse (&amp;rest args)</code></li>
+<li>L848: <code>(defun eshell-complete-host-reference ()</code></li>
+<li>L876: <code>(defun eshell-du-sum-directory (path depth)</code></li>
+<li>L911: <code>(defun eshell/du (&amp;rest args)</code></li>
+<li>L979: <code>(defun eshell-show-elapsed-time ()</code></li>
+<li>L986: <code>(defun eshell/time (&amp;rest args)</code></li>
+<li>L1016: <code>(defun eshell/whoami ()</code></li>
+<li>L1020: <code>(defun eshell-nil-blank-string (string)</code></li>
+<li>L1028: <code>(defun eshell/diff (&amp;rest args)</code></li>
+<li>L1062: <code>(defun eshell/locate (&amp;rest args)</code></li>
+<li>L1079: <code>(defun eshell/occur (&amp;rest args)</code></li>
+<li>L1093: <code>(provide 'em-unix)</code></li>
+</ul>
+<h2>em-xtra.el</h2>
+<ul>
+<li>L26: <code>(require 'cl-lib)</code></li>
+<li>L27: <code>(require 'esh-util)</code></li>
+<li>L45: <code>(defun eshell/expr (&amp;rest args)</code></li>
+<li>L49: <code>(defun eshell/substitute (&amp;rest args)</code></li>
+<li>L54: <code>(defun eshell/count (&amp;rest args)</code></li>
+<li>L59: <code>(defun eshell/mismatch (&amp;rest args)</code></li>
+<li>L64: <code>(defun eshell/union (&amp;rest args)</code></li>
+<li>L69: <code>(defun eshell/intersection (&amp;rest args)</code></li>
+<li>L74: <code>(defun eshell/set-difference (&amp;rest args)</code></li>
+<li>L79: <code>(defun eshell/set-exclusive-or (&amp;rest args)</code></li>
+<li>L87: <code>(provide 'em-xtra)</code></li>
+</ul>
+<h2>esh-arg.el</h2>
+<ul>
+<li>L30: <code>(require 'esh-util)</code></li>
+<li>L31: <code>(require 'esh-module)</code></li>
+<li>L33: <code>(require 'pcomplete)</code></li>
+<li>L59: <code>(defcustom eshell-arg-load-hook nil</code></li>
+<li>L65: <code>(defcustom eshell-delimiter-argument-list '(?\; ?&amp; ?\| ?\&gt; ?\s ?\t ?\n)</code></li>
+<li>L70: <code>(defcustom eshell-special-chars-inside-quoting '(?\\ ?\")</code></li>
+<li>L75: <code>(defcustom eshell-special-chars-outside-quoting</code></li>
+<li>L89: <code>(defcustom eshell-parse-argument-hook</code></li>
+<li>L196: <code>(defcustom eshell-special-ref-default "buffer"</code></li>
+<li>L205: <code>(defvar-keymap eshell-arg-mode-map</code></li>
+<li>L210: <code>(define-minor-mode eshell-arg-mode</code></li>
+<li>L216: <code>(defun eshell-arg-initialize ()     ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L232: <code>(defun eshell-concat (quoted &amp;rest rest)</code></li>
+<li>L272: <code>(defun eshell-concat-1 (quoted first second)</code></li>
+<li>L282: <code>(defun eshell-concat-groups (quoted &amp;rest args)</code></li>
+<li>L315: <code>(defun eshell-resolve-current-argument ()</code></li>
+<li>L339: <code>(defun eshell-finish-arg (&amp;rest arguments)</code></li>
+<li>L352: <code>(defun eshell-quote-argument (string)</code></li>
+<li>L367: <code>(defun eshell-parse-arguments (beg end)</code></li>
+<li>L400: <code>(defun eshell-parse-argument ()</code></li>
+<li>L450: <code>(defun eshell-quote-backslash (string &amp;optional index)</code></li>
+<li>L462: <code>(defun eshell-parse-backslash ()</code></li>
+<li>L494: <code>(defun eshell-parse-literal-quote ()</code></li>
+<li>L506: <code>(defun eshell-parse-double-quote ()</code></li>
+<li>L523: <code>(defun eshell-unescape-inner-double-quote (bound)</code></li>
+<li>L547: <code>(defun eshell-parse-delimiter ()</code></li>
+<li>L564: <code>(defun eshell-prepare-splice (args)</code></li>
+<li>L600: <code>(defun eshell-parse-special-reference ()</code></li>
+<li>L633: <code>(defun eshell-insert-special-reference (type &amp;rest args)</code></li>
+<li>L649: <code>(defun eshell-complete-special-reference ()</code></li>
+<li>L709: <code>(defun eshell-get-buffer (buffer-or-name)</code></li>
+<li>L715: <code>(defun eshell-insert-buffer-name (buffer-name)</code></li>
+<li>L720: <code>(defun eshell-complete-buffer-ref ()</code></li>
+<li>L724: <code>(defun eshell-get-marker (position buffer-or-name)</code></li>
+<li>L733: <code>(defun eshell-insert-marker (position buffer-name)</code></li>
+<li>L740: <code>(defun eshell-complete-marker-ref ()</code></li>
+<li>L745: <code>(provide 'esh-arg)</code></li>
+</ul>
+<h2>esh-cmd.el</h2>
+<ul>
+<li>L103: <code>(require 'esh-util)</code></li>
+<li>L104: <code>(require 'esh-arg)</code></li>
+<li>L105: <code>(require 'esh-proc)</code></li>
+<li>L106: <code>(require 'esh-module)</code></li>
+<li>L107: <code>(require 'esh-io)</code></li>
+<li>L108: <code>(require 'esh-ext)</code></li>
+<li>L110: <code>(require 'eldoc)</code></li>
+<li>L111: <code>(require 'generator)</code></li>
+<li>L112: <code>(require 'pcomplete)</code></li>
+<li>L125: <code>(defcustom eshell-prefer-lisp-functions nil</code></li>
+<li>L129: <code>(defcustom eshell-lisp-regexp "\\([(']\\|#'\\)"</code></li>
+<li>L134: <code>(defcustom eshell-lisp-form-nil-is-failure t</code></li>
+<li>L138: <code>(defcustom eshell-pre-command-hook nil</code></li>
+<li>L142: <code>(defcustom eshell-post-command-hook nil</code></li>
+<li>L146: <code>(defcustom eshell-prepare-command-hook nil</code></li>
+<li>L156: <code>(defcustom eshell-named-command-hook nil</code></li>
+<li>L184: <code>(defcustom eshell-pre-rewrite-command-hook</code></li>
+<li>L192: <code>(defcustom eshell-rewrite-command-hook</code></li>
+<li>L222: <code>(defcustom eshell-complex-commands '("ls")</code></li>
+<li>L238: <code>(defcustom eshell-cmd-load-hook nil</code></li>
+<li>L243: <code>(defcustom eshell-deferrable-commands</code></li>
+<li>L253: <code>(defcustom eshell-subcommand-bindings</code></li>
+<li>L323: <code>(defun eshell-cmd-initialize ()     ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L342: <code>(defun eshell-complete-lisp-symbols ()</code></li>
+<li>L353: <code>(defun eshell-add-command (form &amp;optional background)</code></li>
+<li>L365: <code>(defun eshell-remove-command (command)</code></li>
+<li>L377: <code>(defun eshell-commands-for-process (process)</code></li>
+<li>L394: <code>(defun eshell-parse-command (command &amp;optional args toplevel)</code></li>
+<li>L448: <code>(defun eshell-debug-show-parsed-args (terms)</code></li>
+<li>L453: <code>(defun eshell-no-command-conversion (terms)</code></li>
+<li>L460: <code>(defun eshell-subcommand-arg-values (terms)</code></li>
+<li>L470: <code>(defun eshell-rewrite-sexp-command (terms)</code></li>
+<li>L477: <code>(defun eshell-rewrite-initial-subcommand (terms)</code></li>
+<li>L483: <code>(defun eshell-rewrite-named-command (terms)</code></li>
+<li>L529: <code>(defun eshell-rewrite-for-command (terms)</code></li>
+<li>L556: <code>(defun eshell-structure-basic-command (func names keyword test body</code></li>
+<li>L587: <code>(defun eshell-rewrite-while-command (terms)</code></li>
+<li>L600: <code>(defun eshell-rewrite-if-command (terms)</code></li>
+<li>L619: <code>(defun eshell-exit-success-p ()</code></li>
+<li>L626: <code>(defun eshell-parse-pipeline (terms)</code></li>
+<li>L664: <code>(defun eshell-parse-subcommand-argument ()</code></li>
+<li>L680: <code>(defun eshell-parse-lisp-argument ()</code></li>
+<li>L696: <code>(defun eshell-split-commands (terms separator &amp;optional</code></li>
+<li>L724: <code>(defun eshell-separate-commands (terms separator &amp;optional</code></li>
+<li>L760: <code>(defmacro eshell-do-subjob (object)</code></li>
+<li>L770: <code>(defmacro eshell-commands (object &amp;optional silent)</code></li>
+<li>L779: <code>(defmacro eshell-trap-errors (object)</code></li>
+<li>L796: <code>(defmacro eshell-with-copied-handles (object &amp;optional steal-p)</code></li>
+<li>L807: <code>(defmacro eshell-protect (object)</code></li>
+<li>L813: <code>(defun eshell--unmark-deferrable (command)</code></li>
+<li>L827: <code>(defmacro eshell-do-pipelines (pipeline &amp;optional notfirst)</code></li>
+<li>L854: <code>(defmacro eshell-do-pipelines-synchronously (pipeline)</code></li>
+<li>L884: <code>(defmacro eshell-execute-pipeline (pipeline)</code></li>
+<li>L891: <code>(defmacro eshell-as-subcommand (command)</code></li>
+<li>L901: <code>(defmacro eshell-do-command-to-value (object)</code></li>
+<li>L911: <code>(defmacro eshell-command-to-value (command)</code></li>
+<li>L946: <code>(defun eshell--invoke-command-directly-p (command)</code></li>
+<li>L978: <code>(defun eshell-invoke-directly-p (command)</code></li>
+<li>L989: <code>(defun eshell-eval-argument (argument)</code></li>
+<li>L997: <code>(defun eshell-eval-command (command &amp;optional input)</code></li>
+<li>L1028: <code>(defun eshell-resume-command (proc status)</code></li>
+<li>L1053: <code>(defun eshell-resume-eval (command)</code></li>
+<li>L1080: <code>(defmacro eshell-manipulate (form tag &amp;rest body)</code></li>
+<li>L1094: <code>(defun eshell-do-eval (form &amp;optional synchronous-p)</code></li>
+<li>L1321: <code>(defun eshell/which (command &amp;rest names)</code></li>
+<li>L1339: <code>(defun eshell-named-command (command &amp;optional args)</code></li>
+<li>L1365: <code>(defun eshell-find-alias-function (name)</code></li>
+<li>L1385: <code>(defun eshell--find-plain-lisp-command (command)</code></li>
+<li>L1394: <code>(defun eshell-plain-command--which (command)</code></li>
+<li>L1403: <code>(defun eshell-plain-command (command args)</code></li>
+<li>L1411: <code>(defun eshell-exec-lisp (printer errprint func-or-form args form-p)</code></li>
+<li>L1499: <code>(defun eshell/funcall (func &amp;rest args)</code></li>
+<li>L1509: <code>(defun eshell-lisp-command (object &amp;optional args)</code></li>
+<li>L1563: <code>(provide 'esh-cmd)</code></li>
+</ul>
+<h2>esh-ext.el</h2>
+<ul>
+<li>L35: <code>(require 'esh-io)</code></li>
+<li>L36: <code>(require 'esh-arg)</code></li>
+<li>L37: <code>(require 'esh-opt)</code></li>
+<li>L38: <code>(require 'esh-proc)</code></li>
+<li>L39: <code>(require 'esh-util)</code></li>
+<li>L49: <code>(defcustom eshell-ext-load-hook nil</code></li>
+<li>L55: <code>(defcustom eshell-binary-suffixes exec-suffixes</code></li>
+<li>L60: <code>(defcustom eshell-force-execution</code></li>
+<li>L73: <code>(defun eshell-search-path (name)</code></li>
+<li>L93: <code>(defcustom eshell-windows-shell-file</code></li>
+<li>L118: <code>(defcustom eshell-interpreter-alist</code></li>
+<li>L142: <code>(defcustom eshell-alternate-command-hook nil</code></li>
+<li>L155: <code>(defcustom eshell-command-interpreter-max-length 256</code></li>
+<li>L160: <code>(defcustom eshell-explicit-command-char ?*</code></li>
+<li>L167: <code>(defcustom eshell-explicit-remote-commands t</code></li>
+<li>L181: <code>(defun eshell-ext-initialize ()     ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L186: <code>(defun eshell-explicit-command--which (command)</code></li>
+<li>L191: <code>(defun eshell-explicit-command (command args)</code></li>
+<li>L206: <code>(defun eshell-quoted-file-command--which (command)</code></li>
+<li>L210: <code>(defun eshell-quoted-file-command (command args)</code></li>
+<li>L220: <code>(defun eshell-remote-command (command args)</code></li>
+<li>L238: <code>(defun eshell-connection-local-command (command args)</code></li>
+<li>L258: <code>(defun eshell-external-command--which (command)</code></li>
+<li>L263: <code>(defun eshell-external-command (command args)</code></li>
+<li>L276: <code>(defun eshell/addpath (&amp;rest args)</code></li>
+<li>L298: <code>(defun eshell-script-interpreter (file)</code></li>
+<li>L326: <code>(defun eshell-find-interpreter (file args &amp;optional no-examine-p)</code></li>
+<li>L383: <code>(provide 'esh-ext)</code></li>
+</ul>
+<h2>esh-io.el</h2>
+<ul>
+<li>L71: <code>(require 'esh-arg)</code></li>
+<li>L72: <code>(require 'esh-util)</code></li>
+<li>L88: <code>(defcustom eshell-io-load-hook nil</code></li>
+<li>L94: <code>(defcustom eshell-number-of-handles 3</code></li>
+<li>L103: <code>(defcustom eshell-output-handle 1</code></li>
+<li>L108: <code>(defcustom eshell-error-handle 2</code></li>
+<li>L113: <code>(defcustom eshell-print-queue-size 5</code></li>
+<li>L122: <code>(defcustom eshell-buffered-print-size 2048</code></li>
+<li>L132: <code>(defcustom eshell-buffered-print-redisplay-throttle 0.025</code></li>
+<li>L140: <code>(defcustom eshell-virtual-targets</code></li>
+<li>L217: <code>(defun eshell-io-initialize ()      ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L227: <code>(defun eshell-parse-redirection ()</code></li>
+<li>L287: <code>(defun eshell-strip-redirections (terms)</code></li>
+<li>L320: <code>(defun eshell--apply-redirections (cmd)</code></li>
+<li>L328: <code>(defun eshell-create-handles</code></li>
+<li>L359: <code>(defun eshell-duplicate-handles (handles &amp;optional steal-p)</code></li>
+<li>L378: <code>(defun eshell-protect-handles (handles)</code></li>
+<li>L385: <code>(defun eshell-close-handles (&amp;optional exit-code result handles)</code></li>
+<li>L405: <code>(defun eshell-close-handle (handle status)</code></li>
+<li>L418: <code>(defun eshell-set-output-handle (index mode &amp;optional target handles)</code></li>
+<li>L440: <code>(defun eshell-copy-output-handle (index index-to-copy &amp;optional handles)</code></li>
+<li>L450: <code>(defun eshell-set-all-output-handles (mode &amp;optional target handles)</code></li>
+<li>L456: <code>(defun eshell-kill-append (string)</code></li>
+<li>L461: <code>(defun eshell-clipboard-append (string)</code></li>
+<li>L467: <code>(defun eshell-interactive-output-p (&amp;optional index handles)</code></li>
+<li>L497: <code>(defun eshell-init-print-buffer ()</code></li>
+<li>L503: <code>(defun eshell-flush (&amp;optional redisplay-now)</code></li>
+<li>L525: <code>(defun eshell-buffered-print (&amp;rest strings)</code></li>
+<li>L536: <code>(defmacro eshell-with-buffered-print (&amp;rest body)</code></li>
+<li>L565: <code>(defun eshell--output-maybe-n (object handle)</code></li>
+<li>L774: <code>(defun eshell-output-object (object &amp;optional handle-index handles)</code></li>
+<li>L784: <code>(defun eshell-maybe-output-newline (&amp;optional handle-index handles)</code></li>
+<li>L797: <code>(provide 'esh-io)</code></li>
+</ul>
+<h2>esh-mode.el</h2>
+<ul>
+<li>L63: <code>(require 'esh-arg)</code></li>
+<li>L64: <code>(require 'esh-cmd)</code></li>
+<li>L65: <code>(require 'esh-ext)</code></li>
+<li>L66: <code>(require 'esh-io)</code></li>
+<li>L67: <code>(require 'esh-module)</code></li>
+<li>L68: <code>(require 'esh-proc)</code></li>
+<li>L69: <code>(require 'esh-util)</code></li>
+<li>L70: <code>(require 'esh-var)</code></li>
+<li>L79: <code>(defcustom eshell-mode-unload-hook nil</code></li>
+<li>L84: <code>(defcustom eshell-mode-hook nil</code></li>
+<li>L88: <code>(defcustom eshell-first-time-mode-hook nil</code></li>
+<li>L93: <code>(defcustom eshell-exit-hook nil</code></li>
+<li>L99: <code>(defcustom eshell-kill-on-exit t</code></li>
+<li>L104: <code>(defcustom eshell-input-filter-functions nil</code></li>
+<li>L110: <code>(defcustom eshell-send-direct-to-subprocesses nil</code></li>
+<li>L114: <code>(defcustom eshell-expand-input-functions nil</code></li>
+<li>L120: <code>(defcustom eshell-scroll-to-bottom-on-input nil</code></li>
+<li>L130: <code>(defcustom eshell-scroll-to-bottom-on-output nil</code></li>
+<li>L143: <code>(defcustom eshell-scroll-show-maximum-output t</code></li>
+<li>L151: <code>(defcustom eshell-buffer-maximum-lines 1024</code></li>
+<li>L158: <code>(defcustom eshell-output-filter-functions</code></li>
+<li>L169: <code>(defcustom eshell-preoutput-filter-functions nil</code></li>
+<li>L175: <code>(defcustom eshell-password-prompt-regexp</code></li>
+<li>L185: <code>(defcustom eshell-skip-prompt-function nil</code></li>
+<li>L191: <code>(defcustom eshell-status-in-mode-line t</code></li>
+<li>L195: <code>(defcustom eshell-directory-name</code></li>
+<li>L283: <code>(defvar-keymap eshell-mode-map</code></li>
+<li>L289: <code>(defvar-keymap eshell-command-map</code></li>
+<li>L305: <code>(defvar-keymap eshell-command-repeat-map</code></li>
+<li>L313: <code>(defun eshell-kill-buffer-function ()</code></li>
+<li>L325: <code>(define-derived-mode eshell-mode fundamental-mode "Eshell"</code></li>
+<li>L414: <code>(defun eshell-command-started ()</code></li>
+<li>L419: <code>(defun eshell-command-finished ()</code></li>
+<li>L426: <code>(defun eshell-toggle-direct-send ()</code></li>
+<li>L437: <code>(defun eshell-self-insert-command ()</code></li>
+<li>L445: <code>(defun eshell-intercept-commands ()</code></li>
+<li>L466: <code>(defun eshell-find-tag (&amp;optional tagname next-p regexp-p)</code></li>
+<li>L478: <code>(defun eshell-move-argument (limit func property arg)</code></li>
+<li>L496: <code>(defun eshell-forward-argument (&amp;optional arg)</code></li>
+<li>L501: <code>(defun eshell-backward-argument (&amp;optional arg)</code></li>
+<li>L506: <code>(defun eshell-repeat-argument (&amp;optional arg)</code></li>
+<li>L530: <code>(defun eshell-interactive-print (string)</code></li>
+<li>L557: <code>(defun eshell-parse-command-input (beg end &amp;optional args)</code></li>
+<li>L579: <code>(defun eshell-update-markers (pmark)</code></li>
+<li>L585: <code>(defun eshell-queue-input (&amp;optional use-region)</code></li>
+<li>L592: <code>(defun eshell-send-input (&amp;optional use-region queue-p no-newline)</code></li>
+<li>L674: <code>(defun eshell-send-eof-to-process ()</code></li>
+<li>L687: <code>(defun eshell-interactive-filter (buffer string)</code></li>
+<li>L728: <code>(defun eshell-run-output-filters ()</code></li>
+<li>L736: <code>(defun eshell-preinput-scroll-to-bottom ()</code></li>
+<li>L762: <code>(defun eshell-postoutput-scroll-to-bottom ()</code></li>
+<li>L794: <code>(defun eshell-beginning-of-input ()</code></li>
+<li>L798: <code>(defun eshell-beginning-of-output ()</code></li>
+<li>L802: <code>(defun eshell-end-of-output ()</code></li>
+<li>L808: <code>(defun eshell-delete-output (&amp;optional kill)</code></li>
+<li>L825: <code>(defun eshell-show-output (&amp;optional arg)</code></li>
+<li>L840: <code>(defun eshell-mark-output (&amp;optional arg)</code></li>
+<li>L847: <code>(defun eshell-kill-input ()</code></li>
+<li>L856: <code>(defun eshell-show-maximum-output (&amp;optional interactive)</code></li>
+<li>L865: <code>(defun eshell/clear (&amp;optional scrollback)</code></li>
+<li>L875: <code>(defun eshell/clear-scrollback ()</code></li>
+<li>L880: <code>(defun eshell-get-old-input (&amp;optional use-current-region)</code></li>
+<li>L894: <code>(defun eshell-copy-old-input ()</code></li>
+<li>L901: <code>(defun eshell/exit ()</code></li>
+<li>L905: <code>(defun eshell-life-is-too-much ()</code></li>
+<li>L912: <code>(defun eshell-truncate-buffer ()</code></li>
+<li>L936: <code>(defun eshell-send-invisible ()</code></li>
+<li>L948: <code>(defun eshell-watch-for-password-prompt ()</code></li>
+<li>L975: <code>(defun eshell-handle-control-codes ()</code></li>
+<li>L1008: <code>(defun eshell-handle-ansi-color ()</code></li>
+<li>L1022: <code>(defun eshell-bookmark-name ()</code></li>
+<li>L1028: <code>(defun eshell-bookmark-make-record ()</code></li>
+<li>L1035: <code>(defun eshell-bookmark-jump (bookmark)</code></li>
+<li>L1042: <code>(provide 'esh-mode)</code></li>
+</ul>
+<h2>esh-module-loaddefs.el</h2>
+<ul>
+<li>L224: <code>(provide 'esh-module-loaddefs)</code></li>
+</ul>
+<h2>esh-module.el</h2>
+<ul>
+<li>L27: <code>(require 'esh-util)</code></li>
+<li>L45: <code>(defcustom eshell-module-unload-hook</code></li>
+<li>L52: <code>(defcustom eshell-module-loading-messages t</code></li>
+<li>L58: <code>(defcustom eshell-modules-list</code></li>
+<li>L113: <code>(defun eshell-load-modules (modules)</code></li>
+<li>L132: <code>(defun eshell-initialize-modules (modules)</code></li>
+<li>L145: <code>(defun eshell-unload-modules (modules &amp;optional kind)</code></li>
+<li>L165: <code>(defun eshell-unload-extension-modules ()</code></li>
+<li>L169: <code>(provide 'esh-module)</code></li>
+</ul>
+<h2>esh-opt.el</h2>
+<ul>
+<li>L30: <code>(require 'esh-util)</code></li>
+<li>L37: <code>(defmacro eshell-eval-using-options (name macro-args options &amp;rest body-forms)</code></li>
+<li>L125: <code>(defun eshell--get-option-symbols (options)</code></li>
+<li>L133: <code>(defun eshell--do-opts (name args orig-args options option-syms)</code></li>
+<li>L155: <code>(defun eshell-show-usage (name options)</code></li>
+<li>L204: <code>(defun eshell--split-switch (switch kind)</code></li>
+<li>L217: <code>(defun eshell--set-option (name ai opt value options opt-vals)</code></li>
+<li>L240: <code>(defun eshell--process-option (name switch kind ai options opt-vals)</code></li>
+<li>L281: <code>(defun eshell--process-args (name args options option-syms)</code></li>
+<li>L317: <code>(provide 'esh-opt)</code></li>
+</ul>
+<h2>esh-proc.el</h2>
+<ul>
+<li>L26: <code>(require 'esh-arg)</code></li>
+<li>L27: <code>(require 'esh-io)</code></li>
+<li>L28: <code>(require 'esh-util)</code></li>
+<li>L30: <code>(require 'pcomplete)</code></li>
+<li>L41: <code>(defcustom eshell-proc-load-hook nil</code></li>
+<li>L46: <code>(defcustom eshell-process-wait-time 0.05</code></li>
+<li>L51: <code>(defcustom eshell-process-wait-seconds 0</code></li>
+<li>L57: <code>(defcustom eshell-process-wait-milliseconds 50</code></li>
+<li>L63: <code>(defcustom eshell-done-messages-in-minibuffer t</code></li>
+<li>L67: <code>(defcustom eshell-delete-exited-processes t</code></li>
+<li>L86: <code>(defcustom eshell-reset-signals</code></li>
+<li>L91: <code>(defcustom eshell-exec-hook nil</code></li>
+<li>L100: <code>(defcustom eshell-kill-hook nil</code></li>
+<li>L133: <code>(defvar-keymap eshell-proc-mode-map</code></li>
+<li>L143: <code>(defun eshell-kill-process-function (proc status)</code></li>
+<li>L155: <code>(define-minor-mode eshell-proc-mode</code></li>
+<li>L161: <code>(defun eshell-proc-initialize ()    ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L177: <code>(defun eshell-process-active-p (process)</code></li>
+<li>L187: <code>(defun eshell-wait-for-process (&amp;rest procs)</code></li>
+<li>L198: <code>(defun eshell/jobs ()</code></li>
+<li>L204: <code>(defun eshell/kill (&amp;rest args)</code></li>
+<li>L252: <code>(defun eshell-remove-process-entry (entry)</code></li>
+<li>L263: <code>(defun eshell-record-process-properties (process &amp;optional index)</code></li>
+<li>L283: <code>(defun eshell-gather-process-output (command args)</code></li>
+<li>L445: <code>(defun eshell-interactive-process-filter (process string)</code></li>
+<li>L459: <code>(defun eshell-insertion-filter (proc string)</code></li>
+<li>L500: <code>(defun eshell-sentinel (proc string)</code></li>
+<li>L561: <code>(defun eshell-process-interact (func &amp;optional all query)</code></li>
+<li>L583: <code>(defcustom eshell-kill-process-wait-time 5</code></li>
+<li>L587: <code>(defcustom eshell-kill-process-signals '(SIGINT SIGQUIT SIGKILL)</code></li>
+<li>L595: <code>(defcustom eshell-kill-processes-on-exit nil</code></li>
+<li>L617: <code>(defun eshell-round-robin-kill (&amp;optional query)</code></li>
+<li>L631: <code>(defun eshell-query-kill-processes ()</code></li>
+<li>L648: <code>(defun eshell--reset-after-signal (status)</code></li>
+<li>L660: <code>(defun eshell-interrupt-process ()</code></li>
+<li>L666: <code>(defun eshell-kill-process ()</code></li>
+<li>L672: <code>(defun eshell-quit-process ()</code></li>
+<li>L695: <code>(defun eshell-read-process-name (prompt)</code></li>
+<li>L705: <code>(defun eshell-insert-process (process)</code></li>
+<li>L714: <code>(defun eshell-complete-process-ref ()</code></li>
+<li>L718: <code>(provide 'esh-proc)</code></li>
+</ul>
+<h2>esh-util.el</h2>
+<ul>
+<li>L26: <code>(require 'seq)</code></li>
+<li>L36: <code>(defcustom eshell-stringify-t t</code></li>
+<li>L43: <code>(defcustom eshell-group-file "/etc/group"</code></li>
+<li>L47: <code>(defcustom eshell-passwd-file "/etc/passwd"</code></li>
+<li>L51: <code>(defcustom eshell-hosts-file "/etc/hosts"</code></li>
+<li>L61: <code>(defcustom eshell-handle-errors t</code></li>
+<li>L66: <code>(defcustom eshell-private-file-modes #o600 ; umask 177</code></li>
+<li>L70: <code>(defcustom eshell-private-directory-modes #o700 ; umask 077</code></li>
+<li>L74: <code>(defcustom eshell-tar-regexp</code></li>
+<li>L80: <code>(defcustom eshell-convert-numeric-arguments t</code></li>
+<li>L97: <code>(defcustom eshell-ange-ls-uids nil</code></li>
+<li>L105: <code>(defcustom eshell-debug-command nil</code></li>
+<li>L176: <code>(defmacro eshell-condition-case (tag form &amp;rest handlers)</code></li>
+<li>L186: <code>(defun eshell-debug-command-start (command)</code></li>
+<li>L195: <code>(defun eshell-always-debug-command (kind string &amp;rest objects)</code></li>
+<li>L204: <code>(defmacro eshell-debug-command (kind string &amp;rest objects)</code></li>
+<li>L216: <code>(defun eshell--mark-as-output (start end &amp;optional object)</code></li>
+<li>L224: <code>(defun eshell--mark-yanked-as-output (start end)</code></li>
+<li>L237: <code>(defun eshell--unmark-string-as-output (string)</code></li>
+<li>L251: <code>(defmacro eshell-with-temp-command (command &amp;rest body)</code></li>
+<li>L288: <code>(defun eshell-find-delimiter</code></li>
+<li>L338: <code>(defun eshell-convertible-to-number-p (string)</code></li>
+<li>L346: <code>(defun eshell-convert-to-number (string)</code></li>
+<li>L355: <code>(defun eshell-convert (string &amp;optional to-string)</code></li>
+<li>L401: <code>(defun eshell-get-path (&amp;optional literal-p)</code></li>
+<li>L427: <code>(defun eshell-set-path (path)</code></li>
+<li>L440: <code>(defun eshell-parse-colon-path (path-env)</code></li>
+<li>L451: <code>(defun eshell-split-filename (filename)</code></li>
+<li>L479: <code>(defun eshell-to-flat-string (value)</code></li>
+<li>L491: <code>(defun eshell-stringify (object)</code></li>
+<li>L520: <code>(defun eshell-regexp-arg (prompt)</code></li>
+<li>L532: <code>(defun eshell-printable-size (filesize &amp;optional human-readable</code></li>
+<li>L554: <code>(defun eshell-winnow-list (entries exclude &amp;optional predicates)</code></li>
+<li>L578: <code>(defun eshell-user-login-name ()</code></li>
+<li>L583: <code>(defun eshell-read-passwd-file (file)</code></li>
+<li>L603: <code>(defun eshell-read-passwd (file result-var timestamp-var)</code></li>
+<li>L615: <code>(defun eshell-read-group-names ()</code></li>
+<li>L629: <code>(defun eshell-read-user-names ()</code></li>
+<li>L653: <code>(defun eshell-subgroups (groupsym)</code></li>
+<li>L663: <code>(defmacro eshell-with-file-modes (modes &amp;rest forms)</code></li>
+<li>L668: <code>(defmacro eshell-with-private-file-modes (&amp;rest forms)</code></li>
+<li>L684: <code>(defun eshell-directory-files-and-attributes (dir &amp;optional full match nosort id-format)</code></li>
+<li>L695: <code>(defun eshell-current-ange-uids ()</code></li>
+<li>L712: <code>(defun eshell-parse-ange-ls (dir)</code></li>
+<li>L772: <code>(defun eshell-file-attributes (file &amp;optional id-format)</code></li>
+<li>L797: <code>(defun eshell-process-list-p (procs)</code></li>
+<li>L802: <code>(defun eshell-make-process-list (procs)</code></li>
+<li>L880: <code>(defun eshell-sublist (l &amp;optional n m)</code></li>
+<li>L888: <code>(provide 'esh-util)</code></li>
+</ul>
+<h2>esh-var.el</h2>
+<ul>
+<li>L113: <code>(require 'esh-util)</code></li>
+<li>L114: <code>(require 'esh-cmd)</code></li>
+<li>L115: <code>(require 'esh-opt)</code></li>
+<li>L116: <code>(require 'esh-module)</code></li>
+<li>L117: <code>(require 'esh-arg)</code></li>
+<li>L118: <code>(require 'esh-io)</code></li>
+<li>L120: <code>(require 'pcomplete)</code></li>
+<li>L121: <code>(require 'ring)</code></li>
+<li>L136: <code>(defcustom eshell-var-load-hook nil</code></li>
+<li>L141: <code>(defcustom eshell-prefer-lisp-variables nil</code></li>
+<li>L145: <code>(defcustom eshell-complete-export-definition t</code></li>
+<li>L149: <code>(defcustom eshell-modify-global-environment nil</code></li>
+<li>L153: <code>(defcustom eshell-variable-name-regexp "[A-Za-z0-9_-]+"</code></li>
+<li>L160: <code>(defcustom eshell-variable-aliases-list</code></li>
+<li>L255: <code>(defvar-keymap eshell-var-mode-map</code></li>
+<li>L274: <code>(define-minor-mode eshell-var-mode</code></li>
+<li>L280: <code>(defun eshell-var-initialize ()     ;Called from 'eshell-mode' via intern-soft!</code></li>
+<li>L309: <code>(defun eshell-parse-local-variables (args)</code></li>
+<li>L335: <code>(defun eshell-handle-local-variables ()</code></li>
+<li>L340: <code>(defun eshell-interpolate-variable ()</code></li>
+<li>L348: <code>(defun eshell/define (var-alias definition)</code></li>
+<li>L374: <code>(defun eshell/export (&amp;rest sets)</code></li>
+<li>L382: <code>(defun pcomplete/eshell-mode/export ()</code></li>
+<li>L389: <code>(defun eshell/unset (&amp;rest args)</code></li>
+<li>L396: <code>(defun pcomplete/eshell-mode/unset ()</code></li>
+<li>L400: <code>(defun eshell/set (&amp;rest args)</code></li>
+<li>L408: <code>(defun pcomplete/eshell-mode/set ()</code></li>
+<li>L412: <code>(defun eshell/setq (&amp;rest args)</code></li>
+<li>L422: <code>(defun pcomplete/eshell-mode/setq ()</code></li>
+<li>L428: <code>(defun eshell/env (&amp;rest args)</code></li>
+<li>L445: <code>(defun eshell-insert-envvar (envvar-name)</code></li>
+<li>L451: <code>(defun eshell-envvar-names (&amp;optional environment)</code></li>
+<li>L462: <code>(defun eshell-environment-variables ()</code></li>
+<li>L474: <code>(defun eshell-parse-variable ()</code></li>
+<li>L504: <code>(defun eshell-parse-variable-ref (&amp;optional modifier-p)</code></li>
+<li>L614: <code>(defun eshell-parse-indices ()</code></li>
+<li>L637: <code>(defun eshell-parse-index (index)</code></li>
+<li>L667: <code>(defun eshell-eval-indices (indices)</code></li>
+<li>L672: <code>(defun eshell-prepare-indices (indices)</code></li>
+<li>L677: <code>(defun eshell-get-variable (name &amp;optional indices quoted)</code></li>
+<li>L715: <code>(defun eshell-set-variable (name value)</code></li>
+<li>L753: <code>(defun eshell-apply-indices (value indices &amp;optional quoted)</code></li>
+<li>L809: <code>(defun eshell-index-value (value index)</code></li>
+<li>L840: <code>(defun eshell-complete-variable-reference ()</code></li>
+<li>L872: <code>(defun eshell-variables-list ()</code></li>
+<li>L880: <code>(defun eshell-complete-variable-assignment ()</code></li>
+<li>L898: <code>(provide 'esh-var)</code></li>
+</ul>
+<h2>eshell.el</h2>
+<ul>
+<li>L177: <code>(require 'esh-util)</code></li>
+<li>L178: <code>(require 'esh-module)                   ;For eshell-using-module</code></li>
+<li>L179: <code>(require 'esh-proc)                     ;For eshell-wait-for-process</code></li>
+<li>L180: <code>(require 'esh-io)                       ;For eshell-last-command-status</code></li>
+<li>L181: <code>(require 'esh-cmd)</code></li>
+<li>L197: <code>(defcustom eshell-load-hook nil</code></li>
+<li>L202: <code>(defcustom eshell-unload-hook nil</code></li>
+<li>L208: <code>(defcustom eshell-buffer-name "*eshell*"</code></li>
+<li>L226: <code>(defun eshell (&amp;optional arg)</code></li>
+<li>L262: <code>(defun eshell-command-mode-exit ()</code></li>
+<li>L271: <code>(define-minor-mode eshell-command-mode</code></li>
+<li>L275: <code>(define-key map [(control ?g)] #'abort-recursive-edit)</code></li>
+<li>L276: <code>(define-key map [(control ?m)] #'eshell-command-mode-exit)</code></li>
+<li>L277: <code>(define-key map [(control ?j)] #'eshell-command-mode-exit)</code></li>
+<li>L278: <code>(define-key map [(meta control ?m)] #'eshell-command-mode-exit)</code></li>
+<li>L288: <code>(defun eshell-read-command (&amp;optional prompt)</code></li>
+<li>L299: <code>(defun eshell-command (command &amp;optional to-current-buffer)</code></li>
+<li>L355: <code>(defun eshell-command-result (command &amp;optional status-var)</code></li>
+<li>L380: <code>(defun eshell-unload-function ()</code></li>
+<li>L391: <code>(provide 'eshell)</code></li>
+</ul></main></html>

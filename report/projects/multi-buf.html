@@ -1,0 +1,142 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>multi-buf</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/djr7C4/multi-buf">Sorgente upstream</a>. Revisione: <code>dcd28e9d18b4757431eb99a22b2193efb8f87841</code>.</p>
+<h2>Funzionamento</h2>
+<p>Backend modulari e registro di buffer, con classi e comandi DWIM coerenti fra terminali e altri modi.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x multi-buf-vterm-dwim; C-u forza una nuova istanza; doppio prefisso per selezione. Il profilo carica esplicitamente vterm, come farebbero gli autoload di un'installazione normale.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/multi-buf.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/multi-buf.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario multi-buf: passed</h3>
+<p><a href="../../results/multi-buf.json">Esito e snapshot</a> · <a href="../../results/multi-buf-keys.json">Traccia dei tasti</a> · <a href="../../recordings/multi-buf.cast">Registrazione asciinema</a> · <a href="../../index.html#multi-buf">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>multi-buf-vterm-dwim</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.71</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.91</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.91</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.11</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.12</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.33</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.13</td>
+<td><code>C-u</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.53</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.83</td>
+<td><code>multi-buf-vterm-dwim</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.33</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.63</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.83</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.83</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.03</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.04</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.34</td>
+<td><code>multi-buf-vterm-dwim</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.84</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.64</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.84</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.55</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.75</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.45</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.95</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.15</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

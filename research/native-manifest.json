@@ -1,0 +1,68 @@
+{
+  "artifacts": [
+    {
+      "file": "native/cooked-rust-vendor.tar.gz",
+      "bytes": 1928605,
+      "sha256": "9b0cce5f0d80b3156b6064a8274fbc7b50166d825bda8eeaab93556e33547fa8"
+    },
+    {
+      "file": "native/ghostel-module-x86_64-linux.so",
+      "bytes": 1856504,
+      "sha256": "9d4f7f4da7f7c95fd15cbaef15e66b81d18b8632301800903d80a8aa0881d061"
+    },
+    {
+      "file": "native/ghostel-module.so",
+      "bytes": 1856504,
+      "sha256": "9d4f7f4da7f7c95fd15cbaef15e66b81d18b8632301800903d80a8aa0881d061"
+    },
+    {
+      "file": "native/herdr-linux-x86_64",
+      "bytes": 26207464,
+      "sha256": "2a02fed16beb651ef006e1d43f048f652ca4dc58ad053cd2d44450563d5c54b7"
+    },
+    {
+      "file": "native/libalacritty_emacs.so",
+      "bytes": 1126728,
+      "sha256": "62be152654c6b863b47256c92505bdd528717ce9eead4f03b6bd252988572d8c"
+    },
+    {
+      "file": "native/libcooked.so",
+      "bytes": 929168,
+      "sha256": "e4e8e463e3a243018b97fe611b9ac41dd887da9fa65f07005d427fa99d3a14a0"
+    },
+    {
+      "file": "native/libkuro_core-1.2.0-x86_64-unknown-linux-gnu.tar.gz",
+      "bytes": 609622,
+      "sha256": "487c276aa1ba593cb7d5a7cad503092da071985cff8fe383e620e345f2e7168c"
+    },
+    {
+      "file": "native/libkuro_core-1.2.0-x86_64-unknown-linux-gnu.tar.gz.sha256",
+      "bytes": 65,
+      "sha256": "2c6d385cca33033ec8ee077c6a97128392b8a8e652e1f68f77967011a5c8753a"
+    },
+    {
+      "file": "native/libkuro_core.so",
+      "bytes": 1417976,
+      "sha256": "668aec6a5f9457d2525a2ca7dfb9bd43207da9360da5a02f2aa0ca87f57136ca"
+    },
+    {
+      "file": "native/zmx-0.8.1-linux-x86_64.tar.gz",
+      "bytes": 4314746,
+      "sha256": "dfd75720b942466f28870731cc86dbc07afa72fb8f3bd5eeb4ff707e4eecebe8"
+    },
+    {
+      "file": "native/zmx-0.8.1-linux-x86_64.tar.gz.sha256",
+      "bytes": 144,
+      "sha256": "4ef4bc9459716c282e856fea101f637487070105b44ce1e416bc54b4266b0fe1"
+    }
+  ],
+  "provenance": {
+    "ghostel": "release v0.56.0, research/release-ghostel.json",
+    "kuro": "release 1.2.0, research/release-kuro.json",
+    "cooked": "source dd8e9fcc3c09d85d9dd598682dbe6390bd138262; runtime-dependencies workflow and build-cooked.log",
+    "alacritty": "bootstrap build; research/build-alacritty.log and pinned source-lock",
+    "vterm": "local CMake build against system libvterm; prepare.py rebuilds it",
+    "zmx": "release 0.8.1, research/release-correct-zmx.json",
+    "herdr": "research/release-correct-herdr.json"
+  }
+}

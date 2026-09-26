@@ -1,0 +1,934 @@
+# Indice del codice: el-be-back
+
+Fonte: https://github.com/ArthurHeymans/el-be-back.git
+
+Revisione: `e7a4b2d3b340aa98fd99d593054cca834601f4d6`.
+
+
+## ebb-eshell.el
+
+- L13: `(require 'cl-lib)`
+- L14: `(require 'ebb-io)`
+- L15: `(require 'ebb-input)`
+- L16: `(require 'ebb-render)`
+- L17: `(require 'ebb-shell)`
+- L55: `(defvar ebb-eshell-emacs-mode-map`
+- L57: `(define-key map (kbd "C-c C-j") #'ebb-eshell-semi-char-mode)`
+- L58: `(define-key map [remap eshell-toggle-direct-send] #'ebb-eshell-char-mode)`
+- L61: `(defun ebb-eshell--semi-char-map ()`
+- L66: `(defvar ebb-eshell-semi-char-mode-map`
+- L70: `(defvar ebb-eshell-char-mode-map`
+- L73: `(define-key map (kbd "C-M-RET") #'ebb-eshell-semi-char-mode)`
+- L76: `(define-minor-mode ebb-eshell--running-mode`
+- L81: `(defun ebb-eshell--set-overriding-map (mode map enabled)`
+- L88: `(define-minor-mode ebb-eshell--semi-char-mode`
+- L96: `(define-minor-mode ebb-eshell--char-mode`
+- L104: `(defun ebb-eshell--switch-input-mode (mode &optional read-only)`
+- L117: `(defun ebb-eshell-emacs-mode ()`
+- L122: `(defun ebb-eshell-semi-char-mode ()`
+- L128: `(defun ebb-eshell-char-mode ()`
+- L136: `(defun ebb-eshell--term-name (&rest _)`
+- L140: `(defun ebb-eshell--event (type &rest args)`
+- L155: `(defun ebb-eshell--output-filter ()`
+- L173: `(defun ebb-eshell--resize (window)`
+- L182: `(defun ebb-eshell--setup (process)`
+- L207: `(defun ebb-eshell--cleanup (process)`
+- L240: `(defun ebb-eshell--sentinel (original process event)`
+- L248: `(defun ebb-eshell--around-gather (original command args)`
+- L293: `(define-minor-mode ebb-eshell--local-mode`
+- L306: `(define-minor-mode ebb-eshell-mode`
+- L338: `(defun ebb-eshell--visual-sentinel (process _event)`
+- L349: `(defun ebb-eshell--exec-visual (&rest args)`
+- L373: `(define-minor-mode ebb-eshell-visual-command-mode`
+- L381: `(provide 'ebb-eshell)`
+
+## ebb-graphics.el
+
+- L20: `(require 'cl-lib)`
+- L21: `(require 'gv)`
+- L22: `(require 'subr-x)`
+- L24: `(defcustom ebb-kitty-graphics-storage-limit (* 64 1024 1024)`
+- L36: `(defcustom ebb-kitty-graphics-image-limit (* 32 1024 1024)`
+- L41: `(defcustom ebb-kitty-graphics-allow-files nil`
+- L49: `(defcustom ebb-kitty-graphics-placement-limit 1024`
+- L54: `(defcustom ebb-kitty-graphics-image-count-limit 4096`
+- L62: `(defcustom ebb-kitty-graphics-subprocess-budget 8`
+- L72: `(defun ebb-graphics--consume-subprocess-budget ()`
+- L78: `(defcustom ebb-kitty-graphics-surface-limit (* 64 1024 1024)`
+- L84: `(defcustom ebb-graphics-fallback-cell-size '(8 . 16)`
+- L91: `(defun ebb-graphics-normalize-cell-size (size &optional fallback)`
+- L138: `(defun ebb-graphics-state-byte-count (state)`
+- L146: `(defun ebb-graphics-create (&optional budget)`
+- L150: `(defun ebb-graphics-reset (state)`
+- L167: `(defun ebb-graphics--parse-integer (string &optional signed)`
+- L179: `(defun ebb-graphics--parse-params (header)`
+- L196: `(defun ebb-graphics--param-string (params key &optional default)`
+- L200: `(defun ebb-graphics--param-char (params key default)`
+- L208: `(defun ebb-graphics--param-integer (params key &optional default signed)`
+- L216: `(defun ebb-graphics--quiet-p (params kind)`
+- L227: `(defun ebb-graphics--response-prefix (params &optional actual-id)`
+- L238: `(defun ebb-graphics--respond (respond-fn params kind message &optional actual-id)`
+- L251: `(defun ebb-graphics--error (message)`
+- L255: `(defun ebb-graphics--error-p (value)`
+- L259: `(defun ebb-graphics--decode (payload)`
+- L267: `(defun ebb-graphics--inflate (data)`
+- L302: `(defun ebb-graphics--temporary-file-p (path)`
+- L314: `(defun ebb-graphics--sensitive-path-p (path)`
+- L323: `(defun ebb-graphics--read-file-bytes (path offset size &optional delete-after)`
+- L374: `(defun ebb-graphics--shm-path (name)`
+- L384: `(defun ebb-graphics--load-file-medium`
+- L419: `(defun ebb-graphics--load-direct`
+- L471: `(defun ebb-graphics--png-size (data)`
+- L484: `(defun ebb-graphics--prepare-image (params data)`
+- L521: `(defun ebb-graphics--load-image`
+- L556: `(defun ebb-graphics--image-storage-size (format width height data)`
+- L568: `(defun ebb-graphics--image-storage-bytes (image)`
+- L577: `(defun ebb-graphics--next-unused-id (state)`
+- L585: `(defun ebb-graphics--allocate-id (state)`
+- L591: `(defun ebb-graphics--prospective-image-id (state params)`
+- L598: `(defun ebb-graphics--delete-image (state image-id)`
+- L613: `(defun ebb-graphics--eviction-plan (state required-bytes excluded-id`
+- L641: `(defun ebb-graphics--store-image (state params format width height data)`
+- L686: `(defun ebb-graphics--placement-geometry (image columns rows cell-size)`
+- L724: `(defun ebb-graphics--placement-candidate`
+- L774: `(defun ebb-graphics--commit-placement (state placement)`
+- L789: `(defun ebb-graphics--add-placement (state params image row column cell-size)`
+- L796: `(defun ebb-graphics-clear-placements (state &optional all)`
+- L806: `(defun ebb-graphics-clear-row-range (state top bottom)`
+- L818: `(defun ebb-graphics--scroll-placement-up (placement top bottom count)`
+- L846: `(defun ebb-graphics--scroll-placement-down (placement top bottom count)`
+- L871: `(defun ebb-graphics-scroll (state direction top bottom count)`
+- L905: `(defun ebb-graphics-history-grew (state old-base bottom count)`
+- L931: `(defun ebb-graphics-trim-history (state count)`
+- L959: `(defun ebb-graphics--placement-intersects-p (placement row column)`
+- L969: `(defun ebb-graphics--remove-placements (state predicate free-data)`
+- L990: `(defun ebb-graphics--newest-image-by-number (state number)`
+- L999: `(defun ebb-graphics--find-image (state params)`
+- L1011: `(defun ebb-graphics--handle-delete`
+- L1146: `(defun ebb-graphics--invalid-parameter-p (params)`
+- L1188: `(defun ebb-graphics--handle-transmit`
+- L1244: `(defun ebb-graphics--handle-query`
+- L1262: `(defun ebb-graphics-process-apc`
+- L1335: `(defun ebb-graphics-process-overflow (state payload respond-fn)`
+- L1349: `(provide 'ebb-graphics)`
+
+## ebb-input.el
+
+- L13: `(require 'cl-lib)`
+- L14: `(require 'ebb-term)`
+- L81: `(defun ebb-input--modifier-code (mods)`
+- L92: `(defun ebb-input-translate (key &optional screen)`
+- L203: `(defun ebb-input--add-modifier (seq mods)`
+- L221: `(defun ebb-input-encode-mouse (event screen pos-offset)`
+- L248: `(defun ebb-input--mouse-posn (event)`
+- L254: `(defun ebb-input--mouse-coordinates (event screen pos-offset)`
+- L283: `(defun ebb-input--mouse-event-allowed-p (event mode screen)`
+- L298: `(defun ebb-input--mouse-button (event screen)`
+- L319: `(defun ebb-input--mouse-press-p (event)`
+- L323: `(defun ebb-input--mouse-release-p (event)`
+- L330: `(defun ebb-input--mouse-remember-press (event screen button)`
+- L337: `(defun ebb-input--mouse-forget-press (event screen)`
+- L346: `(defun ebb-input--mouse-mod-bits (event)`
+- L357: `(defun ebb-input-focus-in ()`
+- L361: `(defun ebb-input-focus-out ()`
+- L367: `(defun ebb-input-bracketed-paste-start ()`
+- L371: `(defun ebb-input-bracketed-paste-end ()`
+- L377: `(defcustom ebb-semi-char-non-bound-keys`
+- L412: `(defun ebb-input-make-keymap (input-command categories exceptions)`
+- L419: `(define-key map key input-command))))`
+- L443: `(define-key map (vector meta-prefix-char) (make-sparse-keymap))`
+- L479: `(defun ebb-input--mouse-event-symbols ()`
+- L493: `(defun ebb--prepare-mouse-mode-map ()`
+- L497: `(define-key map (vector key) #'ebb-mouse-input))`
+- L501: `(define-key map (vector prefix) map))`
+- L504: `(defvar ebb-mouse-mode-map`
+- L510: `(defun ebb-input-make-semi-char-map (categories emacs-mode-command`
+- L522: `(define-key map (kbd "C-q") #'ebb-quoted-input)`
+- L523: `(define-key map (kbd "C-y") #'ebb-yank)`
+- L524: `(define-key map (kbd "S-<insert>") #'ebb-yank)`
+- L525: `(define-key map [remap yank] #'ebb-yank)`
+- L526: `(define-key map (kbd "M-y") #'ebb-yank-pop)`
+- L529: `(define-key map (kbd "C-c C-c") #'ebb-self-input))`
+- L530: `(define-key map (kbd "C-c C-e") emacs-mode-command)`
+- L533: `(defun ebb--prepare-semi-char-mode-map ()`
+- L538: `(defvar ebb-semi-char-mode-map`
+- L542: `(defun ebb-update-semi-char-mode-map ()`
+- L551: `(defun ebb--prepare-char-mode-map ()`
+- L558: `(define-key map (kbd "C-M-m") #'ebb-semi-char-mode)`
+- L561: `(defvar ebb-char-mode-map`
+- L567: `(defvar ebb-mode-map`
+- L570: `(define-key map [XF86Paste] #'ebb-yank)`
+- L571: `(define-key map [XF86Copy] #'kill-ring-save)`
+- L572: `(define-key map [xterm-paste] #'ebb-xterm-paste)`
+- L574: `(define-key map (kbd "C-c M-d") #'ebb-char-mode)`
+- L575: `(define-key map (kbd "C-c C-j") #'ebb-semi-char-mode)`
+- L576: `(define-key map (kbd "C-c C-e") #'ebb-emacs-mode)`
+- L577: `(define-key map (kbd "C-c C-k") #'ebb-kill-process)`
+- L579: `(define-key map (kbd "C-c C-p") #'ebb-previous-prompt)`
+- L580: `(define-key map (kbd "C-c C-n") #'ebb-next-prompt)`
+- L582: `(define-key map (kbd "C-c M-p") #'ebb-previous-hyperlink)`
+- L583: `(define-key map (kbd "C-c M-n") #'ebb-next-hyperlink)`
+- L585: `(define-key map [remap scroll-up-command] #'ebb-scroll-up)`
+- L586: `(define-key map [remap scroll-down-command] #'ebb-scroll-down)`
+- L590: `(define-key map key #'ebb-mouse-scroll-down))`
+- L592: `(define-key map key #'ebb-mouse-scroll-up))`
+- L593: `(define-key map [remap kill-ring-save] #'ebb-copy-region)`
+- L597: `(defvar ebb-emacs-mode-map`
+- L600: `(define-key map (kbd "RET") #'ebb-open-link-at-point)`
+- L601: `(define-key map (kbd "<return>") #'ebb-open-link-at-point)`
+- L605: `(provide 'ebb-input)`
+
+## ebb-io.el
+
+- L14: `(require 'cl-lib)`
+- L15: `(require 'ebb-term)`
+- L16: `(require 'ebb-parse)`
+- L17: `(require 'ebb-render)`
+- L65: `(defcustom ebb-scrollback-lines 10000`
+- L70: `(defcustom ebb-chunk-size 4096`
+- L75: `(defcustom ebb-io-max-pending-bytes (* 16 1024 1024)`
+- L84: `(defcustom ebb-minimum-latency 0.008`
+- L90: `(defcustom ebb-maximum-latency 0.033`
+- L96: `(defcustom ebb-sync-output-timeout 0.25`
+- L103: `(defcustom ebb-report-pixel-size t`
+- L112: `(defcustom ebb-pixel-size-idle-delay 0.05`
+- L117: `(defcustom ebb-enable-shell-integration t`
+- L126: `(defun ebb-io-receive (io output)`
+- L137: `(defun ebb-io--filter (io _process output)`
+- L142: `(defun ebb-io--enqueue-output (io output)`
+- L170: `(defun ebb-io--normalize-pending (io)`
+- L186: `(defun ebb-io--pending-p (io)`
+- L193: `(defun ebb-io--schedule-processing (io)`
+- L208: `(defun ebb-io--cancel-sync-timer (io)`
+- L214: `(defun ebb-io--sync-timeout (io)`
+- L223: `(defun ebb-io--process-pending (io &optional drain-all)`
+- L301: `(defun ebb-io--report-processing-error (_io error-data count)`
+- L311: `(defun ebb-io-create-terminal (buffer event-handler &optional begin end)`
+- L343: `(defun ebb-io--detect-shell (shell-command)`
+- L355: `(defun ebb-io--integration-script (shell-type extra-env)`
+- L370: `(defun ebb-io--environment-value (name environment)`
+- L377: `(defun ebb-io--prepare-environment (shell-command extra-env)`
+- L400: `(defun ebb-io--build-command (shell-command extra-env)`
+- L429: `(defun ebb-io--term-name ()`
+- L433: `(defun ebb-io--remote-command (shell-command rows columns)`
+- L453: `(defun ebb-io--wrap-command-with-stty (command rows columns)`
+- L466: `(defun ebb-io--bash-rcfile (integration-script)`
+- L476: `(defun ebb-io--fish-setup-confd (integration-script)`
+- L510: `(defun ebb-io--pty-process-p (process)`
+- L541: `(defun ebb-io--pixel-size-helper ()`
+- L556: `(defun ebb-io--cancel-pixel-size-timer (io)`
+- L562: `(defun ebb-io--disable-pixel-size (io error)`
+- L568: `(defun ebb-io--report-pixel-size (io process tty helper height width cell)`
+- L593: `(defun ebb-io-set-window-size (io process height width)`
+- L619: `(defun ebb-io-start (io shell-command buffer &optional extra-env)`
+- L695: `(defun ebb-io-attach (io process buffer)`
+- L711: `(defun ebb-io--sentinel (io proc event)`
+- L736: `(defun ebb-io--prepare-interrupt (io)`
+- L750: `(defun ebb-io-send (io string)`
+- L770: `(defun ebb-io-handle-resize (io new-width new-height)`
+- L797: `(defun ebb-io-stop (io)`
+- L811: `(provide 'ebb-io)`
+
+## ebb-parse.el
+
+- L17: `(require 'cl-lib)`
+- L18: `(require 'url-util)`
+- L19: `(require 'ebb-term)`
+- L21: `(defcustom ebb-enable-osc52 nil`
+- L26: `(defcustom ebb-report-fallback-pixel-size nil`
+- L33: `(defcustom ebb-kitty-graphics-apc-limit (* 256 1024)`
+- L94: `(defun ebb-parse--collect-control-header-byte-p (parser)`
+- L101: `(defun ebb-parse--record-mode (table screen mode enabled)`
+- L109: `(defun ebb-parse--recorded-mode (table screen mode)`
+- L114: `(defun ebb-parse--log (fmt &rest args)`
+- L119: `(defun ebb-parse--respond (parser response)`
+- L124: `(defun ebb-parse--color-to-xterm (color-str)`
+- L142: `(defun ebb-parse--256color-hex (n)`
+- L163: `(defun ebb-parse--palette-color-to-xterm (n)`
+- L167: `(defun ebb-parse--emit (parser type &rest args)`
+- L174: `(defun ebb-parse--parse-params (param-str)`
+- L206: `(defun ebb-parse-create (screen &optional write-fn emit-fn)`
+- L213: `(defun ebb-parse-cancel-sequence (parser)`
+- L235: `(defun ebb-parse-bytes (parser string &optional start end)`
+- L362: `(defun ebb-parse--fast-csi-at (parser string start end)`
+- L408: `(defun ebb-parse--fast-sgr-at (parser string start end)`
+- L447: `(defun ebb-parse--fast-simple-sgr-at (screen string start end)`
+- L469: `(defun ebb-parse--process-char (parser ch)`
+- L534: `(defun ebb-parse--dispatch-c0 (parser ch)`
+- L551: `(defun ebb-parse--ground (parser ch)`
+- L558: `(defun ebb-parse--escape (parser ch)`
+- L614: `(defun ebb-parse--escape-intermediate (parser ch)`
+- L629: `(defun ebb-parse--escape-ignored (parser ch)`
+- L635: `(defun ebb-parse--dispatch-esc-intermediate (parser ch)`
+- L659: `(defun ebb-parse--dispatch-esc (parser ch)`
+- L683: `(defun ebb-parse--complete-string (parser)`
+- L692: `(defun ebb-parse--csi-entry (parser ch)`
+- L721: `(defun ebb-parse--csi-param (parser ch)`
+- L741: `(defun ebb-parse--csi-intermediate (parser ch)`
+- L757: `(defun ebb-parse--csi-ignored (parser ch)`
+- L766: `(defun ebb-parse--osc-collect (parser chunk)`
+- L776: `(defun ebb-parse--osc-string (parser ch)`
+- L791: `(defun ebb-parse--dcs-entry (parser ch)`
+- L812: `(defun ebb-parse--dcs-param (parser ch)`
+- L832: `(defun ebb-parse--dcs-collect (parser chunk)`
+- L842: `(defun ebb-parse--dcs-passthrough (parser ch)`
+- L846: `(defun ebb-parse--dcs-ignored (_parser _ch)`
+- L851: `(defun ebb-parse--charset-designate (parser ch)`
+- L861: `(defun ebb-parse--apc-collect (parser chunk)`
+- L883: `(defun ebb-parse--sos-pm-apc (parser ch)`
+- L891: `(defun ebb-parse--dispatch-apc (parser)`
+- L978: `(defun ebb-parse--csi-unknown (parser params)`
+- L1028: `(defun ebb-parse--fast-csi (parser final-byte param)`
+- L1073: `(defun ebb-parse--rect-coordinates (screen params offset)`
+- L1099: `(defun ebb-parse--dispatch-csi-intermediate (parser final-byte params)`
+- L1218: `(defun ebb-parse--dispatch-csi (parser final-byte)`
+- L1244: `(defun ebb-parse--csi-ich (parser params)`
+- L1249: `(defun ebb-parse--csi-cuu (parser params)`
+- L1254: `(defun ebb-parse--csi-cud (parser params)`
+- L1259: `(defun ebb-parse--csi-cuf (parser params)`
+- L1264: `(defun ebb-parse--csi-cub (parser params)`
+- L1269: `(defun ebb-parse--csi-cnl (parser params)`
+- L1274: `(defun ebb-parse--csi-cpl (parser params)`
+- L1279: `(defun ebb-parse--csi-cha (parser params)`
+- L1293: `(defun ebb-parse--csi-cup (parser params)`
+- L1299: `(defun ebb-parse--csi-cht (parser params)`
+- L1304: `(defun ebb-parse--csi-ed (parser params)`
+- L1312: `(defun ebb-parse--csi-el (parser params)`
+- L1320: `(defun ebb-parse--csi-il (parser params)`
+- L1325: `(defun ebb-parse--csi-dl (parser params)`
+- L1330: `(defun ebb-parse--csi-dch (parser params)`
+- L1335: `(defun ebb-parse--csi-su (parser params)`
+- L1344: `(defun ebb-parse--csi-xtsmgraphics (parser params)`
+- L1366: `(defun ebb-parse--csi-sd (parser params)`
+- L1371: `(defun ebb-parse--csi-ech (parser params)`
+- L1376: `(defun ebb-parse--csi-cbt (parser params)`
+- L1381: `(defun ebb-parse--csi-hpa (parser params)`
+- L1385: `(defun ebb-parse--csi-hpr (parser params)`
+- L1390: `(defun ebb-parse--csi-rep (parser params)`
+- L1395: `(defun ebb-parse--csi-da (parser _params)`
+- L1405: `(defun ebb-parse--csi-vpa (parser params)`
+- L1418: `(defun ebb-parse--csi-vpr (parser params)`
+- L1423: `(defun ebb-parse--csi-hvp (parser params)`
+- L1427: `(defun ebb-parse--csi-tbc (parser params)`
+- L1432: `(defun ebb-parse--csi-sm (parser params)`
+- L1451: `(defun ebb-parse--csi-rm (parser params)`
+- L1470: `(defun ebb-parse--csi-decstbm (parser params)`
+- L1481: `(defun ebb-parse--csi-scp (parser params)`
+- L1494: `(defun ebb-parse--csi-rcp (parser params)`
+- L1501: `(defun ebb-parse--csi-decscusr (parser params)`
+- L1508: `(defun ebb-parse--csi-dsr (parser params)`
+- L1525: `(defun ebb-parse--csi-winops (parser params)`
+- L1587: `(defun ebb-parse--set-colon-sgr-color (screen params)`
+- L1602: `(defun ebb-parse--set-semicolon-sgr-color (screen params index attribute`
+- L1624: `(defun ebb-parse--apply-colon-sgr (screen param)`
+- L1641: `(defun ebb-parse--sgr-step (screen params index &optional count)`
+- L1662: `(defun ebb-parse--apply-simple-sgr (screen param)`
+- L1694: `(defun ebb-parse--csi-sgr (parser params)`
+- L1709: `(defun ebb-parse--handle-osc-4 (parser payload)`
+- L1729: `(defun ebb-parse--handle-progress (parser payload)`
+- L1738: `(defun ebb-parse--handle-osc-777 (parser payload)`
+- L1744: `(defun ebb-parse--handle-osc-52 (parser payload)`
+- L1778: `(defun ebb-parse--dispatch-osc (parser)`
+- L1865: `(defun ebb-parse--sgr-color-status (color foreground &optional code)`
+- L1881: `(defun ebb-parse--sgr-status (screen)`
+- L1924: `(defun ebb-parse--cursor-style-status (screen)`
+- L1935: `(defun ebb-parse--decrqss-value (screen request)`
+- L1960: `(defun ebb-parse--dispatch-dcs (parser)`
+- L1983: `(provide 'ebb-parse)`
+
+## ebb-render.el
+
+- L18: `(require 'cl-lib)`
+- L19: `(require 'ebb-term)`
+- L21: `(defvar ebb-link-map)`
+- L35: `(defcustom ebb-fit-glyphs t`
+- L61: `(defun ebb-render--string-pixel-size (string)`
+- L71: `(defun ebb-render--glyph-cache-valid-p ()`
+- L85: `(defun ebb-render--quantize-scale (scale)`
+- L92: `(defun ebb-render--glyph-display-spec (char cw)`
+- L122: `(defun ebb-render--fit-glyphs (string)`
+- L177: `(defun ebb-render--256color-hex (n)`
+- L249: `(defun ebb-render--color-to-string (color)`
+- L303: `(defcustom ebb-kitty-graphics-render-cache-limit (* 64 1024 1024)`
+- L310: `(defcustom ebb-kitty-graphics-render-entry-limit (* 16 1024 1024)`
+- L318: `(defcustom ebb-kitty-graphics-layout-cache-limit 1024`
+- L328: `(defcustom ebb-kitty-graphics-elisp-rgba-pixel-limit (* 512 512)`
+- L335: `(defcustom ebb-kitty-graphics-allow-slow-rgba t`
+- L376: `(defun ebb-render-create (screen buffer &optional begin end)`
+- L419: `(defun ebb-render-text-area-pixel-size (render)`
+- L426: `(defun ebb-render-cell-pixel-size (render)`
+- L443: `(defun ebb-render--run-after-refresh-hook (render)`
+- L451: `(defun ebb-render-refresh (render)`
+- L540: `(defun ebb-render--history-graphics-signature (screen)`
+- L564: `(defun ebb-render--update-scrollback (render)`
+- L648: `(defun ebb-render--restore-window-point (render window anchor)`
+- L660: `(defun ebb-render--history-capacity (render)`
+- L670: `(defun ebb-render--anchor-location (render anchor total)`
+- L679: `(defun ebb-render--anchor-history-row (render anchor total)`
+- L684: `(defun ebb-render--anchor-buffer-position (render anchor)`
+- L706: `(defun ebb-render--history-row-string (render row &optional graphics-signature)`
+- L742: `(defun ebb-render--rebuild-scrollback`
+- L770: `(defun ebb-render-scroll-history (render rows)`
+- L871: `(defun ebb-render-buffer-location (render &optional position)`
+- L888: `(defun ebb-render-buffer-anchor (render &optional position)`
+- L906: `(defun ebb-render-goto-anchor (render anchor &optional no-recenter)`
+- L921: `(defun ebb-render-goto-location (render row column &optional no-recenter)`
+- L994: `(defun ebb-render--line-to-string-scrollback (line width)`
+- L1022: `(defun ebb-render--cells-to-string-scrollback-fast (cells width)`
+- L1057: `(defun ebb-render--apply-line-rendition (line string width)`
+- L1071: `(defun ebb-render--line-to-string (line width)`
+- L1110: `(defun ebb-render--text-runs-to-string (line width)`
+- L1122: `(defun ebb-render--apply-line-metadata (line string)`
+- L1179: `(defun ebb-render--graphics-background ()`
+- L1191: `(defun ebb-render--graphics-raw-png-helper (image)`
+- L1215: `(defun ebb-render--graphics-ppm-data (image background)`
+- L1250: `(defun ebb-render--graphics-cache-touch (render key)`
+- L1255: `(defun ebb-render--graphics-cache-put (render key object bytes)`
+- L1284: `(defun ebb-render--graphics-image-object (render image placement)`
+- L1379: `(defun ebb-render--graphics-color-id (color)`
+- L1387: `(defun ebb-render--virtual-placement (graphics image-id placement-id)`
+- L1400: `(defun ebb-render--line-has-placeholder-placement-p`
+- L1431: `(defun ebb-render--sync-placeholder-history-cache (render)`
+- L1446: `(defun ebb-render--prepare-placeholder-caches (render)`
+- L1455: `(defun ebb-render--placeholder-tile-row`
+- L1486: `(defun ebb-render--graphics-line (screen row absolute)`
+- L1492: `(defun ebb-render--graphics-column-indices (line string width scrollback)`
+- L1534: `(defun ebb-render--graphics-wide-carriers (line string width owners indices)`
+- L1571: `(defun ebb-render--placeholder-diacritic-index (character)`
+- L1575: `(defun ebb-render--placeholder-coordinates (cell)`
+- L1588: `(defun ebb-render--apply-virtual-graphics`
+- L1692: `(defun ebb-render--apply-graphics (render row string &optional absolute)`
+- L1829: `(defun ebb-render--trim-trailing (string)`
+- L1849: `(defun ebb-render--update-line (render row)`
+- L1883: `(defun ebb-render--safe-char (char)`
+- L1887: `(defun ebb-render--safe-string (string)`
+- L1902: `(defun ebb-render--cells-to-string (cells width)`
+- L1910: `(defun ebb-render--apply-attr-properties (string attr)`
+- L1922: `(defun ebb-render--cells-to-string-fast (cells width)`
+- L1958: `(defun ebb-render--cells-to-string-uniform (cells width)`
+- L1979: `(defun ebb-render--cells-to-string-general (cells width)`
+- L2046: `(defun ebb-render--attr-to-face (attr)`
+- L2120: `(defun ebb-render--cursor-type-for-style (style)`
+- L2131: `(defun ebb-render--update-cursor (render)`
+- L2210: `(defun ebb-render--apply-viewport-reset (render)`
+- L2223: `(defun ebb-render--invalidate-screen-lines (screen)`
+- L2229: `(defun ebb-render--theme-changed (&rest _)`
+- L2243: `(defun ebb-render--install-theme-invalidation ()`
+- L2247: `(defun ebb-render-invalidate-all (render)`
+- L2258: `(defun ebb-render-full-reset (render)`
+- L2390: `(defun ebb-render-resize-height (render)`
+- L2466: `(defun ebb-render-destroy (render)`
+- L2477: `(provide 'ebb-render)`
+
+## ebb-serial-codec.el
+
+- L21: `(require 'cl-lib)`
+- L28: `(defcustom ebb-serial-invalid-byte-policy 'replacement`
+- L45: `(defun ebb-serial-codec-make-state (&optional invalid-byte-policy)`
+- L54: `(defun ebb-serial-codec-reset (state)`
+- L58: `(defun ebb-serial-codec--unibyte (string)`
+- L77: `(defun ebb-serial-codec--continuation-byte-p (byte)`
+- L81: `(defun ebb-serial-codec--valid-sequence-byte-p (lead offset byte)`
+- L92: `(defun ebb-serial-codec--valid-prefix-p (bytes index end)`
+- L104: `(defun ebb-serial-codec--invalid-byte-string (byte policy)`
+- L111: `(defun ebb-serial-codec--valid-codepoint-p (codepoint min-codepoint)`
+- L117: `(defun ebb-serial-codec--decode-codepoint (bytes index length)`
+- L133: `(defun ebb-serial-codec--sequence-shape (byte)`
+- L142: `(defun ebb-serial-codec-decode (state chunk)`
+- L204: `(defun ebb-serial-codec-flush (state)`
+- L217: `(provide 'ebb-serial-codec)`
+
+## ebb-serial-test.el
+
+- L10: `(require 'ert)`
+- L11: `(require 'cl-lib)`
+- L12: `(require 'ebb-serial-codec)`
+- L49: `(defun ebb-serial-tests--require-ebb-serial ()`
+- L54: `(defun ebb-serial-tests--sleep-process (buffer)`
+- L61: `(defun ebb-serial-tests--decode-chunks (chunks &optional policy)`
+- L369: `(provide 'ebb-serial-tests)`
+
+## ebb-serial.el
+
+- L22: `(require 'cl-lib)`
+- L23: `(require 'subr-x)`
+- L24: `(require 'format-spec)`
+- L25: `(require 'ebb)`
+- L26: `(require 'ebb-serial-codec)`
+- L33: `(defcustom ebb-serial-default-speed 115200`
+- L38: `(defcustom ebb-serial-default-coding-system 'utf-8-unix`
+- L43: `(defcustom ebb-serial-default-input-mode 'semi-char`
+- L50: `(defcustom ebb-serial-speed-history`
+- L56: `(defcustom ebb-serial-buffer-name-format "*ebb-serial %p*"`
+- L63: `(defcustom ebb-serial-break-duration 0`
+- L71: `(defcustom ebb-serial-send-break-function nil`
+- L80: `(defcustom ebb-serial-remote-socat-program "socat"`
+- L96: `(defvar ebb-serial-mode-map`
+- L98: `(define-key map (kbd "C-c C-k") #'ebb-serial-disconnect)`
+- L99: `(define-key map (kbd "C-c C-s r") #'ebb-serial-reconnect)`
+- L100: `(define-key map (kbd "C-c C-s d") #'ebb-serial-disconnect)`
+- L101: `(define-key map (kbd "C-c C-s c") #'ebb-serial-configure)`
+- L102: `(define-key map (kbd "C-c C-s b") #'ebb-serial-send-break)`
+- L103: `(define-key map (kbd "C-c C-s x") #'ebb-serial-send-byte)`
+- L107: `(define-minor-mode ebb-serial-mode`
+- L121: `(defun ebb-serial--buffer-name (port)`
+- L125: `(defun ebb-serial--read-port ()`
+- L129: `(defun ebb-serial--live-process-p (&optional process)`
+- L136: `(defun ebb-serial--require-process ()`
+- L142: `(defun ebb-serial--mode-line-string ()`
+- L168: `(defun ebb-serial--mode-line-item (text help-echo command)`
+- L176: `(defun ebb-serial--speed-string ()`
+- L182: `(defun ebb-serial--configuration-summary ()`
+- L197: `(defun ebb-serial--popup-mode-line-menu (event keymap)`
+- L209: `(defun ebb-serial--install-mode-line ()`
+- L217: `(defun ebb-serial--display-window ()`
+- L228: `(defun ebb-serial--resize-terminal-to-window (&rest _)`
+- L238: `(defun ebb-serial--select-default-input-mode ()`
+- L245: `(defun ebb-serial--create-terminal ()`
+- L249: `(defun ebb-serial--ensure-terminal ()`
+- L261: `(defun ebb-serial--setup-buffer (port speed)`
+- L276: `(defun ebb-serial--set-configuration (speed bytesize parity stopbits flowcontrol)`
+- L284: `(defun ebb-serial--remote-port-p (&optional port)`
+- L289: `(defun ebb-serial--remote-default-directory (port)`
+- L294: `(defun ebb-serial--remote-port-localname (port)`
+- L298: `(defun ebb-serial--socat-bool (name enabled)`
+- L302: `(defun ebb-serial--socat-open-address (port)`
+- L340: `(defun ebb-serial--socat-command ()`
+- L347: `(defun ebb-serial--configure-process`
+- L364: `(defun ebb-serial--apply-configuration`
+- L386: `(defun ebb-serial-set-speed (speed)`
+- L397: `(defun ebb-serial--read-parity ()`
+- L409: `(defun ebb-serial--read-flowcontrol ()`
+- L421: `(defun ebb-serial-set-framing (bytesize parity stopbits)`
+- L439: `(defun ebb-serial-set-flowcontrol (flowcontrol)`
+- L449: `(defun ebb-serial--clear-process-state (&optional state)`
+- L457: `(defun ebb-serial--process-arguments ()`
+- L474: `(defun ebb-serial--remote-process-arguments ()`
+- L486: `(defun ebb-serial--make-process ()`
+- L495: `(defun ebb-serial--open-process ()`
+- L524: `(defun ebb-serial--queue-output (text)`
+- L529: `(defun ebb-serial--filter (process chunk)`
+- L542: `(defun ebb-serial--sentinel (process message)`
+- L559: `(defun ebb-serial--send-raw-string (process bytes)`
+- L570: `(defun ebb-serial--send-input (input)`
+- L580: `(defun ebb-serial (port &optional speed)`
+- L608: `(defun ebb-serial-reconnect ()`
+- L616: `(defun ebb-serial-disconnect ()`
+- L625: `(defun ebb-serial--read-choice (prompt choices current)`
+- L634: `(defun ebb-serial-configure (speed bytesize parity stopbits flowcontrol)`
+- L657: `(defun ebb-serial--parse-byte (string)`
+- L670: `(defun ebb-serial--read-byte ()`
+- L679: `(defun ebb-serial-send-byte (byte)`
+- L686: `(defun ebb-serial-send-break (&optional duration)`
+- L701: `(defun ebb-serial-copy-port-name ()`
+- L709: `(defun ebb-serial--connection-menu ()`
+- L712: `(define-key map [copy-port]`
+- L715: `(define-key map [send-byte]`
+- L718: `(define-key map [send-break]`
+- L721: `(define-key map [separator-1] '(menu-item "--"))`
+- L722: `(define-key map [configure]`
+- L725: `(define-key map [disconnect]`
+- L728: `(define-key map [reconnect]`
+- L733: `(defun ebb-serial--speed-menu ()`
+- L742: `(define-key map [other]`
+- L745: `(define-key map [separator-1] '(menu-item "--"))`
+- L758: `(defun ebb-serial--config-menu ()`
+- L761: `(define-key map [configure]`
+- L764: `(define-key map [separator-1] '(menu-item "--"))`
+- L780: `(define-key map [separator-2] '(menu-item "--"))`
+- L793: `(define-key map [separator-3] '(menu-item "--"))`
+- L809: `(define-key map [separator-4] '(menu-item "--"))`
+- L822: `(define-key map [separator-5] '(menu-item "--"))`
+- L838: `(defun ebb-serial-mode-line-connection-menu (event)`
+- L843: `(defun ebb-serial-mode-line-speed-menu (event)`
+- L848: `(defun ebb-serial-mode-line-config-menu (event)`
+- L853: `(provide 'ebb-serial)`
+
+## ebb-shell.el
+
+- L29: `(require 'cl-lib)`
+- L30: `(require 'ebb-term)`
+- L31: `(require 'ebb-render)`
+- L47: `(defcustom ebb-enable-shell-prompt-annotation nil`
+- L52: `(defcustom ebb-enable-directory-tracking t`
+- L57: `(defcustom ebb-shell-prompt-annotation-position 'left-margin`
+- L63: `(defcustom ebb-shell-prompt-annotation-running-indicator "+"`
+- L68: `(defcustom ebb-shell-prompt-annotation-success-indicator "0"`
+- L73: `(defcustom ebb-shell-prompt-annotation-failure-indicator "X"`
+- L78: `(defcustom ebb-shell-message-handler-alist nil`
+- L132: `(defun ebb-shell--base64-decode (str)`
+- L141: `(defun ebb-shell--split-payload (payload start)`
+- L147: `(defun ebb-shell--absolute-line (screen)`
+- L155: `(defun ebb-shell--make-indicator (text face)`
+- L159: `(defun ebb-shell--status-indicator (status)`
+- L169: `(defun ebb-shell--running-indicator ()`
+- L177: `(defun ebb-shell--mark-prompt (screen kind)`
+- L188: `(defun ebb-shell-handle-osc51 (payload screen)`
+- L231: `(defun ebb-shell--set-cwd (args)`
+- L244: `(defun ebb-shell--set-command (args)`
+- L251: `(defun ebb-shell--set-exit-status (args)`
+- L258: `(defun ebb-shell--handle-message (args)`
+- L277: `(defun ebb-shell-post-render (render)`
+- L300: `(defun ebb-shell--line-to-buffer-pos (render abs-line &optional column)`
+- L321: `(defun ebb-shell--apply-prompt-start (render abs-line column)`
+- L328: `(defun ebb-shell--apply-prompt-end (render abs-line column)`
+- L356: `(defun ebb-shell--apply-pre-exec ()`
+- L363: `(defun ebb-shell--schedule-overlay-correction ()`
+- L372: `(defun ebb-shell--correct-overlays (buffer)`
+- L387: `(defun ebb-shell-imenu-create-index ()`
+- L426: `(defun ebb-shell-imenu-goto (_name position &rest _rest)`
+- L436: `(defun ebb-shell-previous-prompt (&optional n)`
+- L442: `(defun ebb-shell-next-prompt (&optional n)`
+- L448: `(defun ebb-shell--goto-prompt (step)`
+- L496: `(defun ebb-shell-setup-margins ()`
+- L514: `(defun ebb-shell-cleanup ()`
+- L541: `(defcustom ebb-terminfo-directory`
+- L549: `(defcustom ebb-term-name "ebb-truecolor"`
+- L555: `(defun ebb-shell-env-vars ()`
+- L567: `(provide 'ebb-shell)`
+
+## ebb-term.el
+
+- L17: `(require 'cl-lib)`
+- L24: `(require 'ebb-graphics)`
+- L197: `(defun ebb--swap-saved-renditions (screen)`
+- L224: `(defun ebb--reverse-wrap-mode (screen)`
+- L230: `(defun ebb--set-reverse-wrap-mode (screen extended enabled)`
+- L269: `(defun ebb--line-protection-bits (table line width)`
+- L277: `(defun ebb--mark-written-protection (screen line start end)`
+- L295: `(defun ebb-screen-dec-protection-enabled-p (screen)`
+- L299: `(defun ebb-screen-set-dec-protection (screen enabled)`
+- L306: `(defun ebb-screen-set-iso-protection (screen enabled)`
+- L313: `(defun ebb--line-initialized-cells (line cells width)`
+- L324: `(defun ebb-screen-horizontal-margins-enabled-p (screen)`
+- L328: `(defun ebb-screen-left-margin (screen)`
+- L334: `(defun ebb-screen-right-margin (screen &optional row)`
+- L341: `(defun ebb-screen-set-horizontal-margin-mode (screen enabled)`
+- L348: `(defun ebb-screen-set-horizontal-margins (screen left right)`
+- L358: `(defun ebb-line-rendition (line)`
+- L379: `(defun ebb-screen-line-width (screen &optional row)`
+- L389: `(defun ebb-screen-set-line-rendition (screen rendition)`
+- L404: `(defun ebb-screen-mark-viewport-reset (screen)`
+- L408: `(defun ebb-screen-take-viewport-reset (screen)`
+- L415: `(defun ebb-cell-copy (cell)`
+- L462: `(defun ebb--make-empty-cells (width)`
+- L469: `(defun ebb--make-empty-line (width)`
+- L478: `(defun ebb--line-ensure-cells (line width)`
+- L514: `(defun ebb--line-set-attr-run (line start end attr)`
+- L545: `(defun ebb--merge-attr-runs (runs)`
+- L561: `(defun ebb--ordered-lines-vector (screen)`
+- L569: `(defun ebb--default-tab-stops (width)`
+- L592: `(defun ebb--make-erase-cell (screen)`
+- L609: `(defun ebb--clear-wide-char-at (screen row col)`
+- L643: `(defun ebb--mark-region-dirty (screen top bot)`
+- L667: `(defun ebb-screen-create (width height)`
+- L686: `(defun ebb-screen-get-dirty (screen)`
+- L690: `(defun ebb-screen-clear-dirty (screen)`
+- L697: `(defun ebb-screen-clear-scrollback-dirty (screen)`
+- L701: `(defun ebb--history-map-current-p (screen)`
+- L709: `(defun ebb--history-grow-map (screen)`
+- L722: `(defun ebb--history-entry-line-count (entry)`
+- L729: `(defun ebb--history-chunk-line-length (chunk index)`
+- L733: `(defun ebb--history-chunk-line-text (chunk index)`
+- L741: `(defun ebb--history-chunk-compact (chunk)`
+- L770: `(defun ebb--history-entry-row-count (entry width)`
+- L778: `(defun ebb--history-chunk-row-map (chunk width)`
+- L796: `(defun ebb--history-chunk-row-location (chunk row width)`
+- L817: `(defun ebb--history-changed (screen &optional kind entry)`
+- L860: `(defun ebb--history-physical-row-count-safe (screen)`
+- L866: `(defun ebb--history-clear (screen)`
+- L876: `(defun ebb--history-normalize (screen)`
+- L890: `(defun ebb--history-plain-row-text (line width wrapped)`
+- L906: `(defun ebb--history-text-row-info (line width wrapped)`
+- L932: `(defun ebb--shift-attr-runs (runs offset)`
+- L940: `(defun ebb--slice-attr-runs (runs start end)`
+- L948: `(defun ebb--history-flush-batch ()`
+- L974: `(defun ebb--history-add-input-chunk (screen string starts lengths first count)`
+- L1001: `(defun ebb--text-to-cells (text &optional attr-runs)`
+- L1018: `(defun ebb--history-line-ensure-cells (line)`
+- L1051: `(defun ebb--history-push-row (screen line width)`
+- L1141: `(defun ebb-history-line-row-count (line width)`
+- L1152: `(defun ebb-screen-history-row-map (screen)`
+- L1181: `(defun ebb-screen-history-row-count (screen)`
+- L1187: `(defun ebb-screen-history-row-location (screen row)`
+- L1216: `(defun ebb-screen-history-anchor-location (screen id offset)`
+- L1257: `(defun ebb-screen-history-render-row (screen row)`
+- L1301: `(defun ebb-history-line-offset-position (line width offset)`
+- L1322: `(defun ebb-history-line-end-offset-position (line width offset)`
+- L1331: `(defun ebb-screen-prompt-end-locations (screen)`
+- L1354: `(defun ebb--scroll-region-up (screen count)`
+- L1422: `(defun ebb--scroll-region-down (screen count)`
+- L1458: `(defun ebb--trim-scrollback (screen)`
+- L1502: `(defun ebb--previous-cell (screen)`
+- L1564: `(defun ebb--apply-emoji-presentation (screen)`
+- L1614: `(defun ebb--append-to-previous-cell (screen char)`
+- L1633: `(defun ebb--append-joined-char (screen char)`
+- L1641: `(defun ebb--wrap-to-next-line (screen)`
+- L1654: `(defun ebb--apply-pending-wrap (screen)`
+- L1666: `(defun ebb--write-single-width-char`
+- L1695: `(defun ebb--write-general-char`
+- L1761: `(defun ebb-screen-write-char (screen char)`
+- L1792: `(defun ebb-screen-write-string (screen string start end)`
+- L1887: `(defun ebb--plain-blank-line-p (line width)`
+- L1903: `(defun ebb--simple-crlf-block-p (screen lengths)`
+- L1930: `(defun ebb--apply-simple-crlf-block (screen string starts lengths)`
+- L1999: `(defun ebb-screen-write-crlf-block (screen string start end)`
+- L2048: `(defun ebb-screen-cursor-backward (screen count)`
+- L2088: `(defun ebb-screen-cursor-move (screen direction count)`
+- L2119: `(defun ebb-screen-cursor-goto (screen row col)`
+- L2140: `(defun ebb-screen-cursor-next-line (screen count)`
+- L2145: `(defun ebb-screen-cursor-prev-line (screen count)`
+- L2152: `(defun ebb-screen--inside-horizontal-margins-p (screen)`
+- L2159: `(defun ebb-screen--index (screen horizontal-eligible)`
+- L2173: `(defun ebb-screen-index (screen)`
+- L2178: `(defun ebb-screen-reverse-index (screen)`
+- L2192: `(defun ebb-screen-next-line (screen)`
+- L2201: `(defun ebb-screen-carriage-return (screen)`
+- L2211: `(defun ebb-screen-backspace (screen)`
+- L2217: `(defun ebb-screen-set-attr (screen prop value)`
+- L2235: `(defun ebb-screen-reset-attr (screen)`
+- L2242: `(defun ebb-screen-set-hyperlink (screen uri &optional id)`
+- L2252: `(defun ebb--line-empty-for-history-p (line width)`
+- L2263: `(defun ebb--line-history-signature (line width)`
+- L2275: `(defun ebb--viewport-row-has-graphics-p (screen row)`
+- L2286: `(defun ebb--history-preserve-display (screen)`
+- L2317: `(defun ebb-screen--erase-in-display-unprotected (screen mode)`
+- L2363: `(defun ebb-screen--erase-in-line-unprotected (screen mode)`
+- L2417: `(defun ebb--erase-whole-line (screen row)`
+- L2440: `(defun ebb-screen--erase-chars-unprotected (screen count)`
+- L2467: `(defun ebb-screen--protected-snapshot (screen table)`
+- L2485: `(defun ebb-screen--restore-protected-snapshot (screen table snapshots)`
+- L2505: `(defun ebb-screen--initialized-snapshot (screen)`
+- L2518: `(defun ebb-screen--restore-initialized-snapshot (screen coordinates)`
+- L2529: `(defun ebb-screen--preserving-protection (screen table function &rest args)`
+- L2539: `(defun ebb-screen--erase-preserving-dec-and-iso`
+- L2549: `(defun ebb-screen-erase-in-display (screen mode)`
+- L2555: `(defun ebb-screen-erase-in-line (screen mode)`
+- L2561: `(defun ebb-screen-erase-chars (screen count)`
+- L2567: `(defun ebb-screen-dec-erase-in-display (screen mode)`
+- L2572: `(defun ebb-screen-dec-erase-in-line (screen mode)`
+- L2579: `(defun ebb-screen-scroll (screen direction count)`
+- L2587: `(defun ebb-screen-insert-lines (screen count)`
+- L2661: `(defun ebb-screen-delete-lines (screen count)`
+- L2734: `(defun ebb-screen-insert-chars (screen count)`
+- L2768: `(defun ebb-screen-delete-chars (screen count)`
+- L2803: `(defun ebb-screen-repeat-char (screen count)`
+- L2811: `(defun ebb-screen-tab-forward (screen count)`
+- L2828: `(defun ebb-screen-tab-backward (screen count)`
+- L2838: `(defun ebb-screen-set-tab-stop (screen)`
+- L2845: `(defun ebb-screen-clear-tab-stop (screen mode)`
+- L2855: `(defun ebb-screen-set-scroll-region (screen top bottom)`
+- L2868: `(defun ebb--resize-alt-save (saved new-width new-height &optional alternate)`
+- L2913: `(defun ebb-screen-enter-alt (screen &optional home clear)`
+- L3003: `(defun ebb-screen-leave-alt (screen)`
+- L3071: `(defun ebb-screen-save-cursor (screen)`
+- L3089: `(defun ebb-screen-restore-cursor (screen)`
+- L3118: `(defun ebb-screen-alignment-test (screen)`
+- L3138: `(defun ebb-screen-column-mode-enabled-p (screen)`
+- L3142: `(defun ebb-screen-set-column-mode (screen wide)`
+- L3158: `(defun ebb-screen-set-mode (screen mode value)`
+- L3203: `(defun ebb-screen-set-cursor-style (screen style)`
+- L3217: `(defun ebb--resize-alt-screen`
+- L3258: `(defun ebb--normalize-logical-lines-for-width`
+- L3288: `(defun ebb--resize-main-screen`
+- L3344: `(defun ebb-screen-resize (screen new-width new-height)`
+- L3393: `(defun ebb--unwrap-lines (lines old-width)`
+- L3431: `(defun ebb--cursor-logical-anchor (lines width row column pending-wrap)`
+- L3446: `(defun ebb--normalize-cells-for-width (cells width &optional offset)`
+- L3474: `(defun ebb--cells-row-count (cells width)`
+- L3485: `(defun ebb--cells-offset-position (cells width offset)`
+- L3505: `(defun ebb--logical-offset-position (logical-lines index offset width)`
+- L3518: `(defun ebb--blank-cell-p (cell)`
+- L3524: `(defun ebb--trim-trailing-blank-cells (cells)`
+- L3532: `(defun ebb--rewrap-lines-all (logical-lines new-width)`
+- L3573: `(defun ebb--rewrap-lines (logical-lines new-width new-height)`
+- L3586: `(defun ebb--wrap-end (cells offset width)`
+- L3602: `(defun ebb--fit-cells-to-width (cells target-width)`
+- L3635: `(defun ebb--pad-cells (cells target-width)`
+- L3648: `(defun ebb-screen-soft-reset (screen)`
+- L3679: `(defun ebb-screen-reset (screen)`
+- L3750: `(defun ebb-screen-designate-charset (screen slot charset-char)`
+- L3763: `(defun ebb-screen-shift-out (screen)`
+- L3767: `(defun ebb-screen-shift-in (screen)`
+- L3773: `(defun ebb--line-plain-text (line width)`
+- L3786: `(defun ebb-screen-plain-text (screen)`
+- L3799: `(defun ebb-screen-virtual-line (screen row)`
+- L3806: `(defun ebb--cells-text-range (cells start end)`
+- L3817: `(defun ebb-screen-text-range (screen start end)`
+- L3843: `(defun ebb-screen--invalidate-rect-line (screen row line)`
+- L3852: `(defun ebb-screen-fill-rect (screen char top left bottom right)`
+- L3880: `(defun ebb-screen-erase-rect (screen top left bottom right &optional selective)`
+- L3904: `(defun ebb-screen-copy-rect`
+- L3964: `(defun ebb-screen-checksum-rect (screen top left bottom right)`
+- L3988: `(defun ebb-screen-get-line (screen row)`
+- L3995: `(defun ebb-screen-scrollback-lines-raw (screen)`
+- L4007: `(defun ebb-screen-scrollback-lines (screen)`
+- L4011: `(provide 'ebb-term)`
+
+## ebb-test.el
+
+- L9: `(require 'ert)`
+- L10: `(require 'ebb-term)`
+- L11: `(require 'ebb-parse)`
+- L12: `(require 'ebb-render)`
+- L13: `(require 'ebb-io)`
+- L14: `(require 'ebb-trace)`
+- L15: `(require 'ebb-input)`
+- L16: `(require 'ebb)`
+- L22: `(defmacro ebb-test-with-screen (spec &rest body)`
+- L34: `(defun ebb-test-output (parser str)`
+- L38: `(defun ebb-test-base64 (string)`
+- L42: `(defun ebb-test-display-line (screen row)`
+- L56: `(defun ebb-test-display-text (screen)`
+- L63: `(defun ebb-test-cursor (screen)`
+- L4263: `(defun ebb-test--mouse-event (type point)`
+- L5366: `(defun ebb-test--session-buffer (name &optional identity)`
+- L5596: `(require 'ebb-shell)`
+- L6046: `(defmacro ebb-test-with-glyph-metrics (metrics &rest body)`
+- L6325: `(provide 'ebb-test)`
+
+## ebb-trace.el
+
+- L17: `(require 'cl-lib)`
+- L18: `(require 'ebb-io)`
+- L19: `(require 'ebb-render)`
+- L31: `(defun ebb-trace--log (time operation &rest args)`
+- L48: `(define-minor-mode ebb-trace-mode`
+- L58: `(defun ebb-trace--start ()`
+- L89: `(defun ebb-trace--other-traces-p ()`
+- L97: `(defun ebb-trace--stop ()`
+- L115: `(defun ebb-trace--filter-advice (orig-fn io process output)`
+- L124: `(defun ebb-trace--resize-advice (orig-fn io new-width new-height)`
+- L133: `(defun ebb-trace--refresh-advice (orig-fn render)`
+- L141: `(defun ebb-trace--processing-error (io error-data count)`
+- L148: `(provide 'ebb-trace)`
+
+## ebb.el
+
+- L21: `(require 'cl-lib)`
+- L22: `(require 'comint)`
+- L23: `(require 'project)`
+- L24: `(require 'bookmark)`
+- L25: `(require 'face-remap)`
+- L26: `(require 'browse-url)`
+- L27: `(require 'ebb-term)`
+- L28: `(require 'ebb-parse)`
+- L29: `(require 'ebb-render)`
+- L30: `(require 'ebb-input)`
+- L31: `(require 'ebb-io)`
+- L32: `(require 'ebb-shell)`
+- L39: `(defcustom ebb-buffer-name "*ebb*"`
+- L44: `(defcustom ebb-default-shell nil`
+- L51: `(defcustom ebb-tramp-shells`
+- L70: `(defcustom ebb-tramp-default-method nil`
+- L78: `(defcustom ebb-trust-osc7-remote-hosts nil`
+- L90: `(defcustom ebb-kill-buffer-on-exit t`
+- L96: `(defcustom ebb-detect-password-prompts t`
+- L101: `(defcustom ebb-password-prompt-regex comint-password-prompt-regexp`
+- L106: `(defcustom ebb-password-prompt-debounce 0.2`
+- L111: `(defcustom ebb-password-prompt-functions`
+- L119: `(defcustom ebb-query-before-kill 'auto`
+- L127: `(defcustom ebb-show-title t`
+- L132: `(defcustom ebb-buffer-name-function #'ebb-buffer-name-by-directory`
+- L149: `(defcustom ebb-buffer-name-title-prefix "ebb: "`
+- L156: `(defcustom ebb-default-input-mode 'semi-char`
+- L162: `(defcustom ebb-notification-function #'ebb--default-notification`
+- L167: `(defcustom ebb-progress-function #'ebb--default-progress`
+- L172: `(defcustom ebb-enable-url-detection t`
+- L177: `(defcustom ebb-enable-file-detection t`
+- L182: `(defcustom ebb-file-detection-path-regex`
+- L218: `(define-minor-mode ebb--semi-char-mode`
+- L223: `(define-minor-mode ebb--char-mode`
+- L228: `(define-minor-mode ebb--mouse-mode`
+- L235: `(defun ebb--refresh-input-cursor ()`
+- L240: `(defun ebb--switch-input-mode (mode)`
+- L248: `(defun ebb-semi-char-mode ()`
+- L253: `(defun ebb-char-mode ()`
+- L258: `(defun ebb-emacs-mode ()`
+- L265: `(defun ebb--require-running-terminal ()`
+- L276: `(defun ebb-send-string (string)`
+- L281: `(defun ebb--key-event (key modifiers)`
+- L302: `(defun ebb-send-key (key &optional modifiers)`
+- L314: `(defun ebb-paste-string (string)`
+- L325: `(defun ebb-self-input (n &optional e)`
+- L350: `(defun ebb-quoted-input ()`
+- L359: `(defun ebb-yank (&optional rotate)`
+- L371: `(defun ebb-yank-pop ()`
+- L376: `(defun ebb-xterm-paste (event)`
+- L395: `(defun ebb-send-password (&optional password)`
+- L409: `(defun ebb--cursor-row-text ()`
+- L430: `(defun ebb--password-prompt-detected-p ()`
+- L436: `(defun ebb--default-password-source (row)`
+- L440: `(defun ebb--cancel-password-confirm-timer ()`
+- L446: `(defun ebb--confirm-and-prompt (buf)`
+- L455: `(defun ebb--prompt-password ()`
+- L476: `(defun ebb--detect-password-prompt (&optional _render)`
+- L505: `(defun ebb-mouse-input (event)`
+- L539: `(defun ebb--scroll-rows (arg)`
+- L545: `(defun ebb-scroll-up (&optional arg)`
+- L552: `(defun ebb-scroll-down (&optional arg)`
+- L559: `(defun ebb--wheel-rows (event)`
+- L581: `(defun ebb-mouse-scroll-up (event)`
+- L591: `(defun ebb-mouse-scroll-down (event)`
+- L601: `(defun ebb--clear-screen (scrollback)`
+- L615: `(defun ebb-clear ()`
+- L621: `(defun ebb-clear-scrollback ()`
+- L627: `(defun ebb-copy-all ()`
+- L636: `(defun ebb-copy-region (_begin _end)`
+- L658: `(defun ebb-kill-process ()`
+- L665: `(defun ebb-reset ()`
+- L673: `(defun ebb-previous-prompt (&optional n)`
+- L680: `(defun ebb-next-prompt (&optional n)`
+- L689: `(defun ebb--default-notification (title body)`
+- L694: `(defun ebb--default-progress (state percent)`
+- L705: `(defun ebb--run-callback (buffer function args)`
+- L715: `(defun ebb--defer-callback (function &rest args)`
+- L722: `(defun ebb--sync-model-size ()`
+- L734: `(defun ebb--handle-event (type &rest args)`
+- L811: `(defun ebb--focus-change ()`
+- L826: `(defun ebb--ensure-focus-change-hook ()`
+- L832: `(defun ebb--maybe-remove-focus-change-hook ()`
+- L849: `(defun ebb--window-size-change (window)`
+- L868: `(defvar-keymap ebb-link-map`
+- L873: `(defun ebb--link-at (position)`
+- L878: `(defun ebb--open-link (uri)`
+- L900: `(defun ebb-open-link-at-click (event)`
+- L905: `(defun ebb-open-link-at-point ()`
+- L910: `(defun ebb--linkify (begin end uri)`
+- L916: `(defun ebb--detect-plain-links (_render)`
+- L957: `(defun ebb--find-hyperlink (direction position)`
+- L973: `(defun ebb--goto-hyperlink (direction)`
+- L980: `(defun ebb-next-hyperlink (&optional count)`
+- L986: `(defun ebb-previous-hyperlink (&optional count)`
+- L992: `(define-derived-mode ebb-mode fundamental-mode "Ebb"`
+- L1038: `(defun ebb--kill-buffer-query ()`
+- L1047: `(defun ebb--set-shell-cwd (path)`
+- L1067: `(defun ebb--buffers ()`
+- L1074: `(defun ebb--find-session (identity)`
+- L1081: `(defun ebb--cycle (step)`
+- L1094: `(defun ebb-next ()`
+- L1100: `(defun ebb-previous ()`
+- L1106: `(defun ebb-list-buffers ()`
+- L1123: `(defun ebb-other (&optional program)`
+- L1131: `(defun ebb--cwd-to-path (dir host)`
+- L1178: `(defun ebb--remote-login-shell ()`
+- L1191: `(defun ebb--remote-shell ()`
+- L1208: `(defun ebb--start (program display-function)`
+- L1249: `(defun ebb (&optional program)`
+- L1286: `(defun ebb-other-window (&optional program)`
+- L1292: `(defun ebb-project ()`
+- L1311: `(defun ebb-project-other-window ()`
+- L1322: `(defun ebb-bookmark-make-record ()`
+- L1332: `(defun ebb--bookmark-property (record property)`
+- L1337: `(defun ebb-bookmark-jump (record)`
+- L1362: `(defun ebb--same-host-p (left right)`
+- L1380: `(defun ebb--this-host-p (host)`
+- L1390: `(defun ebb--local-host-p (host)`
+- L1397: `(defun ebb--format-title-for-buffer (title)`
+- L1417: `(defun ebb-buffer-name-by-title (title)`
+- L1423: `(defun ebb-buffer-name-by-directory (&optional _title)`
+- L1430: `(defun ebb--rename-managed (new-name)`
+- L1439: `(defun ebb--set-title (title)`
+- L1448: `(defun ebb--mode-line-input-mode ()`
+- L1466: `(require 'ebb-eshell)`
+- L1468: `(provide 'ebb)`

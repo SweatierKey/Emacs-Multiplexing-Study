@@ -1,0 +1,62 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: multi-term</h1>
+<p>Fonte: https://github.com/manateelazycat/multi-term.git</p>
+<p>Revisione: <code>017c77c550115936860e2ea71b88e585371475d5</code>.</p>
+<h2>multi-term.el</h2>
+<ul>
+<li>L279: <code>(require 'term)</code></li>
+<li>L280: <code>(require 'cl-lib)</code></li>
+<li>L281: <code>(require 'advice)</code></li>
+<li>L292: <code>(defcustom multi-term-program nil</code></li>
+<li>L298: <code>(defcustom multi-term-program-switches nil</code></li>
+<li>L303: <code>(defcustom multi-term-try-create t</code></li>
+<li>L311: <code>(defcustom multi-term-default-dir "~/"</code></li>
+<li>L316: <code>(defcustom multi-term-buffer-name "terminal"</code></li>
+<li>L321: <code>(defcustom multi-term-scroll-show-maximum-output nil</code></li>
+<li>L329: <code>(defcustom multi-term-scroll-to-bottom-on-output nil</code></li>
+<li>L341: <code>(defcustom multi-term-switch-after-close 'NEXT</code></li>
+<li>L349: <code>(defcustom term-unbind-key-list</code></li>
+<li>L355: <code>(defcustom term-bind-key-alist</code></li>
+<li>L382: <code>(defcustom multi-term-dedicated-window-height 14</code></li>
+<li>L387: <code>(defcustom multi-term-dedicated-max-window-height 30</code></li>
+<li>L394: <code>(defcustom multi-term-dedicated-skip-other-window-p nil</code></li>
+<li>L414: <code>(defcustom multi-term-dedicated-select-after-open-p nil</code></li>
+<li>L422: <code>(defcustom multi-term-dedicated-close-back-to-open-buffer-p nil</code></li>
+<li>L451: <code>(defun multi-term ()</code></li>
+<li>L465: <code>(defun multi-term-next (&amp;optional offset)</code></li>
+<li>L472: <code>(defun multi-term-prev (&amp;optional offset)</code></li>
+<li>L479: <code>(defun multi-term-dedicated-open ()</code></li>
+<li>L508: <code>(defun multi-term-dedicated-close ()</code></li>
+<li>L529: <code>(defun multi-term-dedicated-remember-window-height ()</code></li>
+<li>L538: <code>(defun multi-term-dedicated-toggle ()</code></li>
+<li>L554: <code>(defun multi-term-dedicated-select ()</code></li>
+<li>L561: <code>(defun term-send-esc ()</code></li>
+<li>L566: <code>(defun term-send-return ()</code></li>
+<li>L573: <code>(defun term-send-backward-kill-word ()</code></li>
+<li>L578: <code>(defun term-send-forward-kill-word ()</code></li>
+<li>L583: <code>(defun term-send-backward-word ()</code></li>
+<li>L588: <code>(defun term-send-forward-word ()</code></li>
+<li>L593: <code>(defun term-send-reverse-search-history ()</code></li>
+<li>L598: <code>(defun term-send-delete-word ()</code></li>
+<li>L603: <code>(defun term-send-quote ()</code></li>
+<li>L609: <code>(defun term-send-M-x ()</code></li>
+<li>L615: <code>(defun multi-term-internal ()</code></li>
+<li>L631: <code>(defun multi-term-switch-buffer (term-buffer default-dir)</code></li>
+<li>L642: <code>(defun multi-term-get-buffer (&amp;optional special-shell dedicated-window)</code></li>
+<li>L672: <code>(defun multi-term-handle-close ()</code></li>
+<li>L680: <code>(defun multi-term-kill-buffer-hook ()</code></li>
+<li>L700: <code>(defun multi-term-switch (direction offset)</code></li>
+<li>L712: <code>(defun multi-term-switch-internal (direction offset)</code></li>
+<li>L728: <code>(defun multi-term-keystroke-setup ()</code></li>
+<li>L741: <code>(define-key term-raw-map unbind-key nil))</code></li>
+<li>L752: <code>(define-key term-raw-map bind-key bind-command))))</code></li>
+<li>L754: <code>(defun multi-term-dedicated-handle-other-window-advice (activate)</code></li>
+<li>L764: <code>(defun multi-term-current-window-take-height (&amp;optional window)</code></li>
+<li>L771: <code>(defun multi-term-dedicated-get-window ()</code></li>
+<li>L778: <code>(defun multi-term-dedicated-get-buffer-name ()</code></li>
+<li>L782: <code>(defun multi-term-dedicated-exist-p ()</code></li>
+<li>L787: <code>(defun multi-term-window-exist-p (window)</code></li>
+<li>L792: <code>(defun multi-term-buffer-exist-p (buffer)</code></li>
+<li>L797: <code>(defun multi-term-dedicated-window-p ()</code></li>
+<li>L802: <code>(defun multi-term-window-dedicated-only-one-p ()</code></li>
+<li>L872: <code>(provide 'multi-term)</code></li>
+</ul></main></html>

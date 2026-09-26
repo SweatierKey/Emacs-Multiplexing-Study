@@ -1,0 +1,122 @@
+[
+  {
+    "at": 2.306,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.606,
+    "keys": "ansi-term",
+    "input_hex": "616e73692d7465726d"
+  },
+  {
+    "at": 3.107,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 3.907,
+    "keys": "b''",
+    "input_hex": ""
+  },
+  {
+    "at": 4.107,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.908,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 5.109,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.109,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 6.309,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.311,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 7.511,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.313,
+    "keys": "C-c C-j: term line mode",
+    "input_hex": "030a"
+  },
+  {
+    "at": 8.713,
+    "keys": "C-x t 2: new tab",
+    "input_hex": "187432"
+  },
+  {
+    "at": 9.115,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 9.415,
+    "keys": "ansi-term",
+    "input_hex": "616e73692d7465726d"
+  },
+  {
+    "at": 9.916,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 10.716,
+    "keys": "b''",
+    "input_hex": ""
+  },
+  {
+    "at": 10.916,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.718,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 11.918,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.918,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 13.119,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 14.122,
+    "keys": "C-c C-j: term line mode",
+    "input_hex": "030a"
+  },
+  {
+    "at": 14.522,
+    "keys": "C-x t p: previous tab",
+    "input_hex": "187470"
+  }
+]

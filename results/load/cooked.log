@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"cooked","library":"/home/admin/Emacs-Multiplexing-Study/sources/cooked/lisp/cooked.el","commands":["cooked","cooked-copy-command","cooked-copy-output","cooked-follow-link","cooked-follow-link-at-point","cooked-goto-last-command","cooked-install-terminfo","cooked-install-terminfo-remote","cooked-next-command","cooked-other-window","cooked-previous-command","cooked-show-output","cooked-write-output"]}
+STDERR:

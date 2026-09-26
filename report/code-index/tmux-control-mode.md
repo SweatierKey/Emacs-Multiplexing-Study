@@ -1,0 +1,182 @@
+# Indice del codice: tmux-control-mode
+
+Fonte: https://github.com/stephenjayakar/emacs-tmux-control-mode.git
+
+Revisione: `d2a93a336f7d6a4a770cb9e740d5e6cfb602843b`.
+
+
+## tmux-cc.el
+
+- L19: `(require 'subr-x)`
+- L20: `(require 'windmove)`
+- L28: `(defvar vterm-mode-map)`
+- L36: `(defcustom tmux-cc-passthrough-keys`
+- L44: `(defcustom tmux-cc-strip-problematic-escape-sequences nil`
+- L50: `(defcustom tmux-cc-focus-next-key "C-<tab>"`
+- L55: `(defcustom tmux-cc-focus-prev-key "C-S-<tab>"`
+- L60: `(defcustom tmux-cc-focus-other-key "C-x o"`
+- L65: `(defcustom tmux-cc-command-key "C-t !"`
+- L70: `(defcustom tmux-cc-split-horizontal-key "C-t 3"`
+- L75: `(defcustom tmux-cc-split-vertical-key "C-t 2"`
+- L80: `(defcustom tmux-cc-new-window-key "C-t c"`
+- L85: `(defcustom tmux-cc-new-session-key "C-t S"`
+- L90: `(defcustom tmux-cc-manager-key "C-t t"`
+- L95: `(defcustom tmux-cc-switch-window-key "C-t w"`
+- L100: `(defcustom tmux-cc-switch-session-key "C-t s"`
+- L105: `(defcustom tmux-cc-detach-key "C-t d"`
+- L110: `(defcustom tmux-cc-kill-pane-key "C-t k"`
+- L115: `(defcustom tmux-cc-manager-buffer-name "*tmux-control*"`
+- L120: `(defcustom tmux-cc-manager-help-buffer-name "*tmux-control-help*"`
+- L125: `(defcustom tmux-cc-pane-buffer-prefix "tmux-pane "`
+- L130: `(defcustom tmux-cc-pane-history-lines 200`
+- L135: `(defcustom tmux-cc-manager-preview-window-size 12`
+- L140: `(defcustom tmux-cc-confirm-destructive-actions t`
+- L145: `(defcustom tmux-cc-default-command "tmux -CC attach"`
+- L150: `(defcustom tmux-cc-vterm-shell-command "sleep 1000000"`
+- L157: `(defcustom tmux-cc-sync-client-size t`
+- L201: `(defvar tmux-cc-pane-mode-map (make-sparse-keymap)`
+- L255: `(defvar tmux-cc-manager-mode-map`
+- L257: `(define-key map (kbd "g") #'tmux-cc-manager-refresh)`
+- L258: `(define-key map (kbd "RET") #'tmux-cc-manager-visit)`
+- L259: `(define-key map (kbd "TAB") #'tmux-cc-manager-toggle-preview)`
+- L260: `(define-key map (kbd "<tab>") #'tmux-cc-manager-toggle-preview)`
+- L261: `(define-key map (kbd "h") #'tmux-cc-manager-help)`
+- L262: `(define-key map (kbd "?") #'tmux-cc-manager-help)`
+- L263: `(define-key map (kbd "k") #'tmux-cc-manager-delete)`
+- L264: `(define-key map (kbd "c") #'tmux-cc-manager-command)`
+- L265: `(define-key map (kbd "n") #'tmux-cc-manager-new-window)`
+- L266: `(define-key map (kbd "S") #'tmux-cc-manager-new-session)`
+- L267: `(define-key map (kbd "r") #'tmux-cc-manager-rename-session)`
+- L268: `(define-key map (kbd "s") #'tmux-cc-switch-session)`
+- L269: `(define-key map (kbd "w") #'tmux-cc-switch-window)`
+- L270: `(define-key map (kbd "d") #'tmux-cc-manager-detach)`
+- L271: `(define-key map (kbd "q") #'quit-window)`
+- L275: `(define-minor-mode tmux-cc-pane-mode`
+- L280: `(define-derived-mode tmux-cc-manager-mode special-mode "Tmux-Control"`
+- L283: `(defun tmux-cc--bind-pane-key (key command)`
+- L287: `(define-key tmux-cc-pane-mode-map (kbd key) command)))`
+- L289: `(defun tmux-cc-setup-keybindings ()`
+- L308: `(defun tmux-cc--tmux-target (target)`
+- L312: `(defun tmux-cc--bootstrap-current-layout ()`
+- L328: `(defun tmux-cc--schedule-bootstrap-current-layout (&optional delay)`
+- L344: `(defun tmux-cc--visible-pane-windows (&optional frame)`
+- L352: `(defun tmux-cc--window-bounds-size (windows)`
+- L377: `(defun tmux-cc--current-client-size (&optional frame)`
+- L393: `(defun tmux-cc--sync-client-size (&optional frame force)`
+- L406: `(defun tmux-cc--schedule-client-size-sync (&optional frame)`
+- L417: `(defun tmux-cc--window-size-change (&optional frame)`
+- L421: `(defun tmux-cc--prepare-pane-window (window)`
+- L430: `(defun tmux-cc--disable-pane-editor-chrome ()`
+- L438: `(defun tmux-cc--pane-window-width (window)`
+- L452: `(defun tmux-cc--resize-pane-vterm (window)`
+- L464: `(defun tmux-cc--resize-visible-pane-vterms (&optional frame)`
+- L469: `(defun tmux-cc-refresh-geometry (&optional frame)`
+- L482: `(defun tmux-cc--render-manager-closed (&optional reason)`
+- L496: `(defun tmux-cc--show-manager-buffer ()`
+- L505: `(defun tmux-cc--render-manager-connecting ()`
+- L515: `(defun tmux-cc--run-startup-refresh ()`
+- L527: `(defun tmux-cc--cleanup-session (&optional process reason)`
+- L565: `(defun tmux-cc-stop (&optional reason)`
+- L577: `(defun tmux-cc--parse-node (str pos)`
+- L624: `(defun tmux-cc--parse-children (str pos end-char)`
+- L641: `(defun tmux-cc-parse-layout-string (layout-str)`
+- L647: `(defun tmux-cc--ensure-layout-pane-buffers (node)`
+- L661: `(defun tmux-cc-apply-layout (node root-window)`
+- L706: `(defun tmux-cc-start (command)`
+- L749: `(defun tmux-cc--filter (process string)`
+- L769: `(defun tmux-cc--strip-control-mode-wrappers (string)`
+- L779: `(defun tmux-cc--sentinel (_process event)`
+- L786: `(defun tmux-cc--handle-line (line)`
+- L855: `(defun tmux-cc--decode-octal (str)`
+- L867: `(defun tmux-cc--strip-osc (str)`
+- L876: `(defun tmux-cc--strip-problematic-escapes (str)`
+- L883: `(defun tmux-cc--ensure-vterm ()`
+- L888: `(defun tmux-cc--pane-emulate-terminal (proc string)`
+- L892: `(defun tmux-cc--pane-copy-mode-active-p (buffer)`
+- L899: `(defun tmux-cc--pane-accept-output (proc string)`
+- L911: `(defun tmux-cc--pane-flush-pending-output (&optional buffer)`
+- L927: `(defun tmux-cc--after-vterm-copy-mode (&rest _)`
+- L938: `(defun tmux-cc--handle-output (pane-id str)`
+- L960: `(defun tmux-cc--apply-pane-history (pane-id lines)`
+- L977: `(defun tmux-cc--request-pane-history (pane-id)`
+- L990: `(defun tmux-cc--request-pane-history-for-lines (panes)`
+- L995: `(defun tmux-cc--handle-layout-change (_window-id layout-str)`
+- L1004: `(defun tmux-cc--pane-local-map ()`
+- L1008: `(define-key map`
+- L1012: `(define-key map (kbd key) nil))`
+- L1015: `(defun tmux-cc-create-pane (pane-id)`
+- L1038: `(defun tmux-cc--control-key-command (string)`
+- L1044: `(defun tmux-cc--send-current-pane-keys (string)`
+- L1052: `(defun tmux-cc--send-keys (pane-id string)`
+- L1061: `(defun tmux-cc--intercept-process-send-string (orig-fun proc string &rest args)`
+- L1080: `(defun tmux-cc--intercept-split-window-right (orig-fun &rest args)`
+- L1084: `(defun tmux-cc--intercept-split-window-below (orig-fun &rest args)`
+- L1088: `(defun tmux-cc--intercept-delete-window (orig-fun &optional window)`
+- L1092: `(defun tmux-cc--intercept-delete-other-windows (orig-fun &optional window)`
+- L1101: `(defun tmux-cc-send-command (cmd &optional callback)`
+- L1108: `(defun tmux-cc-command (cmd)`
+- L1113: `(defun tmux-cc--current-pane-id ()`
+- L1119: `(defun tmux-cc--current-pane-id-required ()`
+- L1124: `(defun tmux-cc--pane-id-for-window (window)`
+- L1130: `(defun tmux-cc--select-pane-id (pane-id)`
+- L1135: `(defun tmux-cc--focus-window-pane (window)`
+- L1143: `(defun tmux-cc--sync-selected-window-to-tmux ()`
+- L1147: `(defun tmux-cc--neighbor-pane-window (directions)`
+- L1155: `(defun tmux-cc-split-horizontal ()`
+- L1162: `(defun tmux-cc-split-vertical ()`
+- L1169: `(defun tmux-cc--select-pane (selector)`
+- L1176: `(defun tmux-cc--focus-window (move-fn)`
+- L1182: `(defun tmux-cc-focus-right ()`
+- L1188: `(defun tmux-cc-focus-left ()`
+- L1194: `(defun tmux-cc-focus-up ()`
+- L1200: `(defun tmux-cc-focus-down ()`
+- L1206: `(defun tmux-cc-focus-next-pane ()`
+- L1213: `(defun tmux-cc-focus-previous-pane ()`
+- L1220: `(defun tmux-cc-smart-next-window ()`
+- L1226: `(defun tmux-cc-smart-previous-window ()`
+- L1232: `(defun tmux-cc-detach ()`
+- L1237: `(defun tmux-cc-switch-session (&optional session)`
+- L1254: `(defun tmux-cc-switch-window (&optional window-str)`
+- L1272: `(defun tmux-cc--pane-buffer (pane-id)`
+- L1279: `(defun tmux-cc--display-pane-buffer (pane-id)`
+- L1285: `(defun tmux-cc--refresh-manager-if-live ()`
+- L1291: `(defun tmux-cc--run-command-and-refresh (command &optional callback)`
+- L1302: `(defun tmux-cc-new-window (&optional name)`
+- L1311: `(defun tmux-cc-new-session (&optional name)`
+- L1320: `(defun tmux-cc-kill-pane (pane-id)`
+- L1334: `(defun tmux-cc-kill-window (window-id)`
+- L1340: `(defun tmux-cc-rename-session (session-name &optional new-name)`
+- L1352: `(defun tmux-cc-kill-session (session-name)`
+- L1358: `(defun tmux-cc-manager (&optional callback)`
+- L1371: `(defun tmux-cc--pane-id-list-from-pane-lines (panes)`
+- L1380: `(defun tmux-cc--reconcile-pane-buffers (panes)`
+- L1402: `(defun tmux-cc--manager-window-pane-map (panes)`
+- L1422: `(defun tmux-cc--manager-session-pane-map (windows window-pane-map)`
+- L1441: `(defun tmux-cc-manager-refresh (&optional callback &rest _)`
+- L1463: `(defun tmux-cc--manager-line-target ()`
+- L1481: `(defun tmux-cc--manager-target-pane-id (target-type target-id pane-id)`
+- L1487: `(defun tmux-cc--manager-preview-delete-overlay ()`
+- L1494: `(defun tmux-cc--manager-preview-live-p ()`
+- L1500: `(defun tmux-cc--manager-preview-snapshot (pane-id)`
+- L1524: `(defun tmux-cc--manager-preview-string (pane-id label)`
+- L1542: `(defun tmux-cc--manager-preview-rendered-string ()`
+- L1562: `(defun tmux-cc--manager-target-preview-active-p (target-type target-id)`
+- L1567: `(defun tmux-cc--manager-insert-preview-block (pane-id label)`
+- L1573: `(defun tmux-cc--manager-find-target (target-type target-id)`
+- L1587: `(defun tmux-cc--manager-set-preview (target-type target-id pane-id label)`
+- L1595: `(defun tmux-cc--manager-clear-preview-state ()`
+- L1603: `(defun tmux-cc--manager-rerender ()`
+- L1617: `(defun tmux-cc--manager-refresh-preview ()`
+- L1624: `(defun tmux-cc-manager-hide-preview ()`
+- L1630: `(defun tmux-cc-manager-toggle-preview ()`
+- L1648: `(defun tmux-cc-manager-help ()`
+- L1690: `(defun tmux-cc-manager-command (command)`
+- L1695: `(defun tmux-cc-manager-new-window ()`
+- L1700: `(defun tmux-cc-manager-new-session ()`
+- L1705: `(defun tmux-cc-manager-rename-session ()`
+- L1727: `(defun tmux-cc-manager-detach ()`
+- L1733: `(defun tmux-cc--manager-target-description (target-type target-id label)`
+- L1741: `(defun tmux-cc-manager-delete ()`
+- L1764: `(defun tmux-cc--render-manager-buffer (sessions windows panes)`
+- L1863: `(defun tmux-cc-manager-visit ()`
+- L1900: `(provide 'tmux-cc)`

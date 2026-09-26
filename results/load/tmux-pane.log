@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"tmux-pane","library":"/home/admin/Emacs-Multiplexing-Study/sources/tmux-pane/tmux-pane.el","commands":["tmux-pane--windmove","tmux-pane-close","tmux-pane-mode","tmux-pane-omni-window-down","tmux-pane-omni-window-last","tmux-pane-omni-window-left","tmux-pane-omni-window-right","tmux-pane-omni-window-up","tmux-pane-open-horizontal","tmux-pane-open-vertical","tmux-pane-rerun","tmux-pane-toggle-horizontal","tmux-pane-toggle-vertical","windmove-last"]}
+STDERR:

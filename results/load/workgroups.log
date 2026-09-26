@@ -1,0 +1,42 @@
+{"status":"loaded","feature":"workgroups","library":"/home/admin/Emacs-Multiplexing-Study/sources/workgroups/workgroups.el","commands":["wg-clone-workgroup","wg-create-workgroup","wg-delete-other-workgroups","wg-dired","wg-echo-all-workgroups","wg-echo-current-workgroup","wg-echo-last-message","wg-echo-time","wg-echo-version","wg-find-file","wg-find-file-read-only","wg-get-by-buffer","wg-help","wg-kill-ring-save-base-config","wg-kill-ring-save-working-config","wg-kill-workgroup","wg-kill-workgroup-and-buffers","wg-load","wg-move-window-backward","wg-move-window-forward","wg-offset-left","wg-offset-right","wg-rename-workgroup","wg-reset","wg-reverse-frame-horizontally","wg-reverse-frame-horizontally-and-vertically","wg-reverse-frame-vertically","wg-revert-all-workgroups","wg-revert-workgroup","wg-save","wg-swap-workgroups","wg-switch-left","wg-switch-left-other-frame","wg-switch-right","wg-switch-right-other-frame","wg-switch-to-index","wg-switch-to-index-0","wg-switch-to-index-1","wg-switch-to-index-2","wg-switch-to-index-3","wg-switch-to-index-4","wg-switch-to-index-5","wg-switch-to-index-6","wg-switch-to-index-7","wg-switch-to-index-8","wg-switch-to-index-9","wg-switch-to-previous-workgroup","wg-switch-to-workgroup","wg-toggle-mode-line","wg-toggle-morph","wg-update-all-workgroups","wg-update-all-workgroups-and-save","wg-update-workgroup","wg-yank-config","workgroups-mode"]}
+STDERR:
+Package cl is deprecated
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘typecase’ is an obsolete alias (as of 27.1); use ‘cl-typecase’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘incf’ is an obsolete alias (as of 27.1); use ‘cl-incf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/workgroups/workgroups.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘incf’ is an obsolete alias (as of 27.1); use ‘cl-incf’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.
+sources/workgroups/workgroups.el: Warning: ‘destructuring-bind’ is an obsolete alias (as of 27.1); use ‘cl-destructuring-bind’ instead.

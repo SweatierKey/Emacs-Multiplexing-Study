@@ -1,0 +1,29 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: emacs-tunnel</h1>
+<p>Fonte: https://github.com/mimunzar/emacs-tunnel.git</p>
+<p>Revisione: <code>ace3afdf5d3c68a4acf43d07bf7054ab5b8108c4</code>.</p>
+<h2>tslime-test.el</h2>
+<ul>
+<li>L1: <code>(require 'tslime)</code></li>
+</ul>
+<h2>tslime.el</h2>
+<ul>
+<li>L4: <code>(defun tslime-s-join (separator seq)</code></li>
+<li>L7: <code>(defun tslime-re-matches (re s)</code></li>
+<li>L11: <code>(defun tslime-append-newline-if-missing (s)</code></li>
+<li>L14: <code>(defun tslime-paste-buffer-to-tmux-panel (f-shell buffer panel)</code></li>
+<li>L18: <code>(defun tslime-send-to-tmux-panel (s conf)</code></li>
+<li>L22: <code>(defun tslime-prompt-for-tmux-conf ()</code></li>
+<li>L26: <code>(defun tslime-paste-buffer-to-screen-panel (f-shell buffer session region)</code></li>
+<li>L30: <code>(defun tslime-send-to-screen-panel (s conf)</code></li>
+<li>L34: <code>(defun tslime-parse-screen-session-list (s)</code></li>
+<li>L38: <code>(defun tslime-prompt-for-screen-session ()</code></li>
+<li>L42: <code>(defun tslime-prompt-for-screen-conf ()</code></li>
+<li>L47: <code>(defun tslime-make-send-multiplexer (f-prompt-conf f-multiplexer-send)</code></li>
+<li>L53: <code>(defun tslime-make-send-dispatch (f-send-screen f-send-tmux)</code></li>
+<li>L67: <code>(defun tslime-send-region (multiplexer &amp;optional forget)</code></li>
+<li>L71: <code>(defun tslime-send (&amp;optional forget)</code></li>
+<li>L79: <code>(defun tslime-forget-send ()</code></li>
+<li>L83: <code>(global-set-key (kbd "C-c C-c") #'tslime-send)</code></li>
+<li>L84: <code>(global-set-key (kbd "C-c C-f") #'tslime-forget-send)</code></li>
+<li>L86: <code>(provide 'tslime)</code></li>
+</ul></main></html>

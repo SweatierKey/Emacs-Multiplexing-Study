@@ -1,0 +1,470 @@
+# Indice del codice: term-sessions
+
+Fonte: https://github.com/ArthurHeymans/emacs-term-sessions.git
+
+Revisione: `29084b6a8a73b612f60a73ef798303384bd44215`.
+
+
+## term-sessions-actions.el
+
+- L10: `(require 'term-sessions-core)`
+- L11: `(require 'term-sessions-zmx)`
+- L12: `(require 'term-sessions-tramp)`
+- L13: `(require 'term-sessions-frontends)`
+- L14: `(require 'term-sessions-org)`
+- L27: `(defvar term-sessions-org-link-action-map`
+- L29: `(define-key map (kbd "o") #'term-sessions-action-open-org-link)`
+- L30: `(define-key map (kbd "w") #'term-sessions-action-copy-org-link-target)`
+- L34: `(defvar term-sessions-action-map`
+- L36: `(define-key map (kbd "o") #'term-sessions-action-open)`
+- L37: `(define-key map (kbd "k") #'term-sessions-action-kill)`
+- L38: `(define-key map (kbd "h") #'term-sessions-action-history)`
+- L39: `(define-key map (kbd "H") #'term-sessions-action-history-full)`
+- L40: `(define-key map (kbd "v") #'term-sessions-action-history-vt)`
+- L41: `(define-key map (kbd "x") #'term-sessions-action-history-html)`
+- L42: `(define-key map (kbd "Y") #'term-sessions-action-copy-history)`
+- L43: `(define-key map (kbd "?") #'term-sessions-action-search-history)`
+- L44: `(define-key map (kbd "w") #'term-sessions-action-copy-name)`
+- L45: `(define-key map (kbd "a") #'term-sessions-action-copy-attach-command)`
+- L46: `(define-key map (kbd "M-d") #'term-sessions-action-copy-cwd)`
+- L47: `(define-key map (kbd "M-c") #'term-sessions-action-copy-command)`
+- L48: `(define-key map (kbd "M-w") #'term-sessions-action-copy-where)`
+- L49: `(define-key map (kbd "M-s") #'term-sessions-action-copy-spec-link)`
+- L50: `(define-key map (kbd "y") #'term-sessions-action-store-org-link)`
+- L51: `(define-key map (kbd "O") #'term-sessions-action-copy-org-link)`
+- L52: `(define-key map (kbd "i") #'term-sessions-action-insert-org-link)`
+- L53: `(define-key map (kbd "s") #'term-sessions-action-send-command)`
+- L54: `(define-key map (kbd "D") #'term-sessions-action-dired-cwd)`
+- L55: `(define-key map (kbd "P") #'term-sessions-action-dired-project)`
+- L56: `(define-key map (kbd "M-!") #'term-sessions-action-compile-cwd)`
+- L57: `(define-key map (kbd "M-p") #'term-sessions-action-project-compile)`
+- L58: `(define-key map (kbd "!") #'term-sessions-action-run-command)`
+- L59: `(define-key map (kbd "&") #'term-sessions-action-run-async)`
+- L60: `(define-key map (kbd "W") #'term-sessions-action-wait)`
+- L61: `(define-key map (kbd "M-W") #'term-sessions-action-wait-async)`
+- L65: `(defun term-sessions-action--entry (candidate)`
+- L70: `(defun term-sessions-action--call (candidate function)`
+- L76: `(defun term-sessions-action--entry-spec-link (entry)`
+- L83: `(defun term-sessions-action--entry-org-link (entry)`
+- L90: `(defun term-sessions-action--read-target-session-entry (prompt)`
+- L97: `(defun term-sessions-action--with-target-session (prompt function)`
+- L103: `(defun term-sessions-action--current-buffer-entry ()`
+- L114: `(defun term-sessions-action--entry-cwd-directory (entry)`
+- L119: `(defun term-sessions-action-open (candidate)`
+- L128: `(defun term-sessions-action-kill (candidate)`
+- L137: `(defun term-sessions-action-history (candidate)`
+- L146: `(defun term-sessions-action-history-full (candidate)`
+- L155: `(defun term-sessions-action-history-vt (candidate)`
+- L164: `(defun term-sessions-action-history-html (candidate)`
+- L173: `(defun term-sessions-action-copy-history (candidate)`
+- L184: `(defun term-sessions-action-search-history (candidate)`
+- L196: `(defun term-sessions-action-dired-cwd (candidate)`
+- L205: `(defun term-sessions-action-dired-project (candidate)`
+- L220: `(defun term-sessions-action-compile-cwd (candidate command)`
+- L232: `(defun term-sessions-action-project-compile (candidate)`
+- L244: `(defun term-sessions-action-run-command (candidate command)`
+- L255: `(defun term-sessions-action-run-async (candidate command)`
+- L266: `(defun term-sessions-action-wait (candidate)`
+- L275: `(defun term-sessions-action-wait-async (candidate)`
+- L284: `(defun term-sessions-action-copy-name (candidate)`
+- L292: `(defun term-sessions-action-copy-attach-command (candidate)`
+- L306: `(defun term-sessions-action-copy-cwd (candidate)`
+- L317: `(defun term-sessions-action-copy-command (candidate)`
+- L326: `(defun term-sessions-action-copy-where (candidate)`
+- L338: `(defun term-sessions-action-copy-spec-link (candidate)`
+- L349: `(defun term-sessions-action-store-org-link (candidate)`
+- L358: `(defun term-sessions-action-copy-org-link (candidate)`
+- L369: `(defun term-sessions-action-insert-org-link (candidate)`
+- L378: `(defun term-sessions-action-send-command (candidate command)`
+- L389: `(defun term-sessions-action-send-text-to-session (text)`
+- L401: `(defun term-sessions-action-send-command-text-to-session (text)`
+- L410: `(defun term-sessions-action-send-file-path-to-session (file)`
+- L416: `(defun term-sessions-action-run-file-in-session (file)`
+- L427: `(defun term-sessions-action-open-org-link (link)`
+- L436: `(defun term-sessions-action-copy-org-link-target (link)`
+- L442: `(defun term-sessions-action--org-element-link-target ()`
+- L454: `(defun term-sessions-action--raw-link-target ()`
+- L468: `(defun term-sessions-action-org-link-target ()`
+- L473: `(defun term-sessions-action-list-row-target ()`
+- L487: `(defun term-sessions-action-current-buffer-target ()`
+- L494: `(defvar embark-expression-map)`
+- L495: `(defvar embark-file-map)`
+- L496: `(defvar embark-identifier-map)`
+- L497: `(defvar embark-keymap-alist)`
+- L498: `(defvar embark-region-map)`
+- L534: `(defun term-sessions-embark-setup ()`
+- L551: `(define-key (symbol-value (nth 0 spec))`
+- L565: `(defun term-sessions-embark-teardown ()`
+- L571: `(define-key (symbol-value (nth 0 saved))`
+- L579: `(defun term-sessions-actions-unload-function ()`
+- L588: `(provide 'term-sessions-actions)`
+
+## term-sessions-consult.el
+
+- L10: `(require 'seq)`
+- L11: `(require 'subr-x)`
+- L12: `(require 'term-sessions-core)`
+- L13: `(require 'term-sessions-zmx)`
+- L14: `(require 'term-sessions-tramp)`
+- L15: `(require 'term-sessions-frontends)`
+- L16: `(require 'term-sessions-list)`
+- L21: `(defcustom term-sessions-consult-sources`
+- L53: `(defun term-sessions-consult--read (sources &rest args)`
+- L59: `(defun term-sessions-consult--column-widths (&optional total-width)`
+- L70: `(defun term-sessions-consult--display (entry)`
+- L96: `(defun term-sessions-consult--entry (candidate)`
+- L101: `(defun term-sessions-consult--entries ()`
+- L112: `(defun term-sessions-consult--displayed ()`
+- L125: `(defun term-sessions-consult--items (&optional predicate)`
+- L132: `(defun term-sessions-consult--annotate (candidate)`
+- L153: `(defun term-sessions-consult--open (candidate)`
+- L157: `(defun term-sessions-consult--open-new (name)`
+- L164: `(defun term-sessions-consult--local-p (entry)`
+- L168: `(defun term-sessions-consult--remote-p (entry)`
+- L172: `(defun term-sessions-consult--backend-key (&optional directory)`
+- L181: `(defun term-sessions-consult--current-host-p (entry)`
+- L186: `(defun term-sessions-consult--current-project-p (entry)`
+- L203: `(defun term-sessions-consult--attached-p (entry)`
+- L207: `(defun term-sessions-consult--make-source (name predicate &rest properties)`
+- L269: `(defun term-sessions-consult-session ()`
+- L287: `(provide 'term-sessions-consult)`
+
+## term-sessions-core.el
+
+- L10: `(require 'cl-lib)`
+- L11: `(require 'subr-x)`
+- L20: `(defcustom term-sessions-backend 'zmx`
+- L26: `(defcustom term-sessions-preferred-frontend 'term`
+- L36: `(defcustom term-sessions-history-lines 200`
+- L105: `(defun term-sessions--command-string (program args)`
+- L109: `(defun term-sessions--buffer-name (name &optional suffix)`
+- L113: `(defun term-sessions--term-buffer-base-name (name)`
+- L118: `(defun term-sessions--mark-buffer (name &optional spec terminal-p)`
+- L132: `(defun term-sessions--string-or-nil (value)`
+- L137: `(defun term-sessions--fit-column (value width &optional ellipsis)`
+- L147: `(defun term-sessions--distribute-extra-width (columns extra)`
+- L168: `(defun term-sessions--scaled-column-widths (columns budget)`
+- L176: `(defun term-sessions--column-width (widths key &optional fallback)`
+- L181: `(defun term-sessions--directory-key (directory)`
+- L193: `(defun term-sessions--buffer-live-process-p (&optional buffer)`
+- L205: `(defun term-sessions--session-buffer (name directory &optional backend)`
+- L224: `(defun term-sessions--live-session-buffer (name directory &optional backend)`
+- L233: `(defun term-sessions--entry-name (entry)`
+- L240: `(defun term-sessions--entry-directory (entry)`
+- L245: `(defun term-sessions--entry-cwd-directory (entry)`
+- L264: `(defun term-sessions--register-completion-entry (candidate entry)`
+- L274: `(defun term-sessions--completion-entry (candidate)`
+- L284: `(provide 'term-sessions-core)`
+
+## term-sessions-frontends.el
+
+- L10: `(require 'term)`
+- L11: `(require 'term-sessions-core)`
+- L12: `(require 'term-sessions-zmx)`
+- L13: `(require 'term-sessions-tramp)`
+- L60: `(defcustom term-sessions-ghostel-open-function #'term-sessions--ghostel-open-command`
+- L67: `(defcustom term-sessions-default-command nil`
+- L74: `(defun term-sessions--ghostel-live-process-p ()`
+- L80: `(defun term-sessions--ghostel-open-command (buffer-name command)`
+- L110: `(defun term-sessions--short-directory-name (directory)`
+- L118: `(defun term-sessions--buffer-name-for-spec (spec)`
+- L129: `(defun term-sessions--buffer-name-for-title (name title)`
+- L133: `(defun term-sessions--ghostel-buffer-name-for-title (name fallback-name title)`
+- L140: `(defun term-sessions--install-ghostel-title-tracking (name fallback-name)`
+- L158: `(defun term-sessions--attach-shell (directory)`
+- L165: `(defun term-sessions--open-vterm (name command buffer-name &optional spec)`
+- L186: `(defun term-sessions--open-eat (name command buffer-name &optional spec)`
+- L202: `(defun term-sessions--open-ebb (name command buffer-name &optional spec)`
+- L241: `(defun term-sessions--terminal-buffer-base-name (name buffer-name)`
+- L249: `(defun term-sessions--open-term (name command buffer-name &optional spec)`
+- L260: `(defun term-sessions--open-term-process (name program args buffer-name &optional spec)`
+- L324: `(defun term-sessions--open-tramp-process (name command frontend buffer-name &optional spec)`
+- L339: `(defun term-sessions--open-shell (name command buffer-name &optional spec)`
+- L349: `(defun term-sessions--open-command-frontend (name command frontend buffer-name &optional spec)`
+- L360: `(defun term-sessions--open-ghostel (name command buffer-name &optional spec)`
+- L371: `(defun term-sessions--read-session-entry (&optional prompt require-existing)`
+- L406: `(defun term-sessions--read-existing-session-entry (&optional prompt)`
+- L410: `(defun term-sessions--pop-existing-session-buffer (name directory &optional backend)`
+- L418: `(defun term-sessions-open-with-frontend (name &optional command frontend allow-create)`
+- L457: `(defun term-sessions-open (name &optional command)`
+- L469: `(provide 'term-sessions-frontends)`
+
+## term-sessions-list.el
+
+- L10: `(require 'cl-lib)`
+- L11: `(require 'seq)`
+- L12: `(require 'subr-x)`
+- L13: `(require 'tabulated-list)`
+- L14: `(require 'hl-line)`
+- L15: `(require 'imenu)`
+- L16: `(require 'tramp)`
+- L17: `(require 'term-sessions-core)`
+- L18: `(require 'term-sessions-zmx)`
+- L19: `(require 'term-sessions-frontends)`
+- L20: `(require 'term-sessions-org)`
+- L24: `(defcustom term-sessions-list-include-open-remotes t`
+- L32: `(defcustom term-sessions-list-failed-remote-retry-delay 300`
+- L41: `(defcustom term-sessions-list-remote-query-timeout 10`
+- L73: `(defvar term-sessions-list-mode-map`
+- L76: `(define-key map (kbd "RET") #'term-sessions-list-open)`
+- L77: `(define-key map (kbd "o") #'term-sessions-list-open)`
+- L78: `(define-key map (kbd "g") #'revert-buffer)`
+- L79: `(define-key map (kbd "R") #'term-sessions-list-clear-failed-remotes)`
+- L80: `(define-key map (kbd "k") #'term-sessions-list-kill)`
+- L81: `(define-key map (kbd "h") #'term-sessions-list-history)`
+- L82: `(define-key map (kbd "s") #'term-sessions-list-send-command)`
+- L83: `(define-key map (kbd "y") #'term-sessions-list-store-org-link)`
+- L84: `(define-key map (kbd "m") #'term-sessions-list-mark)`
+- L85: `(define-key map (kbd "u") #'term-sessions-list-unmark)`
+- L86: `(define-key map (kbd "U") #'term-sessions-list-unmark-all)`
+- L87: `(define-key map (kbd "t") #'term-sessions-list-toggle-mark)`
+- L88: `(define-key map (kbd "T") #'term-sessions-list-toggle-all-marks)`
+- L89: `(define-key map (kbd "%") #'term-sessions-list-mark-regexp)`
+- L90: `(define-key map (kbd "-") #'term-sessions-list-widen)`
+- L91: `(define-key map (kbd "<backspace>") #'term-sessions-list-remove-narrow-criterion)`
+- L92: `(define-key map (kbd "q") #'quit-window)`
+- L93: `(define-key map (kbd "/") narrow-map)`
+- L94: `(define-key narrow-map (kbd "n") #'term-sessions-list-narrow-name)`
+- L95: `(define-key narrow-map (kbd "h") #'term-sessions-list-narrow-host)`
+- L96: `(define-key narrow-map (kbd "l") #'term-sessions-list-narrow-local)`
+- L97: `(define-key narrow-map (kbd "r") #'term-sessions-list-narrow-remote)`
+- L98: `(define-key narrow-map (kbd "w") #'term-sessions-list-narrow-cwd-or-project)`
+- L99: `(define-key narrow-map (kbd "c") #'term-sessions-list-narrow-command)`
+- L100: `(define-key narrow-map (kbd "a") #'term-sessions-list-narrow-attached)`
+- L101: `(define-key narrow-map (kbd "d") #'term-sessions-list-narrow-detached)`
+- L102: `(define-key narrow-map (kbd "u") #'term-sessions-list-narrow-recently-updated)`
+- L106: `(define-derived-mode term-sessions-list-mode tabulated-list-mode "Term-Sessions"`
+- L123: `(defun term-sessions-list--column-widths (&optional total-width)`
+- L140: `(defun term-sessions-list--format (&optional total-width)`
+- L152: `(defun term-sessions-list--update-format ()`
+- L157: `(defun term-sessions-list--numeric-string-p (string)`
+- L162: `(defun term-sessions-list--time-string (time-or-seconds)`
+- L172: `(defun term-sessions-list--location-label (directory)`
+- L179: `(defun term-sessions-list--project-label (cwd directory)`
+- L190: `(defun term-sessions-list--clients-number (clients)`
+- L197: `(defun term-sessions-list--updated-seconds (entry)`
+- L208: `(defun term-sessions-list--parse-duration (duration)`
+- L223: `(defun term-sessions-list--entry-label (entry)`
+- L229: `(defun term-sessions-list--mode-line-indicator ()`
+- L235: `(defun term-sessions-list-imenu-index ()`
+- L246: `(defun term-sessions-list-eldoc (_callback)`
+- L261: `(defun term-sessions-list--directory-for-tramp-vec (vec)`
+- L276: `(defun term-sessions-list--remote-key-for-tramp-vec (vec)`
+- L286: `(defun term-sessions-list--tramp-vec-score (vec)`
+- L296: `(defun term-sessions-list--local-directory ()`
+- L300: `(defun term-sessions-list--open-remote-directories ()`
+- L321: `(defun term-sessions-list--failed-remote-p (directory)`
+- L338: `(defun term-sessions-list--record-remote-failure (directory error)`
+- L343: `(defun term-sessions-list--remote-connection-state (directory)`
+- L360: `(defun term-sessions-list--remote-known-offline-p (directory)`
+- L364: `(defun term-sessions-list--skip-known-offline-remote-p (directory)`
+- L373: `(defun term-sessions-list--skip-unavailable-async-remote-p (directory)`
+- L390: `(defun term-sessions-list--clear-remote-failure (directory)`
+- L395: `(defun term-sessions-list--session-buffer-directories ()`
+- L405: `(defun term-sessions-list--directory-key (directory)`
+- L409: `(defun term-sessions-list--delete-duplicate-directories (directories)`
+- L421: `(defun term-sessions-list-clear-failed-remotes ()`
+- L431: `(defun term-sessions-list--query-directory (directory)`
+- L449: `(defun term-sessions-list--parse-zmx-list-output (output)`
+- L461: `(defun term-sessions-list--rows-for-sessions (sessions directory)`
+- L484: `(defun term-sessions-list--rows-without-directory (rows directory)`
+- L493: `(defun term-sessions-list--remote-query-done (process)`
+- L503: `(defun term-sessions-list--remote-query-install (buffer generation directory rows)`
+- L516: `(defun term-sessions-list--remote-query-timeout (process)`
+- L522: `(defun term-sessions-list--remote-query-sentinel (process event)`
+- L565: `(defun term-sessions-list--start-remote-query (directory buffer generation)`
+- L606: `(defun term-sessions-list--cancel-pending-remote-queries ()`
+- L619: `(defun term-sessions-list--filtered-entries (entries)`
+- L625: `(defun term-sessions-list--entry-key (entry)`
+- L630: `(defun term-sessions-list--same-entry-p (a b)`
+- L635: `(defun term-sessions-list--mark-entry (entry)`
+- L640: `(defun term-sessions-list--unmark-entry (entry)`
+- L647: `(defun term-sessions-list--unmark-entries (entries)`
+- L656: `(defun term-sessions-list--entry-marked-p (entry)`
+- L662: `(defun term-sessions-list--restore-marks ()`
+- L672: `(defun term-sessions-list-revert (&rest _ignore)`
+- L680: `(defun term-sessions-list--bounded-remote-rows (directory timeout)`
+- L734: `(defun term-sessions-list--query-remote-directory (directory)`
+- L751: `(defun term-sessions-list--session-rows ()`
+- L770: `(defun term-sessions-list-refresh ()`
+- L803: `(defun term-sessions-list ()`
+- L820: `(defun term-sessions-list--entry-at-point ()`
+- L825: `(defun term-sessions-list--selected-entries ()`
+- L830: `(defun term-sessions-list--map-selected (function)`
+- L843: `(defun term-sessions-list--reprint ()`
+- L851: `(defun term-sessions-list-open ()`
+- L856: `(defun term-sessions-list-kill ()`
+- L875: `(defun term-sessions-list-history ()`
+- L882: `(defun term-sessions-list-send-command (command)`
+- L889: `(defun term-sessions-list--store-org-link-for-entry (entry)`
+- L907: `(defun term-sessions-list-store-org-link ()`
+- L918: `(defun term-sessions-list-mark ()`
+- L926: `(defun term-sessions-list-unmark ()`
+- L934: `(defun term-sessions-list-unmark-all ()`
+- L940: `(defun term-sessions-list-toggle-mark ()`
+- L947: `(defun term-sessions-list-toggle-all-marks ()`
+- L957: `(defun term-sessions-list-mark-regexp (regexp)`
+- L971: `(defun term-sessions-list-narrow-sessions (label predicate)`
+- L979: `(defun term-sessions-list-remove-narrow-criterion ()`
+- L989: `(defun term-sessions-list-widen ()`
+- L995: `(defun term-sessions-list-narrow-name (regexp)`
+- L1002: `(defun term-sessions-list-narrow-command (regexp)`
+- L1009: `(defun term-sessions-list-narrow-cwd-or-project (regexp)`
+- L1018: `(defun term-sessions-list-narrow-host (host)`
+- L1030: `(defun term-sessions-list-narrow-local ()`
+- L1037: `(defun term-sessions-list-narrow-remote ()`
+- L1044: `(defun term-sessions-list-narrow-attached ()`
+- L1051: `(defun term-sessions-list-narrow-detached ()`
+- L1058: `(defun term-sessions-list-narrow-recently-updated (duration)`
+- L1070: `(provide 'term-sessions-list)`
+
+## term-sessions-org.el
+
+- L10: `(require 'seq)`
+- L11: `(require 'subr-x)`
+- L12: `(require 'url-util)`
+- L13: `(require 'ol)`
+- L14: `(require 'term-sessions-core)`
+- L15: `(require 'term-sessions-zmx)`
+- L16: `(require 'term-sessions-tramp)`
+- L17: `(require 'term-sessions-frontends)`
+- L30: `(defcustom term-sessions-org-babel-default-session-name "org-babel"`
+- L38: `(defcustom term-sessions-org-babel-result-format "[[%s][%s]]"`
+- L44: `(defcustom term-sessions-org-babel-send-after-create-delay 1.0`
+- L51: `(defcustom term-sessions-org-babel-use-bracketed-paste nil`
+- L60: `(defcustom term-sessions-org-babel-use-zmx-send-when-no-buffer nil`
+- L76: `(defun term-sessions--org-encode-alist (alist)`
+- L105: `(defun term-sessions--org-decode-query (query)`
+- L120: `(defun term-sessions--spec-org-link (spec)`
+- L142: `(defun term-sessions--org-link-description (name &optional spec)`
+- L156: `(defun term-sessions--org-link-for-spec (spec)`
+- L163: `(defun term-sessions--org-link-for-entry (entry &optional frontend)`
+- L173: `(defun term-sessions-store-org-link (&optional name-or-interactive)`
+- L212: `(defun term-sessions--org-path-components (path)`
+- L226: `(defun term-sessions--org-default-directory (components)`
+- L232: `(defun term-sessions--org-frontend (components fallback)`
+- L244: `(defun term-sessions--org-babel-false-value-p (value)`
+- L248: `(defun term-sessions--org-babel-default-value-p (value)`
+- L252: `(defun term-sessions--org-babel-session-name (params)`
+- L269: `(defun term-sessions--org-babel-input (body)`
+- L277: `(defun term-sessions--org-babel-link-result (name)`
+- L284: `(defun term-sessions--org-babel-login-shell ()`
+- L297: `(defun term-sessions--org-babel-ensure-session (name)`
+- L310: `(defun term-sessions--ghostel-buffer-process ()`
+- L316: `(defun term-sessions--ghostel-copy-mode-p ()`
+- L320: `(defun term-sessions--ghostel-send-string (input)`
+- L324: `(defun term-sessions--org-babel-buffer-process (buffer)`
+- L332: `(defun term-sessions--org-babel-live-buffer (name)`
+- L337: `(defun term-sessions--org-babel-process-send-string (process input)`
+- L359: `(defun term-sessions--org-babel-send-to-buffer (buffer body)`
+- L368: `(defun term-sessions--org-babel-send-via-zmx-or-error (name body)`
+- L378: `(defun term-sessions--org-babel-send-now (name body)`
+- L389: `(defun term-sessions--org-babel-send-later (name body)`
+- L404: `(defun term-sessions--org-babel-open-active-session (name)`
+- L409: `(defun term-sessions--org-babel-send (name body)`
+- L425: `(defun term-sessions--org-babel-reassemble-result (result params)`
+- L434: `(defun term-sessions--org-babel-raw-result-needed-p (params)`
+- L442: `(defun term-sessions--org-babel-shell-language-p (language)`
+- L450: `(defun term-sessions-org-babel-execute-src-block (org-babel-execute-src-block-fun`
+- L477: `(defun term-sessions-org-babel-shell (org-babel-execute-shell-fun body params)`
+- L490: `(defun term-sessions-org-babel-sh (org-babel-sh-evaluate-fun &rest args)`
+- L499: `(defun term-sessions--open-org-path (path _arg)`
+- L525: `(defun term-sessions--org-register-link ()`
+- L530: `(defun term-sessions-org-setup ()`
+- L539: `(defun term-sessions-org-teardown ()`
+- L551: `(defun term-sessions-org-unload-function ()`
+- L555: `(provide 'term-sessions-org)`
+
+## term-sessions-tests.el
+
+- L6: `(require 'ert)`
+- L7: `(require 'cl-lib)`
+- L8: `(require 'term-sessions)`
+- L1797: `(provide 'term-sessions-tests)`
+
+## term-sessions-tramp.el
+
+- L10: `(require 'subr-x)`
+- L11: `(require 'tramp)`
+- L12: `(require 'term-sessions-core)`
+- L13: `(require 'term-sessions-zmx)`
+- L17: `(defcustom term-sessions-attach-transport 'auto`
+- L30: `(defcustom term-sessions-tramp-process-frontends '(term eat ghostel ebb vterm shell)`
+- L40: `(defun term-sessions--split-host-port (host)`
+- L49: `(defun term-sessions--location (&optional directory)`
+- L93: `(defun term-sessions--location-target (location)`
+- L101: `(defun term-sessions--location-remote-label (location)`
+- L110: `(defun term-sessions--remote-info (&optional directory)`
+- L126: `(defun term-sessions--frontend-supports-tramp-process-p (frontend)`
+- L130: `(defun term-sessions--resolve-attach-transport (&optional location frontend transport)`
+- L163: `(defun term-sessions--interactive-attach-command (name &optional command)`
+- L169: `(defun term-sessions--ensure-interactive-attach-supported (&optional location frontend transport)`
+- L175: `(defun term-sessions--project-name (&optional directory)`
+- L186: `(defun term-sessions-spec-current (name &optional command frontend tags recreate-policy)`
+- L204: `(provide 'term-sessions-tramp)`
+
+## term-sessions-zmx.el
+
+- L10: `(require 'seq)`
+- L11: `(require 'subr-x)`
+- L12: `(require 'term-sessions-core)`
+- L14: `(defcustom term-sessions-zmx-program "zmx"`
+- L19: `(defcustom term-sessions-zmx-dir nil`
+- L25: `(defcustom term-sessions-zmx-session-prefix nil`
+- L31: `(defcustom term-sessions-zmx-enrich-process-info t`
+- L42: `(defmacro term-sessions-zmx--with-environment (&rest body)`
+- L56: `(defun term-sessions--remote-zmx-available-p (program)`
+- L75: `(defun term-sessions--ensure-zmx ()`
+- L90: `(defun term-sessions--call-process-file (program infile &rest args)`
+- L101: `(defun term-sessions--call (program &rest args)`
+- L108: `(defun term-sessions--stdin-temp-file-prefix ()`
+- L117: `(defun term-sessions--call-with-stdin (program stdin &rest args)`
+- L126: `(defun term-sessions--zmx (&rest args)`
+- L132: `(defun term-sessions--zmx-with-stdin (stdin &rest args)`
+- L138: `(defun term-sessions--start-zmx-process (name buffer &rest args)`
+- L144: `(defun term-sessions--zmx-process-sentinel (process event)`
+- L149: `(defun term-sessions--zmx-run-sentinel (process event)`
+- L159: `(defun term-sessions--zmx-list-names ()`
+- L195: `(defun term-sessions--parse-key-value-fields (line)`
+- L206: `(defun term-sessions--zmx-version-info ()`
+- L217: `(defun term-sessions--remote-file-name (path)`
+- L224: `(defun term-sessions--zmx-log-file-name (name log-dir)`
+- L234: `(defun term-sessions--zmx-log-dir ()`
+- L241: `(defun term-sessions--zmx-log-mtime (name &optional log-dir)`
+- L252: `(defun term-sessions--process-output-string (program &rest args)`
+- L260: `(defun term-sessions--zmx-process-cwd (pid)`
+- L267: `(defun term-sessions--zmx-process-args (pid)`
+- L274: `(defun term-sessions--zmx-process-tpgid (pid)`
+- L282: `(defun term-sessions--zmx-current-command (pid)`
+- L288: `(defun term-sessions--zmx-enrich-session-process-info (session)`
+- L302: `(defun term-sessions--zmx-list-sessions ()`
+- L323: `(defun term-sessions--active-p (name)`
+- L327: `(defun term-sessions--zmx-session-entry (session &optional directory)`
+- L341: `(defun term-sessions--completion-entry-for-session (session &optional directory)`
+- L345: `(defun term-sessions--completion-annotate (candidate)`
+- L359: `(defun term-sessions--session-completion-table (&optional sessions directory)`
+- L381: `(defun term-sessions--read-name (&optional prompt require-existing)`
+- L390: `(defun term-sessions--attach-args (name command)`
+- L396: `(defun term-sessions--login-shell-setup-command ()`
+- L400: `(defun term-sessions--attach-command (name &optional command prefer-login-shell)`
+- L417: `(defun term-sessions-kill (name &optional force)`
+- L428: `(defun term-sessions-send (name text)`
+- L437: `(defun term-sessions-send-command (name command)`
+- L445: `(defun term-sessions-run (name command &optional detached)`
+- L458: `(defun term-sessions-run-async (name command)`
+- L475: `(defun term-sessions-wait (name)`
+- L481: `(defun term-sessions-wait-async (name)`
+- L492: `(defun term-sessions-history (name &optional lines vt html)`
+- L517: `(provide 'term-sessions-zmx)`
+
+## term-sessions.el
+
+- L23: `(require 'term-sessions-core)`
+- L24: `(require 'term-sessions-zmx)`
+- L25: `(require 'term-sessions-tramp)`
+- L26: `(require 'term-sessions-frontends)`
+- L27: `(require 'term-sessions-org)`
+- L28: `(require 'term-sessions-list)`
+- L29: `(require 'term-sessions-actions)`
+- L30: `(require 'term-sessions-consult)`
+- L32: `(provide 'term-sessions)`

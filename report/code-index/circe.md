@@ -1,0 +1,740 @@
+# Indice del codice: circe
+
+Fonte: https://github.com/emacs-circe/circe.git
+
+Revisione: `50ac3bc96a0db359a877162a1033b41ba0d01bb8`.
+
+
+## .dir-locals.el
+
+
+## circe-chanop.el
+
+- L38: `(require 'circe)`
+- L40: `(defun circe-command-MODE (mode)`
+- L53: `(defun circe-command-BANS (&optional _ignored)`
+- L60: `(defun circe-command-KICK (nick &optional reason)`
+- L74: `(defun circe-command-GETOP (&optional _ignored)`
+- L83: `(defun circe-command-DROPOP (&optional _ignored)`
+- L96: `(defun circe-command-OPER (&optional user password)`
+- L121: `(provide 'circe-chanop)`
+
+## circe-color-nicks.el
+
+- L38: `(require 'circe)`
+- L39: `(require 'color)`
+- L40: `(require 'cl-lib)`
+- L43: `(defun enable-circe-color-nicks ()`
+- L54: `(defun disable-circe-color-nicks ()`
+- L65: `(defun add-circe-color-nicks ()`
+- L69: `(defun remove-circe-color-nicks ()`
+- L79: `(defcustom circe-color-nicks-min-contrast-ratio 7`
+- L87: `(defcustom circe-color-nicks-min-difference 17`
+- L92: `(defcustom circe-color-nicks-min-fg-difference 17`
+- L97: `(defcustom circe-color-nicks-min-my-message-difference 0`
+- L102: `(defcustom circe-color-nicks-everywhere nil`
+- L107: `(defcustom circe-color-nicks-message-blacklist nil`
+- L113: `(defcustom circe-color-nicks-pool-type 'adaptive`
+- L149: `(defun circe-color-alist ()`
+- L166: `(defun circe-color-canonicalize-format (color)`
+- L174: `(defun circe-color-contrast-ratio (color1 color2)`
+- L178: `(defun circe-color-diff (color1 color2)`
+- L182: `(defun circe-color-name-to-rgb (color)`
+- L190: `(defun circe-nick-color-appropriate-p (color bg fg my-msg)`
+- L202: `(defun circe-nick-colors-delete-similar (colors)`
+- L216: `(defun circe-nick-color-generate-pool ()`
+- L231: `(defun circe-nick-color-pool-test ()`
+- L251: `(defun circe-nick-color-for-nick (nick)`
+- L263: `(defun circe-nick-color-pick ()`
+- L272: `(defun circe-nick-color-pick-least-recent ()`
+- L291: `(defun circe-color-nicks ()`
+- L327: `(defun circe-nick-color-reset ()`
+- L338: `(provide 'circe-color-nicks)`
+
+## circe-compat.el
+
+- L97: `(provide 'circe-compat)`
+
+## circe-display-images.el
+
+- L37: `(require 'circe)`
+- L38: `(require 'url)`
+- L41: `(defun enable-circe-display-images ()`
+- L52: `(defun disable-circe-display-images ()`
+- L63: `(defun add-circe-display-images ()`
+- L67: `(defun remove-circe-display-images ()`
+- L76: `(defcustom circe-display-images-image-regex`
+- L82: `(defcustom circe-display-images-max-height 400`
+- L88: `(defcustom circe-display-images-background nil`
+- L94: `(defcustom circe-display-images-animate-gifs nil`
+- L114: `(defun circe-display-images-toggle-image-at-point ()`
+- L154: `(defun circe-display-images-insert-image-from-url (url)`
+- L187: `(defun circe-create-image (data)`
+- L193: `(defun circe-display-images-urls-in-body ()`
+- L202: `(defun circe-display-images ()`
+- L213: `(provide 'circe-display-images)`
+
+## circe-lagmon.el
+
+- L37: `(require 'circe)`
+- L46: `(defcustom circe-lagmon-timer-tick 5`
+- L53: `(defcustom circe-lagmon-check-interval 60`
+- L58: `(defcustom circe-lagmon-reconnect-interval 120`
+- L65: `(defcustom circe-lagmon-mode-line-format-string "lag:%.1f "`
+- L70: `(defcustom circe-lagmon-mode-line-unknown-lag-string "lag:? "`
+- L95: `(defun circe-lagmon-timer-tick ()`
+- L111: `(defun circe-lagmon-server-check ()`
+- L150: `(defun circe-lagmon-force-mode-line-update ()`
+- L158: `(defun circe-lagmon-format-mode-line-entry ()`
+- L178: `(defun circe-lagmon-init ()`
+- L190: `(defun circe-lagmon--rpl-welcome-handler (conn &rest _ignored)`
+- L194: `(defun circe-lagmon--ctcp-lagmon-handler (conn _event sender _target argument)`
+- L204: `(defun circe-lagmon--nick-handler (conn _event sender _new-nick)`
+- L210: `(define-minor-mode circe-lagmon-mode`
+- L242: `(provide 'circe-lagmon)`
+
+## circe-new-day-notifier.el
+
+- L39: `(require 'circe)`
+- L46: `(defcustom circe-new-day-notifier-format-message "*** Day changed to {day}"`
+- L53: `(defcustom circe-new-day-notifier-date-format "%Y-%m-%d, %A"`
+- L63: `(defun enable-circe-new-day-notifier ()`
+- L71: `(defun disable-circe-new-day-notifier ()`
+- L78: `(defun circe-new-day-notification ()`
+- L86: `(provide 'circe-new-day-notifier)`
+
+## circe-pingmon.el
+
+- L34: `(require 'circe)`
+- L43: `(defcustom circe-pingmon-timer-tick 5`
+- L50: `(defcustom circe-pingmon-check-interval 60`
+- L55: `(defcustom circe-pingmon-reconnect-interval 120`
+- L62: `(defcustom circe-pingmon-mode-line-format-string "ping:%.1f "`
+- L67: `(defcustom circe-pingmon-mode-line-unknown-lag-string "ping:? "`
+- L96: `(defun circe-pingmon-timer-tick ()`
+- L112: `(defun circe-pingmon-server-check ()`
+- L149: `(defun circe-pingmon-force-mode-line-update ()`
+- L157: `(defun circe-pingmon-format-mode-line-entry ()`
+- L179: `(defun circe-pingmon-generate-token ()`
+- L182: `(defun circe-pingmon-init ()`
+- L194: `(defun circe-pingmon--rpl-welcome-handler (conn &rest _ignored)`
+- L198: `(defun circe-pingmon--PONG-handler (conn _event _sender _server token)`
+- L208: `(define-minor-mode circe-pingmon-mode`
+- L237: `(provide 'circe-pingmon)`
+
+## circe.el
+
+- L38: `(require 'circe-compat)`
+- L40: `(require 'ring)`
+- L41: `(require 'timer)`
+- L42: `(require 'lui)`
+- L43: `(require 'lui-format)`
+- L44: `(require 'lui-logging)`
+- L45: `(require 'lcs)`
+- L46: `(require 'irc)`
+- L49: `(require 'lui-irc-colors)`
+- L52: `(require 'diff-mode)`
+- L118: `(defcustom circe-default-nick (user-login-name)`
+- L123: `(defcustom circe-default-user circe-default-nick`
+- L128: `(defcustom circe-default-realname (if (string= (user-full-name) "")`
+- L135: `(defcustom circe-default-ip-family nil`
+- L148: `(defcustom circe-default-directory "~/"`
+- L153: `(defcustom circe-network-options nil`
+- L346: `(defcustom circe-default-quit-message "Using Circe, the loveliest of all IRC clients"`
+- L354: `(defcustom circe-default-part-message "Using Circe, the loveliest of all IRC clients"`
+- L360: `(defcustom circe-auto-query-max 23`
+- L367: `(defcustom circe-use-cycle-completion nil`
+- L378: `(defcustom circe-reduce-lurker-spam nil`
+- L388: `(defcustom circe-active-users-timeout nil`
+- L394: `(defcustom circe-prompt-string (concat (propertize ">"`
+- L403: `(defcustom circe-extra-nicks nil`
+- L408: `(defcustom circe-highlight-nick-type 'sender`
+- L424: `(defcustom circe-inhibit-nick-highlight-function nil`
+- L433: `(defcustom circe-completion-suffix ": "`
+- L438: `(defcustom circe-ignore-list nil`
+- L445: `(defcustom circe-fool-list nil`
+- L455: `(defcustom circe-ignore-functions nil`
+- L463: `(defcustom circe-split-line-length 440`
+- L477: `(defcustom circe-server-max-reconnect-attempts 5`
+- L485: `(defcustom circe-netsplit-delay 60`
+- L492: `(defcustom circe-server-killed-confirmation 'ask-and-kill-all`
+- L507: `(defcustom circe-channel-killed-confirmation 'ask`
+- L516: `(defcustom circe-track-faces-priorities '(circe-highlight-nick-face`
+- L526: `(defcustom circe-server-send-unknown-command-p nil`
+- L533: `(defcustom circe-server-connected-hook nil`
+- L539: `(defcustom circe-server-auto-join-default-type :immediate`
+- L569: `(defcustom circe-format-not-tracked`
+- L595: `(defcustom circe-format-server-message "*** {body}"`
+- L601: `(defcustom circe-format-self-say "> {body}"`
+- L608: `(defcustom circe-format-self-action "* {nick} {body}"`
+- L615: `(defcustom circe-format-self-message "-> *{chattarget}* {body}"`
+- L622: `(defcustom circe-format-action "* {nick} {body}"`
+- L629: `(defcustom circe-format-message-action "* *{nick}* {body}"`
+- L636: `(defcustom circe-chat-buffer-name "{target}@{network}"`
+- L643: `(defcustom circe-format-say "<{nick}> {body}"`
+- L650: `(defcustom circe-format-message "*{nick}* {body}"`
+- L657: `(defcustom circe-format-notice "-{nick}- {body}"`
+- L664: `(defcustom circe-format-server-notice "-Server Notice- {body}"`
+- L670: `(defcustom circe-format-server-topic "*** Topic change by {nick} ({userhost}): {new-topic}"`
+- L684: `(defcustom circe-format-server-lurker-activity`
+- L693: `(defcustom circe-format-server-rejoin`
+- L710: `(defcustom circe-server-buffer-name "{host}:{port}"`
+- L722: `(defcustom circe-format-server-whois-idle-with-signon "*** {whois-nick} is {idle-duration} idle (signon on {signon-date}, {signon-ago} ago)"`
+- L737: `(defcustom circe-format-server-whois-idle "*** {whois-nick} is {idle-duration} idle"`
+- L748: `(defcustom circe-format-server-topic-time "*** Topic set by {setter} on {topic-date}, {topic-ago} ago"`
+- L763: `(defcustom circe-format-server-topic-time-for-channel "*** Topic for {channel} set by {setter} on {topic-date}, {topic-ago} ago"`
+- L778: `(defcustom circe-format-server-channel-creation-time "*** Channel {channel} created on {date}, {ago} ago"`
+- L790: `(defcustom circe-format-server-ctcp-ping "*** CTCP PING request from {nick} ({userhost}) to {target}: {body} ({ago} ago)"`
+- L804: `(defcustom circe-format-server-ctcp-ping-reply "*** CTCP PING reply from {nick} ({userhost}) to {target}: {ago} ago ({body})"`
+- L818: `(defcustom circe-format-server-ctcp "*** CTCP {command} request from {nick} ({userhost}) to {target}: {body}"`
+- L831: `(defcustom circe-format-server-netsplit "*** Netsplit: {split} (Use /WL to see who left)"`
+- L840: `(defcustom circe-format-server-netmerge "*** Netmerge: {split}, split {ago} ago (Use /WL to see who's still missing)"`
+- L852: `(defcustom circe-format-server-join "*** Join: {nick} ({userinfo})"`
+- L866: `(defcustom circe-format-server-join-in-channel "*** Join: {nick} ({userinfo}) joined {channel}"`
+- L880: `(defcustom circe-format-server-mode-change "*** Mode change: {change} on {target} by {setter} ({userhost})"`
+- L892: `(defcustom circe-format-server-nick-change-self "*** Nick change: You are now known as {new-nick}"`
+- L903: `(defcustom circe-format-server-nick-change "*** Nick change: {old-nick} ({userhost}) is now known as {new-nick}"`
+- L914: `(defcustom circe-format-server-nick-regain "*** Nick regain: {old-nick} ({userhost}) is now known as {new-nick}"`
+- L925: `(defcustom circe-format-server-setname "*** Realname changed from {oldname} to {newname}"`
+- L935: `(defcustom circe-format-server-host-change "*** Nick changed host: {nick} is now known as {userhost}"`
+- L949: `(defcustom circe-format-server-part "*** Part: {nick} ({userhost}) left {channel}: {reason}"`
+- L961: `(defcustom circe-format-server-quit-channel "*** Quit: {nick} ({userhost}) left {channel}: {reason}"`
+- L973: `(defcustom circe-format-server-quit "*** Quit: {nick} ({userhost}) left IRC: {reason}"`
+- L1187: `(defun circe-server-buffer ()`
+- L1200: `(defmacro with-circe-server-buffer (&rest body)`
+- L1211: `(defun circe-version ()`
+- L1216: `(defun circe--version ()`
+- L1223: `(defun circe--git-version ()`
+- L1237: `(defun circe (network-or-server &rest server-options)`
+- L1266: `(defun circe--read-network-and-options ()`
+- L1298: `(defun circe--server-get-network-options (network server-options)`
+- L1320: `(defun circe--translate-option-names (option)`
+- L1331: `(defun circe--server-generate-buffer (options)`
+- L1344: `(defun circe--server-set-variables (options)`
+- L1378: `(defun circe-reconnect ()`
+- L1391: `(defun circe--reconnect-p ()`
+- L1403: `(defun circe--validate-password (key value)`
+- L1421: `(defun circe-reconnect--internal ()`
+- L1493: `(defun circe-reconnect-all ()`
+- L1502: `(defun circe--auto-join-list (type)`
+- L1514: `(defun circe--auto-join-channel-buffers ()`
+- L1537: `(defvar circe-mode-map`
+- L1539: `(define-key map (kbd "C-c C-j") 'circe-command-JOIN)`
+- L1540: `(define-key map (kbd "C-c C-r") 'circe-reconnect)`
+- L1548: `(define-derived-mode circe-mode lui-mode "Circe"`
+- L1587: `(defun circe-display (format &rest keywords)`
+- L1630: `(defun circe-display-server-message (message)`
+- L1635: `(defun circe--display-add-nick-property (keywords)`
+- L1649: `(defun circe--display-ignored-p (_format keywords)`
+- L1655: `(defun circe--display-fool-p (_format keywords)`
+- L1661: `(defun circe--ignored-p (nick userhost body)`
+- L1672: `(defun circe--fool-p (nick userhost body)`
+- L1681: `(defun circe--ignore-matches-p (nick userhost body patterns)`
+- L1705: `(defun circe--output-highlight-nick ()`
+- L1759: `(defun circe--extend-text-having-face (from to existing new)`
+- L1775: `(defun circe--input (str)`
+- L1813: `(defun circe--flyspell-check-word-predicate ()`
+- L1826: `(defun circe--flyspell-nick-before-point ()`
+- L1841: `(defun circe--completion-at-point ()`
+- L1865: `(defun circe--completion-table (string pred action)`
+- L1904: `(defun circe--completion-clean-nick (string)`
+- L1913: `(defun circe--completion-sort (collection)`
+- L1956: `(defun circe--completion-candidates (nick-suffix)`
+- L1994: `(defun circe--commands-list ()`
+- L2010: `(defvar circe-server-mode-map (make-sparse-keymap)`
+- L2013: `(define-derived-mode circe-server-mode circe-mode "Circe Server"`
+- L2024: `(defun circe-server-killed ()`
+- L2050: `(defun circe-server-buffers ()`
+- L2059: `(defun circe-server-process ()`
+- L2064: `(defun circe-server-my-nick-p (nick)`
+- L2070: `(defun circe-nick ()`
+- L2076: `(defun circe-server-last-active-buffer ()`
+- L2097: `(defun circe-reduce-lurker-spam ()`
+- L2123: `(defun circe-server-get-chat-buffer (target)`
+- L2135: `(defun circe-server-create-chat-buffer (target chat-mode)`
+- L2154: `(defun circe-server-get-or-create-chat-buffer (target chat-mode)`
+- L2161: `(defun circe-server-remove-chat-buffer (target-or-buffer)`
+- L2171: `(defun circe-server-rename-chat-buffer (old-name new-name)`
+- L2186: `(defun circe-server-chat-buffer-target (&optional buffer)`
+- L2193: `(defun circe-server-chat-buffers ()`
+- L2205: `(defun circe-server-channel-buffers ()`
+- L2221: `(defvar circe-chat-mode-map (make-sparse-keymap)`
+- L2224: `(define-derived-mode circe-chat-mode circe-mode "Circe Chat"`
+- L2243: `(defun circe-chat-disconnected ()`
+- L2254: `(defvar circe-channel-mode-map`
+- L2256: `(define-key map (kbd "C-c C-n") 'circe-command-NAMES)`
+- L2257: `(define-key map (kbd "C-c C-t") 'circe-command-CHTOPIC)`
+- L2261: `(define-derived-mode circe-channel-mode circe-chat-mode "Circe Channel"`
+- L2271: `(defun circe-channel-killed ()`
+- L2301: `(defun circe-channel-user-nick-regain-p (_old new)`
+- L2310: `(defun circe-channel-user-p (nick)`
+- L2325: `(defun circe-channel-nicks ()`
+- L2336: `(defun circe-user-channels (nick)`
+- L2347: `(defun circe-lurker-p (nick)`
+- L2389: `(defun circe-lurker-rejoin-p (nick channel)`
+- L2401: `(defun circe-lurker-display-active (nick userhost)`
+- L2428: `(defvar circe-query-mode-map`
+- L2434: `(define-derived-mode circe-query-mode circe-chat-mode "Circe Query"`
+- L2444: `(defun circe-query-killed ()`
+- L2449: `(defun circe-query-auto-query-buffer (who)`
+- L2458: `(defun circe--query-count ()`
+- L2476: `(defun circe-irc-handler-table ()`
+- L2493: `(defun circe--irc-conn-registered (conn _event _nick)`
+- L2498: `(defun circe--irc-conn-disconnected (conn _event)`
+- L2506: `(defun circe--irc-display-event (conn event &optional sender &rest args)`
+- L2533: `(defun circe--irc-display-format (format target nick userhost event args)`
+- L2555: `(defun circe--irc-display-target (target nick args)`
+- L2581: `(defun circe--irc-display-default (nick userhost event args)`
+- L2605: `(defun circe-set-display-handler (command handler)`
+- L2636: `(defun circe-get-display-handler (command)`
+- L2647: `(defun circe-command-AWAY (reason)`
+- L2652: `(defun circe-command-BACK (&optional _ignored)`
+- L2659: `(defun circe-command-CHTOPIC (&optional _ignored)`
+- L2674: `(defun circe-command-CLEAR (&optional _ignored)`
+- L2679: `(defun circe-command-CTCP (who &optional command argument)`
+- L2698: `(defun circe-command-FOOL (line)`
+- L2714: `(defun circe-command-GAWAY (reason)`
+- L2721: `(defun circe-command-GQUIT (reason)`
+- L2729: `(defun circe-command-HELP (&optional _ignored)`
+- L2735: `(defun circe-command-IGNORE (line)`
+- L2751: `(defun circe-command-INVITE (nick &optional channel)`
+- L2769: `(defun circe-command-JOIN (channel)`
+- L2782: `(defun circe-command-ME (line)`
+- L2794: `(defun circe-command-MSG (who &optional what)`
+- L2819: `(defun circe-command-NAMES (&optional channel)`
+- L2832: `(defun circe-command-NICK (newnick)`
+- L2838: `(defun circe-command-SETNAME (newname)`
+- L2843: `(defun circe-command-PART (reason)`
+- L2854: `(defun circe-command-PING (target)`
+- L2862: `(defun circe-command-QUERY (arg)`
+- L2880: `(defun circe-command-QUIT (reason)`
+- L2890: `(defun circe-command-QUOTE (line)`
+- L2898: `(defun circe-command-SAY (line)`
+- L2915: `(defun circe--split-line (longline)`
+- L2930: `(defun circe-command-SV (&optional _ignored)`
+- L2943: `(defun circe-command-TOPIC (channel &optional newtopic)`
+- L2963: `(defun circe-command-UNFOOL (line)`
+- L2976: `(defun circe-command-UNIGNORE (line)`
+- L2989: `(defun circe-command-WHOAMI (&optional _ignored)`
+- L2997: `(defun circe-command-WHOIS (whom)`
+- L3005: `(defun circe-command-WHOWAS (whom)`
+- L3011: `(defun circe-command-STATS (query)`
+- L3018: `(defun circe-command-WL (&optional split)`
+- L3062: `(defun circe-display-ignore (_nick _userhost _command &rest _args)`
+- L3070: `(defun circe-display-317 (_sender _ignored _numeric _target nick`
+- L3098: `(defun circe-display-329 (_server _ignored _numeric _target channel timestamp)`
+- L3111: `(defun circe-display-333 (_server _ignored _numeric target`
+- L3143: `(defun circe-display-channel-chghost (nick old-userhost _command channel`
+- L3158: `(defun circe-display-chghost (nick old-userhost _command new-user new-host)`
+- L3178: `(defun circe-display-ctcp-action (nick userhost _command target text)`
+- L3205: `(defun circe-display-ctcp-ping (nick userhost _command target text)`
+- L3220: `(defun circe-display-ctcp-ping-reply (nick userhost _command target text)`
+- L3236: `(defun circe-display-ctcp (nick userhost command target text)`
+- L3249: `(defun circe-display-JOIN (nick userhost _command channel`
+- L3324: `(defun circe-display-MODE (setter userhost _command target &rest modes)`
+- L3335: `(defun circe-display-NICK (old-nick userhost _command new-nick)`
+- L3378: `(defun circe-display-NOTICE (nick userhost _command target text)`
+- L3402: `(defun circe-display-PART (nick userhost _command channel &optional reason)`
+- L3422: `(defun circe-display-PRIVMSG (nick userhost _command target text)`
+- L3448: `(defun circe-display-SETNAME (_nick _userhost _command newname)`
+- L3459: `(defun circe-display-topic (nick userhost _command channel new-topic)`
+- L3476: `(defun circe--topic-diff (old new)`
+- L3497: `(defun circe--topic-diff-split (str)`
+- L3516: `(defun circe-display-channel-quit (nick userhost _command channel`
+- L3536: `(defun circe-display-QUIT (nick userhost _command &optional reason)`
+- L3557: `(defun circe--netsplit-join (nick)`
+- L3578: `(defun circe--netsplit-quit (reason nick)`
+- L3600: `(defun circe--netsplit-reason-p (reason)`
+- L3752: `(defun circe-set-message-target (command target)`
+- L3766: `(defun circe--list-drop-right (list pattern)`
+- L3777: `(defun circe--nick-next (oldnick)`
+- L3804: `(defun circe-duration-string (duration)`
+- L3830: `(provide 'circe)`
+
+## irc.el
+
+- L44: `(require 'cl-lib)`
+- L45: `(require 'gnutls)`
+- L46: `(require 'seq)`
+- L58: `(defun irc-connect (&rest keywords)`
+- L124: `(defun irc-connection-get (conn propname)`
+- L128: `(defun irc-connection-uses-sasl-plain (conn)`
+- L133: `(defun irc-connection-uses-sasl-external (conn)`
+- L137: `(defun irc-connection-uses-sasl (conn)`
+- L142: `(defun irc-connection-uses-sasl-strict (conn)`
+- L147: `(defun irc-connection-put (conn propname value)`
+- L151: `(defun irc--sentinel (proc event)`
+- L181: `(defun irc--filter (proc data)`
+- L200: `(defun irc--handle-line (proc line)`
+- L210: `(defun irc--parse-message-tag-value (string)`
+- L228: `(defun irc--parse (line)`
+- L294: `(defun irc-userstring-nick (userstring)`
+- L302: `(defun irc-userstring-userhost (userstring)`
+- L310: `(defun irc-userstring-user (userstring)`
+- L318: `(defun irc-userstring-host (userstring)`
+- L326: `(defun irc-make-userstring (nick user host)`
+- L329: `(defun irc-event-emit (conn event &rest args)`
+- L345: `(defun irc-handler-table ()`
+- L349: `(defun irc-handler-add (table event handler)`
+- L356: `(defun irc-handler-remove (table event handler)`
+- L363: `(defun irc-handler-run (table event &rest args)`
+- L379: `(defun irc-send-raw (conn line &optional flood-handling)`
+- L415: `(defun irc-send--queue (conn)`
+- L445: `(defun irc-send--internal (conn line)`
+- L452: `(defun irc-send-command (conn command &rest args)`
+- L456: `(defun irc--format-command (command &rest args)`
+- L479: `(defun irc-send-AUTHENTICATE (conn arg)`
+- L486: `(defun irc-send-AWAY (conn &optional reason)`
+- L492: `(defun irc-send-CAP (conn &rest args)`
+- L499: `(defun irc-send-INVITE (conn nick channel)`
+- L503: `(defun irc-send-JOIN (conn channel &optional key)`
+- L511: `(defun irc-send-NAMES (conn &optional channel)`
+- L517: `(defun irc-send-NICK (conn nick)`
+- L521: `(defun irc-send-NOTICE (conn msgtarget text-to-be-sent)`
+- L527: `(defun irc-send-PART (conn channel reason)`
+- L531: `(defun irc-send-PASS (conn password)`
+- L535: `(defun irc-send-PONG (conn server)`
+- L541: `(defun irc-send-PRIVMSG (conn msgtarget text-to-be-sent)`
+- L547: `(defun irc-send-SETNAME (conn newname)`
+- L551: `(defun irc-send-QUIT (conn reason)`
+- L555: `(defun irc-send-TOPIC (conn channel &optional new-topic)`
+- L564: `(defun irc-send-USER (conn user mode realname)`
+- L570: `(defun irc-send-WHOIS (conn target &optional server-or-name)`
+- L576: `(defun irc-send-WHOWAS (conn target)`
+- L580: `(defun irc-send-STATS (conn query &optional server)`
+- L589: `(defun irc-debug-out (conn fmt &rest args)`
+- L602: `(defun irc-handle-registration (table)`
+- L660: `(defun irc-handle-registration--connected (conn _event)`
+- L673: `(defun irc-handle-registration--disconnected (conn _event)`
+- L676: `(defun irc-handle-registration--rpl-welcome (conn _event _sender target`
+- L681: `(defun irc-handle-registration--cap (conn _event _sender _target`
+- L708: `(defun irc-handle-registration--authenticate (conn _event _sender arg)`
+- L721: `(defun irc-handle-registration--logged-in (conn _event _sender _target`
+- L726: `(defun irc-handle-registration--sasl-succeeded (conn _event _sender target`
+- L731: `(defun irc-handle-registration--sasl-failed (conn _event _sender _target`
+- L741: `(defun irc-handle-registration--sasl-aborted (conn _event _sender _target`
+- L745: `(defun irc-handle-registration--sasl-already (conn _event _sender _target`
+- L749: `(defun irc-connection-state (conn)`
+- L759: `(defun irc-handle-ping-pong (table)`
+- L763: `(defun irc-handle-ping-pong--ping (conn _event _sender argument)`
+- L769: `(defun irc-handle-isupport (table)`
+- L773: `(defun irc-handle-isupport--005 (conn _event _sender _target &rest args)`
+- L779: `(defun irc-handle-isupport--capabilities-to-alist (capabilities)`
+- L787: `(defun irc-isupport (conn capability)`
+- L797: `(defun irc-string-equal-p (conn s1 s2)`
+- L833: `(defun irc-isupport--case-fold (conn s)`
+- L856: `(defun irc-channel-name-p (conn string)`
+- L868: `(defun irc-nick-without-prefix (conn nick)`
+- L891: `(defun irc-handle-initial-nick-acquisition (table)`
+- L905: `(defun irc-handle-initial-nick-acquisition--get-initial-nick`
+- L914: `(defun irc-generate-nick ()`
+- L930: `(defun irc-handle-ctcp (table)`
+- L972: `(defun irc-handle-ctcp--privmsg (conn _event sender target body)`
+- L980: `(defun irc-handle-ctcp--ctcp (conn _event sender target verb argument)`
+- L987: `(defun irc-handle-ctcp--notice (conn _event sender target body)`
+- L995: `(defun irc-handle-ctcp--ctcpreply (conn _event sender target verb argument)`
+- L1002: `(defun irc-handle-ctcp--ctcp-version (conn _event sender _target _argument)`
+- L1010: `(defun irc-handle-ctcp--ctcp-clientinfo (conn _event sender _target _argument)`
+- L1018: `(defun irc-handle-ctcp--ctcp-source (conn _event sender _target _argument)`
+- L1026: `(defun irc-handle-ctcp--ctcp-ping (conn _event sender _target argument)`
+- L1033: `(defun irc-handle-ctcp--ctcp-time (conn _event sender _target _argument)`
+- L1039: `(defun irc-send-ctcp (conn target verb &optional argument)`
+- L1049: `(defun irc-send-ctcpreply (conn target verb &optional argument)`
+- L1064: `(defun irc-handle-state-tracking (table)`
+- L1122: `(defun irc-channel-from-name (conn name)`
+- L1130: `(defun irc-connection-channel (conn channel-name)`
+- L1136: `(defun irc-connection-channel-list (conn)`
+- L1144: `(defun irc-connection-add-channel (conn channel-name)`
+- L1152: `(defun irc-connection-remove-channel (conn channel-name)`
+- L1158: `(defun irc-current-nick (conn)`
+- L1162: `(defun irc-current-nick-p (conn nick)`
+- L1170: `(defun irc--connection-channel-table (conn)`
+- L1186: `(defun irc-user-from-userstring (conn userstring)`
+- L1199: `(defun irc-channel-user (channel nick)`
+- L1206: `(defun irc-channel-recent-user (channel nick)`
+- L1213: `(defun irc-channel-add-user (channel userstring)`
+- L1229: `(defun irc-channel-remove-user (channel nick)`
+- L1247: `(defun irc-channel-rename-user (channel oldnick newnick)`
+- L1266: `(defun irc-channel-update-user-userhost (channel nick new-user new-host)`
+- L1275: `(defun irc-handle-state-tracking--rpl-welcome (conn _event _sender target`
+- L1279: `(defun irc-handle-state-tracking--JOIN (conn _event sender target`
+- L1292: `(defun irc-handle-state-tracking--PART (conn _event sender target`
+- L1303: `(defun irc-handle-state-tracking--KICK (conn _event _sender target nick`
+- L1313: `(defun irc-handle-state-tracking--QUIT (conn _event sender`
+- L1328: `(defun irc-handle-state-tracking--NICK (conn _event sender new-nick)`
+- L1337: `(defun irc-handle-state-tracking--CHGHOST (conn _event sender new-user new-host)`
+- L1350: `(defun irc-handle-state-tracking--PRIVMSG (conn _event sender target _message)`
+- L1358: `(defun irc-handle-state-tracking--rpl-namreply`
+- L1370: `(defun irc-handle-state-tracking--rpl-endofnames`
+- L1378: `(defun irc-channel--synchronize-nicks (channel nicks)`
+- L1396: `(defun irc-handle-state-tracking--TOPIC (conn _event _sender channel new-topic)`
+- L1403: `(defun irc-handle-state-tracking--rpl-notopic (conn _event _sender`
+- L1410: `(defun irc-handle-state-tracking--rpl-topic (conn _event _sender _current-nick`
+- L1419: `(defun irc-handle-nickserv (table)`
+- L1458: `(defun irc-handle-nickserv--password (conn)`
+- L1464: `(defun irc-handle-nickserv--registered (conn _event current-nick)`
+- L1477: `(defun irc-handle-nickserv--NOTICE (conn _event sender _target message)`
+- L1516: `(defun irc-handle-nickserv--NICK (conn _event _sender new-nick)`
+- L1523: `(defun irc-format (format &rest args)`
+- L1538: `(defun irc-handle-auto-join (table)`
+- L1564: `(defun irc-handle-auto-join--registered (conn _event _current-nick)`
+- L1568: `(defun irc-handle-auto-join--rpl-hosthidden (conn _event _sender _target _host`
+- L1573: `(defun irc-handle-auto-join--nickserv-regained (conn _event)`
+- L1578: `(defun irc-handle-auto-join--nickserv-identified (conn event)`
+- L1587: `(defun irc-handle-auto-join--sasl-login (conn _event &rest _ignored)`
+- L1592: `(provide 'irc)`
+
+## lcs.el
+
+- L54: `(defmacro lcs-for (var from to step &rest body)`
+- L68: `(defun lcs-split-at (lis pos)`
+- L79: `(defun lcs-finish (M+N V_l vl V_r vr)`
+- L91: `(defun lcs-with-positions (a-ls b-ls &optional equalp)`
+- L156: `(defun lcs-unified-diff (a b &optional equalp)`
+- L201: `(provide 'lcs)`
+
+## lui-autopaste.el
+
+- L35: `(require 'mm-url)`
+- L36: `(require 'url-http)`
+- L43: `(defcustom lui-autopaste-lines 3`
+- L48: `(defcustom lui-autopaste-function 'lui-autopaste-service-0x0.st`
+- L59: `(defun enable-lui-autopaste ()`
+- L70: `(defun disable-lui-autopaste ()`
+- L75: `(defun lui-autopaste ()`
+- L86: `(defun lui-autopaste-service-ixio (text)`
+- L102: `(defun lui-autopaste-service-0x0.st (text)`
+- L134: `(defun lui-autopaste-service-paste.rs (text)`
+- L149: `(provide 'lui-autopaste)`
+
+## lui-format.el
+
+- L32: `(require 'lui)`
+- L34: `(defun lui-display (format not-tracked-p &rest keywords)`
+- L48: `(defun lui-format (format &rest keywords)`
+- L120: `(defun lui-format-internal (fmt keywords)`
+- L141: `(defun lui-format-single (specifier keywords)`
+- L155: `(defun lui-format-lookup (identifier keywords)`
+- L181: `(defun lui-sublist (list from &optional to)`
+- L197: `(provide 'lui-format)`
+
+## lui-irc-colors.el
+
+- L41: `(require 'lui)`
+- L71: `(defun lui-irc-defface (face property on-dark on-light fallback doc)`
+- L82: `(defun lui-irc-deffaces-for-color (number on-dark on-light fallback name)`
+- L102: `(defun lui-irc-defface-bulk (colors)`
+- L129: `(defun enable-lui-irc-colors ()`
+- L134: `(defun disable-lui-irc-colors ()`
+- L139: `(defun lui-irc-colors ()`
+- L198: `(defun lui-irc-propertize (start end boldp monospacep inversep italicp strikethroughp underlinep fg bg)`
+- L228: `(defun lui-irc-colors-face (type n)`
+- L236: `(defun lui-irc-colors-spoiler-face (type n)`
+- L244: `(provide 'lui-irc-colors)`
+
+## lui-logging.el
+
+- L33: `(require 'lui-format)`
+- L34: `(require 'url-util)`
+- L41: `(defcustom lui-logging-format "[%T] {text}"`
+- L50: `(defcustom lui-logging-directory "~/.logs"`
+- L55: `(defcustom lui-logging-file-format "{buffer}_%Y-%m-%d.txt"`
+- L67: `(defcustom lui-logging-flush-delay 0`
+- L96: `(defun lui-logging-delayed-p ()`
+- L99: `(defun enable-lui-logging ()`
+- L106: `(defun disable-lui-logging ()`
+- L113: `(defun enable-lui-logging-globally ()`
+- L124: `(defun disable-lui-logging-globally ()`
+- L135: `(defun lui-logging-file-name ()`
+- L149: `(defun lui-logging-flush ()`
+- L157: `(defun lui-logging-write-to-log (file-name content)`
+- L165: `(defun lui-logging-flush-file (file-name queue)`
+- L171: `(defun lui-logging-format-string (text)`
+- L178: `(defun lui-logging-enqueue (file-name text)`
+- L189: `(defun lui-logging ()`
+- L199: `(provide 'lui-logging)`
+
+## lui-track-bar.el
+
+- L35: `(require 'lui)`
+- L36: `(require 'lui-track)`
+- L37: `(require 'tracking)`
+- L48: `(defun enable-lui-track-bar ()`
+- L59: `(provide 'lui-track-bar)`
+
+## lui-track.el
+
+- L37: `(require 'lui)`
+- L38: `(require 'tracking)`
+- L39: `(require 'cl-macs)`
+- L46: `(defcustom lui-track-behavior 'before-switch-to-buffer`
+- L69: `(defcustom lui-track-indicator 'bar`
+- L89: `(defun lui-track--move-pre-input ()`
+- L93: `(defun lui-track-move ()`
+- L129: `(defun enable-lui-track ()`
+- L137: `(defun lui-track-jump-to-indicator ()`
+- L151: `(provide 'lui-track)`
+
+## lui.el
+
+- L46: `(require 'cl-lib)`
+- L47: `(require 'button)`
+- L48: `(require 'flyspell)`
+- L49: `(require 'help-mode)`
+- L50: `(require 'ispell)`
+- L51: `(require 'paren)`
+- L52: `(require 'ring)`
+- L53: `(require 'thingatpt)`
+- L54: `(require 'rx)`
+- L56: `(require 'tracking)`
+- L70: `(defcustom lui-scroll-behavior t`
+- L115: `(defcustom lui-flyspell-p nil`
+- L121: `(defcustom lui-flyspell-alist nil`
+- L137: `(defcustom lui-highlight-keywords nil`
+- L188: `(defcustom lui-formatting-list nil`
+- L206: `(defcustom lui-buttons-list`
+- L239: `(defcustom lui-button-issue-tracker nil`
+- L247: `(defcustom lui-fill-type "    "`
+- L269: `(defcustom lui-fill-column 70`
+- L275: `(defcustom lui-fill-remove-face-from-newline t`
+- L282: `(defcustom lui-time-stamp-format "[%H:%M]"`
+- L289: `(defcustom lui-time-stamp-position 'right`
+- L316: `(defcustom lui-time-stamp-only-when-changed-p t`
+- L323: `(defcustom lui-read-only-output-p t`
+- L329: `(defcustom lui-max-buffer-size 102400`
+- L337: `(defcustom lui-input-ring-size 32`
+- L344: `(defcustom lui-mode-hook nil`
+- L349: `(defcustom lui-pre-input-hook nil`
+- L357: `(defcustom lui-pre-output-hook nil`
+- L362: `(defcustom lui-post-output-hook nil`
+- L410: `(defvar lui-mode-map`
+- L412: `(define-key map (kbd "RET") 'lui-send-input)`
+- L413: `(define-key map (kbd "TAB") 'lui-next-button-or-complete)`
+- L414: `(define-key map (kbd "<backtab>") 'lui-previous-button)`
+- L415: `(define-key map (kbd "<S-tab>") 'lui-previous-button)`
+- L416: `(define-key map (kbd "M-p") 'lui-previous-input)`
+- L417: `(define-key map (kbd "M-n") 'lui-next-input)`
+- L418: `(define-key map (kbd "C-c C-u") 'lui-kill-to-beginning-of-line)`
+- L419: `(define-key map (kbd "C-c C-i") 'lui-fool-toggle-display)`
+- L446: `(defmacro lui-save-undo-list (&rest body)`
+- L466: `(define-derived-mode lui-mode nil "LUI"`
+- L494: `(defun lui-change-major-mode ()`
+- L500: `(defun lui-scroll-window (window _display-start)`
+- L519: `(defun lui-scroll-post-command ()`
+- L543: `(defun lui-scroll-post-output ()`
+- L566: `(defun lui-send-input ()`
+- L582: `(defun lui-add-input (input)`
+- L598: `(defun lui-buttonize ()`
+- L604: `(defun lui-buttonize-custom ()`
+- L634: `(defun lui-buttonize-issues ()`
+- L652: `(defun lui-buttonize-urls ()`
+- L669: `(defun lui-button-activate (button)`
+- L676: `(defun lui-next-button-or-complete ()`
+- L686: `(defun lui-previous-button ()`
+- L691: `(defun lui-button-elisp-symbol (name)`
+- L701: `(defun lui-button-pep (number)`
+- L706: `(defun lui-button-issue (issue)`
+- L718: `(defun lui-kill-to-beginning-of-line ()`
+- L736: `(defun lui-previous-input ()`
+- L762: `(defun lui-next-input ()`
+- L785: `(defun lui-replace-input (str)`
+- L798: `(defun lui-fools ()`
+- L809: `(defun lui-fools-hidden-p ()`
+- L816: `(defun lui-fool-toggle-display ()`
+- L838: `(defun lui-paren-highlighting ()`
+- L846: `(defun lui-blink-paren-function ()`
+- L860: `(defun lui-show-paren-data-function ()`
+- L882: `(defun lui-flyspell-change-dictionary (&optional dictionary)`
+- L902: `(defun lui-find-dictionary (buffer-name)`
+- L913: `(defun lui-flyspell-check-word-p ()`
+- L940: `(defun lui-insert (str &optional not-tracked-p)`
+- L949: `(defun lui-plist-keys (plist)`
+- L960: `(defun lui-insert-with-text-properties (str &rest text-properties)`
+- L1022: `(defun lui--adjust-p (pos old)`
+- L1025: `(defun lui--new-pos (pos shift)`
+- L1028: `(defun lui-adjust-undo-list (shift)`
+- L1050: `(defvar lui-prompt-map`
+- L1052: `(define-key map (kbd "<end>") 'lui-prompt-end-of-line)`
+- L1053: `(define-key map (kbd "C-e") 'lui-prompt-end-of-line)`
+- L1059: `(defun lui-set-prompt (prompt)`
+- L1077: `(defun lui-prompt-end-of-line (&optional _N)`
+- L1086: `(defun lui-faces-in-region (beg end)`
+- L1110: `(defun lui-highlight-keywords ()`
+- L1152: `(defun lui-apply-formatting ()`
+- L1170: `(defun lui-fill ()`
+- L1243: `(defun lui-time-stamp (&optional text)`
+- L1319: `(defun lui-time-stamp-enable-filtering ()`
+- L1324: `(defun lui-filter-buffer-time-stamps (beg end delete)`
+- L1355: `(defun lui-truncate ()`
+- L1372: `(defun lui-read-only ()`
+- L1385: `(defun lui-at-message-p ()`
+- L1389: `(defun lui-beginning-of-message-p ()`
+- L1395: `(defun lui-beginning-of-message ()`
+- L1399: `(defun lui-forward-message ()`
+- L1417: `(defun lui-backward-message ()`
+- L1442: `(defun lui-recover-output-marker ()`
+- L1448: `(defun lui-build-plist (keys)`
+- L1456: `(defun lui-replace-message (new-message)`
+- L1479: `(defun lui-replace (new-message predicate)`
+- L1490: `(defun lui-delete-message ()`
+- L1501: `(defun lui-delete (predicate)`
+- L1514: `(provide 'lui)`
+
+## make-tls-process.el
+
+- L28: `(require 'format-spec)`
+- L29: `(require 'tls)`
+- L31: `(defcustom tls-connection-command`
+- L49: `(defun tls--debug (format-string &rest args)`
+- L57: `(defun make-tls-process (&rest args)`
+- L124: `(defun tls--sentinel (proc event)`
+- L142: `(defun tls--filter (proc data)`
+- L176: `(defun tls--start-process (name cmd host port)`
+- L194: `(provide 'make-tls-process)`
+
+## shorten.el
+
+- L88: `(defun shorten-split (s)`
+- L91: `(defun shorten-join (lst &optional _tail-count)`
+- L94: `(defun shorten-join-sans-tail (lst tail-count)`
+- L98: `(defun shorten-validate-component (str)`
+- L137: `(defun shorten-one (str others)`
+- L159: `(defun shorten-walk-internal (node path tail-count result-out)`
+- L182: `(defun shorten-walk (tree)`
+- L192: `(defun shorten-make-tree (strings)`
+- L213: `(defun shorten-strings (strings)`
+- L222: `(provide 'shorten)`
+
+## tracking.el
+
+- L34: `(require 'easy-mmode)`
+- L35: `(require 'shorten)`
+- L36: `(require 'cl-lib)`
+- L44: `(defcustom tracking-shorten-buffer-names-p t`
+- L52: `(defcustom tracking-shorten-modes t`
+- L61: `(defcustom tracking-frame-behavior 'visible`
+- L71: `(defcustom tracking-position 'before-modes`
+- L85: `(defcustom tracking-faces-priorities nil`
+- L91: `(defcustom tracking-ignored-buffers nil`
+- L109: `(defcustom tracking-most-recent-first nil`
+- L115: `(defcustom tracking-sort-faces-first nil`
+- L124: `(defcustom tracking-buffer-added-hook nil`
+- L135: `(defcustom tracking-buffer-removed-hook nil`
+- L142: `(defcustom tracking-max-mode-line-entries nil`
+- L166: `(defvar tracking-mode-map`
+- L168: `(define-key map (kbd "C-c C-SPC") 'tracking-next-buffer)`
+- L169: `(define-key map (kbd "C-c C-@") 'tracking-next-buffer)`
+- L174: `(define-minor-mode tracking-mode`
+- L224: `(defun tracking-add-buffer (buffer &optional faces)`
+- L264: `(defun tracking-remove-buffer (buffer)`
+- L277: `(defun tracking-next-buffer ()`
+- L315: `(defun tracking-previous-buffer ()`
+- L321: `(defun tracking-ignored-p (buffer faces)`
+- L346: `(defun tracking-status ()`
+- L366: `(define-key map [mode-line down-mouse-1]`
+- L389: `(defun tracking-remove-visible-buffers ()`
+- L404: `(defun tracking-filter-mode (buffer)`
+- L411: `(defun tracking-shorten (buffers)`
+- L430: `(defun tracking-any-in (lista listb)`
+- L438: `(defun tracking-faces-merge (string faces)`
+- L450: `(provide 'tracking)`

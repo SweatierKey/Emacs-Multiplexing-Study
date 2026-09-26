@@ -1,0 +1,92 @@
+[
+  {
+    "at": 2.611,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.911,
+    "keys": "term+mux-new",
+    "input_hex": "7465726d2b6d75782d6e6577"
+  },
+  {
+    "at": 3.411,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.715,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 4.916,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.916,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 6.116,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.118,
+    "keys": "export STUDY_KEEP=web-session-alive",
+    "input_hex": "6578706f72742053545544595f4b4545503d7765622d73657373696f6e2d616c697665"
+  },
+  {
+    "at": 7.318,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.12,
+    "keys": "M-RET: term+ edit mode",
+    "input_hex": "1b0d"
+  },
+  {
+    "at": 8.522,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 8.822,
+    "keys": "term+mux-new",
+    "input_hex": "7465726d2b6d75782d6e6577"
+  },
+  {
+    "at": 9.322,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 10.625,
+    "keys": "M-RET: term+ char mode",
+    "input_hex": "1b0d"
+  },
+  {
+    "at": 11.025,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 11.226,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.226,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 12.426,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

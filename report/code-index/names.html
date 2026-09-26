@@ -1,0 +1,95 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: names</h1>
+<p>Fonte: https://github.com/Malabarba/names.git</p>
+<p>Revisione: <code>45a272fae915148d9a74d4cb3c39917b272ee9c3</code>.</p>
+<h2>names-dev.el</h2>
+<ul>
+<li>L36: <code>(require 'names)</code></li>
+<li>L37: <code>(require 'elisp-mode nil t)</code></li>
+<li>L38: <code>(require 'lisp-mode nil t)</code></li>
+<li>L44: <code>(defmacro names-compare-forms (name form-a form-b)</code></li>
+<li>L52: <code>(defmacro names-compare-forms-assert (name form-a form-b)</code></li>
+<li>L60: <code>(defmacro names-print (name &amp;rest forms)</code></li>
+<li>L83: <code>(defun names--looking-at-namespace ()</code></li>
+<li>L92: <code>(defun names--generate-new-buffer (name &amp;optional form)</code></li>
+<li>L105: <code>(defmacro names--wrapped-in-namespace (command form &amp;optional kill &amp;rest body)</code></li>
+<li>L153: <code>(defun names--top-of-namespace ()</code></li>
+<li>L166: <code>(defun names-eval-defun (edebug-it)</code></li>
+<li>L188: <code>(defun names--preceding-sexp ()</code></li>
+<li>L194: <code>(defun names-eval-last-sexp (eval-last-sexp-arg-internal)</code></li>
+<li>L202: <code>(defun names-eval-print-last-sexp (eval-last-sexp-arg-internal)</code></li>
+<li>L212: <code>(defun names-pprint ()</code></li>
+<li>L224: <code>(require 'find-func nil t)</code></li>
+<li>L230: <code>(defun names--find-function-read (&amp;optional type)</code></li>
+<li>L241: <code>(defun names--dev-fboundp (sym)</code></li>
+<li>L244: <code>(defun names--dev-boundp (sym)</code></li>
+<li>L253: <code>(define-key map [remap eval-defun] #'names-eval-defun)</code></li>
+<li>L254: <code>(define-key map [remap eval-last-sexp] #'names-eval-last-sexp)</code></li>
+<li>L255: <code>(define-key map [remap eval-print-last-sexp] #'names-eval-print-last-sexp)))</code></li>
+<li>L257: <code>(provide 'names-dev)</code></li>
+</ul>
+<h2>names.el</h2>
+<ul>
+<li>L40: <code>(require 'cl-lib)</code></li>
+<li>L53: <code>(require 'edebug)</code></li>
+<li>L54: <code>(require 'bytecomp)</code></li>
+<li>L55: <code>(require 'advice)</code></li>
+<li>L309: <code>(defmacro names--prepend (sbl)</code></li>
+<li>L315: <code>(defmacro names--filter-if-bound (var &amp;optional pred)</code></li>
+<li>L325: <code>(defmacro names--next-keyword (body)</code></li>
+<li>L347: <code>(defmacro define-namespace (name &amp;rest body)</code></li>
+<li>L416: <code>(defun names--define-namespace-implementation (name body)</code></li>
+<li>L497: <code>(defun names--reload-if-upgraded ()</code></li>
+<li>L518: <code>(defun names-convert-form (form)</code></li>
+<li>L571: <code>(defun names-view-manual ()</code></li>
+<li>L576: <code>(defun names--package-name ()</code></li>
+<li>L588: <code>(defun names--generate-defgroup ()</code></li>
+<li>L597: <code>(defun names--generate-version ()</code></li>
+<li>L613: <code>(defun names--add-macro-to-environment (form)</code></li>
+<li>L657: <code>(defun names--extract-autoloads (body)</code></li>
+<li>L689: <code>(defun names--make-autoload-compat (form file)</code></li>
+<li>L697: <code>(defun names--handle-args (func args)</code></li>
+<li>L711: <code>(defun names--message (f &amp;rest rest)</code></li>
+<li>L716: <code>(defun names--warn (f &amp;rest rest)</code></li>
+<li>L723: <code>(defun names--error-if-using-vars ()</code></li>
+<li>L732: <code>(defun names--remove-namespace-from-list (&amp;rest lists)</code></li>
+<li>L738: <code>(defun names--remove-namespace (symbol)</code></li>
+<li>L742: <code>(defun names--remove-protection (symbol)</code></li>
+<li>L746: <code>(defun names--remove-regexp (s r)</code></li>
+<li>L752: <code>(defun names--quote-p (sbl)</code></li>
+<li>L756: <code>(defun names--fboundp (sbl)</code></li>
+<li>L763: <code>(defun names--macrop (sbl)</code></li>
+<li>L769: <code>(defun names--keyword (keyword)</code></li>
+<li>L773: <code>(defun names--boundp (sbl)</code></li>
+<li>L786: <code>(defun names--args-of-function-or-macro (function args macro)</code></li>
+<li>L804: <code>(defun names--get-edebug-spec (name)</code></li>
+<li>L824: <code>(defun names--macro-args-using-edebug (form)</code></li>
+<li>L878: <code>(defun names--edebug-message (&amp;rest args)</code></li>
+<li>L883: <code>(defun names--edebug-make-enter-wrapper (forms)</code></li>
+<li>L890: <code>(defun names--gensym (prefix)</code></li>
+<li>L898: <code>(defun names--edebug-form (cursor)</code></li>
+<li>L950: <code>(defun names--maybe-append-group (form)</code></li>
+<li>L962: <code>(defun names--handle-keyword (body)</code></li>
+<li>L990: <code>(defun names--convert-defmacro (form)</code></li>
+<li>L1015: <code>(defun names--convert-defvaralias (form)</code></li>
+<li>L1026: <code>(defun names--convert-defalias (form)</code></li>
+<li>L1037: <code>(defun names--convert-defvar (form &amp;optional dont-add)</code></li>
+<li>L1052: <code>(defun names--convert-defcustom (form)</code></li>
+<li>L1057: <code>(defun names--convert-custom-declare-variable (form)</code></li>
+<li>L1076: <code>(defun names--convert-defface (form)</code></li>
+<li>L1083: <code>(defun names--convert-define-derived-mode (form)</code></li>
+<li>L1103: <code>(defun names--convert-define-minor-mode (form)</code></li>
+<li>L1129: <code>(defun names--convert-define-globalized-minor-mode (form)</code></li>
+<li>L1161: <code>(defun names--convert-quote (form)</code></li>
+<li>L1196: <code>(defun names--handle-symbol-as-function (s)</code></li>
+<li>L1203: <code>(defun names--convert-macro (form)</code></li>
+<li>L1208: <code>(defun names--convert-lambda (form)</code></li>
+<li>L1230: <code>(defun names--convert-clojure (form)</code></li>
+<li>L1240: <code>(defun names--vars-from-arglist (args)</code></li>
+<li>L1253: <code>(defun names--convert-defun (form)</code></li>
+<li>L1265: <code>(defun names--let-var-convert-then-add (sym add)</code></li>
+<li>L1274: <code>(defun names--convert-let (form &amp;optional star)</code></li>
+<li>L1297: <code>(defun names--convert-let* (form)</code></li>
+<li>L1301: <code>(defun names--convert-cond (form)</code></li>
+<li>L1309: <code>(defun names--convert-condition-case (form)</code></li>
+<li>L1322: <code>(provide 'names)</code></li>
+</ul></main></html>

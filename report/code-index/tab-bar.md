@@ -1,0 +1,183 @@
+# Indice del codice: tab-bar
+
+Fonte: https://git.savannah.gnu.org/cgit/emacs.git
+
+Revisione: `30.1`.
+
+
+## tab-bar.el
+
+- L91: `(defcustom tab-bar-select-tab-modifiers '()`
+- L118: `(defun tab-bar--define-keys ()`
+- L121: `(define-key tab-bar-mode-map`
+- L125: `(define-key tab-bar-mode-map`
+- L129: `(define-key tab-bar-mode-map`
+- L144: `(defun tab-bar--undefine-keys ()`
+- L147: `(define-key tab-bar-mode-map`
+- L151: `(define-key tab-bar-mode-map`
+- L155: `(define-key tab-bar-mode-map`
+- L159: `(defun tab-bar--load-buttons ()`
+- L210: `(defun tab-bar--tab-bar-lines-for-frame (frame)`
+- L222: `(defun tab-bar--update-tab-bar-lines (&optional frames)`
+- L247: `(defun tab-bar-mode--tab-key-bind (map key binding)`
+- L249: `(define-key map key`
+- L253: `(defvar tab-bar-mode-map`
+- L261: `(define-minor-mode tab-bar-mode`
+- L288: `(defun tab-bar--key-to-number (key)`
+- L303: `(defun tab-bar--event-to-item (posn)`
+- L339: `(defun tab-bar-mouse-down-1 (event)`
+- L357: `(defun tab-bar-mouse-1 (event)`
+- L372: `(defun tab-bar-mouse-close-tab (event)`
+- L382: `(defun tab-bar-mouse-context-menu (event &optional posn)`
+- L424: `(defun tab-bar-mouse-move-tab (event)`
+- L447: `(defun tab-bar-handle-timeout ()`
+- L455: `(defun tab-bar-touchscreen-begin (event)`
+- L516: `(defvar-keymap tab-bar-map`
+- L540: `(global-set-key [tab-bar]`
+- L544: `(defun tab-bar-make-keymap (&optional _ignore)`
+- L552: `(defun toggle-tab-bar-mode-from-frame (&optional arg)`
+- L561: `(defun toggle-frame-tab-bar (&optional frame)`
+- L579: `(defcustom tab-bar-show t`
+- L614: `(defcustom tab-bar-new-tab-choice t`
+- L638: `(defcustom tab-bar-new-tab-group t`
+- L652: `(defcustom tab-bar-new-button-show t`
+- L667: `(defcustom tab-bar-close-button-show t`
+- L696: `(defcustom tab-bar-tab-hints nil`
+- L711: `(defun tab-bar-separator ()`
+- L717: `(defcustom tab-bar-tab-name-function #'tab-bar-tab-name-current`
+- L739: `(defun tab-bar-tab-name-current ()`
+- L748: `(defun tab-bar-tab-name-current-with-count ()`
+- L757: `(defun tab-bar-tab-name-all ()`
+- L765: `(defcustom tab-bar-tab-name-truncated-max 20`
+- L775: `(defun tab-bar-tab-name-truncated ()`
+- L798: `(defun tab-bar-tabs (&optional frame)`
+- L820: `(defun tab-bar-tabs-set (tabs &optional frame)`
+- L826: `(defun tab-bar-tab-name-format-truncated (name _tab _i)`
+- L836: `(defun tab-bar-tab-name-format-hints (name _tab i)`
+- L841: `(defun tab-bar-tab-name-format-close-button (name tab _i)`
+- L851: `(defcustom tab-bar-tab-face-function #'tab-bar-tab-face-default`
+- L858: `(defun tab-bar-tab-face-default (tab)`
+- L861: `(defun tab-bar-tab-name-format-face (name tab _i)`
+- L868: `(defcustom tab-bar-tab-name-format-functions`
+- L885: `(defun tab-bar-tab-name-format-default (tab i)`
+- L893: `(defcustom tab-bar-tab-name-format-function #'tab-bar-tab-name-format-default`
+- L905: `(defcustom tab-bar-format '(tab-bar-format-history`
+- L942: `(defun tab-bar-menu-bar (event)`
+- L959: `(defun tab-bar-format-menu-bar ()`
+- L964: `(defun tab-bar-format-history ()`
+- L979: `(defun tab-bar--format-tab (tab i)`
+- L1002: `(defun tab-bar-format-tabs ()`
+- L1011: `(defcustom tab-bar-tab-group-function #'tab-bar-tab-group-default`
+- L1022: `(defun tab-bar-tab-group-default (tab)`
+- L1025: `(defcustom tab-bar-tab-group-format-function #'tab-bar-tab-group-format-default`
+- L1038: `(defun tab-bar-tab-group-format-default (tab i &optional current-p)`
+- L1044: `(defcustom tab-bar-tab-group-face-function #'tab-bar-tab-group-face-default`
+- L1055: `(defun tab-bar-tab-group-face-default (tab)`
+- L1061: `(defun tab-bar--format-tab-group (tab i &optional current-p)`
+- L1087: `(defun tab-bar-format-tabs-groups ()`
+- L1117: `(defun tab-bar-format-add-tab ()`
+- L1123: `(defun tab-bar-format-align-right ()`
+- L1140: `(defun tab-bar-format-global ()`
+- L1151: `(defun tab-bar-format-list (format-list)`
+- L1166: `(defun tab-bar-make-keymap-1 ()`
+- L1175: `(defcustom tab-bar-auto-width t`
+- L1196: `(defcustom tab-bar-auto-width-max '((220) 20)`
+- L1249: `(defun tab-bar-auto-width-1 (wvalue)`
+- L1261: `(defun tab-bar-auto-width (items)`
+- L1349: `(defun frameset-filter-tabs (current _filtered _parameters saving)`
+- L1364: `(defun tab-bar--tab (&optional frame)`
+- L1403: `(defun tab-bar--current-tab (&optional tab frame)`
+- L1407: `(defun tab-bar--current-tab-make (&optional tab)`
+- L1434: `(defun tab-bar--current-tab-find (&optional tabs frame)`
+- L1438: `(defun tab-bar--current-tab-index (&optional tabs frame)`
+- L1443: `(defun tab-bar--tab-index (tab &optional tabs frame)`
+- L1448: `(defun tab-bar--tab-index-by-name (name &optional tabs frame)`
+- L1453: `(defun tab-bar--tab-index-recent (nth &optional tabs frame)`
+- L1460: `(defun tab-bar--tabs-recent (&optional tabs frame)`
+- L1470: `(defcustom tab-bar-tab-post-select-functions nil`
+- L1478: `(defcustom tab-bar-select-restore-windows #'tab-bar-select-restore-windows`
+- L1502: `(defun tab-bar-select-restore-windows (_frame windows _type)`
+- L1534: `(defcustom tab-bar-select-restore-context t`
+- L1547: `(defun tab-bar-minibuffer-restore-tab ()`
+- L1555: `(defun tab-bar-select-tab (&optional tab-number)`
+- L1671: `(defun tab-bar-switch-to-next-tab (&optional arg)`
+- L1682: `(defun tab-bar-switch-to-prev-tab (&optional arg)`
+- L1690: `(defun tab-bar-switch-to-last-tab (&optional arg)`
+- L1699: `(defun tab-bar-switch-to-recent-tab (&optional arg)`
+- L1710: `(defun tab-bar-switch-to-tab (name)`
+- L1735: `(defun tab-bar-move-tab-to (to-number &optional from-number)`
+- L1755: `(defun tab-bar-move-tab (&optional arg)`
+- L1767: `(defun tab-bar-move-tab-backward (&optional arg)`
+- L1774: `(defun tab-bar-move-tab-to-frame (arg &optional from-frame from-number`
+- L1809: `(defun tab-bar-detach-tab (&optional from-number)`
+- L1825: `(defun tab-bar-move-window-to-tab ()`
+- L1840: `(defcustom tab-bar-new-tab-to 'right`
+- L1856: `(defcustom tab-bar-tab-post-open-functions nil`
+- L1864: `(defun tab-bar-new-tab-to (&optional tab-number)`
+- L1956: `(defun tab-bar-new-tab (&optional arg from-number)`
+- L1976: `(defun tab-bar-duplicate-tab (&optional arg from-number)`
+- L1989: `(defcustom tab-bar-close-tab-select 'recent`
+- L2000: `(defcustom tab-bar-close-last-tab-choice nil`
+- L2015: `(defcustom tab-bar-tab-prevent-close-functions nil`
+- L2024: `(defcustom tab-bar-tab-pre-close-functions nil`
+- L2032: `(defun tab-bar-close-tab (&optional tab-number to-number)`
+- L2111: `(defun tab-bar-close-tab-by-name (name)`
+- L2121: `(defun tab-bar-close-other-tabs (&optional tab-number)`
+- L2161: `(defun tab-bar-undo-close-tab ()`
+- L2190: `(defun tab-bar-rename-tab (name &optional tab-number)`
+- L2224: `(defun tab-bar-rename-tab-by-name (tab-name new-name)`
+- L2243: `(defun tab-bar-move-tab-to-group (&optional tab)`
+- L2273: `(defcustom tab-bar-tab-post-change-group-functions '(tab-bar-move-tab-to-group)`
+- L2284: `(defun tab-bar-change-tab-group (group-name &optional tab-number)`
+- L2326: `(defun tab-bar-close-group-tabs (group-name)`
+- L2377: `(defun tab-bar--history-pre-change ()`
+- L2386: `(defun tab-bar--history-change ()`
+- L2400: `(defun tab-bar-history-back ()`
+- L2419: `(defun tab-bar-history-forward ()`
+- L2438: `(defvar-keymap tab-bar-history-mode-map`
+- L2442: `(define-minor-mode tab-bar-history-mode`
+- L2482: `(defun tab-switcher ()`
+- L2505: `(defun tab-switcher-noselect ()`
+- L2548: `(defvar-keymap tab-switcher-mode-map`
+- L2568: `(define-derived-mode tab-switcher-mode nil "Window Configurations"`
+- L2583: `(defun tab-switcher-current-tab (error-if-non-existent-p)`
+- L2594: `(defun tab-switcher-next-line (&optional arg)`
+- L2602: `(defun tab-switcher-prev-line (&optional arg)`
+- L2610: `(defun tab-switcher-unmark (&optional backup)`
+- L2622: `(defun tab-switcher-backup-unmark ()`
+- L2630: `(defun tab-switcher-delete (&optional arg)`
+- L2651: `(defun tab-switcher-delete-backwards (&optional arg)`
+- L2658: `(defun tab-switcher-delete-from-list (tab)`
+- L2666: `(defun tab-switcher-execute ()`
+- L2687: `(defun tab-switcher-select ()`
+- L2700: `(defun tab-switcher-mouse-select (event)`
+- L2709: `(defun tab-bar--reusable-frames (all-frames)`
+- L2716: `(defun tab-bar-get-buffer-tab (buffer-or-name`
+- L2774: `(defun display-buffer-in-tab (buffer alist)`
+- L2833: `(defun display-buffer-in-new-tab (buffer alist)`
+- L2868: `(defun switch-to-buffer-other-tab (buffer-or-name &optional _norecord)`
+- L2879: `(defun find-file-other-tab (filename &optional wildcards)`
+- L2897: `(defun find-file-read-only-other-tab (filename &optional wildcards)`
+- L2913: `(defun other-tab-prefix ()`
+- L2957: `(keymap-set tab-prefix-map "n"   #'tab-duplicate)`
+- L2958: `(keymap-set tab-prefix-map "N"   #'tab-new-to)`
+- L2959: `(keymap-set tab-prefix-map "2"   #'tab-new)`
+- L2960: `(keymap-set tab-prefix-map "1"   #'tab-close-other)`
+- L2961: `(keymap-set tab-prefix-map "0"   #'tab-close)`
+- L2962: `(keymap-set tab-prefix-map "u"   #'tab-undo)`
+- L2963: `(keymap-set tab-prefix-map "o"   #'tab-next)`
+- L2964: `(keymap-set tab-prefix-map "O"   #'tab-previous)`
+- L2965: `(keymap-set tab-prefix-map "m"   #'tab-move)`
+- L2966: `(keymap-set tab-prefix-map "M"   #'tab-move-to)`
+- L2967: `(keymap-set tab-prefix-map "G"   #'tab-group)`
+- L2968: `(keymap-set tab-prefix-map "r"   #'tab-rename)`
+- L2969: `(keymap-set tab-prefix-map "^ f"  #'tab-detach)`
+- L2970: `(keymap-set tab-prefix-map "RET" #'tab-switch)`
+- L2971: `(keymap-set tab-prefix-map "b"   #'switch-to-buffer-other-tab)`
+- L2972: `(keymap-set tab-prefix-map "f"   #'find-file-other-tab)`
+- L2973: `(keymap-set tab-prefix-map "C-f" #'find-file-other-tab)`
+- L2974: `(keymap-set tab-prefix-map "C-r" #'find-file-read-only-other-tab)`
+- L2975: `(keymap-set tab-prefix-map "t"   #'other-tab-prefix)`
+- L2977: `(defvar-keymap tab-bar-switch-repeat-map`
+- L2984: `(defvar-keymap tab-bar-move-repeat-map`
+- L2993: `(provide 'tab-bar)`

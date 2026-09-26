@@ -1,0 +1,32 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: edger</h1>
+<p>Fonte: https://github.com/suderman/edger.git</p>
+<p>Revisione: <code>d7af1643454e8d2025976f31531aee15d0224bb0</code>.</p>
+<h2>emacs/edger.el</h2>
+<ul>
+<li>L15: <code>(require 'windmove)</code></li>
+<li>L16: <code>(require 'tab-bar)</code></li>
+<li>L20: <code>(defcustom edger-executable</code></li>
+<li>L26: <code>(defun edger--pane-context ()</code></li>
+<li>L36: <code>(defun edger--cross (&amp;rest args)</code></li>
+<li>L57: <code>(defun edger--clear ()</code></li>
+<li>L61: <code>(defun edger--navigate (direction)</code></li>
+<li>L72: <code>(defun edger--resize (direction)</code></li>
+<li>L87: <code>(defun edger-resize-left () "Resize left." (interactive) (edger--resize 'left))</code></li>
+<li>L88: <code>(defun edger-resize-down () "Resize down." (interactive) (edger--resize 'down))</code></li>
+<li>L89: <code>(defun edger-resize-up () "Resize up." (interactive) (edger--resize 'up))</code></li>
+<li>L90: <code>(defun edger-resize-right () "Resize right." (interactive) (edger--resize 'right))</code></li>
+<li>L92: <code>(defun edger-horizontal () "Split below and select the new window." (interactive)</code></li>
+<li>L94: <code>(defun edger-vertical () "Split right and select the new window." (interactive)</code></li>
+<li>L96: <code>(defun edger-close () "Close a window, then an editor tab, then its multiplexer pane."</code></li>
+<li>L103: <code>(defun edger-left () "Navigate left." (interactive) (edger--navigate 'left))</code></li>
+<li>L104: <code>(defun edger-down () "Navigate down." (interactive) (edger--navigate 'down))</code></li>
+<li>L105: <code>(defun edger-up () "Navigate up." (interactive) (edger--navigate 'up))</code></li>
+<li>L106: <code>(defun edger-right () "Navigate right." (interactive) (edger--navigate 'right))</code></li>
+<li>L108: <code>(defvar edger-mode-map (make-sparse-keymap)</code></li>
+<li>L112: <code>(define-minor-mode edger-mode</code></li>
+<li>L117: <code>(defun edger-setup (&amp;optional modifier horizontal vertical close)</code></li>
+<li>L129: <code>(keymap-set edger-mode-map (format "%s-%s" modifier (nth 0 binding)) (nth 1 binding))</code></li>
+<li>L130: <code>(keymap-set edger-mode-map</code></li>
+<li>L138: <code>(keymap-set edger-mode-map (format "%s-%s" modifier (car binding)) (cdr binding)))</code></li>
+<li>L143: <code>(provide 'edger)</code></li>
+</ul></main></html>

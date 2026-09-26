@@ -1,0 +1,91 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: marginalia</h1>
+<p>Fonte: https://github.com/minad/marginalia.git</p>
+<p>Revisione: <code>c5d0139012d2a84f8040219b9aee17db4e145e5c</code>.</p>
+<h2>marginalia.el</h2>
+<ul>
+<li>L38: <code>(require 'compat)</code></li>
+<li>L55: <code>(defcustom marginalia-field-width 80</code></li>
+<li>L61: <code>(defcustom marginalia-separator "  "</code></li>
+<li>L65: <code>(defcustom marginalia-align 'left</code></li>
+<li>L71: <code>(defcustom marginalia-align-offset 0</code></li>
+<li>L75: <code>(defcustom marginalia-max-relative-age (* 60 60 24 14)</code></li>
+<li>L82: <code>(defcustom marginalia-remote-file-regexps</code></li>
+<li>L91: <code>(defcustom marginalia-annotators</code></li>
+<li>L127: <code>(defcustom marginalia-classifiers</code></li>
+<li>L138: <code>(defcustom marginalia-prompt-categories</code></li>
+<li>L161: <code>(defcustom marginalia-censor-variables</code></li>
+<li>L169: <code>(defcustom marginalia-command-categories</code></li>
+<li>L380: <code>(defun marginalia--ellipsis ()</code></li>
+<li>L388: <code>(defun marginalia--abbreviate-file-name (file)</code></li>
+<li>L393: <code>(defun marginalia--truncate (str width)</code></li>
+<li>L429: <code>(defmacro marginalia--fields (&amp;rest fields)</code></li>
+<li>L442: <code>(defmacro marginalia--in-minibuffer (&amp;rest body)</code></li>
+<li>L451: <code>(defun marginalia--documentation (str)</code></li>
+<li>L457: <code>(defun marginalia-annotate-binding (cand)</code></li>
+<li>L463: <code>(defun marginalia--annotator (cat)</code></li>
+<li>L470: <code>(defun marginalia-annotate-multi-category (cand)</code></li>
+<li>L496: <code>(defun marginalia--advised (fun)</code></li>
+<li>L501: <code>(defun marginalia--symbol-class (s)</code></li>
+<li>L585: <code>(defun marginalia--definition-prefix (sym)</code></li>
+<li>L595: <code>(defun marginalia--function-doc (sym)</code></li>
+<li>L605: <code>(defun marginalia--function-args (sym)</code></li>
+<li>L623: <code>(defun marginalia-annotate-symbol (cand)</code></li>
+<li>L641: <code>(defun marginalia-annotate-command (cand)</code></li>
+<li>L649: <code>(defun marginalia-annotate-embark-keybinding (cand)</code></li>
+<li>L657: <code>(defun marginalia-annotate-imenu (cand)</code></li>
+<li>L663: <code>(defun marginalia-annotate-function (cand)</code></li>
+<li>L674: <code>(defun marginalia--variable-value (sym)</code></li>
+<li>L746: <code>(defun marginalia-annotate-variable (cand)</code></li>
+<li>L756: <code>(defun marginalia-annotate-environment-variable (cand)</code></li>
+<li>L762: <code>(defun marginalia-annotate-face (cand)</code></li>
+<li>L772: <code>(defun marginalia-annotate-color (cand)</code></li>
+<li>L800: <code>(defun marginalia-annotate-char (cand)</code></li>
+<li>L811: <code>(defun marginalia-annotate-minor-mode (cand)</code></li>
+<li>L829: <code>(defun marginalia-annotate-package (cand)</code></li>
+<li>L853: <code>(defun marginalia--bookmark-type (bm)</code></li>
+<li>L873: <code>(defun marginalia-annotate-bookmark (cand)</code></li>
+<li>L889: <code>(defun marginalia-annotate-customize-group (cand)</code></li>
+<li>L893: <code>(defun marginalia-annotate-input-method (cand)</code></li>
+<li>L897: <code>(defun marginalia-annotate-charset (cand)</code></li>
+<li>L901: <code>(defun marginalia-annotate-coding-system (cand)</code></li>
+<li>L905: <code>(defun marginalia--buffer-status (buffer)</code></li>
+<li>L917: <code>(defun marginalia--buffer-file (buffer)</code></li>
+<li>L935: <code>(defun marginalia-annotate-buffer (cand)</code></li>
+<li>L948: <code>(defun marginalia--full-candidate (cand)</code></li>
+<li>L964: <code>(defun marginalia--remote-file-p (file)</code></li>
+<li>L975: <code>(defun marginalia--annotate-local-file (cand)</code></li>
+<li>L1003: <code>(defun marginalia-annotate-file (cand)</code></li>
+<li>L1013: <code>(defun marginalia--file-owner (attrs)</code></li>
+<li>L1022: <code>(defun marginalia--file-size (attrs)</code></li>
+<li>L1027: <code>(defun marginalia--file-modes (attrs)</code></li>
+<li>L1052: <code>(defun marginalia--time-relative (time)</code></li>
+<li>L1057: <code>(defun marginalia--time-absolute (time)</code></li>
+<li>L1067: <code>(defun marginalia--time (time)</code></li>
+<li>L1076: <code>(defun marginalia--project-root ()</code></li>
+<li>L1091: <code>(defun marginalia-annotate-project-file (cand)</code></li>
+<li>L1100: <code>(defun marginalia--library-cache ()</code></li>
+<li>L1116: <code>(defun marginalia--library-name (file)</code></li>
+<li>L1121: <code>(defun marginalia--library-doc (file)</code></li>
+<li>L1151: <code>(defun marginalia-annotate-library (cand)</code></li>
+<li>L1167: <code>(defun marginalia-annotate-theme (cand)</code></li>
+<li>L1176: <code>(defun marginalia-annotate-frame (cand)</code></li>
+<li>L1193: <code>(defun marginalia-annotate-tab (cand)</code></li>
+<li>L1218: <code>(defun marginalia-classify-by-command-name ()</code></li>
+<li>L1226: <code>(defun marginalia-classify-original-category ()</code></li>
+<li>L1234: <code>(defun marginalia-classify-symbol ()</code></li>
+<li>L1242: <code>(defun marginalia-classify-by-prompt ()</code></li>
+<li>L1254: <code>(defun marginalia--cache-reset (&amp;rest _)</code></li>
+<li>L1260: <code>(defun marginalia--cached (cache fun key)</code></li>
+<li>L1278: <code>(defun marginalia--align (cands)</code></li>
+<li>L1304: <code>(defun marginalia--affixate (metadata annotator cands)</code></li>
+<li>L1328: <code>(defun marginalia--completion-metadata-get (metadata prop)</code></li>
+<li>L1344: <code>(defun marginalia--minibuffer-setup ()</code></li>
+<li>L1355: <code>(defun marginalia--base-position (completions)</code></li>
+<li>L1370: <code>(define-minor-mode marginalia-mode</code></li>
+<li>L1387: <code>(defun marginalia--completion-metadata ()</code></li>
+<li>L1395: <code>(defun marginalia--builtin-annotator-p (md)</code></li>
+<li>L1401: <code>(defun marginalia-cycle ()</code></li>
+<li>L1423: <code>(defun marginalia--context-menu (menu _event)</code></li>
+<li>L1444: <code>(define-key menu [marginalia]</code></li>
+<li>L1449: <code>(provide 'marginalia)</code></li>
+</ul></main></html>

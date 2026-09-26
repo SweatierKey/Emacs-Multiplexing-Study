@@ -1,0 +1,69 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: popper</h1>
+<p>Fonte: https://github.com/karthink/popper.git</p>
+<p>Revisione: <code>d83b894ee7a9daf7c8e9b864c23d08f1b23d78f6</code>.</p>
+<h2>popper-echo.el</h2>
+<ul>
+<li>L55: <code>(require 'popper)</code></li>
+<li>L57: <code>(defcustom popper-echo-transform-function nil</code></li>
+<li>L75: <code>(defcustom popper-echo-dispatch-persist t</code></li>
+<li>L80: <code>(defcustom popper-echo-dispatch-actions nil</code></li>
+<li>L93: <code>(defcustom popper-echo-dispatch-keys '("M-0" "M-1" "M-2" "M-3" "M-4"</code></li>
+<li>L131: <code>(defun popper-echo--dispatch-toggle (i buf-list repeat)</code></li>
+<li>L145: <code>(defun popper-echo--dispatch-kill (i buf-list repeat)</code></li>
+<li>L159: <code>(defun popper-echo--dispatch-raise (i buf-list repeat)</code></li>
+<li>L173: <code>(defun popper-echo--popup-info ()</code></li>
+<li>L183: <code>(defun popper-echo--activate-keymap (buffers repeat)</code></li>
+<li>L194: <code>(define-key map (kbd rawkey) (popper-echo--dispatch-toggle i buffers repeat))</code></li>
+<li>L196: <code>(define-key map (kbd (concat "k " rawkey))</code></li>
+<li>L198: <code>(define-key map (kbd (concat "^ " rawkey))</code></li>
+<li>L203: <code>(defun popper-echo ()</code></li>
+<li>L255: <code>(define-minor-mode popper-echo-mode</code></li>
+<li>L283: <code>(defun popper-tab-line--format (tab tabs)</code></li>
+<li>L295: <code>(defun popper-tab-line--ensure ()</code></li>
+<li>L315: <code>(define-minor-mode popper-tab-line-mode</code></li>
+<li>L348: <code>(provide 'popper-echo)</code></li>
+</ul>
+<h2>popper.el</h2>
+<ul>
+<li>L77: <code>(require 'cl-lib)</code></li>
+<li>L78: <code>(require 'seq)</code></li>
+<li>L93: <code>(defcustom popper-reference-buffers '("\\*Messages\\*$")</code></li>
+<li>L132: <code>(defcustom popper-mode-line '(:eval (propertize " POP" 'face 'mode-line-emphasis))</code></li>
+<li>L141: <code>(defcustom popper-mode-line-position 0</code></li>
+<li>L145: <code>(defcustom popper-display-control t</code></li>
+<li>L155: <code>(defcustom popper-display-function #'popper-select-popup-at-bottom</code></li>
+<li>L166: <code>(defcustom popper-group-function nil</code></li>
+<li>L191: <code>(defcustom popper-window-height #'popper--fit-window-height</code></li>
+<li>L213: <code>(defcustom popper-open-popup-hook nil</code></li>
+<li>L258: <code>(defun popper--fit-window-height (win)</code></li>
+<li>L265: <code>(defun popper-select-popup-at-bottom (buffer &amp;optional alist)</code></li>
+<li>L273: <code>(defun popper-display-popup-at-bottom (buffer &amp;optional alist)</code></li>
+<li>L285: <code>(defun popper-popup-p (buf)</code></li>
+<li>L294: <code>(defun popper-display-control-p (buf &amp;optional _act)</code></li>
+<li>L308: <code>(defun popper-group-by-directory ()</code></li>
+<li>L318: <code>(defun popper-group-by-project ()</code></li>
+<li>L327: <code>(defun popper-group-by-projectile ()</code></li>
+<li>L337: <code>(defun popper-group-by-perspective ()</code></li>
+<li>L347: <code>(defun popper--find-popups (test-buffer-list)</code></li>
+<li>L371: <code>(defun popper--update-popups ()</code></li>
+<li>L407: <code>(defun popper--find-buried-popups ()</code></li>
+<li>L427: <code>(defun popper-close-latest ()</code></li>
+<li>L449: <code>(defun popper-open-latest (&amp;optional group)</code></li>
+<li>L473: <code>(defun popper--delete-popup (win)</code></li>
+<li>L486: <code>(defun popper--modified-mode-line ()</code></li>
+<li>L498: <code>(defun popper--restore-mode-lines (win-buf-alist)</code></li>
+<li>L508: <code>(defun popper--bury-all ()</code></li>
+<li>L513: <code>(defun popper--open-all ()</code></li>
+<li>L523: <code>(defun popper-toggle (&amp;optional arg)</code></li>
+<li>L549: <code>(defun popper-cycle (&amp;optional num)</code></li>
+<li>L573: <code>(defun popper-cycle-backwards (&amp;optional num)</code></li>
+<li>L580: <code>(defun popper-raise-popup (&amp;optional buffer)</code></li>
+<li>L592: <code>(defun popper-lower-to-popup (&amp;optional buffer)</code></li>
+<li>L606: <code>(defun popper-toggle-type (&amp;optional buffer)</code></li>
+<li>L617: <code>(defun popper-kill-latest-popup ()</code></li>
+<li>L627: <code>(defun popper--suppress-p (buf)</code></li>
+<li>L635: <code>(defun popper--suppress-popups ()</code></li>
+<li>L657: <code>(defun popper--set-reference-vars ()</code></li>
+<li>L684: <code>(define-minor-mode popper-mode</code></li>
+<li>L730: <code>(provide 'popper)</code></li>
+</ul></main></html>

@@ -1,0 +1,107 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>eev</h1>
+<p>Categoria: <strong>integrazione</strong>. <a href="https://github.com/edrx/eev">Sorgente upstream</a>. Revisione: <code>4850e9c7a465684a0fdb79a6be83055e0ef9537b</code>.</p>
+<h2>Funzionamento</h2>
+<p>Eepitch conserva un buffer sorgente di istruzioni e un target shell/terminale; F8 invia una riga al target o valuta una riga di controllo contrassegnata dalla stella rossa.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>Il copione usa eev-mode e il suo F8 predefinito, eepitch-shell/eepitch-shell2 per scegliere target, due SSH e ritorno alla shell web. È una forma di interazione riproducibile guidata dal documento, non un nuovo parser VT.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/eev.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/eev.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario eev: passed</h3>
+<p><a href="../../results/eev.json">Esito e snapshot</a> · <a href="../../results/eev-keys.json">Traccia dei tasti</a> · <a href="../../recordings/eev.cast">Registrazione asciinema</a> · <a href="../../index.html#eev">Player</a></p>
+<ul>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>C-x C-f</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.01</td>
+<td><code>/home/admin/Emacs-Multiplexing-Study/lab/eev-demo.e</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.21</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.01</td>
+<td><code>M-&lt;</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.41</td>
+<td><code>F8: eepitch line 1</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.61</td>
+<td><code>F8: eepitch line 2</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.81</td>
+<td><code>F8: eepitch line 3</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.01</td>
+<td><code>F8: eepitch line 4</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.21</td>
+<td><code>F8: eepitch line 5</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.41</td>
+<td><code>F8: eepitch line 6</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.61</td>
+<td><code>F8: eepitch line 7</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.81</td>
+<td><code>F8: eepitch line 8</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.01</td>
+<td><code>F8: eepitch line 9</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.21</td>
+<td><code>C-x b</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.61</td>
+<td><code>*shell*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.81</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.61</td>
+<td><code>C-x b</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.01</td>
+<td><code>*shell 2*</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.21</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

@@ -1,0 +1,246 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: workgroups</h1>
+<p>Fonte: https://github.com/tlh/workgroups.el.git</p>
+<p>Revisione: <code>9572b3492ee09054dc329f64ed846c962b395e39</code>.</p>
+<h2>workgroups.el</h2>
+<ul>
+<li>L55: <code>(require 'cl)</code></li>
+<li>L74: <code>(defcustom workgroups-mode-hook nil</code></li>
+<li>L80: <code>(defcustom wg-prefix-key (kbd "C-z")</code></li>
+<li>L90: <code>(defcustom wg-switch-hook nil</code></li>
+<li>L95: <code>(defcustom wg-no-confirm nil</code></li>
+<li>L104: <code>(defcustom wg-mode-line-on t</code></li>
+<li>L112: <code>(defcustom wg-kill-ring-size 20</code></li>
+<li>L117: <code>(defcustom wg-warning-timeout 0.7</code></li>
+<li>L125: <code>(defcustom wg-switch-on-load t</code></li>
+<li>L130: <code>(defcustom wg-query-for-save-on-emacs-exit t</code></li>
+<li>L138: <code>(defcustom wg-query-for-save-on-workgroups-mode-exit t</code></li>
+<li>L148: <code>(defcustom wg-default-buffer "*scratch*"</code></li>
+<li>L154: <code>(defcustom wg-restore-position nil</code></li>
+<li>L159: <code>(defcustom wg-restore-scroll-bars t</code></li>
+<li>L164: <code>(defcustom wg-restore-fringes t</code></li>
+<li>L169: <code>(defcustom wg-restore-margins t</code></li>
+<li>L174: <code>(defcustom wg-restore-mbs-window t</code></li>
+<li>L179: <code>(defcustom wg-restore-point t</code></li>
+<li>L186: <code>(defcustom wg-restore-point-max t</code></li>
+<li>L195: <code>(defcustom wg-restore-dedicated t</code></li>
+<li>L203: <code>(defcustom wg-morph-on t</code></li>
+<li>L208: <code>(defcustom wg-morph-hsteps 9</code></li>
+<li>L214: <code>(defcustom wg-morph-vsteps 3</code></li>
+<li>L220: <code>(defcustom wg-morph-terminal-hsteps 3</code></li>
+<li>L226: <code>(defcustom wg-morph-terminal-vsteps 1</code></li>
+<li>L232: <code>(defcustom wg-morph-sit-for-seconds 0</code></li>
+<li>L240: <code>(defcustom wg-morph-truncate-partial-width-windows t</code></li>
+<li>L251: <code>(defcustom wg-use-faces t</code></li>
+<li>L256: <code>(defcustom wg-mode-line-left-brace "("</code></li>
+<li>L261: <code>(defcustom wg-mode-line-right-brace ")"</code></li>
+<li>L266: <code>(defcustom wg-mode-line-divider ":"</code></li>
+<li>L271: <code>(defcustom wg-display-left-brace "( "</code></li>
+<li>L276: <code>(defcustom wg-display-right-brace " )"</code></li>
+<li>L281: <code>(defcustom wg-display-divider " | "</code></li>
+<li>L286: <code>(defcustom wg-display-current-workgroup-left-decor "-&lt;{ "</code></li>
+<li>L291: <code>(defcustom wg-display-current-workgroup-right-decor " }&gt;-"</code></li>
+<li>L296: <code>(defcustom wg-display-previous-workgroup-left-decor "*"</code></li>
+<li>L301: <code>(defcustom wg-display-previous-workgroup-right-decor "*"</code></li>
+<li>L306: <code>(defcustom wg-time-format "%H:%M:%S %A, %B %d %Y"</code></li>
+<li>L311: <code>(defcustom wg-display-battery t</code></li>
+<li>L377: <code>(defmacro wg-defface (face key spec doc &amp;rest args)</code></li>
+<li>L455: <code>(defmacro wg-with-gensyms (syms &amp;rest body)</code></li>
+<li>L460: <code>(defmacro wg-dbind (args expr &amp;rest body)</code></li>
+<li>L465: <code>(defmacro wg-dohash (spec &amp;rest body)</code></li>
+<li>L471: <code>(defmacro wg-doconcat (spec &amp;rest body)</code></li>
+<li>L477: <code>(defmacro wg-docar (spec &amp;rest body)</code></li>
+<li>L482: <code>(defmacro wg-get-some (spec &amp;rest body)</code></li>
+<li>L489: <code>(defmacro wg-when-let (binds &amp;rest body)</code></li>
+<li>L499: <code>(defmacro wg-until (test &amp;rest body)</code></li>
+<li>L504: <code>(defmacro wg-aif (test then &amp;rest else)</code></li>
+<li>L509: <code>(defmacro wg-awhen (test &amp;rest body)</code></li>
+<li>L514: <code>(defmacro wg-aand (&amp;rest args)</code></li>
+<li>L521: <code>(defun wg-step-to (n m step)</code></li>
+<li>L528: <code>(defun wg-within (num lo hi &amp;optional hi-inclusive)</code></li>
+<li>L533: <code>(defun wg-last1 (list)</code></li>
+<li>L537: <code>(defun wg-leave (list n)</code></li>
+<li>L541: <code>(defun wg-rnth (n list)</code></li>
+<li>L545: <code>(defun wg-insert-elt (elt list &amp;optional pos)</code></li>
+<li>L551: <code>(defun wg-move-elt (elt list pos)</code></li>
+<li>L556: <code>(defun wg-cyclic-offset-elt (elt list n)</code></li>
+<li>L561: <code>(defun wg-cyclic-nth-from-elt (elt list n)</code></li>
+<li>L567: <code>(defun wg-util-swap (elt1 elt2 list)</code></li>
+<li>L574: <code>(defun wg-aget (alist key)</code></li>
+<li>L578: <code>(defun wg-acopy (alist)</code></li>
+<li>L582: <code>(defun wg-aset (alist key val)</code></li>
+<li>L589: <code>(defun wg-aput (alist &amp;rest key-value-pairs)</code></li>
+<li>L596: <code>(defun wg-get-alist (key val alist-list)</code></li>
+<li>L603: <code>(defmacro wg-abind (alist binds &amp;rest body)</code></li>
+<li>L617: <code>(defmacro wg-fill-keymap (keymap &amp;rest binds)</code></li>
+<li>L623: <code>'(define-key ,km (kbd ,(car b)) ,(cadr b)))</code></li>
+<li>L626: <code>(defun wg-write-sexp-to-file (sexp file)</code></li>
+<li>L633: <code>(defun wg-read-sexp-from-file (file)</code></li>
+<li>L640: <code>(defun wg-read-object (prompt test warning &amp;rest args)</code></li>
+<li>L653: <code>(defun wg-type-of (obj)</code></li>
+<li>L657: <code>(defun wg-type-p (type obj)</code></li>
+<li>L661: <code>(defun wg-type-check (type obj &amp;optional noerror)</code></li>
+<li>L667: <code>(defun wg-cyclic-nth-from-frame (&amp;optional n frame)</code></li>
+<li>L673: <code>(defun wg-add-face (facekey str)</code></li>
+<li>L683: <code>(defmacro wg-fontify (&amp;rest specs)</code></li>
+<li>L699: <code>(defun wg-error-on-active-minibuffer ()</code></li>
+<li>L708: <code>(defun wg-window-p (obj)</code></li>
+<li>L712: <code>(defun wg-wtree-p (obj)</code></li>
+<li>L716: <code>(defun wg-wconfig-p (obj)</code></li>
+<li>L720: <code>(defun wg-workgroup-p (obj)</code></li>
+<li>L728: <code>(defun wg-dir   (w) (wg-aget w 'dir))</code></li>
+<li>L729: <code>(defun wg-edges (w) (wg-aget w 'edges))</code></li>
+<li>L730: <code>(defun wg-wlist (w) (wg-aget w 'wlist))</code></li>
+<li>L731: <code>(defun wg-wtree (w) (wg-aget w 'wtree))</code></li>
+<li>L733: <code>(defun wg-min-size (dir)</code></li>
+<li>L737: <code>(defun wg-actual-min-size (dir)</code></li>
+<li>L741: <code>(defmacro wg-with-edges (w spec &amp;rest body)</code></li>
+<li>L746: <code>(defun wg-put-edges (w left top right bottom)</code></li>
+<li>L750: <code>(defmacro wg-with-bounds (w dir spec &amp;rest body)</code></li>
+<li>L762: <code>(defun wg-put-bounds (w dir ls hs lb hb)</code></li>
+<li>L766: <code>(defun wg-step-edges (edges1 edges2 hstep vstep)</code></li>
+<li>L776: <code>(defun wg-w-edge-operation (w edges op)</code></li>
+<li>L780: <code>(defun wg-first-win (w)</code></li>
+<li>L784: <code>(defun wg-last-win (w)</code></li>
+<li>L788: <code>(defun wg-minify-win (w)</code></li>
+<li>L797: <code>(defun wg-minify-last-win (w)</code></li>
+<li>L801: <code>(defun wg-wsize (w &amp;optional height)</code></li>
+<li>L806: <code>(defun wg-adjust-wsize (w width-fn height-fn &amp;optional new-left new-top)</code></li>
+<li>L814: <code>(defun wg-scale-wsize (w width-scale height-scale)</code></li>
+<li>L820: <code>(defun wg-equal-wtrees (w1 w2)</code></li>
+<li>L830: <code>(defun wg-normalize-wtree (wtree)</code></li>
+<li>L855: <code>(defun wg-scale-wtree (wtree wscale hscale)</code></li>
+<li>L864: <code>(defun wg-scale-wconfigs-wtree (wconfig new-width new-height)</code></li>
+<li>L875: <code>(defun w-set-frame-size-and-scale-wtree (wconfig &amp;optional frame)</code></li>
+<li>L889: <code>(defun wg-reverse-wlist (w &amp;optional dir)</code></li>
+<li>L905: <code>(defun wg-reverse-wconfig (&amp;optional dir wconfig)</code></li>
+<li>L910: <code>(defun wg-wtree-move-window (wtree offset)</code></li>
+<li>L923: <code>(defun wg-wconfig-move-window (offset &amp;optional wconfig)</code></li>
+<li>L931: <code>(defun wg-window-point (ewin)</code></li>
+<li>L937: <code>(defun wg-ewin-&gt;window (ewin)</code></li>
+<li>L957: <code>(defun wg-make-wtree (dir edges wlist)</code></li>
+<li>L964: <code>(defun wg-ewtree-&gt;wtree (&amp;optional ewtree)</code></li>
+<li>L977: <code>(defun wg-make-wconfig ()</code></li>
+<li>L989: <code>(defun wg-make-blank-wconfig (&amp;optional buffer)</code></li>
+<li>L1000: <code>(defun wg-switch-to-window-buffer (win)</code></li>
+<li>L1011: <code>(defun wg-restore-window (win)</code></li>
+<li>L1039: <code>(defun wg-restore-wtree (wtree)</code></li>
+<li>L1058: <code>(defun wg-restore-wconfig (wconfig)</code></li>
+<li>L1073: <code>(defun wg-restore-blank-wconfig ()</code></li>
+<li>L1080: <code>(defun wg-morph-step-edges (w1 w2)</code></li>
+<li>L1085: <code>(defun wg-morph-determine-steps (gui-steps &amp;optional term-steps)</code></li>
+<li>L1088: <code>(defun wg-morph-match-wlist (wt1 wt2)</code></li>
+<li>L1109: <code>(defun wg-morph-win-&gt;win (w1 w2 &amp;optional swap)</code></li>
+<li>L1114: <code>(defun wg-morph-win-&gt;wtree (win wt)</code></li>
+<li>L1123: <code>(defun wg-morph-wtree-&gt;win (wt win &amp;optional noswap)</code></li>
+<li>L1137: <code>(defun wg-morph-wtree-&gt;wtree (wt1 wt2)</code></li>
+<li>L1150: <code>(defun wg-morph-dispatch (w1 w2)</code></li>
+<li>L1162: <code>(defun wg-morph (from to &amp;optional noerror)</code></li>
+<li>L1190: <code>(defun wg-file (&amp;optional noerror)</code></li>
+<li>L1196: <code>(defun wg-list (&amp;optional noerror)</code></li>
+<li>L1202: <code>(defun wg-get-workgroup (key val &amp;optional noerror)</code></li>
+<li>L1211: <code>(defmacro wg-with-frame-state (frame state &amp;rest body)</code></li>
+<li>L1222: <code>(defun wg-frame-val (key)</code></li>
+<li>L1227: <code>(defun wg-set-frame-val (key val)</code></li>
+<li>L1232: <code>(defun wg-delete-frame-key (key)</code></li>
+<li>L1237: <code>(defun wg-delete-frame (frame)</code></li>
+<li>L1244: <code>(defun wg-get-workgroup-prop (prop workgroup)</code></li>
+<li>L1249: <code>(defun wg-set-workgroup-prop (prop val workgroup &amp;optional nodirty)</code></li>
+<li>L1255: <code>(defun wg-uid (workgroup)</code></li>
+<li>L1259: <code>(defun wg-set-uid (workgroup uid)</code></li>
+<li>L1263: <code>(defun wg-uids (&amp;optional noerror)</code></li>
+<li>L1267: <code>(defun wg-new-uid ()</code></li>
+<li>L1273: <code>(defun wg-name (workgroup)</code></li>
+<li>L1277: <code>(defun wg-set-name (workgroup name)</code></li>
+<li>L1281: <code>(defun wg-names (&amp;optional noerror)</code></li>
+<li>L1288: <code>(defun wg-get-frame-workgroup (key &amp;optional noerror)</code></li>
+<li>L1294: <code>(defun wg-current-workgroup (&amp;optional noerror)</code></li>
+<li>L1298: <code>(defun wg-set-current-workgroup (workgroup)</code></li>
+<li>L1302: <code>(defun wg-previous-workgroup (&amp;optional noerror)</code></li>
+<li>L1306: <code>(defun wg-set-previous-workgroup (workgroup)</code></li>
+<li>L1313: <code>(defun wg-set-base-config (workgroup config)</code></li>
+<li>L1317: <code>(defun wg-base-config (workgroup)</code></li>
+<li>L1321: <code>(defun wg-set-working-config (workgroup config)</code></li>
+<li>L1325: <code>(defun wg-update-working-config (workgroup)</code></li>
+<li>L1329: <code>(defun wg-working-config (workgroup)</code></li>
+<li>L1340: <code>(defun wg-make-workgroup (uid name wconfig)</code></li>
+<li>L1347: <code>(defun wg-make-default-workgroup (name)</code></li>
+<li>L1351: <code>(defun wg-make-blank-workgroup (name &amp;optional buffer)</code></li>
+<li>L1355: <code>(defun wg-restore-workgroup (workgroup &amp;optional base)</code></li>
+<li>L1363: <code>(defun wg-delete (workgroup)</code></li>
+<li>L1375: <code>(defun wg-add (new &amp;optional pos)</code></li>
+<li>L1384: <code>(defun wg-check-and-add (workgroup)</code></li>
+<li>L1394: <code>(defun wg-cyclic-offset-workgroup (workgroup n)</code></li>
+<li>L1400: <code>(defun wg-list-swap (w1 w2)</code></li>
+<li>L1410: <code>(defun wg-wtree-buffer-list (wtree)</code></li>
+<li>L1416: <code>(defun wg-workgroup-buffer-list (workgroup)</code></li>
+<li>L1420: <code>(defun wg-buffer-list ()</code></li>
+<li>L1426: <code>(defun wg-find-buffer (bname)</code></li>
+<li>L1434: <code>(defun wg-mode-line-string ()</code></li>
+<li>L1448: <code>(defun wg-mode-line-add-display ()</code></li>
+<li>L1456: <code>(defun wg-mode-line-remove-display ()</code></li>
+<li>L1465: <code>(defun wg-completing-read (prompt choices &amp;rest args)</code></li>
+<li>L1471: <code>(defun wg-read-workgroup (&amp;optional noerror)</code></li>
+<li>L1477: <code>(defun wg-read-buffer-name ()</code></li>
+<li>L1481: <code>(defun wg-read-new-workgroup-name (&amp;optional prompt)</code></li>
+<li>L1488: <code>(defun wg-read-workgroup-index ()</code></li>
+<li>L1500: <code>(defun wg-msg (format-string &amp;rest args)</code></li>
+<li>L1505: <code>(defmacro wg-fontified-msg (&amp;rest format)</code></li>
+<li>L1513: <code>(defun wg-arg (&amp;optional reverse noerror)</code></li>
+<li>L1524: <code>(defun wg-add-to-kill-ring (config)</code></li>
+<li>L1529: <code>(defun wg-disp ()</code></li>
+<li>L1555: <code>(defun wg-cyclic-nth-from-workgroup (&amp;optional workgroup n)</code></li>
+<li>L1563: <code>(defun wg-switch-to-workgroup (workgroup &amp;optional base)</code></li>
+<li>L1577: <code>(defun wg-create-workgroup (name)</code></li>
+<li>L1589: <code>(defun wg-clone-workgroup (workgroup name)</code></li>
+<li>L1600: <code>(defun wg-kill-workgroup (workgroup)</code></li>
+<li>L1612: <code>(defun wg-kill-ring-save-base-config (workgroup)</code></li>
+<li>L1620: <code>(defun wg-kill-ring-save-working-config (workgroup)</code></li>
+<li>L1628: <code>(defun wg-yank-config ()</code></li>
+<li>L1641: <code>(defun wg-kill-workgroup-and-buffers (workgroup)</code></li>
+<li>L1653: <code>(defun wg-delete-other-workgroups (workgroup)</code></li>
+<li>L1665: <code>(defun wg-update-workgroup (workgroup)</code></li>
+<li>L1672: <code>(defun wg-update-all-workgroups ()</code></li>
+<li>L1680: <code>(defun wg-revert-workgroup (workgroup)</code></li>
+<li>L1689: <code>(defun wg-revert-all-workgroups ()</code></li>
+<li>L1695: <code>(defun wg-switch-to-index (n)</code></li>
+<li>L1711: <code>(defun wg-switch-left (&amp;optional workgroup n)</code></li>
+<li>L1718: <code>(defun wg-switch-right (&amp;optional workgroup n)</code></li>
+<li>L1725: <code>(defun wg-switch-left-other-frame (&amp;optional n)</code></li>
+<li>L1731: <code>(defun wg-switch-right-other-frame (&amp;optional n)</code></li>
+<li>L1737: <code>(defun wg-switch-to-previous-workgroup ()</code></li>
+<li>L1742: <code>(defun wg-swap-workgroups ()</code></li>
+<li>L1748: <code>(defun wg-offset-left (workgroup &amp;optional n)</code></li>
+<li>L1754: <code>(defun wg-offset-right (workgroup &amp;optional n)</code></li>
+<li>L1760: <code>(defun wg-rename-workgroup (workgroup newname)</code></li>
+<li>L1769: <code>(defun wg-reset (&amp;optional force)</code></li>
+<li>L1783: <code>(defun wg-save (file)</code></li>
+<li>L1795: <code>(defun wg-load (file)</code></li>
+<li>L1819: <code>(defun wg-find-file (file)</code></li>
+<li>L1825: <code>(defun wg-find-file-read-only (file)</code></li>
+<li>L1831: <code>(defun wg-get-by-buffer (buf)</code></li>
+<li>L1837: <code>(defun wg-dired (dir &amp;optional switches)</code></li>
+<li>L1843: <code>(defun wg-update-all-workgroups-and-save ()</code></li>
+<li>L1854: <code>(defun wg-toggle-mode-line ()</code></li>
+<li>L1865: <code>(defun wg-toggle-morph ()</code></li>
+<li>L1875: <code>(defun wg-move-window-backward (offset)</code></li>
+<li>L1880: <code>(defun wg-move-window-forward (offset)</code></li>
+<li>L1885: <code>(defun wg-reverse-frame-horizontally ()</code></li>
+<li>L1890: <code>(defun wg-reverse-frame-vertically ()</code></li>
+<li>L1895: <code>(defun wg-reverse-frame-horizontally-and-vertically ()</code></li>
+<li>L1903: <code>(defun wg-echo-current-workgroup ()</code></li>
+<li>L1909: <code>(defun wg-echo-all-workgroups ()</code></li>
+<li>L1914: <code>(defun wg-echo-time ()</code></li>
+<li>L1924: <code>(defun wg-echo-version ()</code></li>
+<li>L1930: <code>(defun wg-echo-last-message ()</code></li>
+<li>L2048: <code>(defun wg-help ()</code></li>
+<li>L2062: <code>(defvar wg-map</code></li>
+<li>L2183: <code>(defun wg-unset-prefix-key ()</code></li>
+<li>L2188: <code>(global-set-key key def))</code></li>
+<li>L2191: <code>(defun wg-set-prefix-key ()</code></li>
+<li>L2196: <code>(global-set-key key wg-map)))</code></li>
+<li>L2198: <code>(defun wg-query-for-save ()</code></li>
+<li>L2205: <code>(defun wg-emacs-exit-query ()</code></li>
+<li>L2212: <code>(defun wg-workgroups-mode-exit-query ()</code></li>
+<li>L2219: <code>(define-minor-mode workgroups-mode</code></li>
+<li>L2244: <code>(provide 'workgroups)</code></li>
+</ul></main></html>

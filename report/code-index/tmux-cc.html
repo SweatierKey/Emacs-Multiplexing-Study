@@ -1,0 +1,48 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tmux-cc</h1>
+<p>Fonte: https://github.com/wcy123/tmux-cc.git</p>
+<p>Revisione: <code>7f493a8d7f15e16fdf47da44756e1212e438dc6b</code>.</p>
+<h2>tmux-cc.el</h2>
+<ul>
+<li>L27: <code>(require 'seq)</code></li>
+<li>L28: <code>(require 'shell)</code></li>
+<li>L45: <code>(defun tmux-cc--convert-keys(strings)</code></li>
+<li>L59: <code>(defun tmux-cc--delete-process-on-exit()</code></li>
+<li>L65: <code>(defun tmux-cc--maybe-start-shell-process ()</code></li>
+<li>L74: <code>(defun tmux-cc--tmux-cmd (&amp;rest args)</code></li>
+<li>L88: <code>(defun tmux-cc-send-keys (strings)</code></li>
+<li>L120: <code>(defun tmux-cc-send-region(begin end)</code></li>
+<li>L127: <code>(defun tmux-cc--begining-of-line()</code></li>
+<li>L136: <code>(defun tmux-cc--end-of-line()</code></li>
+<li>L144: <code>(defun tmux-cc-send-current-line ()</code></li>
+<li>L201: <code>(defun tmux-cc-set-target-window (target-window)</code></li>
+<li>L205: <code>(defun tmux-cc-get-panel ()</code></li>
+<li>L222: <code>(defun tmux-cc-clear ()</code></li>
+<li>L227: <code>(defun tmux-cc-run-single-command (command)</code></li>
+<li>L237: <code>(defun tmux-cc-bind-command (command &amp;rest args)</code></li>
+<li>L242: <code>(defun convert-key (key)</code></li>
+<li>L267: <code>(defun tmux-start-special-key ()</code></li>
+<li>L284: <code>(defun tmux-cc-send-keys-from-a-file (file)</code></li>
+<li>L297: <code>(defun tmux-cc-send-a-key (key)</code></li>
+<li>L301: <code>(defvar tmux-cc-key-map</code></li>
+<li>L304: <code>(define-key map (kbd "C-b") 'tmux-start-special-key)</code></li>
+<li>L305: <code>(define-key map (kbd "g") 'tmux-cc-get-panel)</code></li>
+<li>L306: <code>(define-key map (kbd "C-l") 'tmux-cc-clear)</code></li>
+<li>L307: <code>(define-key map "%"          (tmux-cc-bind-command "split-window" "-h"))</code></li>
+<li>L308: <code>(define-key map "0"          (tmux-cc-bind-command "select-window" "-t"  ":=0"))</code></li>
+<li>L309: <code>(define-key map "1"          (tmux-cc-bind-command "select-window" "-t"  ":=1"))</code></li>
+<li>L310: <code>(define-key map "2"          (tmux-cc-bind-command "select-window" "-t"  ":=2"))</code></li>
+<li>L311: <code>(define-key map "3"          (tmux-cc-bind-command "select-window" "-t"  ":=3"))</code></li>
+<li>L312: <code>(define-key map "4"          (tmux-cc-bind-command "select-window" "-t"  ":=4"))</code></li>
+<li>L313: <code>(define-key map "5"          (tmux-cc-bind-command "select-window" "-t"  ":=5"))</code></li>
+<li>L314: <code>(define-key map "6"          (tmux-cc-bind-command "select-window" "-t"  ":=6"))</code></li>
+<li>L315: <code>(define-key map "7"          (tmux-cc-bind-command "select-window" "-t"  ":=7"))</code></li>
+<li>L316: <code>(define-key map "8"          (tmux-cc-bind-command "select-window" "-t"  ":=8"))</code></li>
+<li>L317: <code>(define-key map "9"          (tmux-cc-bind-command "select-window" "-t"  ":=9"))</code></li>
+<li>L318: <code>(define-key map "c"          (tmux-cc-bind-command "new-window"))</code></li>
+<li>L319: <code>(define-key map "o"          (tmux-cc-bind-command "last-pane" "-t" ":.+"))</code></li>
+<li>L320: <code>(define-key map "l"          (tmux-cc-bind-command "last-window"))</code></li>
+<li>L321: <code>(define-key map "z"          (tmux-cc-bind-command "resize-pane" "-Z"))</code></li>
+<li>L322: <code>(define-key map "q"          #'tmux-cc-send-a-key)</code></li>
+<li>L323: <code>(define-key map (kbd "C-c")          (tmux-cc-bind-command "send-key"</code></li>
+<li>L327: <code>(provide 'tmux-cc)</code></li>
+</ul></main></html>

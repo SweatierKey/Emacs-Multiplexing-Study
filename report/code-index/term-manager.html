@@ -1,0 +1,77 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: term-manager</h1>
+<p>Fonte: https://github.com/colonelpanic8/term-manager.git</p>
+<p>Revisione: <code>1581a90ff9b359449e056da55259b9f42e749f0c</code>.</p>
+<h2>term-manager-eat.el</h2>
+<ul>
+<li>L30: <code>(require 'term-manager)</code></li>
+<li>L31: <code>(require 'eat)</code></li>
+<li>L33: <code>(defun term-manager-eat-build-term (directory-symbol)</code></li>
+<li>L45: <code>(provide 'term-manager-eat)</code></li>
+</ul>
+<h2>term-manager-indexed-mapping.el</h2>
+<ul>
+<li>L25: <code>(require 'dash)</code></li>
+<li>L26: <code>(require 'eieio)</code></li>
+<li>L28: <code>(defun term-manager-plist-delete (plist property)</code></li>
+<li>L88: <code>(provide 'term-manager-indexed-mapping)</code></li>
+</ul>
+<h2>term-manager.el</h2>
+<ul>
+<li>L30: <code>(require 'cl-lib)</code></li>
+<li>L31: <code>(require 'dash)</code></li>
+<li>L32: <code>(require 'eieio)</code></li>
+<li>L33: <code>(require 'term)</code></li>
+<li>L34: <code>(require 'term-manager-indexed-mapping)</code></li>
+<li>L41: <code>(defcustom term-manager-display-buffer-alist nil</code></li>
+<li>L46: <code>(defun term-manager-display-buffer (buffer)</code></li>
+<li>L111: <code>(defun term-manager-default-build-term (directory-symbol)</code></li>
+<li>L138: <code>(defun term-manager-replace-home-with-tilde (path)</code></li>
+<li>L145: <code>(defun term-manager-default-name-buffer (_buffer symbol)</code></li>
+<li>L190: <code>(provide 'term-manager)</code></li>
+</ul>
+<h2>term-project.el</h2>
+<ul>
+<li>L32: <code>(require 'project)</code></li>
+<li>L33: <code>(require 'term-manager)</code></li>
+<li>L37: <code>(defun term-project (&amp;rest args)</code></li>
+<li>L47: <code>(defun term-project-maybe-intern (value)</code></li>
+<li>L51: <code>(defun term-project-get-symbol-for-buffer (buffer)</code></li>
+<li>L64: <code>(defun term-project-switch (&amp;rest args)</code></li>
+<li>L69: <code>(defun term-project-global-switch (&amp;rest args)</code></li>
+<li>L76: <code>(defun term-project-get-all-buffers ()</code></li>
+<li>L81: <code>(defun term-project-select-existing ()</code></li>
+<li>L88: <code>(defun term-project-switch-to ()</code></li>
+<li>L94: <code>(defun term-project-forward ()</code></li>
+<li>L101: <code>(defun term-project-backward ()</code></li>
+<li>L108: <code>(cl-defun term-project-create-new (&amp;optional (directory (project-root (project-current))))</code></li>
+<li>L117: <code>(defun term-project-default-directory-forward ()</code></li>
+<li>L123: <code>(defun term-project-default-directory-backward ()</code></li>
+<li>L129: <code>(defun term-project-default-directory-create-new ()</code></li>
+<li>L136: <code>(defun term-project-global-forward ()</code></li>
+<li>L143: <code>(defun term-project-global-backward ()</code></li>
+<li>L150: <code>(defun term-project-global-create-new ()</code></li>
+<li>L155: <code>(provide 'term-project)</code></li>
+</ul>
+<h2>term-projectile.el</h2>
+<ul>
+<li>L30: <code>(require 'projectile)</code></li>
+<li>L31: <code>(require 'term-manager)</code></li>
+<li>L35: <code>(defun term-projectile (&amp;rest args)</code></li>
+<li>L46: <code>(defun maybe-intern (value)</code></li>
+<li>L49: <code>(defun term-projectile-get-symbol-for-buffer (buffer)</code></li>
+<li>L62: <code>(defun term-projectile-switch (&amp;rest args)</code></li>
+<li>L65: <code>(defun term-projectile-global-switch (&amp;rest args)</code></li>
+<li>L70: <code>(defun term-projectile-get-all-buffers ()</code></li>
+<li>L74: <code>(defun term-projectile-select-existing ()</code></li>
+<li>L80: <code>(defun term-projectile-switch-to ()</code></li>
+<li>L86: <code>(defun term-projectile-forward ()</code></li>
+<li>L93: <code>(defun term-projectile-backward ()</code></li>
+<li>L100: <code>(cl-defun term-projectile-create-new (&amp;optional (directory (projectile-project-root)))</code></li>
+<li>L110: <code>(defun term-projectile-default-directory-forward ()</code></li>
+<li>L116: <code>(defun term-projectile-default-directory-backward ()</code></li>
+<li>L122: <code>(defun term-projectile-default-directory-create-new ()</code></li>
+<li>L129: <code>(defun term-projectile-global-forward ()</code></li>
+<li>L136: <code>(defun term-projectile-global-backward ()</code></li>
+<li>L143: <code>(defun term-projectile-global-create-new ()</code></li>
+<li>L148: <code>(provide 'term-projectile)</code></li>
+</ul></main></html>

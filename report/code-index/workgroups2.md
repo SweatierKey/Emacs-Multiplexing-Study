@@ -1,0 +1,217 @@
+# Indice del codice: workgroups2
+
+Fonte: https://github.com/pashinin/workgroups2.git
+
+Revisione: `aff9d76b7be5eed33f30be2fabf111818749cbd5`.
+
+
+## src/workgroups2-sdk.el
+
+- L23: `(require 'cl-lib)`
+- L24: `(require 'disass)`
+- L26: `(defcustom wg-restore-remote-buffers t`
+- L71: `(defmacro wg-with-gensyms (syms &rest body)`
+- L76: `(defmacro wg-dbind (args expr &rest body)`
+- L82: `(defmacro wg-dohash (spec &rest body)`
+- L90: `(defmacro wg-asetf (&rest items)`
+- L107: `(defmacro wg-destructuring-dolist (spec &rest body)`
+- L126: `(defun wg-int-to-b36-one-digit (i)`
+- L133: `(defun wg-b36-to-int-one-digit (i)`
+- L142: `(defun wg-int-to-b36 (i)`
+- L151: `(defun wg-b36-to-int (str)`
+- L161: `(defun wg-insert-before (elt list index)`
+- L170: `(defun wg-string-list-union (&optional list1 list2)`
+- L175: `(defun wg-aget (alist key &optional default)`
+- L180: `(defun wg-aput (alist key value)`
+- L188: `(defun wg-file-buffer-error (file error)`
+- L194: `(defun wg-symbol-of-compiled-function (object)`
+- L208: `(provide 'workgroups2-sdk)`
+
+## src/workgroups2-support.el
+
+- L25: `(require 'workgroups2-sdk)`
+- L26: `(require 'dframe)`
+- L28: `(defmacro wg-switch-to-buffer (buffer &rest body)`
+- L34: `(defun wg-switch-to-shell-buffer (buffer)`
+- L39: `(defmacro wg-support (mode pkg params)`
+- L113: `(defun wg-support-help-mode-serialize (_buffer)`
+- L130: `(defun wg-support-help-mode-deserialize (_buffer vars)`
+- L175: `(defun wg-get-org-agenda-view-commands ()`
+- L191: `(defun wg-run-agenda-cmd (f)`
+- L345: `(defun wg-deserialize-slime-buffer (buf)`
+- L365: `(defun wg-serialize-comint-buffer (buffer)`
+- L391: `(defun wg-temporarily-rename-buffer-if-exists (buffer)`
+- L571: `(provide 'workgroups2-support)`
+
+## src/workgroups2.el
+
+- L80: `(require 'pp)`
+- L81: `(require 'workgroups2-sdk)`
+- L89: `(defcustom wg-session-file "~/.emacs_workgroups"`
+- L94: `(defcustom wg-prefix-key "C-c z"`
+- L101: `(defcustom workgroups-mode nil`
+- L108: `(defcustom wg-first-wg-name "First workgroup"`
+- L113: `(defcustom wg-control-frames t`
+- L118: `(defcustom wg-after-switch-to-workgroup-hook nil`
+- L124: `(defcustom wg-buffer-local-variables-alist`
+- L172: `(defcustom wg-default-buffer "*scratch*"`
+- L178: `(defcustom wg-major-mode-excludes '(dired-mode`
+- L190: `(defun buffer-list (&optional frame)`
+- L206: `(defmacro wg-defstruct (name-form &rest slot-defs)`
+- L296: `(defmacro wg-with-slots (obj slot-bindings &rest body)`
+- L307: `(defmacro wg-set-parameter (place parameter value)`
+- L317: `(defun wg-time-to-b36 ()`
+- L322: `(defun wg-generate-uid ()`
+- L329: `(defun wg-get-current-session (&optional noerror)`
+- L334: `(defun wg-get-first-existing-dir (&optional dir)`
+- L413: `(defun wg-pickelable-or-error (obj)`
+- L429: `(defun wg-pickel-p (obj)`
+- L434: `(defun wg-pickel-default-serializer (object)`
+- L438: `(defun wg-pickel-object-serializer (obj)`
+- L443: `(defun wg-pickel-link-serializer (obj)`
+- L447: `(defun wg-pickel-object-deserializer (key)`
+- L452: `(defun wg-pickel-link-deserializer (key)`
+- L458: `(defun wg-pickel-make-bindings-table (obj)`
+- L481: `(defun wg-pickel-symbol-serializer (symbol)`
+- L488: `(defun wg-pickel-deserialize-symbol (name)`
+- L494: `(defun wg-pickel-buffer-serializer (buffer)`
+- L498: `(defun wg-pickel-deserialize-buffer (uid)`
+- L504: `(defun wg-pickel-marker-serializer (marker)`
+- L509: `(defun wg-pickel-deserialize-marker (data)`
+- L514: `(defun wg-pickel-deserialize-default (object)`
+- L519: `(defun wg-pickel-cons-serializer (_cons)`
+- L522: `(defun wg-pickel-deserialize-cons ()`
+- L525: `(defun wg-pickel-cons-link-serializer (cons binds)`
+- L532: `(defun wg-pickel-cons-link-deserializer (cons-id car-id cdr-id binds)`
+- L538: `(defun wg-pickel-vector-serializer (vector)`
+- L541: `(defun wg-pickel-deserialize-vector (length)`
+- L545: `(defun wg-pickel-vector-link-serializer (vector binds)`
+- L556: `(defun wg-pickel-vector-link-deserializer (vector-id index value-id binds)`
+- L561: `(defun wg-pickel-hash-table-serializer (table)`
+- L570: `(defun wg-pickel-deserialize-hash-table (test size rsize rthresh weakness)`
+- L575: `(defun wg-pickel-hash-table-link-serializer (table binds)`
+- L586: `(defun wg-pickel-hash-table-link-deserializer (key-id value-id table-id binds)`
+- L592: `(defun wg-pickel-serialize-objects (binds)`
+- L600: `(defun wg-pickel-deserialize-objects (serial-objects)`
+- L610: `(defun wg-pickel-serialize-links (binds)`
+- L617: `(defun wg-pickel-deserialize-links (serial-links binds)`
+- L622: `(defun wg-pickel (obj)`
+- L635: `(defun wg-unpickel (pickel)`
+- L656: `(defvar workgroups-mode-map`
+- L658: `(define-key map (kbd (format "%s %s" wg-prefix-key "C-c")) 'wg-create-workgroup)`
+- L659: `(define-key map (kbd (format "%s %s" wg-prefix-key "C-v")) 'wg-open-workgroup)`
+- L660: `(define-key map (kbd (format "%s %s" wg-prefix-key "C-k")) 'wg-kill-workgroup)`
+- L664: `(defun wg-add-workgroups-mode-minor-mode-entries ()`
+- L674: `(defmacro wg-with-edges (w spec &rest body)`
+- L679: `(defmacro wg-with-bounds (wtree dir spec &rest body)`
+- L691: `(defun wg-set-bounds (w dir ls hs lb hb)`
+- L695: `(defun wg-w-size (width &optional height)`
+- L700: `(defun wg-win-parameter (win parameter &optional default)`
+- L706: `(defun wg-restore-window (win)`
+- L740: `(defun wg-window-point (window)`
+- L745: `(defun wg-set-win-parameter (win parameter value)`
+- L753: `(defun wg-window-to-win (&optional window)`
+- L782: `(defun wg-w-edges (w)`
+- L788: `(defun wg-copy-w (w)`
+- L794: `(defun wg-set-edges (w edges)`
+- L801: `(defun wg-normalize-wtree (wtree)`
+- L829: `(defun wg-scale-wtree (wtree wscale hscale)`
+- L843: `(defun wg-wtree-buf-uids (wtree)`
+- L849: `(defun wg-wtree-unique-buf-uids (wtree)`
+- L853: `(defun wg-reset-window-tree ()`
+- L859: `(defun wg-restore-window-tree-helper (w)`
+- L873: `(defun wg-restore-window-tree (wtree)`
+- L883: `(defun wg-window-tree-to-wtree (&optional window-tree)`
+- L900: `(defun wg-flatten-wtree (wtree &optional key)`
+- L909: `(defun wg-frame-to-wconfig (&optional frame)`
+- L925: `(defun wg-current-wconfig ()`
+- L932: `(defun wg-wconfig-buf-uids (wconfig)`
+- L938: `(defun wg-wconfig-restore-frame-position (wconfig &optional frame)`
+- L951: `(defun wg-wconfig-restore-scroll-bars (wconfig)`
+- L958: `(defun wg-scale-wconfigs-wtree (wconfig new-width new-height)`
+- L973: `(defun wg-scale-wconfig-to-frame (wconfig)`
+- L981: `(defun wg-restore-frames ()`
+- L997: `(defun wg-restore-wconfig (wconfig &optional frame)`
+- L1028: `(require 'workgroups2-support)`
+- L1032: `(defun wg-serialize-buffer-mark-ring ()`
+- L1036: `(defun wg-deserialize-buffer-mark-ring (positions)`
+- L1042: `(defun wg-deserialize-buffer-major-mode (major-mode-symbol)`
+- L1048: `(defun wg-deserialize-buffer-local-variables (buf)`
+- L1058: `(defmacro wg-workgroup-list ()`
+- L1063: `(defmacro wg-buf-list ()`
+- L1067: `(defun wg-restore-default-buffer (&optional switch)`
+- L1073: `(defun wg-restore-existing-buffer (buf &optional switch)`
+- L1082: `(defun wg-restore-file-buffer (buf &optional switch)`
+- L1117: `(defun wg-restore-special-buffer (buf &optional switch)`
+- L1145: `(defun wg-restore-buffer (buf &optional switch)`
+- L1170: `(defun wg-buffer-uid (buffer-or-name)`
+- L1174: `(defun wg-bufobj-uid (bufobj)`
+- L1181: `(defun wg-bufobj-name (bufobj)`
+- L1188: `(defun wg-bufobj-file-name (bufobj)`
+- L1196: `(defun wg-equal-bufobjs (bufobj1 bufobj2)`
+- L1204: `(defun wg-find-bufobj (bufobj bufobj-list)`
+- L1208: `(defun wg-find-bufobj-by-uid (uid bufobj-list)`
+- L1212: `(defun wg-find-buffer-in-buf-list (buffer-or-name buf-list)`
+- L1218: `(defun wg-find-buf-in-buffer-list (buf buffer-list)`
+- L1223: `(defun wg-find-buf-by-uid (uid)`
+- L1228: `(defun wg-set-buffer-uid-or-error (uid)`
+- L1232: `(defun wg-buffer-special-data (buffer)`
+- L1246: `(defun wg-serialize-buffer-local-variables ()`
+- L1254: `(defun wg-buffer-to-buf (buffer)`
+- L1265: `(defun wg-add-buffer-to-buf-list (buffer)`
+- L1279: `(defun wg-buffer-uid-or-add (buffer)`
+- L1285: `(defun wg-bufobj-uid-or-add (bufobj)`
+- L1293: `(defun wg-update-buffer-in-buf-list (&optional buffer)`
+- L1304: `(defcustom wg-no-confirm-on-destructive-operation nil`
+- L1309: `(defcustom wg-minibuffer-message-timeout 0.75`
+- L1315: `(defun wg-read-object (prompt test warning &optional initial-contents keymap`
+- L1331: `(defun wg-read-new-workgroup-name (&optional prompt)`
+- L1342: `(defun wg-minibuffer-inactive-p ()`
+- L1346: `(defun wg-barf-on-active-minibuffer ()`
+- L1351: `(defun wg-flag-workgroup-modified (&optional workgroup)`
+- L1358: `(defun wg-get-current-workgroup (&optional noerror frame)`
+- L1366: `(defun wg-set-current-workgroup (workgroup &optional frame)`
+- L1372: `(defun wg-current-workgroup-p (workgroup &optional frame)`
+- L1376: `(defun wg-get-workgroup (obj &optional noerror)`
+- L1386: `(defun wg-workgroup-saved-wconfigs-buf-uids (workgroup)`
+- L1392: `(defun wg-workgroup-all-buf-uids (workgroup)`
+- L1398: `(defun wg-restore-workgroup (workgroup)`
+- L1403: `(defun wg-workgroup-list-or-error (&optional noerror)`
+- L1410: `(defun wg-find-workgroup-by (slotkey value &optional noerror)`
+- L1420: `(defun wg-get-session-from-file ()`
+- L1429: `(defun wg-workgroup-names ()`
+- L1439: `(defun wg-new-default-workgroup-name ()`
+- L1448: `(defun wg-query-and-save-if-modified ()`
+- L1456: `(defun wg-add-workgroup (workgroup)`
+- L1469: `(defun wg-make-and-add-workgroup (name)`
+- L1487: `(defun wg-get-workgroup-create (workgroup)`
+- L1497: `(defun wg-switch-to-workgroup-internal (workgroup-name)`
+- L1512: `(defun wg-get-session-file ()`
+- L1518: `(defun wg-create-workgroup (name)`
+- L1541: `(defun wg-workgroup-state-table (&optional frame)`
+- L1548: `(defun wg-get-workgroup-state (workgroup &optional frame)`
+- L1561: `(defmacro wg-with-undo (workgroup spec &rest body)`
+- L1570: `(defun wg-set-workgroup-working-wconfig (workgroup wconfig)`
+- L1577: `(defun wg-workgroup-working-wconfig (workgroup &optional no-update)`
+- L1588: `(defun wg-update-current-workgroup-working-wconfig ()`
+- L1593: `(defun wg-workgroup-gc-buf-uids (workgroup)`
+- L1600: `(defun wg-pickel-workgroup-parameters (workgroup)`
+- L1609: `(defun wg-unpickel-workgroup-parameters (workgroup)`
+- L1618: `(defun wg-delete-workgroup (workgroup)`
+- L1628: `(defun wg-read-text (path)`
+- L1638: `(defun wg-open-session ()`
+- L1655: `(defmacro wg-insert-and-indent (string)`
+- L1666: `(defun wg-write-sexp-to-file (sexp file)`
+- L1675: `(defun wg-perform-session-maintenance ()`
+- L1698: `(defun wg-save-session (&optional workgroup-name)`
+- L1728: `(defun wg-reset-internal (session)`
+- L1742: `(defun wg-all-buf-uids ()`
+- L1750: `(defun wg-mark-everything-unmodified ()`
+- L1755: `(defun wg-session-parameter (parameter &optional default session)`
+- L1762: `(defun wg-set-session-parameter (parameter value)`
+- L1771: `(defun wg-unpickel-session-parameters (session)`
+- L1781: `(defun wg-workgroup-associated-buf-uids ()`
+- L1789: `(defun workgroups-mode (&optional arg)`
+- L1807: `(defun wg-open-workgroup (&optional group-name)`
+- L1824: `(defun wg-kill-workgroup ()`
+- L1845: `(provide 'workgroups2)`

@@ -1,0 +1,27 @@
+[
+  {
+    "at": 2.621,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.921,
+    "keys": "ansi-term",
+    "input_hex": "616e73692d7465726d"
+  },
+  {
+    "at": 3.421,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.222,
+    "keys": "b''",
+    "input_hex": ""
+  },
+  {
+    "at": 4.422,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

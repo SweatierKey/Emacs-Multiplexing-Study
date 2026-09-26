@@ -1,0 +1,238 @@
+# Indice del codice: auto-complete
+
+Fonte: https://github.com/auto-complete/auto-complete.git
+
+Revisione: `8419bec94f41ae78518d948aec0fc761534d7771`.
+
+
+## auto-complete-config.el
+
+- L25: `(require 'cl-lib)`
+- L26: `(require 'auto-complete)`
+- L46: `(defun ac-imenu-candidates ()`
+- L95: `(defun ac-gtags-candidate ()`
+- L120: `(defun ac-yasnippet-table-hash (table)`
+- L128: `(defun ac-yasnippet-table-parent (table)`
+- L136: `(defun ac-yasnippet-candidate-1 (table)`
+- L151: `(defun ac-yasnippet-candidates ()`
+- L185: `(defun ac-semantic-candidates (prefix)`
+- L197: `(defun ac-semantic-doc (symbol)`
+- L207: `(defun ac-semantic-action ()`
+- L250: `(defun ac-eclim-candidates ()`
+- L430: `(defun ac-css-prefix ()`
+- L439: `(defun ac-css-property-candidates ()`
+- L486: `(defun ac-ropemacs-require ()`
+- L495: `(defun ac-ropemacs-setup ()`
+- L501: `(defun ac-ropemacs-initialize ()`
+- L545: `(defun ac-common-setup ()`
+- L551: `(defun ac-emacs-lisp-mode-setup ()`
+- L560: `(defun ac-cc-mode-setup ()`
+- L565: `(defun ac-ruby-mode-setup ()`
+- L570: `(defun ac-css-mode-setup ()`
+- L576: `(defun ac-config-default ()`
+- L586: `(provide 'auto-complete-config)`
+
+## auto-complete.el
+
+- L60: `(require 'cl-lib)`
+- L61: `(require 'popup)`
+- L65: `(defun ac-error (&optional var)`
+- L84: `(defcustom ac-delay 0.1`
+- L89: `(defcustom ac-auto-show-menu 0.8`
+- L96: `(defcustom ac-show-menu-immediately-on-auto-complete t`
+- L101: `(defcustom ac-expand-on-auto-complete t`
+- L106: `(defcustom ac-disable-faces '(font-lock-comment-face font-lock-string-face font-lock-doc-face)`
+- L111: `(defcustom ac-stop-flymake-on-completing t`
+- L116: `(defcustom ac-flycheck-poll-completion-end-interval 0.5`
+- L122: `(defcustom ac-use-fuzzy (and (locate-library "fuzzy") t)`
+- L127: `(defcustom ac-fuzzy-cursor-color "red"`
+- L132: `(defcustom ac-use-comphist t`
+- L137: `(defcustom ac-comphist-threshold 0.7`
+- L142: `(defcustom ac-comphist-file`
+- L151: `(defcustom ac-user-dictionary nil`
+- L157: `(defcustom ac-dictionary-files '("~/.dict")`
+- L162: `(defcustom ac-dictionary-directories`
+- L174: `(defcustom ac-use-quick-help t`
+- L179: `(defcustom ac-quick-help-delay 1.5`
+- L185: `(defcustom ac-menu-height 10`
+- L190: `(defcustom ac-quick-help-height 20`
+- L196: `(defcustom ac-quick-help-prefer-pos-tip t`
+- L202: `(defcustom ac-candidate-limit nil`
+- L207: `(defcustom ac-modes`
+- L230: `(defcustom ac-compatible-packages-regexp`
+- L236: `(defcustom ac-non-trigger-commands`
+- L243: `(defcustom ac-trigger-commands`
+- L249: `(defcustom ac-trigger-commands-on-completing`
+- L262: `(defcustom ac-trigger-key nil`
+- L275: `(defcustom ac-auto-start 2`
+- L286: `(defcustom ac-stop-words nil`
+- L291: `(defcustom ac-use-dictionary-as-stop-words t`
+- L296: `(defcustom ac-ignore-case 'smart`
+- L305: `(defcustom ac-dwim t`
+- L310: `(defcustom ac-use-menu-map nil`
+- L315: `(defcustom ac-use-overriding-local-map nil`
+- L321: `(defcustom ac-disable-inline nil`
+- L326: `(defcustom ac-candidate-menu-min 1`
+- L331: `(defcustom ac-max-width nil`
+- L444: `(defvar ac-mode-map (make-sparse-keymap)`
+- L449: `(defvar ac-completing-map`
+- L451: `(define-key map "\t" 'ac-expand)`
+- L452: `(define-key map [tab] 'ac-expand)`
+- L453: `(define-key map "\r" 'ac-complete)`
+- L454: `(define-key map (kbd "M-TAB") 'auto-complete)`
+- L456: `(define-key map "\M-n" 'ac-next)`
+- L457: `(define-key map "\M-p" 'ac-previous)`
+- L458: `(define-key map [down] 'ac-next)`
+- L459: `(define-key map [up] 'ac-previous)`
+- L461: `(define-key map [f1] 'ac-help)`
+- L462: `(define-key map [M-f1] 'ac-persist-help)`
+- L463: `(define-key map (kbd "C-?") 'ac-help)`
+- L464: `(define-key map (kbd "C-M-?") 'ac-persist-help)`
+- L466: `(define-key map [C-down] 'ac-quick-help-scroll-down)`
+- L467: `(define-key map [C-up] 'ac-quick-help-scroll-up)`
+- L468: `(define-key map "\C-\M-n" 'ac-quick-help-scroll-down)`
+- L469: `(define-key map "\C-\M-p" 'ac-quick-help-scroll-up)`
+- L471: `(define-key map (kbd "<next>") #'ac-next-page)`
+- L472: `(define-key map (kbd "<prior>") #'ac-previous-page)`
+- L481: `(define-key map (read-kbd-macro (format "M-%s" (1+ i))) symbol)))`
+- L486: `(defvar ac-menu-map`
+- L489: `(define-key map (kbd "RET") 'ac-complete)`
+- L490: `(define-key map "\C-n" 'ac-next)`
+- L491: `(define-key map "\C-p" 'ac-previous)`
+- L492: `(define-key map "\C-s" 'ac-isearch)`
+- L493: `(define-key map [mouse-1] 'ac-mouse-1)`
+- L494: `(define-key map [down-mouse-1] 'ac-ignore)`
+- L497: `(define-key map [mouse-4] 'ac-mouse-4)`
+- L498: `(define-key map [mouse-5] 'ac-mouse-5))`
+- L499: `(define-key map [wheel-up] 'ac-mouse-4)`
+- L500: `(define-key map [wheel-down] 'ac-mouse-5))`
+- L504: `(defvar ac-current-map`
+- L558: `(defun ac-comphist-make (&optional tab)`
+- L562: `(defun ac-comphist-get (db string &optional create)`
+- L571: `(defun ac-comphist-add (db string prefix)`
+- L580: `(defun ac-comphist-score (db string prefix)`
+- L607: `(defun ac-comphist-sort (db collection prefix &optional threshold)`
+- L626: `(defun ac-comphist-serialize (db)`
+- L634: `(defun ac-comphist-deserialize (sexp)`
+- L644: `(defun ac-comphist-init ()`
+- L649: `(defun ac-comphist-load ()`
+- L660: `(defun ac-comphist-save ()`
+- L678: `(defun ac-clear-dictionary-cache ()`
+- L687: `(defun ac-file-dictionary (filename)`
+- L700: `(defun ac-mode-dictionary (mode)`
+- L709: `(defun ac-buffer-dictionary (&optional buffer)`
+- L726: `(defun ac-menu-at-wrapper-line-p ()`
+- L734: `(defun ac-stop-word-p (word)`
+- L740: `(defun ac-prefix-default ()`
+- L749: `(defun ac-prefix-symbol ()`
+- L754: `(defun ac-prefix-file ()`
+- L764: `(defun ac-prefix-valid-file ()`
+- L779: `(defun ac-prefix-c-dot ()`
+- L784: `(defun ac-prefix-c-dot-ref ()`
+- L789: `(defun ac-prefix-cc-member ()`
+- L794: `(defun ac-define-prefix (name prefix)`
+- L799: `(defun ac-match-substring (prefix candidates)`
+- L810: `(defun ac-source-available-p (source)`
+- L832: `(defun ac-compile-sources (sources)`
+- L853: `(defun ac-compiled-sources ()`
+- L862: `(defun ac-menu-create (point width height)`
+- L876: `(defun ac-menu-delete ()`
+- L890: `(defun ac-inline-show (point string)`
+- L947: `(defun ac-inline-delete ()`
+- L954: `(defun ac-inline-hide ()`
+- L964: `(defun ac-inline-update ()`
+- L976: `(defun ac-put-prefix-overlay ()`
+- L990: `(defun ac-remove-prefix-overlay ()`
+- L1001: `(defun ac-activate-completing-map ()`
+- L1011: `(defun ac-deactivate-completing-map ()`
+- L1024: `(defun ac-prefix (requires ignore-list)`
+- L1067: `(defun ac-init ()`
+- L1077: `(defun ac-candidates-1 (source)`
+- L1121: `(defun ac-delete-duplicated-candidates (candidates)`
+- L1133: `(defun ac-reduce-candidates (candidates)`
+- L1147: `(defun ac-candidates ()`
+- L1181: `(defun ac-update-candidates (cursor scroll-top)`
+- L1203: `(defun ac-reposition ()`
+- L1212: `(defun ac-cleanup ()`
+- L1262: `(defun ac-extend-region-to-delete (string)`
+- L1277: `(defun ac-expand-string (string &optional remove-undo-boundary)`
+- L1311: `(defun ac-set-trigger-key (key)`
+- L1316: `(define-key ac-mode-map (read-kbd-macro ac-trigger-key) nil))`
+- L1321: `(define-key ac-mode-map (read-kbd-macro key) 'ac-trigger-key-command)))`
+- L1323: `(defun ac-set-timer ()`
+- L1328: `(defun ac-cancel-timer ()`
+- L1334: `(defun ac-update (&optional force)`
+- L1356: `(defun ac-update-greedy (&optional force)`
+- L1366: `(defun ac-set-show-menu-timer ()`
+- L1372: `(defun ac-cancel-show-menu-timer ()`
+- L1378: `(defun ac-show-menu ()`
+- L1386: `(defun ac-help (&optional persist)`
+- L1391: `(defun ac-persist-help ()`
+- L1396: `(defun ac-last-help (&optional persist)`
+- L1401: `(defun ac-last-persist-help ()`
+- L1406: `(defun ac-set-quick-help-timer ()`
+- L1412: `(defun ac-cancel-quick-help-timer ()`
+- L1418: `(defun ac-pos-tip-show-quick-help (menu &optional item &rest args)`
+- L1444: `(defun ac-quick-help-use-pos-tip-p ()`
+- L1450: `(defun ac-quick-help (&optional force)`
+- L1471: `(defun ac-remove-quick-help ()`
+- L1479: `(defun ac-last-quick-help ()`
+- L1495: `(defmacro ac-define-quick-help-command (name arglist &rest body)`
+- L1517: `(defun ac-isearch-callback (list)`
+- L1521: `(defun ac-isearch ()`
+- L1542: `(cl-defun auto-complete-1 (&key sources (triggered 'command))`
+- L1567: `(defun auto-complete (&optional sources)`
+- L1572: `(defun ac-fuzzy-complete ()`
+- L1590: `(defun ac-next ()`
+- L1600: `(defun ac-next-page ()`
+- L1610: `(defun ac-previous ()`
+- L1620: `(defun ac-previous-page ()`
+- L1630: `(defun ac-expand (arg)`
+- L1652: `(defun ac-expand-previous (arg)`
+- L1657: `(defun ac-expand-common ()`
+- L1668: `(defun ac-complete-1 (candidate)`
+- L1686: `(defun ac-complete ()`
+- L1691: `(cl-defun ac-start (&key`
+- L1731: `(defun ac-stop ()`
+- L1737: `(defun ac-ignore (&rest ignore)`
+- L1741: `(defun ac-mouse-1 (event)`
+- L1747: `(defun ac-mouse-4 (event)`
+- L1752: `(defun ac-mouse-5 (event)`
+- L1757: `(defun ac-trigger-key-command (&optional force)`
+- L1776: `(defun ac-clear-variable-after-save (variable &optional pred)`
+- L1780: `(defun ac-clear-variables-after-save ()`
+- L1786: `(defun ac-clear-variable-every-minutes (variable minutes)`
+- L1790: `(defun ac-clear-variable-every-minute (variable)`
+- L1794: `(defun ac-clear-variable-every-10-minutes (variable)`
+- L1798: `(defun ac-clear-variables-every-minute ()`
+- L1810: `(defun ac-cursor-on-diable-face-p (&optional point)`
+- L1814: `(defun ac-trigger-command-p (command)`
+- L1822: `(defun ac-fallback-key-sequence ()`
+- L1829: `(defun ac-fallback-command (&optional except-command)`
+- L1839: `(defun ac-compatible-package-command-p (command)`
+- L1844: `(defun ac-handle-pre-command ()`
+- L1863: `(defun ac-handle-post-command ()`
+- L1878: `(defun ac-syntax-checker-workaround ()`
+- L1900: `(defun ac-setup ()`
+- L1909: `(define-minor-mode auto-complete-mode`
+- L1926: `(defun auto-complete-mode-maybe ()`
+- L1942: `(defun ac-flyspell-workaround ()`
+- L1951: `(defun ac-linum-workaround ()`
+- L1964: `(defmacro ac-define-source (name source)`
+- L1980: `(defun ac-candidate-words-in-buffer (point prefix limit)`
+- L2003: `(defun ac-incremental-update-word-index ()`
+- L2019: `(defun ac-update-word-index-1 ()`
+- L2031: `(defun ac-update-word-index ()`
+- L2039: `(defun ac-word-candidates (&optional buffer-pred)`
+- L2069: `(defun ac-symbol-file (symbol type)`
+- L2102: `(defun ac-symbol-documentation (symbol)`
+- L2150: `(defun ac-symbol-candidates ()`
+- L2170: `(defun ac-function-candidates ()`
+- L2189: `(defun ac-variable-candidates ()`
+- L2207: `(defun ac-emacs-lisp-feature-candidates ()`
+- L2242: `(defun ac-filename-candidate ()`
+- L2273: `(provide 'auto-complete)`
+
+## etc/install.el
+
+- L1: `(require 'cl)`

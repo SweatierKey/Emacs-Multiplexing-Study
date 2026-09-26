@@ -1,0 +1,98 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: popup</h1>
+<p>Fonte: https://github.com/auto-complete/popup-el.git</p>
+<p>Revisione: <code>3afe431e9aa2e271aaf0412cbb50c733387e8ea4</code>.</p>
+<h2>popup.el</h2>
+<ul>
+<li>L35: <code>(require 'cl-lib)</code></li>
+<li>L36: <code>(require 'mule)</code></li>
+<li>L45: <code>(defun popup-calculate-max-width (max-width)</code></li>
+<li>L56: <code>(defmacro popup-aif (test then &amp;rest else)</code></li>
+<li>L62: <code>(defmacro popup-awhen (test &amp;rest body)</code></li>
+<li>L68: <code>(defun popup-x-to-string (x)</code></li>
+<li>L78: <code>(defun popup-substring-by-width (string width)</code></li>
+<li>L93: <code>(defun popup-fill-string (string &amp;optional width max-width justify squeeze)</code></li>
+<li>L146: <code>(defmacro popup-save-buffer-state (&amp;rest body)</code></li>
+<li>L156: <code>(defun popup-vertical-motion (column direction)</code></li>
+<li>L165: <code>(defun popup-last-line-of-buffer-p ()</code></li>
+<li>L170: <code>(defun popup-lookup-key-by-event (function event)</code></li>
+<li>L228: <code>(defun popup-item-propertize (item &amp;rest properties)</code></li>
+<li>L238: <code>(defun popup-item-property (item property)</code></li>
+<li>L244: <code>(defun popup-replace-displayable (str &amp;optional rep)</code></li>
+<li>L259: <code>(cl-defun popup-make-item (name</code></li>
+<li>L291: <code>(defun popup-item-documentation (item)</code></li>
+<li>L297: <code>(defun popup-item-show-help-1 (item)</code></li>
+<li>L307: <code>(defun popup-item-show-help-with-event-loop (item)</code></li>
+<li>L322: <code>(defun popup-item-show-help (item &amp;optional persist)</code></li>
+<li>L333: <code>(defun popup-set-list (popup list)</code></li>
+<li>L338: <code>(defun popup-set-filtered-list (popup list)</code></li>
+<li>L346: <code>(defun popup-selected-item (popup)</code></li>
+<li>L349: <code>(defun popup-selected-line (popup)</code></li>
+<li>L352: <code>(defun popup-line-overlay (popup line)</code></li>
+<li>L355: <code>(defun popup-selected-line-overlay (popup)</code></li>
+<li>L358: <code>(defun popup-hide-line (popup line)</code></li>
+<li>L363: <code>(defun popup-line-hidden-p (popup line)</code></li>
+<li>L368: <code>(cl-defun popup-set-line-item (popup</code></li>
+<li>L414: <code>(cl-defun popup-create-line-string (popup</code></li>
+<li>L447: <code>(defun popup-live-p (popup)</code></li>
+<li>L451: <code>(defun popup-child-point (popup &amp;optional offset)</code></li>
+<li>L458: <code>(defun popup-calculate-direction (height row)</code></li>
+<li>L473: <code>(cl-defun popup-create (point</code></li>
+<li>L672: <code>(defun popup-delete (popup)</code></li>
+<li>L690: <code>(defun popup-draw (popup)</code></li>
+<li>L791: <code>(defun popup-hide (popup)</code></li>
+<li>L798: <code>(defun popup-hidden-p (popup)</code></li>
+<li>L807: <code>(defun popup-jump (popup cursor)</code></li>
+<li>L817: <code>(defun popup-select (popup i)</code></li>
+<li>L825: <code>(defun popup-next (popup)</code></li>
+<li>L843: <code>(defun popup-previous (popup)</code></li>
+<li>L861: <code>(defun popup-page-next (popup)</code></li>
+<li>L867: <code>(defun popup-page-previous (popup)</code></li>
+<li>L873: <code>(defun popup-scroll-down (popup &amp;optional n)</code></li>
+<li>L881: <code>(defun popup-scroll-up (popup &amp;optional n)</code></li>
+<li>L901: <code>(defvar popup-isearch-keymap</code></li>
+<li>L903: <code>;;(define-key map "\r"        'popup-isearch-done)</code></li>
+<li>L904: <code>(define-key map "\C-g"      'popup-isearch-cancel)</code></li>
+<li>L905: <code>(define-key map "\C-b"      'popup-isearch-close)</code></li>
+<li>L906: <code>(define-key map [left]      'popup-isearch-close)</code></li>
+<li>L907: <code>(define-key map "\C-h"      'popup-isearch-delete)</code></li>
+<li>L908: <code>(define-key map (kbd "DEL") 'popup-isearch-delete)</code></li>
+<li>L909: <code>(define-key map (kbd "C-y") 'popup-isearch-yank)</code></li>
+<li>L915: <code>(defcustom popup-isearch-regexp-builder-function #'regexp-quote</code></li>
+<li>L926: <code>(defun popup-isearch-filter-list (pattern list)</code></li>
+<li>L947: <code>(defun popup-isearch-prompt (popup pattern)</code></li>
+<li>L952: <code>(defun popup-isearch-update (popup filter pattern &amp;optional callback)</code></li>
+<li>L962: <code>(cl-defun popup-isearch (popup</code></li>
+<li>L1041: <code>(cl-defun popup-tip (string</code></li>
+<li>L1151: <code>(defun popup-menu-show-help (menu &amp;optional persist item)</code></li>
+<li>L1154: <code>(defun popup-menu-documentation (menu &amp;optional item)</code></li>
+<li>L1157: <code>(defun popup-menu-show-quick-help (menu &amp;optional item &amp;rest args)</code></li>
+<li>L1181: <code>(defun popup-menu-item-of-mouse-event (event)</code></li>
+<li>L1189: <code>(defun popup-menu-read-key-sequence (keymap &amp;optional prompt timeout)</code></li>
+<li>L1201: <code>(define-key temp-global-map [menu-bar] (lookup-key old-global-map [menu-bar]))</code></li>
+<li>L1202: <code>(define-key temp-global-map [tool-bar] (lookup-key old-global-map [tool-bar]))</code></li>
+<li>L1205: <code>(define-key overriding-terminal-local-map [menu-bar]</code></li>
+<li>L1216: <code>(defun popup-menu-fallback (event default))</code></li>
+<li>L1218: <code>(cl-defun popup-menu-event-loop (menu</code></li>
+<li>L1299: <code>(defun popup-preferred-width (list)</code></li>
+<li>L1311: <code>(defvar popup-menu-keymap</code></li>
+<li>L1313: <code>(define-key map "\r"        'popup-select)</code></li>
+<li>L1314: <code>(define-key map "\C-f"      'popup-open)</code></li>
+<li>L1315: <code>(define-key map [right]     'popup-open)</code></li>
+<li>L1316: <code>(define-key map "\C-b"      'popup-close)</code></li>
+<li>L1317: <code>(define-key map [left]      'popup-close)</code></li>
+<li>L1319: <code>(define-key map "\C-n"      'popup-next)</code></li>
+<li>L1320: <code>(define-key map [down]      'popup-next)</code></li>
+<li>L1321: <code>(define-key map "\C-p"      'popup-previous)</code></li>
+<li>L1322: <code>(define-key map [up]        'popup-previous)</code></li>
+<li>L1324: <code>(define-key map [next]      'popup-page-next)</code></li>
+<li>L1325: <code>(define-key map [prior]     'popup-page-previous)</code></li>
+<li>L1327: <code>(define-key map [f1]        'popup-help)</code></li>
+<li>L1328: <code>(define-key map (kbd "\C-?") 'popup-help)</code></li>
+<li>L1330: <code>(define-key map "\C-s"      'popup-isearch)</code></li>
+<li>L1332: <code>(define-key map [mouse-1]   'popup-select)</code></li>
+<li>L1333: <code>(define-key map [mouse-4]   'popup-previous)</code></li>
+<li>L1334: <code>(define-key map [mouse-5]   'popup-next)</code></li>
+<li>L1337: <code>(cl-defun popup-menu* (list</code></li>
+<li>L1447: <code>(defun popup-cascade-menu (list &amp;rest args)</code></li>
+<li>L1463: <code>(provide 'popup)</code></li>
+</ul></main></html>

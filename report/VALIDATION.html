@@ -1,0 +1,43 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="style.css"><main><a href="../index.html">← Catalogo e video</a><h1>Verifica della consegna</h1>
+<h2>Prove originali</h2>
+<p>I risultati puntuali sono <code>results/&lt;scenario&gt;.json</code>, le registrazioni <code>recordings/&lt;scenario&gt;.cast</code> e i byte inviati <code>results/&lt;scenario&gt;-keys.json</code>. I conteggi sono calcolati da <code>scripts/build-report.py</code>, non mantenuti manualmente nelle schede. Gli esiti negativi precedenti sono in <code>results/attempts/</code>.</p>
+<h2>Replica in ambiente pulito</h2>
+<p>È stato costruito ed eseguito un contenitore Debian dal digest fissato nel Dockerfile, installando i pacchetti archiviati e compilando vterm. I log delle build precedenti conservano le dipendenze mancanti individuate e corrette: ordine delle pre-dipendenze Debian, make e terminfo di base.</p>
+<table>
+<thead>
+<tr>
+<th>Replica</th>
+<th>Esito</th>
+<th>Evidenza</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Smoke pulito: ansi-term, Eat, vterm, multi-vterm, ghostel-mux, tmux annidato con riavvio</td>
+<td>6 scenari riusciti, processo suite exit 0</td>
+<td><code>results/container-smoke-fixed.log</code>, <code>results/container-replay/smoke/</code></td>
+</tr>
+<tr>
+<td>Motori aggiuntivi: Alacritty, Kuro, Ebb, MisTTY, Coterm</td>
+<td>5 scenari riusciti</td>
+<td><code>results/container-native.log</code>, <code>results/container-replay/native/</code></td>
+</tr>
+<tr>
+<td>Cooked, primo tentativo nel contenitore</td>
+<td>Due SSH riuscite; pager fermo per terminfo remota assente; suite exit 1</td>
+<td><code>results/container-replay/native/cooked.json</code></td>
+</tr>
+<tr>
+<td>Cooked, terminfo preparata anche per SSH</td>
+<td>Scenario completo riuscito, exit 0</td>
+<td><code>results/container-cooked-fixed.log</code>, <code>results/container-replay/cooked-fixed/</code></td>
+</tr>
+</tbody>
+</table>
+<p>Le immagini e i codici di uscita sono registrati in <a href="../results/container-replay/manifest.json">manifest.json</a>. Queste repliche <strong>non vengono sommate</strong> ai risultati originali per gonfiare il conteggio. Il primo smoke fallito sul riattacco usava una directory tmux diversa fra i due client; <code>env_override</code> mantiene ora il namespace del server.</p>
+<p>La suite completa non è stata ripetuta interamente nel contenitore: sono stati verificati i percorsi principali e i moduli nativi sopra. La suite include deliberatamente test che falliscono sullo snapshot corrente. Il Dockerfile e gli script non ne trasformano gli errori in successi.</p>
+<h2>Registrazioni e collegamenti</h2>
+<p><code>scripts/verify.py</code> valida formato e ordine temporale degli asciicast, riproduce gli eventi tramite pyte, verifica che gli scenari riusciti abbiano registrazioni e modalità di completamento attive, controlla i collegamenti HTML locali e, quando presente, il manifesto SHA256 del bundle. Il risultato è in <code>results/verification.json</code>.</p>
+<p>È stata ispezionata anche una ricostruzione dello schermo vterm dagli eventi del cast (<code>report/vterm-replayed.png</code>). Non è stato eseguito un test di compatibilità visuale del player su tutti i browser. Il player originale asciinema è incluso con licenza; l'HTML non necessita di servizi remoti per riprodurre i cast.</p>
+<h2>Limiti della riproducibilità</h2>
+<p>I tempi degli eventi, PID, directory assolute, identificatori dei buffer e dettagli della redisplay possono differire fra repliche. I dati attesi sono fixture deterministiche e stato della shell, non un confronto pixel per pixel. I moduli precompilati sono Linux x86_64; le build complete di tutti i backend Rust/Zig non sono ripetute nel contenitore. La provenienza dei binari e i sorgenti sono separatamente conservati.</p></main></html>

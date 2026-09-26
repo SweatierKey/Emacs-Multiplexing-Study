@@ -1,0 +1,43 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: vterm-toggle</h1>
+<p>Fonte: https://github.com/jixiuf/vterm-toggle.git</p>
+<p>Revisione: <code>a0051a8b8eaa85f8df54ddb032f5710c1f62779d</code>.</p>
+<h2>vterm-toggle.el</h2>
+<ul>
+<li>L40: <code>(require 'cl-lib)</code></li>
+<li>L41: <code>(require 'tramp)</code></li>
+<li>L42: <code>(require 'tramp-sh)</code></li>
+<li>L51: <code>(defcustom vterm-toggle-show-hook nil</code></li>
+<li>L56: <code>(defcustom vterm-toggle-hide-hook nil</code></li>
+<li>L61: <code>(defcustom vterm-toggle-fullscreen-p nil</code></li>
+<li>L66: <code>(defcustom vterm-toggle-scope nil</code></li>
+<li>L77: <code>(defcustom vterm-toggle-project-root t</code></li>
+<li>L83: <code>(defcustom vterm-toggle-cd-auto-create-buffer nil</code></li>
+<li>L89: <code>(defcustom vterm-toggle-reset-window-configration-after-exit 'kill-window-only</code></li>
+<li>L97: <code>(defcustom vterm-toggle-hide-method 'delete-window</code></li>
+<li>L114: <code>(defcustom vterm-toggle-togglable-buffer-functions nil</code></li>
+<li>L123: <code>(defun vterm-toggle-togglable-buffer-p (buffer)</code></li>
+<li>L130: <code>(defun vterm-toggle(&amp;optional args)</code></li>
+<li>L149: <code>(defun vterm-toggle-cd(&amp;optional args)</code></li>
+<li>L167: <code>(defun vterm-toggle-hide (&amp;optional _args)</code></li>
+<li>L194: <code>(defun vterm-toggle--get-window()</code></li>
+<li>L199: <code>(defun vterm-toggle--bury-all-vterm ()</code></li>
+<li>L205: <code>(defun vterm-toggle-tramp-get-method-parameter (method param)</code></li>
+<li>L223: <code>(defun vterm-toggle-cd-show(&amp;optional  args)</code></li>
+<li>L230: <code>(defun vterm-toggle-show(&amp;optional make-cd)</code></li>
+<li>L286: <code>(defun vterm-toggle--wait-prompt()</code></li>
+<li>L297: <code>(defun vterm-toggle-insert-cd()</code></li>
+<li>L307: <code>(defun vterm-toggle--new(&amp;optional buffer-name)</code></li>
+<li>L325: <code>(defun vterm-toggle--get-buffer(&amp;optional make-cd ignore-prompt-p)</code></li>
+<li>L340: <code>(defun vterm-toggle--get-dedicated-buffer()</code></li>
+<li>L351: <code>(defun vterm-toggle--not-in-other-frame(frame buf)</code></li>
+<li>L357: <code>(defun vterm-toggle--recent-vterm-buffer(&amp;optional make-cd ignore-prompt-p dir)</code></li>
+<li>L396: <code>(defun vterm-toggle--in-cmd-buffer-p()</code></li>
+<li>L402: <code>(defun vterm-toggle--project-root()</code></li>
+<li>L408: <code>(defun vterm-toggle--recent-other-buffer(&amp;optional _args)</code></li>
+<li>L419: <code>(defun vterm-toggle--exit-hook()</code></li>
+<li>L439: <code>(defun vterm-toggle--mode-hook()</code></li>
+<li>L449: <code>(defun vterm-toggle--switch (direction offset)</code></li>
+<li>L466: <code>(defun vterm-toggle-forward (&amp;optional offset)</code></li>
+<li>L473: <code>(defun vterm-toggle-backward (&amp;optional offset)</code></li>
+<li>L479: <code>(provide 'vterm-toggle)</code></li>
+</ul></main></html>

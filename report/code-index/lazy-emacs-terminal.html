@@ -1,0 +1,113 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: lazy-emacs-terminal</h1>
+<p>Fonte: https://github.com/lizqwerscott/lazy-emacs-terminal.git</p>
+<p>Revisione: <code>75eee8341b0c2e64376f482577e76b19c0c4a530</code>.</p>
+<h2>early-init.el</h2>
+<ul>
+<li>L23: <code>(provide 'early-init)</code></li>
+</ul>
+<h2>init.el</h2>
+<ul>
+<li>L7: <code>(require 'cl-lib)</code></li>
+<li>L9: <code>(defun directory-dirs (path)</code></li>
+<li>L38: <code>(require 'init-package)</code></li>
+<li>L39: <code>(require 'init-startup)</code></li>
+<li>L41: <code>(require 'server)</code></li>
+<li>L46: <code>(require 'keybinding)</code></li>
+<li>L47: <code>(require 'init-edit)</code></li>
+<li>L48: <code>(require 'init-ui)</code></li>
+<li>L50: <code>(require 'init-program)</code></li>
+<li>L51: <code>(require 'init-common-lisp)</code></li>
+<li>L52: <code>(require 'init-input)</code></li>
+</ul>
+<h2>lisp/init-common-lisp.el</h2>
+<ul>
+<li>L31: <code>(provide 'init-common-lisp)</code></li>
+</ul>
+<h2>lisp/init-corfu.el</h2>
+<ul>
+<li>L2: <code>(defun +complete ()</code></li>
+<li>L54: <code>(provide 'init-corfu)</code></li>
+</ul>
+<h2>lisp/init-edit.el</h2>
+<ul>
+<li>L16: <code>(require 'awesome-pair)</code></li>
+<li>L43: <code>(define-key awesome-pair-mode-map (kbd "(") 'awesome-pair-open-round)</code></li>
+<li>L44: <code>(define-key awesome-pair-mode-map (kbd "[") 'awesome-pair-open-bracket)</code></li>
+<li>L45: <code>(define-key awesome-pair-mode-map (kbd "{") 'awesome-pair-open-curly)</code></li>
+<li>L46: <code>(define-key awesome-pair-mode-map (kbd ")") 'awesome-pair-close-round)</code></li>
+<li>L47: <code>(define-key awesome-pair-mode-map (kbd "]") 'awesome-pair-close-bracket)</code></li>
+<li>L48: <code>(define-key awesome-pair-mode-map (kbd "}") 'awesome-pair-close-curly)</code></li>
+<li>L49: <code>(define-key awesome-pair-mode-map (kbd "=") 'awesome-pair-equal)</code></li>
+<li>L51: <code>(define-key awesome-pair-mode-map (kbd "%") 'awesome-pair-match-paren)</code></li>
+<li>L52: <code>(define-key awesome-pair-mode-map (kbd "\"") 'awesome-pair-double-quote)</code></li>
+<li>L54: <code>(define-key awesome-pair-mode-map (kbd "SPC") 'awesome-pair-space)</code></li>
+<li>L55: <code>(define-key awesome-pair-mode-map (kbd "RET") 'awesome-pair-newline)</code></li>
+<li>L57: <code>(define-key awesome-pair-mode-map (kbd "C-k") 'awesome-pair-kill)</code></li>
+<li>L58: <code>(define-key awesome-pair-mode-map (kbd "M-o") 'awesome-pair-backward-delete)</code></li>
+<li>L59: <code>(define-key awesome-pair-mode-map (kbd "C-d") 'awesome-pair-forward-delete)</code></li>
+<li>L60: <code>(define-key awesome-pair-mode-map (kbd "C-k") 'awesome-pair-kill)</code></li>
+<li>L71: <code>(provide 'init-edit)</code></li>
+</ul>
+<h2>lisp/init-input.el</h2>
+<ul>
+<li>L12: <code>(require 'cl-lib)</code></li>
+<li>L13: <code>(require 'posframe)</code></li>
+<li>L14: <code>(defun pyim-probe-meow-normal-mode ()</code></li>
+<li>L24: <code>(global-set-key (kbd "C-\\") 'toggle-input-method)</code></li>
+<li>L36: <code>(provide 'init-input)</code></li>
+</ul>
+<h2>lisp/init-package.el</h2>
+<ul>
+<li>L14: <code>(require 'package)</code></li>
+<li>L35: <code>(defun site-lisp-update ()</code></li>
+<li>L51: <code>(defun require-package (package &amp;optional min-version no-refresh)</code></li>
+<li>L66: <code>(defun maybe-require-package (package &amp;optional min-version no-refresh)</code></li>
+<li>L77: <code>(provide 'init-package)</code></li>
+</ul>
+<h2>lisp/init-program.el</h2>
+<ul>
+<li>L58: <code>(require-package 'dumb-jump)</code></li>
+<li>L60: <code>(require 'xref)</code></li>
+<li>L61: <code>(require 'lsp-bridge)</code></li>
+<li>L62: <code>(defun find-definition-with-lsp-bridge ()</code></li>
+<li>L76: <code>(defun return-find-def ()</code></li>
+<li>L120: <code>(require-package 'format-all)</code></li>
+<li>L128: <code>(defun format-this-buffer ()</code></li>
+<li>L163: <code>(require-package 'helpful)</code></li>
+<li>L170: <code>(require-package 'quickrun)</code></li>
+<li>L175: <code>(require-package 'eacl)</code></li>
+<li>L180: <code>(provide 'init-program)</code></li>
+</ul>
+<h2>lisp/init-startup.el</h2>
+<ul>
+<li>L55: <code>(defun max-gc-limit ()</code></li>
+<li>L58: <code>(defun reset-gc-limit ()</code></li>
+<li>L73: <code>(require-package 'no-littering)</code></li>
+<li>L78: <code>(require 'no-littering)</code></li>
+<li>L82: <code>(require 'recentf)</code></li>
+<li>L194: <code>(require-package 'consult-project-extra)</code></li>
+<li>L202: <code>(require-package 'affe)</code></li>
+<li>L204: <code>(require 'init-corfu)</code></li>
+<li>L252: <code>(provide 'init-startup)</code></li>
+</ul>
+<h2>lisp/init-ui.el</h2>
+<ul>
+<li>L125: <code>(require-package 'avy)</code></li>
+<li>L157: <code>(provide 'init-ui)</code></li>
+</ul>
+<h2>lisp/keybinding.el</h2>
+<ul>
+<li>L2: <code>(define-key project-prefix-map</code></li>
+<li>L7: <code>(defun my/meow-quit ()</code></li>
+<li>L12: <code>(defun help-helfup-lsp-bridge-sly ()</code></li>
+<li>L22: <code>(defun meow-setup ()</code></li>
+<li>L217: <code>(global-set-key (kbd "RET") 'newline-and-indent)</code></li>
+<li>L218: <code>(global-set-key (kbd "S-&lt;return&gt;") 'comment-indent-new-line)</code></li>
+<li>L220: <code>(global-set-key (kbd "C-h f") #'helpful-callable)</code></li>
+<li>L221: <code>(global-set-key (kbd "C-h v") #'helpful-variable)</code></li>
+<li>L222: <code>(global-set-key (kbd "C-h k") #'helpful-key)</code></li>
+<li>L228: <code>(global-set-key (kbd "C-h F") #'helpful-function)</code></li>
+<li>L235: <code>(global-set-key (kbd "C-h C") #'helpful-command)</code></li>
+<li>L237: <code>(global-set-key (kbd "s-x") #'execute-extended-command)</code></li>
+<li>L239: <code>(provide 'keybinding)</code></li>
+</ul></main></html>

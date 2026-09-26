@@ -1,0 +1,454 @@
+# Indice del codice: eat
+
+Fonte: https://codeberg.org/akib/emacs-eat.git
+
+Revisione: `c8d54d649872bfe7b2b9f49ae5c2addbf12d3b99`.
+
+
+## .dir-locals.el
+
+
+## eat-tests.el
+
+- L30: `(require 'ert)`
+- L31: `(require 'eat)`
+- L32: `(require 'cl-lib)`
+- L38: `(defun eat--tests-parse-text-properties (string)`
+- L84: `(defun eat--tests-sanitize-expected-text (string)`
+- L110: `(defun eat--tests-compare-lines (actual expected)`
+- L162: `(defun eat--tests-compare-scrollback (terminal lines)`
+- L182: `(defun eat--tests-compare-display (terminal lines)`
+- L199: `(defun eat--tests-compare-cursor-pos (terminal cursor-pos)`
+- L213: `(defun eat--tests-add-properties (string &rest intervals)`
+- L224: `(defmacro eat--tests-with-term (spec &rest body)`
+- L6261: `(provide 'eat-tests)`
+
+## eat.el
+
+- L84: `(require 'compat)`
+- L85: `(require 'subr-x)`
+- L86: `(require 'cl-lib)`
+- L87: `(require 'ansi-color)`
+- L88: `(require 'color)`
+- L89: `(require 'shell)`
+- L90: `(require 'term)`
+- L91: `(require 'url)`
+- L92: `(require 'tramp)`
+- L93: `(require 'term/xterm)`
+- L123: `(defcustom eat-default-shell-function #'eat-default-shell`
+- L128: `(defcustom eat-shell (or explicit-shell-file-name`
+- L135: `(defcustom eat-tramp-shells '(("docker" . "/bin/sh"))`
+- L143: `(defcustom eat-buffer-name "*eat*"`
+- L150: `(defcustom eat-kill-buffer-on-exit nil`
+- L155: `(defcustom eat-show-title-on-mode-line t`
+- L160: `(defcustom eat-term-scrollback-size 131072 ; 128 K`
+- L166: `(defcustom eat-enable-kill-from-terminal t`
+- L175: `(defcustom eat-enable-yank-to-terminal nil`
+- L184: `(defcustom eat-query-before-killing-running-terminal 'auto`
+- L195: `(defcustom eat-eshell-fallback-if-stty-not-available 'ask`
+- L215: `(defcustom eat-sixel-scale 1.0`
+- L221: `(defcustom eat-sixel-aspect-ratio 1.0`
+- L231: `(defcustom eat-sixel-render-formats`
+- L242: `(defcustom eat-line-input-ring-size 1000`
+- L247: `(defcustom eat-line-auto-move-to-input t`
+- L252: `(defcustom eat-line-move-point-for-matching-input 'after-input`
+- L266: `(defcustom eat-line-input-history-isearch nil`
+- L282: `(defcustom eat-line-input-send-function #'eat-line-send-default`
+- L292: `(defcustom eat-semi-char-non-bound-keys`
+- L340: `(defcustom eat-eshell-semi-char-non-bound-keys`
+- L388: `(defcustom eat-enable-directory-tracking t`
+- L399: `(defcustom eat-enable-shell-command-history t`
+- L409: `(defcustom eat-message-handler-alist nil`
+- L423: `(defcustom eat-enable-auto-line-mode nil`
+- L428: `(defcustom eat-enable-shell-prompt-annotation t`
+- L436: `(defcustom eat-shell-prompt-annotation-position 'left-margin`
+- L447: `(defcustom eat-shell-prompt-annotation-running-margin-indicator "-"`
+- L457: `(defcustom eat-shell-prompt-annotation-success-margin-indicator "0"`
+- L467: `(defcustom eat-shell-prompt-annotation-failure-margin-indicator "X"`
+- L477: `(defcustom eat-shell-prompt-annotation-correction-delay 0.1`
+- L485: `(defcustom eat-exec-hook nil`
+- L493: `(defcustom eat-update-hook nil`
+- L498: `(defcustom eat-exit-hook nil`
+- L506: `(defcustom eat-eshell-exec-hook nil`
+- L511: `(defcustom eat-eshell-update-hook nil`
+- L516: `(defcustom eat-eshell-exit-hook nil`
+- L543: `(defcustom eat-invisible-cursor-type '(nil nil nil)`
+- L556: `(defcustom eat-default-cursor-type`
+- L570: `(defcustom eat-very-visible-cursor-type`
+- L584: `(defcustom eat-vertical-bar-cursor-type '(bar nil nil)`
+- L597: `(defcustom eat-very-visible-vertical-bar-cursor-type '(bar 2 nil)`
+- L610: `(defcustom eat-horizontal-bar-cursor-type '(hbar nil nil)`
+- L623: `(defcustom eat-very-visible-horizontal-bar-cursor-type '(hbar 2 nil)`
+- L636: `(defcustom eat-minimum-latency 0.008`
+- L647: `(defcustom eat-maximum-latency 0.033`
+- L658: `(defcustom eat-term-name #'eat-term-get-suitable-term-name`
+- L728: `(defcustom eat-term-inside-emacs (format "%s,eat" emacs-version)`
+- L733: `(defcustom eat-enable-blinking-text nil`
+- L743: `(defcustom eat-slow-blink-frequency 2`
+- L750: `(defcustom eat-fast-blink-frequency 3`
+- L757: `(defcustom eat-enable-alternative-display t`
+- L768: `(defcustom eat-enable-mouse t`
+- L775: `(defcustom eat-input-chunk-size 1024`
+- L886: `(defun eat--t-goto-bol (&optional n)`
+- L917: `(defun eat--t-goto-eol (&optional n)`
+- L948: `(defun eat--t-bol (&optional n)`
+- L967: `(defun eat--t-eol (&optional n)`
+- L986: `(defun eat--t-col-motion (n)`
+- L1010: `(defun eat--t-current-col ()`
+- L1020: `(defun eat--t-goto-col (n)`
+- L1031: `(defun eat--t-repeated-insert (c n &optional face)`
+- L1041: `(defun eat--t-join-long-line (&optional limit)`
+- L1057: `(defun eat--t-break-long-line (threshold)`
+- L1274: `(defun eat--t-reset ()`
+- L1316: `(defun eat--t-cur-right (&optional n)`
+- L1335: `(defun eat--t-cur-left (&optional n)`
+- L1353: `(defun eat--t-cur-horizontal-abs (&optional n)`
+- L1369: `(defun eat--t-beg-of-next-line (n)`
+- L1387: `(defun eat--t-beg-of-prev-line (n)`
+- L1400: `(defun eat--t-cur-down (&optional n)`
+- L1414: `(defun eat--t-cur-up (&optional n)`
+- L1428: `(defun eat--t-cur-vertical-abs (&optional n)`
+- L1444: `(defun eat--t-scroll-up (&optional n as-side-effect)`
+- L1508: `(defun eat--t-scroll-down (&optional n)`
+- L1537: `(defun eat--t-goto (&optional y x)`
+- L1569: `(defun eat--t-enable-auto-margin ()`
+- L1575: `(defun eat--t-disable-auto-margin ()`
+- L1581: `(defun eat--t-set-charset (slot charset)`
+- L1586: `(defun eat--t-change-charset (charset)`
+- L1593: `(defun eat--t-move-before-to-safe ()`
+- L1615: `(defun eat--t-make-pos-safe ()`
+- L1628: `(defun eat--t-fix-partial-multi-col-char (&optional preserve-face)`
+- L1708: `(defun eat--t-write (str &optional beg end)`
+- L1842: `(defun eat--t-horizontal-tab (&optional n)`
+- L1855: `(defun eat--t-horizontal-backtab (&optional n)`
+- L1868: `(defun eat--t-index ()`
+- L1882: `(defun eat--t-carriage-return ()`
+- L1886: `(defun eat--t-line-feed ()`
+- L1941: `(defun eat--t-reverse-index ()`
+- L1955: `(defun eat--t-bell ()`
+- L1960: `(defun eat--t-form-feed ()`
+- L1965: `(defun eat--t-save-cur ()`
+- L1982: `(defun eat--t-restore-cur ()`
+- L1995: `(defun eat--t-erase-in-line (&optional n)`
+- L2055: `(defun eat--t-erase-in-disp (&optional n)`
+- L2137: `(defun eat--t-device-status-report (n)`
+- L2152: `(defun eat--t-set-cursor-state (state)`
+- L2171: `(defun eat--t-set-cursor-style (style)`
+- L2182: `(defun eat--t-show-cursor ()`
+- L2187: `(defun eat--t-hide-cursor ()`
+- L2192: `(defun eat--t-blinking-cursor ()`
+- L2203: `(defun eat--t-non-blinking-cursor ()`
+- L2214: `(defun eat--t-enable-bracketed-yank ()`
+- L2218: `(defun eat--t-disable-bracketed-yank ()`
+- L2222: `(defun eat--t-enable-alt-disp ()`
+- L2247: `(defun eat--t-disable-alt-disp (&optional dont-move-cursor)`
+- L2291: `(defun eat--t-insert-char (n)`
+- L2321: `(defun eat--t-delete-char (n)`
+- L2360: `(defun eat--t-erase-char (n)`
+- L2389: `(defun eat--t-insert-line (n)`
+- L2441: `(defun eat--t-delete-line (n)`
+- L2491: `(defun eat--t-repeat-last-char (&optional n)`
+- L2510: `(defun eat--t-change-scroll-region (&optional top bottom)`
+- L2526: `(defun eat--t-insert-mode ()`
+- L2530: `(defun eat--t-replace-mode ()`
+- L2534: `(defun eat--t-set-sgr-params (params)`
+- L2738: `(defun eat--t-enable-keypad ()`
+- L2742: `(defun eat--t-disable-keypad ()`
+- L2746: `(defun eat--t-enable-sgr-mouse-encoding ()`
+- L2750: `(defun eat--t-disable-sgr-mouse-encoding ()`
+- L2754: `(defun eat--t-set-mouse-mode (mode)`
+- L2777: `(defun eat--t-enable-x10-mouse ()`
+- L2781: `(defun eat--t-enable-normal-mouse ()`
+- L2785: `(defun eat--t-enable-button-event-mouse ()`
+- L2789: `(defun eat--t-enable-any-event-mouse ()`
+- L2793: `(defun eat--t-disable-mouse ()`
+- L2797: `(defun eat--t-enable-focus-event ()`
+- L2803: `(defun eat--t-disable-focus-event ()`
+- L2809: `(defun eat--t-set-title (title)`
+- L2816: `(defun eat--t-set-cwd (url)`
+- L2828: `(defun eat--t-send-device-attrs (n format)`
+- L2842: `(defun eat--t-send-graphics-attrs (attr operation)`
+- L2870: `(defun eat--t-report-foreground-color ()`
+- L2881: `(defun eat--t-report-background-color ()`
+- L2892: `(defun eat--t-manipulate-selection (targets data)`
+- L2979: `(defun eat--t-sixel-init ()`
+- L3026: `(defun eat--t-sixel-write (str beg end count)`
+- L3056: `(defun eat--t-sixel-render-bitmap (bitmap)`
+- L3138: `(defun eat--t-sixel-flush-line (nullify)`
+- L3202: `(defun eat--t-sixel-newline ()`
+- L3218: `(defun eat--t-sixel-set-color-reg (reg spec)`
+- L3242: `(defun eat--t-sixel-cleanup ()`
+- L3259: `(defun eat--t-sixel-enable-scrolling ()`
+- L3263: `(defun eat--t-sixel-disable-scrolling ()`
+- L3267: `(defun eat--t-ui-cmd (cmd)`
+- L3271: `(defun eat--t-set-modes (params format)`
+- L3312: `(defun eat--t-reset-modes (params format)`
+- L3349: `(defun eat--t-handle-output (output)`
+- L3890: `(defun eat--t-resize (width height)`
+- L3981: `(defun eat-term-make (buffer position)`
+- L3993: `(defun eat-term-p (object)`
+- L3997: `(defun eat-term-live-p (object)`
+- L4002: `(defmacro eat--t-ensure-live-term (object)`
+- L4008: `(defmacro eat--t-with-env (terminal &rest body)`
+- L4031: `(defun eat-term-delete (terminal)`
+- L4052: `(defun eat-term-reset (terminal)`
+- L4058: `(defun eat-term-parameter (terminal parameter)`
+- L4063: `(defun eat-term-parameters (terminal)`
+- L4070: `(defun eat-term-set-parameter (terminal parameter value)`
+- L4179: `(defun eat-term-cursor-type (terminal)`
+- L4196: `(defun eat-term-beginning (terminal)`
+- L4204: `(defun eat-term-end (terminal)`
+- L4214: `(defun eat-term-display-beginning (terminal)`
+- L4219: `(defun eat-term-display-cursor (terminal)`
+- L4230: `(defun eat-term-title (terminal)`
+- L4235: `(defun eat-term-size (terminal)`
+- L4241: `(defun eat-term-process-output (terminal output)`
+- L4247: `(defun eat-term-redisplay (terminal)`
+- L4269: `(defun eat-term-resize (terminal width height)`
+- L4275: `(defun eat-term-in-alternative-display-p (terminal)`
+- L4280: `(defun eat-term-input-event (terminal n event &optional ref-pos)`
+- L4635: `(defun eat-term-send-string (terminal string)`
+- L4640: `(defun eat-term-send-string-as-yank (terminal args)`
+- L4657: `(defun eat-term-make-keymap (input-command categories exceptions)`
+- L4681: `(define-key map key input-command))))`
+- L4706: `(define-key map (vector meta-prefix-char)`
+- L4802: `(defun eat-term-name ()`
+- L4808: `(defun eat-term-get-suitable-term-name (&optional display)`
+- L4822: `(defun eat-term-filter-string (string)`
+- L4857: `(defvar eat--slow-blink-remap nil`
+- L4860: `(defvar eat--fast-blink-remap nil`
+- L4873: `(defun eat--flip-slow-blink-state ()`
+- L4882: `(defun eat--flip-fast-blink-state ()`
+- L4891: `(defun eat--blink-stop-timers ()`
+- L4900: `(defun eat--blink-start-timers ()`
+- L4910: `(define-minor-mode eat-blink-mode`
+- L4955: `(defun eat--flip-cursor-blink-state ()`
+- L4968: `(defun eat--cursor-blink-stop-timers ()`
+- L4976: `(defun eat--cursor-blink-start-timers ()`
+- L4983: `(define-minor-mode eat--cursor-blink-mode`
+- L5043: `(defun eat-reset ()`
+- L5052: `(defun eat--set-cursor (_ state)`
+- L5081: `(defun eat--manipulate-kill-ring (_ selection data)`
+- L5103: `(defun eat--bell (_)`
+- L5107: `(defun eat--sixel-render-format ()`
+- L5124: `(defun eat--set-term-sixel-params ()`
+- L5154: `(defun eat--set-cwd (_ host cwd)`
+- L5163: `(defun eat--set-cwd-uic (host path)`
+- L5176: `(defun eat--pre-prompt ()`
+- L5188: `(defun eat--line-mode-enter-auto-1 ()`
+- L5201: `(defun eat--line-mode-enter-auto ()`
+- L5205: `(defun eat--line-mode-exit-auto-1 ()`
+- L5221: `(defun eat--line-mode-exit-auto ()`
+- L5225: `(defun eat--line-mode-do-toggles ()`
+- L5247: `(defun eat--post-prompt ()`
+- L5296: `(defun eat--post-cont-prompt ()`
+- L5301: `(defun eat--correct-shell-prompt-mark-overlays (buffer)`
+- L5357: `(defun eat--set-cmd (cmd)`
+- L5365: `(defun eat--pre-cmd ()`
+- L5380: `(defun eat--set-cmd-status (code)`
+- L5386: `(defun eat--before-new-prompt ()`
+- L5390: `(defun eat--get-shell-history (hist format)`
+- L5419: `(defun eat--handle-message (name &rest args)`
+- L5435: `(defun eat--handle-uic (_ cmd)`
+- L5499: `(defun eat-previous-shell-prompt (&optional arg)`
+- L5516: `(defun eat-next-shell-prompt (&optional arg)`
+- L5533: `(defun eat-narrow-to-shell-prompt ()`
+- L5571: `(defvar eat--mouse-drag-transient-map-exit nil`
+- L5574: `(defun eat-self-input (n &optional e)`
+- L5666: `(define-key map [mode-line] map)`
+- L5667: `(define-key map [header-line] map)`
+- L5668: `(define-key map [tab-line] map)`
+- L5669: `(define-key map [vertical-line] map)`
+- L5672: `(define-key map [right-divider] map)`
+- L5673: `(define-key map [bottom-divider] map))`
+- L5681: `(defun eat-quoted-input ()`
+- L5693: `(defun eat-input-char (character count)`
+- L5706: `(defun eat-yank (&optional arg)`
+- L5722: `(defun eat-yank-from-kill-ring (string &optional arg)`
+- L5745: `(defun eat-mouse-yank-primary (&optional event)`
+- L5759: `(defun eat-mouse-yank-secondary (&optional event)`
+- L5772: `(defun eat-xterm-paste (event)`
+- L5786: `(defun eat-send-password ()`
+- L5797: `(defvar eat-mode-map`
+- L5799: `(define-key map [?\C-c ?\M-d] #'eat-char-mode)`
+- L5800: `(define-key map [?\C-c ?\C-j] #'eat-semi-char-mode)`
+- L5801: `(define-key map [?\C-c ?\C-l] #'eat-line-mode)`
+- L5802: `(define-key map [?\C-c ?\C-k] #'eat-kill-process)`
+- L5803: `(define-key map [?\C-c ?\C-p] #'eat-previous-shell-prompt)`
+- L5804: `(define-key map [?\C-c ?\C-n] #'eat-next-shell-prompt)`
+- L5805: `(define-key map [?\C-x ?n ?d] #'eat-narrow-to-shell-prompt)`
+- L5806: `(define-key map [xterm-paste] #'ignore)`
+- L5810: `(defun eat--prepare-semi-char-mode-map ()`
+- L5816: `(define-key map [?\C-q] #'eat-quoted-input)`
+- L5817: `(define-key map [?\C-y] #'eat-yank)`
+- L5818: `(define-key map [?\M-y] #'eat-yank-from-kill-ring)`
+- L5819: `(define-key map [?\C-c ?\C-c] #'eat-self-input)`
+- L5820: `(define-key map [?\C-c ?\C-e] #'eat-emacs-mode)`
+- L5821: `(define-key map [S-insert] #'eat-yank)`
+- L5822: `(define-key map [remap insert-char] #'eat-input-char)`
+- L5823: `(define-key map [remap mouse-yank-primary]`
+- L5825: `(define-key map [remap mouse-yank-secondary]`
+- L5827: `(define-key map [xterm-paste] #'eat-xterm-paste)`
+- L5830: `(defvar eat-semi-char-mode-map (ignore-errors`
+- L5834: `(defun eat-update-semi-char-mode-map ()`
+- L5838: `(defvar eat-char-mode-map`
+- L5842: `(define-key map [?\C-\M-m] #'eat-semi-char-mode)`
+- L5843: `(define-key map [xterm-paste] #'eat-xterm-paste)`
+- L5847: `(defvar eat-line-mode-map`
+- L5849: `(define-key map [?\C-c ?\C-e] #'eat-emacs-mode)`
+- L5850: `(define-key map [?\t] #'completion-at-point)`
+- L5851: `(define-key map [?\C-m] #'eat-line-send-input)`
+- L5852: `(define-key map [?\C-d] #'eat-line-delchar-or-eof)`
+- L5853: `(define-key map [?\C-c ?\C-c] #'eat-line-send-interrupt)`
+- L5854: `(define-key map [?\C-c ?\s] #'newline)`
+- L5855: `(define-key map [?\M-p] #'eat-line-previous-input)`
+- L5856: `(define-key map [?\M-n] #'eat-line-next-input)`
+- L5857: `(define-key map [C-up] #'eat-line-previous-input)`
+- L5858: `(define-key map [C-down] #'eat-line-next-input)`
+- L5859: `(define-key map [?\M-r]`
+- L5861: `(define-key map [?\C-c ?\C-r] #'eat-line-find-input)`
+- L5862: `(define-key map [?\C-c ?\M-r]`
+- L5864: `(define-key map [?\C-c ?\M-s]`
+- L5866: `(define-key map [xterm-paste] #'xterm-paste)`
+- L5870: `(defvar eat--mouse-click-mode-map`
+- L5874: `(defvar eat--mouse-modifier-click-mode-map`
+- L5878: `(defvar eat--mouse-movement-mode-map`
+- L5882: `(define-minor-mode eat--semi-char-mode`
+- L5887: `(define-minor-mode eat--char-mode`
+- L5892: `(define-minor-mode eat--mouse-click-mode`
+- L5896: `(define-minor-mode eat--mouse-modifier-click-mode`
+- L5900: `(define-minor-mode eat--mouse-movement-mode`
+- L5904: `(defun eat-emacs-mode ()`
+- L5914: `(defun eat-semi-char-mode ()`
+- L5926: `(defun eat-char-mode ()`
+- L5941: `(defun eat--grab-mouse (_ mode)`
+- L5987: `(define-minor-mode eat--line-mode`
+- L6006: `(defun eat-line-mode ()`
+- L6022: `(defun eat--line-mode-exit ()`
+- L6032: `(defun eat--line-move-to-input ()`
+- L6041: `(defun eat-line-send-default ()`
+- L6050: `(defun eat-line-send ()`
+- L6063: `(defun eat-line-send-input (&optional no-newline)`
+- L6083: `(defun eat-line-delchar-or-eof (arg)`
+- L6094: `(defun eat-line-send-interrupt ()`
+- L6124: `(defun eat--line-reset-input-ring-vars ()`
+- L6130: `(defun eat--line-populate-input-ring (hist format)`
+- L6145: `(defun eat-line-load-input-history-from-file (file format)`
+- L6162: `(defun eat--line-ask-for-regexp-arg (prompt)`
+- L6177: `(defun eat--line-search-arg (arg)`
+- L6193: `(defun eat-line-restore-input ()`
+- L6203: `(defun eat--line-search-start (arg)`
+- L6215: `(defun eat--line-prev-input-string (arg)`
+- L6224: `(defun eat-line-previous-input (arg)`
+- L6240: `(defun eat-line-next-input (arg)`
+- L6247: `(defun eat--line-prev-matching-input-str (regexp arg)`
+- L6253: `(defun eat--line-prev-matching-input-str-pos`
+- L6285: `(defun eat-line-previous-matching-input (regexp n &optional restore)`
+- L6320: `(defun eat-line-next-matching-input (regexp n)`
+- L6329: `(defun eat-line-previous-matching-input-from-input (n)`
+- L6351: `(defun eat-line-next-matching-input-from-input (n)`
+- L6359: `(defun eat-line-find-input ()`
+- L6382: `(defun eat-line-history-isearch-backward ()`
+- L6390: `(defun eat-line-history-isearch-backward-regexp ()`
+- L6398: `(defun eat--line-history-isearch-setup ()`
+- L6414: `(defun eat--line-history-isearch-end ()`
+- L6431: `(defun eat--line-goto-input (pos)`
+- L6446: `(defun eat--line-history-isearch-search ()`
+- L6509: `(defun eat--line-history-isearch-wrap ()`
+- L6524: `(defun eat--line-history-isearch-push-state ()`
+- L6533: `(defun eat--line-history-isearch-pop-state (_cmd hist-pos)`
+- L6542: `(defun eat--synchronize-scroll-windows (&optional force-selected)`
+- L6559: `(defun eat--synchronize-scroll (windows)`
+- L6576: `(defun eat--setup-glyphless-chars ()`
+- L6584: `(defun eat--filter-buffer-substring (begin end &optional delete)`
+- L6611: `(define-derived-mode eat-mode fundamental-mode "Eat"`
+- L6780: `(defun eat-kill-process ()`
+- L6787: `(defun eat--send-string (process string)`
+- L6804: `(defun eat--send-input (_ input)`
+- L6810: `(defun eat--process-output-queue (buffer)`
+- L6857: `(defun eat--filter (process output)`
+- L6882: `(defun eat--sentinel (process message)`
+- L6933: `(defun eat--adjust-process-window-size (process windows)`
+- L6955: `(defun eat--kill-buffer (_process)`
+- L6960: `(defun eat-exec (buffer name command startfile switches)`
+- L7067: `(defun eat-make (name program &optional startfile &rest switches)`
+- L7087: `(defun eat-default-shell ()`
+- L7094: `(defun eat--1 (program arg display-buffer-fn)`
+- L7119: `(defun eat (&optional program arg)`
+- L7143: `(defun eat-other-window (&optional program arg)`
+- L7175: `(defvar eat-eshell-emacs-mode-map`
+- L7177: `(define-key map [?\C-c ?\C-j] #'eat-eshell-semi-char-mode)`
+- L7178: `(define-key map [remap eshell-toggle-direct-send] ; C-c M-d`
+- L7180: `(define-key map [remap undo] #'undefined) ; Disable 'undo'.`
+- L7181: `(define-key map [xterm-paste] #'ignore)`
+- L7185: `(defun eat--eshell-prepare-semi-char-mode-map ()`
+- L7191: `(define-key map [?\C-q] #'eat-quoted-input)`
+- L7192: `(define-key map [?\C-y] #'eat-yank)`
+- L7193: `(define-key map [?\M-y] #'eat-yank-from-kill-ring)`
+- L7194: `(define-key map [?\C-c ?\C-e] #'eat-eshell-emacs-mode)`
+- L7195: `(define-key map [S-insert] #'eat-yank)`
+- L7196: `(define-key map [remap insert-char] #'eat-input-char)`
+- L7197: `(define-key map [remap mouse-yank-primary]`
+- L7199: `(define-key map [remap mouse-yank-secondary]`
+- L7201: `(define-key map [xterm-paste] #'eat-xterm-paste)`
+- L7204: `(defvar eat-eshell-semi-char-mode-map`
+- L7209: `(defun eat-eshell-update-semi-char-mode-map ()`
+- L7214: `(defvar eat-eshell-char-mode-map`
+- L7218: `(define-key map [?\C-\M-m] #'eat-eshell-semi-char-mode)`
+- L7219: `(define-key map [xterm-paste] #'eat-xterm-paste)`
+- L7223: `(define-minor-mode eat--eshell-process-running-mode`
+- L7228: `(define-minor-mode eat--eshell-semi-char-mode`
+- L7245: `(define-minor-mode eat--eshell-char-mode`
+- L7261: `(defun eat-eshell-emacs-mode ()`
+- L7270: `(defun eat-eshell-semi-char-mode ()`
+- L7280: `(defun eat-eshell-char-mode ()`
+- L7304: `(defun eat--eshell-handle-uic (_ cmd)`
+- L7329: `(defun eat--eshell-term-name (&rest _)`
+- L7333: `(defun eat--eshell-output-filter ()`
+- L7356: `(defun eat--eshell-setup-proc-and-term (proc)`
+- L7399: `(defun eat--eshell-cleanup ()`
+- L7431: `(defun eat--eshell-process-output-queue (process buffer)`
+- L7455: `(defun eat--eshell-filter (process string)`
+- L7481: `(defun eat--eshell-sentinel (process message)`
+- L7507: `(defun eat--eshell-adjust-make-process-args (fn command args)`
+- L7573: `(defun eat--eshell-set-input-process (&rest _)`
+- L7583: `(defun eat--eshell-synchronize-scroll (windows)`
+- L7597: `(defun eat--eshell-update-cwd ()`
+- L7603: `(define-minor-mode eat--eshell-local-mode`
+- L7663: `(define-minor-mode eat-eshell-mode`
+- L7780: `(defun eat--eshell-visual-sentinel (proc _msg)`
+- L7804: `(defun eat--eshell-exec-visual (&rest args)`
+- L7840: `(define-minor-mode eat-eshell-visual-command-mode`
+- L7857: `(defun eat-project (&optional arg)`
+- L7875: `(defun eat-project-other-window (&optional arg)`
+- L7906: `(defun eat--trace-log (time operation &rest args)`
+- L7921: `(defun eat--trace-stop ()`
+- L7929: `(defun eat--trace-exec (fn buffer name command startfile switches)`
+- L7960: `(defun eat--trace-process-output-queue (fn buffer)`
+- L7985: `(defun eat--trace-adjust-process-window-size (fn process windows)`
+- L8007: `(defun eat--trace-sentinel (fn &rest args)`
+- L8019: `(defun eat--trace-reset (fn)`
+- L8040: `(defun eat--trace-eshell-adjust-make-process-args (fn &rest args)`
+- L8086: `(defun eat--trace-eshell-output-filter (fn)`
+- L8109: `(defun eat--trace-eshell-cleanup (fn)`
+- L8122: `(define-minor-mode eat-trace-mode`
+- L8188: `(defun eat--trace-replay-eval (data)`
+- L8218: `(defun eat--trace-replay-eval-next ()`
+- L8234: `(defun eat-trace-replay ()`
+- L8259: `(defun eat-trace-replay-next-frame (&optional n)`
+- L8267: `(defun eat-trace--cleanup ()`
+- L8275: `(defvar eat-trace-replay-mode-map`
+- L8277: `(define-key map (kbd "n") #'eat-trace-replay-next-frame)`
+- L8278: `(define-key map (kbd "<down>") #'eat-trace-replay-next-frame)`
+- L8279: `(define-key map (kbd "q") #'quit-window)`
+- L8283: `(define-derived-mode eat-trace-replay-mode special-mode`
+- L8303: `(defun eat-compile-terminfo ()`
+- L8338: `(defun eat-reload ()`
+- L8347: `(provide 'eat)`
+
+## term/eat.el
+
+- L29: `(require 'term/xterm)`
+- L31: `(defcustom xterm-eat-extra-capabilities`
+- L44: `(defun terminal-init-eat ()`
+- L49: `(provide 'term/eat)`

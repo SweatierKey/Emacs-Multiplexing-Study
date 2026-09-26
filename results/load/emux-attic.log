@@ -1,0 +1,25 @@
+{"status":"loaded","feature":"emux","library":"/home/admin/Emacs-Multiplexing-Study/sources/emux-attic/emux.el","commands":["emux-mode","emux-screen-create","emux-screen-destroy","emux-screen-rename","emux-screen-switch","emux-term","emux-term-backward-kill-word","emux-term-backward-word","emux-term-beginning-of-buffer","emux-term-clear-previous-scrollback","emux-term-command","emux-term-create","emux-term-destroy","emux-term-emacs-ring-yank","emux-term-emacs-ring-yank-pop","emux-term-end-of-buffer","emux-term-focus-prompt","emux-term-forward-kill-word","emux-term-forward-word","emux-term-hsplit","emux-term-keyboard-quit","emux-term-next-command","emux-term-next-line","emux-term-previous-command","emux-term-previous-line","emux-term-rename","emux-term-reverse-search-history","emux-term-scroll-down-command","emux-term-scroll-up-command","emux-term-send-raw","emux-term-terminal-ring-yank","emux-term-terminal-ring-yank-pop","emux-term-vsplit"]}
+STDERR:
+Package cl is deprecated
+sources/emux-attic/emux-base.el: Warning: Use keywords rather than deprecated positional arguments to ‘define-minor-mode’
+M-r
+M-p
+M-n
+C-g
+M-<
+M->
+M-v
+C-v
+C-p
+C-n
+C-c r
+C-c -
+C-c |
+C-c K
+C-c C-c
+sources/emux-attic/emux-term.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/emux-attic/emux-term.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+C-c C
+C-c R
+C-c s
+C-c C-k

@@ -1,0 +1,59 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: emux-el</h1>
+<p>Fonte: https://github.com/luozengbin/emux-el.git</p>
+<p>Revisione: <code>acc8db2b25d394364165ddeee13019a28eff4fba</code>.</p>
+<h2>emux.el</h2>
+<ul>
+<li>L28: <code>(require 'cl)</code></li>
+<li>L29: <code>(require 'term)</code></li>
+<li>L36: <code>(defun emux:window-total-width (&amp;optional window)</code></li>
+<li>L51: <code>(defcustom emux:shell-program nil</code></li>
+<li>L58: <code>(defcustom emux:terminal-name "emux"</code></li>
+<li>L78: <code>(defun emux:shell-program ()</code></li>
+<li>L97: <code>(defun emux:terminal-live-p (term)</code></li>
+<li>L103: <code>(defun emux:terminal-kill (term)</code></li>
+<li>L110: <code>(defun emux:current-live-terminal ()</code></li>
+<li>L117: <code>(defun emux:current-live-terminal! ()</code></li>
+<li>L121: <code>(defun* emux:next-live-terminal (term &amp;key cycle)</code></li>
+<li>L127: <code>(defun* emux:previous-live-terminal (term &amp;key cycle)</code></li>
+<li>L133: <code>(defun emux:first-terminal ()</code></li>
+<li>L139: <code>(defun emux:last-terminal ()</code></li>
+<li>L145: <code>(defun emux:list-terminals ()</code></li>
+<li>L149: <code>(defun emux:live-terminals ()</code></li>
+<li>L154: <code>(defun emux:dead-terminals ()</code></li>
+<li>L159: <code>(defun emux:add-terminal (term)</code></li>
+<li>L167: <code>(defun emux:clean-dead-terminals ()</code></li>
+<li>L183: <code>(defun emux:make-terminal-buffer (name program)</code></li>
+<li>L190: <code>(defun emux:new-terminal-1 (name program)</code></li>
+<li>L195: <code>(defun emux:new-terminal ()</code></li>
+<li>L199: <code>(defun emux:make-terminal-header (term &amp;optional window)</code></li>
+<li>L224: <code>(defun emux:update-terminal-header (term &amp;optional window)</code></li>
+<li>L228: <code>(defun emux:update-terminal (term &amp;optional window)</code></li>
+<li>L231: <code>(defun emux:switch-to-terminal (term)</code></li>
+<li>L237: <code>(defun emux:switch-to-terminal-other-window (term)</code></li>
+<li>L246: <code>(defvar emux:term-raw-escape-map</code></li>
+<li>L249: <code>(define-key map (kbd "C-n") 'emux:term-next)</code></li>
+<li>L250: <code>(define-key map (kbd "SPC") 'emux:term-next)</code></li>
+<li>L251: <code>(define-key map (kbd "C-p") 'emux:term-previous)</code></li>
+<li>L252: <code>(define-key map (kbd "C-t") 'emux:term-new)</code></li>
+<li>L253: <code>(define-key map (kbd "A")   'emux:term-rename)</code></li>
+<li>L254: <code>(define-key map (kbd "k")   'emux:term-kill)</code></li>
+<li>L255: <code>(define-key map (kbd "d")   'emux:term-cd)</code></li>
+<li>L256: <code>(define-key map (kbd "~")   'emux:term-sync)</code></li>
+<li>L259: <code>(defvar emux:term-raw-map</code></li>
+<li>L262: <code>(define-key map (kbd "C-c") emux:term-raw-escape-map)</code></li>
+<li>L265: <code>(defun emux:term-mode ()</code></li>
+<li>L273: <code>(defun emux:term-kill-input ()</code></li>
+<li>L280: <code>(defun emux:term-send-input ()</code></li>
+<li>L287: <code>(defun emux:term-command (command &amp;optional record-flag)</code></li>
+<li>L296: <code>(defun emux:term-noselect ()</code></li>
+<li>L302: <code>(defun emux:term ()</code></li>
+<li>L308: <code>(defun emux:term-other-window ()</code></li>
+<li>L313: <code>(defun emux:term-new ()</code></li>
+<li>L318: <code>(defun emux:term-previous ()</code></li>
+<li>L323: <code>(defun emux:term-next ()</code></li>
+<li>L328: <code>(defun emux:term-rename ()</code></li>
+<li>L336: <code>(defun emux:term-kill ()</code></li>
+<li>L346: <code>(defun emux:term-cd (directory)</code></li>
+<li>L351: <code>(defun emux:term-sync (&amp;optional buffer)</code></li>
+<li>L358: <code>(provide 'emux)</code></li>
+</ul></main></html>

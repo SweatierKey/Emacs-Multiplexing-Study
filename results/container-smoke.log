@@ -1,0 +1,18 @@
+web 0 
+SSH LAB: web (loopback fixture, same kernel)
+role=web
+service=active
+version=1.0
+ 
+db 0 
+SSH LAB: db (loopback fixture, same kernel)
+role=db
+service=active
+version=1.0
+ 
+ansi-term passed 
+eat passed 
+vterm passed 
+multi-vterm passed 
+ghostel-mux passed 
+tmux-nested failed State lost on reconnect

@@ -1,0 +1,71 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: alert</h1>
+<p>Fonte: https://github.com/jwiegley/alert.git</p>
+<p>Revisione: <code>31fc56855289d0846e73d7ca9b84b628aeac16a0</code>.</p>
+<h2>alert-test.el</h2>
+<ul>
+<li>L11: <code>(require 'ert)</code></li>
+<li>L12: <code>(require 'alert)</code></li>
+<li>L180: <code>(provide 'alert-test)</code></li>
+</ul>
+<h2>alert.el</h2>
+<ul>
+<li>L192: <code>(require 'cl-lib)</code></li>
+<li>L193: <code>(require 'gntp nil t)</code></li>
+<li>L198: <code>(require 'notifications nil t)</code></li>
+<li>L199: <code>(require 'log4e nil t)</code></li>
+<li>L226: <code>(defcustom alert-severity-faces</code></li>
+<li>L237: <code>(defcustom alert-severity-colors</code></li>
+<li>L249: <code>(defcustom alert-log-severity-functions</code></li>
+<li>L260: <code>(defcustom alert-log-level</code></li>
+<li>L266: <code>(defcustom alert-reveal-idle-time 15</code></li>
+<li>L271: <code>(defcustom alert-persist-idle-time 900</code></li>
+<li>L277: <code>(defcustom alert-fade-time 5</code></li>
+<li>L283: <code>(defcustom alert-hide-all-notifications nil</code></li>
+<li>L288: <code>(defcustom alert-log-messages t</code></li>
+<li>L293: <code>(defcustom alert-default-icon</code></li>
+<li>L302: <code>(defun alert-styles-radio-type (widget-name)</code></li>
+<li>L316: <code>(defcustom alert-default-style 'message</code></li>
+<li>L323: <code>(defun alert-configuration-type ()</code></li>
+<li>L393: <code>(defcustom alert-user-configuration nil</code></li>
+<li>L434: <code>(defun alert-define-style (name &amp;rest plist)</code></li>
+<li>L486: <code>(cl-defun alert-add-rule (&amp;key severity status mode category title</code></li>
+<li>L568: <code>(defun alert-log-notify (info)</code></li>
+<li>L586: <code>(defun alert-legacy-log-notify (mes sev len)</code></li>
+<li>L597: <code>(defun alert-log-clear (info)</code></li>
+<li>L614: <code>(defun alert-message-notify (info)</code></li>
+<li>L622: <code>(defun alert-message-remove (_info)</code></li>
+<li>L630: <code>(defun alert-momentary-notify (info)</code></li>
+<li>L652: <code>(defun alert-fringe-notify (info)</code></li>
+<li>L656: <code>(defun alert-fringe-restore (_info)</code></li>
+<li>L665: <code>(defun alert-mode-line-notify (info)</code></li>
+<li>L670: <code>(defun alert-mode-line-restore (_info)</code></li>
+<li>L680: <code>(defcustom alert-growl-command (executable-find "growlnotify")</code></li>
+<li>L686: <code>(defcustom alert-growl-priorities</code></li>
+<li>L700: <code>(defun alert-growl-notify (info)</code></li>
+<li>L737: <code>(defcustom alert-libnotify-command (executable-find "notify-send")</code></li>
+<li>L744: <code>(defcustom alert-libnotify-additional-args</code></li>
+<li>L751: <code>(defcustom alert-libnotify-priorities</code></li>
+<li>L762: <code>(defun alert-libnotify-notify (info)</code></li>
+<li>L813: <code>(defcustom alert-gntp-icon</code></li>
+<li>L838: <code>(defcustom alert-notifications-priorities</code></li>
+<li>L887: <code>(defcustom alert-notifier-command (executable-find "terminal-notifier")</code></li>
+<li>L893: <code>(defcustom alert-notifier-default-icon</code></li>
+<li>L900: <code>(defun alert-notifier-notify (info)</code></li>
+<li>L912: <code>(defun alert-osx-notifier-notify (info)</code></li>
+<li>L929: <code>(defun alert-frame-notify (info)</code></li>
+<li>L951: <code>(defun alert-frame-remove (info)</code></li>
+<li>L957: <code>(defun x-urgency-hint (frame arg &amp;optional source)</code></li>
+<li>L975: <code>(defun x-urgent (&amp;optional arg)</code></li>
+<li>L984: <code>(defun alert-x11-notify (_info)</code></li>
+<li>L992: <code>(defcustom alert-toaster-default-icon</code></li>
+<li>L1002: <code>(defcustom alert-toaster-command (executable-find "toast")</code></li>
+<li>L1009: <code>(defun alert-toaster-notify (info)</code></li>
+<li>L1022: <code>(defcustom alert-termux-command (executable-find "termux-notification")</code></li>
+<li>L1029: <code>(defun alert-termux-notify (info)</code></li>
+<li>L1052: <code>(defun alert-buffer-status (&amp;optional buffer)</code></li>
+<li>L1067: <code>(defun alert-remove-when-active (remover info)</code></li>
+<li>L1078: <code>(defun alert-remove-on-command ()</code></li>
+<li>L1089: <code>(defun alert-send-notification</code></li>
+<li>L1104: <code>(cl-defun alert (message &amp;key (severity 'normal) title icon category</code></li>
+<li>L1252: <code>(provide 'alert)</code></li>
+</ul></main></html>

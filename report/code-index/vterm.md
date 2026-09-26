@@ -1,0 +1,212 @@
+# Indice del codice: vterm
+
+Fonte: https://github.com/akermu/emacs-libvterm.git
+
+Revisione: `6d715a93fa0e5182bc137d4db09f376e06938aa5`.
+
+
+## vterm.el
+
+- L59: `(require 'term/xterm)`
+- L69: `(defcustom vterm-module-cmake-args ""`
+- L84: `(defcustom vterm-always-compile-module nil`
+- L95: `(defun vterm-module--cmake-is-available ()`
+- L105: `(defun vterm-module-compile ()`
+- L158: `(require 'subr-x)`
+- L159: `(require 'find-func)`
+- L160: `(require 'cl-lib)`
+- L161: `(require 'term)`
+- L162: `(require 'color)`
+- L163: `(require 'compile)`
+- L164: `(require 'face-remap)`
+- L165: `(require 'tramp)`
+- L166: `(require 'bookmark)`
+- L170: `(defcustom vterm-shell shell-file-name`
+- L175: `(defcustom vterm-tramp-shells`
+- L198: `(defcustom vterm-buffer-name "*vterm*"`
+- L210: `(defcustom vterm-max-scrollback 1000`
+- L219: `(defcustom vterm-min-window-width 80`
+- L224: `(defcustom vterm-kill-buffer-on-exit t`
+- L240: `(defcustom vterm-clear-scrollback-when-clearing nil`
+- L252: `(defcustom vterm-keymap-exceptions`
+- L271: `(defcustom vterm-exit-functions nil`
+- L290: `(defcustom vterm-buffer-name-string nil`
+- L309: `(defcustom vterm-term-environment-variable "xterm-256color"`
+- L314: `(defcustom vterm-environment nil`
+- L322: `(defcustom vterm-enable-manipulate-selection-data-by-osc52 nil`
+- L341: `(defcustom vterm-eval-cmds '(("find-file" find-file)`
+- L360: `(defcustom vterm-disable-underline nil`
+- L368: `(defcustom vterm-disable-inverse-video nil`
+- L379: `(defcustom vterm-disable-bold-font nil`
+- L389: `(defcustom vterm-set-bold-highbright nil`
+- L394: `(defcustom vterm-ignore-blink-cursor t`
+- L403: `(defcustom vterm-copy-exclude-prompt t`
+- L408: `(defcustom vterm-use-vterm-prompt-detection-method t`
+- L425: `(defcustom vterm-bookmark-check-dir t`
+- L430: `(defcustom vterm-copy-mode-remove-fake-newlines nil`
+- L634: `(defun vterm--exclude-keys (map exceptions)`
+- L639: `(define-key map (kbd key) nil))`
+- L642: `(define-key map (kbd key) #'vterm--self-insert))`
+- L654: `(define-key map key 'vterm--self-insert))`
+- L658: `(define-key esc-map key 'vterm--self-insert-meta)))`
+- L660: `(define-key map "\e" esc-map)))`
+- L662: `(defun vterm-xterm-paste (event)`
+- L670: `(defvar vterm-mode-map`
+- L673: `(define-key map (kbd "C-]")                 #'vterm--self-insert)`
+- L674: `(define-key map (kbd "M-<")                 #'vterm--self-insert)`
+- L675: `(define-key map (kbd "M->")                 #'vterm--self-insert)`
+- L676: `(define-key map [tab]                       #'vterm-send-tab)`
+- L677: `(define-key map (kbd "TAB")                 #'vterm-send-tab)`
+- L678: `(define-key map [backtab]                   #'vterm--self-insert)`
+- L679: `(define-key map [backspace]                 #'vterm-send-backspace)`
+- L680: `(define-key map (kbd "DEL")                 #'vterm-send-backspace)`
+- L681: `(define-key map [delete]                    #'vterm-send-delete)`
+- L682: `(define-key map (kbd "<deletechar>")        #'vterm-send-delete) ; OKAY!`
+- L683: `(define-key map [C-delete]                  #'vterm-send-ctrl-delete)`
+- L684: `(define-key map [M-backspace]               #'vterm-send-meta-backspace)`
+- L685: `(define-key map (kbd "M-DEL")               #'vterm-send-meta-backspace)`
+- L686: `(define-key map [C-backspace]               #'vterm-send-meta-backspace)`
+- L687: `(define-key map [return]                    #'vterm-send-return)`
+- L688: `(define-key map (kbd "RET")                 #'vterm-send-return)`
+- L689: `(define-key map [C-left]                    #'vterm--self-insert)`
+- L690: `(define-key map [M-left]                    #'vterm--self-insert)`
+- L691: `(define-key map [C-right]                   #'vterm--self-insert)`
+- L692: `(define-key map [M-right]                   #'vterm--self-insert)`
+- L693: `(define-key map [C-up]                      #'vterm--self-insert)`
+- L694: `(define-key map [C-down]                    #'vterm--self-insert)`
+- L695: `(define-key map [M-up]                      #'vterm--self-insert)`
+- L696: `(define-key map [M-down]                    #'vterm--self-insert)`
+- L697: `(define-key map [left]                      #'vterm--self-insert)`
+- L698: `(define-key map [right]                     #'vterm--self-insert)`
+- L699: `(define-key map [up]                        #'vterm--self-insert)`
+- L700: `(define-key map [down]                      #'vterm--self-insert)`
+- L701: `(define-key map [prior]                     #'vterm--self-insert)`
+- L702: `(define-key map [S-prior]                   #'scroll-down-command)`
+- L703: `(define-key map [next]                      #'vterm--self-insert)`
+- L704: `(define-key map [S-next]                    #'scroll-up-command)`
+- L705: `(define-key map [home]                      #'vterm--self-insert)`
+- L706: `(define-key map [end]                       #'vterm--self-insert)`
+- L707: `(define-key map [C-home]                    #'vterm--self-insert)`
+- L708: `(define-key map [C-end]                     #'vterm--self-insert)`
+- L709: `(define-key map [escape]                    #'vterm--self-insert)`
+- L710: `(define-key map [remap yank]                #'vterm-yank)`
+- L711: `(define-key map [remap xterm-paste]         #'vterm-xterm-paste)`
+- L712: `(define-key map [remap yank-pop]            #'vterm-yank-pop)`
+- L713: `(define-key map [remap mouse-yank-primary]  #'vterm-yank-primary)`
+- L714: `(define-key map [mouse-1]                   #'vterm-mouse-set-point)`
+- L715: `(define-key map (kbd "C-SPC")               #'vterm--self-insert)`
+- L716: `(define-key map (kbd "S-SPC")               #'vterm-send-space)`
+- L717: `(define-key map (kbd "C-_")                 #'vterm--self-insert)`
+- L718: `(define-key map [remap undo]                #'vterm-undo)`
+- L719: `(define-key map (kbd "M-.")                 #'vterm--self-insert)`
+- L720: `(define-key map (kbd "M-,")                 #'vterm--self-insert)`
+- L721: `(define-key map (kbd "C-c C-y")             #'vterm--self-insert)`
+- L722: `(define-key map (kbd "C-c C-c")             #'vterm--self-insert)`
+- L723: `(define-key map (kbd "C-c C-l")             #'vterm-clear-scrollback)`
+- L724: `(define-key map (kbd "C-l")                 #'vterm-clear)`
+- L725: `(define-key map (kbd "C-\\")                #'vterm--self-insert)`
+- L726: `(define-key map (kbd "C-c C-g")             #'vterm--self-insert)`
+- L727: `(define-key map (kbd "C-c C-u")             #'vterm--self-insert)`
+- L728: `(define-key map [remap self-insert-command] #'vterm--self-insert)`
+- L729: `(define-key map (kbd "C-c C-r")             #'vterm-reset-cursor-point)`
+- L730: `(define-key map (kbd "C-c C-n")             #'vterm-next-prompt)`
+- L731: `(define-key map (kbd "C-c C-p")             #'vterm-previous-prompt)`
+- L732: `(define-key map (kbd "C-c C-t")             #'vterm-copy-mode)`
+- L735: `(defvar vterm-copy-mode-map`
+- L737: `(define-key map (kbd "C-c C-t")        #'vterm-copy-mode)`
+- L738: `(define-key map [return]               #'vterm-copy-mode-done)`
+- L739: `(define-key map (kbd "RET")            #'vterm-copy-mode-done)`
+- L740: `(define-key map (kbd "C-c C-r")        #'vterm-reset-cursor-point)`
+- L741: `(define-key map (kbd "C-a")            #'vterm-beginning-of-line)`
+- L742: `(define-key map (kbd "C-e")            #'vterm-end-of-line)`
+- L743: `(define-key map (kbd "C-c C-n")        #'vterm-next-prompt)`
+- L744: `(define-key map (kbd "C-c C-p")        #'vterm-previous-prompt)`
+- L750: `(define-derived-mode vterm-mode fundamental-mode "VTerm"`
+- L853: `(defun vterm--tramp-get-shell (method)`
+- L900: `(defun vterm--get-shell ()`
+- L910: `(defun vterm--bookmark-make-record ()`
+- L922: `(defun vterm--bookmark-handler (bmk)`
+- L950: `(defun vterm--compilation-setup ()`
+- L962: `(defun vterm-next-error-function (n &optional reset)`
+- L980: `(defun vterm--enter-copy-mode ()`
+- L989: `(defun vterm--exit-copy-mode ()`
+- L998: `(define-minor-mode vterm-copy-mode`
+- L1019: `(defun vterm-copy-mode-done (arg)`
+- L1045: `(defun vterm--self-insert-meta ()`
+- L1052: `(defun vterm--self-insert ()`
+- L1060: `(defun vterm-send-key (key &optional shift meta ctrl accept-proc-output)`
+- L1071: `(defun vterm-send (key)`
+- L1077: `(defun vterm-send-next-key ()`
+- L1087: `(defun vterm-send-start ()`
+- L1092: `(defun vterm-send-stop ()`
+- L1097: `(defun vterm-send-return ()`
+- L1106: `(defun vterm-send-tab ()`
+- L1111: `(defun vterm-send-space ()`
+- L1116: `(defun vterm-send-backspace ()`
+- L1121: `(defun vterm-send-delete ()`
+- L1126: `(defun vterm-send-ctrl-delete ()`
+- L1131: `(defun vterm-send-meta-backspace ()`
+- L1136: `(defun vterm-send-up ()`
+- L1142: `(defun vterm-send-down ()`
+- L1148: `(defun vterm-send-left ()`
+- L1154: `(defun vterm-send-right ()`
+- L1160: `(defun vterm-send-prior ()`
+- L1166: `(defun vterm-send-next ()`
+- L1172: `(defun vterm-send-meta-dot ()`
+- L1178: `(defun vterm-send-meta-comma ()`
+- L1184: `(defun vterm-send-ctrl-slash ()`
+- L1190: `(defun vterm-send-escape ()`
+- L1195: `(defun vterm-clear-scrollback ()`
+- L1200: `(defun vterm-clear (&optional arg)`
+- L1215: `(defun vterm-undo ()`
+- L1220: `(defun vterm-yank (&optional arg)`
+- L1231: `(defun vterm-yank-primary ()`
+- L1240: `(defun vterm-yank-pop (&optional arg)`
+- L1251: `(defun vterm-mouse-set-point (event &optional promote-to-region)`
+- L1260: `(defun vterm-send-string (string &optional paste-p)`
+- L1273: `(defun vterm-insert (&rest contents)`
+- L1288: `(defun vterm-delete-region (start end)`
+- L1303: `(defun vterm-goto-char (pos)`
+- L1326: `(defun vterm--forward-char ()`
+- L1350: `(defun vterm--backward-char ()`
+- L1371: `(defun vterm--delete-region(start end)`
+- L1375: `(defun vterm--insert(&rest content)`
+- L1379: `(defun vterm--delete-char(n &optional killflag)`
+- L1383: `(defun vterm--translate-event-to-args (event &optional meta)`
+- L1410: `(defun vterm--invalidate ()`
+- L1421: `(defun vterm-check-proc (&optional buffer)`
+- L1431: `(defun vterm--delayed-redraw (buffer)`
+- L1451: `(defun vterm--set-selection (mask data)`
+- L1469: `(defun vterm (&optional arg)`
+- L1488: `(defun vterm-other-window (&optional arg)`
+- L1506: `(defun vterm--internal (pop-to-buf-fun &optional arg)`
+- L1525: `(defun vterm--flush-output (output)`
+- L1556: `(defun vterm--filter (process input)`
+- L1623: `(defun vterm--sentinel (process event)`
+- L1633: `(defun vterm--text-scale-mode (&optional _argv)`
+- L1649: `(defun vterm--window-adjust-process-window-size (process windows)`
+- L1672: `(defun vterm--get-margin-width ()`
+- L1681: `(defun vterm--delete-lines (line-num count &optional delete-whole-line)`
+- L1693: `(defun vterm--goto-line (n)`
+- L1704: `(defun vterm--set-title (title)`
+- L1709: `(defun vterm--set-directory (path)`
+- L1716: `(defun vterm--get-directory (path)`
+- L1738: `(defun vterm--get-pwd (&optional linenum)`
+- L1747: `(defun vterm--get-color (index &rest args)`
+- L1769: `(defun vterm--eval (str)`
+- L1785: `(defun vterm--prompt-tracking-enabled-p ()`
+- L1802: `(defun vterm-next-prompt (n)`
+- L1815: `(defun vterm-previous-prompt (n)`
+- L1831: `(defun vterm--get-beginning-of-line (&optional pt)`
+- L1844: `(defun vterm--get-end-of-line (&optional pt)`
+- L1858: `(defun vterm--get-prompt-point ()`
+- L1876: `(defun vterm--at-prompt-p ()`
+- L1880: `(defun vterm-cursor-in-command-buffer-p (&optional pt)`
+- L1888: `(defun vterm-beginning-of-line ()`
+- L1900: `(defun vterm-end-of-line ()`
+- L1905: `(defun vterm-reset-cursor-point ()`
+- L1912: `(defun vterm--get-cursor-point ()`
+- L1918: `(defun vterm--reinsert-fake-newlines ()`
+- L1932: `(defun vterm--remove-fake-newlines (&optional remembering-pos-p)`
+- L1965: `(defun vterm--filter-buffer-substring (content)`
+- L1973: `(provide 'vterm)`

@@ -1,0 +1,931 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: el-be-back</h1>
+<p>Fonte: https://github.com/ArthurHeymans/el-be-back.git</p>
+<p>Revisione: <code>e7a4b2d3b340aa98fd99d593054cca834601f4d6</code>.</p>
+<h2>ebb-eshell.el</h2>
+<ul>
+<li>L13: <code>(require 'cl-lib)</code></li>
+<li>L14: <code>(require 'ebb-io)</code></li>
+<li>L15: <code>(require 'ebb-input)</code></li>
+<li>L16: <code>(require 'ebb-render)</code></li>
+<li>L17: <code>(require 'ebb-shell)</code></li>
+<li>L55: <code>(defvar ebb-eshell-emacs-mode-map</code></li>
+<li>L57: <code>(define-key map (kbd "C-c C-j") #'ebb-eshell-semi-char-mode)</code></li>
+<li>L58: <code>(define-key map [remap eshell-toggle-direct-send] #'ebb-eshell-char-mode)</code></li>
+<li>L61: <code>(defun ebb-eshell--semi-char-map ()</code></li>
+<li>L66: <code>(defvar ebb-eshell-semi-char-mode-map</code></li>
+<li>L70: <code>(defvar ebb-eshell-char-mode-map</code></li>
+<li>L73: <code>(define-key map (kbd "C-M-RET") #'ebb-eshell-semi-char-mode)</code></li>
+<li>L76: <code>(define-minor-mode ebb-eshell--running-mode</code></li>
+<li>L81: <code>(defun ebb-eshell--set-overriding-map (mode map enabled)</code></li>
+<li>L88: <code>(define-minor-mode ebb-eshell--semi-char-mode</code></li>
+<li>L96: <code>(define-minor-mode ebb-eshell--char-mode</code></li>
+<li>L104: <code>(defun ebb-eshell--switch-input-mode (mode &amp;optional read-only)</code></li>
+<li>L117: <code>(defun ebb-eshell-emacs-mode ()</code></li>
+<li>L122: <code>(defun ebb-eshell-semi-char-mode ()</code></li>
+<li>L128: <code>(defun ebb-eshell-char-mode ()</code></li>
+<li>L136: <code>(defun ebb-eshell--term-name (&amp;rest _)</code></li>
+<li>L140: <code>(defun ebb-eshell--event (type &amp;rest args)</code></li>
+<li>L155: <code>(defun ebb-eshell--output-filter ()</code></li>
+<li>L173: <code>(defun ebb-eshell--resize (window)</code></li>
+<li>L182: <code>(defun ebb-eshell--setup (process)</code></li>
+<li>L207: <code>(defun ebb-eshell--cleanup (process)</code></li>
+<li>L240: <code>(defun ebb-eshell--sentinel (original process event)</code></li>
+<li>L248: <code>(defun ebb-eshell--around-gather (original command args)</code></li>
+<li>L293: <code>(define-minor-mode ebb-eshell--local-mode</code></li>
+<li>L306: <code>(define-minor-mode ebb-eshell-mode</code></li>
+<li>L338: <code>(defun ebb-eshell--visual-sentinel (process _event)</code></li>
+<li>L349: <code>(defun ebb-eshell--exec-visual (&amp;rest args)</code></li>
+<li>L373: <code>(define-minor-mode ebb-eshell-visual-command-mode</code></li>
+<li>L381: <code>(provide 'ebb-eshell)</code></li>
+</ul>
+<h2>ebb-graphics.el</h2>
+<ul>
+<li>L20: <code>(require 'cl-lib)</code></li>
+<li>L21: <code>(require 'gv)</code></li>
+<li>L22: <code>(require 'subr-x)</code></li>
+<li>L24: <code>(defcustom ebb-kitty-graphics-storage-limit (* 64 1024 1024)</code></li>
+<li>L36: <code>(defcustom ebb-kitty-graphics-image-limit (* 32 1024 1024)</code></li>
+<li>L41: <code>(defcustom ebb-kitty-graphics-allow-files nil</code></li>
+<li>L49: <code>(defcustom ebb-kitty-graphics-placement-limit 1024</code></li>
+<li>L54: <code>(defcustom ebb-kitty-graphics-image-count-limit 4096</code></li>
+<li>L62: <code>(defcustom ebb-kitty-graphics-subprocess-budget 8</code></li>
+<li>L72: <code>(defun ebb-graphics--consume-subprocess-budget ()</code></li>
+<li>L78: <code>(defcustom ebb-kitty-graphics-surface-limit (* 64 1024 1024)</code></li>
+<li>L84: <code>(defcustom ebb-graphics-fallback-cell-size '(8 . 16)</code></li>
+<li>L91: <code>(defun ebb-graphics-normalize-cell-size (size &amp;optional fallback)</code></li>
+<li>L138: <code>(defun ebb-graphics-state-byte-count (state)</code></li>
+<li>L146: <code>(defun ebb-graphics-create (&amp;optional budget)</code></li>
+<li>L150: <code>(defun ebb-graphics-reset (state)</code></li>
+<li>L167: <code>(defun ebb-graphics--parse-integer (string &amp;optional signed)</code></li>
+<li>L179: <code>(defun ebb-graphics--parse-params (header)</code></li>
+<li>L196: <code>(defun ebb-graphics--param-string (params key &amp;optional default)</code></li>
+<li>L200: <code>(defun ebb-graphics--param-char (params key default)</code></li>
+<li>L208: <code>(defun ebb-graphics--param-integer (params key &amp;optional default signed)</code></li>
+<li>L216: <code>(defun ebb-graphics--quiet-p (params kind)</code></li>
+<li>L227: <code>(defun ebb-graphics--response-prefix (params &amp;optional actual-id)</code></li>
+<li>L238: <code>(defun ebb-graphics--respond (respond-fn params kind message &amp;optional actual-id)</code></li>
+<li>L251: <code>(defun ebb-graphics--error (message)</code></li>
+<li>L255: <code>(defun ebb-graphics--error-p (value)</code></li>
+<li>L259: <code>(defun ebb-graphics--decode (payload)</code></li>
+<li>L267: <code>(defun ebb-graphics--inflate (data)</code></li>
+<li>L302: <code>(defun ebb-graphics--temporary-file-p (path)</code></li>
+<li>L314: <code>(defun ebb-graphics--sensitive-path-p (path)</code></li>
+<li>L323: <code>(defun ebb-graphics--read-file-bytes (path offset size &amp;optional delete-after)</code></li>
+<li>L374: <code>(defun ebb-graphics--shm-path (name)</code></li>
+<li>L384: <code>(defun ebb-graphics--load-file-medium</code></li>
+<li>L419: <code>(defun ebb-graphics--load-direct</code></li>
+<li>L471: <code>(defun ebb-graphics--png-size (data)</code></li>
+<li>L484: <code>(defun ebb-graphics--prepare-image (params data)</code></li>
+<li>L521: <code>(defun ebb-graphics--load-image</code></li>
+<li>L556: <code>(defun ebb-graphics--image-storage-size (format width height data)</code></li>
+<li>L568: <code>(defun ebb-graphics--image-storage-bytes (image)</code></li>
+<li>L577: <code>(defun ebb-graphics--next-unused-id (state)</code></li>
+<li>L585: <code>(defun ebb-graphics--allocate-id (state)</code></li>
+<li>L591: <code>(defun ebb-graphics--prospective-image-id (state params)</code></li>
+<li>L598: <code>(defun ebb-graphics--delete-image (state image-id)</code></li>
+<li>L613: <code>(defun ebb-graphics--eviction-plan (state required-bytes excluded-id</code></li>
+<li>L641: <code>(defun ebb-graphics--store-image (state params format width height data)</code></li>
+<li>L686: <code>(defun ebb-graphics--placement-geometry (image columns rows cell-size)</code></li>
+<li>L724: <code>(defun ebb-graphics--placement-candidate</code></li>
+<li>L774: <code>(defun ebb-graphics--commit-placement (state placement)</code></li>
+<li>L789: <code>(defun ebb-graphics--add-placement (state params image row column cell-size)</code></li>
+<li>L796: <code>(defun ebb-graphics-clear-placements (state &amp;optional all)</code></li>
+<li>L806: <code>(defun ebb-graphics-clear-row-range (state top bottom)</code></li>
+<li>L818: <code>(defun ebb-graphics--scroll-placement-up (placement top bottom count)</code></li>
+<li>L846: <code>(defun ebb-graphics--scroll-placement-down (placement top bottom count)</code></li>
+<li>L871: <code>(defun ebb-graphics-scroll (state direction top bottom count)</code></li>
+<li>L905: <code>(defun ebb-graphics-history-grew (state old-base bottom count)</code></li>
+<li>L931: <code>(defun ebb-graphics-trim-history (state count)</code></li>
+<li>L959: <code>(defun ebb-graphics--placement-intersects-p (placement row column)</code></li>
+<li>L969: <code>(defun ebb-graphics--remove-placements (state predicate free-data)</code></li>
+<li>L990: <code>(defun ebb-graphics--newest-image-by-number (state number)</code></li>
+<li>L999: <code>(defun ebb-graphics--find-image (state params)</code></li>
+<li>L1011: <code>(defun ebb-graphics--handle-delete</code></li>
+<li>L1146: <code>(defun ebb-graphics--invalid-parameter-p (params)</code></li>
+<li>L1188: <code>(defun ebb-graphics--handle-transmit</code></li>
+<li>L1244: <code>(defun ebb-graphics--handle-query</code></li>
+<li>L1262: <code>(defun ebb-graphics-process-apc</code></li>
+<li>L1335: <code>(defun ebb-graphics-process-overflow (state payload respond-fn)</code></li>
+<li>L1349: <code>(provide 'ebb-graphics)</code></li>
+</ul>
+<h2>ebb-input.el</h2>
+<ul>
+<li>L13: <code>(require 'cl-lib)</code></li>
+<li>L14: <code>(require 'ebb-term)</code></li>
+<li>L81: <code>(defun ebb-input--modifier-code (mods)</code></li>
+<li>L92: <code>(defun ebb-input-translate (key &amp;optional screen)</code></li>
+<li>L203: <code>(defun ebb-input--add-modifier (seq mods)</code></li>
+<li>L221: <code>(defun ebb-input-encode-mouse (event screen pos-offset)</code></li>
+<li>L248: <code>(defun ebb-input--mouse-posn (event)</code></li>
+<li>L254: <code>(defun ebb-input--mouse-coordinates (event screen pos-offset)</code></li>
+<li>L283: <code>(defun ebb-input--mouse-event-allowed-p (event mode screen)</code></li>
+<li>L298: <code>(defun ebb-input--mouse-button (event screen)</code></li>
+<li>L319: <code>(defun ebb-input--mouse-press-p (event)</code></li>
+<li>L323: <code>(defun ebb-input--mouse-release-p (event)</code></li>
+<li>L330: <code>(defun ebb-input--mouse-remember-press (event screen button)</code></li>
+<li>L337: <code>(defun ebb-input--mouse-forget-press (event screen)</code></li>
+<li>L346: <code>(defun ebb-input--mouse-mod-bits (event)</code></li>
+<li>L357: <code>(defun ebb-input-focus-in ()</code></li>
+<li>L361: <code>(defun ebb-input-focus-out ()</code></li>
+<li>L367: <code>(defun ebb-input-bracketed-paste-start ()</code></li>
+<li>L371: <code>(defun ebb-input-bracketed-paste-end ()</code></li>
+<li>L377: <code>(defcustom ebb-semi-char-non-bound-keys</code></li>
+<li>L412: <code>(defun ebb-input-make-keymap (input-command categories exceptions)</code></li>
+<li>L419: <code>(define-key map key input-command))))</code></li>
+<li>L443: <code>(define-key map (vector meta-prefix-char) (make-sparse-keymap))</code></li>
+<li>L479: <code>(defun ebb-input--mouse-event-symbols ()</code></li>
+<li>L493: <code>(defun ebb--prepare-mouse-mode-map ()</code></li>
+<li>L497: <code>(define-key map (vector key) #'ebb-mouse-input))</code></li>
+<li>L501: <code>(define-key map (vector prefix) map))</code></li>
+<li>L504: <code>(defvar ebb-mouse-mode-map</code></li>
+<li>L510: <code>(defun ebb-input-make-semi-char-map (categories emacs-mode-command</code></li>
+<li>L522: <code>(define-key map (kbd "C-q") #'ebb-quoted-input)</code></li>
+<li>L523: <code>(define-key map (kbd "C-y") #'ebb-yank)</code></li>
+<li>L524: <code>(define-key map (kbd "S-&lt;insert&gt;") #'ebb-yank)</code></li>
+<li>L525: <code>(define-key map [remap yank] #'ebb-yank)</code></li>
+<li>L526: <code>(define-key map (kbd "M-y") #'ebb-yank-pop)</code></li>
+<li>L529: <code>(define-key map (kbd "C-c C-c") #'ebb-self-input))</code></li>
+<li>L530: <code>(define-key map (kbd "C-c C-e") emacs-mode-command)</code></li>
+<li>L533: <code>(defun ebb--prepare-semi-char-mode-map ()</code></li>
+<li>L538: <code>(defvar ebb-semi-char-mode-map</code></li>
+<li>L542: <code>(defun ebb-update-semi-char-mode-map ()</code></li>
+<li>L551: <code>(defun ebb--prepare-char-mode-map ()</code></li>
+<li>L558: <code>(define-key map (kbd "C-M-m") #'ebb-semi-char-mode)</code></li>
+<li>L561: <code>(defvar ebb-char-mode-map</code></li>
+<li>L567: <code>(defvar ebb-mode-map</code></li>
+<li>L570: <code>(define-key map [XF86Paste] #'ebb-yank)</code></li>
+<li>L571: <code>(define-key map [XF86Copy] #'kill-ring-save)</code></li>
+<li>L572: <code>(define-key map [xterm-paste] #'ebb-xterm-paste)</code></li>
+<li>L574: <code>(define-key map (kbd "C-c M-d") #'ebb-char-mode)</code></li>
+<li>L575: <code>(define-key map (kbd "C-c C-j") #'ebb-semi-char-mode)</code></li>
+<li>L576: <code>(define-key map (kbd "C-c C-e") #'ebb-emacs-mode)</code></li>
+<li>L577: <code>(define-key map (kbd "C-c C-k") #'ebb-kill-process)</code></li>
+<li>L579: <code>(define-key map (kbd "C-c C-p") #'ebb-previous-prompt)</code></li>
+<li>L580: <code>(define-key map (kbd "C-c C-n") #'ebb-next-prompt)</code></li>
+<li>L582: <code>(define-key map (kbd "C-c M-p") #'ebb-previous-hyperlink)</code></li>
+<li>L583: <code>(define-key map (kbd "C-c M-n") #'ebb-next-hyperlink)</code></li>
+<li>L585: <code>(define-key map [remap scroll-up-command] #'ebb-scroll-up)</code></li>
+<li>L586: <code>(define-key map [remap scroll-down-command] #'ebb-scroll-down)</code></li>
+<li>L590: <code>(define-key map key #'ebb-mouse-scroll-down))</code></li>
+<li>L592: <code>(define-key map key #'ebb-mouse-scroll-up))</code></li>
+<li>L593: <code>(define-key map [remap kill-ring-save] #'ebb-copy-region)</code></li>
+<li>L597: <code>(defvar ebb-emacs-mode-map</code></li>
+<li>L600: <code>(define-key map (kbd "RET") #'ebb-open-link-at-point)</code></li>
+<li>L601: <code>(define-key map (kbd "&lt;return&gt;") #'ebb-open-link-at-point)</code></li>
+<li>L605: <code>(provide 'ebb-input)</code></li>
+</ul>
+<h2>ebb-io.el</h2>
+<ul>
+<li>L14: <code>(require 'cl-lib)</code></li>
+<li>L15: <code>(require 'ebb-term)</code></li>
+<li>L16: <code>(require 'ebb-parse)</code></li>
+<li>L17: <code>(require 'ebb-render)</code></li>
+<li>L65: <code>(defcustom ebb-scrollback-lines 10000</code></li>
+<li>L70: <code>(defcustom ebb-chunk-size 4096</code></li>
+<li>L75: <code>(defcustom ebb-io-max-pending-bytes (* 16 1024 1024)</code></li>
+<li>L84: <code>(defcustom ebb-minimum-latency 0.008</code></li>
+<li>L90: <code>(defcustom ebb-maximum-latency 0.033</code></li>
+<li>L96: <code>(defcustom ebb-sync-output-timeout 0.25</code></li>
+<li>L103: <code>(defcustom ebb-report-pixel-size t</code></li>
+<li>L112: <code>(defcustom ebb-pixel-size-idle-delay 0.05</code></li>
+<li>L117: <code>(defcustom ebb-enable-shell-integration t</code></li>
+<li>L126: <code>(defun ebb-io-receive (io output)</code></li>
+<li>L137: <code>(defun ebb-io--filter (io _process output)</code></li>
+<li>L142: <code>(defun ebb-io--enqueue-output (io output)</code></li>
+<li>L170: <code>(defun ebb-io--normalize-pending (io)</code></li>
+<li>L186: <code>(defun ebb-io--pending-p (io)</code></li>
+<li>L193: <code>(defun ebb-io--schedule-processing (io)</code></li>
+<li>L208: <code>(defun ebb-io--cancel-sync-timer (io)</code></li>
+<li>L214: <code>(defun ebb-io--sync-timeout (io)</code></li>
+<li>L223: <code>(defun ebb-io--process-pending (io &amp;optional drain-all)</code></li>
+<li>L301: <code>(defun ebb-io--report-processing-error (_io error-data count)</code></li>
+<li>L311: <code>(defun ebb-io-create-terminal (buffer event-handler &amp;optional begin end)</code></li>
+<li>L343: <code>(defun ebb-io--detect-shell (shell-command)</code></li>
+<li>L355: <code>(defun ebb-io--integration-script (shell-type extra-env)</code></li>
+<li>L370: <code>(defun ebb-io--environment-value (name environment)</code></li>
+<li>L377: <code>(defun ebb-io--prepare-environment (shell-command extra-env)</code></li>
+<li>L400: <code>(defun ebb-io--build-command (shell-command extra-env)</code></li>
+<li>L429: <code>(defun ebb-io--term-name ()</code></li>
+<li>L433: <code>(defun ebb-io--remote-command (shell-command rows columns)</code></li>
+<li>L453: <code>(defun ebb-io--wrap-command-with-stty (command rows columns)</code></li>
+<li>L466: <code>(defun ebb-io--bash-rcfile (integration-script)</code></li>
+<li>L476: <code>(defun ebb-io--fish-setup-confd (integration-script)</code></li>
+<li>L510: <code>(defun ebb-io--pty-process-p (process)</code></li>
+<li>L541: <code>(defun ebb-io--pixel-size-helper ()</code></li>
+<li>L556: <code>(defun ebb-io--cancel-pixel-size-timer (io)</code></li>
+<li>L562: <code>(defun ebb-io--disable-pixel-size (io error)</code></li>
+<li>L568: <code>(defun ebb-io--report-pixel-size (io process tty helper height width cell)</code></li>
+<li>L593: <code>(defun ebb-io-set-window-size (io process height width)</code></li>
+<li>L619: <code>(defun ebb-io-start (io shell-command buffer &amp;optional extra-env)</code></li>
+<li>L695: <code>(defun ebb-io-attach (io process buffer)</code></li>
+<li>L711: <code>(defun ebb-io--sentinel (io proc event)</code></li>
+<li>L736: <code>(defun ebb-io--prepare-interrupt (io)</code></li>
+<li>L750: <code>(defun ebb-io-send (io string)</code></li>
+<li>L770: <code>(defun ebb-io-handle-resize (io new-width new-height)</code></li>
+<li>L797: <code>(defun ebb-io-stop (io)</code></li>
+<li>L811: <code>(provide 'ebb-io)</code></li>
+</ul>
+<h2>ebb-parse.el</h2>
+<ul>
+<li>L17: <code>(require 'cl-lib)</code></li>
+<li>L18: <code>(require 'url-util)</code></li>
+<li>L19: <code>(require 'ebb-term)</code></li>
+<li>L21: <code>(defcustom ebb-enable-osc52 nil</code></li>
+<li>L26: <code>(defcustom ebb-report-fallback-pixel-size nil</code></li>
+<li>L33: <code>(defcustom ebb-kitty-graphics-apc-limit (* 256 1024)</code></li>
+<li>L94: <code>(defun ebb-parse--collect-control-header-byte-p (parser)</code></li>
+<li>L101: <code>(defun ebb-parse--record-mode (table screen mode enabled)</code></li>
+<li>L109: <code>(defun ebb-parse--recorded-mode (table screen mode)</code></li>
+<li>L114: <code>(defun ebb-parse--log (fmt &amp;rest args)</code></li>
+<li>L119: <code>(defun ebb-parse--respond (parser response)</code></li>
+<li>L124: <code>(defun ebb-parse--color-to-xterm (color-str)</code></li>
+<li>L142: <code>(defun ebb-parse--256color-hex (n)</code></li>
+<li>L163: <code>(defun ebb-parse--palette-color-to-xterm (n)</code></li>
+<li>L167: <code>(defun ebb-parse--emit (parser type &amp;rest args)</code></li>
+<li>L174: <code>(defun ebb-parse--parse-params (param-str)</code></li>
+<li>L206: <code>(defun ebb-parse-create (screen &amp;optional write-fn emit-fn)</code></li>
+<li>L213: <code>(defun ebb-parse-cancel-sequence (parser)</code></li>
+<li>L235: <code>(defun ebb-parse-bytes (parser string &amp;optional start end)</code></li>
+<li>L362: <code>(defun ebb-parse--fast-csi-at (parser string start end)</code></li>
+<li>L408: <code>(defun ebb-parse--fast-sgr-at (parser string start end)</code></li>
+<li>L447: <code>(defun ebb-parse--fast-simple-sgr-at (screen string start end)</code></li>
+<li>L469: <code>(defun ebb-parse--process-char (parser ch)</code></li>
+<li>L534: <code>(defun ebb-parse--dispatch-c0 (parser ch)</code></li>
+<li>L551: <code>(defun ebb-parse--ground (parser ch)</code></li>
+<li>L558: <code>(defun ebb-parse--escape (parser ch)</code></li>
+<li>L614: <code>(defun ebb-parse--escape-intermediate (parser ch)</code></li>
+<li>L629: <code>(defun ebb-parse--escape-ignored (parser ch)</code></li>
+<li>L635: <code>(defun ebb-parse--dispatch-esc-intermediate (parser ch)</code></li>
+<li>L659: <code>(defun ebb-parse--dispatch-esc (parser ch)</code></li>
+<li>L683: <code>(defun ebb-parse--complete-string (parser)</code></li>
+<li>L692: <code>(defun ebb-parse--csi-entry (parser ch)</code></li>
+<li>L721: <code>(defun ebb-parse--csi-param (parser ch)</code></li>
+<li>L741: <code>(defun ebb-parse--csi-intermediate (parser ch)</code></li>
+<li>L757: <code>(defun ebb-parse--csi-ignored (parser ch)</code></li>
+<li>L766: <code>(defun ebb-parse--osc-collect (parser chunk)</code></li>
+<li>L776: <code>(defun ebb-parse--osc-string (parser ch)</code></li>
+<li>L791: <code>(defun ebb-parse--dcs-entry (parser ch)</code></li>
+<li>L812: <code>(defun ebb-parse--dcs-param (parser ch)</code></li>
+<li>L832: <code>(defun ebb-parse--dcs-collect (parser chunk)</code></li>
+<li>L842: <code>(defun ebb-parse--dcs-passthrough (parser ch)</code></li>
+<li>L846: <code>(defun ebb-parse--dcs-ignored (_parser _ch)</code></li>
+<li>L851: <code>(defun ebb-parse--charset-designate (parser ch)</code></li>
+<li>L861: <code>(defun ebb-parse--apc-collect (parser chunk)</code></li>
+<li>L883: <code>(defun ebb-parse--sos-pm-apc (parser ch)</code></li>
+<li>L891: <code>(defun ebb-parse--dispatch-apc (parser)</code></li>
+<li>L978: <code>(defun ebb-parse--csi-unknown (parser params)</code></li>
+<li>L1028: <code>(defun ebb-parse--fast-csi (parser final-byte param)</code></li>
+<li>L1073: <code>(defun ebb-parse--rect-coordinates (screen params offset)</code></li>
+<li>L1099: <code>(defun ebb-parse--dispatch-csi-intermediate (parser final-byte params)</code></li>
+<li>L1218: <code>(defun ebb-parse--dispatch-csi (parser final-byte)</code></li>
+<li>L1244: <code>(defun ebb-parse--csi-ich (parser params)</code></li>
+<li>L1249: <code>(defun ebb-parse--csi-cuu (parser params)</code></li>
+<li>L1254: <code>(defun ebb-parse--csi-cud (parser params)</code></li>
+<li>L1259: <code>(defun ebb-parse--csi-cuf (parser params)</code></li>
+<li>L1264: <code>(defun ebb-parse--csi-cub (parser params)</code></li>
+<li>L1269: <code>(defun ebb-parse--csi-cnl (parser params)</code></li>
+<li>L1274: <code>(defun ebb-parse--csi-cpl (parser params)</code></li>
+<li>L1279: <code>(defun ebb-parse--csi-cha (parser params)</code></li>
+<li>L1293: <code>(defun ebb-parse--csi-cup (parser params)</code></li>
+<li>L1299: <code>(defun ebb-parse--csi-cht (parser params)</code></li>
+<li>L1304: <code>(defun ebb-parse--csi-ed (parser params)</code></li>
+<li>L1312: <code>(defun ebb-parse--csi-el (parser params)</code></li>
+<li>L1320: <code>(defun ebb-parse--csi-il (parser params)</code></li>
+<li>L1325: <code>(defun ebb-parse--csi-dl (parser params)</code></li>
+<li>L1330: <code>(defun ebb-parse--csi-dch (parser params)</code></li>
+<li>L1335: <code>(defun ebb-parse--csi-su (parser params)</code></li>
+<li>L1344: <code>(defun ebb-parse--csi-xtsmgraphics (parser params)</code></li>
+<li>L1366: <code>(defun ebb-parse--csi-sd (parser params)</code></li>
+<li>L1371: <code>(defun ebb-parse--csi-ech (parser params)</code></li>
+<li>L1376: <code>(defun ebb-parse--csi-cbt (parser params)</code></li>
+<li>L1381: <code>(defun ebb-parse--csi-hpa (parser params)</code></li>
+<li>L1385: <code>(defun ebb-parse--csi-hpr (parser params)</code></li>
+<li>L1390: <code>(defun ebb-parse--csi-rep (parser params)</code></li>
+<li>L1395: <code>(defun ebb-parse--csi-da (parser _params)</code></li>
+<li>L1405: <code>(defun ebb-parse--csi-vpa (parser params)</code></li>
+<li>L1418: <code>(defun ebb-parse--csi-vpr (parser params)</code></li>
+<li>L1423: <code>(defun ebb-parse--csi-hvp (parser params)</code></li>
+<li>L1427: <code>(defun ebb-parse--csi-tbc (parser params)</code></li>
+<li>L1432: <code>(defun ebb-parse--csi-sm (parser params)</code></li>
+<li>L1451: <code>(defun ebb-parse--csi-rm (parser params)</code></li>
+<li>L1470: <code>(defun ebb-parse--csi-decstbm (parser params)</code></li>
+<li>L1481: <code>(defun ebb-parse--csi-scp (parser params)</code></li>
+<li>L1494: <code>(defun ebb-parse--csi-rcp (parser params)</code></li>
+<li>L1501: <code>(defun ebb-parse--csi-decscusr (parser params)</code></li>
+<li>L1508: <code>(defun ebb-parse--csi-dsr (parser params)</code></li>
+<li>L1525: <code>(defun ebb-parse--csi-winops (parser params)</code></li>
+<li>L1587: <code>(defun ebb-parse--set-colon-sgr-color (screen params)</code></li>
+<li>L1602: <code>(defun ebb-parse--set-semicolon-sgr-color (screen params index attribute</code></li>
+<li>L1624: <code>(defun ebb-parse--apply-colon-sgr (screen param)</code></li>
+<li>L1641: <code>(defun ebb-parse--sgr-step (screen params index &amp;optional count)</code></li>
+<li>L1662: <code>(defun ebb-parse--apply-simple-sgr (screen param)</code></li>
+<li>L1694: <code>(defun ebb-parse--csi-sgr (parser params)</code></li>
+<li>L1709: <code>(defun ebb-parse--handle-osc-4 (parser payload)</code></li>
+<li>L1729: <code>(defun ebb-parse--handle-progress (parser payload)</code></li>
+<li>L1738: <code>(defun ebb-parse--handle-osc-777 (parser payload)</code></li>
+<li>L1744: <code>(defun ebb-parse--handle-osc-52 (parser payload)</code></li>
+<li>L1778: <code>(defun ebb-parse--dispatch-osc (parser)</code></li>
+<li>L1865: <code>(defun ebb-parse--sgr-color-status (color foreground &amp;optional code)</code></li>
+<li>L1881: <code>(defun ebb-parse--sgr-status (screen)</code></li>
+<li>L1924: <code>(defun ebb-parse--cursor-style-status (screen)</code></li>
+<li>L1935: <code>(defun ebb-parse--decrqss-value (screen request)</code></li>
+<li>L1960: <code>(defun ebb-parse--dispatch-dcs (parser)</code></li>
+<li>L1983: <code>(provide 'ebb-parse)</code></li>
+</ul>
+<h2>ebb-render.el</h2>
+<ul>
+<li>L18: <code>(require 'cl-lib)</code></li>
+<li>L19: <code>(require 'ebb-term)</code></li>
+<li>L21: <code>(defvar ebb-link-map)</code></li>
+<li>L35: <code>(defcustom ebb-fit-glyphs t</code></li>
+<li>L61: <code>(defun ebb-render--string-pixel-size (string)</code></li>
+<li>L71: <code>(defun ebb-render--glyph-cache-valid-p ()</code></li>
+<li>L85: <code>(defun ebb-render--quantize-scale (scale)</code></li>
+<li>L92: <code>(defun ebb-render--glyph-display-spec (char cw)</code></li>
+<li>L122: <code>(defun ebb-render--fit-glyphs (string)</code></li>
+<li>L177: <code>(defun ebb-render--256color-hex (n)</code></li>
+<li>L249: <code>(defun ebb-render--color-to-string (color)</code></li>
+<li>L303: <code>(defcustom ebb-kitty-graphics-render-cache-limit (* 64 1024 1024)</code></li>
+<li>L310: <code>(defcustom ebb-kitty-graphics-render-entry-limit (* 16 1024 1024)</code></li>
+<li>L318: <code>(defcustom ebb-kitty-graphics-layout-cache-limit 1024</code></li>
+<li>L328: <code>(defcustom ebb-kitty-graphics-elisp-rgba-pixel-limit (* 512 512)</code></li>
+<li>L335: <code>(defcustom ebb-kitty-graphics-allow-slow-rgba t</code></li>
+<li>L376: <code>(defun ebb-render-create (screen buffer &amp;optional begin end)</code></li>
+<li>L419: <code>(defun ebb-render-text-area-pixel-size (render)</code></li>
+<li>L426: <code>(defun ebb-render-cell-pixel-size (render)</code></li>
+<li>L443: <code>(defun ebb-render--run-after-refresh-hook (render)</code></li>
+<li>L451: <code>(defun ebb-render-refresh (render)</code></li>
+<li>L540: <code>(defun ebb-render--history-graphics-signature (screen)</code></li>
+<li>L564: <code>(defun ebb-render--update-scrollback (render)</code></li>
+<li>L648: <code>(defun ebb-render--restore-window-point (render window anchor)</code></li>
+<li>L660: <code>(defun ebb-render--history-capacity (render)</code></li>
+<li>L670: <code>(defun ebb-render--anchor-location (render anchor total)</code></li>
+<li>L679: <code>(defun ebb-render--anchor-history-row (render anchor total)</code></li>
+<li>L684: <code>(defun ebb-render--anchor-buffer-position (render anchor)</code></li>
+<li>L706: <code>(defun ebb-render--history-row-string (render row &amp;optional graphics-signature)</code></li>
+<li>L742: <code>(defun ebb-render--rebuild-scrollback</code></li>
+<li>L770: <code>(defun ebb-render-scroll-history (render rows)</code></li>
+<li>L871: <code>(defun ebb-render-buffer-location (render &amp;optional position)</code></li>
+<li>L888: <code>(defun ebb-render-buffer-anchor (render &amp;optional position)</code></li>
+<li>L906: <code>(defun ebb-render-goto-anchor (render anchor &amp;optional no-recenter)</code></li>
+<li>L921: <code>(defun ebb-render-goto-location (render row column &amp;optional no-recenter)</code></li>
+<li>L994: <code>(defun ebb-render--line-to-string-scrollback (line width)</code></li>
+<li>L1022: <code>(defun ebb-render--cells-to-string-scrollback-fast (cells width)</code></li>
+<li>L1057: <code>(defun ebb-render--apply-line-rendition (line string width)</code></li>
+<li>L1071: <code>(defun ebb-render--line-to-string (line width)</code></li>
+<li>L1110: <code>(defun ebb-render--text-runs-to-string (line width)</code></li>
+<li>L1122: <code>(defun ebb-render--apply-line-metadata (line string)</code></li>
+<li>L1179: <code>(defun ebb-render--graphics-background ()</code></li>
+<li>L1191: <code>(defun ebb-render--graphics-raw-png-helper (image)</code></li>
+<li>L1215: <code>(defun ebb-render--graphics-ppm-data (image background)</code></li>
+<li>L1250: <code>(defun ebb-render--graphics-cache-touch (render key)</code></li>
+<li>L1255: <code>(defun ebb-render--graphics-cache-put (render key object bytes)</code></li>
+<li>L1284: <code>(defun ebb-render--graphics-image-object (render image placement)</code></li>
+<li>L1379: <code>(defun ebb-render--graphics-color-id (color)</code></li>
+<li>L1387: <code>(defun ebb-render--virtual-placement (graphics image-id placement-id)</code></li>
+<li>L1400: <code>(defun ebb-render--line-has-placeholder-placement-p</code></li>
+<li>L1431: <code>(defun ebb-render--sync-placeholder-history-cache (render)</code></li>
+<li>L1446: <code>(defun ebb-render--prepare-placeholder-caches (render)</code></li>
+<li>L1455: <code>(defun ebb-render--placeholder-tile-row</code></li>
+<li>L1486: <code>(defun ebb-render--graphics-line (screen row absolute)</code></li>
+<li>L1492: <code>(defun ebb-render--graphics-column-indices (line string width scrollback)</code></li>
+<li>L1534: <code>(defun ebb-render--graphics-wide-carriers (line string width owners indices)</code></li>
+<li>L1571: <code>(defun ebb-render--placeholder-diacritic-index (character)</code></li>
+<li>L1575: <code>(defun ebb-render--placeholder-coordinates (cell)</code></li>
+<li>L1588: <code>(defun ebb-render--apply-virtual-graphics</code></li>
+<li>L1692: <code>(defun ebb-render--apply-graphics (render row string &amp;optional absolute)</code></li>
+<li>L1829: <code>(defun ebb-render--trim-trailing (string)</code></li>
+<li>L1849: <code>(defun ebb-render--update-line (render row)</code></li>
+<li>L1883: <code>(defun ebb-render--safe-char (char)</code></li>
+<li>L1887: <code>(defun ebb-render--safe-string (string)</code></li>
+<li>L1902: <code>(defun ebb-render--cells-to-string (cells width)</code></li>
+<li>L1910: <code>(defun ebb-render--apply-attr-properties (string attr)</code></li>
+<li>L1922: <code>(defun ebb-render--cells-to-string-fast (cells width)</code></li>
+<li>L1958: <code>(defun ebb-render--cells-to-string-uniform (cells width)</code></li>
+<li>L1979: <code>(defun ebb-render--cells-to-string-general (cells width)</code></li>
+<li>L2046: <code>(defun ebb-render--attr-to-face (attr)</code></li>
+<li>L2120: <code>(defun ebb-render--cursor-type-for-style (style)</code></li>
+<li>L2131: <code>(defun ebb-render--update-cursor (render)</code></li>
+<li>L2210: <code>(defun ebb-render--apply-viewport-reset (render)</code></li>
+<li>L2223: <code>(defun ebb-render--invalidate-screen-lines (screen)</code></li>
+<li>L2229: <code>(defun ebb-render--theme-changed (&amp;rest _)</code></li>
+<li>L2243: <code>(defun ebb-render--install-theme-invalidation ()</code></li>
+<li>L2247: <code>(defun ebb-render-invalidate-all (render)</code></li>
+<li>L2258: <code>(defun ebb-render-full-reset (render)</code></li>
+<li>L2390: <code>(defun ebb-render-resize-height (render)</code></li>
+<li>L2466: <code>(defun ebb-render-destroy (render)</code></li>
+<li>L2477: <code>(provide 'ebb-render)</code></li>
+</ul>
+<h2>ebb-serial-codec.el</h2>
+<ul>
+<li>L21: <code>(require 'cl-lib)</code></li>
+<li>L28: <code>(defcustom ebb-serial-invalid-byte-policy 'replacement</code></li>
+<li>L45: <code>(defun ebb-serial-codec-make-state (&amp;optional invalid-byte-policy)</code></li>
+<li>L54: <code>(defun ebb-serial-codec-reset (state)</code></li>
+<li>L58: <code>(defun ebb-serial-codec--unibyte (string)</code></li>
+<li>L77: <code>(defun ebb-serial-codec--continuation-byte-p (byte)</code></li>
+<li>L81: <code>(defun ebb-serial-codec--valid-sequence-byte-p (lead offset byte)</code></li>
+<li>L92: <code>(defun ebb-serial-codec--valid-prefix-p (bytes index end)</code></li>
+<li>L104: <code>(defun ebb-serial-codec--invalid-byte-string (byte policy)</code></li>
+<li>L111: <code>(defun ebb-serial-codec--valid-codepoint-p (codepoint min-codepoint)</code></li>
+<li>L117: <code>(defun ebb-serial-codec--decode-codepoint (bytes index length)</code></li>
+<li>L133: <code>(defun ebb-serial-codec--sequence-shape (byte)</code></li>
+<li>L142: <code>(defun ebb-serial-codec-decode (state chunk)</code></li>
+<li>L204: <code>(defun ebb-serial-codec-flush (state)</code></li>
+<li>L217: <code>(provide 'ebb-serial-codec)</code></li>
+</ul>
+<h2>ebb-serial-test.el</h2>
+<ul>
+<li>L10: <code>(require 'ert)</code></li>
+<li>L11: <code>(require 'cl-lib)</code></li>
+<li>L12: <code>(require 'ebb-serial-codec)</code></li>
+<li>L49: <code>(defun ebb-serial-tests--require-ebb-serial ()</code></li>
+<li>L54: <code>(defun ebb-serial-tests--sleep-process (buffer)</code></li>
+<li>L61: <code>(defun ebb-serial-tests--decode-chunks (chunks &amp;optional policy)</code></li>
+<li>L369: <code>(provide 'ebb-serial-tests)</code></li>
+</ul>
+<h2>ebb-serial.el</h2>
+<ul>
+<li>L22: <code>(require 'cl-lib)</code></li>
+<li>L23: <code>(require 'subr-x)</code></li>
+<li>L24: <code>(require 'format-spec)</code></li>
+<li>L25: <code>(require 'ebb)</code></li>
+<li>L26: <code>(require 'ebb-serial-codec)</code></li>
+<li>L33: <code>(defcustom ebb-serial-default-speed 115200</code></li>
+<li>L38: <code>(defcustom ebb-serial-default-coding-system 'utf-8-unix</code></li>
+<li>L43: <code>(defcustom ebb-serial-default-input-mode 'semi-char</code></li>
+<li>L50: <code>(defcustom ebb-serial-speed-history</code></li>
+<li>L56: <code>(defcustom ebb-serial-buffer-name-format "*ebb-serial %p*"</code></li>
+<li>L63: <code>(defcustom ebb-serial-break-duration 0</code></li>
+<li>L71: <code>(defcustom ebb-serial-send-break-function nil</code></li>
+<li>L80: <code>(defcustom ebb-serial-remote-socat-program "socat"</code></li>
+<li>L96: <code>(defvar ebb-serial-mode-map</code></li>
+<li>L98: <code>(define-key map (kbd "C-c C-k") #'ebb-serial-disconnect)</code></li>
+<li>L99: <code>(define-key map (kbd "C-c C-s r") #'ebb-serial-reconnect)</code></li>
+<li>L100: <code>(define-key map (kbd "C-c C-s d") #'ebb-serial-disconnect)</code></li>
+<li>L101: <code>(define-key map (kbd "C-c C-s c") #'ebb-serial-configure)</code></li>
+<li>L102: <code>(define-key map (kbd "C-c C-s b") #'ebb-serial-send-break)</code></li>
+<li>L103: <code>(define-key map (kbd "C-c C-s x") #'ebb-serial-send-byte)</code></li>
+<li>L107: <code>(define-minor-mode ebb-serial-mode</code></li>
+<li>L121: <code>(defun ebb-serial--buffer-name (port)</code></li>
+<li>L125: <code>(defun ebb-serial--read-port ()</code></li>
+<li>L129: <code>(defun ebb-serial--live-process-p (&amp;optional process)</code></li>
+<li>L136: <code>(defun ebb-serial--require-process ()</code></li>
+<li>L142: <code>(defun ebb-serial--mode-line-string ()</code></li>
+<li>L168: <code>(defun ebb-serial--mode-line-item (text help-echo command)</code></li>
+<li>L176: <code>(defun ebb-serial--speed-string ()</code></li>
+<li>L182: <code>(defun ebb-serial--configuration-summary ()</code></li>
+<li>L197: <code>(defun ebb-serial--popup-mode-line-menu (event keymap)</code></li>
+<li>L209: <code>(defun ebb-serial--install-mode-line ()</code></li>
+<li>L217: <code>(defun ebb-serial--display-window ()</code></li>
+<li>L228: <code>(defun ebb-serial--resize-terminal-to-window (&amp;rest _)</code></li>
+<li>L238: <code>(defun ebb-serial--select-default-input-mode ()</code></li>
+<li>L245: <code>(defun ebb-serial--create-terminal ()</code></li>
+<li>L249: <code>(defun ebb-serial--ensure-terminal ()</code></li>
+<li>L261: <code>(defun ebb-serial--setup-buffer (port speed)</code></li>
+<li>L276: <code>(defun ebb-serial--set-configuration (speed bytesize parity stopbits flowcontrol)</code></li>
+<li>L284: <code>(defun ebb-serial--remote-port-p (&amp;optional port)</code></li>
+<li>L289: <code>(defun ebb-serial--remote-default-directory (port)</code></li>
+<li>L294: <code>(defun ebb-serial--remote-port-localname (port)</code></li>
+<li>L298: <code>(defun ebb-serial--socat-bool (name enabled)</code></li>
+<li>L302: <code>(defun ebb-serial--socat-open-address (port)</code></li>
+<li>L340: <code>(defun ebb-serial--socat-command ()</code></li>
+<li>L347: <code>(defun ebb-serial--configure-process</code></li>
+<li>L364: <code>(defun ebb-serial--apply-configuration</code></li>
+<li>L386: <code>(defun ebb-serial-set-speed (speed)</code></li>
+<li>L397: <code>(defun ebb-serial--read-parity ()</code></li>
+<li>L409: <code>(defun ebb-serial--read-flowcontrol ()</code></li>
+<li>L421: <code>(defun ebb-serial-set-framing (bytesize parity stopbits)</code></li>
+<li>L439: <code>(defun ebb-serial-set-flowcontrol (flowcontrol)</code></li>
+<li>L449: <code>(defun ebb-serial--clear-process-state (&amp;optional state)</code></li>
+<li>L457: <code>(defun ebb-serial--process-arguments ()</code></li>
+<li>L474: <code>(defun ebb-serial--remote-process-arguments ()</code></li>
+<li>L486: <code>(defun ebb-serial--make-process ()</code></li>
+<li>L495: <code>(defun ebb-serial--open-process ()</code></li>
+<li>L524: <code>(defun ebb-serial--queue-output (text)</code></li>
+<li>L529: <code>(defun ebb-serial--filter (process chunk)</code></li>
+<li>L542: <code>(defun ebb-serial--sentinel (process message)</code></li>
+<li>L559: <code>(defun ebb-serial--send-raw-string (process bytes)</code></li>
+<li>L570: <code>(defun ebb-serial--send-input (input)</code></li>
+<li>L580: <code>(defun ebb-serial (port &amp;optional speed)</code></li>
+<li>L608: <code>(defun ebb-serial-reconnect ()</code></li>
+<li>L616: <code>(defun ebb-serial-disconnect ()</code></li>
+<li>L625: <code>(defun ebb-serial--read-choice (prompt choices current)</code></li>
+<li>L634: <code>(defun ebb-serial-configure (speed bytesize parity stopbits flowcontrol)</code></li>
+<li>L657: <code>(defun ebb-serial--parse-byte (string)</code></li>
+<li>L670: <code>(defun ebb-serial--read-byte ()</code></li>
+<li>L679: <code>(defun ebb-serial-send-byte (byte)</code></li>
+<li>L686: <code>(defun ebb-serial-send-break (&amp;optional duration)</code></li>
+<li>L701: <code>(defun ebb-serial-copy-port-name ()</code></li>
+<li>L709: <code>(defun ebb-serial--connection-menu ()</code></li>
+<li>L712: <code>(define-key map [copy-port]</code></li>
+<li>L715: <code>(define-key map [send-byte]</code></li>
+<li>L718: <code>(define-key map [send-break]</code></li>
+<li>L721: <code>(define-key map [separator-1] '(menu-item "--"))</code></li>
+<li>L722: <code>(define-key map [configure]</code></li>
+<li>L725: <code>(define-key map [disconnect]</code></li>
+<li>L728: <code>(define-key map [reconnect]</code></li>
+<li>L733: <code>(defun ebb-serial--speed-menu ()</code></li>
+<li>L742: <code>(define-key map [other]</code></li>
+<li>L745: <code>(define-key map [separator-1] '(menu-item "--"))</code></li>
+<li>L758: <code>(defun ebb-serial--config-menu ()</code></li>
+<li>L761: <code>(define-key map [configure]</code></li>
+<li>L764: <code>(define-key map [separator-1] '(menu-item "--"))</code></li>
+<li>L780: <code>(define-key map [separator-2] '(menu-item "--"))</code></li>
+<li>L793: <code>(define-key map [separator-3] '(menu-item "--"))</code></li>
+<li>L809: <code>(define-key map [separator-4] '(menu-item "--"))</code></li>
+<li>L822: <code>(define-key map [separator-5] '(menu-item "--"))</code></li>
+<li>L838: <code>(defun ebb-serial-mode-line-connection-menu (event)</code></li>
+<li>L843: <code>(defun ebb-serial-mode-line-speed-menu (event)</code></li>
+<li>L848: <code>(defun ebb-serial-mode-line-config-menu (event)</code></li>
+<li>L853: <code>(provide 'ebb-serial)</code></li>
+</ul>
+<h2>ebb-shell.el</h2>
+<ul>
+<li>L29: <code>(require 'cl-lib)</code></li>
+<li>L30: <code>(require 'ebb-term)</code></li>
+<li>L31: <code>(require 'ebb-render)</code></li>
+<li>L47: <code>(defcustom ebb-enable-shell-prompt-annotation nil</code></li>
+<li>L52: <code>(defcustom ebb-enable-directory-tracking t</code></li>
+<li>L57: <code>(defcustom ebb-shell-prompt-annotation-position 'left-margin</code></li>
+<li>L63: <code>(defcustom ebb-shell-prompt-annotation-running-indicator "+"</code></li>
+<li>L68: <code>(defcustom ebb-shell-prompt-annotation-success-indicator "0"</code></li>
+<li>L73: <code>(defcustom ebb-shell-prompt-annotation-failure-indicator "X"</code></li>
+<li>L78: <code>(defcustom ebb-shell-message-handler-alist nil</code></li>
+<li>L132: <code>(defun ebb-shell--base64-decode (str)</code></li>
+<li>L141: <code>(defun ebb-shell--split-payload (payload start)</code></li>
+<li>L147: <code>(defun ebb-shell--absolute-line (screen)</code></li>
+<li>L155: <code>(defun ebb-shell--make-indicator (text face)</code></li>
+<li>L159: <code>(defun ebb-shell--status-indicator (status)</code></li>
+<li>L169: <code>(defun ebb-shell--running-indicator ()</code></li>
+<li>L177: <code>(defun ebb-shell--mark-prompt (screen kind)</code></li>
+<li>L188: <code>(defun ebb-shell-handle-osc51 (payload screen)</code></li>
+<li>L231: <code>(defun ebb-shell--set-cwd (args)</code></li>
+<li>L244: <code>(defun ebb-shell--set-command (args)</code></li>
+<li>L251: <code>(defun ebb-shell--set-exit-status (args)</code></li>
+<li>L258: <code>(defun ebb-shell--handle-message (args)</code></li>
+<li>L277: <code>(defun ebb-shell-post-render (render)</code></li>
+<li>L300: <code>(defun ebb-shell--line-to-buffer-pos (render abs-line &amp;optional column)</code></li>
+<li>L321: <code>(defun ebb-shell--apply-prompt-start (render abs-line column)</code></li>
+<li>L328: <code>(defun ebb-shell--apply-prompt-end (render abs-line column)</code></li>
+<li>L356: <code>(defun ebb-shell--apply-pre-exec ()</code></li>
+<li>L363: <code>(defun ebb-shell--schedule-overlay-correction ()</code></li>
+<li>L372: <code>(defun ebb-shell--correct-overlays (buffer)</code></li>
+<li>L387: <code>(defun ebb-shell-imenu-create-index ()</code></li>
+<li>L426: <code>(defun ebb-shell-imenu-goto (_name position &amp;rest _rest)</code></li>
+<li>L436: <code>(defun ebb-shell-previous-prompt (&amp;optional n)</code></li>
+<li>L442: <code>(defun ebb-shell-next-prompt (&amp;optional n)</code></li>
+<li>L448: <code>(defun ebb-shell--goto-prompt (step)</code></li>
+<li>L496: <code>(defun ebb-shell-setup-margins ()</code></li>
+<li>L514: <code>(defun ebb-shell-cleanup ()</code></li>
+<li>L541: <code>(defcustom ebb-terminfo-directory</code></li>
+<li>L549: <code>(defcustom ebb-term-name "ebb-truecolor"</code></li>
+<li>L555: <code>(defun ebb-shell-env-vars ()</code></li>
+<li>L567: <code>(provide 'ebb-shell)</code></li>
+</ul>
+<h2>ebb-term.el</h2>
+<ul>
+<li>L17: <code>(require 'cl-lib)</code></li>
+<li>L24: <code>(require 'ebb-graphics)</code></li>
+<li>L197: <code>(defun ebb--swap-saved-renditions (screen)</code></li>
+<li>L224: <code>(defun ebb--reverse-wrap-mode (screen)</code></li>
+<li>L230: <code>(defun ebb--set-reverse-wrap-mode (screen extended enabled)</code></li>
+<li>L269: <code>(defun ebb--line-protection-bits (table line width)</code></li>
+<li>L277: <code>(defun ebb--mark-written-protection (screen line start end)</code></li>
+<li>L295: <code>(defun ebb-screen-dec-protection-enabled-p (screen)</code></li>
+<li>L299: <code>(defun ebb-screen-set-dec-protection (screen enabled)</code></li>
+<li>L306: <code>(defun ebb-screen-set-iso-protection (screen enabled)</code></li>
+<li>L313: <code>(defun ebb--line-initialized-cells (line cells width)</code></li>
+<li>L324: <code>(defun ebb-screen-horizontal-margins-enabled-p (screen)</code></li>
+<li>L328: <code>(defun ebb-screen-left-margin (screen)</code></li>
+<li>L334: <code>(defun ebb-screen-right-margin (screen &amp;optional row)</code></li>
+<li>L341: <code>(defun ebb-screen-set-horizontal-margin-mode (screen enabled)</code></li>
+<li>L348: <code>(defun ebb-screen-set-horizontal-margins (screen left right)</code></li>
+<li>L358: <code>(defun ebb-line-rendition (line)</code></li>
+<li>L379: <code>(defun ebb-screen-line-width (screen &amp;optional row)</code></li>
+<li>L389: <code>(defun ebb-screen-set-line-rendition (screen rendition)</code></li>
+<li>L404: <code>(defun ebb-screen-mark-viewport-reset (screen)</code></li>
+<li>L408: <code>(defun ebb-screen-take-viewport-reset (screen)</code></li>
+<li>L415: <code>(defun ebb-cell-copy (cell)</code></li>
+<li>L462: <code>(defun ebb--make-empty-cells (width)</code></li>
+<li>L469: <code>(defun ebb--make-empty-line (width)</code></li>
+<li>L478: <code>(defun ebb--line-ensure-cells (line width)</code></li>
+<li>L514: <code>(defun ebb--line-set-attr-run (line start end attr)</code></li>
+<li>L545: <code>(defun ebb--merge-attr-runs (runs)</code></li>
+<li>L561: <code>(defun ebb--ordered-lines-vector (screen)</code></li>
+<li>L569: <code>(defun ebb--default-tab-stops (width)</code></li>
+<li>L592: <code>(defun ebb--make-erase-cell (screen)</code></li>
+<li>L609: <code>(defun ebb--clear-wide-char-at (screen row col)</code></li>
+<li>L643: <code>(defun ebb--mark-region-dirty (screen top bot)</code></li>
+<li>L667: <code>(defun ebb-screen-create (width height)</code></li>
+<li>L686: <code>(defun ebb-screen-get-dirty (screen)</code></li>
+<li>L690: <code>(defun ebb-screen-clear-dirty (screen)</code></li>
+<li>L697: <code>(defun ebb-screen-clear-scrollback-dirty (screen)</code></li>
+<li>L701: <code>(defun ebb--history-map-current-p (screen)</code></li>
+<li>L709: <code>(defun ebb--history-grow-map (screen)</code></li>
+<li>L722: <code>(defun ebb--history-entry-line-count (entry)</code></li>
+<li>L729: <code>(defun ebb--history-chunk-line-length (chunk index)</code></li>
+<li>L733: <code>(defun ebb--history-chunk-line-text (chunk index)</code></li>
+<li>L741: <code>(defun ebb--history-chunk-compact (chunk)</code></li>
+<li>L770: <code>(defun ebb--history-entry-row-count (entry width)</code></li>
+<li>L778: <code>(defun ebb--history-chunk-row-map (chunk width)</code></li>
+<li>L796: <code>(defun ebb--history-chunk-row-location (chunk row width)</code></li>
+<li>L817: <code>(defun ebb--history-changed (screen &amp;optional kind entry)</code></li>
+<li>L860: <code>(defun ebb--history-physical-row-count-safe (screen)</code></li>
+<li>L866: <code>(defun ebb--history-clear (screen)</code></li>
+<li>L876: <code>(defun ebb--history-normalize (screen)</code></li>
+<li>L890: <code>(defun ebb--history-plain-row-text (line width wrapped)</code></li>
+<li>L906: <code>(defun ebb--history-text-row-info (line width wrapped)</code></li>
+<li>L932: <code>(defun ebb--shift-attr-runs (runs offset)</code></li>
+<li>L940: <code>(defun ebb--slice-attr-runs (runs start end)</code></li>
+<li>L948: <code>(defun ebb--history-flush-batch ()</code></li>
+<li>L974: <code>(defun ebb--history-add-input-chunk (screen string starts lengths first count)</code></li>
+<li>L1001: <code>(defun ebb--text-to-cells (text &amp;optional attr-runs)</code></li>
+<li>L1018: <code>(defun ebb--history-line-ensure-cells (line)</code></li>
+<li>L1051: <code>(defun ebb--history-push-row (screen line width)</code></li>
+<li>L1141: <code>(defun ebb-history-line-row-count (line width)</code></li>
+<li>L1152: <code>(defun ebb-screen-history-row-map (screen)</code></li>
+<li>L1181: <code>(defun ebb-screen-history-row-count (screen)</code></li>
+<li>L1187: <code>(defun ebb-screen-history-row-location (screen row)</code></li>
+<li>L1216: <code>(defun ebb-screen-history-anchor-location (screen id offset)</code></li>
+<li>L1257: <code>(defun ebb-screen-history-render-row (screen row)</code></li>
+<li>L1301: <code>(defun ebb-history-line-offset-position (line width offset)</code></li>
+<li>L1322: <code>(defun ebb-history-line-end-offset-position (line width offset)</code></li>
+<li>L1331: <code>(defun ebb-screen-prompt-end-locations (screen)</code></li>
+<li>L1354: <code>(defun ebb--scroll-region-up (screen count)</code></li>
+<li>L1422: <code>(defun ebb--scroll-region-down (screen count)</code></li>
+<li>L1458: <code>(defun ebb--trim-scrollback (screen)</code></li>
+<li>L1502: <code>(defun ebb--previous-cell (screen)</code></li>
+<li>L1564: <code>(defun ebb--apply-emoji-presentation (screen)</code></li>
+<li>L1614: <code>(defun ebb--append-to-previous-cell (screen char)</code></li>
+<li>L1633: <code>(defun ebb--append-joined-char (screen char)</code></li>
+<li>L1641: <code>(defun ebb--wrap-to-next-line (screen)</code></li>
+<li>L1654: <code>(defun ebb--apply-pending-wrap (screen)</code></li>
+<li>L1666: <code>(defun ebb--write-single-width-char</code></li>
+<li>L1695: <code>(defun ebb--write-general-char</code></li>
+<li>L1761: <code>(defun ebb-screen-write-char (screen char)</code></li>
+<li>L1792: <code>(defun ebb-screen-write-string (screen string start end)</code></li>
+<li>L1887: <code>(defun ebb--plain-blank-line-p (line width)</code></li>
+<li>L1903: <code>(defun ebb--simple-crlf-block-p (screen lengths)</code></li>
+<li>L1930: <code>(defun ebb--apply-simple-crlf-block (screen string starts lengths)</code></li>
+<li>L1999: <code>(defun ebb-screen-write-crlf-block (screen string start end)</code></li>
+<li>L2048: <code>(defun ebb-screen-cursor-backward (screen count)</code></li>
+<li>L2088: <code>(defun ebb-screen-cursor-move (screen direction count)</code></li>
+<li>L2119: <code>(defun ebb-screen-cursor-goto (screen row col)</code></li>
+<li>L2140: <code>(defun ebb-screen-cursor-next-line (screen count)</code></li>
+<li>L2145: <code>(defun ebb-screen-cursor-prev-line (screen count)</code></li>
+<li>L2152: <code>(defun ebb-screen--inside-horizontal-margins-p (screen)</code></li>
+<li>L2159: <code>(defun ebb-screen--index (screen horizontal-eligible)</code></li>
+<li>L2173: <code>(defun ebb-screen-index (screen)</code></li>
+<li>L2178: <code>(defun ebb-screen-reverse-index (screen)</code></li>
+<li>L2192: <code>(defun ebb-screen-next-line (screen)</code></li>
+<li>L2201: <code>(defun ebb-screen-carriage-return (screen)</code></li>
+<li>L2211: <code>(defun ebb-screen-backspace (screen)</code></li>
+<li>L2217: <code>(defun ebb-screen-set-attr (screen prop value)</code></li>
+<li>L2235: <code>(defun ebb-screen-reset-attr (screen)</code></li>
+<li>L2242: <code>(defun ebb-screen-set-hyperlink (screen uri &amp;optional id)</code></li>
+<li>L2252: <code>(defun ebb--line-empty-for-history-p (line width)</code></li>
+<li>L2263: <code>(defun ebb--line-history-signature (line width)</code></li>
+<li>L2275: <code>(defun ebb--viewport-row-has-graphics-p (screen row)</code></li>
+<li>L2286: <code>(defun ebb--history-preserve-display (screen)</code></li>
+<li>L2317: <code>(defun ebb-screen--erase-in-display-unprotected (screen mode)</code></li>
+<li>L2363: <code>(defun ebb-screen--erase-in-line-unprotected (screen mode)</code></li>
+<li>L2417: <code>(defun ebb--erase-whole-line (screen row)</code></li>
+<li>L2440: <code>(defun ebb-screen--erase-chars-unprotected (screen count)</code></li>
+<li>L2467: <code>(defun ebb-screen--protected-snapshot (screen table)</code></li>
+<li>L2485: <code>(defun ebb-screen--restore-protected-snapshot (screen table snapshots)</code></li>
+<li>L2505: <code>(defun ebb-screen--initialized-snapshot (screen)</code></li>
+<li>L2518: <code>(defun ebb-screen--restore-initialized-snapshot (screen coordinates)</code></li>
+<li>L2529: <code>(defun ebb-screen--preserving-protection (screen table function &amp;rest args)</code></li>
+<li>L2539: <code>(defun ebb-screen--erase-preserving-dec-and-iso</code></li>
+<li>L2549: <code>(defun ebb-screen-erase-in-display (screen mode)</code></li>
+<li>L2555: <code>(defun ebb-screen-erase-in-line (screen mode)</code></li>
+<li>L2561: <code>(defun ebb-screen-erase-chars (screen count)</code></li>
+<li>L2567: <code>(defun ebb-screen-dec-erase-in-display (screen mode)</code></li>
+<li>L2572: <code>(defun ebb-screen-dec-erase-in-line (screen mode)</code></li>
+<li>L2579: <code>(defun ebb-screen-scroll (screen direction count)</code></li>
+<li>L2587: <code>(defun ebb-screen-insert-lines (screen count)</code></li>
+<li>L2661: <code>(defun ebb-screen-delete-lines (screen count)</code></li>
+<li>L2734: <code>(defun ebb-screen-insert-chars (screen count)</code></li>
+<li>L2768: <code>(defun ebb-screen-delete-chars (screen count)</code></li>
+<li>L2803: <code>(defun ebb-screen-repeat-char (screen count)</code></li>
+<li>L2811: <code>(defun ebb-screen-tab-forward (screen count)</code></li>
+<li>L2828: <code>(defun ebb-screen-tab-backward (screen count)</code></li>
+<li>L2838: <code>(defun ebb-screen-set-tab-stop (screen)</code></li>
+<li>L2845: <code>(defun ebb-screen-clear-tab-stop (screen mode)</code></li>
+<li>L2855: <code>(defun ebb-screen-set-scroll-region (screen top bottom)</code></li>
+<li>L2868: <code>(defun ebb--resize-alt-save (saved new-width new-height &amp;optional alternate)</code></li>
+<li>L2913: <code>(defun ebb-screen-enter-alt (screen &amp;optional home clear)</code></li>
+<li>L3003: <code>(defun ebb-screen-leave-alt (screen)</code></li>
+<li>L3071: <code>(defun ebb-screen-save-cursor (screen)</code></li>
+<li>L3089: <code>(defun ebb-screen-restore-cursor (screen)</code></li>
+<li>L3118: <code>(defun ebb-screen-alignment-test (screen)</code></li>
+<li>L3138: <code>(defun ebb-screen-column-mode-enabled-p (screen)</code></li>
+<li>L3142: <code>(defun ebb-screen-set-column-mode (screen wide)</code></li>
+<li>L3158: <code>(defun ebb-screen-set-mode (screen mode value)</code></li>
+<li>L3203: <code>(defun ebb-screen-set-cursor-style (screen style)</code></li>
+<li>L3217: <code>(defun ebb--resize-alt-screen</code></li>
+<li>L3258: <code>(defun ebb--normalize-logical-lines-for-width</code></li>
+<li>L3288: <code>(defun ebb--resize-main-screen</code></li>
+<li>L3344: <code>(defun ebb-screen-resize (screen new-width new-height)</code></li>
+<li>L3393: <code>(defun ebb--unwrap-lines (lines old-width)</code></li>
+<li>L3431: <code>(defun ebb--cursor-logical-anchor (lines width row column pending-wrap)</code></li>
+<li>L3446: <code>(defun ebb--normalize-cells-for-width (cells width &amp;optional offset)</code></li>
+<li>L3474: <code>(defun ebb--cells-row-count (cells width)</code></li>
+<li>L3485: <code>(defun ebb--cells-offset-position (cells width offset)</code></li>
+<li>L3505: <code>(defun ebb--logical-offset-position (logical-lines index offset width)</code></li>
+<li>L3518: <code>(defun ebb--blank-cell-p (cell)</code></li>
+<li>L3524: <code>(defun ebb--trim-trailing-blank-cells (cells)</code></li>
+<li>L3532: <code>(defun ebb--rewrap-lines-all (logical-lines new-width)</code></li>
+<li>L3573: <code>(defun ebb--rewrap-lines (logical-lines new-width new-height)</code></li>
+<li>L3586: <code>(defun ebb--wrap-end (cells offset width)</code></li>
+<li>L3602: <code>(defun ebb--fit-cells-to-width (cells target-width)</code></li>
+<li>L3635: <code>(defun ebb--pad-cells (cells target-width)</code></li>
+<li>L3648: <code>(defun ebb-screen-soft-reset (screen)</code></li>
+<li>L3679: <code>(defun ebb-screen-reset (screen)</code></li>
+<li>L3750: <code>(defun ebb-screen-designate-charset (screen slot charset-char)</code></li>
+<li>L3763: <code>(defun ebb-screen-shift-out (screen)</code></li>
+<li>L3767: <code>(defun ebb-screen-shift-in (screen)</code></li>
+<li>L3773: <code>(defun ebb--line-plain-text (line width)</code></li>
+<li>L3786: <code>(defun ebb-screen-plain-text (screen)</code></li>
+<li>L3799: <code>(defun ebb-screen-virtual-line (screen row)</code></li>
+<li>L3806: <code>(defun ebb--cells-text-range (cells start end)</code></li>
+<li>L3817: <code>(defun ebb-screen-text-range (screen start end)</code></li>
+<li>L3843: <code>(defun ebb-screen--invalidate-rect-line (screen row line)</code></li>
+<li>L3852: <code>(defun ebb-screen-fill-rect (screen char top left bottom right)</code></li>
+<li>L3880: <code>(defun ebb-screen-erase-rect (screen top left bottom right &amp;optional selective)</code></li>
+<li>L3904: <code>(defun ebb-screen-copy-rect</code></li>
+<li>L3964: <code>(defun ebb-screen-checksum-rect (screen top left bottom right)</code></li>
+<li>L3988: <code>(defun ebb-screen-get-line (screen row)</code></li>
+<li>L3995: <code>(defun ebb-screen-scrollback-lines-raw (screen)</code></li>
+<li>L4007: <code>(defun ebb-screen-scrollback-lines (screen)</code></li>
+<li>L4011: <code>(provide 'ebb-term)</code></li>
+</ul>
+<h2>ebb-test.el</h2>
+<ul>
+<li>L9: <code>(require 'ert)</code></li>
+<li>L10: <code>(require 'ebb-term)</code></li>
+<li>L11: <code>(require 'ebb-parse)</code></li>
+<li>L12: <code>(require 'ebb-render)</code></li>
+<li>L13: <code>(require 'ebb-io)</code></li>
+<li>L14: <code>(require 'ebb-trace)</code></li>
+<li>L15: <code>(require 'ebb-input)</code></li>
+<li>L16: <code>(require 'ebb)</code></li>
+<li>L22: <code>(defmacro ebb-test-with-screen (spec &amp;rest body)</code></li>
+<li>L34: <code>(defun ebb-test-output (parser str)</code></li>
+<li>L38: <code>(defun ebb-test-base64 (string)</code></li>
+<li>L42: <code>(defun ebb-test-display-line (screen row)</code></li>
+<li>L56: <code>(defun ebb-test-display-text (screen)</code></li>
+<li>L63: <code>(defun ebb-test-cursor (screen)</code></li>
+<li>L4263: <code>(defun ebb-test--mouse-event (type point)</code></li>
+<li>L5366: <code>(defun ebb-test--session-buffer (name &amp;optional identity)</code></li>
+<li>L5596: <code>(require 'ebb-shell)</code></li>
+<li>L6046: <code>(defmacro ebb-test-with-glyph-metrics (metrics &amp;rest body)</code></li>
+<li>L6325: <code>(provide 'ebb-test)</code></li>
+</ul>
+<h2>ebb-trace.el</h2>
+<ul>
+<li>L17: <code>(require 'cl-lib)</code></li>
+<li>L18: <code>(require 'ebb-io)</code></li>
+<li>L19: <code>(require 'ebb-render)</code></li>
+<li>L31: <code>(defun ebb-trace--log (time operation &amp;rest args)</code></li>
+<li>L48: <code>(define-minor-mode ebb-trace-mode</code></li>
+<li>L58: <code>(defun ebb-trace--start ()</code></li>
+<li>L89: <code>(defun ebb-trace--other-traces-p ()</code></li>
+<li>L97: <code>(defun ebb-trace--stop ()</code></li>
+<li>L115: <code>(defun ebb-trace--filter-advice (orig-fn io process output)</code></li>
+<li>L124: <code>(defun ebb-trace--resize-advice (orig-fn io new-width new-height)</code></li>
+<li>L133: <code>(defun ebb-trace--refresh-advice (orig-fn render)</code></li>
+<li>L141: <code>(defun ebb-trace--processing-error (io error-data count)</code></li>
+<li>L148: <code>(provide 'ebb-trace)</code></li>
+</ul>
+<h2>ebb.el</h2>
+<ul>
+<li>L21: <code>(require 'cl-lib)</code></li>
+<li>L22: <code>(require 'comint)</code></li>
+<li>L23: <code>(require 'project)</code></li>
+<li>L24: <code>(require 'bookmark)</code></li>
+<li>L25: <code>(require 'face-remap)</code></li>
+<li>L26: <code>(require 'browse-url)</code></li>
+<li>L27: <code>(require 'ebb-term)</code></li>
+<li>L28: <code>(require 'ebb-parse)</code></li>
+<li>L29: <code>(require 'ebb-render)</code></li>
+<li>L30: <code>(require 'ebb-input)</code></li>
+<li>L31: <code>(require 'ebb-io)</code></li>
+<li>L32: <code>(require 'ebb-shell)</code></li>
+<li>L39: <code>(defcustom ebb-buffer-name "*ebb*"</code></li>
+<li>L44: <code>(defcustom ebb-default-shell nil</code></li>
+<li>L51: <code>(defcustom ebb-tramp-shells</code></li>
+<li>L70: <code>(defcustom ebb-tramp-default-method nil</code></li>
+<li>L78: <code>(defcustom ebb-trust-osc7-remote-hosts nil</code></li>
+<li>L90: <code>(defcustom ebb-kill-buffer-on-exit t</code></li>
+<li>L96: <code>(defcustom ebb-detect-password-prompts t</code></li>
+<li>L101: <code>(defcustom ebb-password-prompt-regex comint-password-prompt-regexp</code></li>
+<li>L106: <code>(defcustom ebb-password-prompt-debounce 0.2</code></li>
+<li>L111: <code>(defcustom ebb-password-prompt-functions</code></li>
+<li>L119: <code>(defcustom ebb-query-before-kill 'auto</code></li>
+<li>L127: <code>(defcustom ebb-show-title t</code></li>
+<li>L132: <code>(defcustom ebb-buffer-name-function #'ebb-buffer-name-by-directory</code></li>
+<li>L149: <code>(defcustom ebb-buffer-name-title-prefix "ebb: "</code></li>
+<li>L156: <code>(defcustom ebb-default-input-mode 'semi-char</code></li>
+<li>L162: <code>(defcustom ebb-notification-function #'ebb--default-notification</code></li>
+<li>L167: <code>(defcustom ebb-progress-function #'ebb--default-progress</code></li>
+<li>L172: <code>(defcustom ebb-enable-url-detection t</code></li>
+<li>L177: <code>(defcustom ebb-enable-file-detection t</code></li>
+<li>L182: <code>(defcustom ebb-file-detection-path-regex</code></li>
+<li>L218: <code>(define-minor-mode ebb--semi-char-mode</code></li>
+<li>L223: <code>(define-minor-mode ebb--char-mode</code></li>
+<li>L228: <code>(define-minor-mode ebb--mouse-mode</code></li>
+<li>L235: <code>(defun ebb--refresh-input-cursor ()</code></li>
+<li>L240: <code>(defun ebb--switch-input-mode (mode)</code></li>
+<li>L248: <code>(defun ebb-semi-char-mode ()</code></li>
+<li>L253: <code>(defun ebb-char-mode ()</code></li>
+<li>L258: <code>(defun ebb-emacs-mode ()</code></li>
+<li>L265: <code>(defun ebb--require-running-terminal ()</code></li>
+<li>L276: <code>(defun ebb-send-string (string)</code></li>
+<li>L281: <code>(defun ebb--key-event (key modifiers)</code></li>
+<li>L302: <code>(defun ebb-send-key (key &amp;optional modifiers)</code></li>
+<li>L314: <code>(defun ebb-paste-string (string)</code></li>
+<li>L325: <code>(defun ebb-self-input (n &amp;optional e)</code></li>
+<li>L350: <code>(defun ebb-quoted-input ()</code></li>
+<li>L359: <code>(defun ebb-yank (&amp;optional rotate)</code></li>
+<li>L371: <code>(defun ebb-yank-pop ()</code></li>
+<li>L376: <code>(defun ebb-xterm-paste (event)</code></li>
+<li>L395: <code>(defun ebb-send-password (&amp;optional password)</code></li>
+<li>L409: <code>(defun ebb--cursor-row-text ()</code></li>
+<li>L430: <code>(defun ebb--password-prompt-detected-p ()</code></li>
+<li>L436: <code>(defun ebb--default-password-source (row)</code></li>
+<li>L440: <code>(defun ebb--cancel-password-confirm-timer ()</code></li>
+<li>L446: <code>(defun ebb--confirm-and-prompt (buf)</code></li>
+<li>L455: <code>(defun ebb--prompt-password ()</code></li>
+<li>L476: <code>(defun ebb--detect-password-prompt (&amp;optional _render)</code></li>
+<li>L505: <code>(defun ebb-mouse-input (event)</code></li>
+<li>L539: <code>(defun ebb--scroll-rows (arg)</code></li>
+<li>L545: <code>(defun ebb-scroll-up (&amp;optional arg)</code></li>
+<li>L552: <code>(defun ebb-scroll-down (&amp;optional arg)</code></li>
+<li>L559: <code>(defun ebb--wheel-rows (event)</code></li>
+<li>L581: <code>(defun ebb-mouse-scroll-up (event)</code></li>
+<li>L591: <code>(defun ebb-mouse-scroll-down (event)</code></li>
+<li>L601: <code>(defun ebb--clear-screen (scrollback)</code></li>
+<li>L615: <code>(defun ebb-clear ()</code></li>
+<li>L621: <code>(defun ebb-clear-scrollback ()</code></li>
+<li>L627: <code>(defun ebb-copy-all ()</code></li>
+<li>L636: <code>(defun ebb-copy-region (_begin _end)</code></li>
+<li>L658: <code>(defun ebb-kill-process ()</code></li>
+<li>L665: <code>(defun ebb-reset ()</code></li>
+<li>L673: <code>(defun ebb-previous-prompt (&amp;optional n)</code></li>
+<li>L680: <code>(defun ebb-next-prompt (&amp;optional n)</code></li>
+<li>L689: <code>(defun ebb--default-notification (title body)</code></li>
+<li>L694: <code>(defun ebb--default-progress (state percent)</code></li>
+<li>L705: <code>(defun ebb--run-callback (buffer function args)</code></li>
+<li>L715: <code>(defun ebb--defer-callback (function &amp;rest args)</code></li>
+<li>L722: <code>(defun ebb--sync-model-size ()</code></li>
+<li>L734: <code>(defun ebb--handle-event (type &amp;rest args)</code></li>
+<li>L811: <code>(defun ebb--focus-change ()</code></li>
+<li>L826: <code>(defun ebb--ensure-focus-change-hook ()</code></li>
+<li>L832: <code>(defun ebb--maybe-remove-focus-change-hook ()</code></li>
+<li>L849: <code>(defun ebb--window-size-change (window)</code></li>
+<li>L868: <code>(defvar-keymap ebb-link-map</code></li>
+<li>L873: <code>(defun ebb--link-at (position)</code></li>
+<li>L878: <code>(defun ebb--open-link (uri)</code></li>
+<li>L900: <code>(defun ebb-open-link-at-click (event)</code></li>
+<li>L905: <code>(defun ebb-open-link-at-point ()</code></li>
+<li>L910: <code>(defun ebb--linkify (begin end uri)</code></li>
+<li>L916: <code>(defun ebb--detect-plain-links (_render)</code></li>
+<li>L957: <code>(defun ebb--find-hyperlink (direction position)</code></li>
+<li>L973: <code>(defun ebb--goto-hyperlink (direction)</code></li>
+<li>L980: <code>(defun ebb-next-hyperlink (&amp;optional count)</code></li>
+<li>L986: <code>(defun ebb-previous-hyperlink (&amp;optional count)</code></li>
+<li>L992: <code>(define-derived-mode ebb-mode fundamental-mode "Ebb"</code></li>
+<li>L1038: <code>(defun ebb--kill-buffer-query ()</code></li>
+<li>L1047: <code>(defun ebb--set-shell-cwd (path)</code></li>
+<li>L1067: <code>(defun ebb--buffers ()</code></li>
+<li>L1074: <code>(defun ebb--find-session (identity)</code></li>
+<li>L1081: <code>(defun ebb--cycle (step)</code></li>
+<li>L1094: <code>(defun ebb-next ()</code></li>
+<li>L1100: <code>(defun ebb-previous ()</code></li>
+<li>L1106: <code>(defun ebb-list-buffers ()</code></li>
+<li>L1123: <code>(defun ebb-other (&amp;optional program)</code></li>
+<li>L1131: <code>(defun ebb--cwd-to-path (dir host)</code></li>
+<li>L1178: <code>(defun ebb--remote-login-shell ()</code></li>
+<li>L1191: <code>(defun ebb--remote-shell ()</code></li>
+<li>L1208: <code>(defun ebb--start (program display-function)</code></li>
+<li>L1249: <code>(defun ebb (&amp;optional program)</code></li>
+<li>L1286: <code>(defun ebb-other-window (&amp;optional program)</code></li>
+<li>L1292: <code>(defun ebb-project ()</code></li>
+<li>L1311: <code>(defun ebb-project-other-window ()</code></li>
+<li>L1322: <code>(defun ebb-bookmark-make-record ()</code></li>
+<li>L1332: <code>(defun ebb--bookmark-property (record property)</code></li>
+<li>L1337: <code>(defun ebb-bookmark-jump (record)</code></li>
+<li>L1362: <code>(defun ebb--same-host-p (left right)</code></li>
+<li>L1380: <code>(defun ebb--this-host-p (host)</code></li>
+<li>L1390: <code>(defun ebb--local-host-p (host)</code></li>
+<li>L1397: <code>(defun ebb--format-title-for-buffer (title)</code></li>
+<li>L1417: <code>(defun ebb-buffer-name-by-title (title)</code></li>
+<li>L1423: <code>(defun ebb-buffer-name-by-directory (&amp;optional _title)</code></li>
+<li>L1430: <code>(defun ebb--rename-managed (new-name)</code></li>
+<li>L1439: <code>(defun ebb--set-title (title)</code></li>
+<li>L1448: <code>(defun ebb--mode-line-input-mode ()</code></li>
+<li>L1466: <code>(require 'ebb-eshell)</code></li>
+<li>L1468: <code>(provide 'ebb)</code></li>
+</ul></main></html>

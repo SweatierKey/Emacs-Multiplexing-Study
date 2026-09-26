@@ -1,0 +1,4 @@
+{"status":"loaded","feature":"term-alert","library":"/home/admin/Emacs-Multiplexing-Study/sources/term-alert/term-alert.el","commands":["term-alert-all-toggle","term-alert-mode","term-alert-next-command-toggle","term-alert-runtime"]}
+STDERR:
+term-cmd: please add ’/home/admin/Emacs-Multiplexing-Study/.runtime/emacs/term-cmd’ to the PATH in your environment or shell’s startup file (e.g. ~/.profile, ~/.bashrc, ~/.zshrc, etc.). Term-cmd will work in shells launched directly from Emacs even if you don’t, but it will only work in tmux and ssh sessions if you do.
+sources/term-alert/term-alert.el: Warning: Use keywords rather than deprecated positional arguments to ‘define-minor-mode’

@@ -1,0 +1,336 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: dash</h1>
+<p>Fonte: https://github.com/magnars/dash.el.git</p>
+<p>Revisione: <code>d746dd9edcb67a108818beb0cdc78dc1cb466832</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>dash-functional.el</h2>
+<ul>
+<li>L43: <code>(require 'dash)</code></li>
+<li>L51: <code>(provide 'dash-functional)</code></li>
+</ul>
+<h2>dash.el</h2>
+<ul>
+<li>L74: <code>(defmacro !cons (car cdr)</code></li>
+<li>L79: <code>(defmacro !cdr (list)</code></li>
+<li>L84: <code>(defmacro --each (list &amp;rest body)</code></li>
+<li>L100: <code>(defun -each (list fn)</code></li>
+<li>L113: <code>(defun -each-indexed (list fn)</code></li>
+<li>L122: <code>(defmacro --each-while (list pred &amp;rest body)</code></li>
+<li>L146: <code>(defun -each-while (list pred fn)</code></li>
+<li>L156: <code>(defmacro --each-r (list &amp;rest body)</code></li>
+<li>L178: <code>(defun -each-r (list fn)</code></li>
+<li>L185: <code>(defmacro --each-r-while (list pred &amp;rest body)</code></li>
+<li>L208: <code>(defun -each-r-while (list pred fn)</code></li>
+<li>L217: <code>(defmacro --dotimes (num &amp;rest body)</code></li>
+<li>L234: <code>(defun -dotimes (num fn)</code></li>
+<li>L244: <code>(defun -map (fn list)</code></li>
+<li>L251: <code>(defmacro --map (form list)</code></li>
+<li>L259: <code>(defmacro --reduce-from (form init list)</code></li>
+<li>L275: <code>(defun -reduce-from (fn init list)</code></li>
+<li>L287: <code>(defmacro --reduce (form list)</code></li>
+<li>L305: <code>(defun -reduce (fn list)</code></li>
+<li>L321: <code>(defmacro --reduce-r-from (form init list)</code></li>
+<li>L331: <code>(defun -reduce-r-from (fn init list)</code></li>
+<li>L351: <code>(defmacro --reduce-r (form list)</code></li>
+<li>L359: <code>(defun -reduce-r (fn list)</code></li>
+<li>L383: <code>(defmacro --reductions-from (form init list)</code></li>
+<li>L395: <code>(defun -reductions-from (fn init list)</code></li>
+<li>L407: <code>(defmacro --reductions (form list)</code></li>
+<li>L423: <code>(defun -reductions (fn list)</code></li>
+<li>L436: <code>(defmacro --reductions-r-from (form init list)</code></li>
+<li>L447: <code>(defun -reductions-r-from (fn init list)</code></li>
+<li>L459: <code>(defmacro --reductions-r (form list)</code></li>
+<li>L477: <code>(defun -reductions-r (fn list)</code></li>
+<li>L491: <code>(defmacro --filter (form list)</code></li>
+<li>L503: <code>(defun -filter (pred list)</code></li>
+<li>L517: <code>(defmacro --remove (form list)</code></li>
+<li>L526: <code>(defun -remove (pred list)</code></li>
+<li>L540: <code>(defmacro --remove-first (form list)</code></li>
+<li>L558: <code>(defun -remove-first (pred list)</code></li>
+<li>L577: <code>(defmacro --remove-last (form list)</code></li>
+<li>L586: <code>(defun -remove-last (pred list)</code></li>
+<li>L607: <code>(defmacro --keep (form list)</code></li>
+<li>L621: <code>(defun -keep (fn list)</code></li>
+<li>L630: <code>(defun -non-nil (list)</code></li>
+<li>L635: <code>(defmacro --map-indexed (form list)</code></li>
+<li>L649: <code>(defun -map-indexed (fn list)</code></li>
+<li>L660: <code>(defmacro --map-when (pred rep list)</code></li>
+<li>L668: <code>(defun -map-when (pred rep list)</code></li>
+<li>L682: <code>(defun -map-first (pred rep list)</code></li>
+<li>L697: <code>(defmacro --map-first (pred rep list)</code></li>
+<li>L704: <code>(defun -map-last (pred rep list)</code></li>
+<li>L713: <code>(defmacro --map-last (pred rep list)</code></li>
+<li>L720: <code>(defun -replace (old new list)</code></li>
+<li>L729: <code>(defun -replace-first (old new list)</code></li>
+<li>L738: <code>(defun -replace-last (old new list)</code></li>
+<li>L747: <code>(defmacro --mapcat (form list)</code></li>
+<li>L752: <code>(defun -mapcat (fn list)</code></li>
+<li>L758: <code>(defmacro --iterate (form init n)</code></li>
+<li>L771: <code>(defun -iterate (fun init n)</code></li>
+<li>L782: <code>(defun -flatten (l)</code></li>
+<li>L799: <code>(defun -flatten-n (num list)</code></li>
+<li>L828: <code>(defmacro --splice (pred form list)</code></li>
+<li>L851: <code>(defun -splice (pred fun list)</code></li>
+<li>L869: <code>(defun -splice-list (pred new-list list)</code></li>
+<li>L876: <code>(defmacro --splice-list (pred new-list list)</code></li>
+<li>L881: <code>(defun -cons* (&amp;rest args)</code></li>
+<li>L895: <code>(defun -snoc (list elem &amp;rest elements)</code></li>
+<li>L904: <code>(defmacro --first (form list)</code></li>
+<li>L917: <code>(defun -first (pred list)</code></li>
+<li>L933: <code>(defmacro --some (form list)</code></li>
+<li>L945: <code>(defun -some (pred list)</code></li>
+<li>L957: <code>(defmacro --every (form list)</code></li>
+<li>L975: <code>(defun -every (pred list)</code></li>
+<li>L988: <code>(defmacro --last (form list)</code></li>
+<li>L997: <code>(defun -last (pred list)</code></li>
+<li>L1052: <code>(defun -fifth-item (list)</code></li>
+<li>L1059: <code>(defun -last-item (list)</code></li>
+<li>L1070: <code>(defun -butlast (list)</code></li>
+<li>L1076: <code>(defmacro --count (pred list)</code></li>
+<li>L1084: <code>(defun -count (pred list)</code></li>
+<li>L1089: <code>(defun ---truthy? (obj)</code></li>
+<li>L1094: <code>(defmacro --any? (form list)</code></li>
+<li>L1099: <code>(defun -any? (pred list)</code></li>
+<li>L1113: <code>(defmacro --all? (form list)</code></li>
+<li>L1130: <code>(defun -all? (pred list)</code></li>
+<li>L1152: <code>(defmacro --none? (form list)</code></li>
+<li>L1157: <code>(defun -none? (pred list)</code></li>
+<li>L1167: <code>(defmacro --only-some? (form list)</code></li>
+<li>L1177: <code>(defun -only-some? (pred list)</code></li>
+<li>L1190: <code>(defun -slice (list from &amp;optional to step)</code></li>
+<li>L1217: <code>(defmacro --take-while (form list)</code></li>
+<li>L1230: <code>(defun -take-while (pred list)</code></li>
+<li>L1242: <code>(defmacro --drop-while (form list)</code></li>
+<li>L1255: <code>(defun -drop-while (pred list)</code></li>
+<li>L1278: <code>(defun -take (n list)</code></li>
+<li>L1289: <code>(defun -take-last (n list)</code></li>
+<li>L1306: <code>(defun -drop-last (n list)</code></li>
+<li>L1317: <code>(defun -split-at (n list)</code></li>
+<li>L1330: <code>(defun -rotate (n list)</code></li>
+<li>L1341: <code>(defun -insert-at (n x list)</code></li>
+<li>L1349: <code>(defun -replace-at (n x list)</code></li>
+<li>L1357: <code>(defun -update-at (n func list)</code></li>
+<li>L1369: <code>(defmacro --update-at (n form list)</code></li>
+<li>L1374: <code>(defun -remove-at (n list)</code></li>
+<li>L1389: <code>(defun -remove-at-indices (indices list)</code></li>
+<li>L1411: <code>(defmacro --split-with (pred list)</code></li>
+<li>L1428: <code>(defun -split-with (pred list)</code></li>
+<li>L1440: <code>(defmacro -split-on (item list)</code></li>
+<li>L1452: <code>(defmacro --split-when (form list)</code></li>
+<li>L1457: <code>(defun -split-when (fn list)</code></li>
+<li>L1476: <code>(defmacro --separate (form list)</code></li>
+<li>L1485: <code>(defun -separate (pred list)</code></li>
+<li>L1495: <code>(defun dash--partition-all-in-steps-reversed (n step list)</code></li>
+<li>L1506: <code>(defun -partition-all-in-steps (n step list)</code></li>
+<li>L1513: <code>(defun -partition-in-steps (n step list)</code></li>
+<li>L1523: <code>(defun -partition-all (n list)</code></li>
+<li>L1529: <code>(defun -partition (n list)</code></li>
+<li>L1536: <code>(defmacro --partition-by (form list)</code></li>
+<li>L1563: <code>(defun -partition-by (fn list)</code></li>
+<li>L1568: <code>(defmacro --partition-by-header (form list)</code></li>
+<li>L1599: <code>(defun -partition-by-header (fn list)</code></li>
+<li>L1607: <code>(defmacro --partition-after-pred (form list)</code></li>
+<li>L1627: <code>(defun -partition-after-pred (pred list)</code></li>
+<li>L1634: <code>(defun -partition-before-pred (pred list)</code></li>
+<li>L1640: <code>(defun -partition-after-item (item list)</code></li>
+<li>L1646: <code>(defun -partition-before-item (item list)</code></li>
+<li>L1652: <code>(defmacro --group-by (form list)</code></li>
+<li>L1674: <code>(defun -group-by (fn list)</code></li>
+<li>L1680: <code>(defun -interpose (sep list)</code></li>
+<li>L1692: <code>(defun -interleave (&amp;rest lists)</code></li>
+<li>L1702: <code>(defmacro --zip-with (form list1 list2)</code></li>
+<li>L1723: <code>(defun -zip-with (fn list1 list2)</code></li>
+<li>L1736: <code>(defun -zip-lists (&amp;rest lists)</code></li>
+<li>L1757: <code>(defun -zip-lists-fill (fill-value &amp;rest lists)</code></li>
+<li>L1772: <code>(defun -unzip-lists (lists)</code></li>
+<li>L1797: <code>(defun dash--zip-lists-or-pair (_form &amp;rest lists)</code></li>
+<li>L1811: <code>(defun -zip (&amp;rest lists)</code></li>
+<li>L1834: <code>(defun -zip-pair (&amp;rest lists)</code></li>
+<li>L1848: <code>(defun -zip-fill (fill-value &amp;rest lists)</code></li>
+<li>L1872: <code>(defun -unzip (lists)</code></li>
+<li>L1892: <code>(defun -cycle (list)</code></li>
+<li>L1901: <code>(defun -pad (fill-value &amp;rest lists)</code></li>
+<li>L1912: <code>(defmacro --annotate (form list)</code></li>
+<li>L1923: <code>(defun -annotate (fn list)</code></li>
+<li>L1934: <code>(defun dash--table-carry (lists restore-lists &amp;optional re)</code></li>
+<li>L1949: <code>(defun -table (fn &amp;rest lists)</code></li>
+<li>L1971: <code>(defun -table-flat (fn &amp;rest lists)</code></li>
+<li>L1998: <code>(defmacro --find-index (form list)</code></li>
+<li>L2007: <code>(defun -find-index (pred list)</code></li>
+<li>L2020: <code>(defun -elem-index (elem list)</code></li>
+<li>L2029: <code>(defmacro --find-indices (form list)</code></li>
+<li>L2037: <code>(defun -find-indices (pred list)</code></li>
+<li>L2051: <code>(defun -elem-indices (elem list)</code></li>
+<li>L2058: <code>(defmacro --find-last-index (form list)</code></li>
+<li>L2071: <code>(defun -find-last-index (pred list)</code></li>
+<li>L2084: <code>(defun -select-by-indices (indices list)</code></li>
+<li>L2093: <code>(defun -select-columns (columns table)</code></li>
+<li>L2106: <code>(defun -select-column (column table)</code></li>
+<li>L2118: <code>(defmacro -&gt; (x &amp;optional form &amp;rest more)</code></li>
+<li>L2131: <code>(defmacro -&gt;&gt; (x &amp;optional form &amp;rest more)</code></li>
+<li>L2144: <code>(defmacro --&gt; (x &amp;rest forms)</code></li>
+<li>L2153: <code>(defmacro -as-&gt; (value variable &amp;rest forms)</code></li>
+<li>L2168: <code>(defmacro -some-&gt; (x &amp;optional form &amp;rest more)</code></li>
+<li>L2179: <code>(defmacro -some-&gt;&gt; (x &amp;optional form &amp;rest more)</code></li>
+<li>L2190: <code>(defmacro -some--&gt; (expr &amp;rest forms)</code></li>
+<li>L2202: <code>(defmacro -doto (init &amp;rest forms)</code></li>
+<li>L2213: <code>(defmacro --doto (init &amp;rest forms)</code></li>
+<li>L2223: <code>(defun -grade-up (comparator list)</code></li>
+<li>L2232: <code>(defun -grade-down (comparator list)</code></li>
+<li>L2244: <code>(defun dash--match-make-source-symbol ()</code></li>
+<li>L2251: <code>(defun dash--match-ignore-place-p (symbol)</code></li>
+<li>L2256: <code>(defun dash--match-cons-skip-cdr (skip-cdr source)</code></li>
+<li>L2265: <code>(defun dash--match-cons-get-car (skip-cdr source)</code></li>
+<li>L2275: <code>(defun dash--match-cons-get-cdr (skip-cdr source)</code></li>
+<li>L2285: <code>(defun dash--match-cons (match-form source)</code></li>
+<li>L2309: <code>(defun dash--get-expand-function (type)</code></li>
+<li>L2313: <code>(defun dash--match-cons-1 (match-form source &amp;optional props)</code></li>
+<li>L2347: <code>(defun dash--match-vector (match-form source)</code></li>
+<li>L2366: <code>(defun dash--match-vector-1 (match-form source)</code></li>
+<li>L2406: <code>(defun dash--match-kv-normalize-match-form (pattern)</code></li>
+<li>L2447: <code>(defun dash--match-kv (match-form source)</code></li>
+<li>L2462: <code>(defun dash-expand:&amp;hash (key source)</code></li>
+<li>L2466: <code>(defun dash-expand:&amp;plist (key source)</code></li>
+<li>L2470: <code>(defun dash-expand:&amp;alist (key source)</code></li>
+<li>L2474: <code>(defun dash-expand:&amp;hash? (key source)</code></li>
+<li>L2483: <code>(defun dash--match-kv-1 (match-form source type)</code></li>
+<li>L2508: <code>(defun dash--match-symbol (match-form source)</code></li>
+<li>L2514: <code>(defun dash--match (match-form source)</code></li>
+<li>L2550: <code>(defun dash--normalize-let-varlist (varlist)</code></li>
+<li>L2564: <code>(defmacro -let* (varlist &amp;rest body)</code></li>
+<li>L2583: <code>(defmacro -let (varlist &amp;rest body)</code></li>
+<li>L2758: <code>(defmacro -lambda (match-form &amp;rest body)</code></li>
+<li>L2792: <code>(defmacro -setq (&amp;rest forms)</code></li>
+<li>L2846: <code>(defmacro -if-let* (vars-vals then &amp;rest else)</code></li>
+<li>L2865: <code>(defmacro -if-let (var-val then &amp;rest else)</code></li>
+<li>L2876: <code>(defmacro --if-let (val then &amp;rest else)</code></li>
+<li>L2883: <code>(defmacro -when-let* (vars-vals &amp;rest body)</code></li>
+<li>L2895: <code>(defmacro -when-let (var-val &amp;rest body)</code></li>
+<li>L2905: <code>(defmacro --when-let (val &amp;rest body)</code></li>
+<li>L2924: <code>(defun dash--member-fn ()</code></li>
+<li>L2936: <code>(defun dash--assoc-fn ()</code></li>
+<li>L2952: <code>(defun dash--hash-test-fn ()</code></li>
+<li>L2967: <code>(defun -distinct (list)</code></li>
+<li>L2989: <code>(defun dash--size+ (size1 size2)</code></li>
+<li>L2999: <code>(defun -union (list1 list2)</code></li>
+<li>L3022: <code>(defun -intersection (list1 list2)</code></li>
+<li>L3044: <code>(defun -difference (list1 list2)</code></li>
+<li>L3073: <code>(defun -powerset (list)</code></li>
+<li>L3081: <code>(defun -frequencies (list)</code></li>
+<li>L3114: <code>(defun dash--numbers&lt;= (nums)</code></li>
+<li>L3122: <code>(defun dash--next-lex-perm (array n)</code></li>
+<li>L3158: <code>(defun dash--lex-perms (vec &amp;optional original)</code></li>
+<li>L3177: <code>(defun dash--uniq-perms (list)</code></li>
+<li>L3187: <code>(defun dash--multi-perms (list freqs)</code></li>
+<li>L3206: <code>(defun -permutations (list)</code></li>
+<li>L3223: <code>(defun -inits (list)</code></li>
+<li>L3232: <code>(defun -tails (list)</code></li>
+<li>L3237: <code>(defun -common-prefix (&amp;rest lists)</code></li>
+<li>L3243: <code>(defun -common-suffix (&amp;rest lists)</code></li>
+<li>L3248: <code>(defun -contains? (list element)</code></li>
+<li>L3261: <code>(defun -same-items? (list1 list2)</code></li>
+<li>L3298: <code>(defun -is-prefix? (prefix list)</code></li>
+<li>L3307: <code>(defun -is-suffix? (suffix list)</code></li>
+<li>L3314: <code>(defun -is-infix? (infix list)</code></li>
+<li>L3331: <code>(defun -sort (comparator list)</code></li>
+<li>L3342: <code>(defmacro --sort (form list)</code></li>
+<li>L3347: <code>(defun -list (&amp;optional arg &amp;rest args)</code></li>
+<li>L3360: <code>(defun -repeat (n x)</code></li>
+<li>L3366: <code>(defun -sum (list)</code></li>
+<li>L3371: <code>(defun -running-sum (list)</code></li>
+<li>L3378: <code>(defun -product (list)</code></li>
+<li>L3383: <code>(defun -running-product (list)</code></li>
+<li>L3390: <code>(defun -max (list)</code></li>
+<li>L3395: <code>(defun -min (list)</code></li>
+<li>L3400: <code>(defun -max-by (comparator list)</code></li>
+<li>L3409: <code>(defun -min-by (comparator list)</code></li>
+<li>L3418: <code>(defmacro --max-by (form list)</code></li>
+<li>L3425: <code>(defmacro --min-by (form list)</code></li>
+<li>L3432: <code>(defun -iota (count &amp;optional start step)</code></li>
+<li>L3447: <code>(defun -fix (fn list)</code></li>
+<li>L3458: <code>(defmacro --fix (form list)</code></li>
+<li>L3463: <code>(defun -unfold (fun seed)</code></li>
+<li>L3480: <code>(defmacro --unfold (form seed)</code></li>
+<li>L3485: <code>(defun -cons-pair? (obj)</code></li>
+<li>L3495: <code>(defun -cons-to-list (con)</code></li>
+<li>L3500: <code>(defun -value-to-list (val)</code></li>
+<li>L3510: <code>(defun -tree-mapreduce-from (fn folder init-value tree)</code></li>
+<li>L3530: <code>(defmacro --tree-mapreduce-from (form folder init-value tree)</code></li>
+<li>L3538: <code>(defun -tree-mapreduce (fn folder tree)</code></li>
+<li>L3556: <code>(defmacro --tree-mapreduce (form folder tree)</code></li>
+<li>L3563: <code>(defun -tree-map (fn tree)</code></li>
+<li>L3573: <code>(defmacro --tree-map (form tree)</code></li>
+<li>L3578: <code>(defun -tree-reduce-from (fn init-value tree)</code></li>
+<li>L3597: <code>(defmacro --tree-reduce-from (form init-value tree)</code></li>
+<li>L3603: <code>(defun -tree-reduce (fn tree)</code></li>
+<li>L3619: <code>(defmacro --tree-reduce (form tree)</code></li>
+<li>L3624: <code>(defun -tree-map-nodes (pred fun tree)</code></li>
+<li>L3635: <code>(defmacro --tree-map-nodes (pred form tree)</code></li>
+<li>L3642: <code>(defun -tree-seq (branch children tree)</code></li>
+<li>L3658: <code>(defmacro --tree-seq (branch children tree)</code></li>
+<li>L3665: <code>(defun -clone (list)</code></li>
+<li>L3684: <code>(defun -rpartial (fn &amp;rest args)</code></li>
+<li>L3694: <code>(defun -juxt (&amp;rest fns)</code></li>
+<li>L3701: <code>(defun -compose (&amp;rest fns)</code></li>
+<li>L3718: <code>(defun -applify (fn)</code></li>
+<li>L3725: <code>(defun -on (op trans)</code></li>
+<li>L3748: <code>(defun -flip (fn)</code></li>
+<li>L3765: <code>(defun -rotate-args (n fn)</code></li>
+<li>L3787: <code>(defun -const (c)</code></li>
+<li>L3794: <code>(defmacro -cut (&amp;rest params)</code></li>
+<li>L3811: <code>(defun -not (pred)</code></li>
+<li>L3820: <code>(defun -orfn (&amp;rest preds)</code></li>
+<li>L3835: <code>(defun -andfn (&amp;rest preds)</code></li>
+<li>L3852: <code>(defun -iteratefn (fn n)</code></li>
+<li>L3868: <code>(defun -counter (&amp;optional beg end inc)</code></li>
+<li>L3889: <code>(defun -fixfn (fn &amp;optional equal-test halt-test)</code></li>
+<li>L3930: <code>(defun -prodfn (&amp;rest fns)</code></li>
+<li>L4087: <code>(defcustom dash-fontify-mode-lighter nil</code></li>
+<li>L4097: <code>(define-minor-mode dash-fontify-mode</code></li>
+<li>L4122: <code>(defun dash--turn-on-fontify-mode ()</code></li>
+<li>L4131: <code>(defcustom dash-enable-fontlock nil</code></li>
+<li>L4151: <code>(defun dash--info-elisp-docs ()</code></li>
+<li>L4159: <code>(defun dash-register-info-lookup ()</code></li>
+<li>L4168: <code>(defun dash-unload-function ()</code></li>
+<li>L4178: <code>(provide 'dash)</code></li>
+</ul>
+<h2>dev/dash-defs.el</h2>
+<ul>
+<li>L20: <code>(require 'dash)</code></li>
+<li>L21: <code>(require 'ert)</code></li>
+<li>L22: <code>(require 'find-func)</code></li>
+<li>L24: <code>(require 'subr-x nil t)</code></li>
+<li>L46: <code>(defun approx= (u v)</code></li>
+<li>L56: <code>(defun dash--example-to-test (example)</code></li>
+<li>L68: <code>(defmacro def-example-group (name doc &amp;rest examples)</code></li>
+<li>L84: <code>(defmacro defexamples (fn &amp;rest examples)</code></li>
+<li>L106: <code>(defun dash--describe (fn)</code></li>
+<li>L128: <code>(defun dash--replace-all (old new)</code></li>
+<li>L134: <code>(defun dash--github-link (fn)</code></li>
+<li>L145: <code>(defun dash--argnames-to-md ()</code></li>
+<li>L158: <code>(defun dash--metavars-to-md ()</code></li>
+<li>L169: <code>(defun dash--hyperlinks-to-md ()</code></li>
+<li>L179: <code>(defun dash--booleans-to-md ()</code></li>
+<li>L186: <code>(defun dash--indent-md-blocks ()</code></li>
+<li>L192: <code>(defun dash--docstring-to-md (doc)</code></li>
+<li>L203: <code>(defun dash--docstring-to-texi (doc)</code></li>
+<li>L239: <code>(defun dash--lisp-to-md (obj)</code></li>
+<li>L252: <code>(defun dash--lisp-to-texi (obj)</code></li>
+<li>L258: <code>(defun dash--expected (obj err)</code></li>
+<li>L269: <code>(defun dash--example-to-md (example)</code></li>
+<li>L285: <code>(defun dash--example-to-texi (example)</code></li>
+<li>L298: <code>(defun dash--group-to-md (group)</code></li>
+<li>L309: <code>(defun dash--group-to-texi (group)</code></li>
+<li>L329: <code>(defun dash--summary-to-md (group)</code></li>
+<li>L339: <code>(defun dash--make-md ()</code></li>
+<li>L349: <code>(defun dash--make-texi ()</code></li>
+<li>L362: <code>(defun dash-make-docs ()</code></li>
+<li>L369: <code>(provide 'dash-defs)</code></li>
+</ul>
+<h2>dev/examples.el</h2>
+<ul>
+<li>L28: <code>(require 'dash)</code></li>
+<li>L29: <code>(require 'dash-defs "dev/dash-defs")</code></li>
+<li>L30: <code>(require 'ert)</code></li>
+<li>L53: <code>(defun even? (num) (= 0 (% num 2)))</code></li>
+<li>L54: <code>(defun square (num) (* num num))</code></li>
+</ul></main></html>

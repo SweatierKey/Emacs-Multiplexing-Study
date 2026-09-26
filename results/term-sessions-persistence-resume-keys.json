@@ -1,0 +1,37 @@
+[
+  {
+    "at": 2.608,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.908,
+    "keys": "term-sessions-open",
+    "input_hex": "7465726d2d73657373696f6e732d6f70656e"
+  },
+  {
+    "at": 3.408,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.208,
+    "keys": "ops",
+    "input_hex": "6f7073"
+  },
+  {
+    "at": 4.408,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.409,
+    "keys": "printenv STUDY_KEEP",
+    "input_hex": "7072696e74656e762053545544595f4b454550"
+  },
+  {
+    "at": 5.609,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

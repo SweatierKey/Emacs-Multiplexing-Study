@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"shell","library":"/home/admin/Emacs-Multiplexing-Study/sources/shell/shell.el","commands":["dirs","shell","shell-backward-command","shell-command-mode","shell-copy-environment-variable","shell-dirtrack-mode","shell-dynamic-complete-command","shell-dynamic-complete-environment-variable","shell-dynamic-complete-filename","shell-forward-command","shell-highlight-undef-mode","shell-narrow-to-prompt","shell-replace-by-expanded-directory","shell-resync-dirs"]}
+STDERR:

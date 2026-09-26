@@ -1,0 +1,12 @@
+{"status":"loaded","feature":"term+mux","library":"/home/admin/Emacs-Multiplexing-Study/sources/term-plus-mux/term+mux.el","commands":["term+mux-mode-line-tabbar-mode","term+mux-new","term+mux-new-command","term+mux-new-other-window","term+mux-new-session","term+mux-noselect","term+mux-other-window","term+mux-remote-session","term+mux-set-title","term+mux-unset-title"]}
+STDERR:
+Package cl is deprecated
+sources/term+/term+.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/tab-group/tab-group.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/tab-group/tab-group.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/tab-group/tab-group.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/tab-group/tab-group.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/tab-group/tab-group.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/tab-group/tab-group.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.
+sources/tab-group/tab-group.el: Warning: ‘flet’ is an obsolete macro (as of 24.3); use either ‘cl-flet’ or ‘cl-letf’.
+sources/tab-group/tab-group.el: Warning: ‘letf’ is an obsolete alias (as of 27.1); use ‘cl-letf’ instead.

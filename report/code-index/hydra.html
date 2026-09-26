@@ -1,0 +1,185 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: hydra</h1>
+<p>Fonte: https://github.com/abo-abo/hydra.git</p>
+<p>Revisione: <code>59a2a45a35027948476d1d7751b0f0215b1e61aa</code>.</p>
+<h2>.dir-locals.el</h2>
+<h2>hydra-examples.el</h2>
+<ul>
+<li>L32: <code>(require 'hydra)</code></li>
+<li>L50: <code>;;     (global-set-key (kbd "&lt;f2&gt; g") 'hydra-zoom/text-scale-increase)</code></li>
+<li>L51: <code>;;     (global-set-key (kbd "&lt;f2&gt; l") 'hydra-zoom/text-scale-decrease)</code></li>
+<li>L56: <code>;;     (define-key emacs-lisp-mode-map [f2 103]</code></li>
+<li>L58: <code>;;     (define-key emacs-lisp-mode-map [f2 108]</code></li>
+<li>L110: <code>;;     (global-set-key (kbd "C-c C-v a") 'abbrev-mode)</code></li>
+<li>L111: <code>;;     (global-set-key (kbd "C-c C-v d") 'toggle-debug-on-error)</code></li>
+<li>L121: <code>(defun hydra-vi/pre ()</code></li>
+<li>L124: <code>(defun hydra-vi/post ()</code></li>
+<li>L184: <code>;; (global-set-key (kbd "C-c C-v") 'hydra-toggle/body)</code></li>
+<li>L224: <code>;; (define-key Buffer-menu-mode-map "." 'hydra-buffer-menu/body)</code></li>
+<li>L228: <code>(defvar dired-mode-map)</code></li>
+<li>L261: <code>;; (global-set-key (kbd "C-c h") 'hydra-apropos/body)</code></li>
+<li>L264: <code>(require 'rect)</code></li>
+<li>L292: <code>;; (global-set-key (kbd "C-x SPC") 'hydra-rectangle/body)</code></li>
+<li>L295: <code>(defun org-agenda-cts ()</code></li>
+<li>L334: <code>;; (define-key org-agenda-mode-map "v" 'hydra-org-agenda-view/body)</code></li>
+<li>L344: <code>(require 'windmove)</code></li>
+<li>L346: <code>(defun hydra-move-splitter-left (arg)</code></li>
+<li>L354: <code>(defun hydra-move-splitter-right (arg)</code></li>
+<li>L362: <code>(defun hydra-move-splitter-up (arg)</code></li>
+<li>L370: <code>(defun hydra-move-splitter-down (arg)</code></li>
+<li>L379: <code>(defun hydra-ex-point-mark ()</code></li>
+<li>L388: <code>(provide 'hydra-examples)</code></li>
+</ul>
+<h2>hydra-ox.el</h2>
+<ul>
+<li>L28: <code>(require 'hydra)</code></li>
+<li>L29: <code>(require 'org)</code></li>
+<li>L123: <code>(define-key org-mode-map (kbd "C-c C-,") 'hydra-ox/body)</code></li>
+<li>L125: <code>(provide 'hydra-ox)</code></li>
+</ul>
+<h2>hydra-test.el</h2>
+<ul>
+<li>L27: <code>(require 'ert)</code></li>
+<li>L28: <code>(require 'hydra)</code></li>
+<li>L225: <code>(define-key global-map (kbd "M-g")</code></li>
+<li>L227: <code>(define-key global-map [134217831 104]</code></li>
+<li>L229: <code>(define-key global-map [134217831 106]</code></li>
+<li>L231: <code>(define-key global-map [134217831 107]</code></li>
+<li>L1379: <code>(defun remapable-print ()</code></li>
+<li>L1382: <code>(defun remaped-print ()</code></li>
+<li>L1385: <code>(define-key global-map (kbd "C-=") 'remapable-print)</code></li>
+<li>L1386: <code>(define-key global-map [remap remapable-print] 'remaped-print)</code></li>
+<li>L1392: <code>(defmacro hydra-with (in &amp;rest body)</code></li>
+<li>L1719: <code>(provide 'hydra-test)</code></li>
+</ul>
+<h2>hydra.el</h2>
+<ul>
+<li>L64: <code>;;     (global-set-key (kbd "C-c C-v") 'hydra-toggle/body)</code></li>
+<li>L83: <code>(require 'cl-lib)</code></li>
+<li>L84: <code>(require 'lv)</code></li>
+<li>L85: <code>(require 'ring)</code></li>
+<li>L87: <code>(defvar hydra-curr-map nil</code></li>
+<li>L107: <code>(defun hydra-set-transient-map (keymap on-exit &amp;optional foreign-keys)</code></li>
+<li>L126: <code>(defun hydra--clearfun ()</code></li>
+<li>L149: <code>(defun hydra-disable ()</code></li>
+<li>L190: <code>(defun hydra-amaranth-warn ()</code></li>
+<li>L201: <code>(defcustom hydra-is-helpful t</code></li>
+<li>L206: <code>(defcustom hydra-default-hint ""</code></li>
+<li>L225: <code>(defun hydra-posframe-show (str)</code></li>
+<li>L235: <code>(defun hydra-posframe-hide ()</code></li>
+<li>L250: <code>(defcustom hydra-hint-display-type 'lv</code></li>
+<li>L258: <code>(defcustom hydra-verbose nil</code></li>
+<li>L262: <code>(defcustom hydra-key-format-spec "%s"</code></li>
+<li>L267: <code>(defcustom hydra-doc-format-spec "%s"</code></li>
+<li>L271: <code>(defcustom hydra-look-for-remap nil</code></li>
+<li>L313: <code>(defun hydra-add-font-lock ()</code></li>
+<li>L325: <code>(defun hydra-add-imenu ()</code></li>
+<li>L334: <code>(defvar hydra-base-map</code></li>
+<li>L336: <code>(define-key map (kbd "&lt;f1&gt; k") 'hydra--describe-key)</code></li>
+<li>L337: <code>(define-key map [?\C-u] 'hydra--universal-argument)</code></li>
+<li>L338: <code>(define-key map [?-] 'hydra--negative-argument)</code></li>
+<li>L339: <code>(define-key map [?0] 'hydra--digit-argument)</code></li>
+<li>L340: <code>(define-key map [?1] 'hydra--digit-argument)</code></li>
+<li>L341: <code>(define-key map [?2] 'hydra--digit-argument)</code></li>
+<li>L342: <code>(define-key map [?3] 'hydra--digit-argument)</code></li>
+<li>L343: <code>(define-key map [?4] 'hydra--digit-argument)</code></li>
+<li>L344: <code>(define-key map [?5] 'hydra--digit-argument)</code></li>
+<li>L345: <code>(define-key map [?6] 'hydra--digit-argument)</code></li>
+<li>L346: <code>(define-key map [?7] 'hydra--digit-argument)</code></li>
+<li>L347: <code>(define-key map [?8] 'hydra--digit-argument)</code></li>
+<li>L348: <code>(define-key map [?9] 'hydra--digit-argument)</code></li>
+<li>L349: <code>(define-key map [kp-0] 'hydra--digit-argument)</code></li>
+<li>L350: <code>(define-key map [kp-1] 'hydra--digit-argument)</code></li>
+<li>L351: <code>(define-key map [kp-2] 'hydra--digit-argument)</code></li>
+<li>L352: <code>(define-key map [kp-3] 'hydra--digit-argument)</code></li>
+<li>L353: <code>(define-key map [kp-4] 'hydra--digit-argument)</code></li>
+<li>L354: <code>(define-key map [kp-5] 'hydra--digit-argument)</code></li>
+<li>L355: <code>(define-key map [kp-6] 'hydra--digit-argument)</code></li>
+<li>L356: <code>(define-key map [kp-7] 'hydra--digit-argument)</code></li>
+<li>L357: <code>(define-key map [kp-8] 'hydra--digit-argument)</code></li>
+<li>L358: <code>(define-key map [kp-9] 'hydra--digit-argument)</code></li>
+<li>L359: <code>(define-key map [kp-subtract] 'hydra--negative-argument)</code></li>
+<li>L363: <code>(defun hydra--universal-argument (arg)</code></li>
+<li>L372: <code>(defun hydra--digit-argument (arg)</code></li>
+<li>L391: <code>(defun hydra--negative-argument (arg)</code></li>
+<li>L398: <code>(defun hydra--describe-key ()</code></li>
+<li>L414: <code>(defun hydra-repeat (&amp;optional arg)</code></li>
+<li>L427: <code>(defun hydra--callablep (x)</code></li>
+<li>L433: <code>(defun hydra--make-callable (x)</code></li>
+<li>L446: <code>(defun hydra-plist-get-default (plist prop default)</code></li>
+<li>L457: <code>(defun hydra--head-property (h prop &amp;optional default)</code></li>
+<li>L462: <code>(defun hydra--head-set-property (h prop value)</code></li>
+<li>L466: <code>(defun hydra--head-has-property (h prop)</code></li>
+<li>L470: <code>(defun hydra--body-foreign-keys (body)</code></li>
+<li>L479: <code>(defun hydra--body-exit (body)</code></li>
+<li>L488: <code>(defun hydra--normalize-body (body)</code></li>
+<li>L505: <code>(defun hydra-default-pre ()</code></li>
+<li>L524: <code>(defun hydra-keyboard-quit ()</code></li>
+<li>L542: <code>(defun hydra-key-doc-function-default (key key-width doc doc-width)</code></li>
+<li>L549: <code>(defun hydra--to-string (x)</code></li>
+<li>L554: <code>(defun hydra--eval-and-format (x)</code></li>
+<li>L562: <code>(defun hydra--hint-heads-wocol (body heads)</code></li>
+<li>L614: <code>(defun hydra--hint (body heads)</code></li>
+<li>L633: <code>(defun hydra-fontify-head-default (head body)</code></li>
+<li>L662: <code>(defun hydra-fontify-head-greyscale (head _body)</code></li>
+<li>L670: <code>(defun hydra-fontify-head (head body)</code></li>
+<li>L675: <code>(defun hydra--strip-align-markers (str)</code></li>
+<li>L701: <code>(defun hydra--format (_name body docstring heads)</code></li>
+<li>L787: <code>(defun hydra--format-1 (docstring rest varlist)</code></li>
+<li>L817: <code>(defun hydra--complain (format-string &amp;rest args)</code></li>
+<li>L823: <code>(defun hydra--doc (body-key body-name heads)</code></li>
+<li>L841: <code>(defun hydra--call-interactively-remap-maybe (cmd)</code></li>
+<li>L851: <code>(defun hydra--call-interactively (cmd name)</code></li>
+<li>L861: <code>(defun hydra--make-defun (name body doc head</code></li>
+<li>L936: <code>(defun hydra-set-property (name key val)</code></li>
+<li>L948: <code>(defun hydra-get-property (name key)</code></li>
+<li>L956: <code>(defun hydra-show-hint (hint caller)</code></li>
+<li>L968: <code>(defmacro hydra--make-funcall (sym)</code></li>
+<li>L973: <code>(defun hydra--head-name (h name)</code></li>
+<li>L988: <code>(defun hydra--delete-duplicates (heads)</code></li>
+<li>L1005: <code>(defun hydra--pad (lst n)</code></li>
+<li>L1012: <code>(defmacro hydra-multipop (lst n)</code></li>
+<li>L1022: <code>(defun hydra--matrix (lst rows cols)</code></li>
+<li>L1031: <code>(defun hydra--cell (fstr names)</code></li>
+<li>L1052: <code>(defun hydra--vconcat (strs &amp;optional joiner)</code></li>
+<li>L1070: <code>(defun hydra--table (names rows cols &amp;optional cell-formats)</code></li>
+<li>L1091: <code>(defun hydra-reset-radios (names)</code></li>
+<li>L1098: <code>(defun hydra--normalize-heads (heads)</code></li>
+<li>L1109: <code>(defun hydra--sort-heads (normalized-heads)</code></li>
+<li>L1131: <code>(defun hydra--pad-heads (heads-groups padding-head)</code></li>
+<li>L1142: <code>(defun hydra--generate-matrix (heads-groups)</code></li>
+<li>L1166: <code>(defun hydra-interpose (x lst)</code></li>
+<li>L1174: <code>(defun hydra--hint-row (heads body)</code></li>
+<li>L1193: <code>(defun hydra--hint-from-matrix (body heads-matrix)</code></li>
+<li>L1203: <code>(defun hydra--hint-from-matrix-1 (body heads-matrix)</code></li>
+<li>L1215: <code>(defun hydra-idle-message (secs hint name)</code></li>
+<li>L1228: <code>(defun hydra-timeout (secs &amp;optional function)</code></li>
+<li>L1245: <code>(defmacro defhydra (name body &amp;optional docstring &amp;rest heads)</code></li>
+<li>L1374: <code>(define-key keymap (kbd (car x))</code></li>
+<li>L1429: <code>(define-key ,body-map (kbd ,body-key) nil))))</code></li>
+<li>L1449: <code>'(define-key ,bind ,final-key (quote ,name)))</code></li>
+<li>L1462: <code>(defmacro defhydra+ (name body &amp;optional docstring &amp;rest heads)</code></li>
+<li>L1477: <code>(defun hydra--prop (name prop-name)</code></li>
+<li>L1480: <code>(defmacro defhydradio (name _body &amp;rest heads)</code></li>
+<li>L1503: <code>(defun hydra--radio (parent head)</code></li>
+<li>L1514: <code>(defun hydra--quote-maybe (x)</code></li>
+<li>L1523: <code>(defun hydra--cycle-radio (sym)</code></li>
+<li>L1544: <code>(defun hydra-pause-resume ()</code></li>
+<li>L1562: <code>(provide 'hydra)</code></li>
+</ul>
+<h2>lv.el</h2>
+<ul>
+<li>L36: <code>(require 'cl-lib)</code></li>
+<li>L43: <code>(defcustom lv-use-separator nil</code></li>
+<li>L48: <code>(defcustom lv-use-padding nil</code></li>
+<li>L71: <code>(defun lv-window ()</code></li>
+<li>L105: <code>(defun lv--pad-to-center (str width)</code></li>
+<li>L113: <code>(defun lv-message (format-string &amp;rest args)</code></li>
+<li>L139: <code>(defun lv-delete-window ()</code></li>
+<li>L146: <code>(provide 'lv)</code></li>
+</ul>
+<h2>targets/hydra-init.el</h2>
+<ul>
+<li>L23: <code>(require 'hydra)</code></li>
+<li>L25: <code>(require 'hydra-examples)</code></li>
+<li>L26: <code>(require 'hydra-test)</code></li>
+</ul></main></html>

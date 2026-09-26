@@ -1,0 +1,151 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>tmux-control-mode</h1>
+<p>Categoria: <strong>persistenza</strong>. <a href="https://github.com/stephenjayakar/emacs-tmux-control-mode">Sorgente upstream</a>. Revisione: <code>d2a93a336f7d6a4a770cb9e740d5e6cfb602843b</code>.</p>
+<h2>Funzionamento</h2>
+<p>stephenjayakar: feature tmux-cc, manager di sessioni e renderer vterm per le pane, protocollo -CC.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>Avvio e due SSH riusciti; selezione della finestra tmux non ha riportato il focus Emacs alla pane attesa nel copione. Scenario completo negativo; non attribuire persistenza verificata a questo risultato.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/tmux-control-mode.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/tmux-control-mode.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario tmux-control-mode: failed</h3>
+<p><a href="../../results/tmux-control-mode.json">Esito e snapshot</a> · <a href="../../results/tmux-control-mode-keys.json">Traccia dei tasti</a> · <a href="../../recordings/tmux-control-mode.cast">Registrazione asciinema</a> · <a href="../../index.html#tmux-control-mode">Player</a></p>
+<ul>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+</ul>
+<p>Errore finale: asserzione non soddisfatta; leggere traceback e snapshot</p>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.32</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.62</td>
+<td><code>tmux-cc-start</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.92</td>
+<td><code>C-a C-k</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.32</td>
+<td><code>tmux -L ems-tmux-control-mode -f /dev/null -CC new-session -A -s ops</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.52</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.02</td>
+<td><code>M-&lt; C-s %0 RET RET: visit first pane</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.03</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.23</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.23</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.43</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.43</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.63</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.43</td>
+<td><code>C-t c: tmux-cc new-window</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.43</td>
+<td><code>db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">11.63</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.63</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.83</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.83</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.03</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.05</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.35</td>
+<td><code>tmux-cc-switch-window</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.85</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.65</td>
+<td><code>ops:ssh</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.85</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.85</td>
+<td><code>C-x b: select rendered pane</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.25</td>
+<td><code>tmux-pane %0</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.45</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">19.45</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">19.65</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

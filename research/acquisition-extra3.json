@@ -1,0 +1,20 @@
+[
+  {
+    "id": "multi-buffer",
+    "url": "https://gitlab.com/vslavkin/multi-buffer.el.git",
+    "status": "fetched",
+    "commit": "4459d83bb0e2a5399d5cace0016f13778a1f5869"
+  },
+  {
+    "id": "term-toggle",
+    "url": "https://github.com/amno1/emacs-term-toggle.git",
+    "status": "fetched",
+    "commit": "8d3258bc8d03bbb4c735afc681a3c415bb0bbcc6"
+  },
+  {
+    "id": "nssh",
+    "url": "https://codeberg.org/emacs-weirdware/nssh.git",
+    "status": "fetched",
+    "commit": "74d43738565749af680e4d1388e0c2f88e93498d"
+  }
+]

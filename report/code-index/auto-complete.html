@@ -1,0 +1,235 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: auto-complete</h1>
+<p>Fonte: https://github.com/auto-complete/auto-complete.git</p>
+<p>Revisione: <code>8419bec94f41ae78518d948aec0fc761534d7771</code>.</p>
+<h2>auto-complete-config.el</h2>
+<ul>
+<li>L25: <code>(require 'cl-lib)</code></li>
+<li>L26: <code>(require 'auto-complete)</code></li>
+<li>L46: <code>(defun ac-imenu-candidates ()</code></li>
+<li>L95: <code>(defun ac-gtags-candidate ()</code></li>
+<li>L120: <code>(defun ac-yasnippet-table-hash (table)</code></li>
+<li>L128: <code>(defun ac-yasnippet-table-parent (table)</code></li>
+<li>L136: <code>(defun ac-yasnippet-candidate-1 (table)</code></li>
+<li>L151: <code>(defun ac-yasnippet-candidates ()</code></li>
+<li>L185: <code>(defun ac-semantic-candidates (prefix)</code></li>
+<li>L197: <code>(defun ac-semantic-doc (symbol)</code></li>
+<li>L207: <code>(defun ac-semantic-action ()</code></li>
+<li>L250: <code>(defun ac-eclim-candidates ()</code></li>
+<li>L430: <code>(defun ac-css-prefix ()</code></li>
+<li>L439: <code>(defun ac-css-property-candidates ()</code></li>
+<li>L486: <code>(defun ac-ropemacs-require ()</code></li>
+<li>L495: <code>(defun ac-ropemacs-setup ()</code></li>
+<li>L501: <code>(defun ac-ropemacs-initialize ()</code></li>
+<li>L545: <code>(defun ac-common-setup ()</code></li>
+<li>L551: <code>(defun ac-emacs-lisp-mode-setup ()</code></li>
+<li>L560: <code>(defun ac-cc-mode-setup ()</code></li>
+<li>L565: <code>(defun ac-ruby-mode-setup ()</code></li>
+<li>L570: <code>(defun ac-css-mode-setup ()</code></li>
+<li>L576: <code>(defun ac-config-default ()</code></li>
+<li>L586: <code>(provide 'auto-complete-config)</code></li>
+</ul>
+<h2>auto-complete.el</h2>
+<ul>
+<li>L60: <code>(require 'cl-lib)</code></li>
+<li>L61: <code>(require 'popup)</code></li>
+<li>L65: <code>(defun ac-error (&amp;optional var)</code></li>
+<li>L84: <code>(defcustom ac-delay 0.1</code></li>
+<li>L89: <code>(defcustom ac-auto-show-menu 0.8</code></li>
+<li>L96: <code>(defcustom ac-show-menu-immediately-on-auto-complete t</code></li>
+<li>L101: <code>(defcustom ac-expand-on-auto-complete t</code></li>
+<li>L106: <code>(defcustom ac-disable-faces '(font-lock-comment-face font-lock-string-face font-lock-doc-face)</code></li>
+<li>L111: <code>(defcustom ac-stop-flymake-on-completing t</code></li>
+<li>L116: <code>(defcustom ac-flycheck-poll-completion-end-interval 0.5</code></li>
+<li>L122: <code>(defcustom ac-use-fuzzy (and (locate-library "fuzzy") t)</code></li>
+<li>L127: <code>(defcustom ac-fuzzy-cursor-color "red"</code></li>
+<li>L132: <code>(defcustom ac-use-comphist t</code></li>
+<li>L137: <code>(defcustom ac-comphist-threshold 0.7</code></li>
+<li>L142: <code>(defcustom ac-comphist-file</code></li>
+<li>L151: <code>(defcustom ac-user-dictionary nil</code></li>
+<li>L157: <code>(defcustom ac-dictionary-files '("~/.dict")</code></li>
+<li>L162: <code>(defcustom ac-dictionary-directories</code></li>
+<li>L174: <code>(defcustom ac-use-quick-help t</code></li>
+<li>L179: <code>(defcustom ac-quick-help-delay 1.5</code></li>
+<li>L185: <code>(defcustom ac-menu-height 10</code></li>
+<li>L190: <code>(defcustom ac-quick-help-height 20</code></li>
+<li>L196: <code>(defcustom ac-quick-help-prefer-pos-tip t</code></li>
+<li>L202: <code>(defcustom ac-candidate-limit nil</code></li>
+<li>L207: <code>(defcustom ac-modes</code></li>
+<li>L230: <code>(defcustom ac-compatible-packages-regexp</code></li>
+<li>L236: <code>(defcustom ac-non-trigger-commands</code></li>
+<li>L243: <code>(defcustom ac-trigger-commands</code></li>
+<li>L249: <code>(defcustom ac-trigger-commands-on-completing</code></li>
+<li>L262: <code>(defcustom ac-trigger-key nil</code></li>
+<li>L275: <code>(defcustom ac-auto-start 2</code></li>
+<li>L286: <code>(defcustom ac-stop-words nil</code></li>
+<li>L291: <code>(defcustom ac-use-dictionary-as-stop-words t</code></li>
+<li>L296: <code>(defcustom ac-ignore-case 'smart</code></li>
+<li>L305: <code>(defcustom ac-dwim t</code></li>
+<li>L310: <code>(defcustom ac-use-menu-map nil</code></li>
+<li>L315: <code>(defcustom ac-use-overriding-local-map nil</code></li>
+<li>L321: <code>(defcustom ac-disable-inline nil</code></li>
+<li>L326: <code>(defcustom ac-candidate-menu-min 1</code></li>
+<li>L331: <code>(defcustom ac-max-width nil</code></li>
+<li>L444: <code>(defvar ac-mode-map (make-sparse-keymap)</code></li>
+<li>L449: <code>(defvar ac-completing-map</code></li>
+<li>L451: <code>(define-key map "\t" 'ac-expand)</code></li>
+<li>L452: <code>(define-key map [tab] 'ac-expand)</code></li>
+<li>L453: <code>(define-key map "\r" 'ac-complete)</code></li>
+<li>L454: <code>(define-key map (kbd "M-TAB") 'auto-complete)</code></li>
+<li>L456: <code>(define-key map "\M-n" 'ac-next)</code></li>
+<li>L457: <code>(define-key map "\M-p" 'ac-previous)</code></li>
+<li>L458: <code>(define-key map [down] 'ac-next)</code></li>
+<li>L459: <code>(define-key map [up] 'ac-previous)</code></li>
+<li>L461: <code>(define-key map [f1] 'ac-help)</code></li>
+<li>L462: <code>(define-key map [M-f1] 'ac-persist-help)</code></li>
+<li>L463: <code>(define-key map (kbd "C-?") 'ac-help)</code></li>
+<li>L464: <code>(define-key map (kbd "C-M-?") 'ac-persist-help)</code></li>
+<li>L466: <code>(define-key map [C-down] 'ac-quick-help-scroll-down)</code></li>
+<li>L467: <code>(define-key map [C-up] 'ac-quick-help-scroll-up)</code></li>
+<li>L468: <code>(define-key map "\C-\M-n" 'ac-quick-help-scroll-down)</code></li>
+<li>L469: <code>(define-key map "\C-\M-p" 'ac-quick-help-scroll-up)</code></li>
+<li>L471: <code>(define-key map (kbd "&lt;next&gt;") #'ac-next-page)</code></li>
+<li>L472: <code>(define-key map (kbd "&lt;prior&gt;") #'ac-previous-page)</code></li>
+<li>L481: <code>(define-key map (read-kbd-macro (format "M-%s" (1+ i))) symbol)))</code></li>
+<li>L486: <code>(defvar ac-menu-map</code></li>
+<li>L489: <code>(define-key map (kbd "RET") 'ac-complete)</code></li>
+<li>L490: <code>(define-key map "\C-n" 'ac-next)</code></li>
+<li>L491: <code>(define-key map "\C-p" 'ac-previous)</code></li>
+<li>L492: <code>(define-key map "\C-s" 'ac-isearch)</code></li>
+<li>L493: <code>(define-key map [mouse-1] 'ac-mouse-1)</code></li>
+<li>L494: <code>(define-key map [down-mouse-1] 'ac-ignore)</code></li>
+<li>L497: <code>(define-key map [mouse-4] 'ac-mouse-4)</code></li>
+<li>L498: <code>(define-key map [mouse-5] 'ac-mouse-5))</code></li>
+<li>L499: <code>(define-key map [wheel-up] 'ac-mouse-4)</code></li>
+<li>L500: <code>(define-key map [wheel-down] 'ac-mouse-5))</code></li>
+<li>L504: <code>(defvar ac-current-map</code></li>
+<li>L558: <code>(defun ac-comphist-make (&amp;optional tab)</code></li>
+<li>L562: <code>(defun ac-comphist-get (db string &amp;optional create)</code></li>
+<li>L571: <code>(defun ac-comphist-add (db string prefix)</code></li>
+<li>L580: <code>(defun ac-comphist-score (db string prefix)</code></li>
+<li>L607: <code>(defun ac-comphist-sort (db collection prefix &amp;optional threshold)</code></li>
+<li>L626: <code>(defun ac-comphist-serialize (db)</code></li>
+<li>L634: <code>(defun ac-comphist-deserialize (sexp)</code></li>
+<li>L644: <code>(defun ac-comphist-init ()</code></li>
+<li>L649: <code>(defun ac-comphist-load ()</code></li>
+<li>L660: <code>(defun ac-comphist-save ()</code></li>
+<li>L678: <code>(defun ac-clear-dictionary-cache ()</code></li>
+<li>L687: <code>(defun ac-file-dictionary (filename)</code></li>
+<li>L700: <code>(defun ac-mode-dictionary (mode)</code></li>
+<li>L709: <code>(defun ac-buffer-dictionary (&amp;optional buffer)</code></li>
+<li>L726: <code>(defun ac-menu-at-wrapper-line-p ()</code></li>
+<li>L734: <code>(defun ac-stop-word-p (word)</code></li>
+<li>L740: <code>(defun ac-prefix-default ()</code></li>
+<li>L749: <code>(defun ac-prefix-symbol ()</code></li>
+<li>L754: <code>(defun ac-prefix-file ()</code></li>
+<li>L764: <code>(defun ac-prefix-valid-file ()</code></li>
+<li>L779: <code>(defun ac-prefix-c-dot ()</code></li>
+<li>L784: <code>(defun ac-prefix-c-dot-ref ()</code></li>
+<li>L789: <code>(defun ac-prefix-cc-member ()</code></li>
+<li>L794: <code>(defun ac-define-prefix (name prefix)</code></li>
+<li>L799: <code>(defun ac-match-substring (prefix candidates)</code></li>
+<li>L810: <code>(defun ac-source-available-p (source)</code></li>
+<li>L832: <code>(defun ac-compile-sources (sources)</code></li>
+<li>L853: <code>(defun ac-compiled-sources ()</code></li>
+<li>L862: <code>(defun ac-menu-create (point width height)</code></li>
+<li>L876: <code>(defun ac-menu-delete ()</code></li>
+<li>L890: <code>(defun ac-inline-show (point string)</code></li>
+<li>L947: <code>(defun ac-inline-delete ()</code></li>
+<li>L954: <code>(defun ac-inline-hide ()</code></li>
+<li>L964: <code>(defun ac-inline-update ()</code></li>
+<li>L976: <code>(defun ac-put-prefix-overlay ()</code></li>
+<li>L990: <code>(defun ac-remove-prefix-overlay ()</code></li>
+<li>L1001: <code>(defun ac-activate-completing-map ()</code></li>
+<li>L1011: <code>(defun ac-deactivate-completing-map ()</code></li>
+<li>L1024: <code>(defun ac-prefix (requires ignore-list)</code></li>
+<li>L1067: <code>(defun ac-init ()</code></li>
+<li>L1077: <code>(defun ac-candidates-1 (source)</code></li>
+<li>L1121: <code>(defun ac-delete-duplicated-candidates (candidates)</code></li>
+<li>L1133: <code>(defun ac-reduce-candidates (candidates)</code></li>
+<li>L1147: <code>(defun ac-candidates ()</code></li>
+<li>L1181: <code>(defun ac-update-candidates (cursor scroll-top)</code></li>
+<li>L1203: <code>(defun ac-reposition ()</code></li>
+<li>L1212: <code>(defun ac-cleanup ()</code></li>
+<li>L1262: <code>(defun ac-extend-region-to-delete (string)</code></li>
+<li>L1277: <code>(defun ac-expand-string (string &amp;optional remove-undo-boundary)</code></li>
+<li>L1311: <code>(defun ac-set-trigger-key (key)</code></li>
+<li>L1316: <code>(define-key ac-mode-map (read-kbd-macro ac-trigger-key) nil))</code></li>
+<li>L1321: <code>(define-key ac-mode-map (read-kbd-macro key) 'ac-trigger-key-command)))</code></li>
+<li>L1323: <code>(defun ac-set-timer ()</code></li>
+<li>L1328: <code>(defun ac-cancel-timer ()</code></li>
+<li>L1334: <code>(defun ac-update (&amp;optional force)</code></li>
+<li>L1356: <code>(defun ac-update-greedy (&amp;optional force)</code></li>
+<li>L1366: <code>(defun ac-set-show-menu-timer ()</code></li>
+<li>L1372: <code>(defun ac-cancel-show-menu-timer ()</code></li>
+<li>L1378: <code>(defun ac-show-menu ()</code></li>
+<li>L1386: <code>(defun ac-help (&amp;optional persist)</code></li>
+<li>L1391: <code>(defun ac-persist-help ()</code></li>
+<li>L1396: <code>(defun ac-last-help (&amp;optional persist)</code></li>
+<li>L1401: <code>(defun ac-last-persist-help ()</code></li>
+<li>L1406: <code>(defun ac-set-quick-help-timer ()</code></li>
+<li>L1412: <code>(defun ac-cancel-quick-help-timer ()</code></li>
+<li>L1418: <code>(defun ac-pos-tip-show-quick-help (menu &amp;optional item &amp;rest args)</code></li>
+<li>L1444: <code>(defun ac-quick-help-use-pos-tip-p ()</code></li>
+<li>L1450: <code>(defun ac-quick-help (&amp;optional force)</code></li>
+<li>L1471: <code>(defun ac-remove-quick-help ()</code></li>
+<li>L1479: <code>(defun ac-last-quick-help ()</code></li>
+<li>L1495: <code>(defmacro ac-define-quick-help-command (name arglist &amp;rest body)</code></li>
+<li>L1517: <code>(defun ac-isearch-callback (list)</code></li>
+<li>L1521: <code>(defun ac-isearch ()</code></li>
+<li>L1542: <code>(cl-defun auto-complete-1 (&amp;key sources (triggered 'command))</code></li>
+<li>L1567: <code>(defun auto-complete (&amp;optional sources)</code></li>
+<li>L1572: <code>(defun ac-fuzzy-complete ()</code></li>
+<li>L1590: <code>(defun ac-next ()</code></li>
+<li>L1600: <code>(defun ac-next-page ()</code></li>
+<li>L1610: <code>(defun ac-previous ()</code></li>
+<li>L1620: <code>(defun ac-previous-page ()</code></li>
+<li>L1630: <code>(defun ac-expand (arg)</code></li>
+<li>L1652: <code>(defun ac-expand-previous (arg)</code></li>
+<li>L1657: <code>(defun ac-expand-common ()</code></li>
+<li>L1668: <code>(defun ac-complete-1 (candidate)</code></li>
+<li>L1686: <code>(defun ac-complete ()</code></li>
+<li>L1691: <code>(cl-defun ac-start (&amp;key</code></li>
+<li>L1731: <code>(defun ac-stop ()</code></li>
+<li>L1737: <code>(defun ac-ignore (&amp;rest ignore)</code></li>
+<li>L1741: <code>(defun ac-mouse-1 (event)</code></li>
+<li>L1747: <code>(defun ac-mouse-4 (event)</code></li>
+<li>L1752: <code>(defun ac-mouse-5 (event)</code></li>
+<li>L1757: <code>(defun ac-trigger-key-command (&amp;optional force)</code></li>
+<li>L1776: <code>(defun ac-clear-variable-after-save (variable &amp;optional pred)</code></li>
+<li>L1780: <code>(defun ac-clear-variables-after-save ()</code></li>
+<li>L1786: <code>(defun ac-clear-variable-every-minutes (variable minutes)</code></li>
+<li>L1790: <code>(defun ac-clear-variable-every-minute (variable)</code></li>
+<li>L1794: <code>(defun ac-clear-variable-every-10-minutes (variable)</code></li>
+<li>L1798: <code>(defun ac-clear-variables-every-minute ()</code></li>
+<li>L1810: <code>(defun ac-cursor-on-diable-face-p (&amp;optional point)</code></li>
+<li>L1814: <code>(defun ac-trigger-command-p (command)</code></li>
+<li>L1822: <code>(defun ac-fallback-key-sequence ()</code></li>
+<li>L1829: <code>(defun ac-fallback-command (&amp;optional except-command)</code></li>
+<li>L1839: <code>(defun ac-compatible-package-command-p (command)</code></li>
+<li>L1844: <code>(defun ac-handle-pre-command ()</code></li>
+<li>L1863: <code>(defun ac-handle-post-command ()</code></li>
+<li>L1878: <code>(defun ac-syntax-checker-workaround ()</code></li>
+<li>L1900: <code>(defun ac-setup ()</code></li>
+<li>L1909: <code>(define-minor-mode auto-complete-mode</code></li>
+<li>L1926: <code>(defun auto-complete-mode-maybe ()</code></li>
+<li>L1942: <code>(defun ac-flyspell-workaround ()</code></li>
+<li>L1951: <code>(defun ac-linum-workaround ()</code></li>
+<li>L1964: <code>(defmacro ac-define-source (name source)</code></li>
+<li>L1980: <code>(defun ac-candidate-words-in-buffer (point prefix limit)</code></li>
+<li>L2003: <code>(defun ac-incremental-update-word-index ()</code></li>
+<li>L2019: <code>(defun ac-update-word-index-1 ()</code></li>
+<li>L2031: <code>(defun ac-update-word-index ()</code></li>
+<li>L2039: <code>(defun ac-word-candidates (&amp;optional buffer-pred)</code></li>
+<li>L2069: <code>(defun ac-symbol-file (symbol type)</code></li>
+<li>L2102: <code>(defun ac-symbol-documentation (symbol)</code></li>
+<li>L2150: <code>(defun ac-symbol-candidates ()</code></li>
+<li>L2170: <code>(defun ac-function-candidates ()</code></li>
+<li>L2189: <code>(defun ac-variable-candidates ()</code></li>
+<li>L2207: <code>(defun ac-emacs-lisp-feature-candidates ()</code></li>
+<li>L2242: <code>(defun ac-filename-candidate ()</code></li>
+<li>L2273: <code>(provide 'auto-complete)</code></li>
+</ul>
+<h2>etc/install.el</h2>
+<ul>
+<li>L1: <code>(require 'cl)</code></li>
+</ul></main></html>

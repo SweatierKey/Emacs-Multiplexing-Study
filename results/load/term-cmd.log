@@ -1,0 +1,3 @@
+{"status":"loaded","feature":"term-cmd","library":"/home/admin/Emacs-Multiplexing-Study/sources/term-cmd/term-cmd.el","commands":[]}
+STDERR:
+term-cmd: please add ’/home/admin/Emacs-Multiplexing-Study/.runtime/emacs/term-cmd’ to the PATH in your environment or shell’s startup file (e.g. ~/.profile, ~/.bashrc, ~/.zshrc, etc.). Term-cmd will work in shells launched directly from Emacs even if you don’t, but it will only work in tmux and ssh sessions if you do.

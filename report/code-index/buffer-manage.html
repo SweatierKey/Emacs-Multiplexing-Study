@@ -1,0 +1,110 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: buffer-manage</h1>
+<p>Fonte: https://github.com/plandes/buffer-manage.git</p>
+<p>Revisione: <code>f32c756a261aebca0a864e41958097b30690e171</code>.</p>
+<h2>buffer-manage.el</h2>
+<ul>
+<li>L48: <code>(require 'cl-lib)</code></li>
+<li>L49: <code>(require 'eieio)</code></li>
+<li>L50: <code>(require 'derived)</code></li>
+<li>L51: <code>(require 'choice-program-complete)</code></li>
+<li>L52: <code>(require 'config-manage)</code></li>
+<li>L72: <code>(defcustom buffer-manage-key-bindings</code></li>
+<li>L98: <code>(defvar buffer-manage-remap-instances nil</code></li>
+<li>L416: <code>(defun buffer-manager-process-sentinel (process msg entry manager)</code></li>
+<li>L427: <code>(defun buffer-manager-kill-buffer-callback ()</code></li>
+<li>L458: <code>(defun buffer-manage-post-command-hook ()</code></li>
+<li>L719: <code>(define-key keymap key (cl-second def))</code></li>
+<li>L777: <code>(defun buffer-manager-read-bind-choices (&amp;optional use-last-default-p)</code></li>
+<li>L800: <code>(defun buffer-manager-bind-functions (buffer-manager-instance-var)</code></li>
+<li>L817: <code>(provide 'buffer-manage)</code></li>
+</ul>
+<h2>config-manage-base.el</h2>
+<ul>
+<li>L36: <code>(require 'cl-lib)</code></li>
+<li>L37: <code>(require 'seq)</code></li>
+<li>L38: <code>(require 'time-stamp)</code></li>
+<li>L39: <code>(require 'dash)</code></li>
+<li>L40: <code>(require 'eieio)</code></li>
+<li>L41: <code>(require 'eieio-base)</code></li>
+<li>L42: <code>(require 'choice-program)</code></li>
+<li>L43: <code>(require 'config-manage-declare)</code></li>
+<li>L48: <code>(defun config-manage-error-report (err reason)</code></li>
+<li>L343: <code>(defun config-manage-base-insert-at-position (seq elt pos)</code></li>
+<li>L546: <code>(defun config-manage-base-iterate-name (name names)</code></li>
+<li>L749: <code>(defun config-manage-base-mode-refresh ()</code></li>
+<li>L761: <code>(defun config-manage-base-refresh-windows ()</code></li>
+<li>L770: <code>(provide 'config-manage-base)</code></li>
+</ul>
+<h2>config-manage-declare.el</h2>
+<ul>
+<li>L36: <code>(require 'eieio)</code></li>
+<li>L37: <code>(require 'eieio-core)</code></li>
+<li>L42: <code>(defmacro config-manage-declare-functions (&amp;rest fns)</code></li>
+<li>L55: <code>(defmacro config-manage-declare-methods (&amp;rest fns)</code></li>
+<li>L68: <code>(defmacro config-manage-declare-variables (&amp;rest vars)</code></li>
+<li>L79: <code>(defun config-manage-declare-mode-assert (&amp;optional no-error-p this)</code></li>
+<li>L95: <code>(defun config-manage-declare-slots (class)</code></li>
+<li>L115: <code>(provide 'config-manage-declare)</code></li>
+</ul>
+<h2>config-manage-mode.el</h2>
+<ul>
+<li>L38: <code>(require 'dash)</code></li>
+<li>L39: <code>(require 'config-manage-declare)</code></li>
+<li>L40: <code>(require 'config-manage-base)</code></li>
+<li>L41: <code>(require 'config-manage-prop)</code></li>
+<li>L53: <code>(defcustom config-manage-highlight t</code></li>
+<li>L98: <code>(defun config-manage-mode-quit ()</code></li>
+<li>L108: <code>(defun config-manage-mode-name-at-point ()</code></li>
+<li>L118: <code>(defun config-manage-mode-mouse-down (event)</code></li>
+<li>L125: <code>(defun config-manage-mode-mouse-up (event)</code></li>
+<li>L134: <code>(defun config-manage-mode-next ()</code></li>
+<li>L142: <code>(defun config-manage-mode-previous ()</code></li>
+<li>L150: <code>(defun config-manage-mode-activate-entry (&amp;optional name)</code></li>
+<li>L159: <code>(defun config-manage-mode-view (&amp;optional name)</code></li>
+<li>L171: <code>(defun config-manage-mode-info (&amp;optional name)</code></li>
+<li>L180: <code>(defun config-manage-mode-edit (&amp;optional name)</code></li>
+<li>L191: <code>(defun config-manage-mode-set-status (status)</code></li>
+<li>L200: <code>(defun config-manage-mode-mark-delete ()</code></li>
+<li>L205: <code>(defun config-manage-mode-mark-show ()</code></li>
+<li>L210: <code>(defun config-manage-mode-mark-undelete ()</code></li>
+<li>L215: <code>(defun config-manage-mode-apply-selected (status replace func)</code></li>
+<li>L231: <code>(defun config-manage-mode-delete-selected ()</code></li>
+<li>L238: <code>(defun config-manage-mode-rename (new-name)</code></li>
+<li>L251: <code>(defun config-manage-mode-new ()</code></li>
+<li>L257: <code>(define-derived-mode config-manage-mode fundamental-mode "Configuration Manager"</code></li>
+<li>L267: <code>(define-key config-manage-mode-map "q" 'config-manage-mode-quit)</code></li>
+<li>L268: <code>(define-key config-manage-mode-map [down-mouse-2] 'config-manage-mode-mouse-down)</code></li>
+<li>L269: <code>(define-key config-manage-mode-map [mouse-2] 'config-manage-mode-mouse-up)</code></li>
+<li>L270: <code>(define-key config-manage-mode-map [return] 'config-manage-mode-activate-entry)</code></li>
+<li>L271: <code>(define-key config-manage-mode-map "n" 'config-manage-mode-next)</code></li>
+<li>L272: <code>(define-key config-manage-mode-map "p" 'config-manage-mode-previous)</code></li>
+<li>L273: <code>(define-key config-manage-mode-map [(control down)] 'config-manage-mode-next)</code></li>
+<li>L274: <code>(define-key config-manage-mode-map [(control up)] 'config-manage-mode-previous)</code></li>
+<li>L275: <code>(define-key config-manage-mode-map "d" 'config-manage-mode-mark-delete)</code></li>
+<li>L276: <code>(define-key config-manage-mode-map "s" 'config-manage-mode-mark-show)</code></li>
+<li>L277: <code>(define-key config-manage-mode-map "u" 'config-manage-mode-mark-undelete)</code></li>
+<li>L278: <code>(define-key config-manage-mode-map "i" 'config-manage-mode-new)</code></li>
+<li>L279: <code>(define-key config-manage-mode-map "x" 'config-manage-mode-delete-selected)</code></li>
+<li>L280: <code>(define-key config-manage-mode-map "g" 'config-manage-mode-refresh)</code></li>
+<li>L281: <code>(define-key config-manage-mode-map "r" 'config-manage-mode-rename)</code></li>
+<li>L282: <code>(define-key config-manage-mode-map "v" 'config-manage-mode-view)</code></li>
+<li>L283: <code>(define-key config-manage-mode-map "?" 'config-manage-mode-info)</code></li>
+<li>L284: <code>(define-key config-manage-mode-map "e" 'config-manage-mode-edit)</code></li>
+<li>L333: <code>(provide 'config-manage-mode)</code></li>
+</ul>
+<h2>config-manage-prop.el</h2>
+<ul>
+<li>L36: <code>(require 'dash)</code></li>
+<li>L37: <code>(require 'eieio)</code></li>
+<li>L38: <code>(require 'choice-program-complete)</code></li>
+<li>L39: <code>(require 'config-manage-base)</code></li>
+<li>L606: <code>(provide 'config-manage-prop)</code></li>
+</ul>
+<h2>config-manage.el</h2>
+<ul>
+<li>L42: <code>(require 'config-manage-declare)</code></li>
+<li>L47: <code>(require 'config-manage-base)</code></li>
+<li>L48: <code>(require 'config-manage-prop)</code></li>
+<li>L49: <code>(require 'config-manage-mode)</code></li>
+<li>L57: <code>(provide 'config-manage)</code></li>
+</ul></main></html>

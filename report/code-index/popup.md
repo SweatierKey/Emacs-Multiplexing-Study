@@ -1,0 +1,101 @@
+# Indice del codice: popup
+
+Fonte: https://github.com/auto-complete/popup-el.git
+
+Revisione: `3afe431e9aa2e271aaf0412cbb50c733387e8ea4`.
+
+
+## popup.el
+
+- L35: `(require 'cl-lib)`
+- L36: `(require 'mule)`
+- L45: `(defun popup-calculate-max-width (max-width)`
+- L56: `(defmacro popup-aif (test then &rest else)`
+- L62: `(defmacro popup-awhen (test &rest body)`
+- L68: `(defun popup-x-to-string (x)`
+- L78: `(defun popup-substring-by-width (string width)`
+- L93: `(defun popup-fill-string (string &optional width max-width justify squeeze)`
+- L146: `(defmacro popup-save-buffer-state (&rest body)`
+- L156: `(defun popup-vertical-motion (column direction)`
+- L165: `(defun popup-last-line-of-buffer-p ()`
+- L170: `(defun popup-lookup-key-by-event (function event)`
+- L228: `(defun popup-item-propertize (item &rest properties)`
+- L238: `(defun popup-item-property (item property)`
+- L244: `(defun popup-replace-displayable (str &optional rep)`
+- L259: `(cl-defun popup-make-item (name`
+- L291: `(defun popup-item-documentation (item)`
+- L297: `(defun popup-item-show-help-1 (item)`
+- L307: `(defun popup-item-show-help-with-event-loop (item)`
+- L322: `(defun popup-item-show-help (item &optional persist)`
+- L333: `(defun popup-set-list (popup list)`
+- L338: `(defun popup-set-filtered-list (popup list)`
+- L346: `(defun popup-selected-item (popup)`
+- L349: `(defun popup-selected-line (popup)`
+- L352: `(defun popup-line-overlay (popup line)`
+- L355: `(defun popup-selected-line-overlay (popup)`
+- L358: `(defun popup-hide-line (popup line)`
+- L363: `(defun popup-line-hidden-p (popup line)`
+- L368: `(cl-defun popup-set-line-item (popup`
+- L414: `(cl-defun popup-create-line-string (popup`
+- L447: `(defun popup-live-p (popup)`
+- L451: `(defun popup-child-point (popup &optional offset)`
+- L458: `(defun popup-calculate-direction (height row)`
+- L473: `(cl-defun popup-create (point`
+- L672: `(defun popup-delete (popup)`
+- L690: `(defun popup-draw (popup)`
+- L791: `(defun popup-hide (popup)`
+- L798: `(defun popup-hidden-p (popup)`
+- L807: `(defun popup-jump (popup cursor)`
+- L817: `(defun popup-select (popup i)`
+- L825: `(defun popup-next (popup)`
+- L843: `(defun popup-previous (popup)`
+- L861: `(defun popup-page-next (popup)`
+- L867: `(defun popup-page-previous (popup)`
+- L873: `(defun popup-scroll-down (popup &optional n)`
+- L881: `(defun popup-scroll-up (popup &optional n)`
+- L901: `(defvar popup-isearch-keymap`
+- L903: `;;(define-key map "\r"        'popup-isearch-done)`
+- L904: `(define-key map "\C-g"      'popup-isearch-cancel)`
+- L905: `(define-key map "\C-b"      'popup-isearch-close)`
+- L906: `(define-key map [left]      'popup-isearch-close)`
+- L907: `(define-key map "\C-h"      'popup-isearch-delete)`
+- L908: `(define-key map (kbd "DEL") 'popup-isearch-delete)`
+- L909: `(define-key map (kbd "C-y") 'popup-isearch-yank)`
+- L915: `(defcustom popup-isearch-regexp-builder-function #'regexp-quote`
+- L926: `(defun popup-isearch-filter-list (pattern list)`
+- L947: `(defun popup-isearch-prompt (popup pattern)`
+- L952: `(defun popup-isearch-update (popup filter pattern &optional callback)`
+- L962: `(cl-defun popup-isearch (popup`
+- L1041: `(cl-defun popup-tip (string`
+- L1151: `(defun popup-menu-show-help (menu &optional persist item)`
+- L1154: `(defun popup-menu-documentation (menu &optional item)`
+- L1157: `(defun popup-menu-show-quick-help (menu &optional item &rest args)`
+- L1181: `(defun popup-menu-item-of-mouse-event (event)`
+- L1189: `(defun popup-menu-read-key-sequence (keymap &optional prompt timeout)`
+- L1201: `(define-key temp-global-map [menu-bar] (lookup-key old-global-map [menu-bar]))`
+- L1202: `(define-key temp-global-map [tool-bar] (lookup-key old-global-map [tool-bar]))`
+- L1205: `(define-key overriding-terminal-local-map [menu-bar]`
+- L1216: `(defun popup-menu-fallback (event default))`
+- L1218: `(cl-defun popup-menu-event-loop (menu`
+- L1299: `(defun popup-preferred-width (list)`
+- L1311: `(defvar popup-menu-keymap`
+- L1313: `(define-key map "\r"        'popup-select)`
+- L1314: `(define-key map "\C-f"      'popup-open)`
+- L1315: `(define-key map [right]     'popup-open)`
+- L1316: `(define-key map "\C-b"      'popup-close)`
+- L1317: `(define-key map [left]      'popup-close)`
+- L1319: `(define-key map "\C-n"      'popup-next)`
+- L1320: `(define-key map [down]      'popup-next)`
+- L1321: `(define-key map "\C-p"      'popup-previous)`
+- L1322: `(define-key map [up]        'popup-previous)`
+- L1324: `(define-key map [next]      'popup-page-next)`
+- L1325: `(define-key map [prior]     'popup-page-previous)`
+- L1327: `(define-key map [f1]        'popup-help)`
+- L1328: `(define-key map (kbd "\C-?") 'popup-help)`
+- L1330: `(define-key map "\C-s"      'popup-isearch)`
+- L1332: `(define-key map [mouse-1]   'popup-select)`
+- L1333: `(define-key map [mouse-4]   'popup-previous)`
+- L1334: `(define-key map [mouse-5]   'popup-next)`
+- L1337: `(cl-defun popup-menu* (list`
+- L1447: `(defun popup-cascade-menu (list &rest args)`
+- L1463: `(provide 'popup)`

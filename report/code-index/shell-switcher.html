@@ -1,0 +1,73 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: shell-switcher</h1>
+<p>Fonte: https://github.com/DamienCassou/shell-switcher.git</p>
+<p>Revisione: <code>4c96dc27afb519bdbf7bbe42d49a51497f078192</code>.</p>
+<h2>features/step-definitions/shell-switcher-steps.el</h2>
+<h2>features/support/env.el</h2>
+<ul>
+<li>L1: <code>(require 'f)</code></li>
+<li>L14: <code>(require 'cl)</code></li>
+<li>L15: <code>(require 'shell-switcher)</code></li>
+<li>L16: <code>(require 'espuds)</code></li>
+<li>L17: <code>(require 'ert)</code></li>
+</ul>
+<h2>rswitcher.el</h2>
+<ul>
+<li>L40: <code>(defun rswitcher-make ()</code></li>
+<li>L48: <code>(defun rswitcher--elements (switcher)</code></li>
+<li>L55: <code>(defun rswitcher--last-pos (switcher)</code></li>
+<li>L68: <code>(defun rswitcher--set-last-pos (switcher last-pos)</code></li>
+<li>L74: <code>(defun rswitcher--increment-last-pos (switcher)</code></li>
+<li>L81: <code>(defun rswitcher--reset-last-pos (switcher)</code></li>
+<li>L86: <code>(defun rswitcher-length (switcher)</code></li>
+<li>L91: <code>(defun rswitcher-empty-p (switcher)</code></li>
+<li>L95: <code>(defun rswitcher--most-recent-pos (switcher)</code></li>
+<li>L103: <code>(defun rswitcher-most-recent (switcher)</code></li>
+<li>L107: <code>(defun rswitcher--push (switcher elt)</code></li>
+<li>L112: <code>(defun rswitcher-make-most-recent-elt-the-first (switcher)</code></li>
+<li>L119: <code>(defun rswitcher-add (switcher elt)</code></li>
+<li>L125: <code>(defun rswitcher--pop (switcher)</code></li>
+<li>L132: <code>(defun rswitcher-memq (switcher elt)</code></li>
+<li>L137: <code>(defun rswitcher--delete (switcher pos)</code></li>
+<li>L154: <code>(defun rswitcher-delete-all (switcher)</code></li>
+<li>L159: <code>(defun rswitcher-delete-most-recent (switcher)</code></li>
+<li>L163: <code>(defun rswitcher--swap-first-two-elts (switcher)</code></li>
+<li>L170: <code>(defun rswitcher-switch-full (switcher)</code></li>
+<li>L180: <code>(defun rswitcher-switch-partial (switcher)</code></li>
+<li>L194: <code>(provide 'rswitcher)</code></li>
+</ul>
+<h2>shell-switcher.el</h2>
+<ul>
+<li>L48: <code>(require 'rswitcher)</code></li>
+<li>L58: <code>(defcustom shell-switcher-new-shell-function 'shell-switcher-make-eshell</code></li>
+<li>L68: <code>(defcustom shell-switcher-ask-before-creating-new nil</code></li>
+<li>L76: <code>(defcustom shell-switcher-ansi-term-shell ""</code></li>
+<li>L91: <code>(defvar shell-switcher-mode-map</code></li>
+<li>L93: <code>(define-key map (kbd "C-'") 'shell-switcher-switch-buffer)</code></li>
+<li>L94: <code>(define-key map (kbd "C-x 4 '") 'shell-switcher-switch-buffer-other-window)</code></li>
+<li>L95: <code>(define-key map (kbd "C-M-'") 'shell-switcher-new-shell)</code></li>
+<li>L100: <code>(define-minor-mode shell-switcher-mode</code></li>
+<li>L121: <code>(defun shell-switcher-make-shell ()</code></li>
+<li>L127: <code>(defun shell-switcher-make-eshell ()</code></li>
+<li>L133: <code>(defun shell-switcher-make-ansi-term ()</code></li>
+<li>L155: <code>(defun sswitcher--most-recent ()</code></li>
+<li>L159: <code>(defun sswitcher--most-recent-shell-valid-p ()</code></li>
+<li>L163: <code>(defun sswitcher--clean-buffers ()</code></li>
+<li>L169: <code>(defun shell-switcher-kill-all-shells ()</code></li>
+<li>L175: <code>(defun sswitcher--shell-exist-p ()</code></li>
+<li>L180: <code>(defun sswitcher--in-shell-buffer-p ()</code></li>
+<li>L184: <code>(defun shell-switcher-manually-register-shell ()</code></li>
+<li>L192: <code>(defun sswitcher--new-shell (&amp;optional other-window)</code></li>
+<li>L205: <code>(defun sswitcher--no-more-shell-buffers (&amp;optional other-window)</code></li>
+<li>L256: <code>(defun sswitcher--prepare-for-fast-key ()</code></li>
+<li>L267: <code>(define-key map (vector repeat-key)</code></li>
+<li>L274: <code>(defun sswitcher--display-shell-buffer (&amp;optional other-window)</code></li>
+<li>L284: <code>(defun sswitcher--switch-buffer (&amp;optional other-window)</code></li>
+<li>L311: <code>(defun shell-switcher-switch-buffer ()</code></li>
+<li>L325: <code>(defun sswitcher--switch-partially ()</code></li>
+<li>L338: <code>(defun shell-switcher-switch-buffer-other-window ()</code></li>
+<li>L346: <code>(defun shell-switcher-new-shell ()</code></li>
+<li>L352: <code>(defun shell-switcher-open-on-directory (directory)</code></li>
+<li>L361: <code>(defun shell-switcher-open-on-bookmark (bookmark)</code></li>
+<li>L372: <code>(defun shell-switcher-open-on-project (&amp;optional project)</code></li>
+<li>L380: <code>(provide 'shell-switcher)</code></li>
+</ul></main></html>

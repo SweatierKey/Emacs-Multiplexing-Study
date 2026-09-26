@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"tmuxmacs","library":"/home/admin/Emacs-Multiplexing-Study/sources/tmuxmacs/tmuxmacs.el","commands":["tmuxmacs","tmuxmacs-mode","tmuxmacs/focus","tmuxmacs/kill","tmuxmacs/move-pane","tmuxmacs/move-window","tmuxmacs/new-session","tmuxmacs/new-window","tmuxmacs/pane-send-command","tmuxmacs/pane-tail","tmuxmacs/pane-tail-refresh","tmuxmacs/rename","tmuxmacs/send-command"]}
+STDERR:

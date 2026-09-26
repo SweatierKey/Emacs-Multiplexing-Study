@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"equake","library":"/home/admin/Emacs-Multiplexing-Study/sources/equake/equake.el","commands":["equake--launch-shell","equake-ask-before-closing-equake","equake-check-if-in-equake-frame-before-closing","equake-close-tab-without-query","equake-invoke","equake-mode","equake-move-tab-left","equake-move-tab-right","equake-new-tab","equake-new-tab-different-shell","equake-next-tab","equake-prev-tab","equake-rash-mode","equake-rename-etab","equake-restore-last-etab"]}
+STDERR:

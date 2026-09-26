@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"eat-serial","library":"/home/admin/Emacs-Multiplexing-Study/sources/eat-serial/eat-serial.el","commands":["eat-serial","eat-serial-configure","eat-serial-copy-port-name","eat-serial-disconnect","eat-serial-mode","eat-serial-mode-line-config-menu","eat-serial-mode-line-connection-menu","eat-serial-mode-line-speed-menu","eat-serial-reconnect","eat-serial-send-break","eat-serial-send-byte","eat-serial-set-flowcontrol","eat-serial-set-framing","eat-serial-set-speed"]}
+STDERR:

@@ -1,0 +1,52 @@
+[
+  {
+    "at": 2.621,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.921,
+    "keys": "tmux-cc-start",
+    "input_hex": "746d75782d63632d7374617274"
+  },
+  {
+    "at": 3.421,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.222,
+    "keys": "C-a C-k",
+    "input_hex": "010b"
+  },
+  {
+    "at": 4.622,
+    "keys": "tmux -L ems-tmux-control-mode -f /dev/null -CC new-session -A -s ops",
+    "input_hex": "746d7578202d4c20656d732d746d75782d636f6e74726f6c2d6d6f6465202d66202f6465762f6e756c6c202d4343206e65772d73657373696f6e202d41202d73206f7073"
+  },
+  {
+    "at": 4.822,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.324,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 6.524,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.524,
+    "keys": "cat status.txt; tail -n 3 service.log",
+    "input_hex": "636174207374617475732e7478743b207461696c202d6e203320736572766963652e6c6f67"
+  },
+  {
+    "at": 7.724,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

@@ -1,0 +1,37 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: vtermux</h1>
+<p>Fonte: https://github.com/pcmantz/vtermux.git</p>
+<p>Revisione: <code>98db8bfde835ba2c100e5dd835d5772ab2becf0a</code>.</p>
+<h2>vtermux-test.el</h2>
+<ul>
+<li>L3: <code>(require 'ert)</code></li>
+<li>L4: <code>(require 'cl-lib)</code></li>
+<li>L9: <code>(provide 'vterm)</code></li>
+<li>L16: <code>(require 'vtermux)</code></li>
+<li>L36: <code>(defun vtermux-test--make-buffer (name)</code></li>
+<li>L42: <code>(defun vtermux-test--with-mocks (fn)</code></li>
+<li>L71: <code>(defun vtermux-test--capture-vterm-shell (&amp;rest _)</code></li>
+</ul>
+<h2>vtermux.el</h2>
+<ul>
+<li>L55: <code>(require 'cl-lib)</code></li>
+<li>L61: <code>(defun vtermux--detect-backend ()</code></li>
+<li>L68: <code>(defcustom vtermux-backend (vtermux--detect-backend)</code></li>
+<li>L75: <code>(defcustom vtermux-kill-buffer-on-exit t</code></li>
+<li>L80: <code>(defcustom vtermux-command-directory :project</code></li>
+<li>L100: <code>(defun vtermux-register-backend (name create-fn)</code></li>
+<li>L111: <code>(defun vtermux--shell-string (prog args)</code></li>
+<li>L154: <code>(defun vtermux--command-directory (&amp;optional method prompt)</code></li>
+<li>L175: <code>(defun vtermux--next-label (buffers)</code></li>
+<li>L195: <code>(defun vtermux--format-buffer-name (bufname directory &amp;optional label)</code></li>
+<li>L204: <code>(defun vtermux--buffers (bufname buf-list &amp;optional directory)</code></li>
+<li>L216: <code>(defun vtermux--create-buffer (prog bufname args buf-list-sym directory &amp;optional label backend)</code></li>
+<li>L249: <code>(defun vtermux--launch (prog bufname args buf-list-sym directory &amp;optional backend)</code></li>
+<li>L264: <code>(defun vtermux--launch-new (prog bufname args buf-list-sym directory &amp;optional backend)</code></li>
+<li>L275: <code>(defun vtermux--select (prog buf-list-sym)</code></li>
+<li>L286: <code>(defun vtermux--cycle (prog bufname args buf-list-sym directory direction offset &amp;optional backend)</code></li>
+<li>L309: <code>(defun vtermux--next-key (name)</code></li>
+<li>L329: <code>(defmacro vtermux-define (name &amp;rest args)</code></li>
+<li>L467: <code>'((define-key global-map (kbd ,bind-key) #',fn)))</code></li>
+<li>L471: <code>(defun vtermux-run (&amp;optional arg)</code></li>
+<li>L513: <code>(provide 'vtermux)</code></li>
+</ul></main></html>

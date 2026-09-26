@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"tmux-cc","library":"/home/admin/Emacs-Multiplexing-Study/sources/tmux-cc/tmux-cc.el","commands":["tmux-cc-clear","tmux-cc-get-panel","tmux-cc-run-single-command","tmux-cc-send-a-key","tmux-cc-send-current-line","tmux-cc-send-keys-from-a-file","tmux-cc-send-region","tmux-cc-set-target-window","tmux-start-special-key"]}
+STDERR:

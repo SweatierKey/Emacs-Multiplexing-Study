@@ -1,0 +1,100 @@
+# Indice del codice: equake
+
+Fonte: https://github.com/emacsomancer/equake.git
+
+Revisione: `4469dd9eb1519f4d699d43d6cdb3a59488021fe8`.
+
+
+## equake.el
+
+- L159: `;; (define-key *top-map* (kbd "F12") "invoke-equake")`
+- L226: `(require 'dash)                         ; for -let*`
+- L227: `(require 'gv)`
+- L228: `(require 'rx)                           ; for sane regexps`
+- L229: `(require 'subr-x)`
+- L232: `(define-minor-mode equake-mode`
+- L238: `(define-minor-mode equake-rash-mode`
+- L260: `(defcustom equake-inhibit-message-choice nil`
+- L265: `(defcustom equake-hide-from-taskbar-choice t`
+- L270: `(defcustom equake-open-non-terminal-in-new-frame nil`
+- L275: `(defcustom equake-shell-mode-setup nil`
+- L281: `(defcustom equake-display-buffer-function #'display-buffer-pop-up-frame`
+- L288: `(defun equake-inhibit-message-locally ()`
+- L294: `(defcustom equake-new-tab-binding "C-+"`
+- L299: `(define-key equake-mode-map (kbd equake-new-tab-binding) 'equake-new-tab))`
+- L302: `(defcustom equake-new-tab-different-shell-binding "C-M-+"`
+- L307: `(define-key equake-mode-map (kbd equake-new-tab-different-shell-binding) 'equake-new-tab-different-shell))`
+- L310: `(defcustom equake-prev-tab-binding "C-{"`
+- L315: `(define-key equake-mode-map (kbd equake-prev-tab-binding) 'equake-prev-tab))`
+- L318: `(defcustom equake-next-tab-binding "C-}"`
+- L323: `(define-key equake-mode-map (kbd equake-next-tab-binding) 'equake-next-tab))`
+- L326: `(defcustom equake-move-tab-left-binding "C-M-{"`
+- L331: `(define-key equake-mode-map (kbd equake-move-tab-left-binding) 'equake-move-tab-left))`
+- L334: `(defcustom equake-move-tab-right-binding "C-M-}"`
+- L339: `(define-key equake-mode-map (kbd equake-move-tab-right-binding) 'equake-move-tab-right))`
+- L342: `(defcustom equake-rename-etab-binding "C-|"`
+- L347: `(define-key equake-mode-map (kbd equake-rename-etab-binding) 'equake-rename-etab))`
+- L350: `(defcustom equake-close-tab-binding "C-M-_"`
+- L355: `(define-key equake-mode-map (kbd equake-close-tab-binding) 'equake-close-tab-without-query))`
+- L358: `(defcustom equake-available-shells`
+- L369: `(defcustom equake-size-width 1.0`
+- L374: `(defcustom equake-size-height 0.4`
+- L379: `(defcustom equake-opacity-active 75`
+- L384: `(defcustom equake-opacity-inactive 60`
+- L389: `(defcustom equake-default-shell 'eshell`
+- L395: `(defcustom equake-default-sh-command ""`
+- L402: `(defcustom equake-show-monitor-in-mode-line nil`
+- L407: `(defcustom equake-use-frame-hide t`
+- L413: `(defcustom equake-close-frame-on-focus-loss nil`
+- L418: `(defcustom equake-restore-frame-use-offset 'nil`
+- L423: `(defcustom equake-restore-frame-x-offset 0`
+- L428: `(defcustom equake-restore-frame-y-offset 0`
+- L433: `(defcustom equake-display-guess-list`
+- L440: `(defcustom equake-close-frame-after-last-etab-closes t`
+- L491: `(defun equake-kill-emacs-advice (&rest _)`
+- L502: `(defun equake-ask-before-closing-equake ()`
+- L514: `(defun equake-check-if-in-equake-frame-before-closing ()`
+- L522: `(defun equake--open-in-new-frame (buffer alist)`
+- L530: `(defun equake--display-buffer-function (buffer alist)`
+- L537: `(defun equake-invoke ()`
+- L564: `(defun equake-new-tab-different-shell ()`
+- L573: `(defun equake-new-tab (&optional override)`
+- L597: `(defun equake-move-tab-right ()`
+- L605: `(defun equake-move-tab-left ()`
+- L613: `(defun equake-next-tab ()`
+- L623: `(defun equake-prev-tab ()`
+- L633: `(defun equake-rename-etab ()`
+- L640: `(defun equake-restore-last-etab ()`
+- L648: `(defun equake-close-tab-without-query ()`
+- L656: `(defun equake--on-kill-buffer ()`
+- L671: `(defun equake--tab-p (&optional buffer)`
+- L678: `(defun equake--get-tab-properties (&optional buffer)`
+- L690: `(defun equake--get-tab-property (property &optional buffer)`
+- L698: `(defun equake--find-next-tab (monitor tab &optional offset)`
+- L712: `(defun equake--rename-tab (base-name)`
+- L722: `(defun equake--update-mode-line (monitor)`
+- L733: `(defun equake--style-shell-type (mode)`
+- L747: `(defun equake--format-tab (tab)`
+- L768: `(defun equake--get-monitor (&optional frame)`
+- L777: `(defun equake--get-monitor-attribute (attr &optional frame)`
+- L787: `(defun equake--record-frame-history ()`
+- L801: `(defun equake--hide-or-destroy-frame (current-frame)`
+- L811: `(defun equake--set-up-new-frame ()`
+- L823: `(defun equake--transform-existing-frame-into-equake-frame ()`
+- L839: `(defun equake--finish-equake-frame-setup (frame monitor)`
+- L859: `(defun equake--make-new-frame ()`
+- L869: `(defun equake--make-new-frame-when-no-monitor ()`
+- L885: `(defun equake--make-frame-parameters (monitor target-workarea)`
+- L916: `(defun equake--get-display ()`
+- L936: `(defun equake--read-display-from-disk ()`
+- L946: `(defun equake--update-persistent-display-file (frame)`
+- L965: `(defun equake--display-exists-p (display)`
+- L981: `(defun equake--after-focus-change ()`
+- L1010: `(defun equake--after-focus-change-hook ()`
+- L1025: `(defun equake--hide-from-taskbar ()`
+- L1033: `(defun equake--select-some-graphic-frame ()`
+- L1045: `(defun equake--shift-item (list item shift)`
+- L1061: `(defun equake--filter-history (history)`
+- L1067: `(defun equake--on-buffer-list-update ()`
+- L1076: `(defun equake--launch-shell (launchshell)`
+- L1117: `(provide 'equake)`

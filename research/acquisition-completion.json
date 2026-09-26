@@ -1,0 +1,161 @@
+[
+  {
+    "id": "abysl-term",
+    "url": "https://github.com/abysl/abysl-term.git",
+    "status": "fetched",
+    "commit": "7a5de7fb1bd50a56c0ccf6c808fb817a84c49247",
+    "commit_date": "2024-10-15T00:53:16-05:00"
+  },
+  {
+    "id": "alacritty",
+    "url": "https://github.com/ArthurHeymans/emacs-alacritty.git",
+    "status": "fetched",
+    "commit": "a81152af4702bd3b8fd8c737ce8a5abeb7593121",
+    "commit_date": "2025-12-27T20:56:44+01:00"
+  },
+  {
+    "id": "dropdown-remote",
+    "url": "https://github.com/SleepyBag/dropdown-remote.git",
+    "status": "fetched",
+    "commit": "0445c065373f809a6cca31dde3217d9aee970f07",
+    "commit_date": "2020-12-30T14:03:12+08:00"
+  },
+  {
+    "id": "eaf-pyqterminal",
+    "url": "https://github.com/mumu-lhl/eaf-pyqterminal.git",
+    "status": "fetched",
+    "commit": "41ed08eb8253c5d316794622ed52153607f9ae60",
+    "commit_date": "2025-12-07T15:03:14+08:00"
+  },
+  {
+    "id": "eat-lucasec",
+    "url": "https://github.com/lucasec/emacs-eat.git",
+    "status": "fetched",
+    "commit": "d29c8ecf3ee15ad6739e5372f702e2ab9073035d",
+    "commit_date": "2026-05-25T23:11:55-07:00"
+  },
+  {
+    "id": "eat-serial",
+    "url": "https://github.com/ArthurHeymans/eat-serial.git",
+    "status": "fetched",
+    "commit": "5510c23cd97994e98c068903c93545f3e4077881",
+    "commit_date": "2026-06-16T15:28:26+02:00"
+  },
+  {
+    "id": "edger",
+    "url": "https://github.com/suderman/edger.git",
+    "status": "fetched",
+    "commit": "d7af1643454e8d2025976f31531aee15d0224bb0",
+    "commit_date": "2026-09-25T17:12:01-06:00"
+  },
+  {
+    "id": "emacs-tabbar",
+    "url": "https://github.com/sundarvenkata-personal/emacs-tabbar.git",
+    "status": "fetched",
+    "commit": "b782ba0d83c86a7f1cc8b8fd4f4a7b320581164b",
+    "commit_date": "2025-10-15T22:33:35+01:00"
+  },
+  {
+    "id": "emux-rock",
+    "url": "https://github.com/rockneurotiko/emux.git",
+    "status": "fetched",
+    "commit": "0695452583055485e848a4948cdaec1da8f64188",
+    "commit_date": "2014-08-06T22:26:01-07:00"
+  },
+  {
+    "id": "evil-tmux-navigator",
+    "url": "https://github.com/keith/evil-tmux-navigator.git",
+    "status": "fetched",
+    "commit": "b455b255854d1c7af6123d6cb15054f504fa6ac0",
+    "commit_date": "2019-08-31T23:00:57-07:00"
+  },
+  {
+    "id": "ghostel-switch",
+    "url": "https://github.com/JulHee/ghostel-switch.git",
+    "status": "fetched",
+    "commit": "e33a981aaffeb555e453e86b2b4a81a2af40a4e1",
+    "commit_date": "2026-07-24T16:00:35+02:00"
+  },
+  {
+    "id": "ghostherd",
+    "url": "https://github.com/ionrock/ghostherd.git",
+    "status": "fetched",
+    "commit": "2a505e62512e97d2090d76a2ea004e10f86a6a3d",
+    "commit_date": "2026-08-13T18:34:24-05:00"
+  },
+  {
+    "id": "herdr-runtime",
+    "url": "https://github.com/SuddenDevelopment/herdr.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/herdr-runtime'...\nfatal: could not read Username for 'https://github.com': No such device or address\n"
+  },
+  {
+    "id": "lazy-emacs-terminal",
+    "url": "https://github.com/lizqwerscott/lazy-emacs-terminal.git",
+    "status": "fetched",
+    "commit": "75eee8341b0c2e64376f482577e76b19c0c4a530",
+    "commit_date": "2022-10-17T10:52:29+08:00"
+  },
+  {
+    "id": "multi-term-roman",
+    "url": "https://github.com/roman/multi-term.git",
+    "status": "fetched",
+    "commit": "06f6b49ef53a5f2ea779b1608eb5a7b38660e6bb",
+    "commit_date": "2012-11-26T19:38:23Z"
+  },
+  {
+    "id": "project-terminal",
+    "url": "https://github.com/cowboyd/project-terminal.el.git",
+    "status": "fetched",
+    "commit": "79a4cb4fe4bd30c4088f634a108ef24b54769943",
+    "commit_date": "2026-02-23T13:20:08-06:00"
+  },
+  {
+    "id": "term-control",
+    "url": "https://github.com/Pablololo12/term-control.el.git",
+    "status": "fetched",
+    "commit": "d5c0bf282e0e292881b24c4816de5fde0897034c",
+    "commit_date": "2026-02-10T14:15:11Z"
+  },
+  {
+    "id": "term-plus-fork",
+    "url": "https://github.com/ZpullZ/term-plus-el.git",
+    "status": "fetched",
+    "commit": "699fed40378c9d43ee3a0bf80db33df3ae9f9a0e",
+    "commit_date": "2012-11-06T15:14:32Z"
+  },
+  {
+    "id": "terminology",
+    "url": "https://github.com/timjstewart/terminology.git",
+    "status": "fetched",
+    "commit": "f18d28163e5a408e3250f22f2705c9349a43256c",
+    "commit_date": "2022-03-31T13:41:34-06:00"
+  },
+  {
+    "id": "vterm-anti-flicker-filter",
+    "url": "https://github.com/martinbaillie/vterm-anti-flicker-filter.git",
+    "status": "fetched",
+    "commit": "b17b013982b7a4eed0c31a3fee068bcbcac002ea",
+    "commit_date": "2025-08-08T15:57:33+10:00"
+  },
+  {
+    "id": "winterm",
+    "url": "https://github.com/Borwe/emacs-winterm.git",
+    "status": "fetched",
+    "commit": "8549cd42593f22b6c6ff61015cbcd08862c028e8",
+    "commit_date": "2024-04-04T16:47:09+03:00"
+  },
+  {
+    "id": "yantra",
+    "url": "https://github.com/alix559/yantra.git",
+    "status": "fetched",
+    "commit": "abd9d94f3cb60abd0200e5427fe9ba715d7c9103",
+    "commit_date": "2026-08-16T01:16:19Z"
+  },
+  {
+    "id": "zmx",
+    "url": "https://github.com/neomataru/zmx.git",
+    "status": "fetch-failed",
+    "error": "Cloning into 'out/src/zmx'...\nfatal: could not read Username for 'https://github.com': No such device or address\n"
+  }
+]

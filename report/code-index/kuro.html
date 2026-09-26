@@ -1,0 +1,1537 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: kuro</h1>
+<p>Fonte: https://github.com/takeokunn/kuro.git</p>
+<p>Revisione: <code>30a4ff96bdde62c789f42a443766632e8c379873</code>.</p>
+<h2>emacs-lisp/core/kuro-config-logic.el</h2>
+<ul>
+<li>L14: <code>(require 'subr-x)</code></li>
+<li>L15: <code>(require 'kuro-config-macros)</code></li>
+<li>L28: <code>(defvar kuro--keymap nil</code></li>
+<li>L43: <code>(defun kuro--kuro-buffers ()</code></li>
+<li>L66: <code>(defun kuro--set-shell (symbol value)</code></li>
+<li>L94: <code>(defun kuro--set-font (symbol value)</code></li>
+<li>L100: <code>(defun kuro--set-keymap-exceptions (symbol value)</code></li>
+<li>L112: <code>(defun kuro--set-input-echo-delay (symbol value)</code></li>
+<li>L123: <code>(defun kuro--validate-config ()</code></li>
+<li>L140: <code>(defun kuro-validate-config ()</code></li>
+<li>L151: <code>(provide 'kuro-config-logic)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-config-macros.el</h2>
+<ul>
+<li>L14: <code>(defmacro kuro--broadcast-to-buffers (fn &amp;rest args)</code></li>
+<li>L21: <code>(defmacro kuro--in-all-buffers (&amp;rest body)</code></li>
+<li>L27: <code>(defmacro kuro--with-mode (mode msg &amp;rest body)</code></li>
+<li>L34: <code>(defmacro kuro--with-kuro-mode (&amp;rest body)</code></li>
+<li>L38: <code>(defmacro kuro--check-positive-integer (var errors)</code></li>
+<li>L43: <code>(defmacro kuro--check-positive-integer-symbol (var errors)</code></li>
+<li>L50: <code>(defmacro kuro--check-positive-integer-vars (vars errors)</code></li>
+<li>L55: <code>(defmacro kuro--check-optional-positive-integer-vars (vars errors)</code></li>
+<li>L61: <code>(defmacro kuro--check-hex-color (var errors)</code></li>
+<li>L70: <code>(defmacro kuro--def-positive-int-setter (name err-msg doc &amp;rest body)</code></li>
+<li>L84: <code>(provide 'kuro-config-macros)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-config.el</h2>
+<ul>
+<li>L15: <code>(require 'kuro-config-logic)</code></li>
+<li>L16: <code>(require 'kuro-colors)</code></li>
+<li>L42: <code>(defcustom kuro-module-binary-path nil</code></li>
+<li>L67: <code>(defcustom kuro-keymap-exceptions</code></li>
+<li>L89: <code>(defcustom kuro-shell (or (getenv "SHELL") "/bin/bash")</code></li>
+<li>L98: <code>(defcustom kuro-shell-integration t</code></li>
+<li>L104: <code>(defcustom kuro-scrollback-size 10000</code></li>
+<li>L114: <code>(defcustom kuro-clipboard-policy 'write-only</code></li>
+<li>L124: <code>(defcustom kuro-notifications-enabled t</code></li>
+<li>L132: <code>(defcustom kuro-notification-function 'kuro--default-notify</code></li>
+<li>L146: <code>(defcustom kuro-progress-enabled t</code></li>
+<li>L156: <code>(defcustom kuro-progress-format " %s%d%% "</code></li>
+<li>L165: <code>(defcustom kuro-progress-state-glyphs</code></li>
+<li>L176: <code>(defcustom kuro-frame-rate 120</code></li>
+<li>L187: <code>(defcustom kuro-tui-frame-rate 30</code></li>
+<li>L212: <code>(defcustom kuro-streaming-latency-mode t</code></li>
+<li>L220: <code>(defcustom kuro-kill-buffer-on-exit t</code></li>
+<li>L226: <code>(defcustom kuro-typewriter-effect nil</code></li>
+<li>L233: <code>(defcustom kuro-use-binary-ffi t</code></li>
+<li>L253: <code>(defcustom kuro-typewriter-chars-per-second 120</code></li>
+<li>L260: <code>(defcustom kuro-input-echo-delay 0.01</code></li>
+<li>L274: <code>(defcustom kuro-font-family nil</code></li>
+<li>L283: <code>(defcustom kuro-font-size nil</code></li>
+<li>L305: <code>(provide 'kuro-config)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-copy-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--def-copy-window-move (name arg docstring)</code></li>
+<li>L21: <code>(defmacro kuro--def-copy-search (name search-fn fallback-fn wrap-pos docstring)</code></li>
+<li>L40: <code>(defmacro kuro--def-copy-goto-prompt (name direction fallback docstring)</code></li>
+<li>L52: <code>(defmacro kuro--define-copy-mode-bindings (map bindings)</code></li>
+<li>L58: <code>(define-key ,map</code></li>
+<li>L62: <code>(defmacro kuro--def-copy-search-enter (name search-fn docstring)</code></li>
+<li>L73: <code>(provide 'kuro-copy-macros)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-copy.el</h2>
+<ul>
+<li>L16: <code>(require 'cl-lib)</code></li>
+<li>L17: <code>(require 'kuro-config)</code></li>
+<li>L18: <code>(require 'kuro-ffi)</code></li>
+<li>L19: <code>(require 'kuro-copy-macros)</code></li>
+<li>L22: <code>(defvar kuro-mode-map)</code></li>
+<li>L26: <code>(defvar kuro--emulation-mode-map-alist)</code></li>
+<li>L56: <code>(defcustom kuro-copy-mode-auto-exit t</code></li>
+<li>L63: <code>(defcustom kuro-copy-mode-hl-line t</code></li>
+<li>L73: <code>(defun kuro--copy-clear-selection-state (&amp;optional cancel-rect)</code></li>
+<li>L80: <code>(defun kuro--copy-begin-selection (&amp;optional linewise)</code></li>
+<li>L90: <code>(defun kuro--copy-clear-selection-and-deactivate ()</code></li>
+<li>L95: <code>(defun kuro--copy-mode-save-and-exit ()</code></li>
+<li>L103: <code>(defun kuro--copy-finalize (&amp;optional cancel-rect)</code></li>
+<li>L109: <code>(defun kuro--copy-copy-region-and-exit ()</code></li>
+<li>L142: <code>(defun kuro--copy-set-mark ()</code></li>
+<li>L150: <code>(defun kuro--copy-set-mark-line ()</code></li>
+<li>L160: <code>(defun kuro--copy-append-region ()</code></li>
+<li>L179: <code>(defun kuro--copy-rectangle-toggle ()</code></li>
+<li>L208: <code>(defun kuro--copy-search-word-forward ()</code></li>
+<li>L220: <code>(defun kuro--prompt-overlay-positions ()</code></li>
+<li>L230: <code>(defun kuro--copy-find-prompt (direction)</code></li>
+<li>L284: <code>(defvar kuro--copy-mode-map</code></li>
+<li>L294: <code>(defun kuro--enter-copy-mode ()</code></li>
+<li>L317: <code>(defun kuro--exit-copy-mode ()</code></li>
+<li>L335: <code>(defun kuro-copy-mode ()</code></li>
+<li>L363: <code>(defun kuro-occur (regexp)</code></li>
+<li>L374: <code>(provide 'kuro-copy)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-keymap-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--define-key-bindings (map bindings key-fn command-fn)</code></li>
+<li>L28: <code>'(define-key ,map ,(funcall key-fn binding)</code></li>
+<li>L32: <code>(defmacro kuro--bind-keys (map command &amp;rest keys)</code></li>
+<li>L41: <code>'(define-key ,map-sym ,key ,command-sym))</code></li>
+<li>L44: <code>(defmacro kuro--define-keymap (&amp;rest bindings)</code></li>
+<li>L52: <code>'(define-key map ,(if (stringp key) '(kbd ,key) key)</code></li>
+<li>L57: <code>(provide 'kuro-keymap-macros)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-keymap.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-keymap-macros)</code></li>
+<li>L16: <code>(provide 'kuro-keymap)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-lifecycle-commands-macros.el</h2>
+<ul>
+<li>L12: <code>(defmacro kuro--def-control-key (name sequence doc)</code></li>
+<li>L17: <code>(provide 'kuro-lifecycle-commands-macros)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-lifecycle-commands.el</h2>
+<ul>
+<li>L15: <code>(require 'seq)</code></li>
+<li>L16: <code>(require 'kuro-faces-macros)</code></li>
+<li>L17: <code>(require 'kuro-lifecycle-commands-macros)</code></li>
+<li>L18: <code>(require 'kuro-lifecycle-module)</code></li>
+<li>L61: <code>(defvar kuro--font-remap-cookie)</code></li>
+<li>L64: <code>(defun kuro-create (&amp;optional command buffer-name)</code></li>
+<li>L86: <code>(defun kuro-send-string (string)</code></li>
+<li>L94: <code>(defun kuro--most-recent-buffer ()</code></li>
+<li>L103: <code>(defun kuro-send-region (start end)</code></li>
+<li>L130: <code>(defun kuro--cleanup-render-state ()</code></li>
+<li>L164: <code>(defun kuro-kill ()</code></li>
+<li>L177: <code>(defun kuro--list-sessions-safe ()</code></li>
+<li>L183: <code>(defun kuro--detached-sessions (sessions)</code></li>
+<li>L188: <code>(defun kuro--session-candidates (sessions)</code></li>
+<li>L196: <code>(defun kuro--read-attach-session-id ()</code></li>
+<li>L211: <code>(defun kuro--attach-buffer (session-id)</code></li>
+<li>L217: <code>(defun kuro-attach (session-id)</code></li>
+<li>L236: <code>(provide 'kuro-lifecycle-commands)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-lifecycle-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--clear-session-state ()</code></li>
+<li>L21: <code>(defmacro kuro--detach-and-clear-session-state (session-id)</code></li>
+<li>L31: <code>(defmacro kuro--run-session-setup-fns ()</code></li>
+<li>L37: <code>(provide 'kuro-lifecycle-macros)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-lifecycle-module.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-module)</code></li>
+<li>L45: <code>(defun kuro--module-loadable-p ()</code></li>
+<li>L51: <code>(defun kuro--try-load-module ()</code></li>
+<li>L58: <code>(defun kuro--install-and-load-module (install-fn install-name)</code></li>
+<li>L67: <code>(defun kuro--prompt-and-install-module ()</code></li>
+<li>L81: <code>(defun kuro--ensure-module-installed ()</code></li>
+<li>L90: <code>(provide 'kuro-lifecycle-module)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-lifecycle.el</h2>
+<ul>
+<li>L21: <code>(require 'kuro-ffi)</code></li>
+<li>L22: <code>(require 'kuro-renderer)</code></li>
+<li>L23: <code>(require 'kuro-faces)</code></li>
+<li>L24: <code>(require 'kuro-render-buffer)</code></li>
+<li>L25: <code>(require 'kuro-dnd)</code></li>
+<li>L26: <code>(require 'kuro-compilation)</code></li>
+<li>L27: <code>(require 'kuro-bookmark)</code></li>
+<li>L28: <code>(require 'kuro-color-scheme)</code></li>
+<li>L29: <code>(require 'kuro-sessions)</code></li>
+<li>L30: <code>(require 'kuro-lifecycle-module)</code></li>
+<li>L31: <code>(require 'kuro-lifecycle-macros)</code></li>
+<li>L102: <code>(defvar kuro--font-remap-cookie nil</code></li>
+<li>L156: <code>(defun kuro--shell-integration-dir ()</code></li>
+<li>L170: <code>(defun kuro--setup-shell-integration-env ()</code></li>
+<li>L182: <code>(defun kuro--terminal-dimensions ()</code></li>
+<li>L187: <code>(defun kuro--session-buffer-name (session-id)</code></li>
+<li>L191: <code>(defun kuro--show-buffer-if-interactive (buffer)</code></li>
+<li>L197: <code>(defun kuro--create-session-buffer (&amp;optional buffer-name)</code></li>
+<li>L207: <code>(defun kuro--initialize-session-buffer (buffer rows cols)</code></li>
+<li>L214: <code>(defun kuro--start-session-in-buffer (buffer command)</code></li>
+<li>L243: <code>(defun kuro--do-attach (session-id rows cols)</code></li>
+<li>L255: <code>(defun kuro--rollback-attach (session-id buffer err)</code></li>
+<li>L263: <code>(defun kuro--teardown-session ()</code></li>
+<li>L275: <code>(defun kuro--prefill-buffer (rows)</code></li>
+<li>L286: <code>(defun kuro--schedule-initial-render (buf)</code></li>
+<li>L310: <code>(defun kuro--init-session-buffer (buffer rows cols)</code></li>
+<li>L324: <code>(require 'kuro-lifecycle-commands)</code></li>
+<li>L326: <code>(provide 'kuro-lifecycle)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-module-install.el</h2>
+<ul>
+<li>L13: <code>(require 'cl-lib)</code></li>
+<li>L14: <code>(require 'kuro-module-platform)</code></li>
+<li>L15: <code>(require 'subr-x)</code></li>
+<li>L16: <code>(require 'url)</code></li>
+<li>L18: <code>(defun kuro-module--ensure-https-base-url (base-url)</code></li>
+<li>L25: <code>(defcustom kuro-module-installation-method nil</code></li>
+<li>L36: <code>(defcustom kuro-module-release-base-url</code></li>
+<li>L57: <code>(defun kuro-module--parse-sha256 (value source)</code></li>
+<li>L64: <code>(defun kuro-module--verify-sha256 (file expected-hash)</code></li>
+<li>L76: <code>(defun kuro-module--target-path ()</code></li>
+<li>L86: <code>(defun kuro-module--ensure-private-install-directory (dir)</code></li>
+<li>L108: <code>(defun kuro-module--ensure-single-link-regular-file (file role)</code></li>
+<li>L122: <code>(defun kuro-module--ensure-install-destination (file)</code></li>
+<li>L136: <code>(defun kuro-module--copy-validated-module-file (source destination)</code></li>
+<li>L152: <code>(defun kuro-module--shared-library-name ()</code></li>
+<li>L156: <code>(defun kuro-module--installed-module-path (target-dir)</code></li>
+<li>L160: <code>(defun kuro-module--release-spec (&amp;optional version)</code></li>
+<li>L178: <code>(defun kuro-module--http-response-body-start (source)</code></li>
+<li>L187: <code>(defun kuro-module--http-response-body-string (source)</code></li>
+<li>L192: <code>(defun kuro-module--fetch-sha256 (sha-url)</code></li>
+<li>L204: <code>(defun kuro-module--write-http-body-to-file (buffer file source)</code></li>
+<li>L212: <code>(defun kuro-module--download-release-archive (url sha-url tmp-file)</code></li>
+<li>L228: <code>(defun kuro-module--archive-members (tar-bin archive)</code></li>
+<li>L236: <code>(defun kuro-module--extract-archive-member (tar-bin archive destination member)</code></li>
+<li>L243: <code>(defun kuro-module--validate-release-archive (tar-bin tmp-file)</code></li>
+<li>L252: <code>(defun kuro-module--install-release-archive (tar-bin tmp-file target-dir)</code></li>
+<li>L282: <code>(defun kuro-module-download (&amp;optional version)</code></li>
+<li>L310: <code>(defun kuro-module--locate-cargo-toml ()</code></li>
+<li>L328: <code>(defun kuro-module--cargo-built-library-path (cargo-toml)</code></li>
+<li>L334: <code>(defun kuro-module--install-built-library (built dest)</code></li>
+<li>L343: <code>(defun kuro-module-build ()</code></li>
+<li>L370: <code>(provide 'kuro-module-install)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-module-macros.el</h2>
+<ul>
+<li>L17: <code>(defmacro kuro--module-try (path-expr)</code></li>
+<li>L23: <code>(defmacro kuro--run-module-search-tiers ()</code></li>
+<li>L28: <code>(provide 'kuro-module-macros)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-module-platform.el</h2>
+<ul>
+<li>L16: <code>(defun kuro-module--platform-extension ()</code></li>
+<li>L23: <code>(defun kuro-module--shared-extension ()</code></li>
+<li>L28: <code>(defun kuro-module--platform-string (&amp;optional system-type-override system-configuration-override)</code></li>
+<li>L52: <code>(defun kuro-module--lib-name ()</code></li>
+<li>L57: <code>(provide 'kuro-module-platform)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-module.el</h2>
+<ul>
+<li>L15: <code>(require 'cl-lib)</code></li>
+<li>L16: <code>(require 'kuro-config)  ;; for kuro-module-binary-path defcustom</code></li>
+<li>L17: <code>(require 'kuro-module-platform)</code></li>
+<li>L18: <code>(require 'kuro-module-install)</code></li>
+<li>L19: <code>(require 'kuro-module-macros)</code></li>
+<li>L28: <code>(defun kuro-module--library-candidate-error (source path reason)</code></li>
+<li>L33: <code>(defun kuro-module--library-candidate-from-path (path &amp;optional required source)</code></li>
+<li>L74: <code>(defun kuro-module--library-candidate-active-path (candidate)</code></li>
+<li>L87: <code>(defun kuro-module--tier-custom ()</code></li>
+<li>L93: <code>(defun kuro-module--tier-env ()</code></li>
+<li>L101: <code>(defun kuro-module--tier-xdg ()</code></li>
+<li>L105: <code>(defun kuro-module--tier-dev ()</code></li>
+<li>L129: <code>(defun kuro-module--find-library ()</code></li>
+<li>L138: <code>(defun kuro-module-load ()</code></li>
+<li>L153: <code>(defun kuro--ensure-module-loaded ()</code></li>
+<li>L163: <code>(provide 'kuro-module)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro-scrollback.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-config)</code></li>
+<li>L15: <code>(require 'kuro-keymap)</code></li>
+<li>L25: <code>(defvar kuro--scrollback-edit-keymap</code></li>
+<li>L32: <code>(define-derived-mode kuro-scrollback-edit-mode text-mode "Kuro-Edit"</code></li>
+<li>L48: <code>(defun kuro-edit-scrollback ()</code></li>
+<li>L76: <code>(defun kuro-scrollback-send ()</code></li>
+<li>L94: <code>(defun kuro-scrollback-discard ()</code></li>
+<li>L100: <code>(provide 'kuro-scrollback)</code></li>
+</ul>
+<h2>emacs-lisp/core/kuro.el</h2>
+<ul>
+<li>L36: <code>(require 'kuro-module)</code></li>
+<li>L37: <code>(require 'kuro-config)</code></li>
+<li>L38: <code>(require 'kuro-ffi)</code></li>
+<li>L39: <code>(require 'kuro-faces)</code></li>
+<li>L40: <code>(require 'kuro-keymap)</code></li>
+<li>L41: <code>(require 'kuro-scrollback)</code></li>
+<li>L42: <code>(require 'kuro-overlays)</code></li>
+<li>L43: <code>(require 'kuro-navigation)</code></li>
+<li>L44: <code>(require 'kuro-input)</code></li>
+<li>L47: <code>(require 'kuro-stream)</code></li>
+<li>L48: <code>(require 'kuro-render-buffer)</code></li>
+<li>L49: <code>(require 'kuro-renderer)</code></li>
+<li>L50: <code>(require 'kuro-lifecycle)</code></li>
+<li>L71: <code>(defvar kuro-mode-map</code></li>
+<li>L93: <code>(require 'kuro-input-mode)</code></li>
+<li>L94: <code>(require 'kuro-copy)</code></li>
+<li>L96: <code>(defun kuro--window-size-change (frame)</code></li>
+<li>L124: <code>(defun kuro--make-focus-change-fn (prev)</code></li>
+<li>L135: <code>(define-derived-mode kuro-mode fundamental-mode "Kuro"</code></li>
+<li>L211: <code>(provide 'kuro)</code></li>
+</ul>
+<h2>emacs-lisp/faces/kuro-colors-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--defcolor (suffix default label index)</code></li>
+<li>L23: <code>(provide 'kuro-colors-macros)</code></li>
+</ul>
+<h2>emacs-lisp/faces/kuro-colors.el</h2>
+<ul>
+<li>L29: <code>(require 'kuro-colors-macros)</code></li>
+<li>L81: <code>(defun kuro--rebuild-named-colors ()</code></li>
+<li>L93: <code>(defun kuro--set-color (symbol value)</code></li>
+<li>L122: <code>(provide 'kuro-colors)</code></li>
+</ul>
+<h2>emacs-lisp/faces/kuro-faces-attrs.el</h2>
+<ul>
+<li>L20: <code>(require 'kuro-faces-color)</code></li>
+<li>L82: <code>(defun kuro--decode-attrs (attr-flags)</code></li>
+<li>L152: <code>(defun kuro--attrs-to-face-props (fg bg attr-flags underline-color)</code></li>
+<li>L212: <code>(provide 'kuro-faces-attrs)</code></li>
+</ul>
+<h2>emacs-lisp/faces/kuro-faces-color.el</h2>
+<ul>
+<li>L26: <code>(require 'kuro-colors)</code></li>
+<li>L131: <code>(defmacro kuro--define-color-type-dispatch (color)</code></li>
+<li>L139: <code>(defun kuro--color-to-emacs (color)</code></li>
+<li>L149: <code>(defun kuro--indexed-to-emacs (idx)</code></li>
+<li>L214: <code>(provide 'kuro-faces-color)</code></li>
+</ul>
+<h2>emacs-lisp/faces/kuro-faces-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--with-face-remap (cookie-var &amp;rest remap-body)</code></li>
+<li>L27: <code>(provide 'kuro-faces-macros)</code></li>
+</ul>
+<h2>emacs-lisp/faces/kuro-faces.el</h2>
+<ul>
+<li>L35: <code>(require 'cl-lib)</code></li>
+<li>L36: <code>(require 'kuro-config)</code></li>
+<li>L37: <code>(require 'kuro-ffi)</code></li>
+<li>L38: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L39: <code>(require 'kuro-faces-color)</code></li>
+<li>L40: <code>(require 'kuro-faces-attrs)</code></li>
+<li>L41: <code>(require 'kuro-faces-macros)</code></li>
+<li>L42: <code>(require 'kuro-char-width)</code></li>
+<li>L80: <code>(defun kuro--apply-font-to-buffer (buf)</code></li>
+<li>L98: <code>(defun kuro--make-face (fg bg flags underline-color)</code></li>
+<li>L102: <code>(defun kuro--get-cached-face-raw--miss (fg-enc bg-enc flags ul-normalized)</code></li>
+<li>L181: <code>(defun kuro--remap-default-face (fg-str bg-str)</code></li>
+<li>L193: <code>(defun kuro--apply-default-colors ()</code></li>
+<li>L212: <code>(defun kuro--apply-palette-entry (idx r g b)</code></li>
+<li>L224: <code>(defun kuro--apply-palette-update-entry (entry)</code></li>
+<li>L229: <code>(defun kuro--apply-palette-update-entries (entries)</code></li>
+<li>L237: <code>(defun kuro--apply-palette-updates ()</code></li>
+<li>L246: <code>(provide 'kuro-faces)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-activity.el</h2>
+<ul>
+<li>L35: <code>(require 'kuro-config)</code></li>
+<li>L36: <code>(require 'kuro-poll-modes)</code></li>
+<li>L37: <code>(require 'kuro-prompt-status)</code></li>
+<li>L38: <code>(require 'kuro-keymap)</code></li>
+<li>L39: <code>(require 'tabulated-list)</code></li>
+<li>L50: <code>(defcustom kuro-activity-notify-threshold 10.0</code></li>
+<li>L59: <code>(defcustom kuro-activity-notify-on-exit t</code></li>
+<li>L66: <code>(defcustom kuro-activity-notify-on-bell t</code></li>
+<li>L73: <code>(defcustom kuro-activity-bell-message "Bell"</code></li>
+<li>L78: <code>(defcustom kuro-activity-log-max-length 200</code></li>
+<li>L105: <code>(defun kuro--activity-notify (title body)</code></li>
+<li>L129: <code>(defun kuro--activity-on-command-complete (exit-code duration-ms</code></li>
+<li>L151: <code>(defun kuro--activity-bell-advice (&amp;rest _args)</code></li>
+<li>L160: <code>(defun kuro--activity-check-exit ()</code></li>
+<li>L174: <code>(define-minor-mode kuro-activity-mode</code></li>
+<li>L198: <code>(defun kuro-activity-list-delete-entry ()</code></li>
+<li>L207: <code>(defvar kuro-activity-list-mode-map</code></li>
+<li>L219: <code>(defun kuro-activity-list--entries ()</code></li>
+<li>L228: <code>(defun kuro-activity-list--refresh ()</code></li>
+<li>L233: <code>(define-derived-mode kuro-activity-list-mode tabulated-list-mode</code></li>
+<li>L244: <code>(defun kuro-activity-list ()</code></li>
+<li>L257: <code>(defun kuro-activity-clear ()</code></li>
+<li>L269: <code>(provide 'kuro-activity)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-bookmark.el</h2>
+<ul>
+<li>L14: <code>(require 'bookmark)</code></li>
+<li>L18: <code>(defun kuro-bookmark--string-has-control-character-p (value)</code></li>
+<li>L22: <code>(defun kuro-bookmark--safe-directory (directory)</code></li>
+<li>L31: <code>(defun kuro-bookmark--safe-buffer-name (name)</code></li>
+<li>L38: <code>(defun kuro-bookmark-make-record ()</code></li>
+<li>L52: <code>(defun kuro-bookmark-jump (bookmark)</code></li>
+<li>L64: <code>(defun kuro--setup-bookmark ()</code></li>
+<li>L68: <code>(provide 'kuro-bookmark)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-char-width-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--set-fontset-font-both (range spec)</code></li>
+<li>L22: <code>(provide 'kuro-char-width-macros)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-char-width.el</h2>
+<ul>
+<li>L25: <code>(require 'seq)</code></li>
+<li>L26: <code>(require 'kuro-char-width-macros)</code></li>
+<li>L128: <code>(defun kuro--apply-char-width-overrides ()</code></li>
+<li>L134: <code>(defun kuro--reapply-char-width-in-all-buffers ()</code></li>
+<li>L148: <code>(defun kuro-char-width-setup ()</code></li>
+<li>L156: <code>(defun kuro--assign-mono-fonts ()</code></li>
+<li>L196: <code>(defun kuro--probe-glyph-metrics (probe-char)</code></li>
+<li>L221: <code>(defun kuro--rescale-font-for-glyph (probe-char range cell-width cell-height)</code></li>
+<li>L245: <code>(defun kuro--refine-glyph-widths ()</code></li>
+<li>L293: <code>(defun kuro--setup-char-width-table ()</code></li>
+<li>L316: <code>(defun kuro--detect-nerd-font ()</code></li>
+<li>L327: <code>(defun kuro--setup-fontset ()</code></li>
+<li>L342: <code>(provide 'kuro-char-width)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-color-scheme.el</h2>
+<ul>
+<li>L17: <code>(require 'cl-lib)</code></li>
+<li>L18: <code>(require 'kuro-config)</code></li>
+<li>L33: <code>(defcustom kuro-color-scheme-debounce-seconds 0.05</code></li>
+<li>L48: <code>(defun kuro--color-scheme-luminance (hex-or-name)</code></li>
+<li>L56: <code>(defun kuro--color-scheme-detect-dark-p (&amp;optional frame)</code></li>
+<li>L76: <code>(defun kuro--color-scheme-apply-now ()</code></li>
+<li>L90: <code>(defun kuro--color-scheme-schedule (&amp;rest _args)</code></li>
+<li>L102: <code>(defun kuro-color-scheme-refresh ()</code></li>
+<li>L111: <code>(defun kuro--color-scheme-install-hook ()</code></li>
+<li>L128: <code>(defun kuro--color-scheme-uninstall-hook ()</code></li>
+<li>L136: <code>(provide 'kuro-color-scheme)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-compilation.el</h2>
+<ul>
+<li>L14: <code>(require 'compile)</code></li>
+<li>L16: <code>(defcustom kuro-compilation-navigation t</code></li>
+<li>L23: <code>(defun kuro--setup-compilation ()</code></li>
+<li>L30: <code>(defun kuro--teardown-compilation ()</code></li>
+<li>L35: <code>(provide 'kuro-compilation)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-debug-perf.el</h2>
+<ul>
+<li>L26: <code>(require 'kuro-config)</code></li>
+<li>L30: <code>(defcustom kuro-debug-perf nil</code></li>
+<li>L48: <code>(defun kuro--perf-report (ffi-ms apply-ms cursor-ms total-ms dirty face-count)</code></li>
+<li>L74: <code>(defvar kuro--col-to-buf-map)</code></li>
+<li>L77: <code>(defun kuro-debug-state ()</code></li>
+<li>L113: <code>(defun kuro-debug-line-widths ()</code></li>
+<li>L142: <code>(provide 'kuro-debug-perf)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-dnd.el</h2>
+<ul>
+<li>L14: <code>(require 'cl-lib)</code></li>
+<li>L15: <code>(require 'dnd)</code></li>
+<li>L22: <code>(defun kuro-dnd--path-has-control-character-p (path)</code></li>
+<li>L26: <code>(defun kuro-dnd--file-uri-p (uri)</code></li>
+<li>L32: <code>(defun kuro-dnd--local-file-path-p (path)</code></li>
+<li>L41: <code>(defun kuro-dnd--quoted-local-file-path (uri)</code></li>
+<li>L48: <code>(defun kuro-dnd-handle-uri (uri _action)</code></li>
+<li>L56: <code>(defun kuro--setup-dnd ()</code></li>
+<li>L64: <code>(defun kuro--teardown-dnd ()</code></li>
+<li>L68: <code>(provide 'kuro-dnd)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-hyperlinks-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--make-hyperlink-overlay (beg end uri)</code></li>
+<li>L24: <code>(provide 'kuro-hyperlinks-macros)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-hyperlinks.el</h2>
+<ul>
+<li>L16: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L17: <code>(require 'kuro-keymap)</code></li>
+<li>L18: <code>(require 'kuro-hyperlinks-macros)</code></li>
+<li>L19: <code>(require 'kuro-url-safety)</code></li>
+<li>L37: <code>(defun kuro--hyperlink-range-entry-p (entry)</code></li>
+<li>L50: <code>(defun kuro--hyperlink-buffer-range-p (beg end)</code></li>
+<li>L58: <code>(defun kuro-open-hyperlink-at-point ()</code></li>
+<li>L68: <code>(defun kuro--clear-hyperlink-overlays ()</code></li>
+<li>L73: <code>(defun kuro--apply-hyperlink-ranges ()</code></li>
+<li>L90: <code>(provide 'kuro-hyperlinks)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux-ext-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--install-mux-lifecycle-hooks ()</code></li>
+<li>L21: <code>(defmacro kuro--uninstall-mux-lifecycle-hooks ()</code></li>
+<li>L27: <code>(provide 'kuro-mux-ext-macros)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux-ext.el</h2>
+<ul>
+<li>L42: <code>(require 'kuro-config)</code></li>
+<li>L43: <code>(require 'kuro-mux-ext-macros)</code></li>
+<li>L60: <code>(defun kuro-mux-break-pane ()</code></li>
+<li>L77: <code>(defun kuro-mux-join-pane (name)</code></li>
+<li>L97: <code>(defun kuro-mux-rename (name)</code></li>
+<li>L110: <code>(defun kuro-mux--name-lighter ()</code></li>
+<li>L118: <code>(defun kuro-mux-send-to-session (name text)</code></li>
+<li>L140: <code>(defun kuro-mux--tab-bar-update ()</code></li>
+<li>L159: <code>(defun kuro-mux--tab-bar-session-tab-p (name)</code></li>
+<li>L165: <code>(defun kuro-mux--on-session-created ()</code></li>
+<li>L171: <code>(defun kuro-mux--on-session-killed ()</code></li>
+<li>L183: <code>(defun kuro-mux--install-hooks ()</code></li>
+<li>L187: <code>(defun kuro-mux--uninstall-hooks ()</code></li>
+<li>L192: <code>(define-minor-mode kuro-mux-tab-bar-mode</code></li>
+<li>L209: <code>(defcustom kuro-mux-layout-file</code></li>
+<li>L216: <code>(defcustom kuro-mux-auto-save-layout nil</code></li>
+<li>L224: <code>(defun kuro-mux--auto-save-on-exit ()</code></li>
+<li>L231: <code>(provide 'kuro-mux-ext)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux-ext2.el</h2>
+<ul>
+<li>L16: <code>(require 'kuro-keymap)</code></li>
+<li>L17: <code>(require 'kuro-mux-monitor)</code></li>
+<li>L18: <code>(require 'cl-lib)</code></li>
+<li>L80: <code>(defun kuro-mux--session-spec (buf)</code></li>
+<li>L93: <code>(defun kuro-mux-save-layout ()</code></li>
+<li>L112: <code>(defun kuro-mux--skip-layout-trivia ()</code></li>
+<li>L121: <code>(defun kuro-mux--read-layout-file ()</code></li>
+<li>L140: <code>(defun kuro-mux--proper-list-p (value)</code></li>
+<li>L158: <code>(defun kuro-mux--proper-keyword-plist-p (value)</code></li>
+<li>L170: <code>(defun kuro-mux--non-empty-string-p (value)</code></li>
+<li>L174: <code>(defun kuro-mux--string-has-control-character-p (value)</code></li>
+<li>L178: <code>(defun kuro-mux--valid-layout-name-p (value)</code></li>
+<li>L183: <code>(defun kuro-mux--valid-layout-directory-p (value)</code></li>
+<li>L191: <code>(defun kuro-mux--safe-layout-name (value)</code></li>
+<li>L196: <code>(defun kuro-mux--safe-layout-directory (value)</code></li>
+<li>L203: <code>(defun kuro-mux--layout-spec-allowed-keys-p (spec)</code></li>
+<li>L213: <code>(defun kuro-mux--layout-session-from-plist (spec)</code></li>
+<li>L223: <code>(defun kuro-mux--layout-session-to-plist (session)</code></li>
+<li>L232: <code>(defun kuro-mux--valid-layout-spec-p (spec)</code></li>
+<li>L239: <code>(defun kuro-mux--restore-session (spec)</code></li>
+<li>L260: <code>(defun kuro-mux-restore-layout ()</code></li>
+<li>L287: <code>(defun kuro-mux--parse-layout-plists (raw)</code></li>
+<li>L364: <code>(defvar kuro-mux-prefix-map</code></li>
+<li>L371: <code>(define-key map (kbd (number-to-string n))</code></li>
+<li>L383: <code>(defcustom kuro-mux-prefix-key "C-c m"</code></li>
+<li>L393: <code>(defun kuro-mux-create (&amp;optional command)</code></li>
+<li>L402: <code>(defun kuro-mux-install-keys (&amp;optional keymap)</code></li>
+<li>L410: <code>(define-key map (kbd kuro-mux-prefix-key) kuro-mux-prefix-map)</code></li>
+<li>L416: <code>(defun kuro-mux--help-insert ()</code></li>
+<li>L423: <code>(defun kuro-mux-help ()</code></li>
+<li>L432: <code>(defun kuro-mux-clock ()</code></li>
+<li>L451: <code>(defun kuro-mux--broadcast-send (text)</code></li>
+<li>L466: <code>(defun kuro-mux-broadcast-toggle ()</code></li>
+<li>L484: <code>(defcustom kuro-mux-install-prefix-keys t</code></li>
+<li>L491: <code>(defun kuro-mux-setup ()</code></li>
+<li>L506: <code>(provide 'kuro-mux-ext2)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux-layout-macros.el</h2>
+<ul>
+<li>L14: <code>(defmacro kuro--dispatch-layout (layout win buffers)</code></li>
+<li>L25: <code>(provide 'kuro-mux-layout-macros)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux-layout.el</h2>
+<ul>
+<li>L17: <code>(require 'kuro-mux-layout-macros)</code></li>
+<li>L42: <code>(defun kuro-mux--visible-session-buffers ()</code></li>
+<li>L55: <code>(defun kuro-mux--layout-chain (window buffers side)</code></li>
+<li>L65: <code>(defun kuro-mux--layout-main (main-win buffers main-side sub-side)</code></li>
+<li>L75: <code>(defun kuro-mux--fill-band (band buffers start cols)</code></li>
+<li>L89: <code>(defun kuro-mux--layout-tiled (buffers)</code></li>
+<li>L110: <code>(defun kuro-mux-select-layout (layout)</code></li>
+<li>L138: <code>(defun kuro-mux--cycle-layout (step)</code></li>
+<li>L153: <code>(defun kuro-mux-next-layout ()</code></li>
+<li>L161: <code>(defun kuro-mux-previous-layout ()</code></li>
+<li>L168: <code>(provide 'kuro-mux-layout)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--def-mux-nav (name nav-fn docstring)</code></li>
+<li>L29: <code>(defmacro kuro--def-mux-split (name split-fn docstring)</code></li>
+<li>L40: <code>(defmacro kuro--def-mux-swap (name window-nav-fn docstring)</code></li>
+<li>L53: <code>(defmacro kuro--mux-resize-dispatch (direction delta)</code></li>
+<li>L62: <code>(provide 'kuro-mux-macros)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux-monitor.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-config)</code></li>
+<li>L15: <code>(require 'kuro-activity)</code></li>
+<li>L16: <code>(require 'cl-lib)</code></li>
+<li>L17: <code>(require 'subr-x)</code></li>
+<li>L20: <code>(defcustom kuro-mux-monitor-activity-debounce 2.0</code></li>
+<li>L26: <code>(defcustom kuro-mux-pipe-pane-directory</code></li>
+<li>L52: <code>(defun kuro-mux--activity-watcher (_beg _end _old-len)</code></li>
+<li>L66: <code>(defun kuro-mux--silence-watcher (_beg _end _old-len)</code></li>
+<li>L85: <code>(defun kuro-mux-monitor-activity-toggle ()</code></li>
+<li>L103: <code>(defun kuro-mux-monitor-silence (seconds)</code></li>
+<li>L126: <code>(defun kuro-mux--pipe-pane-directory-path ()</code></li>
+<li>L131: <code>(defun kuro-mux--pipe-pane-path-mode (path)</code></li>
+<li>L138: <code>(defun kuro-mux--pipe-pane-existing-safe-directory ()</code></li>
+<li>L156: <code>(defun kuro-mux--pipe-pane-safe-directory ()</code></li>
+<li>L170: <code>(defun kuro-mux--pipe-pane-validate-filename (file)</code></li>
+<li>L186: <code>(defun kuro-mux--pipe-pane-file-in-directory-p (file dir basename)</code></li>
+<li>L191: <code>(defun kuro-mux--pipe-pane-single-link-p (file)</code></li>
+<li>L195: <code>(defun kuro-mux--pipe-pane-file-attributes (file)</code></li>
+<li>L200: <code>(defun kuro-mux--pipe-pane-target-from-attributes (file attributes)</code></li>
+<li>L211: <code>(defun kuro-mux--pipe-pane-validate-existing-regular-file</code></li>
+<li>L232: <code>(defun kuro-mux--pipe-pane-ensure-regular-file (file)</code></li>
+<li>L246: <code>(defun kuro-mux--pipe-pane-prepare-file (file)</code></li>
+<li>L260: <code>(defun kuro-mux--pipe-pane-validate-active-file (target)</code></li>
+<li>L284: <code>(defun kuro-mux--pipe-pane-watcher (beg end _old-len)</code></li>
+<li>L300: <code>(defun kuro-mux-pipe-pane (file)</code></li>
+<li>L322: <code>(provide 'kuro-mux-monitor)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux-windows.el</h2>
+<ul>
+<li>L16: <code>(require 'kuro-config)</code></li>
+<li>L17: <code>(require 'kuro-mux-macros)</code></li>
+<li>L32: <code>(defun kuro-mux--track-window-change (_frame)</code></li>
+<li>L44: <code>(defun kuro-mux-last ()</code></li>
+<li>L59: <code>(defun kuro-mux-find-window (name)</code></li>
+<li>L95: <code>(defun kuro-mux-detach ()</code></li>
+<li>L112: <code>(defun kuro-mux-zoom ()</code></li>
+<li>L128: <code>(defcustom kuro-mux-kill-confirm t</code></li>
+<li>L134: <code>(defun kuro-mux-kill ()</code></li>
+<li>L159: <code>(defun kuro-mux-resize-pane (direction &amp;optional delta)</code></li>
+<li>L177: <code>(provide 'kuro-mux-windows)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-mux.el</h2>
+<ul>
+<li>L53: <code>(require 'kuro-config)</code></li>
+<li>L54: <code>(require 'kuro-ffi)</code></li>
+<li>L55: <code>(require 'kuro-mux-macros)</code></li>
+<li>L90: <code>(defun kuro-mux--register ()</code></li>
+<li>L99: <code>(defun kuro-mux--unregister ()</code></li>
+<li>L105: <code>(defun kuro-mux--live-sessions ()</code></li>
+<li>L111: <code>(defun kuro-mux--for-each-live-session (fn &amp;optional exclude)</code></li>
+<li>L119: <code>(defun kuro-mux--session-display-name (buf)</code></li>
+<li>L125: <code>(defun kuro-mux--find-session-by-name (name)</code></li>
+<li>L134: <code>(defun kuro-mux--next-buffer (buf sessions)</code></li>
+<li>L139: <code>(defun kuro-mux--prev-buffer (buf sessions)</code></li>
+<li>L152: <code>(defun kuro-mux-switch-by-name (name)</code></li>
+<li>L166: <code>(defun kuro-mux--session-index ()</code></li>
+<li>L172: <code>(defun kuro-mux--mode-line-segment ()</code></li>
+<li>L180: <code>(defcustom kuro-mux-mode-line-segment t</code></li>
+<li>L187: <code>(defun kuro-mux--buffer-mode-line-setup ()</code></li>
+<li>L195: <code>(defun kuro-mux-install-mode-line ()</code></li>
+<li>L206: <code>(defun kuro-mux-other-window ()</code></li>
+<li>L221: <code>(defun kuro-mux--visible-windows ()</code></li>
+<li>L231: <code>(defun kuro-mux-rotate-panes (&amp;optional backward)</code></li>
+<li>L257: <code>(defun kuro-mux-rotate-panes-backward ()</code></li>
+<li>L264: <code>(defun kuro-mux-select-by-index (n)</code></li>
+<li>L280: <code>(require 'kuro-mux-windows)</code></li>
+<li>L281: <code>(require 'kuro-mux-layout)</code></li>
+<li>L282: <code>(require 'kuro-mux-ext)</code></li>
+<li>L283: <code>(require 'kuro-mux-monitor)</code></li>
+<li>L284: <code>(require 'kuro-mux-ext2)</code></li>
+<li>L286: <code>(provide 'kuro-mux)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-navigation-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--def-navigator (name type-pred on-found on-miss docstring)</code></li>
+<li>L27: <code>(defmacro kuro--def-nav-cmd (name nav-fn direction docstring)</code></li>
+<li>L33: <code>(defmacro kuro--with-focus-guard (&amp;rest body)</code></li>
+<li>L40: <code>(defmacro kuro--def-focus-handler (name sequence doc)</code></li>
+<li>L48: <code>(provide 'kuro-navigation-macros)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-navigation.el</h2>
+<ul>
+<li>L20: <code>(require 'kuro-ffi)</code></li>
+<li>L21: <code>(require 'kuro-ffi-modes)</code></li>
+<li>L22: <code>(require 'kuro-navigation-macros)</code></li>
+<li>L39: <code>(defun kuro--update-prompt-positions (marks positions max-count)</code></li>
+<li>L80: <code>(defun kuro--find-mark-in-direction (direction type-pred)</code></li>
+<li>L112: <code>(defun kuro--command-output-region ()</code></li>
+<li>L138: <code>(defun kuro-copy-command-output ()</code></li>
+<li>L156: <code>(defun kuro--prompt-line-text (row)</code></li>
+<li>L163: <code>(defun kuro--command-history-entries ()</code></li>
+<li>L182: <code>(defun kuro--command-history-label (exit text)</code></li>
+<li>L191: <code>(defun kuro-command-history ()</code></li>
+<li>L237: <code>(provide 'kuro-navigation)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-poll-modes-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--run-tier1-poll-fns ()</code></li>
+<li>L21: <code>(defmacro kuro--dispatch-clipboard-action (action)</code></li>
+<li>L42: <code>(defmacro kuro--gated-poll (cadence fn)</code></li>
+<li>L48: <code>(provide 'kuro-poll-modes-macros)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-poll-modes.el</h2>
+<ul>
+<li>L33: <code>(require 'kuro-config)</code></li>
+<li>L34: <code>(require 'kuro-eval)</code></li>
+<li>L35: <code>(require 'kuro-ffi)</code></li>
+<li>L36: <code>(require 'kuro-ffi-modes)</code></li>
+<li>L37: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L38: <code>(require 'kuro-navigation)</code></li>
+<li>L39: <code>(require 'kuro-prompt-status)</code></li>
+<li>L40: <code>(require 'kuro-hyperlinks)</code></li>
+<li>L41: <code>(require 'kuro-text-size)</code></li>
+<li>L42: <code>(require 'kuro-tramp)</code></li>
+<li>L43: <code>(require 'kuro-poll-modes-macros)</code></li>
+<li>L119: <code>(defun kuro--poll-osc-events ()</code></li>
+<li>L129: <code>(defun kuro--notify-build-action-handler (session-id id)</code></li>
+<li>L155: <code>(defun kuro--sanitize-notification-text (text)</code></li>
+<li>L161: <code>(defun kuro--default-notify (title body &amp;optional id report)</code></li>
+<li>L194: <code>(defun kuro--notification-fields (notif)</code></li>
+<li>L203: <code>(defun kuro--handle-notifications ()</code></li>
+<li>L227: <code>(defun kuro--apply-terminal-modes (modes)</code></li>
+<li>L243: <code>(defun kuro--poll-cwd ()</code></li>
+<li>L258: <code>(defun kuro--progress-state-glyph (state)</code></li>
+<li>L263: <code>(defun kuro--progress-mode-line-string (state percent)</code></li>
+<li>L269: <code>(defun kuro--apply-progress (progress)</code></li>
+<li>L283: <code>(defun kuro--progress-mode-line ()</code></li>
+<li>L291: <code>(defun kuro--poll-progress ()</code></li>
+<li>L308: <code>(defun kuro--poll-user-vars ()</code></li>
+<li>L328: <code>(defun kuro--run-command-complete-hook (marks)</code></li>
+<li>L343: <code>(defun kuro--poll-prompt-mark-updates ()</code></li>
+<li>L352: <code>(defun kuro--poll-image-events ()</code></li>
+<li>L357: <code>(defun kuro--poll-placeholder-events ()</code></li>
+<li>L366: <code>(defun kuro--check-process-exit ()</code></li>
+<li>L371: <code>(defun kuro--send-osc52-clipboard-response ()</code></li>
+<li>L413: <code>(defun kuro--clipboard-sanitize (text)</code></li>
+<li>L417: <code>(defun kuro--clipboard-set-selection (text target)</code></li>
+<li>L429: <code>(defun kuro--clipboard-write (text target)</code></li>
+<li>L447: <code>(defun kuro--clipboard-query (target)</code></li>
+<li>L459: <code>(defun kuro--handle-clipboard-actions ()</code></li>
+<li>L468: <code>(defun kuro--poll-terminal-mode-state ()</code></li>
+<li>L478: <code>(defun kuro--poll-tier1-modes ()</code></li>
+<li>L484: <code>(defun kuro--poll-terminal-modes ()</code></li>
+<li>L493: <code>(provide 'kuro-poll-modes)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-prompt-status.el</h2>
+<ul>
+<li>L18: <code>(require 'kuro-config)</code></li>
+<li>L19: <code>(require 'kuro-ffi)</code></li>
+<li>L23: <code>(defcustom kuro-prompt-status-annotations t</code></li>
+<li>L28: <code>(defcustom kuro-prompt-status-success-indicator "✓"</code></li>
+<li>L33: <code>(defcustom kuro-prompt-status-failure-indicator "✗"</code></li>
+<li>L38: <code>(defcustom kuro-prompt-status-show-extras t</code></li>
+<li>L48: <code>(defcustom kuro-prompt-status-min-duration-ms 0</code></li>
+<li>L91: <code>(defun kuro--prompt-status-indicator (exit-code)</code></li>
+<li>L102: <code>(defun kuro--apply-prompt-status-overlay (row indicator)</code></li>
+<li>L114: <code>(defun kuro--clear-prompt-status-overlays ()</code></li>
+<li>L121: <code>(defun kuro--format-prompt-duration (duration-ms)</code></li>
+<li>L146: <code>(defun kuro--sanitize-prompt-extra (text)</code></li>
+<li>L152: <code>(defun kuro--format-prompt-extras (aid duration-ms err-path)</code></li>
+<li>L171: <code>(defun kuro--apply-prompt-extras-overlay (row aid duration-ms err-path)</code></li>
+<li>L187: <code>(defun kuro--update-prompt-status (marks)</code></li>
+<li>L211: <code>(defun kuro--ensure-left-margin ()</code></li>
+<li>L221: <code>(defun kuro-prompt-status-mode-line-segment ()</code></li>
+<li>L240: <code>(defun kuro-prompt-status-install-mode-line ()</code></li>
+<li>L253: <code>(provide 'kuro-prompt-status)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-sessions.el</h2>
+<ul>
+<li>L17: <code>(require 'cl-lib)</code></li>
+<li>L18: <code>(require 'tabulated-list)</code></li>
+<li>L19: <code>(require 'kuro-keymap)</code></li>
+<li>L34: <code>(defun kuro--session-status (detached-p alive-p)</code></li>
+<li>L40: <code>(defun kuro-sessions--fetch-raw ()</code></li>
+<li>L46: <code>(defun kuro-sessions--entry (entry)</code></li>
+<li>L54: <code>(defun kuro-sessions--entries ()</code></li>
+<li>L60: <code>(defun kuro-sessions-attach ()</code></li>
+<li>L71: <code>(defun kuro-sessions-destroy ()</code></li>
+<li>L81: <code>(defun kuro-sessions-refresh ()</code></li>
+<li>L86: <code>(defvar kuro-sessions-mode-map</code></li>
+<li>L96: <code>(define-derived-mode kuro-sessions-mode tabulated-list-mode "Kuro Sessions"</code></li>
+<li>L104: <code>(defun kuro-list-sessions ()</code></li>
+<li>L113: <code>(provide 'kuro-sessions)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-stream.el</h2>
+<ul>
+<li>L40: <code>(require 'kuro-ffi)</code></li>
+<li>L41: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L42: <code>(require 'kuro-typewriter)</code></li>
+<li>L71: <code>(defun kuro--stream-idle-tick (buf)</code></li>
+<li>L95: <code>(defun kuro--start-stream-idle-timer ()</code></li>
+<li>L109: <code>(defun kuro--stop-stream-idle-timer ()</code></li>
+<li>L120: <code>(provide 'kuro-stream)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-text-size.el</h2>
+<ul>
+<li>L37: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L54: <code>(defun kuro--text-size-permille-to-height (permille)</code></li>
+<li>L67: <code>(defun kuro--clear-text-size-overlays ()</code></li>
+<li>L72: <code>(defun kuro--make-text-size-overlay (beg end height)</code></li>
+<li>L84: <code>(defun kuro--apply-text-size-ranges ()</code></li>
+<li>L107: <code>(provide 'kuro-text-size)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-tramp.el</h2>
+<ul>
+<li>L16: <code>(require 'subr-x)</code></li>
+<li>L17: <code>(require 'tramp)</code></li>
+<li>L18: <code>(require 'kuro-config)</code></li>
+<li>L19: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L29: <code>(defun kuro-tramp--valid-method-p (method)</code></li>
+<li>L34: <code>(defun kuro-tramp--set-method (symbol value)</code></li>
+<li>L41: <code>(defcustom kuro-tramp-method "ssh"</code></li>
+<li>L51: <code>(defun kuro-tramp--valid-host-label-p (label)</code></li>
+<li>L60: <code>(defun kuro-tramp--valid-remote-host-p (host)</code></li>
+<li>L72: <code>(defun kuro-tramp--valid-host-list-p (hosts)</code></li>
+<li>L80: <code>(defun kuro-tramp--set-allowed-hosts (symbol value)</code></li>
+<li>L87: <code>(defcustom kuro-tramp-allowed-hosts nil</code></li>
+<li>L98: <code>(defun kuro-tramp--safe-absolute-path-p (path)</code></li>
+<li>L108: <code>(defun kuro-tramp--host-equal-p (left right)</code></li>
+<li>L114: <code>(defun kuro-tramp--local-host-p (host)</code></li>
+<li>L126: <code>(defun kuro-tramp--host-allowed-p (host)</code></li>
+<li>L134: <code>(defun kuro--tramp-remote-path (host path)</code></li>
+<li>L142: <code>(defun kuro-tramp--target-directory (host cwd)</code></li>
+<li>L157: <code>(defun kuro--apply-cwd-with-tramp ()</code></li>
+<li>L167: <code>(provide 'kuro-tramp)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-tui-mode.el</h2>
+<ul>
+<li>L34: <code>(require 'kuro-ffi)</code></li>
+<li>L35: <code>(require 'kuro-config)</code></li>
+<li>L94: <code>(defun kuro--enter-tui-mode ()</code></li>
+<li>L100: <code>(defun kuro--exit-tui-mode ()</code></li>
+<li>L108: <code>(defun kuro--update-tui-streaming-timer ()</code></li>
+<li>L135: <code>(provide 'kuro-tui-mode)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-url-detect.el</h2>
+<ul>
+<li>L14: <code>(require 'cl-lib)</code></li>
+<li>L15: <code>(require 'kuro-ffi)</code></li>
+<li>L16: <code>(require 'kuro-keymap)</code></li>
+<li>L17: <code>(require 'kuro-url-safety)</code></li>
+<li>L21: <code>(defcustom kuro-url-detection t</code></li>
+<li>L26: <code>(defcustom kuro-url-detection-delay 0.5</code></li>
+<li>L48: <code>(defvar kuro--url-keymap</code></li>
+<li>L56: <code>(defun kuro--clear-url-overlays ()</code></li>
+<li>L63: <code>(defun kuro--url-detect-range-p (beg end)</code></li>
+<li>L71: <code>(defun kuro--make-url-overlay (beg end url)</code></li>
+<li>L89: <code>(defun kuro-open-url-at-point ()</code></li>
+<li>L103: <code>(defun kuro--overlay-with-marker-p (pos marker)</code></li>
+<li>L108: <code>(defun kuro--scan-urls-in-region (beg end)</code></li>
+<li>L121: <code>(defun kuro--url-detect-visible ()</code></li>
+<li>L139: <code>(defun kuro--start-url-detection ()</code></li>
+<li>L146: <code>(defun kuro--stop-url-detection ()</code></li>
+<li>L153: <code>(provide 'kuro-url-detect)</code></li>
+</ul>
+<h2>emacs-lisp/features/kuro-url-safety.el</h2>
+<ul>
+<li>L15: <code>(require 'cl-lib)</code></li>
+<li>L16: <code>(require 'url-parse)</code></li>
+<li>L25: <code>(defun kuro--terminal-web-url-characters-valid-p (url)</code></li>
+<li>L31: <code>(defun kuro--terminal-web-url-port-valid-p (port)</code></li>
+<li>L38: <code>(defun kuro--terminal-web-url-dns-label-valid-p (label)</code></li>
+<li>L47: <code>(defun kuro--terminal-web-url-dns-host-valid-p (host)</code></li>
+<li>L59: <code>(defun kuro--terminal-web-url-ipv4-looking-p (host)</code></li>
+<li>L64: <code>(defun kuro--terminal-web-url-decimal-octet-valid-p (octet)</code></li>
+<li>L70: <code>(defun kuro--terminal-web-url-ipv4-address-valid-p (host)</code></li>
+<li>L78: <code>(defun kuro--terminal-web-url-ipv6-h16-valid-p (group)</code></li>
+<li>L83: <code>(defun kuro--terminal-web-url-ipv6-split-side (side)</code></li>
+<li>L89: <code>(defun kuro--terminal-web-url-ipv6-group-count (groups allow-ipv4-at-end)</code></li>
+<li>L118: <code>(defun kuro--terminal-web-url-ipv6-address-valid-p (address)</code></li>
+<li>L147: <code>(defun kuro--terminal-web-url-ipv6-host-valid-p (host)</code></li>
+<li>L154: <code>(defun kuro--terminal-web-url-host-valid-p (host)</code></li>
+<li>L169: <code>(defun kuro--terminal-web-url-target-summary (url)</code></li>
+<li>L175: <code>(defun kuro--terminal-web-url-valid-p (url)</code></li>
+<li>L196: <code>(provide 'kuro-url-safety)</code></li>
+</ul>
+<h2>emacs-lisp/ffi/kuro-binary-decoder-macros.el</h2>
+<ul>
+<li>L12: <code>(defmacro kuro--decode-face-range-step (result vec pos base ul-p)</code></li>
+<li>L69: <code>(provide 'kuro-binary-decoder-macros)</code></li>
+</ul>
+<h2>emacs-lisp/ffi/kuro-binary-decoder.el</h2>
+<ul>
+<li>L49: <code>(require 'kuro-binary-decoder-macros)</code></li>
+<li>L137: <code>(defun kuro--binary-decode-error (format-string &amp;rest args)</code></li>
+<li>L145: <code>(defun kuro--binary-require-count (count section)</code></li>
+<li>L151: <code>(defun kuro--binary-require-available (vec pos byte-count section)</code></li>
+<li>L167: <code>(defun kuro--binary-require-byte-range (vec pos byte-count section)</code></li>
+<li>L180: <code>(defun kuro--binary-normalize-frame (payload)</code></li>
+<li>L200: <code>(defun kuro--binary-require-text-strings (text-strings num-rows)</code></li>
+<li>L239: <code>(defun kuro--decode-face-ranges (vec pos num-face-ranges v2-p)</code></li>
+<li>L311: <code>(defun kuro--decode-binary-updates-with-strings (text-strings vec)</code></li>
+<li>L402: <code>(defun kuro--poll-updates-binary-optimised (session-id)</code></li>
+<li>L440: <code>(provide 'kuro-binary-decoder)</code></li>
+</ul>
+<h2>emacs-lisp/ffi/kuro-eval.el</h2>
+<ul>
+<li>L19: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(require 'kuro-config)</code></li>
+<li>L21: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L22: <code>(require 'subr-x)</code></li>
+<li>L28: <code>(defcustom kuro-eval-allowed-commands</code></li>
+<li>L52: <code>(defcustom kuro-eval-denied-env-name-regexp</code></li>
+<li>L104: <code>(defun kuro--eval-proper-list-p (value)</code></li>
+<li>L122: <code>(defun kuro--eval-command-allowed-name-p (name)</code></li>
+<li>L128: <code>(defun kuro--eval-string-without-controls-p (value)</code></li>
+<li>L133: <code>(defun kuro--eval-local-absolute-directory-p (path)</code></li>
+<li>L141: <code>(defun kuro--eval-env-name-p (name)</code></li>
+<li>L146: <code>(defun kuro--eval-env-name-denied-p (name)</code></li>
+<li>L154: <code>(defun kuro--eval-validate-command-string (cmd)</code></li>
+<li>L163: <code>(defun kuro--eval-osc51-command--build (name args source)</code></li>
+<li>L193: <code>(defun kuro--eval-command-allowed-p (cmd)</code></li>
+<li>L201: <code>(defun kuro--eval-osc51-command-form (cmd)</code></li>
+<li>L221: <code>(defun kuro--eval-osc51-dispatch-command (command)</code></li>
+<li>L233: <code>(defun kuro--eval-osc51-command (cmd)</code></li>
+<li>L243: <code>(defun kuro--poll-eval-command-updates ()</code></li>
+<li>L251: <code>(provide 'kuro-eval)</code></li>
+</ul>
+<h2>emacs-lisp/ffi/kuro-ffi-macros.el</h2>
+<ul>
+<li>L14: <code>(defmacro kuro--when-divisible (counter divisor &amp;rest body)</code></li>
+<li>L25: <code>(defmacro kuro--defvar-permanent-local (name value &amp;optional doc)</code></li>
+<li>L40: <code>(defmacro kuro--def-ffi-getter (name core-fn default doc)</code></li>
+<li>L46: <code>(defmacro kuro--def-ffi-unary (name core-fn default arg doc)</code></li>
+<li>L52: <code>(defmacro kuro--def-ffi-binary (name core-fn default arg1 arg2 doc)</code></li>
+<li>L59: <code>(defmacro kuro--define-ffi-binary-getters (&amp;rest entries)</code></li>
+<li>L74: <code>(defmacro kuro--define-ffi-getters (&amp;rest entries)</code></li>
+<li>L87: <code>(defmacro kuro--define-ffi-unary-getters (&amp;rest entries)</code></li>
+<li>L101: <code>(defmacro kuro--call (fallback &amp;rest body)</code></li>
+<li>L118: <code>(provide 'kuro-ffi-macros)</code></li>
+</ul>
+<h2>emacs-lisp/ffi/kuro-ffi-modes.el</h2>
+<ul>
+<li>L19: <code>(require 'kuro-ffi)</code></li>
+<li>L126: <code>(provide 'kuro-ffi-modes)</code></li>
+</ul>
+<h2>emacs-lisp/ffi/kuro-ffi-osc.el</h2>
+<ul>
+<li>L20: <code>(require 'kuro-ffi)</code></li>
+<li>L246: <code>(defun kuro--notify-action-response (session-id id button close)</code></li>
+<li>L264: <code>(provide 'kuro-ffi-osc)</code></li>
+</ul>
+<h2>emacs-lisp/ffi/kuro-ffi.el</h2>
+<ul>
+<li>L32: <code>(require 'kuro-config)</code></li>
+<li>L33: <code>(require 'kuro-ffi-macros)</code></li>
+<li>L39: <code>(defcustom kuro-log-errors t</code></li>
+<li>L69: <code>(defun kuro-show-log ()</code></li>
+<li>L111: <code>(defun kuro--init (command &amp;optional shell-args rows cols)</code></li>
+<li>L138: <code>(defun kuro--shutdown ()</code></li>
+<li>L149: <code>(defun kuro--send-key (data)</code></li>
+<li>L160: <code>(defun kuro--send-paste (text)</code></li>
+<li>L178: <code>(defun kuro--resize (rows cols)</code></li>
+<li>L183: <code>(defun kuro--set-cell-pixel-size (width height)</code></li>
+<li>L192: <code>(defun kuro--push-cell-pixel-size-from-font ()</code></li>
+<li>L220: <code>(provide 'kuro-ffi)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-encode.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-ffi)</code></li>
+<li>L17: <code>(require 'kuro-input-keys-data)</code></li>
+<li>L32: <code>(defun kuro--named-key-sequence-dispatch (base sequences)</code></li>
+<li>L42: <code>(defun kuro--encode-key-event (event)</code></li>
+<li>L65: <code>(defun kuro-send-next-key ()</code></li>
+<li>L89: <code>(provide 'kuro-input-encode)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keymap-data.el</h2>
+<ul>
+<li>L107: <code>(provide 'kuro-input-keymap-data)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keymap-meta-macros.el</h2>
+<ul>
+<li>L13: <code>(require 'kuro-input-macros)</code></li>
+<li>L14: <code>(require 'kuro-input-keymap-data)</code></li>
+<li>L16: <code>(defmacro kuro--define-meta-letter-bindings (map letters)</code></li>
+<li>L34: <code>(define-key ,map-sym (kbd (format "M-%c" char)) command)</code></li>
+<li>L35: <code>(define-key ,map-sym (vector ?\e char) command))))</code></li>
+<li>L38: <code>(provide 'kuro-input-keymap-meta-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keymap-meta.el</h2>
+<ul>
+<li>L15: <code>(require 'kuro-ffi)</code></li>
+<li>L16: <code>(require 'kuro-input-keymap-data)</code></li>
+<li>L17: <code>(require 'kuro-input-keymap-meta-macros)</code></li>
+<li>L18: <code>(require 'kuro-keymap)</code></li>
+<li>L19: <code>(require 'kuro-keymap-macros)</code></li>
+<li>L33: <code>(defun kuro--send-meta-backspace ()</code></li>
+<li>L40: <code>(defun kuro--meta-exception-char (exc)</code></li>
+<li>L46: <code>(defun kuro--keymap-clear-exception (map exc)</code></li>
+<li>L49: <code>(define-key map (kbd exc) nil)</code></li>
+<li>L52: <code>(define-key map (vector ?\e char) nil)))))</code></li>
+<li>L54: <code>(defun kuro--keymap-setup-meta (map)</code></li>
+<li>L90: <code>(defun kuro--keymap-apply-exceptions (map)</code></li>
+<li>L98: <code>(provide 'kuro-input-keymap-meta)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keymap-navigation-macros.el</h2>
+<ul>
+<li>L13: <code>(require 'kuro-input-macros)</code></li>
+<li>L14: <code>(require 'kuro-input-keymap-data)</code></li>
+<li>L16: <code>(defmacro kuro--modifier-arrow-send-and-render (xterm-seq)</code></li>
+<li>L22: <code>(defmacro kuro--define-modifier-arrow-bindings (map modifiers arrows)</code></li>
+<li>L64: <code>(defmacro kuro--def-shifted-key (name kkp-seq legacy-seq docstring)</code></li>
+<li>L77: <code>(provide 'kuro-input-keymap-navigation-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keymap-navigation.el</h2>
+<ul>
+<li>L15: <code>(require 'kuro-ffi)</code></li>
+<li>L16: <code>(require 'kuro-input-keys-data)</code></li>
+<li>L17: <code>(require 'kuro-input-keymap-data)</code></li>
+<li>L18: <code>(require 'kuro-keymap)</code></li>
+<li>L19: <code>(require 'kuro-keymap-macros)</code></li>
+<li>L20: <code>(require 'kuro-input-keymap-navigation-macros)</code></li>
+<li>L89: <code>(defun kuro--keymap-setup-navigation (map)</code></li>
+<li>L121: <code>(define-key map [S-return] #'kuro--send-shifted-return))</code></li>
+<li>L123: <code>(provide 'kuro-input-keymap-navigation)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keymap.el</h2>
+<ul>
+<li>L27: <code>(require 'kuro-input-keymap-data)</code></li>
+<li>L28: <code>(require 'kuro-input-keymap-meta)</code></li>
+<li>L29: <code>(require 'kuro-input-keymap-navigation)</code></li>
+<li>L30: <code>(require 'kuro-input-macros)</code></li>
+<li>L31: <code>(require 'kuro-input-mouse)</code></li>
+<li>L32: <code>(require 'kuro-input-mouse-scroll)</code></li>
+<li>L33: <code>(require 'kuro-input-paste)</code></li>
+<li>L34: <code>(require 'kuro-keymap)</code></li>
+<li>L35: <code>(require 'kuro-keymap-macros)</code></li>
+<li>L67: <code>(defvar kuro--keymap nil</code></li>
+<li>L73: <code>(defun kuro--keymap-setup-special (map)</code></li>
+<li>L82: <code>(defun kuro--send-escape ()</code></li>
+<li>L88: <code>(defun kuro--keymap-setup-ctrl (map)</code></li>
+<li>L98: <code>(define-key map (kbd "C-v") #'kuro--scroll-aware-ctrl-v)</code></li>
+<li>L102: <code>(define-key map [escape] #'kuro--send-escape))</code></li>
+<li>L104: <code>(defun kuro--keymap-setup-super-hyper (map)</code></li>
+<li>L124: <code>(defun kuro--keymap-setup-mouse (map)</code></li>
+<li>L130: <code>(defun kuro--keymap-setup-yank (map)</code></li>
+<li>L141: <code>(defvar kuro--char-keymap nil</code></li>
+<li>L148: <code>(defun kuro--build-full-keymap ()</code></li>
+<li>L153: <code>(define-key map [remap self-insert-command] #'kuro--self-insert)</code></li>
+<li>L163: <code>(defun kuro--build-keymap ()</code></li>
+<li>L175: <code>(provide 'kuro-input-keymap)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keys-data.el</h2>
+<ul>
+<li>L39: <code>(defun kuro--encode-kitty-key (key modifiers)</code></li>
+<li>L131: <code>(provide 'kuro-input-keys-data)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keys-macros.el</h2>
+<ul>
+<li>L12: <code>(defmacro kuro--def-key-sequence (name doc normal application &amp;optional kkp-cp)</code></li>
+<li>L26: <code>(defmacro kuro--def-shifted-fkey (name legacy-seq kkp-cp doc)</code></li>
+<li>L37: <code>(defmacro kuro--def-keypad-key (name normal-char application-seq doc)</code></li>
+<li>L47: <code>(provide 'kuro-input-keys-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-keys.el</h2>
+<ul>
+<li>L28: <code>(require 'kuro-input-keys-macros)</code></li>
+<li>L29: <code>(require 'kuro-input-keys-data)</code></li>
+<li>L30: <code>(require 'kuro-input-macros)</code></li>
+<li>L96: <code>(defmacro kuro--define-shifted-fkeys ()</code></li>
+<li>L114: <code>(defmacro kuro--define-keypad-keys ()</code></li>
+<li>L134: <code>(defun kuro--ctrl-modified (char _modifier)</code></li>
+<li>L143: <code>(defun kuro--alt-modified (char)</code></li>
+<li>L155: <code>(defun kuro--super-modified (char)</code></li>
+<li>L167: <code>(defun kuro--hyper-modified (char)</code></li>
+<li>L179: <code>(provide 'kuro-input-keys)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--def-special-key (name byte doc)</code></li>
+<li>L20: <code>(defmacro kuro--def-kkp-key (name kkp-seq legacy-char doc)</code></li>
+<li>L32: <code>(defmacro kuro--def-key-sender (name encoder-form arg doc)</code></li>
+<li>L41: <code>(defmacro kuro--with-kkp-all-escape (sequence-form &amp;rest legacy-body)</code></li>
+<li>L50: <code>(defmacro kuro--with-kkp-disambiguate (kkp-form legacy-form)</code></li>
+<li>L56: <code>(provide 'kuro-input-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-buffer-macros.el</h2>
+<ul>
+<li>L24: <code>(defmacro kuro--line-splice (from to replacement new-point)</code></li>
+<li>L35: <code>(defmacro kuro--line-splice-with-undo (from to replacement new-point)</code></li>
+<li>L44: <code>(defmacro kuro--line-replace-buffer-with-undo (replacement-form)</code></li>
+<li>L51: <code>(defmacro kuro--line-insert-with-undo (from replacement-form)</code></li>
+<li>L59: <code>(defmacro kuro--line-delete-with-undo (from to)</code></li>
+<li>L64: <code>(defmacro kuro--line-replace-range-with-undo (from to replacement-form)</code></li>
+<li>L74: <code>(provide 'kuro-input-mode-buffer-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-completion-dispatch.el</h2>
+<ul>
+<li>L15: <code>(defun kuro--line-display-completions (candidates label)</code></li>
+<li>L21: <code>(defun kuro--line-dispatch-completion-candidates</code></li>
+<li>L36: <code>(provide 'kuro-input-mode-completion-dispatch)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-completion-history.el</h2>
+<ul>
+<li>L13: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L14: <code>(require 'kuro-input-mode-completion-dispatch)</code></li>
+<li>L21: <code>(defun kuro--line-all-history-completions (prefix)</code></li>
+<li>L35: <code>(defun kuro--line-complete-history ()</code></li>
+<li>L47: <code>(defun kuro--line-complete-history-multi ()</code></li>
+<li>L59: <code>(defun kuro--line-history-search ()</code></li>
+<li>L75: <code>(provide 'kuro-input-mode-completion-history)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-completion-word-macros.el</h2>
+<ul>
+<li>L12: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L14: <code>(defmacro kuro--line-with-word-span (vars &amp;rest body)</code></li>
+<li>L28: <code>(provide 'kuro-input-mode-completion-word-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-completion-word.el</h2>
+<ul>
+<li>L13: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L14: <code>(require 'kuro-input-mode-completion-dispatch)</code></li>
+<li>L15: <code>(require 'kuro-input-mode-completion-word-macros)</code></li>
+<li>L34: <code>(defun kuro--line-complete-word ()</code></li>
+<li>L45: <code>(defun kuro--line-expand-abbrev ()</code></li>
+<li>L58: <code>(provide 'kuro-input-mode-completion-word)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-completion.el</h2>
+<ul>
+<li>L13: <code>(require 'kuro-input-mode-completion-history)</code></li>
+<li>L14: <code>(require 'kuro-input-mode-completion-word)</code></li>
+<li>L21: <code>(defun kuro--line-complete ()</code></li>
+<li>L30: <code>(provide 'kuro-input-mode-completion)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-data.el</h2>
+<ul>
+<li>L15: <code>(require 'kuro-config)</code></li>
+<li>L16: <code>(require 'kuro-ffi)</code></li>
+<li>L20: <code>(defvar kuro--keymap)</code></li>
+<li>L21: <code>(defvar kuro--char-keymap)</code></li>
+<li>L22: <code>(defvar kuro-mode-map)</code></li>
+<li>L77: <code>(defun kuro-input-mode-savehist-setup ()</code></li>
+<li>L86: <code>(defcustom kuro-line-history-max-length 100</code></li>
+<li>L95: <code>(defcustom kuro-line-use-minibuffer nil</code></li>
+<li>L107: <code>(defcustom kuro-line-completion-function nil</code></li>
+<li>L116: <code>(defcustom kuro-line-abbrev-alist nil</code></li>
+<li>L133: <code>(defun kuro--input-mode-lighter ()</code></li>
+<li>L137: <code>(provide 'kuro-input-mode-data)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-edit.el</h2>
+<ul>
+<li>L16: <code>(require 'kuro-config)</code></li>
+<li>L17: <code>(require 'kuro-keymap)</code></li>
+<li>L18: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L42: <code>(defvar kuro--line-edit-keymap</code></li>
+<li>L49: <code>(define-derived-mode kuro-line-edit-mode text-mode "Kuro-Line-Edit"</code></li>
+<li>L63: <code>(defun kuro--line-edit-in-buffer ()</code></li>
+<li>L92: <code>(defun kuro-line-edit-send ()</code></li>
+<li>L110: <code>(defun kuro-line-edit-discard ()</code></li>
+<li>L122: <code>(provide 'kuro-input-mode-edit)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-ext.el</h2>
+<ul>
+<li>L21: <code>(require 'kuro-config)</code></li>
+<li>L22: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L23: <code>(require 'kuro-input-mode-line-ops)</code></li>
+<li>L24: <code>(require 'kuro-input-mode-transform)</code></li>
+<li>L44: <code>(defvar kuro--keymap)</code></li>
+<li>L45: <code>(defvar kuro--char-keymap)</code></li>
+<li>L46: <code>(defvar kuro-mode-map)</code></li>
+<li>L52: <code>(require 'kuro-input-mode-yank)</code></li>
+<li>L53: <code>(require 'kuro-input-mode-ext2)</code></li>
+<li>L55: <code>(provide 'kuro-input-mode-ext)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-ext2-data.el</h2>
+<ul>
+<li>L78: <code>(provide 'kuro-input-mode-ext2-data)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-ext2-keymap.el</h2>
+<ul>
+<li>L16: <code>(require 'kuro-keymap)</code></li>
+<li>L17: <code>(require 'kuro-keymap-macros)</code></li>
+<li>L18: <code>(require 'kuro-input-mode-ext2-data)</code></li>
+<li>L19: <code>(require 'kuro-ffi-macros)</code></li>
+<li>L66: <code>(defvar kuro--keymap)</code></li>
+<li>L67: <code>(defvar kuro--char-keymap)</code></li>
+<li>L68: <code>(defvar kuro-mode-map)</code></li>
+<li>L77: <code>(defvar kuro--line-mode-keymap nil</code></li>
+<li>L97: <code>(defun kuro--resolve-keymap (keymap)</code></li>
+<li>L108: <code>(defun kuro--build-line-mode-keymap ()</code></li>
+<li>L113: <code>(define-key map [remap self-insert-command] #'kuro--line-self-insert)</code></li>
+<li>L114: <code>(define-key map [return] #'kuro--line-commit)</code></li>
+<li>L115: <code>(define-key map [backspace] #'kuro--line-delete)</code></li>
+<li>L122: <code>(defun kuro--install-input-mode-keymap ()</code></li>
+<li>L176: <code>(defun kuro--apply-input-mode ()</code></li>
+<li>L189: <code>(provide 'kuro-input-mode-ext2-keymap)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-ext2-mode-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--def-input-mode (name mode message &amp;rest pre-apply)</code></li>
+<li>L27: <code>(provide 'kuro-input-mode-ext2-mode-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-ext2-mode.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-config)</code></li>
+<li>L19: <code>(require 'kuro-input-mode-ext2-keymap)</code></li>
+<li>L20: <code>(require 'kuro-input-mode-edit)</code></li>
+<li>L21: <code>(require 'kuro-input-mode-line-nav)</code></li>
+<li>L22: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L88: <code>(defun kuro-cycle-input-mode ()</code></li>
+<li>L98: <code>(provide 'kuro-input-mode-ext2-mode)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-ext2-send.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-input-mode-line)</code></li>
+<li>L15: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L16: <code>(require 'kuro-config)</code></li>
+<li>L26: <code>(defun kuro-line-minibuffer-send ()</code></li>
+<li>L52: <code>(provide 'kuro-input-mode-ext2-send)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-ext2.el</h2>
+<ul>
+<li>L17: <code>(require 'kuro-input-mode-ext2-data)</code></li>
+<li>L18: <code>(require 'kuro-input-mode-ext2-send)</code></li>
+<li>L19: <code>(require 'kuro-input-mode-ext2-keymap)</code></li>
+<li>L20: <code>(require 'kuro-input-mode-ext2-mode)</code></li>
+<li>L22: <code>(provide 'kuro-input-mode-ext2)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-history-nav-state.el</h2>
+<ul>
+<li>L13: <code>(require 'kuro-input-mode-line-state)</code></li>
+<li>L35: <code>(provide 'kuro-input-mode-history-nav-state)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-history-nav.el</h2>
+<ul>
+<li>L13: <code>(require 'kuro-input-mode-history-nav-state)</code></li>
+<li>L14: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L59: <code>(provide 'kuro-input-mode-history-nav)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-history.el</h2>
+<ul>
+<li>L15: <code>(require 'kuro-input-mode-completion)</code></li>
+<li>L16: <code>(require 'kuro-input-mode-history-nav)</code></li>
+<li>L18: <code>(provide 'kuro-input-mode-history)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-line-display.el</h2>
+<ul>
+<li>L24: <code>(defun kuro--line-mode-update-display ()</code></li>
+<li>L46: <code>(defun kuro--line-clear-overlay ()</code></li>
+<li>L57: <code>(provide 'kuro-input-mode-line-display)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-line-nav.el</h2>
+<ul>
+<li>L15: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L53: <code>(provide 'kuro-input-mode-line-nav)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-line-ops.el</h2>
+<ul>
+<li>L15: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L75: <code>(provide 'kuro-input-mode-line-ops)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-line-state.el</h2>
+<ul>
+<li>L15: <code>(require 'seq)</code></li>
+<li>L35: <code>(defun kuro--line-undo-push ()</code></li>
+<li>L43: <code>(defun kuro--line-set-buffer (text)</code></li>
+<li>L61: <code>(provide 'kuro-input-mode-line-state)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-line.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-config)</code></li>
+<li>L15: <code>(require 'kuro-ffi)</code></li>
+<li>L16: <code>(require 'cl-lib)</code></li>
+<li>L17: <code>(require 'kuro-input-mode-line-display)</code></li>
+<li>L18: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L38: <code>(defun kuro--line-undo ()</code></li>
+<li>L51: <code>(defun kuro--line-word-bounds-forward ()</code></li>
+<li>L60: <code>(defun kuro--line-self-insert ()</code></li>
+<li>L77: <code>(defun kuro--line-quoted-insert ()</code></li>
+<li>L90: <code>(defun kuro--line-delete ()</code></li>
+<li>L96: <code>(defun kuro--line-newline ()</code></li>
+<li>L105: <code>(defun kuro--line-kill-line ()</code></li>
+<li>L110: <code>(defun kuro--line-commit ()</code></li>
+<li>L126: <code>(defun kuro--line-abort ()</code></li>
+<li>L132: <code>(provide 'kuro-input-mode-line)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-macros.el</h2>
+<ul>
+<li>L26: <code>(require 'kuro-input-mode-buffer-macros)</code></li>
+<li>L27: <code>(require 'kuro-input-mode-line-state)</code></li>
+<li>L32: <code>(defmacro kuro--with-line-edit (&amp;rest body)</code></li>
+<li>L37: <code>(defmacro kuro--with-line-edit-undo (&amp;rest body)</code></li>
+<li>L41: <code>(defmacro kuro--def-line-command (name docstring &amp;rest body)</code></li>
+<li>L52: <code>(defmacro kuro--def-line-nav (name docstring &amp;rest body)</code></li>
+<li>L62: <code>(defmacro kuro--def-line-history-nav (name docstring guard stashp index-form buffer-form)</code></li>
+<li>L113: <code>(defmacro kuro--line-apply-word-transform (replacement-form)</code></li>
+<li>L123: <code>(defmacro kuro--def-line-word-transform (name docstring replacement-form)</code></li>
+<li>L131: <code>(provide 'kuro-input-mode-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-transform.el</h2>
+<ul>
+<li>L13: <code>(require 'kuro-input-mode-line)</code></li>
+<li>L14: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L34: <code>(defun kuro--line-transpose-words ()</code></li>
+<li>L51: <code>(provide 'kuro-input-mode-transform)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode-yank.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L28: <code>(defun kuro--line-yank ()</code></li>
+<li>L39: <code>(defun kuro--line-yank-pop ()</code></li>
+<li>L60: <code>(defun kuro--line-yank-last-arg ()</code></li>
+<li>L91: <code>(provide 'kuro-input-mode-yank)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mode.el</h2>
+<ul>
+<li>L43: <code>(require 'kuro-input-mode-data)</code></li>
+<li>L44: <code>(require 'kuro-input-mode-line)</code></li>
+<li>L45: <code>(require 'kuro-input-mode-line-state)</code></li>
+<li>L46: <code>(require 'kuro-input-mode-macros)</code></li>
+<li>L47: <code>(require 'kuro-ffi)</code></li>
+<li>L49: <code>(require 'kuro-input-mode-history)</code></li>
+<li>L50: <code>(require 'kuro-input-mode-ext)</code></li>
+<li>L52: <code>(provide 'kuro-input-mode)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mouse-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--dispatch-mouse-event (btn press)</code></li>
+<li>L30: <code>(defmacro kuro--def-mouse-cmd (name btn-form press doc)</code></li>
+<li>L42: <code>(defmacro kuro--def-scroll-command (name doc scroll-form offset-form)</code></li>
+<li>L58: <code>(provide 'kuro-input-mouse-macros)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mouse-scroll.el</h2>
+<ul>
+<li>L16: <code>(require 'kuro-input-mouse)</code></li>
+<li>L17: <code>(require 'kuro-input-mouse-macros)</code></li>
+<li>L37: <code>(defun kuro--mouse-scroll-up ()</code></li>
+<li>L52: <code>(defun kuro--mouse-scroll-down ()</code></li>
+<li>L62: <code>(provide 'kuro-input-mouse-scroll)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-mouse.el</h2>
+<ul>
+<li>L18: <code>(require 'kuro-ffi)</code></li>
+<li>L19: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L20: <code>(require 'kuro-input-mouse-macros)</code></li>
+<li>L52: <code>(defun kuro--encode-mouse (event button press)</code></li>
+<li>L67: <code>(defun kuro--encode-mouse-sgr (event button press)</code></li>
+<li>L85: <code>(provide 'kuro-input-mouse)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-paste.el</h2>
+<ul>
+<li>L17: <code>(require 'kuro-ffi)</code></li>
+<li>L39: <code>(defun kuro--paste-prefix-numeric-value (arg default)</code></li>
+<li>L53: <code>(defun kuro--paste-yank-index (arg)</code></li>
+<li>L60: <code>(defun kuro--paste-yank-pop-index (arg)</code></li>
+<li>L64: <code>(defun kuro--send-paste-or-raw (text)</code></li>
+<li>L72: <code>(defun kuro--yank (&amp;optional arg)</code></li>
+<li>L81: <code>(defun kuro--yank-pop (&amp;optional arg)</code></li>
+<li>L92: <code>(provide 'kuro-input-paste)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-render.el</h2>
+<ul>
+<li>L15: <code>(require 'kuro-config)</code></li>
+<li>L16: <code>(require 'kuro-input-macros)</code></li>
+<li>L30: <code>(defun kuro--do-pending-render (buf)</code></li>
+<li>L39: <code>(defun kuro--schedule-immediate-render ()</code></li>
+<li>L52: <code>(provide 'kuro-input-render)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-send-scroll.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-input-macros)</code></li>
+<li>L15: <code>(require 'kuro-input-send)</code></li>
+<li>L31: <code>(defun kuro--scroll-aware-ctrl-v ()</code></li>
+<li>L42: <code>(defun kuro--scroll-aware-meta-v ()</code></li>
+<li>L74: <code>(provide 'kuro-input-send-scroll)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input-send.el</h2>
+<ul>
+<li>L14: <code>(require 'kuro-ffi)</code></li>
+<li>L15: <code>(require 'kuro-input-macros)</code></li>
+<li>L16: <code>(require 'kuro-input-keys-macros)</code></li>
+<li>L17: <code>(require 'kuro-input-mouse-macros)</code></li>
+<li>L18: <code>(require 'kuro-input-render)</code></li>
+<li>L38: <code>(defun kuro--self-insert ()</code></li>
+<li>L54: <code>(defun kuro--send-special (byte)</code></li>
+<li>L90: <code>(defun kuro--send-key-sequence (normal-sequence application-sequence)</code></li>
+<li>L100: <code>(defun kuro--ctrl-alt-modified (char _modifier)</code></li>
+<li>L117: <code>(provide 'kuro-input-send)</code></li>
+</ul>
+<h2>emacs-lisp/input/kuro-input.el</h2>
+<ul>
+<li>L23: <code>(require 'kuro-config)</code></li>
+<li>L24: <code>(require 'kuro-ffi)</code></li>
+<li>L25: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L26: <code>(require 'kuro-input-macros)</code></li>
+<li>L27: <code>(require 'kuro-input-render)</code></li>
+<li>L34: <code>(require 'kuro-input-send)</code></li>
+<li>L35: <code>(require 'kuro-input-send-scroll)</code></li>
+<li>L36: <code>(require 'kuro-input-keys)</code></li>
+<li>L37: <code>(require 'kuro-input-mouse)</code></li>
+<li>L38: <code>(require 'kuro-input-mouse-scroll)</code></li>
+<li>L44: <code>(require 'kuro-input-keymap)</code></li>
+<li>L45: <code>(require 'kuro-input-encode)</code></li>
+<li>L53: <code>(provide 'kuro-input)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-overlays-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--toggle-blink-state (blink-type)</code></li>
+<li>L22: <code>(defmacro kuro--register-blink-overlay (ov blink-type row)</code></li>
+<li>L37: <code>(provide 'kuro-overlays-macros)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-overlays.el</h2>
+<ul>
+<li>L26: <code>(require 'seq)</code></li>
+<li>L27: <code>(require 'subr-x)</code></li>
+<li>L28: <code>(require 'kuro-ffi)</code></li>
+<li>L29: <code>(require 'kuro-faces)</code></li>
+<li>L30: <code>(require 'kuro-faces-attrs)</code></li>
+<li>L31: <code>(require 'kuro-overlays-macros)</code></li>
+<li>L63: <code>(defun kuro--recompute-blink-frame-intervals ()</code></li>
+<li>L181: <code>(defun kuro--toggle-blink-phase (blink-type)</code></li>
+<li>L195: <code>(defun kuro--tick-blink-overlays ()</code></li>
+<li>L231: <code>(defun kuro--clear-all-image-overlays ()</code></li>
+<li>L242: <code>(defun kuro--filter-overlays (overlays predicate &amp;optional on-delete)</code></li>
+<li>L256: <code>(defun kuro--clear-row-image-overlays (row)</code></li>
+<li>L279: <code>(defun kuro--finite-proper-list-p (value)</code></li>
+<li>L297: <code>(defun kuro--list-length-p (value expected)</code></li>
+<li>L310: <code>(defun kuro--strict-base64-payload-p (b64)</code></li>
+<li>L323: <code>(defun kuro--image-notification-p (notif)</code></li>
+<li>L333: <code>(defun kuro--placeholder-region-p (region)</code></li>
+<li>L352: <code>(defun kuro--decode-png-image (b64)</code></li>
+<li>L363: <code>(defun kuro--place-image-overlay (img row col cell-width &amp;optional image-id)</code></li>
+<li>L384: <code>(defun kuro--render-image-notification (notif)</code></li>
+<li>L403: <code>(defun kuro--clear-placeholder-overlays ()</code></li>
+<li>L410: <code>(defun kuro--place-placeholder-tile (img row col slice)</code></li>
+<li>L425: <code>(defun kuro--render-placeholder-region (region)</code></li>
+<li>L454: <code>(defun kuro--render-placeholder-regions (regions)</code></li>
+<li>L466: <code>(defun kuro--animation-clamp-gap (gap-ms)</code></li>
+<li>L475: <code>(defun kuro--animation-cancel (image-id)</code></li>
+<li>L481: <code>(defun kuro--animation-overlay-for-id (image-id)</code></li>
+<li>L488: <code>(defun kuro--animation-advance (buffer image-id frame-index)</code></li>
+<li>L517: <code>(defun kuro--maybe-start-animation (image-id)</code></li>
+<li>L530: <code>(defun kuro--clear-all-animations ()</code></li>
+<li>L573: <code>(defun kuro--remove-blink-overlay-from-lists (ov)</code></li>
+<li>L582: <code>(defun kuro--reset-blink-overlays (remaining)</code></li>
+<li>L594: <code>(defun kuro--shift-blink-overlay-rows (up down rows)</code></li>
+<li>L655: <code>(provide 'kuro-overlays)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-render-buffer-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--with-buffer-edit (&amp;rest body)</code></li>
+<li>L21: <code>(defmacro kuro--with-current-render-row (row &amp;rest body)</code></li>
+<li>L30: <code>(defmacro kuro--with-rewritten-line (row text col-to-buf &amp;rest body)</code></li>
+<li>L54: <code>(provide 'kuro-render-buffer-macros)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-render-buffer.el</h2>
+<ul>
+<li>L19: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(require 'kuro-ffi)</code></li>
+<li>L21: <code>(require 'kuro-ffi-modes)</code></li>
+<li>L22: <code>(require 'kuro-faces)</code></li>
+<li>L23: <code>(require 'kuro-render-buffer-macros)</code></li>
+<li>L24: <code>(require 'kuro-overlays)</code></li>
+<li>L60: <code>(defun kuro--init-row-positions (rows)</code></li>
+<li>L64: <code>(defun kuro--invalidate-row-positions ()</code></li>
+<li>L84: <code>(defun kuro--row-position (row)</code></li>
+<li>L98: <code>(defun kuro--scroll-lines (direction n last-rows)</code></li>
+<li>L126: <code>(defun kuro--apply-buffer-scroll (up down)</code></li>
+<li>L146: <code>(defun kuro--clear-line-blink-overlays (line-start &amp;optional row pre-end)</code></li>
+<li>L162: <code>(defun kuro--clear-line-blink-overlays-from-row (row line-start line-end-before)</code></li>
+<li>L175: <code>(defun kuro--clear-line-blink-overlays-by-scan (line-start line-end-before)</code></li>
+<li>L210: <code>(defun kuro--update-row-position-cache-after-line-change (row old-len new-len new-line-end)</code></li>
+<li>L230: <code>(defun kuro--ensure-buffer-row-exists (row)</code></li>
+<li>L277: <code>(defun kuro--clear-row-overlays (row &amp;optional pre-end)</code></li>
+<li>L307: <code>(defun kuro--update-line-full (row text face-ranges col-to-buf)</code></li>
+<li>L326: <code>(require 'kuro-render-cursor)</code></li>
+<li>L328: <code>(provide 'kuro-render-buffer)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-render-cursor-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--cache-cursor-state (row col visible shape)</code></li>
+<li>L20: <code>(provide 'kuro-render-cursor-macros)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-render-cursor.el</h2>
+<ul>
+<li>L17: <code>(require 'kuro-ffi)</code></li>
+<li>L18: <code>(require 'kuro-ffi-modes)</code></li>
+<li>L19: <code>(require 'kuro-render-cursor-macros)</code></li>
+<li>L23: <code>(defvar kuro--col-to-buf-map)</code></li>
+<li>L55: <code>(defun kuro--grid-col-to-buffer-pos (row col)</code></li>
+<li>L73: <code>(defun kuro--anchor-window-at-pos (win target-pos)</code></li>
+<li>L104: <code>(defun kuro--apply-cursor-blink (visible shape)</code></li>
+<li>L119: <code>(defun kuro--apply-cursor-display (visible shape)</code></li>
+<li>L193: <code>(defun kuro--update-cursor ()</code></li>
+<li>L234: <code>(defun kuro--update-scroll-indicator ()</code></li>
+<li>L251: <code>(provide 'kuro-render-cursor)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-renderer-macros.el</h2>
+<ul>
+<li>L13: <code>(defmacro kuro--recompute-budget-vars (rate)</code></li>
+<li>L24: <code>(defmacro kuro--with-frame-coalescing (&amp;rest body)</code></li>
+<li>L43: <code>(defmacro kuro--with-live-render-frame (&amp;rest body)</code></li>
+<li>L52: <code>(provide 'kuro-renderer-macros)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-renderer-pipeline-macros.el</h2>
+<ul>
+<li>L15: <code>(defmacro kuro--timed (ms-var &amp;rest body)</code></li>
+<li>L23: <code>(defmacro kuro--with-render-env (&amp;rest body)</code></li>
+<li>L33: <code>(defmacro kuro--reset-cursor-cache ()</code></li>
+<li>L43: <code>(defmacro kuro--with-render-buffer-mutation (&amp;rest body)</code></li>
+<li>L50: <code>(defmacro kuro--with-update-entry (entry-form row text face-ranges col-to-buf &amp;rest body)</code></li>
+<li>L64: <code>(defmacro kuro--do-update-list (update-list row text face-ranges col-to-buf &amp;rest body)</code></li>
+<li>L80: <code>(defmacro kuro--with-core-render-pipeline-body (&amp;rest body)</code></li>
+<li>L98: <code>(defmacro kuro--core-render-pipeline-run (updates-var &amp;rest body)</code></li>
+<li>L106: <code>(defmacro kuro--core-render-pipeline-run-with-timing</code></li>
+<li>L126: <code>(provide 'kuro-renderer-pipeline-macros)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-renderer-pipeline.el</h2>
+<ul>
+<li>L32: <code>(require 'kuro-ffi)</code></li>
+<li>L33: <code>(require 'kuro-ffi-osc)</code></li>
+<li>L34: <code>(require 'kuro-config)</code></li>
+<li>L35: <code>(require 'kuro-render-buffer)</code></li>
+<li>L36: <code>(require 'kuro-binary-decoder)</code></li>
+<li>L37: <code>(require 'kuro-debug-perf)</code></li>
+<li>L38: <code>(require 'kuro-poll-modes)</code></li>
+<li>L39: <code>(require 'kuro-renderer-pipeline-macros)</code></li>
+<li>L69: <code>(defvar kuro--col-to-buf-map nil</code></li>
+<li>L111: <code>(defun kuro--sanitize-title (title)</code></li>
+<li>L118: <code>(defun kuro--pending-resize-valid-p (rows cols)</code></li>
+<li>L122: <code>(defun kuro--current-buffer-row-count ()</code></li>
+<li>L128: <code>(defun kuro--adjust-buffer-row-count (rows)</code></li>
+<li>L143: <code>(defun kuro--reset-render-state-after-resize (rows cols)</code></li>
+<li>L155: <code>(defun kuro--handle-pending-resize ()</code></li>
+<li>L174: <code>(defun kuro--apply-title-update ()</code></li>
+<li>L185: <code>(defun kuro--apply-decoded-scroll-shift ()</code></li>
+<li>L218: <code>(defun kuro--col-to-buf-map-should-evict-p ()</code></li>
+<li>L224: <code>(defun kuro--evict-out-of-bounds-col-to-buf-rows ()</code></li>
+<li>L231: <code>(defun kuro--evict-empty-dirty-col-to-buf-rows (dirty-rows)</code></li>
+<li>L237: <code>(defun kuro--evict-stale-col-to-buf-entries (dirty-rows)</code></li>
+<li>L257: <code>(defun kuro--dirty-update-error (format-string &amp;rest args)</code></li>
+<li>L265: <code>(defun kuro--validate-dirty-face-ranges (face-ranges entry-index)</code></li>
+<li>L284: <code>(defun kuro--validate-dirty-col-to-buf (col-to-buf entry-index)</code></li>
+<li>L300: <code>(defun kuro--validate-dirty-update-entry (entry entry-index)</code></li>
+<li>L323: <code>(defun kuro--validate-dirty-update-list (update-list)</code></li>
+<li>L335: <code>(defun kuro--apply-dirty-lines (update-list)</code></li>
+<li>L351: <code>(defun kuro--poll-frame-updates ()</code></li>
+<li>L365: <code>(defun kuro--execute-core-render-steps (&amp;optional timings)</code></li>
+<li>L389: <code>(defun kuro--core-render-pipeline ()</code></li>
+<li>L397: <code>(defun kuro--core-render-pipeline-with-timing ()</code></li>
+<li>L408: <code>(defun kuro--finalize-dirty-updates (update-list)</code></li>
+<li>L421: <code>(defun kuro--apply-dirty-updates ()</code></li>
+<li>L434: <code>(defun kuro--poll-within-budget (frame-start-time)</code></li>
+<li>L449: <code>(provide 'kuro-renderer-pipeline)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-renderer.el</h2>
+<ul>
+<li>L33: <code>(require 'kuro-renderer-pipeline)</code></li>
+<li>L34: <code>(require 'kuro-renderer-macros)</code></li>
+<li>L35: <code>(require 'kuro-input)</code></li>
+<li>L36: <code>(require 'kuro-config)</code></li>
+<li>L37: <code>(require 'kuro-faces)</code></li>
+<li>L38: <code>(require 'kuro-overlays)</code></li>
+<li>L39: <code>(require 'kuro-stream)</code></li>
+<li>L40: <code>(require 'kuro-tui-mode)</code></li>
+<li>L159: <code>(defun kuro--update-frame-budget-ratio (duration)</code></li>
+<li>L170: <code>(defun kuro--install-render-timer (rate)</code></li>
+<li>L185: <code>(defun kuro--start-render-loop ()</code></li>
+<li>L194: <code>(defun kuro--stop-render-loop ()</code></li>
+<li>L207: <code>(defun kuro--switch-render-timer (new-rate)</code></li>
+<li>L218: <code>(defun kuro--ring-pending-bell ()</code></li>
+<li>L229: <code>(defun kuro--tick-blink-if-active ()</code></li>
+<li>L234: <code>(defun kuro--render-cycle-stage-2 (frame-start)</code></li>
+<li>L246: <code>(defun kuro--render-cycle ()</code></li>
+<li>L270: <code>(provide 'kuro-renderer)</code></li>
+</ul>
+<h2>emacs-lisp/rendering/kuro-typewriter.el</h2>
+<ul>
+<li>L29: <code>(require 'kuro-config)</code></li>
+<li>L30: <code>(require 'kuro-ffi)</code></li>
+<li>L31: <code>(require 'kuro-render-buffer)</code></li>
+<li>L68: <code>(defun kuro--start-typewriter-timer ()</code></li>
+<li>L81: <code>(defun kuro--stop-typewriter-timer ()</code></li>
+<li>L87: <code>(defun kuro--typewriter-enqueue (row text)</code></li>
+<li>L92: <code>(defun kuro--typewriter-tick ()</code></li>
+<li>L114: <code>(defun kuro--typewriter-queue-next ()</code></li>
+<li>L127: <code>(defun kuro--typewriter-write-partial (row text)</code></li>
+<li>L145: <code>(provide 'kuro-typewriter)</code></li>
+</ul></main></html>

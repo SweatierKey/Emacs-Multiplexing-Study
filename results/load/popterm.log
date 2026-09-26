@@ -1,0 +1,2 @@
+{"status":"loaded","feature":"popterm","library":"/home/admin/Emacs-Multiplexing-Study/sources/popterm/popterm.el","commands":["popterm--ghostel-send-C-g","popterm-eat","popterm-eshell","popterm-find","popterm-ghostel","popterm-global-mode","popterm-mode","popterm-next","popterm-posframe-toggle","popterm-prev","popterm-return","popterm-shell","popterm-toggle","popterm-toggle-cd","popterm-toggle-named","popterm-vterm","popterm-window-toggle"]}
+STDERR:

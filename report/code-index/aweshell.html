@@ -1,0 +1,172 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: aweshell</h1>
+<p>Fonte: https://github.com/manateelazycat/aweshell.git</p>
+<p>Revisione: <code>db495f29eef9013cf6b3796c3797e0ec76352e3f</code>.</p>
+<h2>aweshell.el</h2>
+<ul>
+<li>L214: <code>(require 'eshell)</code></li>
+<li>L215: <code>(require 'cl-lib)</code></li>
+<li>L216: <code>(require 'subr-x)</code></li>
+<li>L217: <code>(require 'seq)</code></li>
+<li>L235: <code>(defcustom aweshell-complete-selection-key "M-h"</code></li>
+<li>L240: <code>(defcustom aweshell-clear-buffer-key "C-l"</code></li>
+<li>L245: <code>(defcustom aweshell-sudo-toggle-key "C-S-l"</code></li>
+<li>L250: <code>(defcustom aweshell-search-history-key "M-'"</code></li>
+<li>L255: <code>(defcustom aweshell-valid-command-color "#98C379"</code></li>
+<li>L260: <code>(defcustom aweshell-invalid-command-color "#FF0000"</code></li>
+<li>L275: <code>(defcustom aweshell-dedicated-window-height 14</code></li>
+<li>L280: <code>(defcustom aweshell-auto-suggestion-p t</code></li>
+<li>L288: <code>(defcustom aweshell-search-history-completing-read-fn 'ido-completing-read</code></li>
+<li>L302: <code>(defun aweshell-kill-buffer-hook ()</code></li>
+<li>L309: <code>(defun aweshell-get-buffer-index ()</code></li>
+<li>L321: <code>(defun aweshell-get-buffer-names ()</code></li>
+<li>L330: <code>(defun aweshell-get-buffer-index-list ()</code></li>
+<li>L350: <code>(defun aweshell-toggle (&amp;optional arg)</code></li>
+<li>L378: <code>(defun aweshell-new ()</code></li>
+<li>L383: <code>(defun aweshell-next ()</code></li>
+<li>L398: <code>(defun aweshell-prev ()</code></li>
+<li>L413: <code>(defun aweshell-clear-buffer ()</code></li>
+<li>L420: <code>(defun aweshell-sudo-toggle ()</code></li>
+<li>L436: <code>(defun aweshell-search-history ()</code></li>
+<li>L450: <code>(defun aweshell-switch-buffer ()</code></li>
+<li>L476: <code>(defun aweshell-switch-buffer--annotate (candidate)</code></li>
+<li>L491: <code>(defun aweshell-current-window-take-height (&amp;optional window)</code></li>
+<li>L498: <code>(defun aweshell-dedicated-exist-p ()</code></li>
+<li>L503: <code>(defun aweshell-window-exist-p (window)</code></li>
+<li>L508: <code>(defun aweshell-buffer-exist-p (buffer)</code></li>
+<li>L513: <code>(defun aweshell-dedicated-open ()</code></li>
+<li>L522: <code>(defun aweshell-dedicated-close ()</code></li>
+<li>L534: <code>(defun aweshell-dedicated-toggle ()</code></li>
+<li>L541: <code>(defun aweshell-dedicated-select-window ()</code></li>
+<li>L546: <code>(defun aweshell-dedicated-pop-window ()</code></li>
+<li>L553: <code>(defun aweshell-dedicated-create-window ()</code></li>
+<li>L560: <code>(defun aweshell-dedicated-split-window ()</code></li>
+<li>L571: <code>(defun aweshell-dedicated-create-buffer ()</code></li>
+<li>L610: <code>(define-key eshell-mode-map (kbd aweshell-clear-buffer-key) 'aweshell-clear-buffer)</code></li>
+<li>L611: <code>(define-key eshell-mode-map (kbd aweshell-sudo-toggle-key) 'aweshell-sudo-toggle)</code></li>
+<li>L612: <code>(define-key eshell-mode-map (kbd aweshell-search-history-key) 'aweshell-search-history)</code></li>
+<li>L619: <code>(require 'eshell-up)</code></li>
+<li>L625: <code>(require 'eshell-prompt-extras)</code></li>
+<li>L631: <code>(defun aweshell-validate-command ()</code></li>
+<li>L667: <code>(defun aweshell-emacs (&amp;rest args)</code></li>
+<li>L681: <code>(defun aweshell-unpack (file &amp;rest args)</code></li>
+<li>L705: <code>(defun aweshell-sync-dir-buffer-name ()</code></li>
+<li>L780: <code>(defun aweshell-cat-with-syntax-highlight (filename)</code></li>
+<li>L800: <code>(defun eshell-command-alert (process status)</code></li>
+<li>L925: <code>(provide 'aweshell)</code></li>
+</ul>
+<h2>eshell-did-you-mean.el</h2>
+<ul>
+<li>L31: <code>(require 'cl-lib)</code></li>
+<li>L32: <code>(require 'eshell)</code></li>
+<li>L33: <code>(require 'pcomplete)</code></li>
+<li>L35: <code>(defun eshell-did-you-mean--edit-distance (s1 s2)</code></li>
+<li>L58: <code>(defun eshell-did-you-mean--edit-distances (string strings &amp;optional threshold)</code></li>
+<li>L76: <code>(defun eshell-did-you-mean--get-all-commands ()</code></li>
+<li>L83: <code>(defun eshell-did-you-mean-output-filter (output)</code></li>
+<li>L108: <code>(defun eshell-did-you-mean-setup ()</code></li>
+<li>L115: <code>(provide 'eshell-did-you-mean)</code></li>
+</ul>
+<h2>eshell-prompt-extras.el</h2>
+<ul>
+<li>L80: <code>(require 'em-ls)</code></li>
+<li>L81: <code>(require 'em-dirs)</code></li>
+<li>L82: <code>(require 'esh-ext)</code></li>
+<li>L83: <code>(require 'tramp)</code></li>
+<li>L84: <code>(require 'subr-x)</code></li>
+<li>L85: <code>(require 'seq)</code></li>
+<li>L94: <code>(defcustom epe-show-python-info t</code></li>
+<li>L99: <code>(defcustom epe-git-dirty-char "*"</code></li>
+<li>L104: <code>(defcustom epe-git-untracked-char "?"</code></li>
+<li>L109: <code>(defcustom epe-git-modified-char "!"</code></li>
+<li>L114: <code>(defcustom epe-git-renamed-char "»"</code></li>
+<li>L119: <code>(defcustom epe-git-deleted-char "x"</code></li>
+<li>L124: <code>(defcustom epe-git-added-char "+"</code></li>
+<li>L129: <code>(defcustom epe-git-unmerged-char "≠"</code></li>
+<li>L134: <code>(defcustom epe-git-ahead-char "↑"</code></li>
+<li>L139: <code>(defcustom epe-git-behind-char "↓"</code></li>
+<li>L144: <code>(defcustom epe-git-diverged-char "↕"</code></li>
+<li>L149: <code>(defcustom epe-git-detached-HEAD-char "D:"</code></li>
+<li>L154: <code>(defcustom epe-show-local-working-directory nil</code></li>
+<li>L159: <code>(defcustom epe-path-style 'fish</code></li>
+<li>L166: <code>(defcustom epe-fish-path-max-len 30</code></li>
+<li>L171: <code>(defcustom epe-pipeline-show-time t</code></li>
+<li>L176: <code>(defcustom epe-show-git-status-extended nil</code></li>
+<li>L259: <code>(defmacro epe-colorize-with-face (str face)</code></li>
+<li>L263: <code>(defun epe-pwd ()</code></li>
+<li>L269: <code>(defun epe-abbrev-dir-name (dir)</code></li>
+<li>L276: <code>(defun epe-trim-newline (string)</code></li>
+<li>L281: <code>(defun epe-fish-path (path &amp;optional max-len)</code></li>
+<li>L307: <code>(defun epe-extract-git-component (path)</code></li>
+<li>L331: <code>(defun epe-user-name ()</code></li>
+<li>L337: <code>(defun epe-date-time (&amp;optional format)</code></li>
+<li>L341: <code>(defun epe-status-formatter (timestamp duration)</code></li>
+<li>L349: <code>(defcustom epe-status-min-duration 1</code></li>
+<li>L357: <code>(defun epe-status--record ()</code></li>
+<li>L361: <code>(defun epe-status (&amp;optional formatter min-duration)</code></li>
+<li>L383: <code>(defun epe-remote-p ()</code></li>
+<li>L387: <code>(defun epe-remote-user ()</code></li>
+<li>L391: <code>(defun epe-remote-host ()</code></li>
+<li>L407: <code>(defun epe-git-p ()</code></li>
+<li>L413: <code>(defun epe-git-short-sha1 ()</code></li>
+<li>L424: <code>(defun epe-git-branch ()</code></li>
+<li>L433: <code>(defun epe-git-tag (&amp;optional rev with-distance)</code></li>
+<li>L456: <code>(defun epe-git-dirty ()</code></li>
+<li>L462: <code>(defun epe-git-unpushed-number ()</code></li>
+<li>L467: <code>(defun epe-git-untracked ()</code></li>
+<li>L477: <code>(defun epe-git-modified ()</code></li>
+<li>L481: <code>(defun epe-git-renamed ()</code></li>
+<li>L485: <code>(defun epe-git-deleted ()</code></li>
+<li>L489: <code>(defun epe-git-added ()</code></li>
+<li>L493: <code>(defun epe-git-unmerged ()</code></li>
+<li>L497: <code>(defun epe-git-ahead ()</code></li>
+<li>L501: <code>(defun epe-git-behind ()</code></li>
+<li>L505: <code>(defun epe-git-diverged ()</code></li>
+<li>L509: <code>(defun epe-git-p-helper (command)</code></li>
+<li>L513: <code>(defun epe-git-untracked-p ()</code></li>
+<li>L517: <code>(defun epe-git-added-p ()</code></li>
+<li>L522: <code>(defun epe-git-modified-p ()</code></li>
+<li>L528: <code>(defun epe-git-renamed-p ()</code></li>
+<li>L532: <code>(defun epe-git-deleted-p ()</code></li>
+<li>L538: <code>(defun epe-git-unmerged-p ()</code></li>
+<li>L542: <code>(defun epe-git-ahead-p ()</code></li>
+<li>L546: <code>(defun epe-git-behind-p ()</code></li>
+<li>L550: <code>(defun epe-git-diverged-p ()</code></li>
+<li>L561: <code>(defun epe-theme-lambda ()</code></li>
+<li>L589: <code>(defun epe-theme-dakrone ()</code></li>
+<li>L639: <code>(defun epe-theme-pipeline ()</code></li>
+<li>L678: <code>(defun epe-theme-multiline-with-status ()</code></li>
+<li>L714: <code>(defun epe-git-prompt-info ()</code></li>
+<li>L719: <code>(defun epe-git-default-info ()</code></li>
+<li>L729: <code>(defun epe-git-extended-info ()</code></li>
+<li>L736: <code>(defun epe-git-description ()</code></li>
+<li>L744: <code>(defun epe-git-full-status ()</code></li>
+<li>L759: <code>(provide 'eshell-prompt-extras)</code></li>
+</ul>
+<h2>eshell-up.el</h2>
+<ul>
+<li>L70: <code>(defun eshell-up-closest-parent-dir (file)</code></li>
+<li>L77: <code>(defun eshell-up-find-parent-dir (path &amp;optional match)</code></li>
+<li>L95: <code>(defun eshell-up (&amp;optional match)</code></li>
+<li>L111: <code>(defun eshell-up-peek (&amp;optional match)</code></li>
+<li>L121: <code>(provide 'eshell-up)</code></li>
+</ul>
+<h2>exec-path-from-shell.el</h2>
+<ul>
+<li>L83: <code>(defcustom exec-path-from-shell-variables</code></li>
+<li>L89: <code>(defcustom exec-path-from-shell-check-startup-files t</code></li>
+<li>L96: <code>(defcustom exec-path-from-shell-shell-name nil</code></li>
+<li>L108: <code>(defun exec-path-from-shell--double-quote (s)</code></li>
+<li>L112: <code>(defun exec-path-from-shell--shell ()</code></li>
+<li>L121: <code>(defcustom exec-path-from-shell-arguments</code></li>
+<li>L131: <code>(defun exec-path-from-shell--debug (msg &amp;rest args)</code></li>
+<li>L136: <code>(defun exec-path-from-shell--standard-shell-p (shell)</code></li>
+<li>L140: <code>(defun exec-path-from-shell-printf (str &amp;optional args)</code></li>
+<li>L175: <code>(defun exec-path-from-shell-getenvs (names)</code></li>
+<li>L197: <code>(defun exec-path-from-shell-getenv (name)</code></li>
+<li>L204: <code>(defun exec-path-from-shell-setenv (name value)</code></li>
+<li>L214: <code>(defun exec-path-from-shell-copy-envs (names)</code></li>
+<li>L227: <code>(defun exec-path-from-shell--maybe-warn-about-startup-files (pairs)</code></li>
+<li>L242: <code>(defun exec-path-from-shell-copy-env (name)</code></li>
+<li>L252: <code>(defun exec-path-from-shell-initialize ()</code></li>
+<li>L262: <code>(provide 'exec-path-from-shell)</code></li>
+</ul></main></html>

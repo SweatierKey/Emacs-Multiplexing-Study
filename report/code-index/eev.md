@@ -1,0 +1,2037 @@
+# Indice del codice: eev
+
+Fonte: https://github.com/edrx/eev.git
+
+Revisione: `4850e9c7a465684a0fdb79a6be83055e0ef9537b`.
+
+
+## eejump.el
+
+- L76: `;; (define-key eev-mode-map "\M-j" 'eejump)`
+- L78: `(defun eejump (arg)`
+- L95: `(defun eejump-str* (str)`
+- L106: `(defun eejump-*   () (find-efunction 'eejump-*))`
+- L107: `(defun eejump-1   () (find-fline "~/TODO"))`
+- L108: `(defun eejump-21  () (find-2a nil '(eejump 1)))`
+- L109: `(defun eejump-31  () (find-2b nil '(eejump 1)))`
+- L110: `(defun eejump-2   () (find-emacs-keys-intro))`
+- L111: `(defun eejump-3   () (find-windows-beginner-intro))`
+- L112: `(defun eejump-5   () (find-eev-quick-intro))`
+- L113: `(defun eejump-50  () (find-eev-intro))`
+- L114: `(defun eejump-6   () (find-escripts-intro))`
+- L115: `(defun eejump-7   () (find-elisp-intro))`
+- L117: `(defun eejump-10  () (set-frame-font "5x7"  t))`
+- L118: `(defun eejump-11  () (set-frame-font "6x13" t))`
+- L119: `(defun eejump-12  () (set-frame-font "10x20" t))`
+- L121: `(defun eejump-55  () (find-fline "~/.emacs"))`
+- L122: `(defun eejump-555 () (find-eev ""))`
+- L136: `(provide 'eejump)`
+
+## eepitch.el
+
+- L230: `(require 'eev-multiwindow)		; for 'find-2a'`
+- L231: `(require 'eev-blinks)			; for 'find-ebuffer'`
+- L232: `(require 'eev-elinks)			; for 'ee-intern'`
+- L238: `(defun ee-bol () (point-at-bol))`
+- L239: `(defun ee-eol () (point-at-eol))`
+- L241: `(defun ee-read (str)  (read (concat "(progn\n" str "\n)")))`
+- L242: `(defun ee-eval (sexp) (let ((debug-on-error nil)) (eval sexp)))`
+- L244: `(defun ee-eval-string (str)`
+- L250: `(defun ee-eval-string-print (str)`
+- L254: `(defun ee-next-line (&optional arg try-vscroll)`
+- L299: `(defun eepitch-buffer-exists () (get-buffer        eepitch-buffer-name))`
+- L300: `(defun eepitch-window-exists () (get-buffer-window eepitch-buffer-name))`
+- L301: `(defun eepitch-target-buffer () (get-buffer        eepitch-buffer-name))`
+- L302: `(defun eepitch-target-window () (get-buffer-window eepitch-buffer-name))`
+- L303: `(defun eepitch-target-here () (eq (current-buffer) (eepitch-target-buffer)))`
+- L305: `(defun eepitch-buffer-create ()`
+- L339: `(defun eepitch-window-show ()`
+- L351: `(defun eepitch-prepare ()`
+- L370: `(defun eepitch (code)`
+- L401: `(defun eepitch-eval-at-target-window (code)`
+- L408: `(defun eepitch-line (line)`
+- L420: `(defun eepitch-this-line (&optional debug)`
+- L441: `(defun eepitch-preprocess-line (line) line)`
+- L455: `(defun ee-kill-buffer (buffer)`
+- L461: `(defun eepitch-kill-buffer ()`
+- L472: `(defun eepitch-kill ()`
+- L506: `(defun eepitch-shell ()`
+- L511: `(defun eepitch-shell2  () (interactive) (eepitch '(shell "*shell 2*")))`
+- L512: `(defun eepitch-shell3  () (interactive) (eepitch '(shell "*shell 3*")))`
+- L513: `(defun eepitch-eshell  () (interactive) (eepitch '(eshell)))`
+- L514: `(defun eepitch-eshell2 () (interactive) (eepitch '(eshell 2)))`
+- L515: `(defun eepitch-eshell3 () (interactive) (eepitch '(eshell 3)))`
+- L534: `(defun ee-expand (fname)`
+- L544: `(defun ee-split (str)`
+- L551: `(defun ee-split-and-expand (str)`
+- L576: `(defun find-comintprocess-ne (name &optional program-and-args)`
+- L583: `(defun find-comintprocess (name &optional program-and-args)`
+- L590: `(defun eepitch-comint (name &optional program-and-args)`
+- L616: `(defun eewrap-eepitch () (interactive)`
+- L624: `(defun ee-adjust-red-stars (str)`
+- L631: `(defun ee-this-line-extract ()`
+- L635: `(defun ee-no-properties (str)`
+- L664: `(defun eepitch-set-glyph0 (pos &optional char face)`
+- L669: `(defun eepitch-set-glyph (pos &optional char face)`
+- L702: `;; (global-set-key [f8]   'eepitch-this-line)`
+- L703: `;; (global-set-key "\M-T" 'eewrap-eepitch)`
+- L719: `(defun eepitch-make-suffix (arg)`
+- L724: `(defun eepitch-do (program-and-args &optional suffix)`
+- L745: `(defun eepitch-del-echo (flag)`
+- L760: `(defun eepitch-de (code)`
+- L765: `(defun eepitch-comint-de (name &optional program-and-args)`
+- L780: `(defun ee-at0 (dir code)`
+- L790: `(defun eepitch-comint-at (dir name &optional program-and-args)`
+- L794: `(defun eepitch-to-buffer (name)`
+- L798: `(defun ee-with-pager-cat (code)`
+- L846: `(defun find-ansitermprocess (&optional program name0)`
+- L861: `(defun find-vtermprocess (&optional program name0)`
+- L879: `(defun find-eatprocess0 (program buffername)`
+- L889: `(defun find-eatprocess (&optional program name0)`
+- L904: `(defun eepitch-line-ansiterm (line)`
+- L910: `(defun eepitch-line-vterm (line)`
+- L916: `(defun eepitch-line-eat (line)`
+- L931: `(defun eepitch-ansiterm (&optional program name0)`
+- L948: `(defun eepitch-vterm (&optional program name0)`
+- L965: `(defun eepitch-eat (&optional program name0)`
+- L1015: `(defun  ee-wait-repl-started ()`
+- L1018: `(defun ee-wait (ntimes time)`
+- L1031: `(defun find-slyprocess-reuse ()`
+- L1036: `(defun find-slyprocess-create00 ()`
+- L1045: `(defun find-slyprocess-create0 ()`
+- L1060: `(defun find-slyprocess-create ()`
+- L1064: `(defun find-slyprocess ()`
+- L1074: `(defun eepitch-sly () (interactive)`
+- L1109: `(defun eepitch-b-show-source ()`
+- L1113: `(defun eepitch-b-set-source (&optional n)`
+- L1121: `(defun eepitch-b-show-target ()`
+- L1125: `(defun eepitch-b-set-target ()`
+- L1130: `(defun eepitch-b-show-source-and-target ()`
+- L1141: `(defun eepitch-b (sexp)`
+- L1150: `(defun eepitch-b-set-target-and-show ()`
+- L1171: `(defun ee-buffers-in-modes (majormodes)`
+- L1177: `(defun ee-buffers-in-mode (majormode)`
+- L1180: `(defun ee-buffers-with-minor-mode (minormode)`
+- L1186: `(defun ee-buffers-with-name-matching (regexp)`
+- L1192: `(defun ee-kill-buffers (buffernames &optional show-only)`
+- L1199: `(defun ee-kill-buffers-in-modes (majormodes &optional show-only)`
+- L1202: `(defun ee-kill-buffers-in-mode (majormode &optional show-only)`
+- L1205: `(defun ee-kill-buffers-with-minor-mode (minormode &optional show-only)`
+- L1208: `(defun ee-kill-buffers-with-name-matching (regexp &optional show-only)`
+- L1217: `(defun find-ebuffer-in-mode (majormode &rest pos-spec-list)`
+- L1240: `(defun eepitch-gdb-kill ()`
+- L1243: `(defun eepitch-gdb-select ()`
+- L1256: `(defun ee-slime-inferior-lisp-buffers ()`
+- L1261: `(defun ee-slime-buffers ()`
+- L1265: `(defun eepitch-slime-kill (&optional show-only)`
+- L1268: `(defun eepitch-slime-select ()`
+- L1278: `(defun eepitch-slime-pkgbuffers ()`
+- L1283: `(defun eepitch-slime-set-pkgbuffers ()`
+- L1286: `(defun eepitch-slime-get-pkgbuffer (pkg)`
+- L1289: `(defun eepitch-slime-select-pkgbuffer (pkg)`
+- L1294: `(defun find-3ee-maxima-slime ()`
+- L1298: `(defun find-4eee-maxima-slime ()`
+- L1308: `(defun eepitch-sly-kill (&optional show-only)`
+- L1311: `(defun eepitch-sly-select ()`
+- L1316: `(defun eepitch-sly-pkgbuffers ()`
+- L1321: `(defun eepitch-sly-set-pkgbuffers ()`
+- L1324: `(defun eepitch-sly-get-pkgbuffer (pkg)`
+- L1327: `(defun eepitch-sly-select-pkgbuffer (pkg)`
+- L1332: `(defun find-3ee-maxima-sly ()`
+- L1336: `(defun find-4eee-maxima-sly ()`
+- L1364: `(defun eepitch-sh   () (interactive) (eepitch-comint "sh" "sh"))`
+- L1365: `(defun eepitch-bash () (interactive) (eepitch-comint "bash" "bash"))`
+- L1366: `(defun eepitch-dash () (interactive) (eepitch-comint "dash" "dash"))`
+- L1367: `(defun eepitch-ksh  () (interactive) (eepitch-comint "ksh" "ksh"))`
+- L1368: `(defun eepitch-tcsh () (interactive) (eepitch-comint "tcsh" "tcsh"))`
+- L1369: `(defun eepitch-zsh  () (interactive) (eepitch-comint-de "zsh" "zsh"))`
+- L1370: `(defun eepitch-scsh () (interactive) (eepitch-comint "scsh" "scsh"))`
+- L1371: `(defun eepitch-pwsh  () (interactive) (eepitch-ansiterm "pwsh" "pwsh"))`
+- L1372: `(defun eepitch-pwsh2 () (interactive) (eepitch-ansiterm "pwsh" "pwsh 2"))`
+- L1375: `(defun eepitch-lua51  () (interactive) (eepitch-comint "lua51"  "lua5.1"))`
+- L1376: `(defun eepitch-lua52  () (interactive) (eepitch-comint "lua52"  "lua5.2"))`
+- L1377: `(defun eepitch-lua53  () (interactive) (eepitch-comint "lua53"  "lua5.3"))`
+- L1378: `(defun eepitch-lua54  () (interactive) (eepitch-comint "lua54"  "lua5.4"))`
+- L1379: `(defun eepitch-luajit () (interactive) (eepitch-comint "luajit" "luajit"))`
+- L1380: `(defun eepitch-julia  () (interactive) (eepitch-comint "julia"  "julia"))`
+- L1381: `(defun eepitch-python2 () (interactive) (eepitch-comint "python2" "python2"))`
+- L1382: `(defun eepitch-python3 () (interactive) (eepitch-comint "python3" "python3"))`
+- L1383: `(defun eepitch-python  () (interactive) (eepitch-comint "python3" "python3"))`
+- L1384: `(defun eepitch-perl () (interactive) (eepitch-comint "perl" "perl -d -e 42"))`
+- L1385: `(defun eepitch-raku    () (interactive) (eepitch-comint "raku" "raku"))`
+- L1386: `(defun eepitch-php     () (interactive) (eepitch-comint "php -a" "php -a"))`
+- L1387: `(defun eepitch-ruby    () (interactive) (eepitch-ansiterm "irb" "irb"))`
+- L1388: `(defun eepitch-irb     () (interactive) (eepitch-ansiterm "irb" "irb"))`
+- L1391: `(defun eepitch-tcl     () (interactive) (eepitch-comint "tclsh"   "tclsh"))`
+- L1392: `(defun eepitch-tclsh   () (interactive) (eepitch-comint "tclsh"   "tclsh"))`
+- L1393: `(defun eepitch-wish    () (interactive) (eepitch-comint "wish"    "wish"))`
+- L1394: `(defun eepitch-expect  () (interactive) (eepitch-comint "expect"  "expect"))`
+- L1397: `(defun eepitch-ielm   () (interactive) (eepitch '(ielm)))`
+- L1399: `(defun eepitch-sbcl   () (interactive) (eepitch-comint "sbcl" "sbcl"))`
+- L1400: `(defun eepitch-gcl    () (interactive) (eepitch-comint "gcl"  "gcl"))`
+- L1401: `(defun eepitch-guile  () (interactive) (eepitch-comint "guile" "guile"))`
+- L1402: `(defun eepitch-racket () (interactive) (eepitch-comint "racket" "racket"))`
+- L1403: `(defun eepitch-scheme () (interactive) (eepitch-comint "scheme" "scheme"))`
+- L1404: `(defun eepitch-mitscheme () (interactive)`
+- L1406: `(defun eepitch-tinyscheme () (interactive)`
+- L1410: `(defun eepitch-fennel () (interactive) (eepitch-comint "fennel" "fennel"))`
+- L1414: `(defun eepitch-ghci   () (interactive) (eepitch-comint "ghci" "ghci"))`
+- L1415: `(defun eepitch-hugs   () (interactive) (eepitch-comint "hugs" "hugs"))`
+- L1416: `(defun eepitch-hugs98 () (interactive) (eepitch-comint "hugs" "hugs -98"))`
+- L1417: `(defun eepitch-ocaml  () (interactive) (eepitch-comint "ocaml" "ocaml"))`
+- L1418: `(defun eepitch-polyml () (interactive) (eepitch-comint "polyml" "poly"))`
+- L1419: `(defun eepitch-sml    () (interactive) (eepitch-comint "sml" "sml"))`
+- L1420: `(defun eepitch-labltk () (interactive) (eepitch-comint "labltk" "labltk"))`
+- L1421: `(defun eepitch-erl    () (interactive) (eepitch-comint "erl" "erl"))`
+- L1422: `(defun eepitch-iex    () (interactive) (eepitch-comint "iex" "iex"))`
+- L1423: `(defun eepitch-coqtop () (interactive) (eepitch-comint "coqtop" "coqtop"))`
+- L1426: `(defun eepitch-gforth () (interactive) (eepitch '(run-forth "gforth")))`
+- L1427: `(defun eepitch-gforth () (interactive) (eepitch-comint "gforth" "gforth"))`
+- L1428: `(defun eepitch-pforth () (interactive) (eepitch-comint "pforth" "pforth"))`
+- L1429: `(defun eepitch-yforth () (interactive) (eepitch-comint "yforth" "yforth"))`
+- L1432: `(defun eepitch-maxima () (interactive) (eepitch-comint "maxima" "maxima"))`
+- L1433: `(defun eepitch-octave () (interactive) (eepitch-comint "octave" "octave"))`
+- L1434: `(defun eepitch-R () (interactive)`
+- L1439: `(defun eepitch-gs () (interactive) (eepitch-comint "gs" "gs -r45"))`
+- L1440: `(defun eepitch-gs () (interactive) (eepitch-comint "gs" "gs -r60"))`
+- L1441: `(defun eepitch-gnuplot () (interactive)`
+- L1445: `(defun eepitch-bsh () (interactive)`
+- L1447: `(defun eepitch-scala () (interactive)`
+- L1449: `(defun eepitch-clojure () (interactive)`
+- L1453: `(defun eepitch-sqlite3 () (interactive)`
+- L1455: `(defun eepitch-mysql () (interactive)`
+- L1459: `(defun eepitch-gst () (interactive)`
+- L1465: `(defun eepitch-nodejs () (interactive) (eepitch-comint "nodejs" "nodejs"))`
+- L1466: `(defun eepitch-smjs () (interactive) (eepitch-comint "smjs" "smjs"))`
+- L1467: `(defun eepitch-mozrepl () (interactive)`
+- L1472: `(defun eepitch-luatex () (interactive)`
+- L1474: `(defun eepitch-lualatex () (interactive)`
+- L1476: `(defun eepitch-latex () (interactive)`
+- L1478: `(defun eepitch-tex   () (interactive)`
+- L1480: `(defun eepitch-mf    () (interactive)`
+- L1482: `(defun eepitch-mpost () (interactive)`
+- L1486: `(defun eepitch-pacmd () (interactive) (eepitch-comint "pacmd" "pacmd"))`
+- L1492: `(defun eepitch-isympy () (interactive) (eepitch-vterm "isympy3" "isympy3"))`
+- L1534: `(defun find-eepitch-debug-links (&rest pos-spec-list)`
+- L1580: `(provide 'eepitch)`
+
+## eev-aliases.el
+
+- L130: `(provide 'eev-aliases)`
+
+## eev-anchors.el
+
+- L46: `(require 'eepitch)             ; (find-eev "eepitch.el")`
+- L47: `(require 'eev-codings)         ; (find-eev "eev-codings.el")`
+- L93: `(defun ee-format-as-anchor (tag)`
+- L113: `(defun ee-goto-anchor (&optional tag &rest rest)`
+- L144: `(defun find-anchor (fname &optional tag &rest pos-spec-list)`
+- L162: `(defun to (tag &rest pos-spec-list)`
+- L170: `(provide 'eev-anchors)`
+
+## eev-audiovideo.el
+
+- L112: `(require 'eev-code)`
+- L113: `(require 'eev-brxxx)`
+- L121: `(defun ee-time-around-point ()`
+- L140: `(defun ee-re-search-from (pos regexp &optional limit repeat)`
+- L148: `(defun ee-time-from-bol ()`
+- L154: `(defun ee-time-from-bol-flash () (interactive)`
+- L189: `(defun ee-time-to-seconds (time)`
+- L196: `(defun ee-seconds-to-time (seconds)`
+- L217: `(defun ee-secs-to-mm:ss (n)`
+- L224: `(defun ee-mm:ss-to-secs (mm:ss)`
+- L244: `(defun ee-time-to-youtube-time (str &optional c)`
+- L266: `(defun ee-time-to-arg (time)`
+- L288: `(defun ee-time+ (seconds time)`
+- L293: `(defun ee-time-from-bol-shift (seconds)`
+- L301: `(defun ee-time-from-bol-shift- (seconds)`
+- L320: `(defun ee-audiovideo-sexp (time)`
+- L323: `(defun ee-time-from-bol-rerun (&optional arg)`
+- L349: `(define-key eev-avadj-mode-map "\M--" 'ee-time-from-bol-shift-)`
+- L350: `(define-key eev-avadj-mode-map "\M-=" 'ee-time-from-bol-shift)`
+- L351: `(define-key eev-avadj-mode-map "\M-+" 'ee-time-from-bol-shift)`
+- L352: `(define-key eev-avadj-mode-map "\M-p" 'ee-time-from-bol-rerun)`
+- L354: `(define-minor-mode eev-avadj-mode`
+- L384: `(defun    find-mplayer (fname &optional pos &rest rest)`
+- L389: `(defun ee-mplayer-video-options () ee-mplayer-options)`
+- L390: `(defun ee-find-mplayer (fname &optional pos &rest rest)`
+- L397: `(defun      code-mplayer (c fname)`
+- L399: `(defun find-code-mplayer (c fname)`
+- L401: `(defun   ee-code-mplayer (c fname)`
+- L431: `(defun ee-mplayer-audio-options () ee-termplayer-options)`
+- L432: `(defun ee-find-termplayer (fname &optional pos &rest rest)`
+- L439: `(defun    find-termplayer (fname &optional pos &rest rest)`
+- L444: `(defun      code-termplayer (c fname)`
+- L446: `(defun find-code-termplayer (c fname)`
+- L448: `(defun   ee-code-termplayer (c fname)`
+- L477: `(defun    find-mpv-video (fname &optional pos &rest rest)`
+- L482: `(defun ee-find-mpv-video (fname &optional pos &rest rest)`
+- L489: `(defun      code-mpv-video (c fname)`
+- L491: `(defun find-code-mpv-video (c fname)`
+- L493: `(defun   ee-code-mpv-video (c fname)`
+- L521: `(defun ee-find-mpv-audio (fname &optional pos &rest rest)`
+- L529: `(defun    find-mpv-audio (fname &optional pos &rest rest)`
+- L534: `(defun      code-mpv-audio (c fname)`
+- L536: `(defun find-code-mpv-audio (c fname)`
+- L538: `(defun   ee-code-mpv-audio (c fname)`
+- L563: `(defun    find-vlc-video (fname &optional pos &rest rest)`
+- L567: `(defun ee-find-vlc-video (fname &optional pos &rest rest)`
+- L574: `(defun      code-vlc-video (c fname)`
+- L576: `(defun find-code-vlc-video (c fname)`
+- L578: `(defun   ee-code-vlc-video (c fname)`
+- L613: `(defun find-youtube-video (youtubeid &optional time &rest rest)`
+- L616: `(defun ee-find-youtube-video (youtubeid &optional time &rest rest)`
+- L620: `(defun ee-find-youtube-url (youtubeid time)`
+- L668: `(provide 'eev-audiovideo)`
+
+## eev-beginner.el
+
+- L169: `(require 'eev-load)`
+- L184: `(defun eev-beginner ()`
+- L193: `(provide 'eev-beginner)`
+
+## eev-blinks.el
+
+- L126: `(defun eek (str)`
+- L132: `(defun find-eek (str &rest pos-spec-list)`
+- L138: `(defun eek2 (str &optional norecord)`
+- L155: `(defun ee-eek2 (stringorlist &optional norecord)`
+- L183: `(defun ee-goto-position (&optional pos-spec &rest rest)`
+- L218: `(defun ee-goto-rest (list)`
+- L279: `(defun find-fline (fname &rest pos-spec-list)`
+- L290: `(defun find-fline-gz (fname &rest pos-spec-list)`
+- L299: `(defun find-node (nodestr &rest pos-spec-list)`
+- L322: `(defun find-wottb-call (sexp bufname &rest pos-spec-list)`
+- L338: `(defun find-eapropos (regexp &rest pos-spec-list)`
+- L346: `(defun find-efunctiondescr (symbol &rest pos-spec-list)`
+- L354: `(defun find-evariabledescr (symbol &rest pos-spec-list)`
+- L364: `(defun find-ekeydescr (key &rest pos-spec-list)`
+- L373: `(defun find-etypedescr (type &rest pos-spec-list)`
+- L382: `(defun find-efunctiond (function &rest pos-spec-list)`
+- L394: `(defun find-customizegroup (group &rest pos-spec-list)`
+- L405: `(defun find-customizeoption (symbol &rest rest)`
+- L410: `(defun find-customizevariable (symbol &rest rest)`
+- L415: `(defun find-customizeapropos (pattern &optional type &rest rest)`
+- L420: `(defun find-customizeface (face &rest rest)`
+- L430: `(defun find-epackages0 (&optional no-fetch &rest pos-spec-list)`
+- L443: `(defun find-epackage (&optional pkg-desc &rest pos-spec-list)`
+- L455: `(defun find-eshortdoc (group &rest rest)`
+- L474: `(defun find-dbsw-call (sexp &rest pos-spec-list)`
+- L496: `(defun find-epackages (&rest pos-spec-list)`
+- L510: `(defun ee-goto-position-package (&optional pkgsymbol &rest rest)`
+- L519: `(defun ee-packages-nline-for (pkgsymbol &optional nns)`
+- L523: `(defun ee-packages-nlines-for (pkgsymbol &optional nns)`
+- L530: `(defun ee-packages-nlines-and-names (&optional tles)`
+- L565: `(defun find-echardescr (&optional pos &rest pos-spec-list)`
+- L571: `(defun find-ecolors (&rest pos-spec-list)`
+- L580: `(defun find-efacedescr (&optional face &rest pos-spec-list)`
+- L588: `(defun find-efaces (&rest pos-spec-list)`
+- L594: `(defun ee-find-efaces-hack (pos-spec-list)`
+- L602: `(defun find-etpat (&optional pos &rest pos-spec-list)`
+- L611: `(defun find-etpat0 (&rest pos-spec-list)`
+- L618: `(defun find-etpat00 ()`
+- L644: `(defun find-eregionpp (b e &optional arg)`
+- L660: `(defun ee-string-intervals (str)`
+- L668: `(defun ee-symbol< (symbol1 symbol2)`
+- L673: `(defun ee-sort-symbols (symbols)`
+- L676: `(defun ee-sort-pairs (pairs)`
+- L684: `(defun ee-eregionpp-preprocess (intervals0 arg)`
+- L691: `(defun find-eregionpp0 (b e &optional use-print-circle)`
+- L707: `(defun find-eoverlayspp ()`
+- L712: `(defun ee-overlay-pp0 (ovl)`
+- L727: `(defun find-ebuffercontents (&optional b &rest pos-spec-list)`
+- L735: `(defun ee-buffer-contents (&optional b)`
+- L742: `(defun ee-buffer-contents0 (b)`
+- L751: `(defun ee-write-buffer-contents (b fname)`
+- L776: `(defun find-ebufferandpos (buffer-and-pos &rest pos-spec-list)`
+- L796: `(defun find-efunction (symbol &rest pos-spec-list)`
+- L804: `(defun find-ealias (symbol &rest pos-spec-list)`
+- L813: `(defun find-evariable (symbol &rest pos-spec-list)`
+- L818: `(defun find-eface (face &rest pos-spec-list)`
+- L844: `(defun find-ebuffer (buffer &rest pos-spec-list)`
+- L850: `(defun find-emarker (marker &rest pos-spec-list)`
+- L870: `(defun find-eoutput-rerun (buffer-name code &rest pos-spec-list)`
+- L887: `(defun find-eoutput-reuse (buffer-name code &rest pos-spec-list)`
+- L905: `(defun find-estring (string &rest pos-spec-list)`
+- L914: `(defun find-estring-elisp (string &rest pos-spec-list)`
+- L921: `(defun find-estring-mode (sexp string &rest pos-spec-list)`
+- L929: `(defun find-estring-sh (string &rest pos-spec-list)`
+- L933: `(defun find-estring-2a (str &rest pos-spec-list)`
+- L961: `;;    (define-key ee-fep-keymap (kbd "C-c C-c") 'next-line)`
+- L965: `(defun ee-epropertize (textproperties)`
+- L969: `(defun find-epropertize (textproperties)`
+- L974: `(defun find-epropertize-2b (textproperties)`
+- L990: `(defun ee-raw-text-unix ()`
+- L997: `(defun find-estring-lv (string &rest pos-spec-list)`
+- L1027: `(defun ee-hashtable-to-string (f hashtable)`
+- L1046: `(defun find-ehashtable (hashtable &rest pos-spec-list)`
+- L1108: `(defun ee-struct-class (stro)`
+- L1111: `(defun ee-struct-slot-names (stro)`
+- L1115: `(defun ee-struct-slot-names+ (stro)`
+- L1118: `(defun ee-struct-index-table (stro)`
+- L1121: `(defun ee-struct-to-string (stro)`
+- L1147: `(defun find-estruct (stro &rest pos-spec-list)`
+- L1154: `(defun ee-struct-to-triples (stro)`
+- L1163: `(defun find-estructt (stro &rest pos-spec-list)`
+- L1221: `(defun find-clprin1 (o &rest pos-spec-list)`
+- L1227: `(defun find-clprin1s (o &rest pos-spec-list)`
+- L1235: `(defun ee-clprin1  (o) (cl-prin1-to-string o))`
+- L1236: `(defun ee-clprin1s (o) (mapconcat 'cl-prin1-to-string o "\n"))`
+- L1274: `(defun ee-indent-as-elisp (str)`
+- L1281: `(defun ee-clprin2 (o)`
+- L1290: `(defun ee-clprin2s (o)`
+- L1293: `(defun find-clprin2 (o &rest pos-spec-list)`
+- L1301: `(defun find-clprin2s (o &rest pos-spec-list)`
+- L1343: `(defun find-sh (command &rest pos-spec-list)`
+- L1358: `(defun find-sh0 (command)`
+- L1367: `(defun find-sh-at-dir (dir command &rest pos-spec-list)`
+- L1374: `(defun find-sh-man-fontify (command &rest pos-spec-list)`
+- L1403: `(defun find-man (manpage &rest pos-spec-list)`
+- L1423: `(defun ee-find-man-goto-pos-spec (&rest rest)`
+- L1495: `(defun find-w3m (url &rest pos-spec-list)`
+- L1527: `(defun find-eww (url &rest pos-spec-list)`
+- L1542: `(defun ee-find-eww-search ()`
+- L1560: `(defun ee-find-eww-preprocess-url (url)`
+- L1598: `(defun find-Package (fname &optional packagename &rest pos-spec-list)`
+- L1606: `(defun find-status (packagename &rest pos-spec-list)`
+- L1612: `(defun find-available (packagename &rest pos-spec-list)`
+- L1618: `(defun find-grep-status (grepargs &rest pos-spec-list)`
+- L1622: `(defun find-grep-available (grepargs &rest pos-spec-list)`
+- L1649: `(defun find-epp0 (object)`
+- L1656: `(defun find-epp (object &rest pos-spec-list)`
+- L1661: `(defun find-eppp (object &rest pos-spec-list)`
+- L1668: `(defun find-eppm (code &rest pos-spec-list)`
+- L1672: `(defun find-eppma (code &rest pos-spec-list)`
+- L1683: `(defun find-efunctionpp (symbol &rest pos-spec-list)`
+- L1696: `(defun find-eppp-with-prefix (prefix object &rest pos-spec-list)`
+- L1718: `(defun find-eloadhistory0 (fname &rest pos-spec-list)`
+- L1726: `(defun find-eloadhistory (library &rest pos-spec-list)`
+- L1738: `(defun find-eloadhistory-for (f &rest rest)`
+- L1784: `(defun find-lgreps (f &optional stem)`
+- L1829: `(defun find-esubstitutecommandkeys (string &rest pos-spec-list)`
+- L1836: `(defun find-ekeymapdescr (keymap &rest pos-spec-list)`
+- L1844: `(defun find-eminorkeymapdescr (mode-symbol &rest pos-spec-list)`
+- L1852: `(defun ee-minor-mode-keymap (mode-symbol)`
+- L1862: `(defun find-ebufferlocalvars (&rest pos-spec-list)`
+- L1874: `(defun ee-buffer-local-variables ()`
+- L1879: `(defun find-eccldump (ccl-code &rest pos-spec-list)`
+- L1888: `(defun find-echarsetchars (charset &rest pos-spec-list)`
+- L1913: `(defun ee-insert (&rest rest)`
+- L1927: `(defun find-einsert (what &rest rest)`
+- L1949: `(defun find-eunicode (&rest pos-spec-list)`
+- L1956: `(defun find-eunicodeucs (c &rest pos-spec-list)`
+- L1991: `(defun ee-closure-to-list (c)`
+- L1996: `(defun ee-closure-to-lambda (c)`
+- L2005: `(defun ee-symbol-function (sym)`
+- L2014: `(defun ee-closure-to-named-plist (c &optional head)`
+- L2044: `(defun ee-defun-sexp-for (symbol)`
+- L2047: `(defun ee-defun-str-for (symbol)`
+- L2052: `(defun ee-eejump-symbols ()`
+- L2055: `(defun ee-find-eejumps-header ()`
+- L2070: `(defun ee-find-eejumps-body ()`
+- L2073: `(defun find-eejumps (&rest pos-spec-list) (interactive)`
+- L2098: `(defun ee-shortdefp (sym)`
+- L2106: `(defun ee-shortdef-symbols ()`
+- L2109: `(defun ee-find-eeshortdefs-body ()`
+- L2112: `(defun ee-find-eeshortdefs-header ()`
+- L2118: `(defun find-eeshortdefs (&rest pos-spec-list)`
+- L2131: `(defun ee-shortaliasp (sym)`
+- L2137: `(defun ee-shortalias-symbols ()`
+- L2140: `(defun ee-defalias-str-for (symbol)`
+- L2143: `(defun ee-find-eeshortaliases-body ()`
+- L2147: `(defun ee-find-eeshortaliases-header ()`
+- L2153: `(defun find-eeshortaliases (&rest pos-spec-list)`
+- L2176: `(defun find-eaproposf (regexp &rest rest)`
+- L2194: `(defun find-eaproposv (regexp &rest rest)`
+- L2212: `(defun find-eapropost (regexp &rest rest)`
+- L2232: `(defun find-eaproposl (regexp &rest rest)`
+- L2256: `(defun ee-eaproposf0 (regexp predicate fmt)`
+- L2266: `(provide 'eev-blinks)`
+
+## eev-bounded.el
+
+- L49: `(require 'eev-code)`
+- L68: `(defun ee-sdelim-to-s (sdelim)`
+- L74: `(defun ee-edelim-to-e (edelim)`
+- L91: `(defun       code-bounded (newf f delim &optional adjust face dur)`
+- L94: `(defun  find-code-bounded (newf f delim &optional adjust face dur)`
+- L97: `(defun    ee-code-bounded (newf f delim &optional adjust face dur)`
+- L140: `(defun ee-bounded-function ()`
+- L145: `;; (define-key eev-mode-map [f3] 'ee-bounded-function)`
+- L147: `(provide 'eev-bounded)`
+- L170: `(defun ee-add-quote (obj)`
+- L177: `(defun ee-pp0q (obj)`
+- L181: `(defun ee-eeb-define-docstring`
+- L199: `(defun ee-eeb-define`
+- L227: `(defun eeb-define`
+- L243: `(defun find-eeb-define (&rest rest)`
+- L248: `(defun eeb-define-try`
+
+## eev-brxxx.el
+
+- L134: `(require 'eev-code)	      ; (find-eev "eev-code.el")`
+- L173: `(defun ee-url-to-fname0 (url)`
+- L177: `(defun ee-url-to-fname (url)`
+- L182: `(defun ee-fname-to-url (fname)`
+- L186: `(defun ee-url-to-local-url (url)`
+- L192: `(defun ee-dired-to-fname (&optional no-error-if-not-filep)`
+- L200: `(defun ee-dired-to-url (&optional no-error-if-not-filep)`
+- L211: `(defun ee-tail-call1 (fmt f rest)`
+- L231: `(defun      code-brurl (f &rest rest)`
+- L234: `(defun find-code-brurl (f &rest rest)`
+- L236: `(defun   ee-code-brurl (f &rest rest)`
+- L247: `(defun ee-code-brurl-rest (f rest)`
+- L254: `(defun ee-code-brurl-:remote (f brxxx &rest rest)`
+- L264: `(defun ee-code-brurl-:local (f brxxxl &rest rest)`
+- L275: `(defun ee-code-brurl-:dired (f brxxxd &rest rest)`
+- L307: `(defun      code-brfile (f &rest rest)`
+- L310: `(defun find-code-brfile (f &rest rest)`
+- L312: `(defun   ee-code-brfile (f &rest rest)`
+- L325: `(defun ee-code-brfile-rest (f rest)`
+- L332: `(defun ee-code-brfile-:local (f brxxxl &rest rest)`
+- L343: `(defun ee-code-brfile-:dired (f brxxxd &rest rest)`
+- L426: `(provide 'eev-brxxx)`
+
+## eev-channels.el
+
+- L54: `(require 'eev-prepared) 		; (find-eev "eev-prepared.el")`
+- L56: `(defun ee-read-file (fname)`
+- L106: `(defun eechannel-strfile (channel)`
+- L110: `(defun eechannel-pidfile (channel)`
+- L113: `(defun eechannel-pid     (channel)`
+- L119: `(defun eechannel-kill (channel sig)`
+- L124: `(defun eechannel-send (channel str)`
+- L130: `(defun eechannel-this-line () (interactive)`
+- L139: `(defun eechannel (channel)`
+- L155: `(defun eechannel-pid-running-p (pid)`
+- L164: `(defun eechannel-args-ne (channel prog-and-args)`
+- L168: `(defun eechannel-create-ne (channel prog-and-args)`
+- L171: `(defun eechannel-assert-ne (channel prog-and-args)`
+- L177: `(defun eechannel-args   (channel prog-and-args)`
+- L179: `(defun eechannel-create (channel prog-and-args)`
+- L181: `(defun eechannel-assert (channel prog-and-args)`
+- L220: `(defun eexterm-args-ne (channel &optional prog-and-args xterm-args)`
+- L231: `(defun eexterm-create-ne (channel &optional prog-and-args xterm-args)`
+- L235: `(defun eexterm-ne (channel &optional prog-and-args xterm-args)`
+- L243: `(defun eexterm-args (channel &optional prog-and-args xterm-args)`
+- L246: `(defun eexterm-create (channel &optional prog-and-args xterm-args)`
+- L250: `(defun eexterm (channel &optional prog-and-args xterm-args)`
+- L257: `(defun eexterm-kill (&optional channel sig)`
+- L263: `(provide 'eev-channels)`
+
+## eev-code.el
+
+- L56: `(require 'eepitch)	   ; For: 'ee-read'`
+- L57: `(require 'eev-template0)   ; See: (find-eev "eev-template0.el")`
+- L58: `(require 'eev-wrap)        ; For: 'ee-S'`
+- L84: `(defun ee-aref (alist idx)`
+- L93: `(defun ee-adel (alist idx)`
+- L102: `(defun ee-aset (alist idx newelt)`
+- L113: `(defun ee-areplace (alist idx newelt)`
+- L146: `(defun ee-code-c-d-add-pair (c d)`
+- L190: `(defun      code-c-d (c d &rest rest)`
+- L195: `(defun find-code-c-d (c d &rest rest)`
+- L197: `(defun   ee-code-c-d (c d &rest rest)`
+- L204: `(defun   ee-code-c-d-rest (c d rest)`
+- L210: `(defun find-code-c-d-rest (c d &rest rest)`
+- L213: `(defun ee-code-c-d-base (c d)`
+- L243: `(defun ee-code-c-d-:anchor (c d &rest rest)`
+- L251: `(defun ee-code-c-d-:info (c d info &rest rest)`
+- L262: `(defun ee-code-c-d-:linfo (c d manual &rest rest)`
+- L270: `(defun ee-code-c-d-:gz (c d &rest rest)`
+- L279: `(defun ee-code-c-d-:tags (c d &rest rest)`
+- L294: `(defun ee-code-c-d-:w3m (c d &rest rest)`
+- L301: `(defun ee-code-c-d-:wget (c d url &rest rest)`
+- L310: `(defun ee-code-c-d-:grep (c d &rest rest) (ee-code-c-d-rest c d rest))  ; compat`
+- L315: `(defun ee-find-node (dir manual page &rest pos-spec-list)`
+- L318: `(defun ee-find-grep (dir grep-command-args &rest pos-spec-list)`
+- L324: `(defun ee-find-xxxsh (dir command &rest pos-spec-list)`
+- L328: `(defun ee-find-xxxsh0 (dir command)`
+- L332: `(defun ee-find-xxxsh00 (dir command)`
+- L336: `(defun ee-find-tag (tag &rest pos-spec-list)`
+- L359: `(defun ee-locate-library (fname &optional truename)`
+- L422: `(defun eev-version ()`
+- L432: `(provide 'eev-code)`
+
+## eev-codings.el
+
+- L99: `(defun ee-to-coding (coding str)`
+- L102: `(defun ee-tolatin1 (str)`
+- L123: `(defun ee-tolatin1-re (re)`
+- L141: `(provide 'eev-codings)`
+
+## eev-compose-hash.el
+
+- L174: `;;   (define-key eev-mode-map (kbd "M-,") 'ee-compose-pair)`
+- L188: `(defun ee-composes-initialize ()`
+- L213: `(defun ee-composes-do (bigstrspec &optional action)`
+- L226: `(defun ee-composes-do-default ()`
+- L234: `(defun ee-composes-do-remove-face ()`
+- L242: `(defun ee-composes-do-test ()`
+- L274: `(defun ee-composes-to-string ()`
+- L281: `(defun ee-composes-to-catcodes ()`
+- L287: `(defun ee-composes-to-declareunicodes ()`
+- L307: `(defun ee-compose-pair (&optional arg)`
+- L349: `(defun ee-composes-set-face (face fg bg)`
+- L665: `;; (define-key eev-mode-map (kbd "M-,") 'ee-compose-pair)`
+- L673: `(provide 'eev-compose-hash)`
+
+## eev-edit.el
+
+- L63: `;; (define-key eev-mode-map "\M-h\M-2" 'ee-duplicate-this-line)`
+- L67: `(defun ee-duplicate-this-line ()`
+- L82: `;; (define-key eev-mode-map "\M-h\M-y" 'ee-yank-pos-spec)`
+- L87: `(defun ee-yank-pos-spec ()`
+- L129: `;; (define-key eev-mode-map "\M-h\M-w" 'ee-copy-this-line-to-kill-ring)`
+- L133: `(defun ee-copy-this-line-to-kill-ring (&optional arg)`
+- L152: `(defun  ee-tag-re () ee-tag-re-utf-8)`
+- L154: `(defun ee-preceding-tag-flash (&optional regexp)`
+- L167: `(defun ee-preceding-tag-flash-no-error ()`
+- L172: `(defun ee-copy-preceding-tag-to-kill-ring ()`
+- L193: `;; (define-key eev-mode-map "\M-h\M--" 'ee-shrink-hyperlink-at-eol)`
+- L196: `(defun ee-shrink-sexp (sexp)`
+- L206: `(defun ee-shrink-hyperlink-at-eol ()`
+- L226: `;; (define-key eev-mode-map "\M-s" 'ee-flip-psne-ness)`
+- L230: `(defun ee-flip-psne-ness ()`
+- L248: `;; (define-key eev-mode-map "\M-I" 'eewrap-vldi-list-line)`
+- L263: `(defun eewrap-vldi-list-line () (interactive)`
+- L276: `(defun ee-wrap-vldi-list-line (line)`
+- L295: `(provide 'eev-edit)`
+
+## eev-elinks.el
+
+- L130: `(defun ee-url-at-point ()`
+- L133: `(defun ee-stuff-around-point0 (chars)`
+- L140: `(defun ee-stuff-around-point (chars)`
+- L144: `(defun ee-debpkgname-around-point ()`
+- L149: `(defun ee-debpkgname-ask (&optional prompt)`
+- L154: `(defun ee-manpagename-around-point ()`
+- L160: `(defun ee-manpagename-ask (&optional prompt)`
+- L166: `(defun ee-1stclassvideo-around-point-ask ()`
+- L176: `(defun ee-1stclassvideo-ask (default0)`
+- L185: `(defun ee-1stclassvideos ()`
+- L188: `(defun ee-lisp-symbol-around-point ()`
+- L194: `(defun ee-lisp-symbol-around-point-ask (&optional prompt)`
+- L242: `(defun ee-remove-nils (list)`
+- L249: `(defun ee-links-to-string0 (list)`
+- L255: `(defun ee-links-to-string (list)`
+- L260: `(defun find-elinks (links &rest pos-spec-list)`
+- L265: `(defun find-elinks-elisp (links &rest pos-spec-list)`
+- L272: `(defun find-elinks-mode (sexp links &rest pos-spec-list)`
+- L280: `(defun find-elinks-mode-prefix (sexp prefix links &rest pos-spec-list)`
+- L286: `(defun find-elinks-sh (links &rest pos-spec-list)`
+- L313: `(defun find-efunction-links (&optional f &rest pos-spec-list)`
+- L326: `(defun ee-find-efunction-links (f)`
+- L371: `(defun find-eloadhistory-links (&rest pos-spec-list)`
+- L398: `(defun ee-eloadhistory-find-flines ()`
+- L405: `(defun ee-eloadhistory-fors ()`
+- L412: `(defun ee-shorten-elc (fname)`
+- L423: `(defun find-epploadhistory (object &rest pos-spec-list)`
+- L447: `(defun find-evariable-links (var &rest pos-spec-list)`
+- L538: `;; (define-key eev-mode-map "\M-h\M-k" 'find-ekey-links)`
+- L541: `(defun ee-format-kbd-macro (key)`
+- L546: `(defun find-ekey-links (key &rest pos-spec-list)`
+- L570: `(defun find-elongkey-links (longkey &rest pos-spec-list)`
+- L588: `(defun ee-find-eboundkey-links (key f)`
+- L639: `(defun find-eapropos-links (&optional regexp &rest pos-spec-list)`
+- L681: `(defun find-etype-links (&optional type &rest pos-spec-list)`
+- L744: `(defun ee-infop          () (get-buffer "*info*"))`
+- L745: `(defun ee-info-node      () (with-current-buffer "*info*" Info-current-node))`
+- L746: `(defun ee-info-book+     () (with-current-buffer "*info*" Info-current-file))`
+- L747: `(defun ee-info-book-     () (file-name-nondirectory (ee-info-book+)))`
+- L748: `(defun ee-info-fullnode  () (format "(%s)%s" (ee-info-book-) (ee-info-node)))`
+- L749: `(defun ee-info-fullnode+ () (format "(%s)%s" (ee-info-book+) (ee-info-node)))`
+- L751: `(defun ee-info-file-     () (file-name-nondirectory ee-info-file))`
+- L752: `(defun ee-info-shortp    () (string= (ee-info-book-) (ee-info-file-)))`
+- L753: `(defun ee-info-shortf    () (ee-intern "find-%snode" ee-info-code))`
+- L754: `(defun ee-info-shortlink () (list (ee-info-shortf) (ee-info-node)))`
+- L756: `(defun ee-find-info-links ()`
+- L762: `(defun find-einfo-links (&optional fullnode &rest rest)`
+- L833: `(defun ee-intro-stem (&optional bufname)`
+- L843: `(defun ee-find-intro-links (&optional stem)`
+- L852: `(defun find-eintro-links (&optional stem &rest rest)`
+- L867: `;; (define-key eev-mode-map "\M-h\M-i" 'find-eintro-or-einfo-links)`
+- L868: `(defun find-eintro-or-einfo-links ()`
+- L886: `(defun ee-find-wgetes-links (&optional stem tag)`
+- L892: `(defun ee-find-wgetangg-links (&optional stem tag)`
+- L898: `(defun ee-find-wget-links (&optional url)`
+- L966: `(defun ee-filter (f list)`
+- L971: `(defun ee-code-c-d-filter-1 (code)`
+- L982: `(defun ee-code-c-d-filter-2 (fname code)`
+- L998: `(defun find-code-c-d-filter-1 (code)`
+- L1002: `(defun find-code-c-d-filter-2 (fname code)`
+- L1008: `(defun ee-prefixp (prefix str)`
+- L1013: `(defun ee-remove-prefix (prefix str)`
+- L1019: `(defun ee-replace-prefix0 (prefix newprefix fname)`
+- L1023: `(defun ee-replace-prefix (prefix newprefix fname)`
+- L1026: `(defun ee-intern (fmt &rest args)`
+- L1031: `(defun ee-find-xxxfile-sexps (fname)`
+- L1054: `;; (define-key eev-mode-map "\M-hf" 'find-file-links)`
+- L1056: `(defun ee-if-prefixp (d newd fname code)`
+- L1065: `(defun ee-find-file-links (&optional fname)`
+- L1079: `(defun ee-find-file-extra-links (fname) ()) ; customize this`
+- L1081: `(defun find-file-links (fname &rest pos-spec-list)`
+- L1125: `(defun find-grep-links (&rest pos-spec-list)`
+- L1138: `(defun ee-find-grep-links ()`
+- L1156: `(defun ee-find-grep-links0 (find-xxxgreps grep-commands)`
+- L1164: `(defun ee-find-grep-commands ()`
+- L1168: `(defun ee-first-n-elements (n list)`
+- L1174: `(defun ee-find-grep-functions (dir)`
+- L1181: `(defun ee-find-grep-links1 ()`
+- L1215: `(defun find-pdflike-page-links (&optional page bufname offset target &rest pos-spec-list)`
+- L1236: `(defun ee-pdflike-page-links (&optional page bufname offset)`
+- L1267: `(defun ee-count-formfeeds (start end)`
+- L1278: `(defun ee-current-page ()`
+- L1281: `(defun ee-last-kill ()`
+- L1285: `(defun ee-region ()`
+- L1289: `(defun ee-region-or-last-kill ()`
+- L1311: `(defun ee-hyperlink-prefix ()`
+- L1343: `(defun find-eface-links (&optional face-symbol &rest pos-spec-list)`
+- L1384: `(defun ee-face-at-point (&optional arg)`
+- L1405: `(defun ee-face-of-glyph (char)`
+- L1433: `(defun find-ecolor-links (&optional initialcolor &rest pos-spec-list)`
+- L1459: `(defun ee-color-values (color)`
+- L1464: `(defun ee-color-choose-tk (&optional initialcolor)`
+- L1491: `(defun find-epackage-links (&optional pkg c d &rest pos-spec-list)`
+- L1513: `(defun ee-find-epackage-links0 (pkg c d)`
+- L1561: `(defun ee-find-epackage-pkg-to-c (pkg)`
+- L1572: `(defun ee-package-findelpafiles (pkgname)`
+- L1578: `(defun ee-file-expand-wildcards-slash (pattern)`
+- L1585: `(defun ee-file-name-nondirectory-slash (fname)`
+- L1619: `(defun ee-package-desc (pkg)`
+- L1629: `(defun ee-package-dir (pkg)`
+- L1638: `(defun ee-package-url (pkg)`
+- L1664: `(defun find-esetkey-links (&optional key command &rest pos-spec-list)`
+- L1696: `(global-set-key   (kbd \"{longkey}\") '{command})`
+- L1702: `(define-key global-map (kbd \"{longkey}\") '{command})`
+- L1705: `(define-key eev-mode-map (kbd \"{longkey}\") '{command})`
+- L1706: `(define-key eev-mode-map (kbd \"{longkey}\") nil)`
+- L1711: `(defun ee-read-command ()`
+- L1719: `(defun ee-command-at-point ()`
+- L1746: `(defun find-ekbmacro-links (&rest pos-spec-list)`
+- L1776: `(defun find-emajormode-links (&optional mode &rest pos-spec-list)`
+- L1807: `(defun find-eminormodes-links (&rest pos-spec-list)`
+- L1853: `(defun find-emodeline-links (&rest pos-spec-list)`
+- L1894: `(defun find-emenubar-links (&rest pos-spec-list)`
+- L1952: `(defun find-elocus-links (&optional key keymap &rest pos-spec-list)`
+- L1997: `(defun ee-read-key-sequence (prompt)`
+- L2000: `(defun ee-binding-locus (key)`
+- L2003: `(defun ee-keymap-lookup (keymap key)`
+- L2029: `(defun ee-shorten-file-name (fname)`
+- L2035: `(defun find-code-pdf-links (&optional fname c &rest pos-spec-list)`
+- L2093: `(defun find-pdf-links ()`
+- L2105: `(defun find-code-audiovideo-links (&optional fname c &rest pos-spec-list)`
+- L2154: `(defun eepitch-{c} () (interactive)`
+- L2255: `(defun ee-buffer-manpage-name (&optional bufname)`
+- L2266: `(defun find-last-manpage-links (manpagename &rest rest)`
+- L2276: `(defun find-manpage-links (manpagename &rest rest)`
+- L2324: `(provide 'eev-elinks)`
+
+## eev-env.el
+
+- L41: `(require 'eepitch)`
+- L55: `(defun ee-setenv (envvar value)`
+- L93: `(defun ee-with-env (changes code)`
+- L104: `(defun ee-with-env0 (changes)`
+- L108: `(defun ee-with-env00 (change)`
+- L126: `(provide 'eev-env)`
+
+## eev-eval.el
+
+- L56: `(require 'eev-flash)		; (find-eev "eev-flash.el")`
+- L57: `(require 'eev-multiwindow)	; (find-eev "eev-multiwindow.el")`
+- L74: `(defun ee-backward-sexp ()`
+- L87: `(defun ee-forward-sexp ()`
+- L96: `(defun ee-last-sexp ()`
+- L102: `(defmacro ee-no-debug (&rest body)`
+- L109: `(defun ee-eval (sexp)`
+- L113: `(defun ee-eval-lexical (sexp)`
+- L132: `(defun ee-eval-last-sexp-default (&optional arg)`
+- L136: `(defun ee-eval-last-sexp-0 ()`
+- L142: `(defun ee-eval-last-sexp-1 ()`
+- L146: `(defun ee-eval-last-sexp-2 ()`
+- L150: `(defun ee-eval-last-sexp-3 ()`
+- L154: `(defun ee-eval-last-sexp-4 ()`
+- L160: `(defun ee-eval-last-sexp-5 ()`
+- L166: `(defun ee-eval-last-sexp-7 ()`
+- L170: `(defun ee-eval-last-sexp-8 ()`
+- L174: `(defun ee-eval-last-sexp-11 ()`
+- L208: `(defun ee-eval-sexp-eol (&optional arg)`
+- L235: `(defun ee-goto-eol ()`
+- L246: `(defun ee-eval-last-sexp (&optional arg)`
+- L334: `(provide 'eev-eval)`
+
+## eev-explain.el
+
+- L78: `(defun ee-forward-sexp1 ()`
+- L85: `(defun ee-forward-sexp3 ()`
+- L96: `(defun ee-forward-sexp3s ()`
+- L108: `(defun ee-subsexps-before-point ()`
+- L120: `(defun ee-bets-set ()`
+- L124: `(defun ee-bets-begin (n) (nth 0 (nth n ee-bets)))`
+- L125: `(defun ee-bets-end   (n) (nth 1 (nth n ee-bets)))`
+- L126: `(defun ee-bets-text  (n) (nth 2 (nth n ee-bets)))`
+- L140: `(defun ee-set-string-property (str property-name value)`
+- L144: `(defun ee-set-string-face (str &optional face)`
+- L147: `(defun ee-set-string-fg (str &optional fg)`
+- L150: `(defun ee-bets-flash (n &optional b-adj e-adj spec face)`
+- L175: `(defun ee-explain-eejump ()`
+- L187: `(defun ee-explain-code-c-d ()`
+- L205: `(defun ee-explain-code-c-d ()`
+- L225: `(defun eev-explain ()`
+- L247: `(provide 'eev-explain)`
+
+## eev-flash.el
+
+- L66: `(defun ee-flash (start end &optional face duration)`
+- L72: `(defun eeflash (start end &optional face duration)`
+- L78: `(defun eeflash+ (s &optional e spec add-to-e)`
+- L91: `(provide 'eev-flash)`
+
+## eev-helpful.el
+
+- L75: `(defun find-helpful-links (&optional action symbol &rest pos-spec-list)`
+- L90: `(defun ee-find-helpful-links (&optional action symbol)`
+- L111: `(defun ee-helpful-action (&optional buffername)`
+- L117: `(defun ee-helpful-symbol (&optional buffername)`
+- L144: `(defun find-hcallable (symbol &rest pos-spec-list)`
+- L150: `(defun find-hcommand (symbol &rest pos-spec-list)`
+- L156: `(defun find-hfunction (symbol &rest pos-spec-list)`
+- L162: `(defun find-hkey (keyseq &rest pos-spec-list)`
+- L168: `(defun find-hmacro (symbol &rest pos-spec-list)`
+- L174: `(defun find-hsymbol (symbol &rest pos-spec-list)`
+- L180: `(defun find-hvariable (symbol &rest pos-spec-list)`
+- L190: `(defun find-hkeymap-links (&optional symbol &rest pos-spec-list)`
+- L233: `(provide 'eev-helpful)`
+
+## eev-hlinks.el
+
+- L123: `(defun find-here-links (&optional arg &rest pos-spec-list)`
+- L140: `(defun ee-find-here-links-header ()`
+- L152: `(defun ee-find-here-links (&optional arg)`
+- L188: `(defun ee-find-here-debug-links ()`
+- L329: `(defun ee-hlang-eval (hsexp)`
+- L336: `(defun ee-hlang-:lisp (&rest sexps)`
+- L340: `(defun ee-hlang-:or (&rest hsexps)`
+- L348: `(defun ee-hlang-:if (sexp1 sexp2)`
+- L365: `(defun ee-hlang-run (hprogram)`
+- L379: `(defun ee-detect-here ()`
+- L431: `(defun ee-buffer-re (re)`
+- L434: `(defun ee-buffer-eq (str) (string= str (buffer-name)))`
+- L436: `(defun ee-buffer-re-wget (subre)`
+- L438: `(defun ee-buffer-re-wgetangg (subre)`
+- L441: `(defun ee-buffer-help0    () (ee-buffer-eq "*Help*"))`
+- L442: `(defun ee-buffer-help-re0 (re n)`
+- L448: `(defun ee-buffer-help (re n) (intern (or (ee-buffer-help-re0 re n) "nil")))`
+- L452: `(defun ee-custom-lispify-tag-name (str)`
+- L456: `(defun ee-underlinewsp-re (&rest components)`
+- L481: `(defun ee-grep-bufferp       () (eq major-mode 'grep-mode))`
+- L482: `(defun ee-man-bufferp        () (eq major-mode 'Man-mode))`
+- L483: `(defun ee-rcirc-bufferp      () (eq major-mode 'rcirc-mode))`
+- L484: `(defun ee-info-bufferp       () (eq major-mode 'Info-mode))`
+- L485: `(defun ee-dired-bufferp      () (eq major-mode 'dired-mode))`
+- L486: `(defun ee-wdired-bufferp     () (eq major-mode 'wdired-mode))`
+- L487: `(defun ee-eww-bufferp        () (eq major-mode 'eww-mode))`
+- L488: `(defun ee-w3m-bufferp        () (eq major-mode 'w3m-mode))`
+- L490: `(defun ee-epackages-bufferp  () (eq major-mode 'package-menu-mode))`
+- L491: `(defun ee-osm-bufferp        () (eq major-mode 'osm-mode))`
+- L492: `(defun ee-helpful-bufferp    () (eq major-mode 'helpful-mode))`
+- L493: `(defun ee-nov-bufferp        () (eq major-mode 'nov-mode))`
+- L494: `(defun ee-telegachat-bufferp () (eq major-mode 'telega-chat-mode))`
+- L497: `(defun ee-intro-bufferp    () (ee-buffer-re "^\\*(find-\\(.*\\)-intro)\\*$"))`
+- L498: `(defun ee-freenode-bufferp () (ee-buffer-re "^\\(.*\\).freenode\\.net"))`
+- L499: `(defun ee-ecolors-bufferp  () (ee-buffer-eq "*Colors*"))`
+- L500: `(defun ee-efaces-bufferp   () (ee-buffer-eq "*Faces*"))`
+- L501: `(defun ee-pdftext-bufferp  () (ee-buffer-re "^pdftotext"))`
+- L502: `(defun ee-custom-bufferp   () (ee-buffer-re ee-custom-re))`
+- L503: `(defun ee-custom-f-bufferp () (ee-buffer-re ee-custom-f-re))`
+- L504: `(defun ee-custom-v-bufferp () (ee-buffer-re ee-custom-v-re))`
+- L505: `(defun ee-wgetes-bufferp   () (ee-buffer-re-wgetangg "e/\\(.*\\)\\.e"))`
+- L506: `(defun ee-wgetangg-bufferp () (ee-buffer-re-wgetangg   "\\(.*\\)"))`
+- L507: `(defun ee-wget-bufferp     () (ee-buffer-re-wget       "\\(.*\\)"))`
+- L518: `(defun  ee-efunctiondescr-bufferp () (ee-buffer-help ee-efunctiondescr-re 1))`
+- L519: `(defun  ee-find-efunctiondescr-links ()`
+- L528: `(defun  ee-evardescr-bufferp () (ee-buffer-help ee-evardescr-re 1))`
+- L529: `(defun  ee-find-evardescr-links ()`
+- L538: `(defun  ee-efacedescr-bufferp () (ee-buffer-help ee-efacedescr-re 1))`
+- L539: `(defun  ee-find-efacedescr-links ()`
+- L548: `(defun  ee-epackage-bufferp ()`
+- L551: `(defun  ee-find-epackage-links ()`
+- L557: `(defun  ee-find-man-links ()`
+- L564: `(defun  ee-find-custom-links ()`
+- L572: `(defun  ee-find-custom-f-links ()`
+- L581: `(defun  ee-find-custom-v-links ()`
+- L592: `(defun  ee-eshortdoc-bufferp () (ee-buffer-re ee-eshortdoc-re))`
+- L593: `(defun  ee-find-eshortdoc-links ()`
+- L599: `(defun ee-file-bufferp     () buffer-file-name)`
+- L601: `(defun ee-find-dired-links ()`
+- L606: `(defun ee-packages-package-here ()`
+- L609: `(defun ee-find-epackages-links ()`
+- L616: `(defun ee-find-efaces-links    () '((find-efaces)))`
+- L617: `(defun ee-find-ecolors-links   () '((find-ecolors)))`
+- L618: `(defun ee-find-pdftext-links   () (ee-pdflike-page-links))`
+- L619: `(defun ee-find-eww-links       () '((find-eww ,(plist-get eww-data :url))))`
+- L620: `(defun ee-find-w3m-links       () '((find-w3m ,w3m-current-url)))`
+- L625: `(defun ee-libera-bufferp ()`
+- L631: `(defun ee-find-libera-links ()`
+- L654: `(defun find-here-links-beginner (&optional arg)`
+- L665: `(defun find-here-links-3 ()`
+- L682: `(defun find-here-links-1 ()`
+- L691: `(provide 'eev-hlinks)`
+
+## eev-htests.el
+
+- L56: `(defun find-tlhs (sexp1 sexp2)`
+- L72: `(defun find-tlhi (sexp1 sexp2)`
+- L140: `(provide 'eev-htests)`
+
+## eev-hydras.el
+
+- L68: `(require 'hydra)`
+- L70: `(defun ee-edit-index-replace (from-string to-string)`
+- L89: `(defun ee-edit-index ()`
+- L158: `(provide 'eev-hydras)`
+
+## eev-intro.el
+
+- L122: `(require 'info)`
+- L146: `(defun find-intro-dual-define ()`
+- L163: `(defun ee-bad-line (str) (string-match "[\\\"]" str))`
+- L164: `(defun ee-this-line ()`
+- L169: `(defun ee-intro-sourcep ()`
+- L172: `(defun find-intro-intro ()`
+- L177: `(defun find-intro-source ()`
+- L186: `(defun find-c2a (a b)   (find-wset "13_co_co" a b))`
+- L187: `(defun find-c2b (a b)   (find-wset "13_co_c"  a b))`
+- L189: `(defun find-intro-dual ()`
+- L224: `(defun ee-intro-fontify ()`
+- L252: `(defun ee-intro-face (c)`
+- L258: `(defun ee-intro-fontify-maybe ())`
+- L259: `(defun ee-intro-fontify-maybe () (ee-intro-fontify))`
+- L261: `(defun find-eintro (bigstr &rest pos-spec-list)`
+- L267: `(defun find-eintro-latin1 (bigstr &rest pos-spec-list)`
+- L289: `(defun ee-bol-skip-invisible ()`
+- L292: `(defun ee-eol-skip-invisible ()`
+- L308: `(defun find-eev-quick-intro (&rest pos-spec-list) (interactive)`
+- L2003: `(defun find-emacs-keys-intro (&rest pos-spec-list) (interactive)`
+- L2220: `(defun find-eev-install-intro (&rest pos-spec-list) (interactive)`
+- L2894: `(defun find-eev-levels-intro (&rest pos-spec-list) (interactive)`
+- L3053: `(require 'eev-load)               ; (find-eev \"eev-load.el\")`
+- L3054: `(require 'eev-aliases)            ; (find-eev \"eev-aliases.el\")`
+- L3154: `(defun find-eev-intro (&rest rest) (interactive)`
+- L3340: `(global-set-key (kbd \"s-e\") 'eev-mode)`
+- L3425: `(defun find-here-links-intro (&rest pos-spec-list) (interactive)`
+- L3920: `(defun find-refining-intro (&rest pos-spec-list) (interactive)`
+- L4151: `(define-key eev-mode-map \"\\M-h\\M-h\" 'find-here-links)`
+- L4152: `(define-key eev-mode-map \"\\M-h\\M-h\" 'find-here-links-beginner)`
+- L4190: `(define-key eev-mode-map \"\\M-h\\M-h\" 'find-here-links)`
+- L4379: `(defun find-saving-links-intro (&rest pos-spec-list) (interactive)`
+- L5299: `(defun find-eval-intro (&rest rest) (interactive)`
+- L5755: `(defun find-links-conv-intro (&rest pos-spec-list) (interactive)`
+- L6215: `(defun find-links-intro (&rest rest) (interactive)`
+- L6606: `(defun find-eepitch-intro (&rest rest)`
+- L7372: `(define-key eev-mode-map (kbd \"<f9>\") 'eepitch-b-set-target-and-show)`
+- L7780: `(defun find-wrap-intro (&rest rest) (interactive)`
+- L8054: `(defun find-eejump-intro (&rest rest) (interactive)`
+- L8139: `\(global-set-key (kbd \"M-j\") 'eejump-simplified)`
+- L8346: `(defun find-anchors-intro (&rest rest) (interactive)`
+- L8484: `(defun find-code-c-d-intro (&rest rest) (interactive)`
+- L8655: `(defun find-pdf-like-intro (&rest rest) (interactive)`
+- L9133: `(defun find-brxxx-intro (&rest rest) (interactive)`
+- L9543: `(defun find-psne-intro (&rest rest) (interactive)`
+- L9739: `(define-key eev-mode-map \"\\M-s\" 'ee-flip-psne-ness)`
+- L9812: `(defun find-audiovideo-intro (&rest pos-spec-list) (interactive)`
+- L10657: `(defun find-multiwindow-intro (&rest pos-spec-list) (interactive)`
+- L10946: `(define-key eev-mode-map \"\\M-#\" 'eewrap-two-eepitches)`
+- L11009: `(defun find-rcirc-intro (&rest pos-spec-list) (interactive)`
+- L11137: `(global-set-key [f2] 'rcirc-next-active-buffer)`
+- L11210: `(defun find-templates-intro (&rest rest) (interactive)`
+- L11811: `\(define-key eev-mode-map \"\\M-h\\M-u\" 'find-macports-links)`
+- L11863: `(defun find-prepared-intro (&rest rest) (interactive)`
+- L12109: `(defun find-bounded-intro (&rest pos-spec-list) (interactive)`
+- L12186: `(define-key eev-mode-map [f3] 'ee-bounded-function)`
+- L12203: `(defun find-channels-intro (&rest pos-spec-list) (interactive)`
+- L12720: `(defun find-videos-intro (&rest pos-spec-list) (interactive)`
+- L12959: `(defun find-video-links-intro (&rest pos-spec-list) (interactive)`
+- L13459: `(defun find-defun-intro (&rest rest) (interactive)`
+- L13684: `(defun find-emacs-intro (&rest rest) (interactive)`
+- L13878: `(defun find-org-intro (&rest pos-spec-list) (interactive)`
+- L14046: `(defun find-escripts-intro (&rest pos-spec-list) (interactive)`
+- L14983: `(defun find-git-intro (&rest pos-spec-list) (interactive)`
+- L15354: `(defun find-windows-beginner-intro (&rest pos-spec-list) (interactive)`
+- L15861: `(defun find-eev-exercises-intro (&rest pos-spec-list) (interactive)`
+- L16003: `(defun find-kla-intro (&rest pos-spec-list) (interactive)`
+- L16675: `(defun find-kl-here-intro (&rest pos-spec-list) (interactive)`
+- L16864: `(defun find-edit-index-intro (&rest pos-spec-list) (interactive)`
+- L17092: `(defun find-rstdoc-intro (&rest pos-spec-list) (interactive)`
+- L17471: `(defun find-show2-intro (&rest pos-spec-list) (interactive)`
+- L17933: `(defun find-lua-tutorial-intro (&rest pos-spec-list) (interactive)`
+- L18174: `(defun find-dot-emacs-intro (&rest pos-spec-list) (interactive)`
+- L18283: `(require 'eev-load)               ; (find-eev \"eev-load.el\")`
+- L18284: `(require 'eev-aliases)            ; (find-eev \"eev-aliases.el\")`
+- L18307: `(defun find-debootstrap-intro (&rest pos-spec-list) (interactive)`
+- L18365: `(defun find-lean4-intro (&rest pos-spec-list) (interactive)`
+- L18680: `(defun find-try-sly-intro (&rest pos-spec-list) (interactive)`
+- L18996: `(defun find-three-main-keys-intro (&rest pos-spec-list) (interactive)`
+- L19274: `(defun find-elisp-intro (&rest pos-spec-list) (interactive)`
+- L19910: `(defun find-lexical-intro (&rest pos-spec-list) (interactive)`
+- L20095: `(defun get/set0 ()`
+- L20107: `(defun get/set (getter setter)`
+- L20159: `(defun getb () b)`
+- L20203: `(defun ee-dynlex-url (nnnnn)`
+- L20207: `(defun find-dynlexpost (nnnnn &rest ignored)`
+- L20238: `(defun find-strange-functions-intro (&rest pos-spec-list) (interactive)`
+- L20745: `(provide 'eev-intro)`
+
+## eev-kl-here.el
+
+- L58: `(require 'eev-kla)		; (find-eev "eev-kla.el")`
+- L59: `(require 'eev-hlinks)		; (find-eev "eev-hlinks.el")`
+- L83: `(defun ee-find-info-linki ()`
+- L89: `(defun ee-find-intro-linki ()`
+- L95: `(defun ee-find-man-linki ()`
+- L99: `(defun ee-find-file-linki ()`
+- L107: `(defun ee-find-epackage-linki ()`
+- L112: `(defun ee-find-epackages-linki ()`
+- L117: `(defun ee-find-custom-linki ()`
+- L123: `(defun ee-find-custom-f-linki ()`
+- L129: `(defun  ee-find-custom-v-linki ()`
+- L135: `(defun ee-find-ecolors-linki ()`
+- L139: `(defun ee-find-efaces-linki ()`
+- L143: `(defun  ee-find-eshortdoc-linki ()`
+- L148: `(defun ee-find-wgetes-linki ()`
+- L154: `(defun ee-find-wgetangg-linki ()`
+- L160: `(defun ee-find-wget-linki ()`
+- L165: `(defun ee-find-efunctiondescr-linki ()`
+- L172: `(defun ee-find-efacedescr-linki ()`
+- L179: `(defun ee-find-evardescr-linki ()`
+- L187: `(defun ee-find-libera-linki ()`
+- L251: `(defun ee-detect-linki ()`
+- L254: `(defun ee-get-linki ()`
+- L270: `(defun eekl (&optional arg)`
+- L278: `(defun eekll (&optional arg)`
+- L286: `(defun eekls (&optional arg)`
+- L307: `(defun find-kl-debug-links (&optional symbol &rest pos-spec-list)`
+- L353: `(provide 'eev-kl-here)`
+
+## eev-kla.el
+
+- L175: `(defun ee-kl-transform (fname)`
+- L184: `(defun ee-kl-expand (fname)`
+- L202: `(defun ee-kl-fname ()`
+- L205: `(defun ee-kl-anchor ()`
+- L208: `(defun ee-kl-region ()`
+- L214: `(defun ee-kl-line ()`
+- L243: `(defun ee-kl-prefixp (prefix str)`
+- L250: `(defun ee-kl-cds ()`
+- L255: `(cl-defun ee-kl-lrcds (&key fname)`
+- L265: `(cl-defun ee-kl-lrcd (&key fname)`
+- L287: `(cl-defun ee-kl-r (&key fname)`
+- L291: `(cl-defun ee-kl-c (&key fname)`
+- L295: `(cl-defun ee-kl-d (&key fname)`
+- L304: `(cl-defun ee-kl-shortfname (&key fname c r)`
+- L309: `(cl-defun ee-kl-shorterfname (&key fname c r)`
+- L334: `(cl-defun ee-kl-find-c (&key fname c)`
+- L340: `(cl-defun ee-kl-find-cfile (&key fname c)`
+- L346: `(cl-defun ee-kl-sexp-kla (&key fname c r anchor)`
+- L356: `(cl-defun ee-kl-sexp-kla0 (&key fname c r anchor)`
+- L364: `(cl-defun ee-kl-sexp-klas (&key fname c r anchor region)`
+- L376: `(cl-defun ee-kl-sexp-klf (&key fname c r)`
+- L384: `(cl-defun ee-kl-sexp-klfs (&key fname c r region)`
+- L394: `(cl-defun ee-kl-sexp-klt (&key anchor)`
+- L399: `(cl-defun ee-kl-sexp-klts (&key anchor region)`
+- L417: `(defun ee-kl-kill (link)`
+- L425: `(defun ee-kl-link-to-string (link)`
+- L445: `(defun eekla ()`
+- L451: `(defun eekla0 ()`
+- L457: `(defun eeklas ()`
+- L463: `(defun eeklf ()`
+- L468: `(defun eeklfs ()`
+- L473: `(defun eeklt ()`
+- L478: `(defun eeklts ()`
+- L497: `(defun ee-kl-comment-prefix (&optional mode)`
+- L507: `(defun ee-kl-link-to-string-with-comment (link)`
+- L511: `(defun ee-kl-insert (&optional link)`
+- L535: `(defun ee-kla2-flash (pos1 pos2)`
+- L539: `(defun ee-kla2-goto-bol ()`
+- L546: `(defun ee-kla2-insert (link)`
+- L553: `(defun eekla2 ()`
+- L586: `(provide 'eev-kla)`
+
+## eev-lean4.el
+
+- L65: `(require 'eev-rstdoc)`
+- L116: `(defun l () (interactive) (find-es "lean"))`
+- L117: `(defun a () (interactive) (mkdir "/tmp/L/" t) (find-fline "/tmp/L/a.lean"))`
+- L120: `(defun cr3 () (interactive)`
+- L138: `(defmacro ee-let*-macro-leandoc (pl &rest code)`
+- L179: `(defun      code-leandocpdf (pl)`
+- L181: `(defun find-code-leandocpdf (pl)`
+- L185: `(defun   ee-code-leandocpdf (pl)`
+- L239: `(defun {k2}l (&rest rest) (interactive)`
+- L258: `(defun find-leandocprep-links (&optional pl &rest pos-spec-list)`
+- L337: `(defun find-leanbook-links (&optional bk secname &rest pos-spec-list)`
+- L522: `(provide 'eev-lean4)`
+
+## eev-load.el
+
+- L100: `(require 'eev-intro)	       ; (find-eev "eev-intro.el")`
+- L105: `(require 'eev-flash)	       ; (find-eev "eev-flash.el")`
+- L106: `(require 'eev-multiwindow)     ; (find-eev "eev-multiwindow.el")`
+- L107: `(require 'eev-eval)	       ; (find-eev "eev-eval.el")`
+- L108: `(require 'eev-mode)	       ; (find-eev "eev-mode.el")`
+- L109: `(require 'eev-anchors)	       ; (find-eev "eev-anchors.el")`
+- L110: `(require 'eev-template0)       ; (find-eev "eev-template0.el")`
+- L115: `(require 'eev-blinks)	       ; (find-eev "eev-blinks.el")`
+- L116: `(require 'eev-plinks)	       ; (find-eev "eev-plinks.el")`
+- L117: `(require 'eev-elinks)	       ; (find-eev "eev-elinks.el")`
+- L118: `(require 'eev-tlinks)	       ; (find-eev "eev-tlinks.el")`
+- L119: `(require 'eev-hlinks)	       ; (find-eev "eev-hlinks.el")`
+- L120: `(require 'eev-htests)          ; (find-eev "eev-htests.el")`
+- L124: `(require 'eev-brxxx)	       ; (find-eev "eev-brxxx.el")`
+- L132: `(require 'eepitch)             ; (find-eev "eepitch.el")`
+- L133: `(require 'eev-wrap)	       ; (find-eev "eev-wrap.el")`
+- L138: `(require 'eejump)              ; (find-eev "eejump.el")`
+- L143: `(require 'eev-anchors)	       ; (find-eev "eev-anchors.el")`
+- L149: `(require 'eev-code)	          ; (find-eev "eev-code.el")`
+- L150: `(require 'eev-pdflike)	          ; (find-eev "eev-pdflike.el")`
+- L153: `(require 'eev-codings)	          ; (find-eev "eev-codings.el")`
+- L154: `(require 'eev-env)	          ; (find-eev "eev-env.el")`
+- L155: `(require 'eev-edit)               ; (find-eev "eev-edit.el")`
+- L156: `(require 'eev-testblocks)         ; (find-eev "eev-testblocks.el")`
+- L157: `(require 'eev-kla)                ; (find-eev "eev-kla.el")`
+- L158: `(require 'eev-kl-here)            ; (find-eev "eev-kl-here.el")`
+- L159: `(require 'eev-strange-functions)  ; (find-eev "eev-strange-functions.el")`
+- L160: `(require 'eev-helpful)            ; (find-eev "eev-helpful.el")`
+- L161: `(require 'eev-rstdoc)             ; (find-eev "eev-rstdoc.el")`
+- L162: `(require 'eev-qrl)                ; (find-eev "eev-qrl.el")`
+- L166: `(require 'eev-wconfig)         ; (find-eev "eev-wconfig.el")`
+- L172: `(require 'eev-audiovideo)      ; (find-eev "eev-audiovideo.el")`
+- L173: `(require 'eev-videolinks)      ; (find-eev "eev-videolinks.el")`
+- L174: `(require 'eev-rcirc)           ; (find-eev "eev-rcirc.el")`
+- L210: `(provide 'eev-load)`
+
+## eev-mode.el
+
+- L48: `(defun ee-kill-this-buffer ()`
+- L69: `(defvar eev-mode-map nil)`
+- L71: `(defun eev-mode-map-set ()`
+- L78: `(define-key eev-mode-map "\M-e" 'ee-eval-sexp-eol)  ; extends C-e C-x C-e`
+- L79: `(define-key eev-mode-map "\M-E" 'ee-eval-last-sexp) ; extends     C-x C-e`
+- L80: `(define-key eev-mode-map "\M-k" 'ee-kill-this-buffer)`
+- L81: `(define-key eev-mode-map "\M-K" 'bury-buffer)`
+- L86: `(define-key eev-mode-map "\M-j" 'eejump)`
+- L93: `(define-key eev-mode-map [f8]   'eepitch-this-line)`
+- L94: `(define-key eev-mode-map "\M-T" 'eewrap-eepitch)`
+- L101: `(define-key eev-mode-map "\M-A" 'eewrap-anchor)`
+- L102: `(define-key eev-mode-map "\M-B" 'eewrap-escript-block)`
+- L103: `(define-key eev-mode-map "\M-C" 'eewrap-code-c-d)`
+- L104: `(define-key eev-mode-map "\M-D" 'eewrap-debian)`
+- L105: `(define-key eev-mode-map "\M-F" 'eewrap-find-fline)`
+- L106: `(define-key eev-mode-map "\M-J" 'eewrap-eejump)`
+- L107: `(define-key eev-mode-map "\M-M" 'eewrap-man)`
+- L108: `(define-key eev-mode-map "\M-P" 'eewrap-pdflike)`
+- L109: `(define-key eev-mode-map "\M-R" 'eewrap-rm/mkdir/cd)`
+- L110: `(define-key eev-mode-map "\M-S" 'eewrap-sh)`
+- L111: `(define-key eev-mode-map "\M-V" 'eewrap-audiovideo)`
+- L112: `;; (define-key eev-mode-map "\M-Z" 'eewrap-zsh)`
+- L113: `;; (define-key eev-mode-map "\M-#" 'eewrap-two-eepitches)`
+- L120: `(define-key eev-mode-map "\M-h\M-a" 'find-code-audiovideo-links)`
+- L121: `(define-key eev-mode-map "\M-h\M-d" 'find-debpkg-links)`
+- L122: `(define-key eev-mode-map "\M-h\M-e" 'find-extra-file-links)`
+- L123: `(define-key eev-mode-map "\M-h\M-f" 'find-efunction-links)`
+- L124: `(define-key eev-mode-map "\M-h\M-g" 'find-grep-links)`
+- L125: `(define-key eev-mode-map "\M-h\M-h" 'find-here-links)`
+- L126: `(define-key eev-mode-map "\M-h\M-i" 'find-eintro-or-einfo-links)`
+- L127: `(define-key eev-mode-map "\M-h\M-k" 'find-ekey-links)`
+- L128: `(define-key eev-mode-map "\M-h\M-l" 'find-elocus-links)`
+- L129: `(define-key eev-mode-map "\M-h\M-n" 'find-eunicodeucs)`
+- L130: `(define-key eev-mode-map "\M-h\M-p" 'find-pdf-links)`
+- L131: `(define-key eev-mode-map "\M-h\M-s" 'find-strange-function-eol-links)`
+- L132: `(define-key eev-mode-map "\M-h\M-S" 'find-strange-function-links)`
+- L133: `(define-key eev-mode-map "\M-h\M-v" 'find-evariable-links)`
+- L134: `(define-key eev-mode-map "\M-ha"    'find-eapropos-links)`
+- L135: `(define-key eev-mode-map "\M-hf"    'find-file-links)`
+- L136: `(define-key eev-mode-map "\M-hg"    'find-git-links)`
+- L137: `(define-key eev-mode-map "\M-hM"    'find-ekbmacro-links)`
+- L138: `;; (define-key eev-mode-map "\M-h\M-m" 'find-manpage-links)`
+- L139: `;; (define-key eev-mode-map "\M-hm"    'find-last-manpage-links)`
+- L143: `;; (define-key eev-mode-map "\M-h\M-s" 'find-efacedescr)`
+- L144: `(define-key eev-mode-map "\M-h\M-c" 'find-echardescr)`
+- L145: `(define-key eev-mode-map "\M-h\M-t" 'find-etpat)`
+- L146: `(define-key eev-mode-map "\M-hc"    'find-ecolor-links)`
+- L147: `(define-key eev-mode-map "\M-hs"    'find-eface-links)`
+- L148: `(define-key eev-mode-map "\M-ht"    'find-etpat0)`
+- L154: `(define-key eev-mode-map "\M-h\M-1" 'find-here-links-1)`
+- L155: `(define-key eev-mode-map "\M-h\M-2" 'ee-duplicate-this-line)`
+- L156: `(define-key eev-mode-map "\M-h\M-3" 'find-here-links-3)`
+- L157: `(define-key eev-mode-map "\M-h\M-y" 'ee-yank-pos-spec)`
+- L158: `(define-key eev-mode-map "\M-h\M-w" 'ee-copy-this-line-to-kill-ring)`
+- L159: `(define-key eev-mode-map "\M-h\M--" 'ee-shrink-hyperlink-at-eol)`
+- L165: `;; (define-key eev-mode-map "\M-s" 'ee-flip-psne-ness)`
+- L166: `(define-key eev-mode-map "\M-I" 'eewrap-vldi-list-line)`
+- L169: `;; (define-key eev-mode-map "\M-hg"    'find-git-links-1)`
+- L189: `;;   (define-key eev-mode-map "\M-e" 'ee-eval-sexp-eol)`
+- L190: `;;   (define-key eev-mode-map "\M-E" 'ee-eval-last-sexp)`
+- L191: `;;   (define-key eev-mode-map "\M-k" 'ee-kill-this-buffer)`
+- L192: `;;   (define-key eev-mode-map "\M-K" 'bury-buffer)`
+- L193: `;;   (define-key eev-mode-map "\M-j" 'eejump)`
+- L194: `;;   (define-key eev-mode-map [f8]   'eepitch-this-line)`
+- L195: `;;   (define-key eev-mode-map "\M-T" 'eewrap-eepitch)`
+- L223: `(defvar eev-mode-help "Toggle eev mode, i.e, activate or deactivate the 'eev-mode-map' keymap.`
+- L282: `(defun eev-mode-define ()`
+- L312: `;; (define-key eev-mode-map [f3]   'eeb-default)`
+- L314: `;; (define-key eev-mode-map [f9]   'eechannel-do-this-line)`
+- L315: `;; (define-key eev-mode-map [f12]  'eesteps-do-step)`
+- L316: `;; (define-key eev-mode-map "\M-P" 'ee-yank-one-line)`
+- L318: `;; (define-key eev-mode-map [?\C-,] 'eev-compose-two-keys) ; only works on X`
+- L319: `;; (define-key eev-mode-map [?\M-,] 'eev-compose-two-keys) ; works anywhere`
+- L331: `(provide 'eev-mode)`
+
+## eev-multiwindow.el
+
+- L48: `(defun find-wset-1 () (delete-other-windows))`
+- L49: `(defun find-wset-2 () (split-window-vertically))`
+- L50: `(defun find-wset-3 () (split-window-horizontally))`
+- L51: `(defun find-wset-s () (split-window-sensibly (selected-window)))`
+- L52: `(defun find-wset-o () (other-window 1))`
+- L53: `(defun find-wset-O () (other-window -1))`
+- L54: `(defun find-wset-+ () (balance-windows))`
+- L55: `(defun find-wset-c () (recenter))`
+- L56: `(defun find-wset-_ () (eval (car sexps)) (setq sexps (cdr sexps)))`
+- L57: `(defun find-wset-\  ())			; allow whitespace`
+- L59: `(defun find-wset (chars &rest sexps)`
+- L85: `(defun find-2a (a b)   (find-wset "13_o_o" a b))`
+- L86: `(defun find-2b (a b)   (find-wset "13_o_"  a b))`
+- L87: `(defun find-3a (a b c) (find-wset "13_o2_o_o"  a b c))`
+- L88: `(defun find-3b (a b c) (find-wset "13_o2_o_oo" a b c))`
+- L89: `(defun find-3c (a b c) (find-wset "13_o2_o_"   a b c))`
+- L108: `(defun ee-here (code)`
+- L122: `(defun ee-here-reset (code)`
+- L136: `(defun find-wset-e () (ee-here       (car sexps)) (setq sexps (cdr sexps)))`
+- L137: `(defun find-wset-E () (ee-here-reset (car sexps)) (setq sexps (cdr sexps)))`
+- L138: `(defun find-3ee  (b c)   (find-wset "13o2eoeo"     b c))`
+- L139: `(defun find-3EE  (b c)   (find-wset "13o2EoEo"     b c))`
+- L140: `(defun find-4eee (b c d) (find-wset "13o2eo2+eoeo" b c d))`
+- L141: `(defun find-4EEE (b c d) (find-wset "13o2Eo2+EoEo" b c d))`
+- L145: `(defun find-wset-= () (ee-here       (car sexps)) (setq sexps (cdr sexps)))`
+- L146: `(defun find-wset-! () (ee-here-reset (car sexps)) (setq sexps (cdr sexps)))`
+- L155: `(defun ee-first-frame-with-title (title)`
+- L163: `(defun ee-select-frame (title)`
+- L173: `(defun find-wset-F () (ee-select-frame (car sexps)) (setq sexps (cdr sexps)))`
+- L178: `(provide 'eev-multiwindow)`
+
+## eev-on-windows.el
+
+- L136: `(require 'eww)`
+- L137: `(require 'eshell)`
+- L138: `(require 'em-alias)`
+- L156: `(defun ee-download-with-eww (url dir)`
+- L175: `(defun ee-use-eshell ()`
+- L186: `(defun ee-use-shell ()`
+- L211: `(defun ee-use-wget-exe ()`
+- L218: `(defun ee-use-wget ()`
+- L232: `(defun ee-use-firefox ()`
+- L238: `(defun ee-use-googlechrome ()`
+- L262: `(defun ee-use-bullets ()`
+- L268: `(defun ee-use-red-stars ()`
+- L284: `(defun ee-use-find-angg-es-local ()`
+- L293: `(defun ee-use-find-angg-es-remote ()`
+- L313: `(defun ee-use-lua ()`
+- L320: `(defun ee-use-lua-exe ()`
+- L344: `(defun ee-use-windows ()`
+- L361: `(defun ee-use-gnu-linux ()`
+- L382: `(defun ee-use-gnu-linux-but-simulate ()`
+- L521: `(provide 'eev-on-windows)`
+
+## eev-pdflike.el
+
+- L203: `(require 'eev-plinks)			; (find-eev "eev-plinks.el")`
+- L204: `(require 'eev-brxxx)			; (find-eev "eev-brxxx.el")`
+- L240: `(defun find-sh-page (program-and-args &rest pos-spec-list)`
+- L252: `(defun ee-goto-position-page (&optional pos-spec &rest rest)`
+- L267: `(defun ee-pdftotext-replace-bad-ffs (bigstr)`
+- L293: `(defun      code-pdfbackend (pdfbackend)`
+- L295: `(defun find-code-pdfbackend (pdfbackend)`
+- L297: `(defun   ee-code-pdfbackend (pdfbackend)`
+- L359: `(defun      code-pdftextbackend (pdftextbackend)`
+- L361: `(defun find-code-pdftextbackend (pdftextbackend)`
+- L363: `(defun   ee-code-pdftextbackend (pdftextbackend)`
+- L421: `(defun      code-pdfbackendalias (newbackend oldbackend)`
+- L423: `(defun find-code-pdfbackendalias (newbackend oldbackend)`
+- L425: `(defun   ee-code-pdfbackendalias (newbackend oldbackend)`
+- L670: `(defun  ee-find-xpdf-colon ()`
+- L681: `(defun  ee-find-xpdf-page (fname &optional page &rest rest)`
+- L688: `(defun find-xpdf-page (fname &optional page &rest rest)`
+- L715: `(defun ee-find-pdftotext-text (fname &rest rest)`
+- L718: `(defun find-pdftotext-page (fname &optional page &rest rest)`
+- L766: `(defun ee-find-pdftotext8-text (fname &rest rest)`
+- L768: `(defun ee-find-pdf-text8       (fname &rest rest)`
+- L771: `(defun find-pdftotext8-text (fname &optional page &rest rest)`
+- L776: `(defun find-pdf-text8       (fname &optional page &rest rest)`
+- L806: `(defun  ee-find-texworkspdf-page (fname &optional page)`
+- L849: `(defun find-pdftools-page (pdffile &optional page &rest rest)`
+- L886: `(defun find-pdftoolsr-page (fname &optional page &rest rest)`
+- L902: `(defun ee-pdftools-revert-all ()`
+- L924: `(defun find-emacsreader-page (pdffile &optional page &rest rest)`
+- L931: `(defun find-emacsreaderr-page (fname &optional page &rest rest)`
+- L952: `(defun  ee-find-xdvi-page (fname &optional page)`
+- L979: `(defun     find-djview-page (fname &optional page &rest rest)`
+- L983: `(defun  ee-find-djview-page (fname &optional page)`
+- L989: `(defun ee-find-djview-cleanup (&optional fname)`
+- L1019: `(defun     find-evince-page (fname &optional page &rest rest)`
+- L1022: `(defun  ee-find-evince-page (fname &optional page)`
+- L1046: `(defun     find-mupdf-page (fname &optional page &rest rest)`
+- L1049: `(defun  ee-find-mupdf-page (fname &optional page &rest rest)`
+- L1071: `(defun     find-okular-page (fname &optional page &rest rest)`
+- L1074: `(defun  ee-find-okular-page (fname &optional page &rest rest)`
+- L1102: `(defun  ee-find-gv-page (fname &optional page)`
+- L1127: `(defun ee-find-djvutxt-text (fname)`
+- L1161: `(defun ee-fname-page-to-url (fname &optional page)`
+- L1171: `(defun ee-find-firefox-page (fname &optional page)`
+- L1174: `(defun ee-find-googlechrome-page (fname &optional page)`
+- L1265: `(provide 'eev-pdflike)`
+
+## eev-plinks.el
+
+- L158: `(defun ee-unsplit (list) (if (listp list) (mapconcat 'identity list " ") list))`
+- L159: `(defun ee-no-trailing-nl (str) (replace-regexp-in-string "\n$" "" str))`
+- L172: `(defun find-bgprocess-ne (program-and-args)`
+- L176: `(defun find-bgprocess (program-and-args)`
+- L192: `(defun find-callprocess00-ne (program-and-args)`
+- L199: `(defun find-callprocess00 (program-and-args)`
+- L202: `(defun find-callprocess0-ne (program-and-args)`
+- L205: `(defun find-callprocess0 (program-and-args)`
+- L212: `(defun find-callprocess-ne (program-and-args &rest pos-spec-list)`
+- L217: `(defun find-callprocess (program-and-args &rest pos-spec-list)`
+- L238: `(defun find-callprocessregion-ne (program-and-args input)`
+- L247: `(defun find-callprocessregion (program-and-args input)`
+- L250: `(defun ee-callprocessregion (cmd)`
+- L291: `(defun ee-urlretrieve-header1 ()`
+- L295: `(defun ee-urlretrieve-ok ()`
+- L299: `(defun ee-urlretrieve-assert-ok ()`
+- L305: `(defun find-urlretrieve00 (url)`
+- L316: `(defun ee-urlretrieve0 (url)`
+- L333: `(defun ee-very-primitive-wget0 (url fname)`
+- L344: `(defun ee-very-primitive-wget1 (url)`
+- L365: `(defun ee-eshell/fakewget (&rest args)`
+- L389: `(defun ee-wget-downloading (url)`
+- L393: `(defun find-wget00 (url)`
+- L396: `(defun find-wget0 (url &rest pos-spec-list)`
+- L422: `(defun find-wget (url &rest pos-spec-list)`
+- L435: `(defun find-wget-mode (sexp url &rest pos-spec-list)`
+- L443: `(defun find-wgeta (url &rest pos-spec-list)`
+- L449: `(defun find-wgeta-mode (sexp url &rest pos-spec-list)`
+- L455: `(defun find-wget-elisp (url &rest pos-spec-list)`
+- L460: `(defun find-wgeta-elisp (url &rest pos-spec-list)`
+- L465: `(defun find-wget-org (url &rest pos-spec-list)`
+- L486: `(defun find-anggwget (fname &rest pos-spec-list)`
+- L490: `(defun find-anggwgeta (fname &rest pos-spec-list)`
+- L494: `(defun find-anggwget-elisp (fname &rest pos-spec-list)`
+- L498: `(defun find-anggwgeta-elisp (fname &rest pos-spec-list)`
+- L514: `(defun find-angg-wget (fname &rest rest)`
+- L516: `(defun find-anggfile-wget (fname &rest rest)`
+- L518: `(defun find-es-wget (fname &rest rest)`
+- L529: `(defun find-gitk (dir)`
+- L534: `(defun find-tkdiff (f1 f2)`
+- L543: `(defun find-osm (lat lon zoom &rest comments)`
+- L552: `(defun find-osm-str (latlonzoomstr &rest comments)`
+- L562: `(defun find-telegachat (idn &rest rest)`
+- L578: `(defun find-telegachat-msgc (idn &rest rest)`
+- L584: `(defun ee-telegachat-msg0 (idn)`
+- L590: `(defun ee-telegachat-msgc (idn)`
+- L602: `(defun find-firefox      (url) (find-bgprocess '(,ee-firefox-program      ,url)))`
+- L603: `(defun find-googlechrome (url) (find-bgprocess '(,ee-googlechrome-program ,url)))`
+- L606: `(defun find-lynx (url &rest pos-spec-list)`
+- L627: `(defun find-lgrep (f re)`
+- L639: `(defun ee-find-lgrep (f re)`
+- L647: `(defun ee-file-name-elc-to-el (fname)`
+- L669: `(defun find-efunctionlgrep (f &optional stem)`
+- L679: `(defun ee-efunctionlgrep-re  (stem)`
+- L683: `(defun ee-efunctionlgrep-re0 (stem)`
+- L702: `(defun find-clhsdoci (clhsname &rest rest)`
+- L710: `(defun ee-clhs-lookup-index (clhsname)`
+- L720: `(provide 'eev-plinks)`
+
+## eev-prepared.el
+
+- L48: `(require 'eev-env)`
+- L49: `(require 'eev-code)`
+- L109: `(defun ee-se-to-string (s e)`
+- L118: `(defun ee-octal-to-num (str)`
+- L124: `(defun ee-write-string (str &optional altfile fmode)`
+- L133: `(defun ee-write (s e pre post &optional altfile fmode)`
+- L140: `(defun ee-se-to-string-with-nl (s e)`
+- L145: `(defun ee-write-with-nl (s e pre post &optional altfile fmode)`
+- L153: `(defun eev (s &optional e altfile)`
+- L188: `(defun eevs (s &optional e suffix)`
+- L199: `(defun eelatex (s &optional e)`
+- L214: `(defun eegdb (s &optional e)`
+- L225: `(defun eeg (s &optional e)`
+- L230: `(defun eeeval (s &optional e)`
+- L238: `(defun ee-default-directory ()`
+- L253: `(defun eecd (&optional dir command)`
+- L266: `(provide 'eev-prepared)`
+
+## eev-qrl.el
+
+- L76: `(defun ee-qrl-as     () (cl-loop for (a b) on ee-qrl-plist by 'cddr collect a))`
+- L77: `(defun ee-qrl-regexp () (mapconcat 'regexp-quote (ee-qrl-as) "\\|"))`
+- L78: `(defun ee-qrl-r0    (s) (plist-get ee-qrl-plist (ee-no-properties s) 'equal))`
+- L79: `(defun ee-qrl-r1    (s) (replace-regexp-in-string "\\\\" "\\\\\\\\" s))`
+- L80: `(defun ee-qrl-r2    (s) (ee-qrl-r1 (ee-qrl-r0 s)))`
+- L81: `(defun ee-qrl-r3  (a b) (ee-qrl-r2 (match-string 0)))`
+- L83: `(defun ee-qrl0 (&rest plist)`
+- L89: `(defun ee-qrl-narrow (&rest plist)`
+- L97: `(defun ee-qrl (&rest plist)`
+- L107: `(provide 'eev-qrl)`
+
+## eev-rcirc.el
+
+- L151: `(defun ee-rcirc-buffer (server &optional channel)`
+- L155: `(defun ee-rcirc-process (server)`
+- L160: `(defun ee-rcirc-connected (server)`
+- L166: `(defun ee-rcirc-connect (server channels)`
+- L172: `(defun ee-rcirc-join-channels (server channels)`
+- L176: `(defun ee-rcirc-join-channel (server channel)`
+- L186: `(defun ee-rcirc-connect-or-join (server &optional ichannels achannels channel)`
+- L220: `(defun find-rcirc-buffer0`
+- L226: `(defun find-rcirc-buffer`
+- L256: `(defun find-rcirc-buffer-2a`
+- L265: `(defun find-rcirc-buffer-3a`
+- L355: `(defun find-freenode (&optional channel &rest pos-spec-list)`
+- L364: `(defun find-freenode-2a (channel)`
+- L379: `(defun find-freenode-3a (channel)`
+- L400: `(defun eepitch-freenode (channel)`
+- L426: `(defun find-libera (&optional channel &rest pos-spec-list)`
+- L435: `(defun find-libera-2a (channel)`
+- L450: `(defun find-libera-3a (channel)`
+- L471: `(defun eepitch-libera (channel)`
+- L489: `(defun find-libera-links (&optional c channels &rest pos-spec-list)`
+- L520: `(defun {c}2 () (interactive) (find-libera-2a \"{channel}\"))`
+- L521: `(defun {c}3 () (interactive) (find-libera-3a \"{channel}\"))`
+- L531: `(provide 'eev-rcirc)`
+
+## eev-readme.el
+
+
+## eev-rstdoc.el
+
+- L424: `(defun ee-rstdoc-c   (kw) (replace-regexp-in-string "^:" "" (format "%s" kw)))`
+- L425: `(defun ee-rstdoc-kw  (kw) (format ":%s" (ee-rstdoc-c kw)))`
+- L426: `(defun ee-rstdoc-var (kw) (ee-intern "ee-rstdoc-:%s" (ee-rstdoc-c kw)))`
+- L427: `(defun ee-rstdoc-get (kw) (symbol-value (ee-rstdoc-var kw)))`
+- L429: `(defun ee-rstdoc-getfield (kw field)`
+- L434: `(defun ee-rstdoc-getfield0 (kw field)`
+- L439: `(defun ee-rstdoc-stem (kw str)`
+- L444: `(defun ee-rstdoc-hashanchor (str)`
+- L449: `(defun ee-rstdoc-short (kw str)`
+- L454: `(defun ee-rstdoc-htm (kw)`
+- L457: `(defun ee-rstdoc-html (kw &optional str)`
+- L466: `(defun ee-rstdoc-web (kw &optional str)`
+- L475: `(defun ee-rstdoc-rst (kw &optional str)`
+- L488: `(defun ee-rstdoc-around-point ()`
+- L491: `(defun ee-rstdoc-short-around-point (kw)`
+- L497: `(defun ee-rstdoc-kill (sexp)`
+- L514: `(defun      code-rstdoc (kw)`
+- L516: `(defun find-code-rstdoc (kw &rest rest)`
+- L520: `(defun   ee-code-rstdoc (kw0)`
+- L548: `(defun find-{c}doc-expand  (str &rest rest) (ee-rstdoc-html {kw} str))`
+- L549: `(defun find-{c}docw-expand (str &rest rest) (ee-rstdoc-web  {kw} str))`
+- L550: `(defun find-{c}docr-expand (str &rest rest) (ee-rstdoc-rst  {kw} str))`
+- L552: `(defun find-{c}doc (&optional str &rest rest)`
+- L558: `(defun find-{c}docw (&optional str &rest rest)`
+- L564: `(defun find-{c}docr (&optional str &rest rest)`
+- L572: `(defun find-{c}dochelp (&optional str &rest rest)`
+- L577: `(defun {kill} ()`
+- L586: `(defun {kill}f (&optional fname)`
+- L610: `(defun ee-rstdoc-default-defuns ()`
+- L620: `(provide 'eev-rstdoc)`
+
+## eev-strange-functions.el
+
+- L79: `(defun find-sf-links (sexp)`
+- L89: `(defun find-sf-debug-links (sexp)`
+- L127: `(defun find-strange-function-links (dbg)`
+- L133: `(defun find-strange-function-eol-links (dbg)`
+- L154: `(defun ee-sf-get-sexp-flash ()`
+- L193: `(defun ee-sf-run-hprog-first-half ()`
+- L196: `(defun ee-sf-run-hprog ()`
+- L211: `(defun find-sf-elinks-elisp ()`
+- L224: `(defun ee-sf-make-find-rx (suffixes)`
+- L227: `(defun ee-sf-make-find-re (suffixes)`
+- L230: `(defun ee-sf-match-find-re (f suffixes)`
+- L272: `(defun ee-sf-1stclassvideo-stem (f)`
+- L275: `(defun ee-sf-1stclassvideo-p ()`
+- L294: `(defun ee-sf-1stclassvideo-links (c &optional time &rest rest)`
+- L340: `(defun ee-sf-codecd-stem (f)`
+- L343: `(defun ee-sf-codecd-stem0 (f)`
+- L346: `(defun ee-sf-codecd-d (c)`
+- L351: `(defun ee-sf-codecd-p ()`
+- L375: `(defun ee-sf-codecd-links (c d)`
+- L424: `(defun ee-sf-pdf-stem (f)`
+- L427: `(defun ee-sf-pdf-file (c)`
+- L433: `(defun ee-sf-pdf-p ()`
+- L452: `(defun ee-sf-pdf-links (c fname)`
+- L490: `(provide 'eev-strange-functions)`
+
+## eev-template0.el
+
+- L113: `(defun ee-template0 (str)`
+- L127: `(defun ee-template00 (str)`
+- L155: `(defun ee-dynlex-test (a b)`
+- L212: `(defmacro ee-template0-lex (str)`
+- L221: `(defun ee-template00-lex (str)`
+- L227: `(defun ee-template000-lex (str)`
+- L251: `(provide 'eev-template0)`
+
+## eev-testblocks.el
+
+- L109: `(defun ee-insert-test-block ()`
+- L132: `(defun ee-insert-test-c-mode ()`
+- L149: `(defun ee-insert-test-elixir-mode ()`
+- L163: `(defun ee-insert-test-fennel-mode ()`
+- L179: `(defun ee-insert-test-f90-mode ()`
+- L196: `(defun ee-insert-test-gnuplot-mode ()`
+- L212: `(defun ee-insert-test-haskell-mode ()`
+- L226: `(defun ee-insert-test-js-mode ()`
+- L240: `(defun ee-insert-test-julia-mode ()`
+- L254: `(defun ee-insert-test-latex-mode ()`
+- L274: `(defun ee-insert-test-lisp-mode ()`
+- L284: `(defun ee-insert-test-lisp-mode-nil ()`
+- L300: `(defun ee-insert-test-lisp-mode-1 ()`
+- L317: `(defun ee-insert-test-lisp-mode-2 ()`
+- L332: `(defun ee-insert-test-lisp-mode-3 ()`
+- L352: `(defun ee-insert-test-lisp-mode-4 ()`
+- L382: `(defun ee-insert-test-lisp-mode-5 ()`
+- L418: `(defun ee-insert-test-lua-mode ()`
+- L434: `(defun ee-insert-test-makefile-gmake-mode ()`
+- L450: `(defun ee-insert-test-makefile-mode ()`
+- L466: `(defun ee-insert-test-maxima-mode ()`
+- L480: `(defun ee-insert-test-octave-mode ()`
+- L494: `(defun ee-insert-test-org-mode ()`
+- L508: `(defun ee-insert-test-perl-mode ()`
+- L522: `(defun ee-insert-test-php-mode ()`
+- L538: `(defun ee-insert-test-python-mode ()`
+- L552: `(defun ee-insert-test-racket-mode ()`
+- L566: `(defun ee-insert-test-raku-mode ()`
+- L589: `(defun ee-insert-test-ruby-mode ()`
+- L604: `(defun ee-insert-test-scheme-mode ()`
+- L631: `(defun ee-insert-test-sml-mode ()`
+- L646: `(defun ee-insert-test-sh-mode ()`
+- L660: `(defun ee-insert-test-sql-mode ()`
+- L674: `(defun ee-insert-test-subed-vtt-mode ()`
+- L725: `(defun ee-insert-test-tcl-mode ()`
+- L739: `(defun ee-insert-test-tuareg-mode ()`
+- L755: `(provide 'eev-testblocks)`
+
+## eev-tla.el
+
+- L151: `(defun ee-tla-canonicalize (o)`
+- L155: `(defun ee-tla-set (tla fname)`
+- L160: `(defun ee-tla-get    (o) (gethash o ee-tla-table))`
+- L161: `(defun ee-tla-remove (o) (remhash o ee-tla-table))`
+- L162: `(defun ee-tla-fname  () (ee-tla-canonicalize (buffer-file-name)))`
+- L163: `(defun ee-tla-tla    () (ee-tla-get (ee-tla-fname)))`
+- L166: `(defun ee-tla-tag ()`
+- L175: `(defun ee-tla-table-to-string ()`
+- L212: `(defun      code-tla (tla fname)`
+- L214: `(defun find-code-tla (tla fname)`
+- L216: `(defun   ee-code-tla (tla fname)`
+- L232: `(defun {tla} (&rest pos-spec-list)`
+- L235: `(defun {tla}a (&rest pos-spec-list)`
+- L243: `(defun {tla}p (&optional page &rest rest)`
+- L246: `(defun {tla}t (&optional page &rest rest)`
+- L255: `(defun ee-tla-tex-to-pdf (fname)`
+- L265: `(defun find-tla-def-links (&optional fname tla &rest pos-spec-list)`
+- L296: `(defun find-tla-links (&optional tla fname tag &rest pos-spec-list)`
+- L343: `(defun find-tla-here-links ()`
+- L355: `(defun eejump-3 () (find-tla-here-links))`
+- L362: `(defun ee-tla-link (&optional tla n tag)`
+- L372: `(defun eejump-33 ()`
+- L434: `(defun find-pdf-txt (fnamepdf &rest pos-spec-list)`
+- L447: `(defun find-pdf-txt-links (&optional fnamepdf &rest pos-spec-list)`
+- L466: `(defun ee-fnamepdf-to-fnametxt (fnamepdf)`
+- L478: `(defun find-pdf-text-insert (nlines fnamepdf)`
+- L488: `(provide 'eev-tla)`
+
+## eev-tlinks.el
+
+- L211: `(require 'eev-env)`
+- L212: `(require 'eev-wrap)    ; For: (find-eev "eev-wrap.el" "ee-template0")`
+- L213: `(require 'cl-lib)      ; For 'cl-remove-if'`
+- L214: `(require 'subr-x)      ; For 'string-join'`
+- L290: `(defun ee-count-lines (str)`
+- L294: `(defun ee-copy-rest00 (skip gotoend code)`
+- L307: `(defun ee-search-forward-before (str)`
+- L314: `(defun ee-copy-rest0 (skip code)`
+- L330: `(defun ee-copy-rest (skip code)`
+- L416: `(defun ee-copy-rest-skip0 (&optional skip)`
+- L422: `(defun ee-copy-rest-gotoend0 (&optional end)`
+- L428: `(defun ee-copy-rest-showtarget0 (target)`
+- L433: `(defun ee-copy-rest-3 (skip gotoend target)`
+- L451: `(defun ee-copy-rest-3m (skip gotoend target)`
+- L475: `(defun ee-prepend-commas (str)`
+- L478: `(defun ee-if-nil-setq (str)`
+- L480: `(defun ee-if-nil-setqs (vars sep)`
+- L485: `(defun find-find-links-links (&optional k stem args &rest pos-spec-list)`
+- L504: `\(define-key eev-mode-map \"\\M-h{k}\" 'find-{stem}-links)`
+- L559: `(defun find-find-links-links-new (&optional stem args vars &rest pos-spec-list)`
+- L606: `(defun ee-ffll-optional (args)`
+- L611: `(defun ee-ffll-setqs (spaces args)`
+- L617: `(defun ee-ffll-lets (spaces vars)`
+- L623: `(defun ee-ffll-comma-args (args)`
+- L628: `(defun ee-ffll-defun-without-lets (stem args)`
+- L634: `(defun find-{stem}-links ({optional}&rest pos-spec-list)`
+- L650: `(defun ee-ffll-defun-with-lets (stem args vars)`
+- L657: `(defun find-{stem}-links ({optional}&rest pos-spec-list)`
+- L674: `(defun ee-ffll-defun (stem args &optional vars)`
+- L679: `(defun ee-ffll-deftest (stem args &optional vars)`
+- L685: `(defun ee-template-test (&rest args)`
+- L689: `(defun tt0 () (interactive) (eek \"C-M-x\") (ee-template-test))`
+- L690: `(defun tt  () (interactive) (eek \"C-M-x\") (ee-template-test \"A\" \"B\"))`
+- L702: `(defun find-let*-macro-links (&optional stem args defs &rest pos-spec-list)`
+- L721: `(defmacro ee-let*-macro-{stem} ({args} &rest code)`
+- L745: `(defun find-intro-links (&optional stem &rest pos-spec-list)`
+- L804: `(defun find-eev-header-links (&optional stem-el date &rest pos-spec-list)`
+- L868: `(defun ee-links-for-debpkg (pkgname)`
+- L875: `(defun ee-dfs0 (pkg ext)`
+- L881: `(defun ee-links-for-debpkg-extra-vldi (pkg)`
+- L891: `(defun ee-debian-pooldir (pkg)`
+- L899: `(defun find-debpkg-links (&optional pkgname &rest rest)`
+- L966: `(defun find-pacman-links (&optional pkg &rest pos-spec-list)`
+- L1003: `(defun find-macports-links (&optional pkg &rest pos-spec-list)`
+- L1048: `(defun find-homebrew-links (&optional pkg &rest pos-spec-list)`
+- L1085: `(defun ee-dsc-url-split (dsc-url)`
+- L1103: `(defun ee-links-for-dscbuild (dsc-url)`
+- L1111: `(defun ee-links-for-dscbuild0 (date prot dir/ xxx vvv -sv)`
+- L1159: `(defun find-eev-reload-links (&rest pos-spec-list)`
+- L1236: `(defun find-eev-install-links (&optional dir script comment &rest pos-spec-list)`
+- L1334: `(defun find-eev-update-links (&optional dir script &rest pos-spec-list)`
+- L1451: `(defun find-youtubedl-links (&optional dir title hash ext- stem &rest pos-spec-list)`
+- L1528: `(defun ee-youtubedl-split (fname)`
+- L1540: `(defun ee-youtubedl-dir   (fname) (nth 0 (ee-youtubedl-split fname)))`
+- L1541: `(defun ee-youtubedl-title (fname) (nth 1 (ee-youtubedl-split fname)))`
+- L1542: `(defun ee-youtubedl-hash  (fname) (nth 2 (ee-youtubedl-split fname)))`
+- L1543: `(defun ee-youtubedl-ext-  (fname) (nth 3 (ee-youtubedl-split fname)))`
+- L1544: `(defun ee-youtubedl-ext   (fname) (nth 4 (ee-youtubedl-split fname)))`
+- L1550: `(defun ee-youtubedl-guess* (dir hash)`
+- L1554: `(defun ee-youtubedl-subtitle-p (fname)`
+- L1558: `(defun ee-youtubedl-not-subtitles (fnames)`
+- L1562: `(defun ee-youtubedl-guess (dir hash n)`
+- L1570: `(defun ee-youtubedl-guess-title (dir hash) (ee-youtubedl-guess dir hash 1))`
+- L1571: `(defun ee-youtubedl-guess-ext-  (dir hash) (ee-youtubedl-guess dir hash 3))`
+- L1573: `(defun ee-youtubedl-hash-around-point ()`
+- L1622: `(defun ee-youtubedl-dir-links (&optional dirs hash stem)`
+- L1633: `(defun ee-youtubedl-guess** (dirs hash)`
+- L1636: `(defun ee-youtubedl-hash-to-fname (hash)`
+- L1639: `(defun ee-youtubedl-url-to-hash (url)`
+- L1644: `(defun ee-youtubedl-url-to-fname (url)`
+- L1683: `(defun find-psne-links (&optional url wget-options echo-options &rest pos-spec-list)`
+- L1706: `(defun ee-find-psne-core (url &optional wget-options echo-options)`
+- L1728: `(defun ee-find-psne-echo-options ()`
+- L1756: `(defun find-psne-eevvideo-links (&optional stem exts time &rest pos-spec-list)`
+- L1779: `(defun ee-psne-eevvideo-core (stem exts time)`
+- L1823: `(defun find-psne-1stclassvideo-links (&optional c time &rest pos-spec-list)`
+- L1846: `(defun ee-psne-1stclassvideo-play (c time)`
+- L1866: `(defun find-1stclassvideo-video (c &optional time &rest rest)`
+- L1894: `(defun ee-git-url-stem (url)`
+- L1897: `(defun ee-git-url-at-point ()`
+- L1904: `(defun find-git-links (&optional url c &rest pos-spec-list)`
+- L1968: `(defun ee-fossil-url-stem (url) (ee-git-url-stem url))`
+- L1970: `(defun find-fossil-links (&optional url subdir c &rest pos-spec-list)`
+- L2031: `(defun find-apt-get-source-links (&optional pkg &rest pos-spec-list)`
+- L2083: `(defun find-netcat-test-links (&optional eesrc eetgt tgtname tgtport &rest pos-spec-list)`
+- L2136: `(defun find-eevvideo-links (&optional c stem youtubeid time &rest pos-spec-list)`
+- L2167: `(defun find-psnevideo-links (&optional c url youtubeid time &rest pos-spec-list)`
+- L2186: `(defun ee-psnevideo-links (c url &optional youtubeid time)`
+- L2220: `(defun ee-psnevideo-url-youtube (url &optional youtubeid time)`
+- L2251: `(defun ee-psne-if-needed (url)`
+- L2256: `(defun ee-psne-downloaded-p (url)`
+- L2259: `(defun ee-psne-download (url)`
+- L2265: `(defun ee-psne-download0 (url)`
+- L2284: `(defun ee-psne-url-comment (url)`
+- L2312: `(defun      code-psnevideo (c url &optional youtubeid)`
+- L2314: `(defun find-code-psnevideo (&optional c url youtubeid &rest rest)`
+- L2319: `(defun   ee-code-psnevideo (c url youtubeid)`
+- L2325: `(defun find-{c}video (&optional time &rest rest)`
+- L2419: `(defun find-eev-video-links (&optional c anggstem youtubehash &rest pos-spec-list)`
+- L2483: `(defun find-eevshortvideo-links (&optional c stem youtubeid &rest pos-spec-list)`
+- L2502: `(defun find-{c}video (&optional time &rest rest)`
+- L2529: `(defun find-wgeteevsubtitles-links (&optional stem exts &rest pos-spec-list)`
+- L2563: `(defun ee-wgeteevsubtitles-cmds (stem exts)`
+- L2595: `(defun find-latex-links (&optional stem &rest pos-spec-list)`
+- L2647: `(defun find-lua-links (&optional fname &rest pos-spec-list)`
+- L2714: `(defun ee-untabify-string (string)`
+- L2726: `(defun ee-ss-string-pad (str &optional padchar barchar)`
+- L2733: `(defun ee-ss-screenshot0 ()`
+- L2740: `(defun ee-ss-screenshot (linefmt)`
+- L2744: `(defun find-escreenshot0-links (&rest pos-spec-list)`
+- L2760: `(defun find-escreenshot-links (&rest pos-spec-list)`
+- L2778: `(defun find-windows-eepitch-lua-links (&optional dir &rest pos-spec-list)`
+- L2838: `(defun eepitch-lua52 () (interactive)`
+- L2868: `(defun find-extra-file-links (&optional fname c &rest pos-spec-list)`
+- L2923: `(defun eepitch-{c} () (interactive)`
+- L2947: `(defun find-emacs-tangents-links (&optional yyyy mm dd msg txtstem &rest pos-spec-list)`
+- L2993: `(defun find-eeit-links (&optional majormode &rest pos-spec-list)`
+- L3020: `(defun {eeitfunstr} ()`
+- L3052: `(defun find-texlive-links (&optional date &rest pos-spec-list)`
+- L3129: `(defun find-newbrowser-links (&optional browser binary b &rest pos-spec-list)`
+- L3161: `(defun find-{browser} (url) (find-bgprocess '(\"{binary}\" ,url)))`
+- L3175: `(defun ee-find-{browser}-page (fname &optional page)`
+- L3207: `(defun ee-find-{browser}-page (fname &optional page)`
+- L3248: `(defun find-altbrowser-links (&optional binary &rest pos-spec-list)`
+- L3272: `(defun find-googlechrome (url) (find-bgprocess '(\"{binary}\" ,url)))`
+- L3289: `(defun find-googlechrome (url) (find-bgprocess '(\"{binary}\" ,url)))`
+- L3304: `(defun find-newpdfviewer-links (&optional short binary &rest pos-spec-list)`
+- L3362: `(defun find-pdf-page-links (&rest pos-spec-list)`
+- L3402: `(defun ee-0x0-upload (b e &rest ignore)`
+- L3410: `(defun ee-0x0-upload-region (b e)`
+- L3439: `(defun find-0x0-links (&optional url &rest pos-spec-list)`
+- L3473: `(defun find-red-star-links (&rest pos-spec-list)`
+- L3545: `(defun ee-use-red-stars ()`
+- L3553: `(defun ee-use-red-bullets ()`
+- L3577: `(defun find-angg-es-links (&rest pos-spec-list)`
+- L3656: `(defun find-angg-not-configured (&rest rest) (interactive)`
+- L3659: `(defun find-es-not-configured (&rest rest) (interactive)`
+- L3685: `(defun find-1stclassvideo-links (&optional c &rest pos-spec-list)`
+- L3706: `(defmacro ee-let*-macro-1stclassvideo-c (c &rest code)`
+- L3735: `(defun ee-find-1stclassvideo-links (c)`
+- L3762: `(defun ee-1stclassvideo-basicinfo (c &optional pos)`
+- L3784: `(defun ee-1stclassvideo-basicsexps (c &optional pos)`
+- L3811: `(defun ee-1stclassvideo-dlsubs (c)`
+- L3816: `(defun ee-1stclassvideo-dlsubs0 (c haslocal hassubs)`
+- L3849: `(defun ee-1stclassvideo-defuns (c)`
+- L3857: `(defun find-{c}video (&optional time &rest rest)`
+- L3861: `(defun find-{c}lsubs (&optional time &rest rest)`
+- L3865: `(defun find-{c}hsubs (&optional time &rest rest)`
+- L3873: `(defun find-{c}video (&optional time &rest rest)`
+- L3885: `(defun      code-1stclassvideo (c)`
+- L3894: `(defun find-code-1stclassvideo (c)`
+- L3896: `(defun   ee-code-1stclassvideo (c)`
+- L3907: `(defun      code-1stclassvideos (&optional cs)`
+- L3913: `(defun find-code-1stclassvideos (&optional cs)`
+- L3915: `(defun   ee-code-1stclassvideos (&optional cs)`
+- L3941: `(defun find-1stclassvideoindex (c &rest pos-spec-list)`
+- L3945: `(defun find-1stclassvideolsubs (c &rest pos-spec-list)`
+- L3951: `(defun find-1stclassvideohsubs (c &optional pos &rest pos-spec-list)`
+- L3955: `(defun find-1stclassvideodef (c &rest pos-spec-list)`
+- L3969: `(defun find-1stclassvideos (&rest rest)`
+- L3998: `(defun find-dot-emacs-links (&optional opts &rest pos-spec-list)`
+- L4027: `(defun ee-dot-emacs-eval   (opts) (eval    (ee-dot-emacs-read opts)))`
+- L4028: `(defun ee-dot-emacs-read   (opts) (ee-read (ee-dot-emacs-concat opts)))`
+- L4029: `(defun ee-dot-emacs-concat (opts)`
+- L4037: `(defun ee-dot-emacs-eevgit (&rest rest) "\`
+- L4043: `(defun ee-dot-emacs-eev (&rest rest) "\`
+- L4045: `(require 'eev-load)               ; (find-eev \"eev-load.el\")`
+- L4046: `(require 'eev-aliases)            ; (find-eev \"eev-aliases.el\")`
+- L4051: `(defun ee-dot-emacs-angges (&rest rest) "\`
+- L4053: `(defun find-angg (fname &rest rest)`
+- L4055: `(defun find-anggfile (fname &rest rest)`
+- L4057: `(defun find-es (fname &rest rest)`
+- L4062: `(defun ee-dot-emacs-melpa (&rest rest) "\`
+- L4064: `(require 'package)`
+- L4070: `(defun ee-dot-emacs-edrxmaxima (&rest rest) "\`
+- L4079: `(defun ee-dot-emacs-maxima5470 (&rest rest) "\`
+- L4089: `(defun ee-dot-emacs-epl (&rest rest) "\`
+- L4093: `(defun eepitch-preprocess-line (line)`
+- L4098: `(defun ee-dot-emacs-eepitchb (&rest rest) "\`
+- L4100: `(define-key eev-mode-map (kbd \"<f9>\") 'eepitch-b-set-target-and-show)`
+- L4104: `(defun ee-dot-emacs-lean4 (&rest rest) "\`
+- L4107: `(defun fli () (interactive) (find-lean4-intro))`
+- L4108: `(defun el4 () (interactive) (find-eev \"eev-lean4.el\"))`
+- L4109: `(require 'eev-lean4)      ; (find-eev \"eev-lean4.el\")`
+- L4113: `(defun ee-dot-emacs-mfms (&rest rest) "\`
+- L4117: `(defun mf ()`
+- L4122: `(defun ms ()`
+- L4132: `(defun ee-dot-emacs-sly (&rest rest) "\`
+- L4159: `(defun find-advicebefore-links (&optional fun &rest pos-spec-list)`
+- L4180: `(defun ee-log (f r) (setq ee-log (cons (cons f r) ee-log)))`
+- L4181: `(defun ee-log-{fun} (&rest r) (ee-log '{fun} r))`
+- L4200: `(defun find-osm-links (&optional lat lon zoom &rest pos-spec-list)`
+- L4216: `(defun ee-find-osm-links (&optional lat lon zoom)`
+- L4232: `(defun ee-osm-lat  () (if (eq major-mode 'osm-mode) osm--lat))`
+- L4233: `(defun ee-osm-lon  () (if (eq major-mode 'osm-mode) osm--lon))`
+- L4234: `(defun ee-osm-zoom () (if (eq major-mode 'osm-mode) osm--zoom))`
+- L4245: `(defun find-pip3-links (&optional pkg &rest pos-spec-list)`
+- L4290: `(defun find-yttranscript-links (&optional c hash &rest pos-spec-list)`
+- L4347: `(defun find-yttranscript0-links (&optional c hash &rest pos-spec-list)`
+- L4398: `(defun find-importlib-links (&optional pkg distr &rest pos-spec-list)`
+- L4446: `(defun find-pypi-links (&optional pkg &rest pos-spec-list)`
+- L4492: `(defun find-nov-links (&optional fname &rest pos-spec-list)`
+- L4506: `(defun ee-find-nov-links (&optional fname)`
+- L4518: `(defun find-nov (fname &rest rest)`
+- L4536: `(defun find-telegachat-links (&optional bufname &rest pos-spec-list)`
+- L4550: `(defun ee-find-telegachat-links (&optional bufname msgn)`
+- L4591: `(defun ee-telega-msgn (&optional msg)`
+- L4602: `(defun find-eejump-links (&optional n sexp &rest pos-spec-list)`
+- L4654: `(defun find-kla-links (&optional fname &rest pos-spec-list)`
+- L4698: `(defun find-rstdoc-links (&optional kw &rest pos-spec-list)`
+- L4753: `(defun find-mpv-links (&rest pos-spec-list)`
+- L4773: `(defun mf ()`
+- L4778: `(defun ms ()`
+- L4795: `(defun find-try-sly-links (&rest pos-spec-list)`
+- L4894: `(defun ee-clhs-lookup-index (name)`
+- L4898: `(defun find-clhsdoci (name &rest rest)`
+- L4982: `(defun find-wgetrecursive-links (&optional url &rest pos-spec-list)`
+- L5044: `(defun find-mbe-links (&optional ch page pos-spec &rest pos-spec-list)`
+- L5082: `(defun ee-grim ()`
+- L5098: `(defun find-melpa-links (&rest pos-spec-list)`
+- L5115: `(require 'package)`
+- L5134: `(defun find-emacsclient-links (&rest pos-spec-list)`
+- L5185: `(defun find-show2-links (&optional texfile &rest pos-spec-list)`
+- L5243: `(defun show2 (&optional fname0)`
+- L5259: `(defun show2-use (&optional fname0)`
+- L5267: `(defun find-show2-use (&optional fname0 &rest pos-spec-list)`
+- L5275: `(defmacro ee-let*-macro-show2-use (fname0 &rest code)`
+- L5288: `(defun ee-show2-use (&optional fname0)`
+- L5348: `(defun tb  () (interactive) (find-ebuffer (eepitch-target-buffer)))`
+- L5349: `(defun v   () (interactive) (find-pdftools-page \"{dir}{stem}.pdf\"))`
+- L5350: `(defun D   () (interactive) (find-pdf-page \"{dir}{stem}.pdf\"))`
+- L5351: `(defun etv () (interactive) (find-wset \"13o2_o_o\" '(tb) '(v)))`
+- L5368: `(defun find-luatb0 (&optional fname linedef linenow &rest rest)`
+- L5379: `(defun find-luatb (str &rest rest)`
+- L5398: `(defun      code-brappend (c url &optional f)`
+- L5400: `(defun find-code-brappend (c url &optional f)`
+- L5402: `(defun   ee-code-brappend (c url &optional f)`
+- L5408: `(defun find-{c} (&optional anchor &rest rest)`
+- L5429: `(defun find-maximamsg-links (&optional n yyyymm day &rest pos-spec-list)`
+- L5447: `(defun ee-find-maximamsg-links (&optional n yyyymm day &rest pos-spec-list)`
+- L5477: `(defun find-maximamsg (&optional str &rest rest)`
+- L5492: `(defun find-qdraw-links (&optional fs xr yr &rest pos-spec-list)`
+- L5559: `(defun find-quicklisp-links (&optional pkg &rest pos-spec-list)`
+- L5610: `(defun find-sbcl-links (&optional name &rest pos-spec-list)`
+- L5665: `(defun find-slime-sly-links (&rest pos-spec-list)`
+- L5704: `(defun find-linki-links (&optional stem &rest pos-spec-list)`
+- L5731: `(defun ee-find-{stem}-linki ()`
+- L5744: `(defun find-gitdoc-links (&optional stem &rest pos-spec-list)`
+- L5785: `(defun find-luainit-links (&optional dir &rest pos-spec-list)`
+- L5857: `(defun find-luaso-links (&optional fname funname &rest pos-spec-list)`
+- L5946: `(defun find-subed-mpv-links (&optional emacs-width &rest pos-spec-list)`
+- L6055: `(defun find-debootstrap0-links (&optional container n &rest pos-spec-list)`
+- L6086: `(defun ee-debootstrap0 (&optional container n)`
+- L6130: `(defun ee-debootstrap1 (&optional container user passwd)`
+- L6175: `(defun find-debootstrap1-links (&optional container user passwd &rest pos-spec-list)`
+- L6235: `(defun find-debootstrap2-links (&optional container user &rest pos-spec-list)`
+- L6289: `(defun find-package-vc-install-links (&optional giturl &rest pos-spec-list)`
+- L6354: `(defun find-ethemes-links (&rest pos-spec-list)`
+- L6386: `(defun ee-load-themes ()`
+- L6392: `(defun ee-custom-theme-load-path ()`
+- L6422: `(defun find-tryit-links (&optional configs sexps &rest pos-spec-list)`
+- L6448: `(defun ee-tryit-read-sexps ()`
+- L6457: `(defun ee-tryit-tostring (o)`
+- L6466: `(defun ee-tryit-has (c)`
+- L6473: `(defun ee-tryit-line (sexp)`
+- L6481: `(defun ee-tryit-if (c &rest sexps)`
+- L6490: `(defun ee-tryit-body ()`
+- L6535: `(defun ee-tryit-progn (config &optional sexps)`
+- L6545: `(defun ee-tryit-progns (configs &optional sexps)`
+- L6568: `(defun find-githubio-links (&optional username fname &rest pos-spec-list)`
+- L6595: `(defun ee-find-githubio-part1 (username)`
+- L6643: `(defun ee-find-githubio-part2 (username)`
+- L6659: `(defun ee-find-githubio-part3 (username fname)`
+- L6668: `(defun ee-find-githubio-part4 (username)`
+- L6679: `(defun ee-find-githubio-upload (username fname)`
+- L6704: `(defun ee-minipaste-find-wgets (baseurl fname)`
+- L6720: `(defun find-minipaste-config-links (&optional username &rest pos-spec-list)`
+- L6760: `(defun ee-minipaste-username ()`
+- L6763: `(defun ee-minipastedir ()`
+- L6766: `(defun ee-minipaste-configured ()`
+- L6770: `(defun ee-in-minipastedir (fullfname)`
+- L6775: `(defun find-minipaste-dwim (fullfname)`
+- L6800: `(defun find-minipaste-links (&optional fname &rest pos-spec-list)`
+- L6822: `(provide 'eev-tlinks)`
+
+## eev-videolinks.el
+
+- L150: `(defun find-eev-video (mp4stem hash &optional time &rest rest)`
+- L153: `(defun find-eevyoutube-video (mp4stem hash &optional time &rest rest)`
+- L156: `(defun find-eevlocal-video (mp4stem hash &optional time &rest rest)`
+- L163: `(defun find-eevlinks-video (mp4stem hash &optional time &rest rest)`
+- L181: `(defun find-eevlocal-links (&optional stem hash time &rest pos-spec-list)`
+- L213: `(defun ee-eevlocal-body (stem hash time)`
+- L225: `(defun ee-eevlocal-youtube-comment (hash time)`
+- L246: `(defun ee-eevlocal-psne (stem time)`
+- L253: `(defun ee-eevlocal-findmpvvideo (stem time)`
+- L280: `(defun ee-use-youtube-videos ()`
+- L295: `(defun ee-use-local-videos ()`
+- L1102: `(defun ee-1stclassvideos-field (c &optional field)`
+- L1105: `(defun ee-1stclassvideos-mp4stem (c)`
+- L1109: `(defun ee-1stclassvideos-pagestem (c)`
+- L1113: `(defun ee-1stclassvideos-hsubstem (c)`
+- L1117: `(defun ee-1stclassvideos-lsubstem (c)`
+- L1120: `(defun ee-1stclassvideos-hash (c)`
+- L1124: `(defun ee-1stclassvideos-localmp4 (c)`
+- L1129: `(defun ee-1stclassvideos-mp4found (c)`
+- L1133: `(defun ee-1stclassvideos-hsubsurl (c &optional pos)`
+- L1175: `(defun find-code-eev{mod}video (&optional mod c stem hash &rest rest)`
+- L1177: `(defun      code-eev{mod}video (mod c stem &optional hash)`
+- L1179: `(defun   ee-code-eev{mod}video (&optional mod c stem hash)`
+- L1192: `(defun find-{c}video (&optional time &rest comments)`
+- L1206: `(defun find-code-eevvideo (&optional c stem hash &rest rest)`
+- L1208: `(defun      code-eevvideo (c stem &optional hash)`
+- L1211: `(defun find-code-eevlocalvideo (&optional c stem hash &rest rest)`
+- L1213: `(defun      code-eevlocalvideo (c stem &optional hash)`
+- L1216: `(defun find-code-eevlinksvideo (&optional c stem hash &rest rest)`
+- L1218: `(defun      code-eevlinksvideo (c stem &optional hash)`
+- L1232: `(defun      code-youtubevideo (c hash &rest rest)`
+- L1234: `(defun find-code-youtubevideo (c hash &rest rest)`
+- L1236: `(defun   ee-code-youtubevideo (c hash)`
+- L1245: `(defun find-{c}video (&optional time &rest rest)`
+- L1302: `(provide 'eev-videolinks)`
+
+## eev-wconfig.el
+
+- L179: `(defun find-wconfig-links (&rest pos-spec-list)`
+- L232: `(defun find-wconfig-browser-links (&rest pos-spec-list)`
+- L301: `(require 'eev-load)`
+- L302: `(require 'eev-wconfig)`
+- L351: `(defun find-wconfig-wget-links (&rest pos-spec-list)`
+- L379: `(require 'eww)`
+- L380: `(defun ee-download-with-eww (url dir)`
+- L518: `(defun find-wconfig-shell-links (&rest pos-spec-list)`
+- L538: `(require 'eshell)`
+- L539: `(require 'em-alias)`
+- L574: `(defun eepitch-shell  () (interactive) (eepitch-eshell))`
+- L575: `(defun eepitch-shell2 () (interactive) (eepitch-eshell2))`
+- L576: `(defun eepitch-shell3 () (interactive) (eepitch-eshell3))`
+- L594: `(defun ee-find-psne-echo-options () \"-N\")`
+- L617: `(defun eepitch-shell  () (interactive) (eepitch-eshell))`
+- L618: `(defun eepitch-shell2 () (interactive) (eepitch-eshell2))`
+- L619: `(defun eepitch-shell3 () (interactive) (eepitch-eshell3))`
+- L620: `(defun ee-find-psne-echo-options () \"-N\")`
+- L640: `(defun find-wconfig-lua-links (&rest pos-spec-list)`
+- L676: `(defun eepitch-lua51 () (interactive)`
+- L678: `(defun eepitch-lua52 () (interactive)`
+- L680: `(defun eepitch-lua53 () (interactive)`
+- L682: `(defun eepitch-lua54 () (interactive)`
+- L713: `(defun eepitch-python () (interactive)`
+- L737: `(defun eepitch-lua51 () (interactive)`
+- L739: `(defun eepitch-lua52 () (interactive)`
+- L741: `(defun eepitch-lua53 () (interactive)`
+- L743: `(defun eepitch-lua54 () (interactive)`
+- L745: `(defun eepitch-python () (interactive)`
+- L765: `(defun find-wconfig-mpv-links (&rest pos-spec-list)`
+- L836: `(defun find-wconfig-magic-links (&rest pos-spec-list)`
+- L902: `(require 'eev-load)`
+- L903: `(require 'eev-wconfig)`
+- L920: `(defun ee-wconfig-run-magic ()`
+- L933: `(defun eepitch-shell  () (interactive) (eepitch-eshell))`
+- L934: `(defun eepitch-shell2 () (interactive) (eepitch-eshell2))`
+- L935: `(defun eepitch-shell3 () (interactive) (eepitch-eshell3))`
+- L936: `(defun ee-find-psne-echo-options () \"-N\")`
+- L939: `(defun eepitch-lua51 () (interactive)`
+- L941: `(defun eepitch-lua52 () (interactive)`
+- L943: `(defun eepitch-lua53 () (interactive)`
+- L945: `(defun eepitch-lua54 () (interactive)`
+- L962: `(defun find-wconfig-exercises-links (&rest pos-spec-list)`
+- L1027: `(defun find-wconfig-undo-links (&rest pos-spec-list)`
+- L1060: `(require 'eshell)`
+- L1061: `(require 'em-alias)`
+- L1063: `(defun eepitch-shell  () (interactive) (eepitch '(shell)))`
+- L1064: `(defun eepitch-shell2 () (interactive) (eepitch '(shell \"*shell 2*\")))`
+- L1065: `(defun eepitch-shell2 () (interactive) (eepitch '(shell \"*shell 3*\")))`
+- L1066: `(defun ee-find-psne-echo-options () \"\")`
+- L1070: `(defun eepitch-lua51  () (interactive) (eepitch-comint \"lua51\" \"lua5.1\"))`
+- L1071: `(defun eepitch-lua52  () (interactive) (eepitch-comint \"lua52\" \"lua5.2\"))`
+- L1072: `(defun eepitch-lua53  () (interactive) (eepitch-comint \"lua53\" \"lua5.3\"))`
+- L1073: `(defun eepitch-lua54  () (interactive) (eepitch-comint \"lua54\" \"lua5.4\"))`
+- L1074: `(defun eepitch-python () (interactive) (eepitch-comint \"python3\" \"python3\"))`
+- L1085: `(provide 'eev-wconfig)`
+
+## eev-wrap.el
+
+- L63: `(require 'eev-template0)      ; (find-eev "eev-template0.el")`
+- L92: `(defun ee-S (object)`
+- L103: `(defun ee-HS (object) (concat ee-hyperlink-prefix (ee-S object)))`
+- L105: `(defun ee-H (str) (format "%s%s" ee-hyperlink-prefix str))`
+- L107: `(defun ee-needs-quote (obj)`
+- L111: `(defun ee-add-quote (obj)`
+- L117: `(defun ee-Q (obj)`
+- L120: `(defun ee-Qrest (rest)`
+- L125: `(defun ee-ppp00 (list)             (mapconcat 'ee-pp0 list "\n"))`
+- L126: `(defun ee-ppp0  (list) (concat "(" (mapconcat 'ee-pp0 list "\n ") ")\n"))`
+- L132: `(defun ee-indent-string-in-mode (str code-to-switch-to-mode)`
+- L139: `(defun ee-indent-string-as-elisp (str)`
+- L142: `(defun ee-pploadhistory00 (list)`
+- L145: `(defun ee-pploadhistory0 (list)`
+- L167: `(defun ee-splitn (n str)`
+- L176: `(defun ee-this-line-extract ()`
+- L179: `(defun ee-this-line-extractn (n)`
+- L182: `(defun ee-this-line-wrapn (n f)`
+- L217: `(defun  eewrap-anchor () (interactive)`
+- L219: `(defun ee-wrap-anchor (line)`
+- L224: `(defun ee-wrap-anchor0 (prefix anchor)`
+- L245: `;; (define-key eev-mode-map "\M-B" 'eewrap-escript-block)`
+- L247: `(defun  eewrap-escript-block () (interactive)`
+- L249: `(defun ee-wrap-escript-block (anchor title &optional date)`
+- L279: `(defun  eewrap-code-c-d () (interactive)`
+- L281: `(defun ee-wrap-code-c-d (c d)`
+- L299: `(defun  eewrap-debian () (interactive)`
+- L301: `(defun ee-wrap-debian (stem)`
+- L319: `(defun  eewrap-find-fline () (interactive)`
+- L321: `(defun ee-wrap-find-fline (fname)`
+- L341: `(defun  eewrap-eejump () (interactive)`
+- L343: `(defun ee-wrap-eejump (n sexp)`
+- L364: `(defun  eewrap-man () (interactive)`
+- L366: `(defun ee-wrap-man (str)`
+- L385: `(defun  eewrap-pdflike () (interactive)`
+- L387: `(defun ee-wrap-pdflike (stem fname)`
+- L407: `;; (define-key eev-mode-map "\M-Q" 'eewrap-pdflike-link)`
+- L410: `(defun  eewrap-pdflike-link () (interactive)`
+- L412: `(defun ee-wrap-pdflike-link (n text)`
+- L417: `(defun ee-wrap-pdflike-link1 (what n text)`
+- L437: `(defun  eewrap-rm/mkdir/cd () (interactive)`
+- L439: `(defun ee-wrap-rm/mkdir/cd (dir)`
+- L459: `(defun  eewrap-sh () (interactive)`
+- L461: `(defun ee-wrap-sh (str)`
+- L465: `(defun  eewrap-sh0 () (interactive)`
+- L467: `(defun ee-wrap-sh0 (str)`
+- L495: `(defun  eewrap-audiovideo () (interactive)`
+- L497: `(defun ee-wrap-audiovideo (stem fname)`
+- L520: `;; (define-key eev-mode-map "\M-Z" 'eewrap-zsh)`
+- L524: `(defun  eewrap-zsh () (interactive)`
+- L526: `(defun ee-wrap-zsh (str)`
+- L545: `(defun  eewrap-two-eepitches () (interactive)`
+- L547: `(defun ee-wrap-two-eepitches (b c)`
+- L574: `(defun  eewrap-eewrap () (interactive)`
+- L578: `(defun ee-wrap-eewrap (C stem args)`
+- L588: `;; (define-key eev-mode-map \"\\M-{C}\" 'eewrap-{stem})`
+- L594: `(defun  eewrap-{stem} () (interactive)`
+- L596: `(defun ee-wrap-{stem} ({args})`
+- L607: `(defun find-eewrap-links (&optional C stem args &rest pos-spec-list)`
+- L629: `(defun find-eewraptest-links (&optional stem line &rest pos-spec-list)`
+- L661: `(provide 'eev-wrap)`
+
+## eev.el
+
+- L42: `(provide 'eev)`
+
+## eev2-all.el
+
+- L51: `(require 'eepitch)             ; (find-eev "eepitch.el")`
+- L52: `(require 'eev-wrap)	       ; (find-eev "eev-wrap.el")`
+- L59: `(require 'eev-flash)	       ; (find-eev "eev-flash.el")`
+- L60: `(require 'eev-eval)	       ; (find-eev "eev-eval.el")`
+- L61: `(require 'eev-multiwindow)     ; (find-eev "eev-multiwindow.el")`
+- L62: `(require 'eev-mode)	       ; (find-eev "eev-mode.el")`
+- L67: `(require 'eev-blinks)	       ; (find-eev "eev-blinks.el")`
+- L68: `(require 'eev-plinks)	       ; (find-eev "eev-plinks.el")`
+- L69: `(require 'eev-elinks)	       ; (find-eev "eev-elinks.el")`
+- L70: `(require 'eev-tlinks)	       ; (find-eev "eev-tlinks.el")`
+- L75: `(require 'eev-code)	       ; (find-eev "eev-code.el")`
+- L76: `(require 'eev-env)	       ; (find-eev "eev-env.el")`
+- L77: `(require 'eev-brxxx)	       ; (find-eev "eev-brxxx.el")`
+- L78: `(require 'eev-pdflike)	       ; (find-eev "eev-pdflike.el")`
+- L79: `(require 'eev-audiovideo)      ; (find-eev "eev-audiovideo.el")`
+- L80: `(require 'eev-codings)	       ; (find-eev "eev-codings.el")`
+- L81: `(require 'eev-anchors)	       ; (find-eev "eev-anchors.el")`
+- L85: `(require 'eev-intro)	       ; (find-eev "eev-intro.el")`
+- L86: `(require 'eev-edit)            ; (find-eev "eev-edit.el")`
+- L87: `(require 'eejump)              ; (find-eev "eejump.el")`
+- L88: `(require 'eev-rcirc)           ; (find-eev "eev-rcirc.el")`
+- L96: `(require 'eev-prepared)		; (find-eev "eev-prepared.el")`
+- L97: `(require 'eev-bounded)		; (find-eev "eev-bounded.el")`
+- L98: `(require 'eev-channels)		; (find-eev "eev-channels.el")`
+- L100: `(provide 'eev2-all)`

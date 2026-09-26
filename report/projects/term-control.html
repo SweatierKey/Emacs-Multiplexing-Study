@@ -1,0 +1,154 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>term-control</h1>
+<p>Categoria: <strong>gestore</strong>. <a href="https://github.com/Pablololo12/term-control.el">Sorgente upstream</a>. Revisione: <code>d5c0bf282e0e292881b24c4816de5fde0897034c</code>.</p>
+<h2>Funzionamento</h2>
+<p>Terminali vterm nominati, associazione allo stato delle tab e completamento dei nomi.</p>
+<h2>Utilizzo umano e limiti</h2>
+<p>M-x term-control-switch-to-term e nomi web/db. Vertico e Marginalia operano sul minibuffer reale.</p>
+<h2>Evidenza</h2>
+<ul>
+<li>Acquisizione: <code>fetched</code>.</li>
+<li>Caricamento isolato: <code>loaded</code>.</li>
+<li><a href="../code-index/term-control.html">Indice dei simboli e riferimenti alle righe</a>.</li>
+<li><a href="../../results/load/term-control.log">Log del caricamento</a>.</li>
+</ul>
+<h3>Scenario term-control: passed</h3>
+<p><a href="../../results/term-control.json">Esito e snapshot</a> · <a href="../../results/term-control-keys.json">Traccia dei tasti</a> · <a href="../../recordings/term-control.cast">Registrazione asciinema</a> · <a href="../../index.html#term-control">Player</a></p>
+<ul>
+<li><code>completion_enabled</code>: <code>True</code></li>
+<li><code>ssh_web</code>: <code>True</code></li>
+<li><code>ssh_db</code>: <code>True</code></li>
+<li><code>distinct_buffers</code>: <code>True</code></li>
+<li><code>return_preserves_shell</code>: <code>True</code></li>
+<li><code>pager_roundtrip</code>: <code>True</code></li>
+</ul>
+<p>Sequenza realmente inviata (secondi dall’avvio, incluso RET):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">t</th>
+<th>Tasto / input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.61</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2.91</td>
+<td><code>term-control-switch-to-term</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.21</td>
+<td><code>web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4.41</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.71</td>
+<td><code>lab-ssh lab-web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5.92</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">6.92</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">7.12</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.12</td>
+<td><code>export STUDY_KEEP=web-session-alive</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">8.32</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.12</td>
+<td><code>M-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.42</td>
+<td><code>term-control-switch-to-term</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">9.92</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.72</td>
+<td><code>db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">10.92</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.23</td>
+<td><code>lab-ssh lab-db</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">12.43</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.43</td>
+<td><code>cat status.txt; tail -n 3 service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">13.63</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">14.64</td>
+<td><code>C-x b: switch-to-buffer</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.04</td>
+<td><code>web</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.44</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">15.84</td>
+<td><code>printenv STUDY_KEEP</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.04</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.74</td>
+<td><code>less service.log</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">16.94</td>
+<td><code>RET</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">17.66</td>
+<td><code>q: leave less</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.16</td>
+<td><code>printf 'PAGER_%s\n' RETURNED</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">18.36</td>
+<td><code>RET</code></td>
+</tr>
+</tbody>
+</table></main></html>

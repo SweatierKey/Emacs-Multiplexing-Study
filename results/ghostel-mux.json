@@ -1,0 +1,51 @@
+{
+  "id": "ghostel-mux",
+  "status": "passed",
+  "scenario": "two-ssh-endpoints",
+  "started": "2026-09-26T11:33:02Z",
+  "snapshots": [
+    {
+      "name": "*mux:session-1:1.1*",
+      "mode": "ghostel-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "admin@DESKTOP-RH2IGIR:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "name": "*mux:session-1:2.1*",
+      "mode": "ghostel-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "admin@DESKTOP-RH2IGIR:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt; tail -n 3 service.log\nrole=db\nservice=active\nversion=1.0\nINFO db health=ok\nWARN db disk threshold=75\nINFO db requests=42\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "name": "*mux:session-1:1.1*",
+      "mode": "ghostel-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "admin@DESKTOP-RH2IGIR:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "name": "*mux:session-1:1.1*",
+      "mode": "ghostel-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nINFO web boot complete\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nservice.log (END)\n"
+    },
+    {
+      "name": "*mux:session-1:1.1*",
+      "mode": "ghostel-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "admin@DESKTOP-RH2IGIR:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt; tail -n 3 service.log\nrole=web\nservice=active\nversion=1.0\nINFO web health=ok\nWARN web disk threshold=75\nINFO web requests=42\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ export STUDY_KEEP=web-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printenv STUDY_KEEP\nweb-session-alive\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ less service.log\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printf 'PAGER_%s\\n' RETURNED\nPAGER_RETURNED\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "checks": {
+    "completion_enabled": true,
+    "ssh_web": true,
+    "ssh_db": true,
+    "distinct_buffers": true,
+    "return_preserves_shell": true,
+    "pager_roundtrip": true
+  }
+}

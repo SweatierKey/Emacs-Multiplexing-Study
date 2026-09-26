@@ -1,0 +1,121 @@
+[
+  {
+    "id": "auto-complete",
+    "url": "https://github.com/auto-complete/auto-complete.git",
+    "status": "fetched",
+    "commit": "8419bec94f41ae78518d948aec0fc761534d7771",
+    "commit_date": "2026-06-19T01:32:47-07:00"
+  },
+  {
+    "id": "buffer-manage",
+    "url": "https://github.com/plandes/buffer-manage.git",
+    "status": "fetched",
+    "commit": "f32c756a261aebca0a864e41958097b30690e171",
+    "commit_date": "2026-07-12T20:21:02-05:00"
+  },
+  {
+    "id": "circe",
+    "url": "https://github.com/emacs-circe/circe.git",
+    "status": "fetched",
+    "commit": "50ac3bc96a0db359a877162a1033b41ba0d01bb8",
+    "commit_date": "2026-09-16T22:07:44+02:00"
+  },
+  {
+    "id": "cooked-build",
+    "url": "https://github.com/vodik/cooked.git",
+    "status": "fetched",
+    "commit": "dd8e9fcc3c09d85d9dd598682dbe6390bd138262",
+    "commit_date": "2026-09-06T22:34:46-04:00"
+  },
+  {
+    "id": "friendly-tramp-path",
+    "url": "https://github.com/p3r7/friendly-tramp-path.git",
+    "status": "fetched",
+    "commit": "be572b8953b9e5a3a35c30bb64c2936d3e9802ba",
+    "commit_date": "2020-05-02T12:32:09+02:00"
+  },
+  {
+    "id": "herdr-runtime",
+    "url": "https://github.com/ogulcancelik/herdr.git",
+    "status": "fetched",
+    "commit": "81ddfc65b4661c52569f8b8d1ee41d5a6d68f85e",
+    "commit_date": "2026-09-26T02:13:20+02:00"
+  },
+  {
+    "id": "log4e",
+    "url": "https://github.com/aki2o/log4e.git",
+    "status": "fetched",
+    "commit": "6d71462df9bf595d3861bfb328377346aceed422",
+    "commit_date": "2024-01-23T22:13:06+09:00"
+  },
+  {
+    "id": "migemo",
+    "url": "https://github.com/emacs-jp/migemo.git",
+    "status": "fetched",
+    "commit": "c0d84b4092ddade01110ba875559bfd454862ac2",
+    "commit_date": "2025-06-16T12:09:37+09:00"
+  },
+  {
+    "id": "names",
+    "url": "https://github.com/Malabarba/names.git",
+    "status": "fetched",
+    "commit": "45a272fae915148d9a74d4cb3c39917b272ee9c3",
+    "commit_date": "2022-12-27T15:25:45-03:00"
+  },
+  {
+    "id": "popwin",
+    "url": "https://github.com/emacsorphanage/popwin.git",
+    "status": "fetched",
+    "commit": "b67254bef763ffa5ab781460bc47d6adf6f87127",
+    "commit_date": "2026-06-19T21:54:14+08:00"
+  },
+  {
+    "id": "readline-complete",
+    "url": "https://github.com/monsanto/readline-complete.el.git",
+    "status": "fetched",
+    "commit": "30c020c37b2741160cc37e656e13c85d826a0ebf",
+    "commit_date": "2015-07-08T10:37:33-04:00"
+  },
+  {
+    "id": "tab-group",
+    "url": "https://github.com/tarao/tab-group-el.git",
+    "status": "fetched",
+    "commit": "5a290ec2608e4100fb188fd60ecb77affcc3465b",
+    "commit_date": "2014-03-06T23:50:25+09:00"
+  },
+  {
+    "id": "uuid",
+    "url": "https://github.com/nicferrier/emacs-uuid.git",
+    "status": "fetched",
+    "commit": "1519bfeb0e31602b840bc8dd35d7c7e732c159fe",
+    "commit_date": "2012-09-10T09:51:32+01:00"
+  },
+  {
+    "id": "window-layout",
+    "url": "https://github.com/kiwanami/emacs-window-layout.git",
+    "status": "fetched",
+    "commit": "277d0a8247adf13707703574cbbc16ddcff7c5fd",
+    "commit_date": "2024-11-04T18:00:01+09:00"
+  },
+  {
+    "id": "with-shell-interpreter",
+    "url": "https://github.com/p3r7/with-shell-interpreter.git",
+    "status": "fetched",
+    "commit": "8191d0b745dda30c7f6d225eb86598d8337c6b82",
+    "commit_date": "2026-07-27T17:22:30+02:00"
+  },
+  {
+    "id": "yaxception",
+    "url": "https://github.com/aki2o/yaxception.git",
+    "status": "fetched",
+    "commit": "5941de88b19752c14e0dce0d2bf562b1288055a0",
+    "commit_date": "2024-01-07T14:04:06+09:00"
+  },
+  {
+    "id": "zmx-runtime",
+    "url": "https://github.com/neurosnap/zmx.git",
+    "status": "fetched",
+    "commit": "54b212d0eb05db3fabacce06b7bbc696afe7dcf8",
+    "commit_date": "2026-09-25T15:52:53-04:00"
+  }
+]

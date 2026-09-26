@@ -1,0 +1,22 @@
+vterm-toggle passed 
+better-shell failed Launch did not enter a terminal: {'name': ' *Minibuf-1*', 'mode': 'minibuffer-mode', 'vertico': True, 'marginalia': True, 'text': 'Shell buffer (default *shell*<2>): '}
+shell-here failed Launch did not enter a terminal: {'name': ' *Minibuf-1*', 'mode': 'minibuffer-mode', 'vertico': True, 'marginalia': True, 'text': 'Shell buffer (default *shell*): '}
+shell-switcher passed 
+toggle-term passed 
+popterm passed 
+ghostel-switch failed Launch did not enter a terminal: {'name': '*scratch*', 'mode': 'lisp-interaction-mode', 'vertico': True, 'marginalia': True, 'text': ''}
+term-control passed 
+emux-el passed 
+term-plus-mux failed Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web
+
+SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/
+term+ failed Missing actual remote role output: local@lab:/home/admin/Emacs-Multiplexing-Study$ lab-ssh lab-web
+
+SSH LAB: web (loopback fixture, same kernel)
+web@lab:~/Emacs-Multiplexing-Study/
+eterm-256color failed Launch did not enter a terminal: {'name': ' *Minibuf-1*', 'mode': 'minibuffer-mode', 'vertico': True, 'marginalia': True, 'text': 'eterm-256color-mode requires compilation of eterm
+terminal-toggle passed 
+sticky-shell failed Launch did not enter a terminal: {'name': ' *Minibuf-1*', 'mode': 'minibuffer-mode', 'vertico': True, 'marginalia': True, 'text': 'Shell buffer (default *shell*<2>): '}
+navorski passed 
+term-run failed Launch did not enter a terminal: {'name': '*scratch*', 'mode': 'lisp-interaction-mode', 'vertico': True, 'marginalia': True, 'text': ''}

@@ -1,0 +1,105 @@
+# Indice del codice: shell
+
+Fonte: https://git.savannah.gnu.org/cgit/emacs.git
+
+Revisione: `30.1`.
+
+
+## shell.el
+
+- L52: `;;  '(define-key shell-mode-map "\M-#" 'shells-dynamic-spell))`
+- L98: `(require 'comint)`
+- L99: `(require 'pcomplete)`
+- L101: `(require 'subr-x)`
+- L116: `(defcustom shell-dumb-shell-regexp (purecopy "cmd\\(proxy\\)?\\.exe")`
+- L125: `(defcustom shell-prompt-pattern "^[^#$%>\n]*[#$%>] *"`
+- L141: `(defcustom shell-completion-fignore nil`
+- L149: `(defcustom shell-delimiter-argument-list '(?\| ?& ?< ?> ?\( ?\) ?\;)`
+- L157: `(defcustom shell-file-name-chars`
+- L167: `(defcustom shell-file-name-quote-list`
+- L177: `(defcustom shell-dynamic-complete-functions`
+- L191: `(defcustom shell-command-regexp "[^;&|\n]+"`
+- L197: `(defcustom shell-command-separator-regexp "[;&|\n \t]*"`
+- L203: `(defcustom shell-completion-execonly t`
+- L211: `(defcustom shell-popd-regexp "popd"`
+- L216: `(defcustom shell-pushd-regexp "pushd"`
+- L221: `(defcustom shell-pushd-tohome nil`
+- L227: `(defcustom shell-pushd-dextract nil`
+- L233: `(defcustom shell-pushd-dunique nil`
+- L239: `(defcustom shell-cd-regexp "cd"`
+- L244: `(defcustom shell-chdrive-regexp`
+- L254: `(defcustom shell-dirtrack-verbose t`
+- L262: `(defcustom explicit-shell-file-name nil`
+- L272: `(defcustom explicit-csh-args`
+- L285: `(defcustom explicit-bash-args`
+- L294: `(defcustom shell-input-autoexpand 'history`
+- L311: `(defcustom shell-fontify-input-enable t`
+- L321: `(defcustom shell-indirect-setup-hook nil`
+- L334: `(defcustom shell-highlight-undef-enable nil`
+- L359: `(defcustom shell-has-auto-cd nil`
+- L368: `(defcustom shell-get-old-input-include-continuation-lines nil`
+- L374: `(defcustom shell-kill-buffer-on-exit nil`
+- L380: `(defvar shell-mode-map`
+- L382: `(define-key map "\C-c\C-f" 'shell-forward-command)`
+- L383: `(define-key map "\C-c\C-b" 'shell-backward-command)`
+- L384: `(define-key map "\t" 'completion-at-point)`
+- L385: `(define-key map (kbd "M-RET") 'shell-resync-dirs)`
+- L386: `(define-key map "\M-?" 'comint-dynamic-list-filename-completions)`
+- L387: `(define-key map (kbd "C-x n d") 'shell-narrow-to-prompt)`
+- L388: `(define-key map [menu-bar completion]`
+- L401: `(defvar-keymap shell-repeat-map`
+- L407: `(defcustom shell-mode-hook '()`
+- L422: `(defcustom shell-history-file-name nil`
+- L440: `(defun shell--unquote&requote-argument (qstr &optional upos)`
+- L485: `(defun shell--unquote-argument (str)`
+- L487: `(defun shell--requote-argument (upos qstr)`
+- L492: `(defun shell--parse-pcomplete-arguments ()`
+- L530: `(defun shell-get-old-input ()`
+- L564: `(defun split-string-shell-command (string)`
+- L573: `(defun shell-command-completion-function ()`
+- L585: `(defun shell-completion-vars ()`
+- L628: `(define-derived-mode shell-mode comint-mode "Shell"`
+- L801: `(defun shell-indirect-setup-hook ()`
+- L805: `(defun shell-apply-ansi-color (beg end face)`
+- L811: `(defun shell-reapply-ansi-color ()`
+- L826: `(defun shell-filter-ctrl-a-ctrl-b (string)`
+- L841: `(defun shell-filter-ring-bell (string)`
+- L848: `(defun shell-write-history-on-exit (process event)`
+- L864: `(define-derived-mode shell-command-mode comint-mode "Shell"`
+- L872: `(defun shell (&optional buffer file-name)`
+- L1041: `(define-minor-mode shell-dirtrack-mode`
+- L1056: `(defun shell-directory-tracker (str)`
+- L1116: `(defun shell-unquote-argument (string)`
+- L1142: `(defun shell-process-popd (arg)`
+- L1158: `(defun shell-prefixed-directory-name (dir)`
+- L1168: `(defun shell-process-cd (arg)`
+- L1178: `(defun shell-process-pushd (arg)`
+- L1222: `(defun shell-extract-num (str)`
+- L1226: `(defun shell-cd (dir)`
+- L1232: `(defun shell-resync-dirs ()`
+- L1286: `(defun shell-dirstack-message ()`
+- L1309: `(defun shell-snarf-envar (var)`
+- L1328: `(defun shell-copy-environment-variable (variable)`
+- L1339: `(defun shell-forward-command (&optional arg)`
+- L1351: `(defun shell-backward-command (&optional arg)`
+- L1367: `(defun shell-dynamic-complete-command ()`
+- L1386: `(defun shell-command-completion ()`
+- L1395: `(defun shell--command-completion-data ()`
+- L1457: `(defun shell-dynamic-complete-filename ()`
+- L1465: `(defun shell-filename-completion ()`
+- L1476: `(defun shell-match-partial-variable ()`
+- L1486: `(defun shell-dynamic-complete-environment-variable ()`
+- L1507: `(defun shell-environment-variable-completion ()`
+- L1534: `(defun shell-c-a-p-replace-by-expanded-directory ()`
+- L1563: `(defun shell-replace-by-expanded-directory ()`
+- L1573: `(defun shell--prompt-begin-position ()`
+- L1596: `(defun shell--prompt-end-position ()`
+- L1602: `(defun shell-narrow-to-prompt ()`
+- L1615: `(defun shell-eval-command (command)`
+- L1655: `(defcustom shell-highlight-undef-aliases nil`
+- L1679: `(defcustom shell-highlight-undef-remote-file-name-inhibit-cache nil`
+- L1713: `(defun shell--highlight-undef-executable-find (command)`
+- L1755: `(defun shell-highlight-undef-matcher (end)`
+- L1796: `(define-minor-mode shell-highlight-undef-mode`
+- L1856: `(defun shell-highlight-undef-mode-restart ()`
+- L1865: `(provide 'shell)`

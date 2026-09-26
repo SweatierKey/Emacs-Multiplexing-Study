@@ -1,0 +1,9 @@
+[
+  "emacs terminal emulator in:name,description",
+  "emacs terminal multiplexer in:name,description",
+  "emacs multiplex in:name,description",
+  "emacs vterm in:name,description",
+  "emacs terminal manager in:name,description",
+  "emacs eshell multiple in:name,description",
+  "emacs tmux in:name,description"
+]

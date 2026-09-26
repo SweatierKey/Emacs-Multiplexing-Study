@@ -1,0 +1,35 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tmux-pane</h1>
+<p>Fonte: https://github.com/laishulu/emacs-tmux-pane.git</p>
+<p>Revisione: <code>0ab0d40b497e984a589189358e04e322b8165985</code>.</p>
+<h2>tmux-pane.el</h2>
+<ul>
+<li>L30: <code>(require 'subr-x)</code></li>
+<li>L32: <code>(defcustom tmux-pane-vertical-percent 25</code></li>
+<li>L37: <code>(defcustom tmux-pane-horizontal-percent 25</code></li>
+<li>L48: <code>(defmacro tmux-pane--ensure-dir (&amp;rest body)</code></li>
+<li>L54: <code>(defun tmux-pane--windmove(dir flag)</code></li>
+<li>L65: <code>(defun tmux-pane-open-vertical ()</code></li>
+<li>L73: <code>(defun tmux-pane-open-horizontal ()</code></li>
+<li>L81: <code>(defun tmux-pane-close ()</code></li>
+<li>L88: <code>(defun tmux-pane-rerun ()</code></li>
+<li>L96: <code>(defun tmux-pane-toggle-vertical()</code></li>
+<li>L109: <code>(defun tmux-pane-toggle-horizontal()</code></li>
+<li>L122: <code>(defun tmux-pane-omni-window-last ()</code></li>
+<li>L128: <code>(defun tmux-pane-omni-window-up ()</code></li>
+<li>L134: <code>(defun tmux-pane-omni-window-down ()</code></li>
+<li>L140: <code>(defun tmux-pane-omni-window-left ()</code></li>
+<li>L146: <code>(defun tmux-pane-omni-window-right ()</code></li>
+<li>L151: <code>(defvar tmux-pane--override-map-enable nil</code></li>
+<li>L154: <code>(defvar tmux-pane--override-keymap</code></li>
+<li>L156: <code>(define-key map (kbd "C-\\") #'tmux-pane-omni-window-last)</code></li>
+<li>L157: <code>(define-key map (kbd "C-k") #'tmux-pane-omni-window-up)</code></li>
+<li>L158: <code>(define-key map (kbd "C-j") #'tmux-pane-omni-window-down)</code></li>
+<li>L159: <code>(define-key map (kbd "C-h") #'tmux-pane-omni-window-left)</code></li>
+<li>L160: <code>(define-key map (kbd "C-l") #'tmux-pane-omni-window-right)</code></li>
+<li>L164: <code>(defvar tmux-pane--override-map-alist</code></li>
+<li>L170: <code>(defvar tmux-pane--override-map-alist-order 0</code></li>
+<li>L173: <code>(defun tmux-pane-in-tmux-p ()</code></li>
+<li>L183: <code>(define-minor-mode tmux-pane-mode</code></li>
+<li>L197: <code>(defun windmove-last ()</code></li>
+<li>L206: <code>(provide 'tmux-pane)</code></li>
+</ul></main></html>

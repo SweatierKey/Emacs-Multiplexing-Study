@@ -1,0 +1,132 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: zellij</h1>
+<p>Fonte: https://github.com/mandoo180/zellij.el.git</p>
+<p>Revisione: <code>985ebccd222d5e288c178729328ab8e94eda3ba3</code>.</p>
+<h2>examples/zellij-config.el</h2>
+<ul>
+<li>L56: <code>(define-key org-mode-map (kbd "C-c z e") #'zellij-org-babel-execute)</code></li>
+<li>L57: <code>(define-key org-mode-map (kbd "C-c z b") #'zellij-org-send-block)))</code></li>
+<li>L62: <code>(defun my/ask-claude ()</code></li>
+<li>L75: <code>(defun my/zellij-run-tests ()</code></li>
+<li>L83: <code>(defun my/send-to-opencode ()</code></li>
+<li>L101: <code>(defun my/pane-name-with-emoji (command)</code></li>
+<li>L116: <code>(defun my/setup-project-zellij ()</code></li>
+<li>L134: <code>(global-set-key (kbd "C-c a c") #'my/ask-claude)</code></li>
+<li>L135: <code>(global-set-key (kbd "C-c a o") #'my/send-to-opencode)</code></li>
+<li>L139: <code>(define-key zellij-mode-map (kbd "C-c z r") #'my/zellij-run-tests)</code></li>
+<li>L140: <code>(define-key zellij-mode-map (kbd "C-c z P") #'my/setup-project-zellij))</code></li>
+<li>L145: <code>(defun my/set-project-zellij-session ()</code></li>
+<li>L159: <code>(defun my/get-language-for-mode ()</code></li>
+<li>L177: <code>(defun my/disable-formatting-for-text-modes ()</code></li>
+<li>L206: <code>(defun my/auto-target-for-python ()</code></li>
+<li>L248: <code>(global-set-key (kbd "C-c z z") #'hydra-zellij/body))</code></li>
+</ul>
+<h2>zellij-org.el</h2>
+<ul>
+<li>L57: <code>(require 'zellij)</code></li>
+<li>L58: <code>(require 'org)</code></li>
+<li>L62: <code>(defun zellij-org--get-target-from-properties ()</code></li>
+<li>L79: <code>(defun zellij-org-babel-execute ()</code></li>
+<li>L114: <code>(defun zellij-org-send-block ()</code></li>
+<li>L148: <code>(defvar zellij-org-mode-map</code></li>
+<li>L150: <code>(define-key map (kbd "C-c z e") #'zellij-org-babel-execute)</code></li>
+<li>L151: <code>(define-key map (kbd "C-c z b") #'zellij-org-send-block)</code></li>
+<li>L156: <code>(define-minor-mode zellij-org-mode</code></li>
+<li>L164: <code>(defun zellij-org-setup ()</code></li>
+<li>L169: <code>(provide 'zellij-org)</code></li>
+</ul>
+<h2>zellij.el</h2>
+<ul>
+<li>L55: <code>(require 'cl-lib)</code></li>
+<li>L56: <code>(require 'project)</code></li>
+<li>L65: <code>(defcustom zellij-executable "zellij"</code></li>
+<li>L70: <code>(defcustom zellij-default-session nil</code></li>
+<li>L77: <code>(defcustom zellij-default-pane-direction "right"</code></li>
+<li>L84: <code>(defcustom zellij-use-project-root t</code></li>
+<li>L90: <code>(defcustom zellij-prompt-for-pane-name t</code></li>
+<li>L95: <code>(defcustom zellij-default-pane-name-function #'zellij--default-pane-name</code></li>
+<li>L101: <code>(defcustom zellij-echo-commands nil</code></li>
+<li>L106: <code>(defcustom zellij-log-buffer-name "*Zellij Log*"</code></li>
+<li>L111: <code>(defcustom zellij-enable-logging t</code></li>
+<li>L116: <code>(defcustom zellij-format-code-blocks t</code></li>
+<li>L121: <code>(defcustom zellij-auto-detect-language t</code></li>
+<li>L126: <code>(defcustom zellij-ai-cli-patterns</code></li>
+<li>L139: <code>(defcustom zellij-pane-targeting-strategy 'navigate</code></li>
+<li>L160: <code>(defun zellij-available-p ()</code></li>
+<li>L164: <code>(defun zellij--current-session ()</code></li>
+<li>L169: <code>(defun zellij--effective-session (&amp;optional session)</code></li>
+<li>L176: <code>(defun zellij--log (format-string &amp;rest args)</code></li>
+<li>L188: <code>(defun zellij--error (format-string &amp;rest args)</code></li>
+<li>L194: <code>(defun zellij--call (args)</code></li>
+<li>L209: <code>(defun zellij--call-async (args &amp;optional callback)</code></li>
+<li>L227: <code>(defun zellij--get-working-directory ()</code></li>
+<li>L235: <code>(defun zellij--default-pane-name (command)</code></li>
+<li>L241: <code>(defun zellij--get-language-for-mode ()</code></li>
+<li>L279: <code>(defun zellij-list-sessions ()</code></li>
+<li>L291: <code>(defun zellij-select-session ()</code></li>
+<li>L299: <code>(defun zellij-session-exists-p (session)</code></li>
+<li>L305: <code>(defun zellij-write-chars (text &amp;optional session)</code></li>
+<li>L312: <code>(defun zellij-write-bytes (bytes &amp;optional session)</code></li>
+<li>L320: <code>(defun zellij-send-command (command &amp;optional session)</code></li>
+<li>L328: <code>(defun zellij-send-text (text &amp;optional session)</code></li>
+<li>L335: <code>(defun zellij-send-lines (lines &amp;optional session)</code></li>
+<li>L343: <code>(defun zellij-go-to-tab (tab &amp;optional session)</code></li>
+<li>L353: <code>(defun zellij-next-tab (&amp;optional session)</code></li>
+<li>L360: <code>(defun zellij-previous-tab (&amp;optional session)</code></li>
+<li>L367: <code>(defun zellij-focus-next-pane (&amp;optional session)</code></li>
+<li>L374: <code>(defun zellij-focus-previous-pane (&amp;optional session)</code></li>
+<li>L381: <code>(defun zellij--navigate-to-pane (tab pane-offset &amp;optional session)</code></li>
+<li>L426: <code>(defun zellij--send-with-navigation (tab pane-offset text &amp;optional session)</code></li>
+<li>L471: <code>(defun zellij--parse-layout (&amp;optional session)</code></li>
+<li>L481: <code>(defun zellij--parse-layout-string (layout-str)</code></li>
+<li>L503: <code>(defun zellij--parse-panes-in-region (start end)</code></li>
+<li>L549: <code>(defun zellij--get-focused-pane (&amp;optional session)</code></li>
+<li>L567: <code>(defun zellij--pane-exists-p (tab pane-offset &amp;optional session)</code></li>
+<li>L581: <code>(defun zellij--detect-ai-panes (&amp;optional session)</code></li>
+<li>L599: <code>(defun zellij--match-ai-pattern (command args)</code></li>
+<li>L607: <code>(defun zellij--get-ai-pane-suggestions (&amp;optional session)</code></li>
+<li>L620: <code>(defun zellij--get-all-panes-for-selection (&amp;optional session)</code></li>
+<li>L665: <code>(defun zellij--should-format-as-code (target)</code></li>
+<li>L685: <code>(defun zellij--format-as-code-block (text &amp;optional language)</code></li>
+<li>L695: <code>(defun zellij-send-to-pane (tab pane-offset command &amp;optional session)</code></li>
+<li>L709: <code>(defun zellij-new-pane (&amp;optional command direction name cwd session)</code></li>
+<li>L736: <code>(defun zellij-new-pane-with-command ()</code></li>
+<li>L747: <code>(defun zellij-new-tab (&amp;optional name cwd layout session)</code></li>
+<li>L780: <code>(defun zellij-new-tab-with-name ()</code></li>
+<li>L788: <code>(defun zellij--get-target (&amp;optional specified-target)</code></li>
+<li>L817: <code>(defun zellij--set-target-manual ()</code></li>
+<li>L831: <code>(defun zellij-set-target-pane ()</code></li>
+<li>L854: <code>(defun zellij-clear-target-pane ()</code></li>
+<li>L862: <code>(defun zellij-show-target ()</code></li>
+<li>L870: <code>(defun zellij-list-panes ()</code></li>
+<li>L897: <code>(defun zellij--send-to-target (text target)</code></li>
+<li>L925: <code>(defun zellij-send-region (start end &amp;optional target)</code></li>
+<li>L937: <code>(defun zellij-send-buffer (&amp;optional target)</code></li>
+<li>L942: <code>(defun zellij-send-region-or-buffer ()</code></li>
+<li>L949: <code>(defun zellij-send-line ()</code></li>
+<li>L954: <code>(defun zellij-send-paragraph ()</code></li>
+<li>L964: <code>(defun zellij-send-to-pane-interactive ()</code></li>
+<li>L982: <code>(defun zellij-send-command-to-target (command)</code></li>
+<li>L989: <code>(defun zellij-send-to-ai (text)</code></li>
+<li>L1002: <code>(defun zellij-toggle-code-formatting ()</code></li>
+<li>L1011: <code>(defun zellij-show-log ()</code></li>
+<li>L1020: <code>(defun zellij-clear-log ()</code></li>
+<li>L1039: <code>(defun zellij--setup-mode-line ()</code></li>
+<li>L1044: <code>(defun zellij--teardown-mode-line ()</code></li>
+<li>L1051: <code>(defvar zellij-mode-map</code></li>
+<li>L1054: <code>(define-key map (kbd "C-c z s") #'zellij-send-region-or-buffer)</code></li>
+<li>L1055: <code>(define-key map (kbd "C-c z l") #'zellij-send-line)</code></li>
+<li>L1056: <code>(define-key map (kbd "C-c z p") #'zellij-send-paragraph)</code></li>
+<li>L1057: <code>(define-key map (kbd "C-c z c") #'zellij-send-command-to-target)</code></li>
+<li>L1058: <code>(define-key map (kbd "C-c z a") #'zellij-send-to-ai)</code></li>
+<li>L1061: <code>(define-key map (kbd "C-c z t") #'zellij-set-target-pane)</code></li>
+<li>L1062: <code>(define-key map (kbd "C-c z T") #'zellij-clear-target-pane)</code></li>
+<li>L1063: <code>(define-key map (kbd "C-c z ?") #'zellij-show-target)</code></li>
+<li>L1064: <code>(define-key map (kbd "C-c z i") #'zellij-list-panes)</code></li>
+<li>L1067: <code>(define-key map (kbd "C-c z n") #'zellij-new-pane-with-command)</code></li>
+<li>L1070: <code>(define-key map (kbd "C-c z N") #'zellij-new-tab-with-name)</code></li>
+<li>L1073: <code>(define-key map (kbd "C-c z g") #'zellij-send-to-pane-interactive)</code></li>
+<li>L1076: <code>(define-key map (kbd "C-c z f") #'zellij-toggle-code-formatting)</code></li>
+<li>L1079: <code>(define-key map (kbd "C-c z L") #'zellij-show-log)</code></li>
+<li>L1085: <code>(define-minor-mode zellij-mode</code></li>
+<li>L1103: <code>(provide 'zellij)</code></li>
+</ul></main></html>

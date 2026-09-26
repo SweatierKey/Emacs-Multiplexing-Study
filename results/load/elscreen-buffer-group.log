@@ -1,0 +1,6 @@
+{"status":"loaded","feature":"elscreen-buffer-group","library":"/home/admin/Emacs-Multiplexing-Study/sources/elscreen-buffer-group/elscreen-buffer-group.el","commands":["elscreen-buffer-group-global-mode"]}
+STDERR:
+sources/elscreen-buffer-group/elscreen-buffer-group.el: Warning: ‘throw’ called with 1 argument, but requires 2
+sources/elscreen-buffer-group/elscreen-buffer-group.el: Warning: ‘throw’ called with 1 argument, but requires 2
+sources/elscreen-buffer-group/elscreen-buffer-group.el: Warning: Malformed function ‘(string string)’
+sources/elscreen-buffer-group/elscreen-buffer-group.el: Warning: reference to free variable ‘pred’

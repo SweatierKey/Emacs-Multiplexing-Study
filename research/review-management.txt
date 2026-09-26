@@ -1,0 +1,285 @@
+
+### emux
+sources/emux/emux-screen.el
+130:                        (emux-screen-get :buffers screen) ":")))
+131:                    (emux-screens))) "\\["))))))
+132:         (set-window-configuration (emux-screen-get :config  switch-to-screen))
+133:         (emux-screen-current switch-to-screen)
+134:         (message (format "switched to screen '%s'" (emux-screen-get :name))))
+135:     (message "there are no screens to switch to.")))
+sources/emux/emux-term.el
+224:   (dotimes (i (- (point) (mark t)))
+225:     (term-send-backspace))
+226:   (process-send-string
+227:    (get-buffer-process (current-buffer))
+228:    (current-kill 1)))
+229: 
+
+### emux-rock
+sources/emux-rock/emux-screen.el
+130:                        (emux-screen-get :buffers screen) ":")))
+131:                    (emux-screens))) "\\["))))))
+132:         (set-window-configuration (emux-screen-get :config  switch-to-screen))
+133:         (emux-screen-current switch-to-screen)
+134:         (message (format "switched to screen '%s'" (emux-screen-get :name))))
+135:     (message "there are no screens to switch to.")))
+sources/emux-rock/emux-term.el
+224:   (dotimes (i (- (point) (mark t)))
+225:     (term-send-backspace))
+226:   (process-send-string
+227:    (get-buffer-process (current-buffer))
+228:    (current-kill 1)))
+229: 
+
+### emux-el
+sources/emux-el/emux.el
+184:   (let ((buffer (generate-new-buffer name)))
+185:     (with-current-buffer buffer (emux:term-mode))
+186:     (term-exec buffer name program nil nil)
+187:     (with-current-buffer buffer (term-char-mode))
+188:     buffer))
+189: 
+
+### emux-shcv
+sources/emux-shcv/emux.el
+243:   (let ((parsed (emux--parse-tmux-key key)))
+244:     (pcase parsed
+245:       (`(ctrl . ,ch)   (vterm-send-key (downcase ch) nil nil t))
+246:       (`(meta . ,ch)   (vterm-send-key (downcase ch) nil t nil))
+247:       ('(special . "Enter")  (vterm-send-return))
+248:       ('(special . "Escape") (vterm-send-key "<escape>"))
+249:       ('(special . "Tab")    (vterm-send-key "<tab>"))
+250:       ('(special . "BSpace") (vterm-send-key "<backspace>"))
+251:       ('(special . "Space")  (vterm-send-string " "))
+252:       ('(special . "Up")     (vterm-send-key "<up>"))
+
+### navorski
+sources/navorski/navorski.el
+323:     (let* ((default-directory (-navorski-get-default-directory profile))
+324: 
+325:            (shell-name   (-navorski-get-shell-path profile))
+326:            (buffer-name  (-navorski-get-buffer-name profile))
+327:            (program-args (-navorski-get-program-args profile))
+328:            (read-only (-navorski-get-read-only profile))
+333:                                  (apply #'make-term
+334:                                         buffer-name shell-name nil program-args)
+335:                                (make-term buffer-name shell-name)))))
+336:       (when navorski-verbose
+337:         (message
+338:          (format "[navorski] EXECUTE: %s %s on DIRECTORY=%s"
+
+### term-plus-mux
+sources/term-plus-mux/term+mux.el
+412:    ((and (listp arg) (eq (car arg) 'quote))
+413:     (let ((arg (term+mux-resolve-arg session command (cadr arg))))
+414:       (shell-quote-argument (if (listp arg) (mapconcat #'identity arg " ")))))
+415:    (t arg))))
+416: 
+417: (defun term+mux-resolve-args (session command args)
+425: (defun term+mux-resolve-command (session command)
+426:   (let* ((cmd command)
+427:          (shell (eq cmd 'shell))
+428:          (term+mux-local-shell-command
+429:           (or term+mux-local-shell-command (term+mux-shell-command)))
+430:          (local (term+mux-session-local-p session))
+459:           (if (ignore-errors
+460:                 (with-temp-buffer
+461:                   (call-process "ssh" nil t nil "-o" "ControlPersist")
+462:                   (goto-char (point-min))
+463:                   (search-forward-regexp
+464:                    "Missing ControlPersist argument" nil t)))
+473:                               " ")
+474:                  exec))
+475:          (cmd (mapconcat #'(lambda (x) (shell-quote-argument (format x exec)))
+476:                          term+mux-command-template " "))
+477:          (args (list 'user-at-host cmd))
+478:          (persist term+mux-ssh-control-persist))
+612:       (setq term-ansi-at-user user)
+613:       (setq term-ansi-at-host host))
+614:     (term-exec buffer name program nil args)
+615:     (with-current-buffer buffer (term-char-mode))
+616:     buffer))
+617: 
+
+### better-shell
+sources/better-shell/better-shell.el
+82:         ;; for local shells, we can potentially do better using pgrep
+83:         (condition-case nil
+84:             (case (call-process ;; look at the exit code of pgrep -P <pid>
+85:                    "pgrep" nil nil nil "-P"
+86:                    (number-to-string (process-id (get-buffer-process buf))))
+87:               (0 nil) ;; child procxesses found, not idle
+144:                   (string-equal dir (better-shell-default-directory s1)))))
+145:           ;; make a new shell if there are none
+146:           (shell (generate-new-buffer-name
+147:                   (if (file-remote-p dir)
+148:                       (with-parsed-tramp-file-name dir nil
+149:                         (format "*shell/%s*" host))
+183:                    (cl-remove nil (mapcar 'cadr (apply (car x) (cdr x)))))
+184:                  (tramp-get-completion-function "ssh"))))
+185:        (remote-host (completing-read "Remote host: " hosts)))
+186:     (if (and arg (= 4 arg))
+187:         ;; this means sudo
+188:         (let ((tramp-default-proxies-alist nil))
+190:           (with-temp-buffer
+191:             (cd (concat "/ssh:" remote-host "|sudo:" remote-host ":"))
+192:             (shell (format "*shell/sudo:%s*" remote-host))))
+193:       ;; non-sudo
+194:       (with-temp-buffer
+195:         (cd (concat "/" (or tramp-default-method "ssh") ":" remote-host ":"))
+196:         (shell (format "*shell/%s*" remote-host))))))
+197: 
+198: ;;;###autoload
+199: (defun better-shell-sudo-here ()
+
+### friendly-shell
+sources/friendly-shell/friendly-shell-command.el
+56: `with-shell-interpreter'"
+57:   (with-shell-interpreter
+58:     :form (shell-command-to-string command)
+59:     :path path
+60:     :interpreter interpreter
+61:     :command-switch command-switch))
+140:   (with-shell-interpreter
+141:     :form
+142:     (let ((errno (shell-command command output-buffer error-buffer))
+143:           (buffer-name (or output-buffer "*Shell Command Output*")))
+144:       (when callback
+145:         (funcall callback))
+sources/friendly-shell/friendly-shell.el
+101:       (let* (
+102:              ;; shell buffer name
+103:              (shell-buffer-basename (or buffer-name
+104:                                         (friendly-shell--generate-buffer-name is-remote interpreter default-directory)))
+105:              (shell-buffer-name (generate-new-buffer-name (concat "*" shell-buffer-basename "*")))
+106:              (shell-buffer (get-buffer-create shell-buffer-name))
+107:              ;; special vars
+108:              (current-prefix-arg '(4))
+109:              ;; copies of special vars set by with-shell-interpreter
+130:           (set (make-local-variable 'comint-process-echoes) og-comint-process-echoes))
+131: 
+132:         (shell shell-buffer)
+133: 
+134:         (with-current-buffer shell-buffer
+135:           ;; NB: comint / shell undoes some of our bindings, so we need to set them back
+
+### shell-switcher
+sources/shell-switcher/shell-switcher.el
+123: This function is to be used as value for
+124: `shell-switcher-new-shell-function'."
+125:   (shell (generate-new-buffer-name "*shell*")))
+126: 
+127: (defun shell-switcher-make-eshell ()
+128:   "Ensure the creation of a new `eshell'.
+129: This function is to be used as value for
+130: `shell-switcher-new-shell-function'."
+131:   (eshell t))
+132: 
+133: (defun shell-switcher-make-ansi-term ()
+134:   "Ensure the creation of a new `ansi-term'.
+138: buffer automatically.  This function is to be used as value for
+139: `shell-switcher-new-shell-function'."
+140:   (let ((shell (or (unless (string= "" shell-switcher-ansi-term-shell)
+141:                      shell-switcher-ansi-term-shell)
+142:                    (getenv "ESHELL")
+143:                    (getenv "SHELL")
+356:                                directory
+357:                              (file-name-directory directory))))
+358:     (shell-switcher-new-shell)))
+359: 
+360: ;;;###autoload
+361: (defun shell-switcher-open-on-bookmark (bookmark)
+367:                                 file
+368:                               (file-name-directory file))))
+369:     (shell-switcher-new-shell)))
+370: 
+371: ;;;###autoload
+372: (defun shell-switcher-open-on-project (&optional project)
+
+### shell-toggle
+sources/shell-toggle/shell-toggle.el
+149:   (when (and shell-toggle-shell-buffer (not (get-buffer-process shell-toggle-shell-buffer)))
+150:     (kill-buffer shell-toggle-shell-buffer))
+151:   (ansi-term (shell-toggle-run-this-shell)))
+152: 
+153: (defun shell-toggle-eshell ()
+154:   (eshell))
+155: 
+156: (defcustom shell-toggle-leave-buffer-hook nil
+157:   "Hook run before leaving the buffer to switch to the shell."
+175: See command `shell-toggle'."
+176:   (interactive)
+177:   (shell-toggle t))
+178: 
+179: ;;;###autoload
+180: (defun shell-toggle (make-cd)
+200: 	       (not (eq (count-windows) 1)))
+201: 	  (delete-other-windows)
+202: 	(shell-toggle-buffer-return-from-shell))
+203:     (progn
+204:       (shell-toggle-buffer-goto-shell make-cd)
+205:       (if shell-toggle-full-screen-window-only (delete-other-windows)))))
+206: 
+207: ;;; ======================================================================
+
+### shell-toggle-plus
+sources/shell-toggle-plus/shell-toggle-plus.el
+116:   (when (and shell-toggle-shell-buffer (not (get-buffer-process shell-toggle-shell-buffer)))
+117:     (kill-buffer shell-toggle-shell-buffer))
+118:   (ansi-term (shell-toggle-run-this-shell)))
+119: 
+120: ;;;###autoload
+121: (defun shell-toggle-eshell ()
+122:   (eshell))
+123: 
+124: ;;;###autoload
+125: (defvar shell-toggle-leave-buffer-hook nil
+141:   "Calls `shell-toggle' with a prefix argument.  See command `shell-toggle'"
+142:   (interactive)
+143:   (shell-toggle t))
+144: 
+145: ;;;###autoload
+146: (defun shell-toggle (make-cd)
+166: 	       (not (eq (count-windows) 1)))
+167: 	  (delete-other-windows)
+168: 	(shell-toggle-buffer-return-from-shell))
+169:     (shell-toggle-buffer-goto-shell make-cd)))
+170: 
+171: ;;; ======================================================================
+172: ;;; Internal functions and declarations
+
+### quick-shell-keybind
+
+### helm-switch-shell
+sources/helm-switch-shell/helm-switch-shell.el
+146: (defun helm-switch-shell--new-shell ()
+147:   "Create a new shell."
+148:   (shell (generate-new-buffer-name "*shell*")))
+149: 
+150: (defun helm-switch-shell--shell-select ()
+151:   "Switch to a new shell, prompting for the shell to run."
+157:   "Create a new shell or eshell, as optionally specified by TYPE, defaulting to `helm-switch-shell-new-shell-type'."
+158:   (cl-case (or type helm-switch-shell-new-shell-type)
+159:     (eshell (eshell t))
+160:     (shell (helm-switch-shell--new-shell))
+161:     (vterm (if (fboundp 'vterm)
+162:                (vterm t)
+163:              (message "emacs-libvterm not installed")))
+164:     (shell-select (helm-switch-shell--shell-select))))
+165: 
+
+### terminology
+sources/terminology/terminology.el
+44:   "Creates a new vterm buffer with the provided *buffer-name*."
+45:   (cl-assert (stringp buffer-name))
+46:   (vterm buffer-name)
+47:   ;; TODO: Customize whether or not insert mode should be entered.
+48:   (evil-insert-state)
+49:   (let ((alist (assoc buffer-name terminology--terminal-alist)))
+52:         (let ((command (assoc 'commands alist)))
+53:           (when command
+54:             (vterm-send-string (cdr command))
+55:             (vterm-send-return))))))
+56: 
+57: (defun terminology--helm-candidate-transformer (candidates _source)
+58:   "Returns a list of candidates based on which candidates match the currently

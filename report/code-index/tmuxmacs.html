@@ -1,0 +1,136 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: tmuxmacs</h1>
+<p>Fonte: https://github.com/andrewppar/tmuxmacs.git</p>
+<p>Revisione: <code>e569afd48a7649607bd569af388c5311763fd935</code>.</p>
+<h2>tmuxmacs-core.el</h2>
+<ul>
+<li>L18: <code>(defun tmuxmacs-core--output (fields)</code></li>
+<li>L25: <code>(defun tmuxmacs-core/execute (command &amp;rest fields)</code></li>
+<li>L37: <code>(defun tmuxmacs-core/pane-output (pane-id)</code></li>
+<li>L41: <code>(defun tmuxmacs-core/entity-map ()</code></li>
+<li>L46: <code>(defun tmuxmacs-core/lookup (key value)</code></li>
+<li>L51: <code>(defun tmuxmacs-core/id-type (identifier)</code></li>
+<li>L57: <code>(provide 'tmuxmacs-core)</code></li>
+</ul>
+<h2>tmuxmacs-face.el</h2>
+<ul>
+<li>L25: <code>(provide 'tmuxmacs-face)</code></li>
+</ul>
+<h2>tmuxmacs-pane.el</h2>
+<ul>
+<li>L16: <code>(require 'tmuxmacs-core)</code></li>
+<li>L17: <code>(require 'tmuxmacs-window)</code></li>
+<li>L18: <code>(require 'cl-lib)</code></li>
+<li>L19: <code>(require 'subr-x)</code></li>
+<li>L21: <code>(defun tmuxmacs-pane/list ()</code></li>
+<li>L24: <code>(defun tmuxmacs-pane/focused ()</code></li>
+<li>L27: <code>(defun tmuxmacs-pane/find (pane-id)</code></li>
+<li>L32: <code>(defun tmuxmacs-pane/window (pane-id)</code></li>
+<li>L41: <code>(defun tmuxmacs-pane/focus (pane-id)</code></li>
+<li>L45: <code>(defun tmp--quote (item)</code></li>
+<li>L48: <code>(defun tmp--parse-split (split)</code></li>
+<li>L54: <code>(cl-defun tmuxmacs-pane/new (&amp;key window split directory command)</code></li>
+<li>L63: <code>(defun tmuxmacs-pane/send-command (pane-id command)</code></li>
+<li>L68: <code>(defun tmuxmacs-pane/session (pane-id)</code></li>
+<li>L71: <code>(defun tmuxmacs-pane/kill (pane-id)</code></li>
+<li>L74: <code>(defun tmuxmacs-pane--pad-line (line-max line)</code></li>
+<li>L81: <code>(cl-defun tmuxmacs-pane/tail (pane-id &amp;key lines width)</code></li>
+<li>L95: <code>(cl-defun tmuxmacs-pane/move (pane-id window-id &amp;key horizontal?)</code></li>
+<li>L100: <code>(provide 'tmuxmacs-pane)</code></li>
+</ul>
+<h2>tmuxmacs-session.el</h2>
+<ul>
+<li>L16: <code>(require 'tmuxmacs-core)</code></li>
+<li>L18: <code>(defun tmuxmacs-session--id (session-name)</code></li>
+<li>L23: <code>(defun tmuxmacs-session--name (session-name)</code></li>
+<li>L28: <code>(defun tmuxmacs-session/focus (session-id)</code></li>
+<li>L31: <code>(defun tmuxmacs-session/focused ()</code></li>
+<li>L36: <code>(defun tmuxmacs-session/new (&amp;optional session-name)</code></li>
+<li>L42: <code>(defun tmuxmacs-session/rename (session-id new-name)</code></li>
+<li>L46: <code>(defun tmuxmacs-session/find (session-name-or-id)</code></li>
+<li>L51: <code>(defun tmuxmacs-session/kill (session-id)</code></li>
+<li>L54: <code>(provide 'tmuxmacs-session)</code></li>
+</ul>
+<h2>tmuxmacs-view.el</h2>
+<ul>
+<li>L21: <code>(require 'cl-lib)</code></li>
+<li>L22: <code>(require 'tmuxmacs-pane)</code></li>
+<li>L23: <code>(require 'subr-x)</code></li>
+<li>L24: <code>(require 'tmuxmacs-face)</code></li>
+<li>L26: <code>(define-derived-mode tmuxmacs-mode fundamental-mode</code></li>
+<li>L29: <code>(define-key tmuxmacs-mode-map</code></li>
+<li>L32: <code>(defun tmv--plist-get-in (plist keys)</code></li>
+<li>L42: <code>(defun tmv--plist-put-in (plist keys value)</code></li>
+<li>L61: <code>(defun tmv--plist-update-in (plist keys function &amp;rest args)</code></li>
+<li>L69: <code>(defun tmv--add-item (lista item)</code></li>
+<li>L78: <code>(defun tmv--pane-data-&gt;session-data (pane-data)</code></li>
+<li>L95: <code>(defun tmv--plist-keys (plist)</code></li>
+<li>L106: <code>(defmacro tmv--with-tmux-session-buffer (data &amp;rest body)</code></li>
+<li>L128: <code>(defun tmv--format-line (id name face)</code></li>
+<li>L134: <code>(defun tmv--format-pane (pane-id session-data last? last-window?)</code></li>
+<li>L142: <code>(defun tmv--format-window (session-id window-id session-data last?)</code></li>
+<li>L154: <code>(defun tmv--format-session (session-id session-data)</code></li>
+<li>L176: <code>(defun tmuxmacs-view/sessions ()</code></li>
+<li>L203: <code>(defun tmv--line ()</code></li>
+<li>L207: <code>(defun tmuxmacs-view/id-at-point ()</code></li>
+<li>L211: <code>(defun tmuxmacs-view/type-at-point ()</code></li>
+<li>L214: <code>(defun tmuxmacs-view/name-at-point ()</code></li>
+<li>L219: <code>(defun tmuxmacs-view--selection (prompt name-key id-key)</code></li>
+<li>L228: <code>(defun tmuxmacs-view/session-selection ()</code></li>
+<li>L231: <code>(defun tmuxmacs-view/window-selection ()</code></li>
+<li>L234: <code>(defun tmv--trim-line (line max-length)</code></li>
+<li>L240: <code>(defun tmv--frame (lines)</code></li>
+<li>L251: <code>(defun tmv--frame-start-line? (line)</code></li>
+<li>L254: <code>(defun tmv--frame-end-line? (line)</code></li>
+<li>L257: <code>(defun tmv--within-frame? ()</code></li>
+<li>L276: <code>(defun tmv--show-pane-tail ()</code></li>
+<li>L288: <code>(defun tmv--delete-frame ()</code></li>
+<li>L302: <code>(defun tmv--pane-at-point? ()</code></li>
+<li>L305: <code>(defun tmv--hide-pane-tail ()</code></li>
+<li>L313: <code>(defun tmuxmacs-view/goto-id (id)</code></li>
+<li>L322: <code>(defun tmuxmacs-view/pane-tail-showing? ()</code></li>
+<li>L327: <code>(defun tmuxmacs-view/toggle-pane-tail ()</code></li>
+<li>L335: <code>(defun tmuxmacs-view/pane-tail-refresh ()</code></li>
+<li>L341: <code>(provide 'tmuxmacs-view)</code></li>
+</ul>
+<h2>tmuxmacs-window.el</h2>
+<ul>
+<li>L16: <code>(require 'tmuxmacs-core)</code></li>
+<li>L17: <code>(require 'tmuxmacs-session)</code></li>
+<li>L18: <code>(require 'cl-lib)</code></li>
+<li>L20: <code>(defun tmw--quote (item)</code></li>
+<li>L23: <code>(defun tmuxmacs-window/list ()</code></li>
+<li>L26: <code>(cl-defun tmuxmacs-window/new (&amp;key session name directory command)</code></li>
+<li>L49: <code>(defun tmuxmacs-window/session (window-id)</code></li>
+<li>L52: <code>(defun tmuxmacs-window/focus (window-id)</code></li>
+<li>L57: <code>(defun tmuxmacs-window/rename (window-id new-name)</code></li>
+<li>L61: <code>(defun tmuxmacs-window/kill (window-id)</code></li>
+<li>L64: <code>(defun tmuxmacs-window/move (window-id session-id)</code></li>
+<li>L67: <code>(defun tmuxmacs-window/find (window-name-or-id)</code></li>
+<li>L74: <code>(defun tmuxmacs-window/focused ()</code></li>
+<li>L79: <code>(provide 'tmuxmacs-window)</code></li>
+</ul>
+<h2>tmuxmacs.el</h2>
+<ul>
+<li>L21: <code>(require 'tmuxmacs-view)</code></li>
+<li>L22: <code>(require 'tmuxmacs-session)</code></li>
+<li>L23: <code>(require 'tmuxmacs-window)</code></li>
+<li>L24: <code>(require 'tmuxmacs-pane)</code></li>
+<li>L26: <code>(defmacro tmuxmacs--with-buffer-refresh (&amp;rest body)</code></li>
+<li>L31: <code>(defmacro tmuxmacs/save-excursion (&amp;rest body)</code></li>
+<li>L40: <code>(defun tmuxmacs ()</code></li>
+<li>L44: <code>(defun tmuxmacs/focus ()</code></li>
+<li>L50: <code>(defun tmuxmacs/rename ()</code></li>
+<li>L64: <code>(defun tmuxmacs/new-session ()</code></li>
+<li>L70: <code>(defun tmuxmacs--prompt (prompt)</code></li>
+<li>L75: <code>(defun tmuxmacs/new-window ()</code></li>
+<li>L86: <code>(defun tmuxmacs/kill ()</code></li>
+<li>L100: <code>(defun tmuxmacs/send-command ()</code></li>
+<li>L115: <code>(defun tmuxmacs/move-window ()</code></li>
+<li>L124: <code>(defmacro tmuxmacs/save-excursion (&amp;rest body)</code></li>
+<li>L130: <code>(defun tmuxmacs/move-pane ()</code></li>
+<li>L141: <code>(defun tmuxmacs/pane-tail ()</code></li>
+<li>L145: <code>(defun tmuxmacs/pane-tail-refresh ()</code></li>
+<li>L149: <code>(defun tmuxmacs--formatted-panes ()</code></li>
+<li>L159: <code>(defun tmuxmacs/pane-send-command ()</code></li>
+<li>L166: <code>(provide 'tmuxmacs)</code></li>
+</ul></main></html>

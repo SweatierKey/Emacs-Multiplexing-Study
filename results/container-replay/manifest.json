@@ -1,0 +1,42 @@
+[
+  {
+    "container": "emacs-study-smoke-fixed",
+    "label": "smoke",
+    "image": "caa0ec59b85cd89b08f8aaee9e29fba0fe60f9ea0aedaf53844f279804f8e085",
+    "exit_code": 0,
+    "status": "exited",
+    "scenarios": [
+      "ansi-term",
+      "eat",
+      "vterm",
+      "multi-vterm",
+      "ghostel-mux",
+      "tmux-nested"
+    ]
+  },
+  {
+    "container": "emacs-study-native",
+    "label": "native",
+    "image": "caa0ec59b85cd89b08f8aaee9e29fba0fe60f9ea0aedaf53844f279804f8e085",
+    "exit_code": 1,
+    "status": "exited",
+    "scenarios": [
+      "cooked",
+      "alacritty",
+      "kuro",
+      "el-be-back",
+      "mistty",
+      "coterm"
+    ]
+  },
+  {
+    "container": "emacs-study-cooked-fixed",
+    "label": "cooked-fixed",
+    "image": "130677d2350596b747c103ef925236be02eac528a642728e958875a2b98141aa",
+    "exit_code": 0,
+    "status": "exited",
+    "scenarios": [
+      "cooked"
+    ]
+  }
+]

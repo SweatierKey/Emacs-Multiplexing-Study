@@ -1,0 +1,68 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="../style.css"><main><a href="../../index.html">← Catalogo e video</a><h1>Indice del codice: term-mux</h1>
+<p>Fonte: https://github.com/merrickluo/term-mux.el.git</p>
+<p>Revisione: <code>0b1770318c892de0d9dce5a5eb6cde38b9c03d78</code>.</p>
+<h2>term-mux-frame.el</h2>
+<ul>
+<li>L25: <code>(require 'term-mux)</code></li>
+<li>L26: <code>(require 'uuid)</code></li>
+<li>L27: <code>(require 'vterm nil t)</code></li>
+<li>L28: <code>(require 'ghostel nil t)</code></li>
+<li>L34: <code>(defcustom term-mux-frame-session-name-fn #'uuid-string</code></li>
+<li>L39: <code>(defcustom term-mux-frame-name "Terminal"</code></li>
+<li>L45: <code>(defun term-mux-frame()</code></li>
+<li>L52: <code>(defun term-mux-frame--exit-fn (&amp;optional buffer _event)</code></li>
+<li>L78: <code>(provide 'term-mux-frame)</code></li>
+</ul>
+<h2>term-mux-test.el</h2>
+<ul>
+<li>L8: <code>(require 'ert)</code></li>
+<li>L9: <code>(require 'term-mux)</code></li>
+<li>L207: <code>(provide 'term-mux-test)</code></li>
+</ul>
+<h2>term-mux.el</h2>
+<ul>
+<li>L22: <code>(require 'subr-x)</code></li>
+<li>L23: <code>(require 'project)</code></li>
+<li>L26: <code>(require 'projectile nil t)</code></li>
+<li>L29: <code>(require 'vterm nil t)</code></li>
+<li>L30: <code>(require 'ghostel nil t)</code></li>
+<li>L36: <code>(defcustom term-mux-buffer-prefix "*term-mux-"</code></li>
+<li>L41: <code>(defcustom term-mux-default-terminal-setup-fn #'term-mux--detect-terminal</code></li>
+<li>L72: <code>(defun term-mux--add-to-buffer-table (session buffer)</code></li>
+<li>L79: <code>(defun term-mux--handle-kill-buffer ()</code></li>
+<li>L105: <code>(defun term-mux--current-window ()</code></li>
+<li>L116: <code>(defun term-mux--session-name ()</code></li>
+<li>L129: <code>(defun term-mux--session-root ()</code></li>
+<li>L138: <code>(defun term-mux--new-buffer (session terminal-setup-fn slot)</code></li>
+<li>L151: <code>(defun term-mux--show-buffer (buffer-or-name &amp;optional session window)</code></li>
+<li>L164: <code>(defun term-mux--current-session ()</code></li>
+<li>L168: <code>(defun term-mux--list-buffers (&amp;optional session)</code></li>
+<li>L172: <code>(defun term-mux--detect-terminal ()</code></li>
+<li>L179: <code>(defun term-mux--setup-vterm ()</code></li>
+<li>L187: <code>(defun term-mux--setup-eshell ()</code></li>
+<li>L193: <code>(defun term-mux--setup-ghostel ()</code></li>
+<li>L203: <code>(defun term-mux--buffer-slot (&amp;optional buffer)</code></li>
+<li>L206: <code>(defun term-mux--buffer-session (&amp;optional buffer)</code></li>
+<li>L209: <code>(defun term-mux--find-empty-slot (session)</code></li>
+<li>L223: <code>(defun term-mux--next-buffer (session slot direction)</code></li>
+<li>L241: <code>(defun term-mux-toggle ()</code></li>
+<li>L258: <code>(defun term-mux-create (&amp;optional terminal-setup-fn session)</code></li>
+<li>L272: <code>(defun term-mux-buffer (&amp;optional terminal-setup-fn session)</code></li>
+<li>L287: <code>(defun term-mux-create-eshell (&amp;optional session)</code></li>
+<li>L292: <code>(defun term-mux-create-vterm (&amp;optional session)</code></li>
+<li>L298: <code>(defun term-mux-create-ghostel (&amp;optional session)</code></li>
+<li>L303: <code>(defun term-mux-switch-to (buffer-or-name)</code></li>
+<li>L309: <code>(defun term-mux-next (&amp;optional direction)</code></li>
+<li>L320: <code>(defun term-mux-prev ()</code></li>
+<li>L325: <code>(defun term-mux-session-empty-p (&amp;optional session)</code></li>
+<li>L333: <code>(defvar term-mux-command-map</code></li>
+<li>L335: <code>(define-key map "n" #'term-mux-next)</code></li>
+<li>L336: <code>(define-key map "p" #'term-mux-prev)</code></li>
+<li>L337: <code>(define-key map "s" #'term-mux-switch-to)</code></li>
+<li>L338: <code>(define-key map "c" #'term-mux-create)</code></li>
+<li>L339: <code>(define-key map "e" #'term-mux-create-eshell)</code></li>
+<li>L340: <code>(define-key map "g" #'term-mux-create-ghostel)</code></li>
+<li>L341: <code>(define-key map "v" #'term-mux-create-vterm)</code></li>
+<li>L347: <code>(define-minor-mode term-mux-mode</code></li>
+<li>L355: <code>(provide 'term-mux)</code></li>
+</ul></main></html>

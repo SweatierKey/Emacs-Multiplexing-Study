@@ -1,0 +1,261 @@
+# Indice del codice: projectile-rails
+
+Fonte: https://github.com/asok/projectile-rails.git
+
+Revisione: `701784df7befe17b861f1b53fe9cbc59d0b94b9f`.
+
+
+## .dir-locals.el
+
+
+## features/step-definitions/projectile-rails-steps.el
+
+
+## features/support/env.el
+
+- L1: `(require 'f)`
+- L30: `(defun projectile-rails-test-touch-file (filepath)`
+- L37: `(defun projectile-rails-test-create-foo-gem (dir)`
+- L48: `(defun delete-fixture-files ()`
+- L56: `(require 'espuds)`
+- L57: `(require 'ert)`
+
+## projectile-rails.el
+
+- L39: `(require 'projectile)`
+- L40: `(require 'autoinsert)`
+- L41: `(require 'inf-ruby)`
+- L42: `(require 'inflections)`
+- L43: `(require 'f)`
+- L44: `(require 'rake)`
+- L45: `(require 'json)`
+- L46: `(require 'comint)`
+- L53: `(defcustom projectile-rails-controller-keywords`
+- L72: `(defcustom projectile-rails-migration-keywords`
+- L83: `(defcustom projectile-rails-model-keywords`
+- L103: `(defcustom projectile-rails-view-keywords`
+- L142: `(defcustom projectile-rails-active-support-keywords`
+- L155: `(defcustom projectile-rails-views-re`
+- L165: `(defcustom projectile-rails-javascript-re`
+- L171: `(defcustom projectile-rails-stylesheet-re`
+- L177: `(defcustom projectile-rails-errors-re`
+- L183: `(defcustom projectile-rails-generate-filepath-re`
+- L189: `(defcustom projectile-rails-javascript-dirs`
+- L195: `(defcustom projectile-rails-component-dir "app/javascript/packs/"`
+- L200: `(defcustom projectile-rails-stylesheet-dirs`
+- L206: `(defcustom projectile-rails-expand-snippet t`
+- L213: `(defcustom projectile-rails-add-keywords t`
+- L218: `(defcustom projectile-rails-keymap-prefix nil`
+- L223: `(make-obsolete-variable 'projectile-keymap-prefix "Use (define-key projectile-rails-mode-map (kbd ...) 'projectile-rails-command-map) instead." "0.20.0")`
+- L225: `(defcustom projectile-rails-server-mode-ansi-colors t`
+- L230: `(defcustom projectile-rails-discover-bind "s-r"`
+- L235: `(defcustom projectile-rails-vanilla-command "bundle exec rails"`
+- L240: `(defcustom projectile-rails-spring-command "bundle exec spring"`
+- L245: `(defcustom projectile-rails-zeus-command "zeus"`
+- L250: `(defcustom projectile-rails-root-file "Gemfile"`
+- L257: `(defcustom projectile-rails-verify-root-files '("config/routes.rb" "config/environment.rb")`
+- L263: `(defcustom projectile-rails-custom-console-command nil`
+- L269: `(defcustom projectile-rails-custom-dbconsole-command nil`
+- L275: `(defcustom projectile-rails-custom-server-command nil`
+- L281: `(defcustom projectile-rails-custom-generate-command nil`
+- L287: `(defcustom projectile-rails-custom-destroy-command nil`
+- L293: `(defcustom projectile-rails-expand-snippet-with-magic-comment nil`
+- L300: `(defcustom projectile-rails-compilation-buffer-maximum-size 500`
+- L337: `(defun projectile-rails--command (&rest cases)`
+- L356: `(defmacro projectile-rails-with-root (body-form)`
+- L361: `(defmacro projectile-rails-find-current-resource (dir re fallback)`
+- L382: `(defun projectile-rails--choose-file-or-new (choices files)`
+- L390: `(defun projectile-rails-spring-p ()`
+- L407: `(defun projectile-rails-zeus-p ()`
+- L415: `(defun projectile-rails-highlight-keywords (keywords)`
+- L425: `(defun projectile-rails-add-keywords-for-file-type ()`
+- L434: `(defun projectile-rails-dir-files (directory)`
+- L445: `(defun projectile-rails-choices (dirs)`
+- L464: `(defun projectile-rails-hash-keys (hash)`
+- L472: `(defmacro projectile-rails-find-resource (prompt dirs &optional newfile-template)`
+- L492: `(defun projectile-rails-find-model ()`
+- L500: `(defun projectile-rails-find-controller ()`
+- L508: `(defun projectile-rails-find-serializer ()`
+- L516: `(defun projectile-rails-find-view ()`
+- L524: `(defun projectile-rails-find-layout ()`
+- L532: `(defun projectile-rails-find-rake-task (arg)`
+- L538: `(defun projectile-rails-find-helper ()`
+- L546: `(defun projectile-rails-find-lib ()`
+- L554: `(defun projectile-rails-find-spec ()`
+- L562: `(defun projectile-rails-find-test ()`
+- L570: `(defun projectile-rails-find-fixture ()`
+- L578: `(defun projectile-rails-find-feature ()`
+- L586: `(defun projectile-rails-find-migration ()`
+- L591: `(defun projectile-rails-find-javascript ()`
+- L598: `(defun projectile-rails-find-component ()`
+- L605: `(defun projectile-rails-find-stylesheet ()`
+- L612: `(defun projectile-rails-find-initializer ()`
+- L620: `(defun projectile-rails-find-environment ()`
+- L628: `(defun projectile-rails-find-webpack ()`
+- L635: `(defun projectile-rails-find-locale ()`
+- L644: `(defun projectile-rails-find-mailer ()`
+- L652: `(defun projectile-rails-find-validator ()`
+- L660: `(defun projectile-rails-find-job ()`
+- L668: `(defun projectile-rails-find-current-model ()`
+- L675: `(defun projectile-rails-find-current-controller ()`
+- L682: `(defun projectile-rails-find-current-serializer ()`
+- L689: `(defun projectile-rails-find-current-view ()`
+- L696: `(defun projectile-rails-find-current-helper ()`
+- L703: `(defun projectile-rails-find-current-javascript ()`
+- L710: `(defun projectile-rails-find-current-stylesheet ()`
+- L717: `(defun projectile-rails-find-current-spec ()`
+- L724: `(defun projectile-rails-find-current-test ()`
+- L729: `(defun projectile-rails-find-current-fixture ()`
+- L737: `(defun projectile-rails-find-current-migration ()`
+- L744: `(defcustom projectile-rails-resource-name-re-list`
+- L759: `(defun projectile-rails-current-resource-name ()`
+- L769: `(defun projectile-rails-list-entries (fun dir)`
+- L778: `(defun projectile-rails-find-log ()`
+- L802: `(defun projectile-rails-rake (arg)`
+- L814: `(defun projectile-rails-cache-key (key)`
+- L818: `(defun projectile-rails--rails-app-p (root)`
+- L827: `(defun projectile-rails-root ()`
+- L840: `(defun projectile-rails-root-relative-to-project-root ()`
+- L848: `(defun projectile-rails-expand-root (dir)`
+- L853: `(defun projectile-rails--file-exists-p (filepath)`
+- L857: `(defun projectile-rails-console (arg)`
+- L879: `(defun projectile-rails--db-config ()`
+- L911: `(defun projectile-rails--determine-sql-product (env)`
+- L921: `(defun projectile-rails--choose-env ()`
+- L930: `(defun projectile-rails-dbconsole ()`
+- L963: `(defun projectile-rails--auto-insert-setup-p (current-project-cond)`
+- L972: `(defun projectile-rails--setup-auto-insert ()`
+- L994: `(defun projectile-rails-setup-auto-insert-maybe ()`
+- L1003: `(defun projectile-rails-expand-yas-buffer ()`
+- L1007: `(defun projectile-rails--snippet-for-module (main-definition name)`
+- L1033: `(defun projectile-rails--snippet-for-model (name)`
+- L1041: `(defun projectile-rails-corresponding-snippet ()`
+- L1077: `(defun projectile-rails--goto-file-at-point (f)`
+- L1084: `(defun projectile-rails--views-goto-file-at-point (name line)`
+- L1096: `(defun projectile-rails--stylesheet-goto-file-at-point (name line)`
+- L1105: `(defun projectile-rails--javascript-goto-file-at-point (name line)`
+- L1114: `(defun projectile-rails--ruby-goto-file-at-point (name line)`
+- L1133: `(defun projectile-rails-views-goto-file-at-point ()`
+- L1141: `(defun projectile-rails-stylesheet-goto-file-at-point ()`
+- L1148: `(defun projectile-rails-javascript-goto-file-at-point ()`
+- L1155: `(defun projectile-rails-ruby-goto-file-at-point ()`
+- L1162: `(defun projectile-rails-goto-file-at-point ()`
+- L1173: `(defun projectile-rails-classify (name)`
+- L1177: `(defun projectile-rails-declassify (name)`
+- L1188: `(defun projectile-rails-server ()`
+- L1202: `(defun projectile-rails--completion-in-region ()`
+- L1210: `(defun projectile-rails--generate-with-completion (command)`
+- L1213: `(define-key keymap (kbd "<tab>") 'projectile-rails--completion-in-region)`
+- L1216: `(defun projectile-rails-generate ()`
+- L1229: `(defun projectile-rails--destroy-read (command)`
+- L1232: `(define-key keymap (kbd "<tab>") 'exit-minibuffer)`
+- L1235: `(defun projectile-rails--destroy-with-completion (command)`
+- L1250: `(defun projectile-rails-destroy ()`
+- L1263: `(defun projectile-rails-sanitize-and-goto-file (dir name &optional ext)`
+- L1269: `(defun projectile-rails-goto-file (filepath &optional ask)`
+- L1275: `(defun projectile-rails-goto-gem (gem)`
+- L1282: `(defun projectile-rails-goto-asset-at-point (dirs)`
+- L1296: `(defun projectile-rails-goto-constant-at-point ()`
+- L1302: `(defun projectile-rails--complete-bounds ()`
+- L1313: `(defun projectile-rails-find-constant (name)`
+- L1353: `(defun projectile-rails--code-directories ()`
+- L1360: `(defun projectile-rails--view-p (path)`
+- L1363: `(defun projectile-rails--ignore-buffer-p ()`
+- L1367: `(defun projectile-rails-extract-region (partial-name)`
+- L1388: `(defun projectile-rails-template-name (template)`
+- L1391: `(defun projectile-rails-template-format (template)`
+- L1402: `(defun projectile-rails-template-dir (template)`
+- L1413: `(defun projectile-rails--goto-template-at-point (dir name format)`
+- L1421: `(defun projectile-rails-goto-template-at-point ()`
+- L1436: `(defun projectile-rails-goto-gemfile ()`
+- L1441: `(defun projectile-rails-goto-package ()`
+- L1446: `(defun projectile-rails-goto-schema ()`
+- L1451: `(defun projectile-rails-goto-seeds ()`
+- L1456: `(defun projectile-rails-goto-routes ()`
+- L1461: `(defun projectile-rails-goto-spec-helper ()`
+- L1466: `(defun projectile-rails-ff (path &optional ask)`
+- L1474: `(defun projectile-rails-name-at-point ()`
+- L1477: `(defun projectile-rails-filename-at-point ()`
+- L1480: `(defun projectile-rails-apply-ansi-color ()`
+- L1483: `(defun projectile-rails-find-file-line (button)`
+- L1493: `(defun projectile-rails--log-buffer-find-template (button)`
+- L1496: `(defun projectile-rails--log-buffer-find-controller (button)`
+- L1499: `(defun projectile-rails--generate-buffer-make-buttons (buffer exit-code)`
+- L1511: `(defun projectile-rails-server-make-buttons ()`
+- L1514: `(defun projectile-rails--log-buffer-make-buttons (start end)`
+- L1529: `(defun projectile-rails-server-terminate ()`
+- L1533: `(defun projectile-rails-generate-ff (button)`
+- L1536: `(defun projectile-rails-sanitize-name (name)`
+- L1549: `(defun projectile-rails-sanitize-dir-name (name)`
+- L1552: `(defun projectile-rails--ensure-suffix (name suffix)`
+- L1555: `(defun projectile-rails-current-line ()`
+- L1563: `(defun projectile-rails-set-assets-dirs ()`
+- L1572: `(defun projectile-rails-set-fixture-dirs ()`
+- L1577: `(defvar projectile-rails-mode-goto-map`
+- L1579: `(define-key map (kbd "f") 'projectile-rails-goto-file-at-point)`
+- L1580: `(define-key map (kbd "g") 'projectile-rails-goto-gemfile)`
+- L1581: `(define-key map (kbd "r") 'projectile-rails-goto-routes)`
+- L1582: `(define-key map (kbd "d") 'projectile-rails-goto-schema)`
+- L1583: `(define-key map (kbd "s") 'projectile-rails-goto-seeds)`
+- L1584: `(define-key map (kbd "h") 'projectile-rails-goto-spec-helper)`
+- L1585: `(define-key map (kbd "p") 'projectile-rails-goto-package)`
+- L1590: `(defvar projectile-rails-mode-run-map`
+- L1592: `(define-key map (kbd "c") 'projectile-rails-console)`
+- L1593: `(define-key map (kbd "s") 'projectile-rails-server)`
+- L1594: `(define-key map (kbd "r") 'projectile-rails-rake)`
+- L1595: `(define-key map (kbd "g") 'projectile-rails-generate)`
+- L1596: `(define-key map (kbd "d") 'projectile-rails-destroy)`
+- L1597: `(define-key map (kbd "b") 'projectile-rails-dbconsole)`
+- L1602: `(defvar projectile-rails-command-map`
+- L1604: `(define-key map (kbd "m") 'projectile-rails-find-model)`
+- L1605: `(define-key map (kbd "M") 'projectile-rails-find-current-model)`
+- L1607: `(define-key map (kbd "c") 'projectile-rails-find-controller)`
+- L1608: `(define-key map (kbd "C") 'projectile-rails-find-current-controller)`
+- L1610: `(define-key map (kbd "v") 'projectile-rails-find-view)`
+- L1611: `(define-key map (kbd "V") 'projectile-rails-find-current-view)`
+- L1613: `(define-key map (kbd "j") 'projectile-rails-find-javascript)`
+- L1614: `(define-key map (kbd "J") 'projectile-rails-find-current-javascript)`
+- L1616: `(define-key map (kbd "s") 'projectile-rails-find-stylesheet)`
+- L1617: `(define-key map (kbd "S") 'projectile-rails-find-current-stylesheet)`
+- L1619: `(define-key map (kbd "h") 'projectile-rails-find-helper)`
+- L1620: `(define-key map (kbd "H") 'projectile-rails-find-current-helper)`
+- L1622: `(define-key map (kbd "p") 'projectile-rails-find-spec)`
+- L1623: `(define-key map (kbd "P") 'projectile-rails-find-current-spec)`
+- L1625: `(define-key map (kbd "t") 'projectile-rails-find-test)`
+- L1626: `(define-key map (kbd "T") 'projectile-rails-find-current-test)`
+- L1628: `(define-key map (kbd "n") 'projectile-rails-find-migration)`
+- L1629: `(define-key map (kbd "N") 'projectile-rails-find-current-migration)`
+- L1631: `(define-key map (kbd "r") 'projectile-rails-console)`
+- L1632: `(define-key map (kbd "R") 'projectile-rails-server)`
+- L1634: `(define-key map (kbd "u") 'projectile-rails-find-fixture)`
+- L1635: `(define-key map (kbd "U") 'projectile-rails-find-current-fixture)`
+- L1637: `(define-key map (kbd "w") 'projectile-rails-find-component)`
+- L1639: `(define-key map (kbd "l") 'projectile-rails-find-lib)`
+- L1640: `(define-key map (kbd "f") 'projectile-rails-find-feature)`
+- L1641: `(define-key map (kbd "i") 'projectile-rails-find-initializer)`
+- L1642: `(define-key map (kbd "o") 'projectile-rails-find-log)`
+- L1643: `(define-key map (kbd "e") 'projectile-rails-find-environment)`
+- L1644: `(define-key map (kbd "W") 'projectile-rails-find-webpack)`
+- L1645: `(define-key map (kbd "a") 'projectile-rails-find-locale)`
+- L1646: `(define-key map (kbd "@") 'projectile-rails-find-mailer)`
+- L1647: `(define-key map (kbd "!") 'projectile-rails-find-validator)`
+- L1648: `(define-key map (kbd "y") 'projectile-rails-find-layout)`
+- L1649: `(define-key map (kbd "k") 'projectile-rails-find-rake-task)`
+- L1650: `(define-key map (kbd "b") 'projectile-rails-find-job)`
+- L1652: `(define-key map (kbd "z") 'projectile-rails-find-serializer)`
+- L1653: `(define-key map (kbd "Z") 'projectile-rails-find-current-serializer)`
+- L1654: `;; (define-key map (kbd "?") 'projectile-rails-find-validator)`
+- L1656: `(define-key map (kbd "x") 'projectile-rails-extract-region)`
+- L1657: `(define-key map (kbd "RET") 'projectile-rails-goto-file-at-point)`
+- L1659: `(define-key map (kbd "g") 'projectile-rails-mode-goto-map)`
+- L1660: `(define-key map (kbd "!") 'projectile-rails-mode-run-map)`
+- L1665: `(defvar projectile-rails-mode-map`
+- L1668: `(define-key map projectile-rails-keymap-prefix 'projectile-rails-command-map))`
+- L1730: `(define-minor-mode projectile-rails-mode`
+- L1742: `(defun projectile-rails-on ()`
+- L1757: `(defun projectile-rails-off ()`
+- L1761: `(defun projectile-rails-server-compilation-filter ()`
+- L1766: `(define-derived-mode projectile-rails-server-mode compilation-mode "Projectile Rails Server"`
+- L1783: `(define-derived-mode projectile-rails-compilation-mode compilation-mode "Projectile Rails Compilation"`
+- L1788: `(define-derived-mode projectile-rails-generate-mode projectile-rails-compilation-mode "Projectile Rails Generate"`
+- L1959: `(provide 'projectile-rails)`

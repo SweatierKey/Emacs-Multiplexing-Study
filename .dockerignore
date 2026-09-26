@@ -1,0 +1,8 @@
+.git
+.runtime
+sources/**/.git
+sources/**/.zig-cache
+sources/**/zig-out
+*.tar.gz
+!vendor/lab-debs.tar.gz
+!native/*.tar.gz

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "myterminal-controls",
+    "url": "https://github.com/myTerminal/myterminal-controls.git",
+    "status": "fetched",
+    "commit": "c635868e13ee898ec77925d98b36421640e22aa4"
+  },
+  {
+    "id": "choice-program",
+    "url": "https://github.com/plandes/choice-program.git",
+    "status": "fetched",
+    "commit": "9c027a54a97390ee4863d663be19b1a2aaa70c7b"
+  },
+  {
+    "id": "ssh",
+    "url": "https://github.com/emacsmirror/ssh.git",
+    "status": "fetched",
+    "commit": "812e27409d01c38d74906a1816640506d6e7e3ef"
+  }
+]
