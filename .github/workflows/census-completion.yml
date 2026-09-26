@@ -1,0 +1,85 @@
+name: Remaining engines and small managers
+on:
+  push:
+    paths: ['.github/workflows/census-completion.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Fetch explicit census additions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out/src out/research out/native
+          python3 - <<'PY'
+          import pathlib,subprocess,json,concurrent.futures,urllib.request,os
+          out=pathlib.Path('out')
+          specs='''alacritty ArthurHeymans/emacs-alacritty
+          eat-serial ArthurHeymans/eat-serial
+          project-terminal cowboyd/project-terminal.el
+          terminology timjstewart/terminology
+          winterm Borwe/emacs-winterm
+          ghostherd ionrock/ghostherd
+          ghostel-switch JulHee/ghostel-switch
+          term-control Pablololo12/term-control.el
+          eaf-pyqterminal mumu-lhl/eaf-pyqterminal
+          abysl-term abysl/abysl-term
+          dropdown-remote SleepyBag/dropdown-remote
+          emacs-tabbar sundarvenkata-personal/emacs-tabbar
+          multi-term-roman roman/multi-term
+          eat-lucasec lucasec/emacs-eat
+          lazy-emacs-terminal lizqwerscott/lazy-emacs-terminal
+          yantra alix559/yantra
+          emux-rock rockneurotiko/emux
+          term-plus-fork ZpullZ/term-plus-el
+          vterm-anti-flicker-filter martinbaillie/vterm-anti-flicker-filter
+          evil-tmux-navigator keith/evil-tmux-navigator
+          edger suderman/edger
+          zmx neomataru/zmx
+          herdr-runtime SuddenDevelopment/herdr'''
+          candidates={line.split()[0]:'https://github.com/'+line.split()[1]+'.git' for line in specs.splitlines() if line.strip()}
+          def clone(item):
+            name,url=item;dest=out/'src'/name
+            try:
+              p=subprocess.run(['git','clone','--depth','1',url,str(dest)],capture_output=True,text=True,timeout=120)
+              if p.returncode:return {'id':name,'url':url,'status':'fetch-failed','error':p.stderr[-1600:]}
+              return {'id':name,'url':url,'status':'fetched','commit':subprocess.check_output(['git','-C',str(dest),'rev-parse','HEAD'],text=True).strip(),'commit_date':subprocess.check_output(['git','-C',str(dest),'show','-s','--format=%cI'],text=True).strip()}
+            except Exception as e:return {'id':name,'url':url,'status':'fetch-failed','error':str(e)}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:rows=list(pool.map(clone,sorted(candidates.items())))
+          (out/'research'/'acquisition-completion.json').write_text(json.dumps(rows,indent=2))
+          for r in rows:print(r['id'],r['status'])
+          for repo in ['neomataru/zmx','neovim/ptyprocess','SuddenDevelopment/herdr','ArthurHeymans/emacs-alacritty']:
+            try:
+              req=urllib.request.Request('https://api.github.com/repos/'+repo+'/releases/latest',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})
+              rel=json.load(urllib.request.urlopen(req,timeout=30));(out/'research'/('release-'+repo.split('/')[1]+'.json')).write_text(json.dumps(rel,indent=2))
+              for a in rel.get('assets',[]):
+                n=a['name'].lower()
+                if 'linux' in n and any(v in n for v in ['x86_64','amd64']):
+                  (out/'native'/a['name']).write_bytes(urllib.request.urlopen(a['browser_download_url'],timeout=60).read())
+            except Exception as e:(out/'research'/('release-'+repo.split('/')[1]+'.error.txt')).write_text(str(e))
+          PY
+      - name: Build the actual Rust terminal module
+        continue-on-error: true
+        run: |
+          rustc --version | tee out/research/rust-version.txt
+          cd out/src/alacritty
+          cargo build --locked --release 2>&1 | tee ../../research/build-alacritty.log
+          cp target/release/*.so ../../native/
+      - name: Record container base digest and archive
+        if: always()
+        run: |
+          docker pull debian:trixie
+          docker image inspect debian:trixie --format '{{json .RepoDigests}}' > out/research/debian-image-digest.json
+          find out/src -type d -name .git -prune -exec rm -rf {} +
+          rm -rf out/src/alacritty/target
+          tar -C out -czf census-completion.tar.gz .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: study-census-completion
+          path: census-completion.tar.gz
+          retention-days: 14
