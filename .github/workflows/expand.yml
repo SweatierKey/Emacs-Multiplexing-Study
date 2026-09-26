@@ -1,0 +1,128 @@
+name: Expand census and native dependencies
+on:
+  push:
+    paths: ['.github/workflows/expand.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Source acquisition with explicit provenance
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out/src out/research out/native out/wheels out/player
+          cat > out/research/acquire-expanded.py <<'PY'
+          import pathlib,subprocess,json,concurrent.futures,urllib.request,urllib.parse,os,hashlib,time
+          out=pathlib.Path('out')
+          specs='''libgterm rwc9u/emacs-libgterm
+          kuro takeokunn/kuro
+          cooked vodik/cooked
+          el-be-back ArthurHeymans/el-be-back
+          lterm TaylanUB/lterm
+          wterm admmq/wterm.el
+          emux-el luozengbin/emux-el
+          vtplex mitch-kyle/vtplex
+          term-plus-mux tarao/term-plus-mux-el
+          bshell plandes/bshell
+          emux-shcv shcv/emux
+          vterm-manager laishulu/emacs-vterm-manager
+          vtermux pcmantz/vtermux
+          popterm ChetanKoneru/popterm.el
+          vterms t0yv0/vterms.el
+          vterm-ring daniel-ts/vterm-ring
+          multi-run sagarjha/multi-run
+          multi-eshell emacsattic/multi-eshell
+          multi-buf djr7C4/multi-buf
+          tmux-control csheaff/tmux-control
+          tmux-cc wcy123/tmux-cc
+          multi-term-tmux beyondmetis/multi-term-tmux
+          tmux-el abougouffa/tmux.el
+          tmuxmacs andrewppar/tmuxmacs
+          turnip kljohann/turnip.el
+          tmux-pane laishulu/emacs-tmux-pane
+          screensend benwbooth/screensend.el
+          tmux-view mgalgs/tmux-view.el
+          tmuxbuf tmshort/tmuxbuf
+          tmux-tandem alberti42/emacs-tmux-tandem
+          tmux-head jeffyql/tmux-head
+          tiling lgfang/tiling
+          zellij mandoo180/zellij.el
+          herdr eddof13/herdr.el
+          emacs-herdr baongoc124/emacs-herdr
+          herdr-emacs valdezm/herdr-emacs
+          deskel andrejlamov/deskel
+          coterm emacsmirror/coterm
+          compat emacs-compat/compat
+          shackle wasamasa/shackle
+          projectile bbatsov/projectile
+          popup auto-complete/popup-el
+          multi-shell emacsmirror/multi-shell
+          eshell-z xuchunyang/eshell-z
+          eshell-up pkulev/eshell-up
+          esh-autosuggest dieggsy/esh-autosuggest
+          exec-path-from-shell purcell/exec-path-from-shell
+          xterm-256color tarao/xterm-256color-el
+          frame-local tarao/frame-local-el
+          eee emacs-eaf/eee'''
+          candidates={line.split()[0]:'https://github.com/'+line.split()[1]+'.git' for line in specs.splitlines() if line.strip()}
+          candidates.update({'detached':'https://git.sr.ht/~niklaseklund/detached.el','eterm-256color':'https://git.sr.ht/~dieggsy/eterm-256color','dtache':'https://codeberg.org/akib/emacs-dtache.git'})
+          def clone(item):
+            name,url=item; dest=out/'src'/name
+            try:
+              p=subprocess.run(['git','clone','--depth','1',url,str(dest)],capture_output=True,text=True,timeout=150)
+              if p.returncode:return {'id':name,'url':url,'status':'fetch-failed','error':p.stderr[-2000:]}
+              sha=subprocess.check_output(['git','-C',str(dest),'rev-parse','HEAD'],text=True).strip()
+              date=subprocess.check_output(['git','-C',str(dest),'show','-s','--format=%cI'],text=True).strip()
+              return {'id':name,'url':url,'commit':sha,'commit_date':date,'status':'fetched'}
+            except Exception as e:return {'id':name,'url':url,'status':'fetch-failed','error':str(e)}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:rows=list(pool.map(clone,sorted(candidates.items())))
+          (out/'research'/'acquisition-expanded.json').write_text(json.dumps(rows,indent=2))
+          for r in rows:print(r['id'],r['status'])
+          def fetch(url,name,auth=False):
+            try:
+              h={'User-Agent':'Emacs-Multiplexing-Study/1.0'}
+              if auth:h['Authorization']='Bearer '+os.environ['GH_TOKEN']
+              r=urllib.request.urlopen(urllib.request.Request(url,headers=h),timeout=40);data=r.read()
+              (out/'research'/name).write_bytes(data)
+              return json.loads(data)
+            except Exception as e:(out/'research'/(name+'.error.txt')).write_text(url+'\n'+str(e));return {}
+          queries=['emacs tmux in:name,description','emacs shell manager in:name,description','emacs terminal in:name,description -topic:dotfiles -topic:terminal-theme','emacs eshell toggle in:name,description','emacs terminal session in:name,description','emacs term multiplexer in:readme size:<200','emacs screen terminal in:name,description']
+          for i,q in enumerate(queries):
+            for page in range(1,4):
+              d=fetch('https://api.github.com/search/repositories?'+urllib.parse.urlencode({'q':q,'per_page':100,'page':page}),f'expanded-github-{i}-{page}.json',True)
+              if not d or len(d.get('items',[]))<100:break
+              time.sleep(2)
+          (out/'research'/'expanded-queries.json').write_text(json.dumps(queries,indent=2))
+          for platform in ['codeberg','gitlab']:
+            for q in ['emacs terminal','emacs tmux','emacs shell','emacs multiplexer']:
+              url=('https://codeberg.org/api/v1/repos/search?'+urllib.parse.urlencode({'q':q,'limit':50}) if platform=='codeberg' else 'https://gitlab.com/api/v4/projects?'+urllib.parse.urlencode({'search':q,'per_page':100,'simple':'true'}))
+              fetch(url,platform+'-'+q.replace(' ','-')+'.json')
+          for repo,tag in [('dakra/ghostel','v0.56.0'),('rwc9u/emacs-libgterm','latest'),('takeokunn/kuro','latest')]:
+            url='https://api.github.com/repos/'+repo+'/releases/'+('latest' if tag=='latest' else 'tags/'+tag)
+            rel=fetch(url,'release-'+repo.split('/')[1]+'.json',True)
+            for asset in rel.get('assets',[]):
+              name=asset['name']
+              if (any(x in name.lower() for x in ['linux','unknown-linux']) and any(x in name for x in ['x86_64','amd64'])) or name.endswith('.el'):
+                try:
+                  data=urllib.request.urlopen(asset['browser_download_url'],timeout=60).read();(out/'native'/name).write_bytes(data)
+                except Exception as e:print(name,str(e))
+          for name,url in [('asciinema-player.js','https://cdn.jsdelivr.net/npm/asciinema-player@3.11.0/dist/bundle/asciinema-player.min.js'),('asciinema-player.css','https://cdn.jsdelivr.net/npm/asciinema-player@3.11.0/dist/bundle/asciinema-player.css')]:
+            try:(out/'player'/name).write_bytes(urllib.request.urlopen(url,timeout=30).read())
+            except Exception as e: print(e)
+          PY
+          python3 out/research/acquire-expanded.py
+          pip download --no-deps -d out/wheels pyte==0.8.2 wcwidth==0.2.13 Markdown==3.8.2
+          find out/src -type d -name .git -prune -exec rm -rf {} +
+          find out -type f -print0 | sort -z | xargs -0 sha256sum > expanded-sha256.txt
+          tar -C out -czf expanded.tar.gz .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: study-expanded
+          path: |
+            expanded.tar.gz
+            expanded-sha256.txt
+          retention-days: 14
