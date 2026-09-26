@@ -1,0 +1,112 @@
+[
+  {
+    "at": 2.306,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.606,
+    "keys": "shell",
+    "input_hex": "7368656c6c"
+  },
+  {
+    "at": 3.107,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 3.907,
+    "keys": "clush -n -w lab-web cat status.txt",
+    "input_hex": "636c757368202d6e202d77206c61622d77656220636174207374617475732e747874"
+  },
+  {
+    "at": 4.107,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.607,
+    "keys": "clush -n --hostfile lab/multiserver/hosts.txt -f 2 'printf \"START %s\\n\" \"$(date +%s%N)\"; sleep 2; printf \"END %s\\n\" \"$(date +%s%N)\"'",
+    "input_hex": "636c757368202d6e202d2d686f737466696c65206c61622f6d756c74697365727665722f686f7374732e747874202d66203220277072696e7466202253544152542025735c6e222022242864617465202b2573254e29223b20736c65657020323b207072696e74662022454e442025735c6e222022242864617465202b2573254e292227"
+  },
+  {
+    "at": 5.807,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.307,
+    "keys": "clush -n --hostfile lab/multiserver/hosts.txt -f 1 'printf \"START %s\\n\" \"$(date +%s%N)\"; sleep 2; printf \"END %s\\n\" \"$(date +%s%N)\"'",
+    "input_hex": "636c757368202d6e202d2d686f737466696c65206c61622f6d756c74697365727665722f686f7374732e747874202d66203120277072696e7466202253544152542025735c6e222022242864617465202b2573254e29223b20736c65657020323b207072696e74662022454e442025735c6e222022242864617465202b2573254e292227"
+  },
+  {
+    "at": 9.508,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.008,
+    "keys": "clush --hostfile lab/multiserver/hosts.txt -b sh -s < lab/multiserver/check.sh",
+    "input_hex": "636c757368202d2d686f737466696c65206c61622f6d756c74697365727665722f686f7374732e747874202d62207368202d73203c206c61622f6d756c74697365727665722f636865636b2e7368"
+  },
+  {
+    "at": 15.208,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 16.71,
+    "keys": "clush -n --hostfile lab/multiserver/hosts.txt --outdir .runtime/multiserver-clush/ui-output cat status.txt",
+    "input_hex": "636c757368202d6e202d2d686f737466696c65206c61622f6d756c74697365727665722f686f7374732e747874202d2d6f7574646972202e72756e74696d652f6d756c74697365727665722d636c7573682f75692d6f757470757420636174207374617475732e747874"
+  },
+  {
+    "at": 16.91,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 18.411,
+    "keys": "C-x C-f",
+    "input_hex": "1806"
+  },
+  {
+    "at": 18.811,
+    "keys": "open clush output file: web",
+    "input_hex": "2f686f6d652f61646d696e2f456d6163732d4d756c7469706c6578696e672d53747564792f2e72756e74696d652f6d756c74697365727665722d636c7573682f75692d6f75747075742f6c61622d776562"
+  },
+  {
+    "at": 19.211,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 20.213,
+    "keys": "C-x C-f",
+    "input_hex": "1806"
+  },
+  {
+    "at": 20.613,
+    "keys": "open clush output file: db",
+    "input_hex": "2f686f6d652f61646d696e2f456d6163732d4d756c7469706c6578696e672d53747564792f2e72756e74696d652f6d756c74697365727665722d636c7573682f75692d6f75747075742f6c61622d6462"
+  },
+  {
+    "at": 21.013,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 22.016,
+    "keys": "C-x b",
+    "input_hex": "1862"
+  },
+  {
+    "at": 22.416,
+    "keys": "select aggregate shell",
+    "input_hex": "2a7368656c6c2a"
+  },
+  {
+    "at": 22.816,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

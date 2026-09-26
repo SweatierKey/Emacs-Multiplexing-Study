@@ -1,0 +1,430 @@
+{
+  "verified_date": "2026-09-26",
+  "method": "Primary README and source review. No runtime claim for these new candidates.",
+  "candidates": [
+    {
+      "id": "cssh",
+      "repository": "https://github.com/dimitri/cssh",
+      "sha": "2fe2754235225a59b63f08b130cfd4352e2e1c3f",
+      "commit_date": "2015-08-10T17:09:50Z",
+      "source_path": "sources/cssh",
+      "already_present": false,
+      "classification": "Emacs-native SSH broadcast controller over term buffers",
+      "features_native": [
+        "Single-host connection with TRAMP completion",
+        "Host selection by regular expression",
+        "DSH host files and named @groups, including nested groups",
+        "IBuffer marked term buffers become a broadcast group",
+        "Controller input is sent to all grouped terminals",
+        "Independent Emacs term buffer for each host"
+      ],
+      "limits": [
+        "No aggregate remote-output buffer: controller contains input and its dummy-shell echo",
+        "No per-command completion tracking, exit-status collection, retry policy or finish-based host serialization",
+        "Many hosts are tiled as windows automatically",
+        "Imports obsolete cl compatibility package; current Emacs runtime not verified here"
+      ],
+      "default_workflow": "After M-x cssh-define-global-bindings: C-= selects host or @group; C-M-= chooses host regexp; in IBuffer C-= controls marked term buffers; type line then RET in controller.",
+      "verdict": "Pertinent for interactive parallel input and inventory files; fails aggregate output and true serial jobs.",
+      "evidence_level": "Complete primary Lisp source and README reviewed; no SSH runtime test in this subtask.",
+      "source_references": [
+        {
+          "file": "sources/cssh/cssh.el",
+          "line": 129,
+          "finding": "Optional global bindings installer",
+          "url": "https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el#L129"
+        },
+        {
+          "file": "sources/cssh/cssh.el",
+          "line": 163,
+          "finding": "SSH terminal construction",
+          "url": "https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el#L163"
+        },
+        {
+          "file": "sources/cssh/cssh.el",
+          "line": 221,
+          "finding": "Regexp target selection",
+          "url": "https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el#L221"
+        },
+        {
+          "file": "sources/cssh/cssh.el",
+          "line": 267,
+          "finding": "Marked IBuffer target selection",
+          "url": "https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el#L267"
+        },
+        {
+          "file": "sources/cssh/cssh.el",
+          "line": 289,
+          "finding": "DSH inventory parsing",
+          "url": "https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el#L289"
+        },
+        {
+          "file": "sources/cssh/cssh.el",
+          "line": 344,
+          "finding": "Separate terminal windows and controller",
+          "url": "https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el#L344"
+        },
+        {
+          "file": "sources/cssh/cssh.el",
+          "line": 398,
+          "finding": "Controller comint dummy shell",
+          "url": "https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el#L398"
+        },
+        {
+          "file": "sources/cssh/cssh.el",
+          "line": 429,
+          "finding": "Line broadcast without job lifecycle tracking",
+          "url": "https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el#L429"
+        }
+      ],
+      "source_files_sha256": {
+        "sources/cssh/cssh.el": "2dae4a42cbc1d2b0f11c887958c600e8484ac6fc07bbd317a8f689948e8102f2",
+        "sources/cssh/README.asciidoc": "59ea23a83907b8896dfb8c863934f2a21842e76fa51d22a3cad548bb3b4d7a3e"
+      },
+      "primary_sources": [
+        "https://github.com/dimitri/cssh",
+        "https://github.com/dimitri/cssh/commit/2fe2754235225a59b63f08b130cfd4352e2e1c3f"
+      ]
+    },
+    {
+      "id": "telecommand",
+      "repository": "https://github.com/abrochard/telecommand",
+      "sha": "fe6620e70a7da2a5cc502eabb3eab9ae046a39cc",
+      "commit_date": "2017-11-07T17:07:34Z",
+      "source_path": "sources/telecommand",
+      "already_present": false,
+      "classification": "Emacs-native menu of named commands on individual TRAMP hosts",
+      "features_native": [
+        "Configure named commands per host",
+        "Tabulated command list and RET to run current row",
+        "Two completing-read prompts select a host and named command",
+        "Synchronous or asynchronous shell-command execution"
+      ],
+      "limits": [
+        "The Marked column has no corresponding multi-selection execution implementation",
+        "Each invocation targets exactly one host and one command",
+        "All runs request the same *telecommand-output* buffer; this is reuse, not multi-host aggregation",
+        "No inventory-wide parallel/serial runner",
+        "Command definitions require Lisp configuration; first-draft snapshot"
+      ],
+      "default_workflow": "Register commands with telecommand-add-command, then M-x telecommand and RET on one row, or M-x telecommand-run and select host/command.",
+      "verdict": "Not a multi-server execution solution despite a superficially relevant project description.",
+      "evidence_level": "Complete primary Lisp source and README reviewed; no SSH runtime test in this subtask.",
+      "source_references": [
+        {
+          "file": "sources/telecommand/telecommand.el",
+          "line": 24,
+          "finding": "Command data and async flag",
+          "url": "https://github.com/abrochard/telecommand/blob/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc/telecommand.el#L24"
+        },
+        {
+          "file": "sources/telecommand/telecommand.el",
+          "line": 27,
+          "finding": "Only RET binding",
+          "url": "https://github.com/abrochard/telecommand/blob/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc/telecommand.el#L27"
+        },
+        {
+          "file": "sources/telecommand/telecommand.el",
+          "line": 56,
+          "finding": "Single host command execution, fixed output buffer",
+          "url": "https://github.com/abrochard/telecommand/blob/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc/telecommand.el#L56"
+        },
+        {
+          "file": "sources/telecommand/telecommand.el",
+          "line": 76,
+          "finding": "Run one table row",
+          "url": "https://github.com/abrochard/telecommand/blob/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc/telecommand.el#L76"
+        },
+        {
+          "file": "sources/telecommand/telecommand.el",
+          "line": 107,
+          "finding": "Programmatic command registration",
+          "url": "https://github.com/abrochard/telecommand/blob/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc/telecommand.el#L107"
+        },
+        {
+          "file": "sources/telecommand/telecommand.el",
+          "line": 117,
+          "finding": "Single host and single command selection",
+          "url": "https://github.com/abrochard/telecommand/blob/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc/telecommand.el#L117"
+        },
+        {
+          "file": "sources/telecommand/telecommand.el",
+          "line": 134,
+          "finding": "Table rendering; Marked field remains empty",
+          "url": "https://github.com/abrochard/telecommand/blob/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc/telecommand.el#L134"
+        }
+      ],
+      "source_files_sha256": {
+        "sources/telecommand/telecommand.el": "000eb40a41b10a1c3c3766b8616fafbb1e25ddce4d2d99c65899dc8c4800ccdc",
+        "sources/telecommand/LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+        "sources/telecommand/README.md": "85e86d3009ec4433c452596b00bf3f0344900cd01b503a60c5d5b700681c905e"
+      },
+      "primary_sources": [
+        "https://github.com/abrochard/telecommand",
+        "https://github.com/abrochard/telecommand/commit/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc"
+      ]
+    },
+    {
+      "id": "emacs-ssh-machines",
+      "repository": "https://github.com/charmitro/emacs-ssh-machines",
+      "sha": "39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02",
+      "commit_date": "2026-03-13T14:05:12Z",
+      "source_path": "sources/emacs-ssh-machines",
+      "already_present": false,
+      "classification": "Emacs-native inventory and individual SSH connection manager",
+      "features_native": [
+        "Persistent host inventory through multisession",
+        "Add/edit/delete/select hosts interactively",
+        "Import/export inventory and import SSH config",
+        "One selected host opens ansi-term",
+        "Single-target file copying and SSH key helpers"
+      ],
+      "limits": [
+        "No multi-host command dispatch",
+        "No job concurrency or serial queue",
+        "No unified command output view",
+        "Does not implement native selected-host batch execution"
+      ],
+      "default_workflow": "M-x add-ssh-machine or M-x import-from-ssh-config; M-x list-ssh-machines; RET connects the host at point.",
+      "verdict": "Inventory usability does not satisfy the requested multi-server command execution.",
+      "evidence_level": "Complete primary Lisp source and README reviewed; no SSH runtime test in this subtask.",
+      "source_references": [
+        {
+          "file": "sources/emacs-ssh-machines/init-ssh.el",
+          "line": 13,
+          "finding": "Persistent inventory",
+          "url": "https://github.com/charmitro/emacs-ssh-machines/blob/39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02/init-ssh.el#L13"
+        },
+        {
+          "file": "sources/emacs-ssh-machines/init-ssh.el",
+          "line": 54,
+          "finding": "Connect one selected machine",
+          "url": "https://github.com/charmitro/emacs-ssh-machines/blob/39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02/init-ssh.el#L54"
+        },
+        {
+          "file": "sources/emacs-ssh-machines/init-ssh.el",
+          "line": 70,
+          "finding": "Host-list keys",
+          "url": "https://github.com/charmitro/emacs-ssh-machines/blob/39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02/init-ssh.el#L70"
+        },
+        {
+          "file": "sources/emacs-ssh-machines/init-ssh.el",
+          "line": 104,
+          "finding": "Connect host at point",
+          "url": "https://github.com/charmitro/emacs-ssh-machines/blob/39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02/init-ssh.el#L104"
+        },
+        {
+          "file": "sources/emacs-ssh-machines/init-ssh.el",
+          "line": 189,
+          "finding": "Inventory export/import",
+          "url": "https://github.com/charmitro/emacs-ssh-machines/blob/39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02/init-ssh.el#L189"
+        },
+        {
+          "file": "sources/emacs-ssh-machines/init-ssh.el",
+          "line": 251,
+          "finding": "Import SSH config",
+          "url": "https://github.com/charmitro/emacs-ssh-machines/blob/39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02/init-ssh.el#L251"
+        },
+        {
+          "file": "sources/emacs-ssh-machines/init-ssh.el",
+          "line": 276,
+          "finding": "Single-host file copy",
+          "url": "https://github.com/charmitro/emacs-ssh-machines/blob/39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02/init-ssh.el#L276"
+        }
+      ],
+      "source_files_sha256": {
+        "sources/emacs-ssh-machines/LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "sources/emacs-ssh-machines/init-ssh.el": "f89b3678692ff8d00724ae91cf1b83a5878bc0075fcb6ecaff416333f32eafea",
+        "sources/emacs-ssh-machines/README.md": "d1f22dd023c1d69be540cb5174b973dc82b5722170ff7fcc7051fa0dfba084eb"
+      },
+      "primary_sources": [
+        "https://github.com/charmitro/emacs-ssh-machines",
+        "https://github.com/charmitro/emacs-ssh-machines/commit/39fcab411fb5f32d60ef3edc98dd7aa7fc17cb02"
+      ]
+    },
+    {
+      "id": "dotfairy-ssh-manager",
+      "repository": "https://github.com/b40yd/dotfairy-ssh-manager",
+      "sha": "9e8613f91923a9b48276a65f12028df0eecbac66",
+      "commit_date": "2024-08-20T03:50:54Z",
+      "source_path": "sources/dotfairy-ssh-manager",
+      "already_present": false,
+      "classification": "Emacs-native SSH connection manager and group input sender",
+      "features_native": [
+        "Host discovery from SSH config, known_hosts, encrypted auth-source entries and Docker",
+        "Persistent connection history",
+        "Live terminal group membership",
+        "Send current line, selected region or whole script buffer to every grouped terminal",
+        "Separate native Emacs terminal buffers",
+        "File upload/download helpers, optional proxy and TOTP paths"
+      ],
+      "limits": [
+        "Group must be assembled by adding opened terminals; no batch connection of a whole inventory exposed in reviewed source",
+        "No unified output buffer",
+        "Input broadcast does not await remote command completion or collect command status",
+        "No finish-based serialization between hosts",
+        "Needs dash/f; advanced authentication paths add sshpass/oathtool setup"
+      ],
+      "default_workflow": "M-x ssh-manager-switch-to-server; C-c C-a in each wanted terminal; M-x ssh-manager for editable command buffer; C-c C-. sends line, C-c C-e sends region, C-c C-c sends buffer. C-c C-r removes current terminal from group.",
+      "verdict": "Useful native script-to-group workflow; no scheduler or aggregate result view. No superiority over the shortlisted tools for complete requirements.",
+      "evidence_level": "Complete primary Lisp source and README reviewed; no SSH runtime test in this subtask.",
+      "source_references": [
+        {
+          "file": "sources/dotfairy-ssh-manager/ssh-manager.el",
+          "line": 109,
+          "finding": "Host inventory discovery",
+          "url": "https://github.com/b40yd/dotfairy-ssh-manager/blob/9e8613f91923a9b48276a65f12028df0eecbac66/ssh-manager.el#L109"
+        },
+        {
+          "file": "sources/dotfairy-ssh-manager/ssh-manager.el",
+          "line": 218,
+          "finding": "Add current terminal to group",
+          "url": "https://github.com/b40yd/dotfairy-ssh-manager/blob/9e8613f91923a9b48276a65f12028df0eecbac66/ssh-manager.el#L218"
+        },
+        {
+          "file": "sources/dotfairy-ssh-manager/ssh-manager.el",
+          "line": 243,
+          "finding": "Broadcast loops across group",
+          "url": "https://github.com/b40yd/dotfairy-ssh-manager/blob/9e8613f91923a9b48276a65f12028df0eecbac66/ssh-manager.el#L243"
+        },
+        {
+          "file": "sources/dotfairy-ssh-manager/ssh-manager.el",
+          "line": 251,
+          "finding": "Default script-buffer keys",
+          "url": "https://github.com/b40yd/dotfairy-ssh-manager/blob/9e8613f91923a9b48276a65f12028df0eecbac66/ssh-manager.el#L251"
+        },
+        {
+          "file": "sources/dotfairy-ssh-manager/ssh-manager.el",
+          "line": 388,
+          "finding": "Default terminal keys",
+          "url": "https://github.com/b40yd/dotfairy-ssh-manager/blob/9e8613f91923a9b48276a65f12028df0eecbac66/ssh-manager.el#L388"
+        },
+        {
+          "file": "sources/dotfairy-ssh-manager/ssh-manager.el",
+          "line": 557,
+          "finding": "Process input sending; no output merger or job queue",
+          "url": "https://github.com/b40yd/dotfairy-ssh-manager/blob/9e8613f91923a9b48276a65f12028df0eecbac66/ssh-manager.el#L557"
+        },
+        {
+          "file": "sources/dotfairy-ssh-manager/ssh-manager.el",
+          "line": 585,
+          "finding": "Connect one selected target",
+          "url": "https://github.com/b40yd/dotfairy-ssh-manager/blob/9e8613f91923a9b48276a65f12028df0eecbac66/ssh-manager.el#L585"
+        }
+      ],
+      "source_files_sha256": {
+        "sources/dotfairy-ssh-manager/.gitignore": "1290636c885835e80ae2bab07c35694be8a4cd9aa9345054f924676833036a92",
+        "sources/dotfairy-ssh-manager/ssh-manager.el": "3402b3d4c3fe9ef8f6dbb106bf8b9cc7fabb9292c750258fb24947377faa45be",
+        "sources/dotfairy-ssh-manager/Makefile": "b020bbe7fe81fdb7b41a9257d14526a9950faa0dcf4d28a0321e0301dab59055",
+        "sources/dotfairy-ssh-manager/LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "sources/dotfairy-ssh-manager/Cask": "0ac61ac80a4472a702652d6bfca411fa40a34882911ad8a19bfe6366b7668f07",
+        "sources/dotfairy-ssh-manager/README.md": "15353887b1b4dca448f47649f39de71544d25c40505bb83906a7df481d6dff29",
+        "sources/dotfairy-ssh-manager/.github/workflows/build.yml": "5c5a0e80ea18e7eb3c2ce3eabe1c12099fe87286fbc769e530e41f120de0260f"
+      },
+      "primary_sources": [
+        "https://github.com/b40yd/dotfairy-ssh-manager",
+        "https://github.com/b40yd/dotfairy-ssh-manager/commit/9e8613f91923a9b48276a65f12028df0eecbac66"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "provider": "web search",
+      "query": "emacs terminal multiple servers commands package"
+    },
+    {
+      "provider": "web search",
+      "query": "\"emacs\" \"nssh\""
+    },
+    {
+      "provider": "web search",
+      "query": "\"emacs\" \"clusterssh\""
+    },
+    {
+      "provider": "web search",
+      "query": "\"emacs\" \"ssh\" \"broadcast\""
+    },
+    {
+      "provider": "web search",
+      "query": "\"emacs\" \"ssh\" \"multiple hosts\""
+    },
+    {
+      "provider": "web search",
+      "query": "\"emacs\" \"parallel-ssh\""
+    },
+    {
+      "provider": "web search",
+      "query": "\"emacs\" \"multi-ssh\""
+    },
+    {
+      "provider": "web search",
+      "query": "\"emacs\" \"ssh\" \"runbook\""
+    },
+    {
+      "provider": "web search",
+      "query": "\"Emacs\" \"multi-host\" -lsp -nix -Configuration -Eglot"
+    },
+    {
+      "provider": "web search",
+      "query": "\"Emacs\" \"remote commands\" package -tramp -lsp -MCP"
+    },
+    {
+      "provider": "GitHub repository search",
+      "command": "gh search repos ssh --language 'Emacs Lisp' --limit 100 --json fullName,description,pushedAt"
+    },
+    {
+      "provider": "GitHub repository search",
+      "command": "gh search repos cluster --language 'Emacs Lisp' --limit 100 --json fullName,description,pushedAt"
+    }
+  ],
+  "additional_discovery_rejected": [
+    {
+      "repository": "https://github.com/channingkuo/skssh",
+      "reviewed": "Primary README retrieved through GitHub API",
+      "reason": "Host-list and single-host shell/Dired/SFTP; no native multi-host execution described."
+    },
+    {
+      "repository": "https://github.com/zzeitt/ob-remotessh",
+      "reviewed": "Primary README retrieved through GitHub API",
+      "reason": "Babel SSH block targeting one :host; does not add inventory-wide execution."
+    }
+  ],
+  "cli_comparison": {
+    "bssh": {
+      "repository": "https://github.com/lablup/bssh",
+      "reviewed_version": "README states v3.0.1, 2026-09-01",
+      "native_features": [
+        "-H ^hosts.txt inventory file",
+        "--parallel N concurrency limit",
+        "--stream host-labelled aggregate text",
+        "--output-dir per-host files",
+        "TUI summary/detail/split/diff views",
+        "Multiplex interactive sessions"
+      ],
+      "limits": [
+        "External CLI: per-node TUI screens are not independent Emacs buffers",
+        "Separate output files must be opened in Emacs by the user",
+        "Default exit is main-rank status; health checks need --require-all-success or an appropriate explicit strategy",
+        "Serialization with --parallel 1 inferred from concurrency control; not runtime-tested here"
+      ],
+      "primary_source": "https://github.com/lablup/bssh"
+    },
+    "clush": {
+      "repository": "https://github.com/cea-hpc/clustershell",
+      "native_features": [
+        "--hostfile inventory",
+        "-f concurrency cap; -f 1 documented serial in flat mode",
+        "-b grouped identical outputs and return codes",
+        "--outdir and --errdir per-host files",
+        "Interactive target selection and output-format switch"
+      ],
+      "limits": [
+        "External CLI, no automatic native per-host Emacs buffers",
+        "In tree mode fanout 1 applies per gateway, not globally",
+        "Interactive clush command prompt is not a collection of full interactive remote terminals"
+      ],
+      "primary_source": "https://clustershell.readthedocs.io/en/latest/tools/clush.html"
+    },
+    "judgment": "For check/script output within ordinary Emacs text, clush is a simpler baseline using OpenSSH. bssh supplies a richer TUI and full session interactions, but neither natively creates one Emacs output buffer per remote host."
+  }
+}

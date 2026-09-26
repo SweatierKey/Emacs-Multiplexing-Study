@@ -7,6 +7,8 @@ Studio di terminali e multiplexer per Emacs, con sorgenti fissati, analisi del c
 - [Report in Markdown](report/REPORT.md) · [Catalogo](report/CATALOGUE.md)
 - [Riproduzione](report/REPRODUCE.md) · [Ricerca e provenienza](report/SEARCH.md) · [Validazione](report/VALIDATION.md)
 
+**Nuovo approfondimento: [lavorare su più server, confronto e tre video](https://sweatierkey.github.io/Emacs-Multiplexing-Study/report/MULTISERVER.html)** — clush, term-sessions e multi-run provati su SSH; inventari, parallelismo, vera serializzazione e output. [Report Markdown](report/MULTISERVER.md) · [Bundle autonomo](https://github.com/SweatierKey/Emacs-Multiplexing-Study/releases/tag/multiserver-2026-09-26). Queste tre prove sono aggiuntive rispetto ai conteggi dello snapshot originale sotto riportati.
+
 Snapshot del 26 settembre 2026: **145 voci nel catalogo**, incluse dipendenze applicative, fork, estensioni, progetti adiacenti e candidati irrisolti; **66 scenari, 59 riusciti e 7 non conclusi**. Sono disponibili 71 cast originali, oltre alle repliche nel contenitore e ai tentativi diagnostici. I conteggi strutturati sono in [summary.json](report/summary.json).
 
 **Non è un censimento dimostrabilmente esaustivo di tutti i progetti mai esistiti. Non tutte le voci hanno una demo end-to-end.** Ogni scheda distingue codice analizzato, caricamento, prova effettiva e limiti. `passed` vale per il singolo scenario descritto, non per ogni funzionalità del progetto.

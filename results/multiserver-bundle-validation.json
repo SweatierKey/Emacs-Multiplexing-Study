@@ -1,0 +1,83 @@
+{
+  "archive": "Emacs-Multiserver-Followup-2026-09-26.tar.gz",
+  "archive_sha256": "9dd41239dd59cb77839200de43a292add826e6bdd4dcf21310c864594197862a",
+  "extract_root": "/tmp/ems-verify-anaqf6bn/study",
+  "hash_manifest_verified_files": 384,
+  "preparation": "passed",
+  "offline_html_rebuild": "passed",
+  "tests": [
+    {
+      "id": "term-sessions",
+      "exit": 0,
+      "status": "passed",
+      "checks": {
+        "vertico_marginalia_enabled": true,
+        "two_real_ssh_connections_in_distinct_buffers": true,
+        "m_s_targets_only_marked_session": true,
+        "both_terminal_buffers_hidden_before_dispatch": true,
+        "T_s_reaches_both_hidden_terminals": true,
+        "remote_command_intervals_overlap": true,
+        "outputs_remain_separate": true,
+        "isolated_zmx_sessions_removed": true
+      },
+      "elapsed": 28.727384214000267,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"checks\": {\n    \"vertico_marginalia_enabled\": true,\n    \"two_real_ssh_connections_in_distinct_buffers\": true,\n    \"m_s_targets_only_marked_session\": true,\n    \"both_terminal_buffers_hidden_before_dispatch\": true,\n    \"T_s_reaches_both_hidden_terminals\": true,\n    \"remote_command_intervals_overlap\": true,\n    \"outputs_remain_separate\": true,\n    \"isolated_zmx_sessions_removed\": true\n  },\n  \"overlap_seconds\": 1.985639301,\n  \"error\": null\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "multi-run",
+      "exit": 0,
+      "status": "passed",
+      "checks": {
+        "completion_enabled": true,
+        "ssh_web": true,
+        "ssh_db": true,
+        "parallel_overlaps": true,
+        "delay_overlaps": true,
+        "separate_output_buffers": true
+      },
+      "elapsed": 23.551331710999875,
+      "stdout": "multiserver-multi-run passed Both broadcast and fixed-delay launches overlap. multi-run-with-delay does not wait for host A to finish before starting host B.\n{\n  \"parallel\": {\n    \"configured_launch_delay_seconds\": 0,\n    \"intervals\": {\n      \"web\": {\n        \"begin\": 1790429043.9348474,\n        \"end\": 1790429045.9365854\n      },\n      \"db\": {\n        \"begin\": 1790429043.941115,\n        \"end\": 1790429045.9430177\n      }\n    },\n    \"observed_overlap_seconds\": 1.9954705238342285,\n    \"host_start_gap_seconds\": 0.006267547607421875,\n    \"strict_series_observed\": false\n  },\n  \"delay\": {\n    \"configured_launch_delay_seconds\": 0.2,\n    \"intervals\": {\n      \"web\": {\n        \"begin\": 1790429047.3298872,\n        \"end\": 1790429049.3319864\n      },\n      \"db\": {\n        \"begin\": 1790429047.5298991,\n        \"end\": 1790429049.531599\n      }\n    },\n    \"observed_overlap_seconds\": 1.8020873069763184,\n    \"host_start_gap_seconds\": 0.2000119686126709,\n    \"strict_series_observed\": false\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "clush",
+      "exit": 0,
+      "status": "passed",
+      "checks": {
+        "single_host": true,
+        "parallel_overlap": true,
+        "serial_no_overlap": true,
+        "script_on_both": true,
+        "combined_labelled_output": true,
+        "separate_stdout_stderr_files": true,
+        "failure_status_reported": true,
+        "command_timeout": true,
+        "emacs_aggregate_buffer": true,
+        "separate_file_buffers_manually_opened": true,
+        "vertico_and_marginalia": true
+      },
+      "elapsed": 32.08816775500054,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"checks\": {\n    \"single_host\": true,\n    \"parallel_overlap\": true,\n    \"serial_no_overlap\": true,\n    \"script_on_both\": true,\n    \"combined_labelled_output\": true,\n    \"separate_stdout_stderr_files\": true,\n    \"failure_status_reported\": true,\n    \"command_timeout\": true,\n    \"emacs_aggregate_buffer\": true,\n    \"separate_file_buffers_manually_opened\": true,\n    \"vertico_and_marginalia\": true\n  },\n  \"observed_serial_order\": [\n    \"web\",\n    \"db\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "lab_start": {
+    "exit": 0,
+    "stdout": "web 0 \nSSH LAB: web (loopback fixture, same kernel)\nrole=web\nservice=active\nversion=1.0\n \ndb 0 \nSSH LAB: db (loopback fixture, same kernel)\nrole=db\nservice=active\nversion=1.0\n \n",
+    "stderr": ""
+  },
+  "status": "passed",
+  "lab_stop": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "listeners_after_stop": [],
+    "listener_check_method": "/proc/net/tcp and /proc/net/tcp6 LISTEN entries, read in the same execution environment as the SSH lab",
+    "state_file_removed": true,
+    "sshd_pid_files_removed": true,
+    "socket_probe_note": "A separate connect_ex probe returned EAGAIN (11), inconclusive in this environment; not used as proof of closure."
+  },
+  "checked_scenario_count": 3,
+  "passed_assertions": 25
+}

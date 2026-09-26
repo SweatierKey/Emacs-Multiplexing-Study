@@ -1,0 +1,121 @@
+{
+  "id": "multiserver-term-sessions",
+  "status": "passed",
+  "checks": {
+    "vertico_marginalia_enabled": true,
+    "two_real_ssh_connections_in_distinct_buffers": true,
+    "m_s_targets_only_marked_session": true,
+    "both_terminal_buffers_hidden_before_dispatch": true,
+    "T_s_reaches_both_hidden_terminals": true,
+    "remote_command_intervals_overlap": true,
+    "outputs_remain_separate": true,
+    "isolated_zmx_sessions_removed": true
+  },
+  "snapshots": [
+    {
+      "name": "*term-session:fleet-web: ~/Emacs-Multiplexing-Study*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "bash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt\nrole=web\nservice=active\nversion=1.0\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "*term-session:fleet-db: ~/Emacs-Multiplexing-Study*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt\nrole=db\nservice=active\nversion=1.0\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ "
+    },
+    {
+      "name": "*term-sessions*",
+      "mode": "term-sessions-list-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "* fleet-db           local          Emacs-Multiplexing-Study 2026-09-26 15:15 2026-09-26 15:15 1       /home/admin/Emacs-Multiplexing-Study /usr/bin/ssh -F /home/admin/Emacs-Multiplexing-Study/.runtime/ssh_config lab-db\n* fleet-web          local          Emacs-Multiplexing-Study 2026-09-26 15:15 2026-09-26 15:15 1       /home/admin/Emacs-Multiplexing-Study /usr/bin/ssh -F /home/admin/Emacs-Multiplexing-Study/.runtime/ssh_config lab-web\n"
+    },
+    {
+      "name": "*term-session:fleet-web: ~/Emacs-Multiplexing-Study*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "bash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt\nrole=web\nservice=active\nversion=1.0\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printf 'BATCH_BEGIN role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"; sleep 2;\n printf 'BATCH_END role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"\nBATCH_BEGIN role=web ns=1790428534114584578\nBATCH_END role=web ns=1790428536117041138\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n\n\n\n\n"
+    },
+    {
+      "name": "*term-session:fleet-db: ~/Emacs-Multiplexing-Study*",
+      "mode": "term-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt\nrole=db\nservice=active\nversion=1.0\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printf 'SELECTED_ONLY role=%s\\n' \"$STUDY_ROLE\"\nSELECTED_ONLY role=db\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printf 'BATCH_BEGIN role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"; sleep 2; p\nrintf 'BATCH_END role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"\nBATCH_BEGIN role=db ns=1790428534126956354\nBATCH_END role=db ns=1790428536129030991\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ \n\n\n"
+    }
+  ],
+  "topology": "Two local zmx sessions; each runs SSH to one loopback fixture. Both SSH endpoints share one kernel. Remote zmx/TRAMP is not tested.",
+  "scope": "Native list marking, command dispatch to hidden terminals, real overlapping execution, separate output buffers.",
+  "source_commit": "29084b6a8a73b612f60a73ef798303384bd44215",
+  "limitations": [
+    "No native host-inventory import is exercised.",
+    "No serial execution barrier or aggregated output is provided by this scenario.",
+    "Parallelism is observed shell execution after independent input delivery; no job tracking is asserted."
+  ],
+  "buffers": {
+    "web": "*term-session:fleet-web: ~/Emacs-Multiplexing-Study*",
+    "db": "*term-session:fleet-db: ~/Emacs-Multiplexing-Study*"
+  },
+  "single_selection": [
+    "fleet-db"
+  ],
+  "single_output": {
+    "web": {
+      "name": "*term-session:fleet-web: ~/Emacs-Multiplexing-Study*",
+      "text": "bash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt\nrole=web\nservice=active\nversion=1.0\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n\n\n\n",
+      "visible": false
+    },
+    "db": {
+      "name": "*term-session:fleet-db: ~/Emacs-Multiplexing-Study*",
+      "text": "lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt\nrole=db\nservice=active\nversion=1.0\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printf 'SELECTED_ONLY role=%s\\n' \"$STUDY_ROLE\"\nSELECTED_ONLY role=db\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ \n\n",
+      "visible": false
+    }
+  },
+  "command": "printf 'BATCH_BEGIN role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"; sleep 2; printf 'BATCH_END role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"",
+  "intervals": {
+    "web": {
+      "start_ns": 1790428534114584578,
+      "end_ns": 1790428536117041138
+    },
+    "db": {
+      "start_ns": 1790428534126956354,
+      "end_ns": 1790428536129030991
+    }
+  },
+  "overlap_seconds": 1.990084784,
+  "hidden_output": {
+    "web": {
+      "name": "*term-session:fleet-web: ~/Emacs-Multiplexing-Study*",
+      "text": "bash-5.2$ lab-ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt\nrole=web\nservice=active\nversion=1.0\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printf 'BATCH_BEGIN role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"; sleep 2;\n printf 'BATCH_END role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"\nBATCH_BEGIN role=web ns=1790428534114584578\nBATCH_END role=web ns=1790428536117041138\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ \n\n\n\n",
+      "visible": false
+    },
+    "db": {
+      "name": "*term-session:fleet-db: ~/Emacs-Multiplexing-Study*",
+      "text": "lab-ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt\nrole=db\nservice=active\nversion=1.0\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printf 'SELECTED_ONLY role=%s\\n' \"$STUDY_ROLE\"\nSELECTED_ONLY role=db\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printf 'BATCH_BEGIN role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"; sleep 2; p\nrintf 'BATCH_END role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"\nBATCH_BEGIN role=db ns=1790428534126956354\nBATCH_END role=db ns=1790428536129030991\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ \n\n",
+      "visible": false
+    }
+  },
+  "cleanup": {
+    "kill": [
+      {
+        "target": "fleet-web",
+        "returncode": 0,
+        "stdout": "killed session fleet-web\n",
+        "stderr": ""
+      },
+      {
+        "target": "fleet-db",
+        "returncode": 0,
+        "stdout": "killed session fleet-db\n",
+        "stderr": ""
+      }
+    ],
+    "remaining_stdout": "",
+    "remaining_stderr": "no sessions found in /home/admin/Emacs-Multiplexing-Study/.runtime/xdg-multiserver-term-sessions/zmx\n",
+    "returncode": 0
+  }
+}

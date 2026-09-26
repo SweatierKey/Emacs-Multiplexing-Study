@@ -1,0 +1,122 @@
+[
+  {
+    "at": 2.32,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.621,
+    "keys": "eshell",
+    "input_hex": "657368656c6c"
+  },
+  {
+    "at": 3.121,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 3.923,
+    "keys": "(setq multi-run-hostnames-list (list \"lab-web\" \"lab-db\"))",
+    "input_hex": "2873657471206d756c74692d72756e2d686f73746e616d65732d6c69737420286c69737420226c61622d7765622220226c61622d6462222929"
+  },
+  {
+    "at": 4.123,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.924,
+    "keys": "multi-run-configure-terminals 2",
+    "input_hex": "6d756c74692d72756e2d636f6e6669677572652d7465726d696e616c732032"
+  },
+  {
+    "at": 5.124,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.125,
+    "keys": "multi-run-ssh",
+    "input_hex": "6d756c74692d72756e2d737368"
+  },
+  {
+    "at": 6.325,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 8.326,
+    "keys": "multi-run \"cat status.txt\"",
+    "input_hex": "6d756c74692d72756e2022636174207374617475732e74787422"
+  },
+  {
+    "at": 8.526,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.53,
+    "keys": "(multi-run \"printf 'MS_PARALLEL_BEGIN_%s %s\\\\n' \\\"$STUDY_ROLE\\\" \\\"$(date +%s.%N)\\\"; sleep 2; printf 'MS_PARALLEL_END_%s %s\\\\n' \\\"$STUDY_ROLE\\\" \\\"$(date +%s.%N)\\\"\")",
+    "input_hex": "286d756c74692d72756e20227072696e746620274d535f504152414c4c454c5f424547494e5f25732025735c5c6e27205c222453545544595f524f4c455c22205c22242864617465202b25732e254e295c223b20736c65657020323b207072696e746620274d535f504152414c4c454c5f454e445f25732025735c5c6e27205c222453545544595f524f4c455c22205c22242864617465202b25732e254e295c222229"
+  },
+  {
+    "at": 9.73,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.933,
+    "keys": "(multi-run-with-delay 0.2 \"printf 'MS_DELAY_BEGIN_%s %s\\\\n' \\\"$STUDY_ROLE\\\" \\\"$(date +%s.%N)\\\"; sleep 2; printf 'MS_DELAY_END_%s %s\\\\n' \\\"$STUDY_ROLE\\\" \\\"$(date +%s.%N)\\\"\")",
+    "input_hex": "286d756c74692d72756e2d776974682d64656c617920302e3220227072696e746620274d535f44454c41595f424547494e5f25732025735c5c6e27205c222453545544595f524f4c455c22205c22242864617465202b25732e254e295c223b20736c65657020323b207072696e746620274d535f44454c41595f454e445f25732025735c5c6e27205c222453545544595f524f4c455c22205c22242864617465202b25732e254e295c222229"
+  },
+  {
+    "at": 13.133,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 16.337,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 16.737,
+    "keys": "eshell<1>",
+    "input_hex": "657368656c6c3c313e"
+  },
+  {
+    "at": 16.937,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 18.737,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 19.137,
+    "keys": "eshell<2>",
+    "input_hex": "657368656c6c3c323e"
+  },
+  {
+    "at": 19.338,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 21.138,
+    "keys": "C-x b: switch-to-buffer",
+    "input_hex": "1862"
+  },
+  {
+    "at": 21.538,
+    "keys": "*eshell*",
+    "input_hex": "2a657368656c6c2a"
+  },
+  {
+    "at": 21.738,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

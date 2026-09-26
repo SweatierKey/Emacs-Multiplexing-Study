@@ -1,0 +1,99 @@
+{
+  "id": "multiserver-multi-run",
+  "status": "passed",
+  "started": "2026-09-26T13:15:32Z",
+  "source_revision": "13d4d923535b5e8482b13ff76185203075fb26a3",
+  "scenario": "Documented master Eshell UI; two live SSH roles; delay versus strict series",
+  "lab": "Two loopback SSH endpoints on the same kernel; their clock is shared.",
+  "configuration": {
+    "completion": [
+      "vertico",
+      "marginalia"
+    ],
+    "package_changes": [],
+    "keymap_changes": [],
+    "ssh": "Private PATH wrapper: /usr/bin/ssh -F .runtime/ssh_config"
+  },
+  "checks": {
+    "completion_enabled": true,
+    "ssh_web": true,
+    "ssh_db": true,
+    "parallel_overlaps": true,
+    "delay_overlaps": true,
+    "separate_output_buffers": true
+  },
+  "snapshots": [
+    {
+      "name": "eshell<1>",
+      "mode": "eshell-mode",
+      "text": "Welcome to the Emacs shell\n\n/home/admin/Emacs-Multiplexing-Study $ ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt\nrole=web\nservice=active\nversion=1.0\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "eshell<2>",
+      "mode": "eshell-mode",
+      "text": "Welcome to the Emacs shell\n\n/home/admin/Emacs-Multiplexing-Study $ ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt\nrole=db\nservice=active\nversion=1.0\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ "
+    },
+    {
+      "name": "eshell<1>",
+      "mode": "eshell-mode",
+      "text": "Welcome to the Emacs shell\n\n/home/admin/Emacs-Multiplexing-Study $ ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt\nrole=web\nservice=active\nversion=1.0\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printf 'MS_PARALLEL_BEGIN_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"; sleep 2; printf 'MS_PARALLEL_END_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"\nMS_PARALLEL_BEGIN_web 1790428542.262528843\nMS_PARALLEL_END_web 1790428544.264516588\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "eshell<2>",
+      "mode": "eshell-mode",
+      "text": "Welcome to the Emacs shell\n\n/home/admin/Emacs-Multiplexing-Study $ ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt\nrole=db\nservice=active\nversion=1.0\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printf 'MS_PARALLEL_BEGIN_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"; sleep 2; printf 'MS_PARALLEL_END_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"\nMS_PARALLEL_BEGIN_db 1790428542.269872621\nMS_PARALLEL_END_db 1790428544.271814474\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ "
+    },
+    {
+      "name": "eshell<1>",
+      "mode": "eshell-mode",
+      "text": "Welcome to the Emacs shell\n\n/home/admin/Emacs-Multiplexing-Study $ ssh lab-web\n\nSSH LAB: web (loopback fixture, same kernel)\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ cat status.txt\nrole=web\nservice=active\nversion=1.0\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printf 'MS_PARALLEL_BEGIN_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"; sleep 2; printf 'MS_PARALLEL_END_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"\nMS_PARALLEL_BEGIN_web 1790428542.262528843\nMS_PARALLEL_END_web 1790428544.264516588\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ printf 'MS_DELAY_BEGIN_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"; sleep 2; printf 'MS_DELAY_END_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"\nMS_DELAY_BEGIN_web 1790428545.664284259\nMS_DELAY_END_web 1790428547.666514187\nweb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/web$ "
+    },
+    {
+      "name": "eshell<2>",
+      "mode": "eshell-mode",
+      "text": "Welcome to the Emacs shell\n\n/home/admin/Emacs-Multiplexing-Study $ ssh lab-db\n\nSSH LAB: db (loopback fixture, same kernel)\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ cat status.txt\nrole=db\nservice=active\nversion=1.0\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printf 'MS_PARALLEL_BEGIN_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"; sleep 2; printf 'MS_PARALLEL_END_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"\nMS_PARALLEL_BEGIN_db 1790428542.269872621\nMS_PARALLEL_END_db 1790428544.271814474\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ printf 'MS_DELAY_BEGIN_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"; sleep 2; printf 'MS_DELAY_END_%s %s\\n' \"$STUDY_ROLE\" \"$(date +%s.%N)\"\nMS_DELAY_BEGIN_db 1790428545.864034440\nMS_DELAY_END_db 1790428547.866360738\ndb@lab:~/Emacs-Multiplexing-Study/lab/fixtures/db$ "
+    }
+  ],
+  "timings": {
+    "parallel": {
+      "configured_launch_delay_seconds": 0,
+      "intervals": {
+        "web": {
+          "begin": 1790428542.262529,
+          "end": 1790428544.2645166
+        },
+        "db": {
+          "begin": 1790428542.2698727,
+          "end": 1790428544.2718146
+        }
+      },
+      "observed_overlap_seconds": 1.9946439266204834,
+      "host_start_gap_seconds": 0.007343769073486328,
+      "strict_series_observed": false
+    },
+    "delay": {
+      "configured_launch_delay_seconds": 0.2,
+      "intervals": {
+        "web": {
+          "begin": 1790428545.6642842,
+          "end": 1790428547.6665142
+        },
+        "db": {
+          "begin": 1790428545.8640344,
+          "end": 1790428547.8663607
+        }
+      },
+      "observed_overlap_seconds": 1.8024797439575195,
+      "host_start_gap_seconds": 0.19975018501281738,
+      "strict_series_observed": false
+    }
+  },
+  "finding": "Both broadcast and fixed-delay launches overlap. multi-run-with-delay does not wait for host A to finish before starting host B.",
+  "capabilities_observed": {
+    "host_list": true,
+    "parallel": true,
+    "separate_output_buffers": true,
+    "strict_series_via_delay": false,
+    "combined_output_buffer": "No built-in collector found in source; not synthesized by this test."
+  }
+}

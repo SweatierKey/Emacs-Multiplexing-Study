@@ -1,0 +1,217 @@
+[
+  {
+    "at": 2.649,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 2.949,
+    "keys": "term-sessions-open",
+    "input_hex": "7465726d2d73657373696f6e732d6f70656e"
+  },
+  {
+    "at": 3.449,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 4.249,
+    "keys": "fleet-web",
+    "input_hex": "666c6565742d776562"
+  },
+  {
+    "at": 4.449,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 5.65,
+    "keys": "lab-ssh lab-web",
+    "input_hex": "6c61622d737368206c61622d776562"
+  },
+  {
+    "at": 5.85,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 6.85,
+    "keys": "cat status.txt",
+    "input_hex": "636174207374617475732e747874"
+  },
+  {
+    "at": 7.05,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 7.654,
+    "keys": "C-c C-j: term line mode",
+    "input_hex": "030a"
+  },
+  {
+    "at": 8.056,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 8.356,
+    "keys": "term-sessions-open",
+    "input_hex": "7465726d2d73657373696f6e732d6f70656e"
+  },
+  {
+    "at": 8.856,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 9.656,
+    "keys": "fleet-db",
+    "input_hex": "666c6565742d6462"
+  },
+  {
+    "at": 9.856,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 11.057,
+    "keys": "lab-ssh lab-db",
+    "input_hex": "6c61622d737368206c61622d6462"
+  },
+  {
+    "at": 11.257,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 12.257,
+    "keys": "cat status.txt",
+    "input_hex": "636174207374617475732e747874"
+  },
+  {
+    "at": 12.457,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 13.06,
+    "keys": "C-c C-j: term line mode",
+    "input_hex": "030a"
+  },
+  {
+    "at": 13.461,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 13.761,
+    "keys": "term-sessions-list",
+    "input_hex": "7465726d2d73657373696f6e732d6c697374"
+  },
+  {
+    "at": 14.262,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 15.062,
+    "keys": "C-x 1: show only the session list",
+    "input_hex": "1831"
+  },
+  {
+    "at": 15.462,
+    "keys": "M-<: first session row",
+    "input_hex": "1b3c"
+  },
+  {
+    "at": 15.862,
+    "keys": "m: mark one session",
+    "input_hex": "6d"
+  },
+  {
+    "at": 16.265,
+    "keys": "s: native send-command to marked session",
+    "input_hex": "73"
+  },
+  {
+    "at": 16.665,
+    "keys": "printf 'SELECTED_ONLY role=%s\\n' \"$STUDY_ROLE\"",
+    "input_hex": "7072696e7466202753454c45435445445f4f4e4c5920726f6c653d25735c6e2720222453545544595f524f4c4522"
+  },
+  {
+    "at": 16.865,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 17.668,
+    "keys": "U: unmark all",
+    "input_hex": "55"
+  },
+  {
+    "at": 18.068,
+    "keys": "T: mark all listed sessions",
+    "input_hex": "54"
+  },
+  {
+    "at": 18.473,
+    "keys": "s: native send-command to both marked sessions",
+    "input_hex": "73"
+  },
+  {
+    "at": 18.873,
+    "keys": "printf 'BATCH_BEGIN role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"; sleep 2; printf 'BATCH_END role=%s ns=%s\\n' \"$STUDY_ROLE\" \"$(date +%s%N)\"",
+    "input_hex": "7072696e7466202742415443485f424547494e20726f6c653d2573206e733d25735c6e2720222453545544595f524f4c45222022242864617465202b2573254e29223b20736c65657020323b207072696e7466202742415443485f454e4420726f6c653d2573206e733d25735c6e2720222453545544595f524f4c45222022242864617465202b2573254e2922"
+  },
+  {
+    "at": 19.073,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 22.227,
+    "keys": "C-x b: inspect web output",
+    "input_hex": "1862"
+  },
+  {
+    "at": 22.627,
+    "keys": "*term-session:fleet-web: ~/Emacs-Multiplexing-Study*",
+    "input_hex": "2a7465726d2d73657373696f6e3a666c6565742d7765623a207e2f456d6163732d4d756c7469706c6578696e672d53747564792a"
+  },
+  {
+    "at": 22.827,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 24.33,
+    "keys": "C-x b: inspect db output",
+    "input_hex": "1862"
+  },
+  {
+    "at": 24.73,
+    "keys": "*term-session:fleet-db: ~/Emacs-Multiplexing-Study*",
+    "input_hex": "2a7465726d2d73657373696f6e3a666c6565742d64623a207e2f456d6163732d4d756c7469706c6578696e672d53747564792a"
+  },
+  {
+    "at": 24.931,
+    "keys": "RET",
+    "input_hex": "0d"
+  },
+  {
+    "at": 26.449,
+    "keys": "M-x",
+    "input_hex": "1b78"
+  },
+  {
+    "at": 26.749,
+    "keys": "term-sessions-list",
+    "input_hex": "7465726d2d73657373696f6e732d6c697374"
+  },
+  {
+    "at": 27.249,
+    "keys": "RET",
+    "input_hex": "0d"
+  }
+]

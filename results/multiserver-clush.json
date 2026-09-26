@@ -1,0 +1,208 @@
+{
+  "id": "multiserver-clush",
+  "status": "passed",
+  "source_revision": "f3f5b1594be3350b0c29bcc6786cff86abba19d7",
+  "topology": "two real loopback SSH endpoints on the same kernel; flat SSH worker",
+  "checks": {
+    "single_host": true,
+    "parallel_overlap": true,
+    "serial_no_overlap": true,
+    "script_on_both": true,
+    "combined_labelled_output": true,
+    "separate_stdout_stderr_files": true,
+    "failure_status_reported": true,
+    "command_timeout": true,
+    "emacs_aggregate_buffer": true,
+    "separate_file_buffers_manually_opened": true,
+    "vertico_and_marginalia": true
+  },
+  "runs": [
+    {
+      "name": "single-host",
+      "argv": [
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/clush",
+        "-n",
+        "-w",
+        "lab-web",
+        "cat status.txt"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "elapsed": 0.14532545899965044,
+      "stdout": "lab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\nlab-web: role=web\nlab-web: service=active\nlab-web: version=1.0\n",
+      "stderr": ""
+    },
+    {
+      "name": "parallel",
+      "argv": [
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/clush",
+        "-n",
+        "--hostfile",
+        "lab/multiserver/hosts.txt",
+        "-f",
+        "2",
+        "printf \"START %s\\n\" \"$(date +%s%N)\"; sleep 2; printf \"END %s\\n\" \"$(date +%s%N)\""
+      ],
+      "stdin": null,
+      "exit": 0,
+      "elapsed": 2.1540095209993524,
+      "stdout": "lab-db: \nlab-db: SSH LAB: db (loopback fixture, same kernel)\nlab-db: START 1790428558399006336\nlab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\nlab-web: START 1790428558408710765\nlab-db: END 1790428560400888520\nlab-web: END 1790428560410154408\n",
+      "stderr": ""
+    },
+    {
+      "name": "serial",
+      "argv": [
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/clush",
+        "-n",
+        "--hostfile",
+        "lab/multiserver/hosts.txt",
+        "-f",
+        "1",
+        "printf \"START %s\\n\" \"$(date +%s%N)\"; sleep 2; printf \"END %s\\n\" \"$(date +%s%N)\""
+      ],
+      "stdin": null,
+      "exit": 0,
+      "elapsed": 4.235010594999949,
+      "stdout": "lab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\nlab-web: START 1790428560553700915\nlab-web: END 1790428562555549731\nlab-db: \nlab-db: SSH LAB: db (loopback fixture, same kernel)\nlab-db: START 1790428562643572762\nlab-db: END 1790428564645556883\n",
+      "stderr": ""
+    },
+    {
+      "name": "script-stdin",
+      "argv": [
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/clush",
+        "--hostfile",
+        "lab/multiserver/hosts.txt",
+        "-b",
+        "sh -s"
+      ],
+      "stdin": "#!/bin/sh\nprintf 'CHECK role=%s\\n' \"$STUDY_ROLE\"\ncat status.txt\ntail -n 2 service.log\n",
+      "exit": 0,
+      "elapsed": 0.1609507470002427,
+      "stdout": "---------------\nlab-db\n---------------\n\nSSH LAB: db (loopback fixture, same kernel)\nCHECK role=db\nrole=db\nservice=active\nversion=1.0\nWARN db disk threshold=75\nINFO db requests=42\n---------------\nlab-web\n---------------\n\nSSH LAB: web (loopback fixture, same kernel)\nCHECK role=web\nrole=web\nservice=active\nversion=1.0\nWARN web disk threshold=75\nINFO web requests=42\n",
+      "stderr": ""
+    },
+    {
+      "name": "identical-output",
+      "argv": [
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/clush",
+        "-n",
+        "--hostfile",
+        "lab/multiserver/hosts.txt",
+        "-b",
+        "printf \"HEALTH_OK\\n\""
+      ],
+      "stdin": null,
+      "exit": 0,
+      "elapsed": 0.15877445500063914,
+      "stdout": "---------------\nlab-db\n---------------\n\nSSH LAB: db (loopback fixture, same kernel)\nHEALTH_OK\n---------------\nlab-web\n---------------\n\nSSH LAB: web (loopback fixture, same kernel)\nHEALTH_OK\n",
+      "stderr": ""
+    },
+    {
+      "name": "per-host-files",
+      "argv": [
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/clush",
+        "-n",
+        "--hostfile",
+        "lab/multiserver/hosts.txt",
+        "--outdir",
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/stdout",
+        "--errdir",
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/stderr",
+        "printf \"STDOUT_%s\\n\" \"$STUDY_ROLE\"; printf \"STDERR_%s\\n\" \"$STUDY_ROLE\" >&2"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "elapsed": 0.16246128900002077,
+      "stdout": "lab-db: \nlab-db: SSH LAB: db (loopback fixture, same kernel)\nlab-db: STDOUT_db\nlab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\nlab-web: STDOUT_web\n",
+      "stderr": "lab-db: STDERR_db\nlab-web: STDERR_web\n"
+    },
+    {
+      "name": "remote-exit-status",
+      "argv": [
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/clush",
+        "-n",
+        "--hostfile",
+        "lab/multiserver/hosts.txt",
+        "-S",
+        "if [ \"$STUDY_ROLE\" = db ]; then echo CHECK_FAILED >&2; exit 7; fi; echo CHECK_OK"
+      ],
+      "stdin": null,
+      "exit": 7,
+      "elapsed": 0.16201158800049598,
+      "stdout": "lab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\nlab-web: CHECK_OK\nlab-db: \nlab-db: SSH LAB: db (loopback fixture, same kernel)\n",
+      "stderr": "lab-db: CHECK_FAILED\nClush.py: lab-db: exited with exit code 7\n"
+    },
+    {
+      "name": "command-timeout",
+      "argv": [
+        "/home/admin/Emacs-Multiplexing-Study/.runtime/multiserver-clush/clush",
+        "-n",
+        "-w",
+        "lab-web",
+        "-S",
+        "-u",
+        "1",
+        "sleep 3; echo TOO_LATE"
+      ],
+      "stdin": null,
+      "exit": 255,
+      "elapsed": 1.056084780000674,
+      "stdout": "lab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\n",
+      "stderr": "Clush.py: lab-web: command timeout\n"
+    }
+  ],
+  "parallel_intervals_ns": {
+    "db": {
+      "START": 1790428558399006336,
+      "END": 1790428560400888520
+    },
+    "web": {
+      "START": 1790428558408710765,
+      "END": 1790428560410154408
+    }
+  },
+  "serial_intervals_ns": {
+    "web": {
+      "START": 1790428560553700915,
+      "END": 1790428562555549731
+    },
+    "db": {
+      "START": 1790428562643572762,
+      "END": 1790428564645556883
+    }
+  },
+  "observed_serial_order": [
+    "web",
+    "db"
+  ],
+  "inventory_order_preserved": true,
+  "per_host_files": {
+    "stdout/lab-web": "\nSSH LAB: web (loopback fixture, same kernel)\nSTDOUT_web\n",
+    "stdout/lab-db": "\nSSH LAB: db (loopback fixture, same kernel)\nSTDOUT_db\n",
+    "stderr/lab-web": "STDERR_web\n",
+    "stderr/lab-db": "STDERR_db\n"
+  },
+  "ui_aggregate": {
+    "name": "*shell*",
+    "mode": "shell-mode",
+    "vertico": true,
+    "marginalia": true,
+    "text": "local@lab:/home/admin/Emacs-Multiplexing-Study$ clush -n -w lab-web cat status.txt\nlab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\nlab-web: role=web\nlab-web: service=active\nlab-web: version=1.0\nlocal@lab:/home/admin/Emacs-Multiplexing-Study$ clush -n --hostfile lab/multiserver/hosts.txt -f 2 'printf \"START %s\\n\" \"$(date +%s%N)\"; sleep 2; printf \"END %s\\n\" \"$(date +%s%N)\"'\nlab-db: \nlab-db: SSH LAB: db (loopback fixture, same kernel)\nlab-db: START 1790428572302648697\nlab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\nlab-web: START 1790428572312818166\nlab-db: END 1790428574304507918\nlab-web: END 1790428574314200468\nlocal@lab:/home/admin/Emacs-Multiplexing-Study$ clush -n --hostfile lab/multiserver/hosts.txt -f 1 'printf \"START %s\\n\" \"$(date +%s%N)\"; sleep 2; printf \"END %s\\n\" \"$(date +%s%N)\"'\nlab-web: \nlab-web: SSH LAB: web (loopback fixture, same kernel)\nlab-web: START 1790428575993070922\nlab-web: END 1790428577994810052\nlab-db: \nlab-db: SSH LAB: db (loopback fixture, same kernel)\nlab-db: START 1790428578082654759\nlab-db: END 1790428580084113947\nlocal@lab:/home/admin/Emacs-Multiplexing-Study$ clush --hostfile lab/multiserver/hosts.txt -b sh -s < lab/multiserver/check.sh\n---------------\nlab-db\n---------------\n\nSSH LAB: db (loopback fixture, same kernel)\nCHECK role=db\nrole=db\nservice=active\nversion=1.0\nWARN db disk threshold=75\nINFO db requests=42\n---------------\nlab-web\n---------------\n\nSSH LAB: web (loopback fixture, same kernel)\nCHECK role=web\nrole=web\nservice=active\nversion=1.0\nWARN web disk threshold=75\nINFO web requests=42\nlocal@lab:/home/admin/Emacs-Multiplexing-Study$ "
+  },
+  "ui_file_buffers": [
+    {
+      "name": "lab-web",
+      "mode": "fundamental-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\nSSH LAB: web (loopback fixture, same kernel)\nrole=web\nservice=active\nversion=1.0\n"
+    },
+    {
+      "name": "lab-db",
+      "mode": "fundamental-mode",
+      "vertico": true,
+      "marginalia": true,
+      "text": "\nSSH LAB: db (loopback fixture, same kernel)\nrole=db\nservice=active\nversion=1.0\n"
+    }
+  ]
+}

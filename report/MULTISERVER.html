@@ -1,0 +1,224 @@
+<!doctype html><html lang="it"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width"><title>Emacs: lavoro multiserver</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="../player/asciinema-player.css">
+<main><h1>Lavorare su più server da Emacs</h1>
+<p>Approfondimento del 26 settembre 2026. Obiettivo: eseguire comandi, check, script e programmi su uno o più host, scelti da una lista, in parallelo oppure in serie, con output separati o riuniti. Sono preferite funzioni previste dal progetto, accessibili senza costruire un orchestratore in Lisp.</p>
+<h2>Scelta consigliata</h2>
+<p><strong>Nessuno dei progetti Emacs verificati soddisfa tutti questi requisiti nativamente.</strong> Il risultato cambia a seconda del lavoro prevalente:</p>
+<ul>
+<li><strong>Check e script su gruppi di server: ClusterShell / <code>clush</code>, eseguito in <code>M-x shell</code>.</strong> È il candidato provato che unisce inventario, parallelismo limitabile, esecuzione seriale con attesa, raccolta output, timeout ed esiti. Il limite è concreto: l'output per host viene scritto in file; aprirli con <code>C-x C-f</code> crea buffer separati, ma non terminali remoti interattivi né una UI Emacs che li gestisce automaticamente.</li>
+<li><strong>Sessioni interattive persistenti e buffer separati: <code>term-sessions</code>.</strong> La sua lista permette di marcare sessioni e inviare un comando anche a terminali nascosti. È il flusso Emacs più convincente fra quelli provati per questo lavoro. Mancano però l'importazione di un inventario host, una campagna seriale con attesa e l'output aggregato.</li>
+<li><strong>Un solo pacchetto Emacs, tutti i requisiti obbligatori: nessun vincitore verificato.</strong> Accoppiare i due strumenti copre attività complementari, ma resta una scelta di due strumenti. Non viene presentata come soluzione già integrata.</li>
+</ul>
+<p><code>clush</code> è un'applicazione esterna con interfaccia a riga di comando: usare Emacs come terminale non la trasforma in un pacchetto Emacs. Viceversa, una shell che replica l'input non diventa automaticamente un gestore di job distribuiti.</p>
+<h2>Criteri che hanno cambiato la selezione</h2>
+<ol>
+<li><strong>Serie</strong> significa che il comando su B inizia dopo la conclusione su A. Un ritardo fisso fra invii non basta.</li>
+<li><strong>Output aggregato</strong> contiene i risultati degli host, identificabili. Il buffer che riceve il comando da distribuire non conta se non riceve anche i risultati.</li>
+<li><strong>Lista host</strong> è distinta dalla lista di sessioni già aperte. Importare un inventario e creare le connessioni è lavoro aggiuntivo se il progetto non lo prevede.</li>
+<li><strong>Buffer separati vivi</strong> è distinto da file di log separati o pannelli interni a una TUI. Sono utili, ma hanno comportamenti diversi.</li>
+<li><strong>Semplicità</strong> viene valutata attraverso il flusso documentato e i tasti reali, senza punteggi arbitrari. I test non aggiungono al prodotto selezione host, sincronizzazione o collector mancanti.</li>
+</ol>
+<h2>Confronto delle capacità native</h2>
+<p>“No” significa nessun flusso corrispondente trovato nello snapshot analizzato; non è una dimostrazione su tutte le versioni o possibili estensioni.</p>
+<table>
+<thead>
+<tr>
+<th>Progetto</th>
+<th>Da una lista</th>
+<th>Parallelo</th>
+<th>Serie con attesa fra host</th>
+<th>Output separati / unico</th>
+<th>Costo umano e limite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>clush</strong></td>
+<td>File host, espressioni, gruppi</td>
+<td>Sì, limite <code>-f N</code></td>
+<td><strong>Sì, <code>-f 1</code> in modalità flat</strong></td>
+<td>File per host / unico etichettato o raccolto</td>
+<td>Comandi CLI brevi; nessun gestore nativo di buffer Emacs per host</td>
+</tr>
+<tr>
+<td><strong>term-sessions</strong></td>
+<td>Sessioni già create, marcatura</td>
+<td>Sì, invio alla selezione</td>
+<td>No nel flusso della lista</td>
+<td>Terminali e history separate / no</td>
+<td><code>M-x term-sessions-list</code>, <code>m</code> o <code>T</code>, <code>s</code>; richiede zmx</td>
+</tr>
+<tr>
+<td><strong>multi-run</strong></td>
+<td>Lista Lisp di host, subset per indici</td>
+<td>Sì</td>
+<td><strong>No, ritardi fissi</strong></td>
+<td>Eshell separati / no</td>
+<td>Configurazione e comandi nel master Eshell; molte funzioni non sono comandi <code>M-x</code></td>
+</tr>
+<tr>
+<td><strong>cssh</strong></td>
+<td>File DSH, gruppi, regexp, IBuffer</td>
+<td>Sì</td>
+<td>No</td>
+<td>Terminali separati / no</td>
+<td>Molto pertinente all'inventario; controller di input senza raccolta esiti</td>
+</tr>
+<tr>
+<td><strong>dotfairy-ssh-manager</strong></td>
+<td>Gruppo di terminali aperti</td>
+<td>Sì, riga/regione/buffer</td>
+<td>No</td>
+<td>Terminali separati / no</td>
+<td>Invio di script comodo, gruppo costruito aggiungendo le sessioni</td>
+</tr>
+<tr>
+<td><strong>Ghostel Mux</strong></td>
+<td>Pannelli della finestra attiva</td>
+<td>Sì, pannelli vivi e visibili</td>
+<td>No</td>
+<td>Terminali separati / no</td>
+<td>SYNC immediato; i terminali nascosti non ricevono input</td>
+</tr>
+<tr>
+<td><strong>tmux-control</strong> (csheaff)</td>
+<td>Connessioni/sessioni tmux</td>
+<td>Nessun batch Emacs trovato</td>
+<td>No</td>
+<td>Buffer di terminale / no</td>
+<td>Buono per sessioni persistenti, non per orchestrare una lista di host</td>
+</tr>
+<tr>
+<td><strong>nssh</strong></td>
+<td>Un hostname DNS risolto in più IP</td>
+<td>Sì</td>
+<td>No</td>
+<td>Shell separate / no</td>
+<td>Cluster DNS, non inventario arbitrario; controller senza output remoto</td>
+</tr>
+<tr>
+<td><strong>telecommand</strong></td>
+<td>Comandi nominati per host</td>
+<td>Una riga per invocazione</td>
+<td>Nessun orchestratore host</td>
+<td>Riusa un buffer / nessun collector multihost</td>
+<td>Menu semplice; colonna “Marked” senza esecuzione collettiva implementata</td>
+</tr>
+<tr>
+<td><strong>emacs-ssh-machines</strong></td>
+<td>Inventario e import/export</td>
+<td>Connessioni individuali</td>
+<td>No</td>
+<td>Terminali separati / no</td>
+<td>Semplifica raggiungere una macchina; non coordina i comandi</td>
+</tr>
+</tbody>
+</table>
+<p><code>project-shells</code>, <code>eev/eepitch</code> ed <code>emamux</code> rimangono utili per raggiungere shell, eseguire runbook e controllare tmux. Nei sorgenti analizzati non offrono la combinazione inventario + scheduler + collector richiesta. Il precedente studio documenta separatamente le loro prove.</p>
+<p>Un'ulteriore alternativa esterna è <a href="https://github.com/lablup/bssh">bssh</a>: lista host, parallelismo, output in streaming, file per host e una TUI di consultazione. È stato esaminato nella documentazione, <strong>non eseguito in questa prova</strong>. Le sue viste rimangono dentro un buffer terminale Emacs; non risolvono il requisito dei buffer Emacs distinti. Non lo classifico sopra un candidato testato sulla sola base del README.</p>
+<h2>Uso concreto: check e script con clush</h2>
+<p>Con ClusterShell installato e accesso SSH già configurato, il file <code>hosts.txt</code> contiene un host o alias SSH per riga. Non serve scrivere un programma di coordinamento. In Emacs: <code>M-x shell</code>, quindi, per esempio:</p>
+<pre><code class="language-sh"># Un solo host
+clush -n -S -w web01 'uptime'
+
+# Stesso check sull'inventario, al massimo 8 host contemporaneamente
+clush -n -S --worker ssh --hostfile hosts.txt -f 8 'systemctl is-active nginx'
+
+# Uno per volta, aspettando il termine di ciascun comando
+clush -n -S --worker ssh --hostfile hosts.txt -f 1 'hostname; uptime'
+
+# Invia il contenuto dello script a tutti gli host; raccoglie gli output
+clush -S --worker ssh --hostfile hosts.txt -b sh -s &lt; check.sh
+
+# Salva anche stdout e stderr separati per host
+clush -n -S --worker ssh --hostfile hosts.txt \
+  --outdir results/stdout --errdir results/stderr 'uptime'
+</code></pre>
+<p>La scelta <code>--worker ssh</code> mantiene esplicita l'esecuzione diretta, flat. <code>-S</code> fa propagare il massimo codice d'uscita dei comandi: per default clush può terminare con successo anche quando un comando remoto fallisce. <code>-n</code> disabilita l'inoltro di stdin; va omesso quando si invia uno script tramite stdin. Un output comune si consulta nel buffer <code>*shell*</code>; un file per host si apre con <code>C-x C-f</code>, poi si cambia buffer con <code>C-x b</code>.</p>
+<p>Limiti da considerare nella scelta:</p>
+<ul>
+<li><code>-f 1</code> garantisce al massimo un comando attivo nel worker diretto; <strong>non promette l'ordine letterale delle righe del file</strong>. Il parser costruisce un NodeSet e l'engine mantiene i client in un set. L'ordine osservato in una prova non è un contratto.</li>
+<li>La serializzazione non implica fermarsi automaticamente al primo errore né rollback. Queste politiche non sono state attribuite al comando.</li>
+<li>Ogni esecuzione apre un comando SSH: lo stato di una shell precedente non viene mantenuto come in un terminale persistente. Programmi interattivi che richiedono un terminale completo richiedono un altro flusso.</li>
+<li>I file per host si aprono manualmente. Il test non implementa aggiornamento live, creazione automatica dei buffer o un selettore Emacs di risultati.</li>
+</ul>
+<p>Funzioni e opzioni sono descritte nel <a href="https://github.com/clustershell/clustershell/blob/f3f5b1594be3350b0c29bcc6786cff86abba19d7/doc/txt/clush.txt">manuale clush</a>. Codice verificato: <a href="https://github.com/clustershell/clustershell/blob/f3f5b1594be3350b0c29bcc6786cff86abba19d7/lib/ClusterShell/CLI/Clush.py#L924">parsing hostfile</a>, <a href="https://github.com/clustershell/clustershell/blob/f3f5b1594be3350b0c29bcc6786cff86abba19d7/lib/ClusterShell/CLI/Clush.py#L177">file per host</a>, <a href="https://github.com/clustershell/clustershell/blob/f3f5b1594be3350b0c29bcc6786cff86abba19d7/lib/ClusterShell/Engine/Engine.py#L439">limite di concorrenza</a>, <a href="https://github.com/clustershell/clustershell/blob/f3f5b1594be3350b0c29bcc6786cff86abba19d7/lib/ClusterShell/CLI/Clush.py#L1197">exit status</a>.</p>
+<h2>Uso concreto: terminali con term-sessions</h2>
+<p>Nel test ciascuna sessione zmx locale contiene una connessione SSH. Si apre con <code>M-x term-sessions-open</code>, si assegna un nome e si esegue <code>ssh HOST</code>. La topologia è semplice da usare senza installare zmx sui server. Il diverso backend TRAMP remoto esiste, ma richiede zmx anche dove gira quel backend e non è stato verificato da questa prova.</p>
+<p>Con il frontend predefinito <code>term</code>, <code>C-c C-j</code> torna alla modalità in cui usare i comandi Emacs. Il flusso operativo è:</p>
+<ol>
+<li><code>M-x term-sessions-list</code> mostra le sessioni.</li>
+<li><code>m</code> marca una riga; <code>T</code> marca tutte; <code>U</code> rimuove tutte le marcature. È disponibile anche <code>%</code> per regexp.</li>
+<li><code>s</code>, comando, <code>RET</code> invia il comando alle sessioni selezionate.</li>
+<li><code>RET</code> apre una sessione; <code>C-x b</code> passa tra i buffer. <code>h</code> apre history separate, senza aggregarle.</li>
+</ol>
+<p>La prova nasconde entrambi i terminali prima dell'invio: non occorre tenerli tutti a schermo. Non si deve però scambiare il ritorno dell'operazione di invio per la conclusione del comando remoto. Le API <code>run</code> e <code>wait</code> del backend operano su una sessione; la lista non le trasforma in un batch seriale con esiti per host.</p>
+<p>Codice verificato: <a href="https://github.com/ArthurHeymans/emacs-term-sessions/blob/29084b6a8a73b612f60a73ef798303384bd44215/term-sessions-list.el#L72">keymap della lista</a>, <a href="https://github.com/ArthurHeymans/emacs-term-sessions/blob/29084b6a8a73b612f60a73ef798303384bd44215/term-sessions-list.el#L825">dispatch alla selezione</a>, <a href="https://github.com/ArthurHeymans/emacs-term-sessions/blob/29084b6a8a73b612f60a73ef798303384bd44215/term-sessions-zmx.el#L428">send/run/wait</a>.</p>
+<h2>Perché multi-run non vince</h2>
+<p>È nato proprio per lavorare su nodi remoti e merita attenzione. Il suo flusso documentato parte da <code>M-x eshell</code>:</p>
+<pre><code class="language-elisp">(setq multi-run-hostnames-list '(&quot;web01&quot; &quot;db01&quot;))
+</code></pre>
+<p>Poi nel master Eshell:</p>
+<pre><code class="language-text">multi-run-configure-terminals 2
+multi-run-ssh
+multi-run &quot;uptime&quot;
+</code></pre>
+<p>La lista è reale e ciascun host conserva il proprio output. Però <code>multi-run-with-delay</code> usa timer; non aspetta l'exit status. Con ritardo 0,2 secondi e comandi di 2 secondi abbiamo misurato <strong>1,802 secondi di sovrapposizione</strong>. Quindi non è esecuzione seriale. Non abbiamo trovato un comando nativo che riunisca i risultati in un buffer.</p>
+<p>Il <a href="https://github.com/sagarjha/multi-run/blob/13d4d923535b5e8482b13ff76185203075fb26a3/multi-run.el#L49">codice dei timer</a> e la <a href="https://sagarjha.github.io/multi-run/#loops">documentazione dell'autore</a> spiegano il limite. La vecchia documentazione include backend assenti dallo snapshot master analizzato: la prova corrente usa Eshell, come previsto da quel codice.</p>
+<h2>Prove eseguite e video</h2>
+<p>Le registrazioni catturano una vera PTY di Emacs; i comandi sono digitati con i binding normali. Emacsclient legge gli snapshot e verifica le condizioni, senza produrre risultati simulati. <strong>Vertico e Marginalia erano attivi in tutte e tre le prove.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Prova</th>
+<th>Evidenza osservata</th>
+<th>Cosa non dimostra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clush</td>
+<td>Un host; lista di due host; intervalli sovrapposti con <code>-f 2</code>; nessuna sovrapposizione con <code>-f 1</code>; script via stdin; output unico; file stdout/stderr per host; errore 7 propagato; timeout; uso dentro Emacs</td>
+<td>Buffer interattivi per host, ordine dell'inventario, programmi TUI, persistenza</td>
+</tr>
+<tr>
+<td>term-sessions</td>
+<td><code>m</code> + <code>s</code> raggiunge solo la sessione marcata; <code>T</code> + <code>s</code> raggiunge entrambi i terminali nascosti; sovrapposizione 1,990 s; due buffer distinti</td>
+<td>Inventario host, serializzazione, raccolta output, backend remoto TRAMP</td>
+</tr>
+<tr>
+<td>multi-run</td>
+<td>Lista host; due SSH; broadcast e ritardo misurati; output separati; ritardo 0,2 s produce sovrapposizione 1,802 s</td>
+<td>Nessuna prova positiva di serializzazione o aggregazione</td>
+</tr>
+</tbody>
+</table>
+<p>I due server sono endpoint SSH reali su loopback, ruoli <code>web</code> e <code>db</code>, <strong>sullo stesso kernel e con lo stesso orologio</strong>. Questo rende confrontabili i timestamp; non misura latenza WAN, scalabilità o differenze tra sistemi remoti. Il banner della fixture cambia per host: la prova clush di <code>-b</code> verifica due gruppi etichettati nello stesso output, non la deduplicazione di output identici.</p>
+<p><code>passed</code> significa che le asserzioni dello scenario sono riuscite. Per multi-run comprende la conferma di una limitazione, non il superamento di tutti i requisiti.</p>
+<div class="video"><button data-cast="../recordings/multiserver-clush.cast">Riproduci clush</button><div class="player"></div></div>
+<div class="video"><button data-cast="../recordings/multiserver-term-sessions.cast">Riproduci term-sessions</button><div class="player"></div></div>
+<div class="video"><button data-cast="../recordings/multiserver-multi-run.cast">Riproduci multi-run</button><div class="player"></div></div>
+
+<ul>
+<li><strong>Clush</strong>: <a href="../recordings/multiserver-clush.cast">video asciinema</a>, <a href="../results/multiserver-clush.json">risultati</a>, <a href="../results/multiserver-clush-keys.json">tasti</a>, <a href="../scripts/test-multiserver-clush.py">script</a>.</li>
+<li><strong>Term-sessions</strong>: <a href="../recordings/multiserver-term-sessions.cast">video asciinema</a>, <a href="../results/multiserver-term-sessions.json">risultati</a>, <a href="../results/multiserver-term-sessions-keys.json">tasti</a>, <a href="../scripts/test-multiserver-term-sessions.py">script</a>.</li>
+<li><strong>Multi-run</strong>: <a href="../recordings/multiserver-multi-run.cast">video asciinema</a>, <a href="../results/multiserver-multi-run.json">risultati</a>, <a href="../results/multiserver-multi-run-keys.json">tasti</a>, <a href="../scripts/test-multiserver-multi-run.py">script</a>.</li>
+</ul>
+<h2>Riproduzione e provenienza</h2>
+<p>È disponibile un <a href="https://github.com/SweatierKey/Emacs-Multiplexing-Study/releases/tag/multiserver-2026-09-26">bundle autonomo di questo approfondimento</a>, con sorgenti, dipendenze selezionate, zmx, configurazione, player e risultati. Non modifica l'archivio dello studio precedente. Il README incluso elenca i prerequisiti e la verifica SHA256.</p>
+<p>Nel bundle, dopo i prerequisiti:</p>
+<pre><code class="language-sh">python3 scripts/prepare-multiserver.py
+python3 scripts/lab.py start
+python3 scripts/test-multiserver-clush.py
+python3 scripts/test-multiserver-term-sessions.py
+python3 scripts/test-multiserver-multi-run.py
+python3 scripts/lab.py stop
+python3 -m http.server 8000 --bind 127.0.0.1
+</code></pre>
+<p>Aprire <code>/report/MULTISERVER.html</code>. Le chiavi SSH generate sono in <code>.runtime</code>, escluse dall'archivio e dal repository. Le prove usano solo i due endpoint locali, senza cambiare <code>~/.ssh/config</code>.</p>
+<p>Snapshot principali: clush <code>f3f5b1594be3350b0c29bcc6786cff86abba19d7</code> (versione dichiarata 1.10.1); term-sessions <code>29084b6a8a73b612f60a73ef798303384bd44215</code>; multi-run <code>13d4d923535b5e8482b13ff76185203075fb26a3</code>; zmx 0.8.1. Gli snapshot dei nuovi candidati e i riferimenti di codice sono in <a href="../research/multiserver-candidates.json">multiserver-candidates.json</a>; quelli inclusi nel bundle sono in <a href="../research/multiserver-bundle-sources.json">multiserver-bundle-sources.json</a>.</p>
+<p>Le quattro aggiunte native sono state esaminate nel sorgente, <strong>senza prova SSH runtime</strong>: <a href="https://github.com/dimitri/cssh/blob/2fe2754235225a59b63f08b130cfd4352e2e1c3f/cssh.el">cssh</a>, <a href="https://github.com/abrochard/telecommand/blob/fe6620e70a7da2a5cc502eabb3eab9ae046a39cc/telecommand.el">telecommand</a>, <a href="https://github.com/charmitro/emacs-ssh-machines">emacs-ssh-machines</a>, <a href="https://github.com/b40yd/dotfairy-ssh-manager">dotfairy-ssh-manager</a>. La ricerca aggiuntiva ha cercato progetti orientati all'esecuzione remota, oltre ai multiplexer del catalogo originale; non pretende di escludere ogni progetto mai pubblicato.</p></main><script src="../player/asciinema-player.js"></script>
+<script>for(const b of document.querySelectorAll('[data-cast]'))b.onclick=()=>{
+AsciinemaPlayer.create(b.dataset.cast,b.parentElement.querySelector('.player'),
+{autoPlay:true,idleTimeLimit:2,fit:'width',theme:'asciinema'});b.disabled=true};</script></html>
